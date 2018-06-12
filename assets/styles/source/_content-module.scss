@@ -1,0 +1,74 @@
+//--------------------------------------------------------------
+// Content Module
+//--------------------------------------------------------------
+.cm {
+
+    &-nav {
+        flex-basis: 100%;
+    }
+
+    &-meta {
+        flex-basis: 100%;
+    }
+
+    &-axns {
+
+        &-trunk {
+            flex-basis: 100%;
+        }
+    }
+
+    &-name {
+        padding: $m-gutter;
+        font-size: 2em;
+
+        .a {
+            @extend %aa;
+        }
+
+        .l {
+            overflow-wrap: break-word;
+        }
+    }
+
+    &-author {
+        @include m-x-gutter;
+
+        .a {
+            @extend %aa;
+        }
+
+        .glabel {
+            @include y-center-ib;
+        }
+    }
+
+    &-author-name {
+        @include y-center-ib;
+    }
+
+    &-avatar {
+        @include y-center-ib;
+        line-height: 0;
+        
+        .img {
+            border-radius: 50%;
+        }
+    }
+
+    &-datetime {
+        @include m-x-gutter;
+
+        .a {
+            @extend %aa;
+        }
+    }
+    
+    &-date {
+        @include y-center-ib;
+    }
+    
+    &-time {
+        @include y-center-ib;
+    }
+}

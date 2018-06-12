@@ -1,0 +1,17 @@
+blockquote {
+    font-family: serif;
+    font-size: $content-font-size * 1.5;
+
+    cite {
+        color: #707070;
+        font-size: .25em;
+        font-family: sans-serif;
+        font-style: normal;
+        text-transform: uppercase;
+
+        &:before {
+            content: '–';
+            margin-right: .3em;
+        }
+    }
+}

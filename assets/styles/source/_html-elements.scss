@@ -1,0 +1,50 @@
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+.html {
+    height: 100%;
+    background-color: $paper-color;
+    color: $ink-color;
+}
+
+.body {
+	min-height: 100%;
+}
+
+@each $i in $headings {
+	#{$i} {
+		@include y-margin(0);
+	}
+}
+
+figure {
+	margin: 0;
+}
+
+pre {
+	line-height: 1.6;
+	max-width: 100%;
+	overflow: auto;
+}
+
+dd {
+	word-break: break-word;
+}
+
+.axn {
+
+    a {
+        @extend %aa;
+    }
+}
+
+.h {
+            
+	.l {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}

@@ -1,0 +1,36 @@
+//--------------------------------------------------------------
+// WP Elements
+//--------------------------------------------------------------
+
+// WP Required Elements
+.wp-caption,
+.wp-caption-text,
+.sticky,
+.screen-reader-text,
+.gallery-caption,
+.bypostauthor {
+    position: inherit;
+}
+
+.wp-smiley {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+	border: none;
+}
+
+p > embed:only-child,
+p > iframe:only-child,
+p > object:only-child {
+	margin-bottom: 0;
+}
+
+.wp-caption,
+.gallery-caption {
+	max-width: 100%;
+}
+
+.wp-caption-text {
+	padding: $m-gutter;
+	font-size: .875em;
+}

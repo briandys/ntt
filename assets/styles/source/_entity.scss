@@ -1,0 +1,173 @@
+.entity---cr {
+    display: grid;
+    grid-template:
+        'start'
+        'header'
+        'main' 1fr
+        'footer'
+        'end';
+    min-height: 100vh;
+}
+
+.entity-start {
+    grid-area: start;
+}
+
+.entity-header {
+    grid-area: header;
+}
+
+.entity-main {
+    grid-area: main;
+    height: 100%;
+}
+.entity-footer {
+    grid-area: footer;
+}
+
+.entity-end {
+    grid-area: end;
+}
+
+//--------------------------------------------------------------
+// View Info
+//--------------------------------------------------------------
+
+.view-name {
+
+    @include m-x-gutter;
+    @include m-y-gutter;
+
+    a {
+        @extend %aa;
+    }
+
+    .post-view & {
+        @extend %vh;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Entity Heading
+//--------------------------------------------------------------
+
+.entity-heading---cr {
+    @extend %entity-header;
+    display: grid;
+    grid-template:
+        'a1 b1'
+        'a2 b2'
+        / auto 1fr;
+    @include m-x-gutter;
+}
+
+.entity-primary-name {
+    grid-area: b1;
+    align-self: end;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 1.125rem;
+}
+
+.entity-primary-description {
+    grid-area: b2;
+    align-self: start;
+    font-size: .75rem;
+}
+
+.entity-primary-logo {
+    grid-row: a1/-1;
+    align-self: center;
+    margin-right: .5rem;
+    line-height: 0;
+
+    a {
+        @extend %aa;
+        max-width: 3rem;
+    }
+}
+
+.entity-name-description--disabled {
+    
+    .entity-heading {
+        @extend %vh;
+    }
+}
+
+.entity-primary-axns---cr {
+    @extend %entity-header;
+}
+
+.entity-primary-nav---cr {
+    @extend %entity-header;
+}
+
+.entity-primary-nav {
+    min-height: $min-aa;
+}
+
+.entity-header---cr {
+    display: grid;
+    grid-template:
+        'a1 b1 c1'
+        'a2 b2 c2'
+        / auto auto 1fr;
+}
+
+.entity-heading {
+    grid-area: b1;
+}
+
+.entity-primary-axns {
+    grid-area: c1;
+}
+
+.entity-primary-axns---cr {
+    justify-content: flex-end;
+}
+
+.primary-search-f5e {
+    flex: 1 100%;
+}
+
+.entity-primary-nav {
+    grid-area: a2;
+    grid-column: a2 / -1;
+}
+
+.entity-primary-nav---cr {
+    flex-wrap: wrap;
+}
+
+.entity-header-aside {
+    grid-area: a1;
+}
+
+//--------------------------------------------------------------
+// Entity Secondary Info
+//--------------------------------------------------------------
+
+.entity-secondary-info {
+    color: gray;
+    font-size: .75em;
+
+    a {
+        @extend %aa;
+        @include m-x-gutter;
+        color: gray;
+    }
+}
+
+.entity-secondary-info---cr {
+
+    > *:not(:last-child) {
+        margin-right: -$m-gutter;
+
+    }
+}
+
+.entity-end {
+    position: relative;
+}

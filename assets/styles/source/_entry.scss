@@ -1,0 +1,72 @@
+//--------------------------------------------------------------
+// Entry Categories
+//--------------------------------------------------------------
+
+.entry-categories {
+
+    @at-root .post-categories {
+        
+        @extend %unlist;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            @include m-x-gutter;
+        }
+
+        a {
+            @extend %aa;
+        }
+
+    }
+
+    @at-root .categories-name {
+        padding: $m-gutter;
+    }
+
+    @at-root .entry-categories---cr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Entry Tags
+//--------------------------------------------------------------
+
+.entry-tags {
+
+    @at-root .entry-tag-group {
+        
+        @extend %unlist;
+        display: flex;
+        flex-wrap: wrap;
+
+        @at-root .entry-tag-item {
+            @include m-x-gutter;
+
+            a {
+                @extend %aa;
+            }
+        
+        }
+
+    }
+
+    @at-root .tags-name {
+        padding: $m-gutter;
+    }
+
+    @at-root .entry-tags---cr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+}
+
+.entry-admin-axns {
+    @include m-x-gutter;
+}

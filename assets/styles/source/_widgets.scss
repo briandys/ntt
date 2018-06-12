@@ -1,0 +1,307 @@
+//--------------------------------------------------------------
+// General
+//--------------------------------------------------------------
+
+.widget-name {
+    @include y-padding($m-gutter);
+    font-weight: bold;
+}
+
+//--------------------------------------------------------------
+// Calendar
+//--------------------------------------------------------------
+.widget_calendar {
+    
+    table
+    {
+        width: 100%;
+    }
+
+    a {
+        @extend %aa;
+        @include m-x-gutter;
+    }
+
+    .txt {
+        @extend %aa;
+        @include m-x-gutter;
+    }
+
+    caption {
+        @include m-x-gutter;
+        @include m-y-gutter;
+    }
+
+    #prev {
+        text-align: right;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Archive
+//--------------------------------------------------------------
+
+.widget_archive {
+
+    ul {
+        @extend %unlist;
+    }
+
+    a {
+        @extend %aa;
+    }
+
+    select {
+        @include tb-margin($m-gutter);
+    }
+
+}
+
+.widget_archive---cr {
+    @include m-x-gutter;
+    @include m-y-gutter;
+}
+
+//--------------------------------------------------------------
+// Audio
+//--------------------------------------------------------------
+
+.widget_media_audio {
+
+    .widget-name {
+        @include m-x-gutter;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Categories
+//--------------------------------------------------------------
+
+.widget_categories {
+
+    ul {
+        @extend %unlist;
+    }
+
+    a {
+        @extend %aa;
+    }
+
+    .children {
+
+        .cat-item {
+            padding-left: $m-gutter;
+        }
+
+    }
+
+    label {
+        @extend .label;
+        @include x-padding();
+    }
+
+}
+
+.widget_categories---cr {
+    @include m-x-gutter;
+}
+
+//--------------------------------------------------------------
+// Text, Custom HTML
+//--------------------------------------------------------------
+
+.widget_text {
+
+    .widget-name {
+        @include m-x-gutter;
+    }
+    
+}
+
+.widget_custom_html {
+    .content---cr > .txt {
+        display: block;
+    }
+}
+
+//--------------------------------------------------------------
+// Meta
+//--------------------------------------------------------------
+
+.widget_meta {
+
+    .widget-name {
+        @include m-x-gutter;
+    }
+
+    ul {
+        @extend %unlist;
+    }
+
+    a {
+        @extend %aa;
+        @include space;
+    }
+
+    li {
+        padding-left: $m-gutter;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Navigation Menu
+//--------------------------------------------------------------
+
+.widget_nav_menu {
+
+    ul {
+        @extend %unlist;
+    }
+
+    a {
+        @extend %aa;
+    }
+
+    .sub-menu {
+
+        .menu-item {
+            padding-left: $m-gutter;
+        }
+
+    }
+
+}
+
+.widget_nav_menu---cr {
+    @include m-x-gutter;
+}
+
+//--------------------------------------------------------------
+// Pages
+//--------------------------------------------------------------
+
+.widget_pages {
+
+    ul {
+        @extend %unlist;
+    }
+
+    a {
+        @extend %aa;
+    }
+
+    .children {
+
+        .page_item {
+            padding-left: $m-gutter;
+        }
+
+    }
+
+}
+
+.widget_pages---cr {
+    @include m-x-gutter;
+}
+
+//--------------------------------------------------------------
+// Recent Comments
+//--------------------------------------------------------------
+
+.widget_recent_comments {
+
+    ul {
+        @extend %unlist;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        @include space;
+    }
+
+    li > * {
+        @extend %aa;
+        justify-content: flex-start;
+        min-width: auto;
+    }
+
+}
+
+.widget_recent_comments---cr {
+    @include m-x-gutter;
+}
+
+//--------------------------------------------------------------
+// Recent Entries
+//--------------------------------------------------------------
+
+.widget_recent_entries {
+
+    ul {
+        @extend %unlist;
+    }
+
+    li {
+        @include space;
+    }
+
+    li > * {
+        @extend %aa;
+        min-width: auto;
+    }
+
+}
+
+.widget_recent_entries---cr {
+    @include m-x-gutter;
+}
+
+//--------------------------------------------------------------
+// Search
+//--------------------------------------------------------------
+.widget_search {
+
+    .widget-name {
+        @include m-x-gutter;
+    }
+
+    @at-root .search-textbox  {
+        @include m-x-gutter;
+    }
+
+    @at-root .submit-search-axn {
+        margin-bottom: -$m-gutter;
+        padding: $m-gutter;
+    }
+
+    @at-root .reset-search-axn {
+        padding: $m-gutter;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Tag Cloud
+//--------------------------------------------------------------
+.widget_tag_cloud {
+
+    .widget-name {
+        @include m-x-gutter;
+    }
+
+}
+
+.tagcloud {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-cloud-link {
+    @extend %aa;
+    @include m-x-gutter;
+    @include space;
+}

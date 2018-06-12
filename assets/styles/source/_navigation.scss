@@ -1,0 +1,200 @@
+//--------------------------------------------------------------
+// General Navigation
+//--------------------------------------------------------------
+
+.nav {
+
+    #{$lists} {
+        @extend %unlist;
+    }
+}
+
+.nav-name {
+    @include name();
+}
+
+//--------------------------------------------------------------
+// Go to Content Navigation
+//--------------------------------------------------------------
+
+.go-content-navi {
+    @include m-x-gutter;
+}
+
+.go-content-navi---a {
+    @extend %aa;
+}
+
+//--------------------------------------------------------------
+// Go to Start Navigation
+//--------------------------------------------------------------
+
+.go-start-navi {
+    @include m-x-gutter;
+}
+
+.go-start-navi---a {
+    @extend %aa;
+}
+
+//--------------------------------------------------------------
+// Entity Primary Navigation
+//--------------------------------------------------------------
+
+.entity-primary-nav-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        @extend %aa;
+    }
+
+    li {
+        @include m-x-gutter;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Entity Secondary Navigation
+//--------------------------------------------------------------
+
+.entity-secondary-nav-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        @extend %aa;
+    }
+
+    li {
+        @include m-x-gutter;
+    }
+}
+
+//--------------------------------------------------------------
+// Entries Navigation
+//--------------------------------------------------------------
+
+.entries-nav {
+
+    a {
+        @extend %aa;
+    }
+
+    h2 {
+        @include name();
+    }
+
+    li {
+        display: inline-block;
+        @include m-x-gutter;
+    }
+ 
+    .current {
+        @extend %aa;
+ 
+    }
+}
+
+//--------------------------------------------------------------
+// Breadcrumbs Navigation
+//--------------------------------------------------------------
+
+.breadcrumbs-nav-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-navi---a {
+    @extend %aa;
+}
+
+.breadcrumb-navi---l {
+    @include m-x-gutter;
+}
+
+.breadcrumb-navi--current---l {
+    @extend %aa;
+}
+
+//--------------------------------------------------------------
+// Entry Navigation
+//--------------------------------------------------------------
+
+.entry-nav {
+
+    a {
+        @extend %aa;
+    }
+
+    .navi {
+        @include m-x-gutter;
+    }
+}
+
+.entry-navi---i {
+    display: none;
+}
+
+//--------------------------------------------------------------
+// Entry Content Navigation
+//--------------------------------------------------------------
+
+.entry-content-nav {
+    flex-basis: 100%;
+    @include y-padding($m-gutter);
+}
+
+.entry-content-nav-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        @extend %aa;
+    }
+}
+
+.entry-content-navi {
+    @include m-x-gutter;
+}
+
+.entry-content-navi--current {
+
+    .entry-content-navi---g {
+        @extend %aa;
+    }
+
+}
+
+//--------------------------------------------------------------
+// Comments Navigation
+//--------------------------------------------------------------
+
+.next-comments-navi,
+.previous-comments-navi {
+    @include m-x-gutter;
+    
+    a {
+        @extend %aa;
+    }
+}
+
+//--------------------------------------------------------------
+// Go to Start Navigation
+//--------------------------------------------------------------
+
+.go-start-navi {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include x-padding();
+}
+
+.go-start-navi---a {
+    color: $ink-color;
+}
+
+.go-start-navi---txt {
+    @extend %vh;
+}

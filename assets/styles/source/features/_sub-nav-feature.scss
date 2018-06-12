@@ -1,0 +1,199 @@
+$border-color: hsla( 0, 0%, 0%, .125 );
+
+.ntt-sub-nav-f5e {
+    
+    &.dom--unready {
+    
+        .children,
+        .sub-menu {
+            display: none;
+        }
+    }
+
+    .entity-primary-nav {
+
+        .page_item_has_children,
+        .menu-item-has-children {
+
+            > a {
+                margin-right: 0;
+                padding-right: $min-aa;
+            }
+        }
+    }
+}
+
+//--------------------------------------------------------------
+// Button Style
+//--------------------------------------------------------------
+
+.sub-nav-toggle-axn {
+    @include x-padding();
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.sub-nav-toggle-axn---a {
+    width: auto;
+    background-color: transparent;
+    color: $ink-color;
+}
+
+.toggle-sub-nav---txt {
+    @extend %vh;
+}
+
+//--------------------------------------------------------------
+// Active Sub-Nav
+//--------------------------------------------------------------
+
+.active-sub-nav {
+    z-index: 99;
+
+    > .toggle-axn .icon {
+        transform: rotate( 180deg); 
+    }
+}
+
+//--------------------------------------------------------------
+// Inactive Sub-Nav
+//--------------------------------------------------------------
+
+.inactive-sub-nav {
+    
+    > .children,
+    > .sub-menu {
+        display: none;
+    }
+}
+
+//--------------------------------------------------------------
+// Sub-Nav
+//--------------------------------------------------------------
+
+.sub-nav-f5e {
+
+    .entity-primary-navi---l {
+        display: flex;
+        align-items: center;
+        min-height: $min-aa;
+    }
+    
+    li {
+        @include x-padding();
+    }
+
+    a {
+        @include m-x-gutter;
+        justify-content: unset;
+    }
+    
+    .page_item_has_children,
+    .menu-item-has-children {
+        position: relative;
+
+        > a {
+            padding-right: 0;
+            margin-right: $min-aa;
+        }
+    }
+
+    .children,
+    .sub-menu {
+
+        .active-other-sub-nav {
+            visibility: hidden;
+            height: 0;
+        }
+    }
+
+    &.entity-primary-nav {
+
+        a {
+            display: flex;
+            white-space: nowrap;
+        }
+
+        .entity-primary-nav-group {
+
+            > li {
+
+                > ul {
+
+                    ul {
+                        transform: translate(.5rem, -.5rem);
+                    }
+
+                }
+            }
+        }
+
+        .page_item_has_children,
+        .menu-item-has-children {
+
+            > a {
+                width: 100%;
+            }
+            
+            > ul {
+                position: absolute;
+                top: 100%;
+                z-index: 99;
+                transform: translate(0, -.5rem);
+
+                > li {
+
+                    > a {
+                        background-color: white;
+                        border-left: 1px solid $border-color;
+                        border-right: 1px solid $border-color;
+                    }
+    
+                    &:first-child {
+    
+                        > a {
+                            border-top: 1px solid $border-color;
+                        }
+                    }
+    
+                    &:last-child {
+    
+                        > a {
+                            border-bottom: 1px solid $border-color;
+                        }
+                    }
+                }
+    
+                > .active-sub-nav {
+    
+                    > a {
+                        border-bottom: 1px solid $border-color;
+                    }
+                }
+            }
+        }
+
+        .children,
+        .sub-menu {
+            max-width: 30rem;
+            min-width: 100%;
+            box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, .05);
+        }
+    }
+
+    .widget_nav_menu---cr,
+    .widget_pages---cr {
+        @include x-padding();
+    }
+
+    .widget-name {
+        @include x-padding($m-gutter);
+    }
+
+    .down-arrowhead-icon {
+        width: .75em;
+        height: .75em;
+    }
+}

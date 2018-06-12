@@ -1,0 +1,93 @@
+embed,
+iframe,
+img,
+object,
+video {
+	@extend %responsive-visuals;
+}
+
+//--------------------------------------------------------------
+// Alignments
+//--------------------------------------------------------------
+$alignment-gutter: 1.5em;
+
+.alignleft {
+    float: left;
+    margin-right: $alignment-gutter;
+}
+
+.alignright {
+    float: right;
+    margin-left: $alignment-gutter;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    @include x-margin(auto);
+}
+
+//--------------------------------------------------------------
+// Gallery
+//--------------------------------------------------------------
+.gallery {
+
+    @include mq(m-vp) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.uniform-gallery {
+
+    .gallery-item {
+    
+        @include mq(m-vp) {
+    
+            .gallery-icon {
+                padding-top: 100%;
+                position: relative;
+                height: 0;
+    
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+    
+            img {
+                @include xy-size();
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.gallery-caption {
+    @include mq( xs-vp ) {
+        margin-bottom: $m-gutter;
+
+        .gallery-item:last-child & {
+            margin-bottom: 0;
+        }
+    }
+}
+
+$gallery-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9;
+
+@each $i in $gallery-columns {
+
+    .gallery-columns-#{$i} {
+        
+        .gallery-item {
+
+            @include mq( m-vp ) {
+                flex-basis: ( 100% / #{$i} );
+            }
+
+        }
+
+    }
+
+}

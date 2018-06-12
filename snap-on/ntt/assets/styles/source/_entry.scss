@@ -1,0 +1,115 @@
+// DateTime
+
+.entry-published-date {
+
+    .day---txt {
+        font-size: 1.5em;
+    }
+ 
+    .month---txt {
+        font-size: .875em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .year---txt {
+        font-size: .75em;
+    }
+}
+
+.entry-published-date---a {
+    color: $ink-color;
+}
+
+.entry-published-date---l {
+    display: flex;
+    flex-direction: column;
+    padding: .25em 1em;
+    background-color: $paper-color;
+    text-align: center;
+}
+
+.entry-published-on-glabel,
+.entry-at-glabel {
+    display: none;
+}
+
+.entry-published-time {
+    @extend %vh;
+}
+
+.entry-updated-datetime {
+    @extend %vh;
+}
+
+.entry-author---cr {
+    display: inline-flex;
+    align-items: center;
+}
+
+.published-by-glabel {
+    @extend %vh;
+}
+
+.entry-author-avatar {
+    order: -1;
+    margin-right: .5rem;
+}
+
+.categories-name {
+    @extend %vh;
+}
+
+// Layout
+
+.entry-header---cr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.entry-meta,
+.entry-meta---cr {
+    display: contents;
+}
+
+.entry-categories {
+    grid-area: 1/1;
+}
+
+.entry-heading {
+    grid-area: 2/1;
+}
+
+.entry-axns {
+    grid-area: 3/1;
+}
+
+.entry-author {
+    grid-area: 4/1;
+}
+
+.entry-datetime,
+.entry-datetime---cr {
+    display: contents;
+}
+
+.entry-published-datetime {
+    grid-area: 1/2/4;
+    @include x-padding();
+}
+
+.comments-actions-snippet {
+    grid-area: 5/1/6/3
+}
+
+.entry-content-nav {
+    grid-area: 6/1/7/3
+}
+
+.entry-banner {
+    grid-area: 6/1/7/3
+}
+
+.entry-categories {
+    margin-bottom: -1rem;
+}

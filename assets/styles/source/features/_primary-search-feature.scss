@@ -1,0 +1,128 @@
+.ntt-primary-search-f5e {
+    
+    &.dom--unready {
+    
+        .widget_search {
+            display: none;
+        }
+    }
+}
+
+.primary-search-f5e {
+
+    .widget-name,
+    .toggle-search---txt,
+    .search-field-label,
+    .go---txt,
+    .reset---txt {
+        @extend %vh;
+    }
+
+    .search-textbox {
+        flex-grow: 1;
+        @include x-padding();
+    }
+
+    .search-field {
+        margin-bottom: 0;
+        @include y-padding();
+    }
+
+    .submit-search-axn {
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .submit-search-axn---a {
+        width: auto;
+        background-color: transparent;
+        color: $ink-color;
+    }
+
+    .submit-search-axn---l {
+        @include y-padding();
+    }
+
+    .reset-search-axn---a {
+        width: auto;
+        background-color: transparent;
+    }
+
+    .reset-search-axn {
+        padding: 0;
+    }
+
+    .reset-search-axn---l {
+        @include y-padding();
+    }
+
+    .search,
+    .search---cr,
+    .search-field,
+    .search-field---cr,
+    .search-axns,
+    .search-axns---cr {
+        display: contents;
+    }
+
+    .widget_search---cr {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .search-textbox {
+        order: -1;
+    }
+
+    .submit-search-axn {
+        order: 1;
+    }
+
+    .search-input {
+        background-color: transparent;
+        border: 0;
+    }
+
+    .dismiss-icon {
+        width: .75em;
+        height: .75em;
+    }
+}
+
+.active-search {
+
+    &.empty-search {
+
+        .reset-search-axn {
+            display: none;
+        }
+    }
+
+    &.populated-search {
+        
+        .toggle-axn {
+            display: none;
+        }
+    }
+}
+
+.inactive-search {
+
+    .search {
+        display: none;
+    }
+}
+
+.primary-search-toggle-axn {
+    @include x-padding();
+}
+
+.primary-search-toggle-axn---a {
+    width: auto;
+    background-color: transparent;
+    color: $ink-color;
+}
+
+.primary-search-toggle-axn---l {
+    @include y-padding();
+}

@@ -1,0 +1,30 @@
+/*
+.entity-header---cr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+*/
+
+.entity-main-header {
+
+    .entry-nav {
+        display: none;
+    }
+}
+
+.entity-secondary-info {
+    text-align: center;
+}
+
+.post-view {
+
+    .view-name {
+        display: none;
+    }
+
+    .entity-secondary-nav-group {
+        justify-content: center;
+    }
+}

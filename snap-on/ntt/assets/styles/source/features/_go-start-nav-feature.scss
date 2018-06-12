@@ -1,0 +1,27 @@
+.ntt-go-start-nav-f5e {
+    
+    &.dom--unready {
+    
+        .go-start-navi {
+            display: none;
+        }
+    }
+
+    .entity-end {
+        position: static;
+    }
+}
+
+.go-start-nav-f5e {
+
+    &.go-start-nav--off {
+
+        .go-start-navi {
+            @extend %vh;
+        }
+    }
+
+    .go-start-navi {
+        position: fixed;
+    }
+}

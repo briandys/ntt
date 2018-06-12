@@ -1,0 +1,14 @@
+/*
+Theme Name: NTT
+Theme URI: http://ntt.dysinelab.com/
+Author: Brian Dys Sahagun
+Author URI: http://briansahagun.com/
+Description: A Hypertext Document
+Version: 0.0.8
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ntt
+Tags: translation-ready
+*/
+
+@import url('assets/styles/ntt.min.css');

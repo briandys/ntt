@@ -1,0 +1,140 @@
+$margin-buffer: 10vh;
+
+.post-view {
+ 
+    .entry-header {
+
+        .entry-meta,
+        .comments-actions-snippet {
+            @extend %vh;
+        }
+    }
+    
+    .entry-heading {
+        @extend %m-vp;
+    }
+
+    .entry-name {
+        font-family: 'Noto Serif', serif;
+        font-weight: normal;
+        letter-spacing: calc(1/32em);
+
+        @include mq(m-vp) {
+            font-size: 4em;
+        }
+    }
+    
+    .entry-axns {
+        @extend %m-vp;
+    }
+    
+    .entry-summary-content {
+        @extend %m-vp;
+    }
+
+    .breadcrumbs-nav {
+        @extend %m-vp;
+    }
+
+    .entry-content-nav {
+        @extend %m-vp;
+    }
+
+    .entry-nav {
+        @extend %m-vp;
+    }
+
+    &.entry-banner-visuals--on {
+    
+        .entry-header,
+        .entry-header---cr {
+            display: contents;
+        }
+        
+        .entry-main,
+        .entry-main---cr,
+        .entry-content,
+        .entry-content---cr {
+            display: contents;
+        }
+        
+        .entry-banner,
+        .entry-banner---cr {
+            display: contents;
+        }
+        
+        .entry-article---cr {
+            display: grid;
+        }
+    
+        .entry-heading {
+            grid-area: 2/1;
+            z-index: 1;
+            @extend %m-vp;
+            margin-top: $margin-buffer;
+        }
+
+        .entry-name {
+            color: white;
+
+            .entry-name---txt {
+                text-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+            }
+        }
+    
+        .entry-axns {
+            grid-area: 3/1;
+            z-index: 1;
+        
+            .post-edit-link {
+                color: white;
+            }
+        }
+    
+        .entry-summary-content {
+            grid-area: 4/1;
+            z-index: 1;
+            margin-bottom: $margin-buffer;
+
+            > * {
+                text-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+            }
+        }
+    
+        .entry-banner-visuals {
+            position: relative;
+            grid-area: 1/1/5;
+        
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: hsla(0, 0%, 0%, .5);
+            }
+        }
+    
+        .entry-banner-visuals---img {
+            width: 100%;
+            height: 100vh;
+            min-height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.entry-published-on-glabel,
+.entry-updated-on-glabel,
+.entry-at-glabel {
+    @extend %glabel;  
+}
+
+.published-by-glabel {
+    @extend %glabel;
+}
+
+.categories-name {
+    @extend %name;
+}

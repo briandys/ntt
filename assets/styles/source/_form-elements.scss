@@ -1,0 +1,118 @@
+//--------------------------------------------------------------
+// General
+//--------------------------------------------------------------
+
+input,
+textarea {
+    @include box-reset;
+    @include min-xy-size();
+    padding: .5em $m-gutter;
+    width: 100%;
+    background-color: $paper-color;
+    border: 1px solid $ink-color;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: .5rem;
+    height: $min-aa;
+    vertical-align: middle;
+}
+
+select {
+    @include box-reset;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: .5em;
+    padding-right: 2rem;
+    width: 100%;
+    border: 1px solid $ink-color;
+    border-radius: 0;
+    height: $min-aa;
+    background-color: $paper-color;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M24.06 35.07a4.43 4.43 0 0 0 6.19 0l19.56-19.56 19.57 19.56a4.37 4.37 0 0 0 6.18-6.18L52.87 6.27A4.26 4.26 0 0 0 49.81 5a4 4 0 0 0-3.06 1.26L24.06 28.89a4.42 4.42 0 0 0 0 6.18zM75.94 64.93a4.43 4.43 0 0 0-6.19 0L50.19 84.49 30.62 64.93a4.37 4.37 0 0 0-6.18 6.18l22.69 22.62A4.26 4.26 0 0 0 50.19 95a4 4 0 0 0 3.06-1.26l22.69-22.63a4.42 4.42 0 0 0 0-6.18z'/%3E%3C/svg%3E");
+	background-position: calc(100% - .5rem) 50%;
+	background-repeat: no-repeat;
+	background-size: 1rem;
+}
+
+button,
+[type="submit"],
+[type="reset"] {
+    @extend %aa;
+    @include box-reset;
+    padding: .5em 1em;
+    width: 100%;
+    background-color: $primary-color;
+    color: $paper-color;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+[type="reset"] {
+    background-color: #e5e5e5;
+    color: $ink-color;
+}
+
+textarea {
+    margin-bottom: -5px;
+    line-height: $m-line-height;
+    min-height: 64px;
+}
+
+//--------------------------------------------------------------
+// Labels, Form Elements
+//--------------------------------------------------------------
+
+.label {
+    display: inline-block;
+    @include m-x-gutter;
+    margin-bottom: .5em;
+}
+
+.felem {
+    display: block;
+    @include m-x-gutter;
+}
+
+.field {
+    @include y-padding(1em);
+    margin-bottom: -1em;
+}
+
+.optional-note-txt {
+    @extend %inline-note;
+}
+
+//--------------------------------------------------------------
+// Post Password
+//--------------------------------------------------------------
+
+.post-password-form {
+
+    p {
+        @include y-padding(1em);
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    input {
+        @include y-margin(1em);
+
+        &[type="password"] {
+            margin-bottom: 0;
+        }
+
+        &[type="submit"] {
+            margin-bottom: 0;
+        }
+    }
+
+    label {
+        display: block;
+    }
+}

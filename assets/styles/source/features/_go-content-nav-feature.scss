@@ -1,0 +1,29 @@
+.ntt-go-content-nav-f5e {
+    
+    &.dom--unready {
+    
+        .go-content-navi {
+            display: none;
+        }
+    }
+
+    &.ntt-go-content-nav--on {
+        overflow: hidden;
+    }
+}
+
+.go-content-nav-f5e {
+
+    .go-content-navi {
+        position: fixed;
+        @include xy-center;
+        z-index: $active-layer;
+    }
+
+    &.go-content-nav {
+
+        &.go-content-nav--off {
+            @extend %vh;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.ntt-go-start-nav-f5e {
+    
+    &.dom--unready {
+    
+        .go-start-navi {
+            display: none;
+        }
+    }
+}
+
+.go-start-nav-f5e {
+
+    .go-start-navi {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        @include x-padding();
+    }
+    
+    .go-start-navi---a {
+        color: $ink-color;
+    }
+
+    .go-start-navi---txt {
+        @extend %vh;
+    }
+
+    &.go-start-nav--off {
+
+        .go-start-navi {
+            @extend %vh;
+        }
+    }
+}
