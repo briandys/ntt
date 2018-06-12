@@ -60,4 +60,4 @@ foreach ( $r_tags as $file_name ) {
 }
 
 // Snap-On
-require( get_parent_theme_file_path( 'snap-on.php' ) );
+require( get_parent_theme_file_path( 'snap-ons.php' ) );

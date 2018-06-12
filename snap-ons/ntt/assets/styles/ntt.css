@@ -121,59 +121,6 @@
   margin-right: .5rem;
 }
 
-.entry-header---cr {
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
-
-.entry-meta,
-.entry-meta---cr {
-  display: contents;
-}
-
-.entry-categories {
-  grid-area: 1/1;
-}
-
-.entry-heading {
-  grid-area: 2/1;
-}
-
-.entry-axns {
-  grid-area: 3/1;
-}
-
-.entry-author {
-  grid-area: 4/1;
-}
-
-.entry-datetime,
-.entry-datetime---cr {
-  display: contents;
-}
-
-.entry-published-datetime {
-  grid-area: 1/2/4;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.comments-actions-snippet {
-  grid-area: 5/1/6/3;
-}
-
-.entry-content-nav {
-  grid-area: 6/1/7/3;
-}
-
-.entry-banner {
-  grid-area: 6/1/7/3;
-}
-
-.entry-categories {
-  margin-bottom: -1rem;
-}
-
 .note {
   padding: 1rem;
 }
