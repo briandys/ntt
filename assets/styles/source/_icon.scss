@@ -1,6 +1,6 @@
 .icon {
 
-  // From Iconmoon
+  // From Icomoon
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -10,4 +10,8 @@
 
   // Fixes JS Events
   pointer-events: none;
+}
+
+.dismiss-icon {
+  @include dimensions(.75em, .75em);
 }

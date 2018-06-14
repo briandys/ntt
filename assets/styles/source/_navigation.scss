@@ -41,6 +41,14 @@
 // Entity Primary Navigation
 //--------------------------------------------------------------
 
+.entity-primary-nav {
+    min-height: $min-aa;
+}
+
+.entity-primary-nav---cr {
+    @extend %entity-header;
+}
+
 .entity-primary-nav-group {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +60,6 @@
     li {
         @include m-x-gutter;
     }
-
 }
 
 //--------------------------------------------------------------

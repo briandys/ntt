@@ -666,7 +666,6 @@ var $document,
         }
 
         var $widgets = $elem.find( '.widget' ),
-            $cr = $elem.children(),
             on = 'active-primary-menu-f5e',
             off = 'inactive-primary-menu-f5e',
             nttF5eOn = 'ntt-primary-menu-f5e--on',
@@ -675,7 +674,8 @@ var $document,
             $toggle, $toggleLabel, $toggleText,
             showText = nttData.showMenuText,
             hideText = nttData.hideMenuText,
-            icon = $( nttData.burgerIcon );
+            toggleIcon = $( nttData.burgerIcon ),
+            dismissIcon = $( nttData.dismissIcon );
 
         $widgets.wrapAll(
             htmlOkFn.cp(
@@ -693,25 +693,39 @@ var $document,
             )
         );
 
-        // Define Object
+        // Define Objects
         $primaryMenu = $( '.primary-menu' );
+        $menuGroup = $( '.primary-menu-group' );
 
-        // Create Button
+        // Create Toggle Button
         $primaryMenu.before(
             htmlOkFn.buttonObj(
                 'primary-menu-toggle-axn',
                 'toggle-axn',
-                'Primary Toggle Menu',
+                'Primary Menu Toggle',
                 'Toggle Menu',
                 'toggle-menu',
-                icon
+                toggleIcon
+            )
+        );
+
+        // Create Dismiss Button
+        $menuGroup.before(
+            htmlOkFn.buttonObj(
+                'primary-menu-dismiss-axn',
+                'dismiss-axn',
+                'Primary Menu Dismiss',
+                'Dismiss Menu',
+                'dismiss-menu',
+                dismissIcon
             )
         );
 
         // Define Object
         $toggle = $elem.find( '.primary-menu-toggle-axn---a' );
+        $dismiss = $elem.find( '.primary-menu-dismiss-axn---a' );
         $toggleLabel = $toggle.find( '.primary-menu-toggle-axn---l' );
-        $toggleText = $elem.find( '.toggle-menu---txt' );
+        $toggleText = $toggleLabel.find( '.toggle-menu---txt' );
 
         // Functions
         primaryMenuFn = {
@@ -766,15 +780,35 @@ var $document,
         // Initialize Deactivation
         primaryMenuFn.off();
 
-        // User Action: Button Click
+        // User Action: Toggle Button Click
         $toggle.on( 'click.ntt', function(e) {
             e.preventDefault();
 
-            console.log( 'click' );
+            console.log( 'click toggle' );
             primaryMenuFn.toggle();
         } );
 
+        // User Action: Dismiss Button Click
+        $dismiss.on( 'click.ntt', function(e) {
+            e.preventDefault();
+
+            console.log( 'click dismiss' );
+            primaryMenuFn.off();
+        } );
+
+        // User Action: Document Click
+        $document.on( 'touchmove.ntt click.ntt', function ( e ) {
+            if ( $elem.hasClass( on ) && ! $( e.target ).closest( $elem ).length ) {
+                primaryMenuFn.off();
+            }
+        } );
         
+        // User Action: ESC Key
+        $document.on( 'keyup.ntt', function ( e ) {
+            if ( $html.hasClass( 'window--loaded' ) && $elem.hasClass( on ) && e.keyCode == 27 ) {
+                primaryMenuFn.off();
+            }
+        } );
     } ) ();
 
     /**

@@ -8,6 +8,10 @@
     }
 }
 
+.ntt-primary-menu-f5e--on {
+     overflow: hidden;
+}
+
 .inactive-primary-menu-f5e {
 
     .primary-menu {
@@ -20,6 +24,10 @@
     .toggle-menu---txt {
         @extend %vh;
     }
+
+    .dismiss-menu---txt {
+        @extend %vh;
+    }
 }
 
 .primary-menu {
@@ -27,8 +35,46 @@
     left: 0;
     top: 0;
     z-index: 100;
+}
+
+.primary-menu---cr {
+    position: relative;
     width: 30rem;
-    overflow-y: auto;
-    max-width: calc( 100vw - $min-aa );
+    max-width: calc( 100vw - 3rem );
+    height: 100vh;
+
+    &:before{
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 0;
+        @include dimensions(.5rem, 100vh);
+        
+        // http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.25+0,0+100
+        background: -moz-linear-gradient(left, hsla(0,0%,0%,0.25) 0%, hsla(0,0%,0%,0) 100%); // FF3.6-15
+        background: -webkit-linear-gradient(left, hsla(0,0%,0%,0.25) 0%,hsla(0,0%,0%,0) 100%); // Chrome10-25,Safari5.1-6
+        background: linear-gradient(to right, hsla(0,0%,0%,0.25) 0%,hsla(0,0%,0%,0) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#00000000',GradientType=1); // IE6-9
+    }
+}
+
+.primary-menu-group {
+    width: 100%;
+    height: 100%;
     background-color: $paper-color;
+    overflow-y: auto;
+}
+
+.primary-menu-toggle-axn---a {
+    width: auto;
+    background-color: transparent;
+}
+
+.primary-menu-dismiss-axn---a {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: auto;
+    background-color: transparent;
+    color: $ink-color;
 }
