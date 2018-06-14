@@ -493,9 +493,10 @@ var $document,
     /**
      * Overflow Actions
      */
-    function overflowActions( $elem ) {
+    ( function() {
 
-        var $widgets = $elem.find( '.widget:not(.primary-action)' );
+        var $elem = $( '#entity-primary-axns' ),
+            $widgets = $elem.find( '.widget:not(.primary-action)' );
 
         if ( $widgets.length && $html.hasClass( 'ntt-primary-axns-overflow-f5e' ) ) {
             $elem.addClass( 'overflow-axns-f5e' );
@@ -511,7 +512,6 @@ var $document,
             hideText = nttData.hideActionsText,
             moreIcon = $( nttData.ellipsisIcon ),
             $toggle, $toggleText,
-            $elem,
             nttF5eOn = 'ntt-overflow-axns-f5e--on',
             nttF5eOff = 'ntt-overflow-axns-f5e--off',
             f5eOn = 'overflow-axns-f5e--on',
@@ -649,9 +649,133 @@ var $document,
                 overflowActionsFn.off();
             }
         } );
-    }
+    } ) ();
 
-    overflowActions( $( '#entity-primary-axns' ) );
+    /**
+     * Primary Menu
+     */
+    ( function() {
+
+        var $elem = $( '#entity-header-aside' );
+
+        // Gatekeeper: Check if element itself exists and if the feature is deliberately declared in Features Functions (functions/features.php)
+        if ( $elem.length && $html.hasClass( 'ntt-primary-menu-f5e' ) ) {
+            $elem.addClass( 'primary-menu-f5e' );
+        } else {
+            return;
+        }
+
+        var $widgets = $elem.find( '.widget' ),
+            $cr = $elem.children(),
+            on = 'active-primary-menu-f5e',
+            off = 'inactive-primary-menu-f5e',
+            nttF5eOn = 'ntt-primary-menu-f5e--on',
+            nttF5eOff = 'ntt-primary-menu-f5e--off',
+            $primaryMenu,
+            $toggle, $toggleLabel, $toggleText,
+            showText = nttData.showMenuText,
+            hideText = nttData.hideMenuText,
+            icon = $( nttData.burgerIcon );
+
+        $widgets.wrapAll(
+            htmlOkFn.cp(
+                'primary-menu',
+                'menu',
+                'Primary Menu'
+            )
+        );
+
+        $widgets.wrapAll(
+            htmlOkFn.group(
+                'primary-menu-group',
+                'menu-group',
+                'Primary Menu Items'
+            )
+        );
+
+        // Define Object
+        $primaryMenu = $( '.primary-menu' );
+
+        // Create Button
+        $primaryMenu.before(
+            htmlOkFn.buttonObj(
+                'primary-menu-toggle-axn',
+                'toggle-axn',
+                'Primary Toggle Menu',
+                'Toggle Menu',
+                'toggle-menu',
+                icon
+            )
+        );
+
+        // Define Object
+        $toggle = $elem.find( '.primary-menu-toggle-axn---a' );
+        $toggleLabel = $toggle.find( '.primary-menu-toggle-axn---l' );
+        $toggleText = $elem.find( '.toggle-menu---txt' );
+
+        // Functions
+        primaryMenuFn = {
+
+            on: function() {
+
+                $toggle.attr( {
+                    'aria-expanded': 'true',
+                    'title': hideText
+                } );
+
+                $toggleText.text( hideText );
+
+                $elem
+                    .addClass( on )
+                    .removeClass( off );
+
+                $html
+                    .addClass( nttF5eOn )
+                    .removeClass( nttF5eOff );
+
+            },
+
+            off: function() {
+
+                $toggle.attr( {
+                    'aria-expanded': 'false',
+                    'title': showText
+                } );
+
+                $toggleText.text( showText );
+
+                $elem
+                    .addClass( off )
+                    .removeClass( on );
+
+                $html
+                    .addClass( nttF5eOff )
+                    .removeClass( nttF5eOn );
+            },
+
+            toggle: function() {
+                
+                if ( $elem.hasClass( off ) ) {
+                    primaryMenuFn.on();    
+                } else if ( $elem.hasClass( on ) ) {
+                    primaryMenuFn.off();  
+                }
+            }
+        };
+
+        // Initialize Deactivation
+        primaryMenuFn.off();
+
+        // User Action: Button Click
+        $toggle.on( 'click.ntt', function(e) {
+            e.preventDefault();
+
+            console.log( 'click' );
+            primaryMenuFn.toggle();
+        } );
+
+        
+    } ) ();
 
     /**
      * Go to Content Nav Feature

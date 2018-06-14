@@ -8,6 +8,7 @@ function ntt_features_scripts() {
     $search_icon = ntt_get_svg( array( 'icon' => 'search-icon', ) );
     $dismiss_icon = ntt_get_svg( array( 'icon' => 'dismiss-icon', ) );
     $ellipsis_icon = ntt_get_svg( array( 'icon' => 'ellipsis-icon', ) );
+    $burger_icon = ntt_get_svg( array( 'icon' => 'burger-icon', ) );
 
     $ntt_l10n['showSubNavText']     = __( 'Show Sub-Nav', 'ntt' );
     $ntt_l10n['hideSubNavText']     = __( 'Hide Sub-Nav', 'ntt' );
@@ -16,16 +17,21 @@ function ntt_features_scripts() {
     $ntt_l10n['showSearchText']     = __( 'Show Search', 'ntt' );
     $ntt_l10n['hideSearchText']     = __( 'Hide Search', 'ntt' );
     
-    $ntt_l10n['toggleActionsText']  = __( 'Toggle Actions', 'ntt' );
+    $ntt_l10n['toggleActionsText']   = __( 'Toggle Actions', 'ntt' );
     $ntt_l10n['showActionsText']     = __( 'Show Actions', 'ntt' );
     $ntt_l10n['hideActionsText']     = __( 'Hide Actions', 'ntt' );
+    
+    $ntt_l10n['toggleMenuText']   = __( 'Toggle Menu', 'ntt' );
+    $ntt_l10n['showMenuText']     = __( 'Show Menu', 'ntt' );
+    $ntt_l10n['hideMenuText']     = __( 'Hide Menu', 'ntt' );
     
     $ntt_l10n['downArrowheadIcon']  = $down_arrowhead_icon;
     $ntt_l10n['upArrowheadIcon']    = $up_arrowhead_icon;
     $ntt_l10n['upArrowIcon']        = $up_arrow_icon;
     $ntt_l10n['searchIcon']         = $search_icon;
     $ntt_l10n['dismissIcon']        = $dismiss_icon;
-    $ntt_l10n['ellipsisIcon']        = $ellipsis_icon;
+    $ntt_l10n['ellipsisIcon']       = $ellipsis_icon;
+    $ntt_l10n['burgerIcon']         = $burger_icon;
     
     wp_localize_script( 'ntt-script', 'nttData', $ntt_l10n );
 }
@@ -49,6 +55,7 @@ function ntt_features_html_css() {
         'go-content-nav',
         'go-start-nav',
         'overflow-axns',
+        'primary-menu',
         'primary-search',
         'sub-nav',
     );

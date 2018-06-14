@@ -1,0 +1,34 @@
+.ntt-primary-menu-f5e {
+    
+    &.dom--unready {
+    
+        .entity-header-aside {
+            display: none;
+        }
+    }
+}
+
+.inactive-primary-menu-f5e {
+
+    .primary-menu {
+        display: none;
+    }
+}
+
+.primary-menu-f5e {
+
+    .toggle-menu---txt {
+        @extend %vh;
+    }
+}
+
+.primary-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 30rem;
+    overflow-y: auto;
+    max-width: calc( 100vw - $min-aa );
+    background-color: $paper-color;
+}

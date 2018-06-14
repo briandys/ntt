@@ -2,7 +2,8 @@
     
     &.dom--unready {
     
-        .entity-primary-axns {
+        .entity-primary-axns,
+        .entity-footer-aside {
             display: none;
         }
     }
@@ -13,55 +14,55 @@
     .toggle-actions---txt {
         @extend %vh;
     }
+
+    &.entity-primary-axns {
+
+        .overflow-axns---cr {
+            position: relative;
+        }
+    
+        .overflow-axns-group {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: 100;
+    
+            &:before {
+                $border-width: .5rem;
+                
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                margin-top: -$border-width;
+                @include dimensions(0, 0);
+                border: $border-width solid white;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                transform-origin: 0 0;
+                transform: rotate(135deg) scale(.75);
+                box-shadow: -2px 2px 1px -1px hsla(0, 0%, 25%, .25);
+            }
+        }
+    
+        .overflow-axns-group---cr {  
+            width: 30rem;
+            max-width: calc( 100vw - 3rem );
+            height: 100%;
+            max-height: calc( 100vh - ( ( 3rem * 2 ) - .5rem ) );
+            transform: translateY(-.5rem);
+            background-color: $paper-color;
+            box-shadow: 0 0 0 1px hsla(0, 0%, 0%, .1), 0 .5rem 1rem hsla(0, 0%, 0%, .05);
+            overflow-y: auto;
+        }
+    }
 }
 
 .inactive-overflow-axns-f5e {
 
     .overflow-axns-group {
         display: none;
-    }
-}
-
-.entity-primary-axns {
-
-    .overflow-axns---cr {
-        position: relative;
-    }
-
-    .overflow-axns-group {
-        position: absolute;
-        right: 0;
-        top: 100%;
-        z-index: 100;
-
-        &:before {
-            $border-width: .5rem;
-            
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 1;
-            margin-top: -$border-width;
-            @include dimensions(0, 0);
-            border: $border-width solid white;
-            border-right-color: transparent;
-            border-top-color: transparent;
-            transform-origin: 0 0;
-            transform: rotate(135deg) scale(.75);
-            box-shadow: -2px 2px 1px -1px hsla(0, 0%, 25%, .25);
-        }
-    }
-
-    .overflow-axns-group---cr {  
-        width: 30rem;
-        max-width: calc( 100vw - 3rem );
-        height: 100%;
-        max-height: calc( 100vh - ( ( 3rem * 2 ) - .5rem ) );
-        transform: translateY(-.5rem);
-        background-color: $paper-color;
-        box-shadow: 0 0 0 1px hsla(0, 0%, 0%, .1), 0 .5rem 1rem hsla(0, 0%, 0%, .05);
-        overflow-y: auto;
     }
 }
 

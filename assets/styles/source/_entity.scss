@@ -104,6 +104,10 @@
     @extend %entity-header;
 }
 
+.entity-header-aside---cr {
+    @extend %entity-header;
+}
+
 .entity-primary-nav {
     min-height: $min-aa;
 }
