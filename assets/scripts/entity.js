@@ -4,7 +4,8 @@ var $document,
     $body,
     documentHeight,
     windowHeight,
-    $goStartNav;
+    $goStartNav,
+    $wildCard;
 
 ( function( $ ) {
 
@@ -15,6 +16,7 @@ var $document,
     documentHeight = document.body.offsetHeight;
     windowHeight = window.innerHeight;
     $goStartNav = $( '#go-start-nav' );
+    $wildCard = $( '#wild-card' ).find( '.wild-card---cr' );
 
     /**
      * Scrolled
@@ -98,6 +100,16 @@ var $document,
             } ).append( $cr );
 
             return $cp;
+        },
+
+        overlayObj: function( css, dataName ) {
+            
+            $obj = $( '<div />', {
+                'class': css + ' ' + 'overlay' + ' ' + 'obj',
+                'data-name': dataName
+            } );
+
+            return $obj;
         }
     };
 
@@ -677,6 +689,7 @@ var $document,
             toggleIcon = $( nttData.burgerIcon ),
             dismissIcon = $( nttData.dismissIcon );
 
+        // Create Primary Menu
         $widgets.wrapAll(
             htmlOkFn.cp(
                 'primary-menu',
@@ -685,6 +698,7 @@ var $document,
             )
         );
 
+        // Create Primary Menu Group
         $widgets.wrapAll(
             htmlOkFn.group(
                 'primary-menu-group',
@@ -721,11 +735,19 @@ var $document,
             )
         );
 
-        // Define Object
+        // Define Objects
         $toggle = $elem.find( '.primary-menu-toggle-axn---a' );
         $dismiss = $elem.find( '.primary-menu-dismiss-axn---a' );
         $toggleLabel = $toggle.find( '.primary-menu-toggle-axn---l' );
         $toggleText = $toggleLabel.find( '.toggle-menu---txt' );
+
+        // Create Overlay
+        $wildCard.append(
+            htmlOkFn.overlayObj(
+                'primary-menu-overlay',
+                'Primary Menu Overlay'
+            )
+        );
 
         // Functions
         primaryMenuFn = {

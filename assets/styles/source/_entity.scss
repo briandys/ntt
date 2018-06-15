@@ -180,12 +180,25 @@
 //--------------------------------------------------------------
 
 .ntt-primary-menu-f5e {
-    
-    .entity-heading---cr {
-        padding-left: 0;
-    }
 
+    &.entity-header-aside--enabled {
+        
+        .entity-heading---cr {
+            padding-left: 0;
+        }
+    }
+    
     .entity-header-aside---cr {
         @extend %entity-header;
+    }
+}
+
+.ntt-primary-search-f5e--on {
+
+    @include mq(xs-vp) {
+        
+        .entity-heading {
+            visibility: hidden;
+        }
     }
 }

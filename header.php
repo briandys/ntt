@@ -10,9 +10,7 @@
     <body <?php body_class(); ?>>
 
         <div id="wild-card" class="wild-card" data-name="Wild Card">
-            <div class="wild-card---cr">
-                
-            </div>
+            <div class="wild-card---cr"></div>
         </div>
 
         <div id="entity" class="entity" data-name="Entity">

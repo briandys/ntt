@@ -1,6 +1,6 @@
 .icon {
 
-  // From Icomoon
+  // From IcoMoon.io
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -13,5 +13,5 @@
 }
 
 .dismiss-icon {
-  @include dimensions(.75em, .75em);
+  @include dimensions(.75em);
 }
