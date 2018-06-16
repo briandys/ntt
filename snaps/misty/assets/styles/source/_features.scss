@@ -1,0 +1,18 @@
+.primary-menu-toggle-axn---a,
+.primary-search-toggle-axn---a,
+.overflow-axns-toggle-axn---a {
+    color: $paper-color;
+}
+
+.primary-search-f5e {
+    
+    .submit-search-axn---a,
+    .reset-search-axn---a {
+        color: $paper-color;
+    }
+
+    .search-input {
+        @include placeholder(hsla(0, 0%, 100%, .65));
+        color: $paper-color;
+    }
+}

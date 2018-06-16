@@ -1,8 +1,12 @@
 .ntt-primary-menu-f5e {
     
     &.dom--unready {
-    
+
         .entity-header-aside {
+            @include dimensions($min-aa);
+        }
+    
+        .entity-header-aside---cr {
             display: none;
         }
     }
@@ -69,6 +73,7 @@
 .primary-menu-toggle-axn---a {
     width: auto;
     background-color: transparent;
+    color: $ink-color;
 }
 
 .primary-menu-dismiss-axn {

@@ -1,0 +1,49 @@
+.entity-header {
+    
+    @at-root .entity-heading {
+        color: white;
+    }
+    
+    @at-root .entity-primary-name {
+        
+        a {
+            color: white;
+        }
+    
+        @at-root .entity-primary-name---a {
+            @include unline;
+        }
+    }
+    
+    @at-root .entity-primary-description {
+        
+        a {
+              color: white;
+        }
+    
+        @at-root .entity-primary-description---a {
+            @include unline;
+        }
+    }   
+
+}
+
+.entity-header---cr {
+    background-color: $primary-color;
+}
+
+.entity-primary-nav {
+    background-color: $paper-color;
+}
+
+.entity-banner {
+    background-color: $paper-color;
+}
+
+.entity-main {
+	background-color: $ash-blue--color;
+}
+
+.entity-footer {
+    background-color: $paper-color;
+}

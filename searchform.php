@@ -17,16 +17,16 @@
         <div class="search-axns form-axns axns cp" data-name="Search Actions">
             <div class="search-axns---cr form-axns---cr">
                 <div class="submit-search-axn submit-axn axn obj" data-name="Submit Action">
-                    <button type="submit" class="submit-search-axn---a a b" title="<?php esc_attr_e( 'Go Search', 'ntt' ); ?>">
+                    <button type="submit" class="submit-search-axn---a a b" title="<?php esc_attr_e( 'Go', 'ntt' ); ?>">
                         <span class="submit-search-axn---l l">
-                            <span class="go---txt txt"><?php esc_html_e( 'Go Search', 'ntt' ); ?></span>
+                            <span class="go---txt txt"><?php esc_html_e( 'Go', 'ntt' ); ?></span>
                         </span>
                     </button>
                 </div>
                 <div class="reset-search-axn reset-axn axn obj" data-name="Reset Action">
-                    <button type="reset" class="reset-search-axn---a a b" title="<?php esc_attr_e( 'Reset Search', 'ntt' ); ?>">
+                    <button type="reset" class="reset-search-axn---a a b" title="<?php esc_attr_e( 'Reset', 'ntt' ); ?>">
                         <span class="reset-search-axn---l l">
-                            <span class="reset---txt txt"><?php esc_html_e( 'Reset Search', 'ntt' ); ?></span>
+                            <span class="reset---txt txt"><?php esc_html_e( 'Reset', 'ntt' ); ?></span>
                         </span>
                     </button>
                 </div>

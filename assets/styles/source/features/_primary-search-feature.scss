@@ -121,3 +121,16 @@
 .primary-search-toggle-axn---l {
     @include y-padding();
 }
+
+.ntt-primary-menu-f5e {
+
+    .active-search {
+
+        .search-input {
+            
+            @include mq(xs-vp) {
+                padding-left: 0;
+            }
+        }
+    }
+}

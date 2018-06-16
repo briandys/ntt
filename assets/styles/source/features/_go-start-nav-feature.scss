@@ -1,10 +1,13 @@
 .go-start-nav-f5e {
-
+    
     .go-start-navi {
-        position: absolute;
+        position: fixed;
         right: 0;
         bottom: 0;
         @include x-padding();
+        opacity: 0;
+        transition: all .3s ease-in-out;
+        transition-property: opacity, transform;
     }
     
     .go-start-navi---a {
@@ -13,5 +16,23 @@
 
     .go-start-navi---txt {
         @extend %vh;
+    }
+}
+
+.go-start-navi {
+
+    .ntt-go-start-nav-f5e.window--unloaded & {
+        display: none;
+    }
+
+    .go-start-nav--on & {
+        transform: translateY(0);
+        opacity: 1;
+        z-index: 100;
+    }
+
+    .go-start-nav--off & {
+        transform: translateY(100%);
+        opacity: 0;
     }
 }

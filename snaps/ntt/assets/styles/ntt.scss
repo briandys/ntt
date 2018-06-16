@@ -1,0 +1,44 @@
+@import '../../../../assets/styles/source/rules';
+@import 'source/rules';
+
+@import 'source/content';
+@import 'source/entity';
+@import 'source/entry';
+@import 'source/navigation';
+@import 'source/notes';
+@import 'source/quote';
+@import 'source/table';
+
+@import 'source/features/overflow-actions-feature';
+@import 'source/features/primary-menu-feature';
+@import 'source/features/primary-search-feature';
+@import 'source/features/sub-nav-feature';
+
+a {
+	@include unline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.nav-name,
+.entries-nav .screen-reader-text {
+	@extend %vh;
+}
+
+.wp-caption-text {
+	color: #707070;
+}
+
+blockquote {
+	font-family: serif;
+}
+
+.body {
+	color: $black-blue--color;
+}
+
+a {
+	color: $panda-blue--color;
+}

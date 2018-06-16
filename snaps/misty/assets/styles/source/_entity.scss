@@ -1,0 +1,49 @@
+.html {
+    background-color: $misty-pink-color;
+}
+
+a {
+    color: $misty-purple-color;
+}
+
+.entity-header {
+    background-color: $misty-purple-color;
+
+    a {
+        color: $paper-color;
+    }
+}
+
+.entity-secondary-info {
+    color: $paper-color;
+
+    a {
+        color: $paper-color;
+    }
+}
+
+.entity-secondary-info---cr {
+    text-align: center;
+}
+
+.ntt-go-start-nav-f5e {
+
+    .entity-secondary-info {
+
+        a {
+            @include unline;
+        }
+    }
+
+    .entity-secondary-info---cr {
+        @include x-padding($min-aa)
+    }
+}
+
+.entity-banner-visuals {
+    display: none;
+
+    .front-view & {
+        display: block;
+    }
+}

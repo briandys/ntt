@@ -2,11 +2,11 @@
 
 function ntt_styles_scripts() {
     
-    wp_enqueue_style( 'ntt-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'ntt-style', get_template_directory_uri(). '/assets/styles/ntt.min.css' );
     
     add_editor_style( array( 'assets/css/editor-style.css', ) );
 
-    wp_enqueue_script( 'ntt-script', get_template_directory_uri(). '/assets/scripts/entity.js', array( 'jquery', ), '0.0.0', true );
+    wp_enqueue_script( 'ntt-script', get_template_directory_uri(). '/assets/scripts/ntt.js', array( 'jquery', ), null, true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

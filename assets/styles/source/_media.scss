@@ -12,19 +12,28 @@ video {
 $alignment-gutter: 1.5em;
 
 .alignleft {
-    float: left;
-    margin-right: $alignment-gutter;
+    
+    @include mq(m-vp) {
+        float: left;
+        margin-right: $alignment-gutter;
+    }
 }
 
 .alignright {
-    float: right;
-    margin-left: $alignment-gutter;
+    
+    @include mq(m-vp) {
+        float: right;
+        margin-left: $alignment-gutter;
+    }
 }
 
 .aligncenter {
-    clear: both;
-    display: block;
-    @include x-margin(auto);
+    
+    @include mq(m-vp) {
+        clear: both;
+        display: block;
+        @include x-margin(auto);
+    }
 }
 
 //--------------------------------------------------------------

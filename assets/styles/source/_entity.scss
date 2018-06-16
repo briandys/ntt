@@ -64,11 +64,17 @@
 
 .entity-primary-name {
     grid-area: b1;
-    align-self: end;
+    align-self: center;
+    grid-row: b1 / -1;
     margin-top: 0;
     margin-bottom: 0;
     font-weight: normal;
     font-size: 1.125rem;
+
+    .entity-description--populated & {
+        grid-row: auto;
+        align-self: end;
+    }
 }
 
 .entity-primary-description {
@@ -97,21 +103,15 @@
 }
 
 //--------------------------------------------------------------
-// Entity Secondary Info
+// Header with Features
 //--------------------------------------------------------------
-
-.ntt-overflow-axns-f5e {
-    
-    .entity-primary-axns---cr {
-        @extend %entity-header;
-    }
-}
 
 .entity-header---cr {
     display: grid;
     grid-template:
         'a1 b1 c1'
-        'a2 b2 c2'
+        'a2 . .'
+        'a3 . .'
         / auto auto 1fr;
 }
 
@@ -148,6 +148,12 @@
     align-self: center;
 }
 
+.entity-banner {
+    grid-area: a3;
+    grid-column: a3 / -1;
+    align-self: center;
+}
+
 //--------------------------------------------------------------
 // Entity Secondary Info
 //--------------------------------------------------------------
@@ -157,38 +163,29 @@
     font-size: .75em;
 
     a {
-        @extend %aa;
-        @include m-x-gutter;
         color: gray;
     }
 }
 
 .entity-secondary-info---cr {
-
-    > *:not(:last-child) {
-        margin-right: -$m-gutter;
-
-    }
+    padding: $m-gutter;
 }
 
 //--------------------------------------------------------------
 // With Features
 //--------------------------------------------------------------
 
-.ntt-go-start-nav-f5e {
-
-    .entity-end {
-        position: relative;
+.ntt-overflow-axns-f5e {
+    
+    .entity-primary-axns---cr {
+        @extend %entity-header;
     }
 }
 
 .ntt-primary-menu-f5e {
 
-    &.entity-header-aside--enabled {
-        
-        .entity-heading---cr {
-            padding-left: 0;
-        }
+    .entity-heading---cr {
+        padding-left: 0;
     }
     
     .entity-header-aside---cr {
@@ -199,9 +196,20 @@
 .ntt-primary-search-f5e--on {
 
     @include mq(xs-vp) {
+
+        .entity-heading---cr {
+            @include x-padding();
+        }
         
-        .entity-heading {
+        .entity-primary-logo {
             visibility: hidden;
+            margin-right: 0;
+            width: 0;
+        }
+
+        .entity-primary-name,
+        .entity-primary-description {
+            display: none;
         }
     }
 }

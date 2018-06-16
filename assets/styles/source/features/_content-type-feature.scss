@@ -1,0 +1,27 @@
+.dom--unready {
+
+    .content---cr {
+        
+        code,
+        pre,
+        table {
+            display: none;
+        }
+    }
+}
+
+.content---cr {
+
+    > .code-content {
+        @extend %content-type;
+    }
+
+    > .pre-content {
+        @extend %content-type;
+    }
+
+    > .table-content {
+        @extend %content-type;
+        @include x-padding();
+    }
+}

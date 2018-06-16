@@ -1,0 +1,26 @@
+.primary-search-f5e {
+
+    $bg: $ink-color;
+    $fg: $paper-color;
+
+    .primary-search-toggle-axn---a {
+        color: $fg;
+    }
+
+    .submit-search-axn---a {
+        color: $fg;
+    }
+
+    .reset-search-axn---a {
+        color: $fg;
+    }
+
+    .search-input {
+        @include placeholder(hsla(0, 0%, 100%, .65));
+        color: $fg;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}

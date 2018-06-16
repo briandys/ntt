@@ -37,10 +37,6 @@
         .a {
             @extend %aa;
         }
-
-        .glabel {
-            @include y-center-ib;
-        }
     }
 
     &-author-name {
@@ -71,4 +67,20 @@
     &-time {
         @include y-center-ib;
     }
+}
+
+.entry-published-on-glabel {
+    @include y-center-ib;
+}
+
+.entry-updated-on-glabel {
+    @include y-center-ib;
+}
+
+.entry-at-glabel {
+    @include y-center-ib;
+}
+
+.published-by-glabel {
+    @include y-center-ib;
 }
