@@ -1,80 +1,86 @@
 ( function( $ ) {
     
-    /**
-     * Go to Start Nav Feature
-     */
-    ( function() {
+    $window.load( function() {
 
-        var $elem = $goStartNav;
+        /**
+         * Go to Start Nav Feature
+         */
+        ( function() {
 
-        if ( $html.hasClass( 'ntt-go-start-nav-f5e' ) ) {
-            $elem.addClass( 'go-start-nav-f5e' );
-        } else {
-            return;
-        }
-        
-        var $navi = $elem.find( '.go-start-navi---a' );
-        
-        // Functions
-        goStartNavFn = {
+            var $elem = $goStartNav;
+
+            if ( $html.hasClass( 'ntt-go-start-nav-f5e' ) ) {
+                $elem.addClass( 'go-start-nav-f5e' );
+            } else {
+                return;
+            }
             
-            // Activate
-            on: function() {
-                $elem
-                    .addClass( 'go-start-nav--on' )
-                    .removeClass( 'go-start-nav--off' );
-                $html
-                    .addClass( 'ntt-go-start-nav--on' )
-                    .removeClass( 'ntt-go-start-nav--off' );
-            },
+            documentHeight = document.body.offsetHeight;
+            windowHeight = window.innerHeight;
 
-            // Deactivate
-            off: function() {
-                $elem
-                    .addClass( 'go-start-nav--off' )
-                    .removeClass( 'go-start-nav--on' );
-                $html
-                    .addClass( 'ntt-go-start-nav--off' )
-                    .removeClass( 'ntt-go-start-nav--on' );
-            },
+            var $navi = $elem.find( '.go-start-navi---a' );
+            
+            // Functions
+            goStartNavFn = {
+                
+                // Activate
+                on: function() {
+                    $elem
+                        .addClass( 'go-start-nav--on' )
+                        .removeClass( 'go-start-nav--off' );
+                    $html
+                        .addClass( 'ntt-go-start-nav--on' )
+                        .removeClass( 'ntt-go-start-nav--off' );
+                },
 
-            activation: function() {
-                var buffer = windowHeight / 2;
+                // Deactivate
+                off: function() {
+                    $elem
+                        .addClass( 'go-start-nav--off' )
+                        .removeClass( 'go-start-nav--on' );
+                    $html
+                        .addClass( 'ntt-go-start-nav--off' )
+                        .removeClass( 'ntt-go-start-nav--on' );
+                },
 
-                if ( documentHeight > windowHeight ) {
-                    
-                    function criteriaMatch() {
+                activation: function() {
+                    var buffer = windowHeight / 2;
+
+                    if ( documentHeight > windowHeight ) {
                         
-                        if ( $elem.hasClass( 'go-start-nav--off' ) && ( ( windowHeight + window.pageYOffset ) >= documentHeight - 640 ) ) {
-                            goStartNavFn.on();
+                        function criteriaMatch() {
+                            
+                            if ( $elem.hasClass( 'go-start-nav--off' ) && ( ( windowHeight + window.pageYOffset ) >= documentHeight - 640 ) ) {
+                                goStartNavFn.on();
+                            }
                         }
-                    }
-                    
-                    criteriaMatch();
-
-                    $window.scrolled( function() {
                         
                         criteriaMatch();
 
-                        if ( $elem.hasClass( 'go-start-nav--on' ) && window.pageYOffset <= ( buffer ) ) {
-                            goStartNavFn.off();
-                        }
-                    } );
+                        $window.scrolled( function() {
+                            
+                            criteriaMatch();
+
+                            if ( $elem.hasClass( 'go-start-nav--on' ) && window.pageYOffset <= ( buffer ) ) {
+                                goStartNavFn.off();
+                            }
+                        } );
+                    }
                 }
-            }
-        };
-        
-        goStartNavFn.off();
-        
-        goStartNavFn.activation();
-        
-        // User Actions
-        $navi
-            .on( 'focusin.ntt', function() {
-                goStartNavFn.on();
-            } )
-            .on( 'click.ntt', function() {
-                $( this ).blur();
-            } );
-    } ) ();
+            };
+            
+            goStartNavFn.off();
+            
+            goStartNavFn.activation();
+            
+            // User Actions
+            $navi
+                .on( 'focusin.ntt', function() {
+                    goStartNavFn.on();
+                } )
+                .on( 'click.ntt', function() {
+                    $( this ).blur();
+                } );
+        } ) ();
+    } );
 } )( jQuery );

@@ -1,22 +1,10 @@
-.ntt-go-start-nav-f5e {
-    
-    &.dom--unready {
-    
-        .go-start-navi {
-            display: none;
-        }
-    }
-}
-
 .go-start-nav-f5e {
 
     .go-start-navi {
-        position: fixed;
+        position: absolute;
         right: 0;
         bottom: 0;
         @include x-padding();
-        transition: all .3s ease-in-out;
-        transition-property: opacity, transform;
     }
     
     .go-start-navi---a {
@@ -25,22 +13,5 @@
 
     .go-start-navi---txt {
         @extend %vh;
-    }
-}
-
-.go-start-nav--on {
-
-    .go-start-navi {
-        transform: translateY(0);
-        opacity: 1;
-        z-index: 100;
-    }
-}
-
-.go-start-nav--off {
-
-    .go-start-navi {
-        transform: translateY(100%);
-        opacity: 0;
     }
 }

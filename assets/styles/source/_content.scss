@@ -182,6 +182,12 @@
     .show-more-marker {
         @include y-padding();
     }
+
+    .pre-content-text,
+    .code-content-text {
+        max-width: 100vw;
+        overflow-x: auto;
+    }
 }
 
 .note---cr {

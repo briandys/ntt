@@ -3,11 +3,12 @@
 
 @import 'source/content';
 @import 'source/entity';
-@import 'source/entry';
+//@import 'source/entry';
 @import 'source/navigation';
 @import 'source/notes';
 @import 'source/quote';
 @import 'source/table';
+@import 'source/features/go-start-nav-feature';
 @import 'source/features/primary-search-feature';
 @import 'source/features/sub-nav-feature';
 

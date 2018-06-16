@@ -5,7 +5,8 @@ var $document,
     documentHeight,
     windowHeight,
     $goStartNav,
-    $wildCard;
+    $wildCard,
+    $content;
 
 ( function( $ ) {
 
@@ -13,10 +14,9 @@ var $document,
     $window = $( window );
     $html = $( document.documentElement );
     $body = $( document.body );
-    documentHeight = document.body.offsetHeight;
-    windowHeight = window.innerHeight;
     $goStartNav = $( '#go-start-nav' );
     $wildCard = $( '#wild-card' ).find( '.wild-card---cr' );
+    $content = $( '.content---cr' );
 
     /**
      * Scrolled
@@ -110,6 +110,15 @@ var $document,
             } );
 
             return $obj;
+        },
+
+        text: function( css ) {
+            
+            $text = $( '<div />', {
+                'class': css + '-text',
+            } );
+
+            return $text;
         }
     };
 
@@ -335,9 +344,7 @@ var $document,
     }
 
     subNav( $( '#entity-primary-nav' ) );
-    
     subNav( $( '.widget_nav_menu' ) );
-    
     subNav( $( '.widget_pages' ) );
 
     /**
@@ -1005,7 +1012,22 @@ var $document,
 
         $( '.cm-singular .content---cr' ).children( 'p:has( [id*=more-]:only-child )' ).addClass( 'show-more-marker');
             
-    }() );
+    } ) ();
+
+    /**
+     * Content Text Container
+     */
+    function contentText( $elem ) {
+        $content.find( $elem ).wrap( htmlOkFn.text( $elem + '-content' ) );
+    }
+
+    contentText( 'pre' );
+    contentText( 'code' );
+    contentText( 'table' );
+    contentText( 'iframe' );
+    contentText( 'embed' );
+    contentText( 'select' );
+    
 
     $document.ready( function() {
         
