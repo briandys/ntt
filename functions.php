@@ -1,5 +1,7 @@
 <?php
 
+$GLOBALS['ntt_name'] = 'NTT';
+
 // Includes
 $r_includes = array(
     'hooks',

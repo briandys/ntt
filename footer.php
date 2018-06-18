@@ -16,13 +16,13 @@
                                 <?php
                                 if ( ! function_exists( 'ntt_wp_theme_name' ) ) {
                                     function ntt_wp_theme_name() {
-                                        return $wp_theme_name = 'NTT';
+                                        return $GLOBALS['ntt_name'];
                                     }
                                 }
                                 
                                 if ( ! function_exists( 'ntt_wp_theme_name_url_fragment' ) ) {
                                     function ntt_wp_theme_name_url_fragment() {
-                                        return $wp_theme_url_fragment = sanitize_title( ntt_wp_theme_name() );
+                                        return sanitize_title( ntt_wp_theme_name() );
                                     }
                                 }
                                 ?>

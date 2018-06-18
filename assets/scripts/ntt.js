@@ -6,7 +6,10 @@ var $document,
     windowHeight,
     $goStartNav,
     $wildCard,
-    $content;
+    $content,
+    
+    wrapTextNode,
+    removeEmpty;
 
 ( function( $ ) {
 
@@ -127,7 +130,7 @@ var $document,
      * Wrap Text Nodes
      * https://stackoverflow.com/a/18727318
      */
-    function wrapTextNode( $elem ) {
+    wrapTextNode = function( $elem ) {
         var $textNodeMU = $( '<span />', { 'class': 'txt' } );
         $elem.contents().filter( function() {
             return this.nodeType === 3;
@@ -138,7 +141,7 @@ var $document,
      * Remove Empty Elements
      * https://stackoverflow.com/a/18727318
      */
-    function removeEmpty( $elem ) {
+    removeEmpty = function( $elem ) {
         $elem.each( function() {
             var $this = $( this );
             if ( $this.html().replace(/\s|&nbsp;/g, '' ).length == 0 ) {
@@ -375,6 +378,7 @@ var $document,
         if ( $primarySearch.length && $html.hasClass( 'ntt-primary-search-f5e' ) ) {
             $primarySearch.addClass( 'primary-search-f5e primary-action' )
         } else {
+            $html.removeClass( 'ntt-primary-search-f5e' );
             return;
         }
 
@@ -518,7 +522,7 @@ var $document,
         var $elem = $( '#entity-primary-axns' ),
             $widgets = $elem.find( '.widget:not(.primary-action)' );
 
-        if ( $widgets.length && $html.hasClass( 'ntt-primary-axns-overflow-f5e' ) ) {
+        if ( $widgets.length && $html.hasClass( 'ntt-overflow-axns-f5e' ) ) {
             $elem.addClass( 'overflow-axns-f5e' );
         } else {
             return;

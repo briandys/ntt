@@ -2,7 +2,7 @@
 .page-entry .view-heading,
 .page-entry .entry-meta,
 .page-entry .comments-actions-snippet,
-.page-entry .comment-md {
+.page-entry .comment-md, .customize-visuals {
   border: 0;
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -17,7 +17,7 @@
 }
 
 .html {
-  background-color: #F4AEE7;
+  background-color: #F4C6E7;
 }
 
 a {
@@ -106,4 +106,38 @@ a:hover {
 
 .primary-search-f5e .search-input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.65);
+}
+
+.customize-page-entry.dom--unready [id*="contact-form"] label > input {
+  display: none;
+}
+
+.customize-form .grunion-radio-label {
+  display: block;
+  text-align: center;
+}
+
+.customize-form .grunion-radio-label input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.customize-form .grunion-radio-label input + img {
+  cursor: pointer;
+  border: .25em solid transparent;
+}
+
+.customize-form .grunion-radio-label input:checked + img {
+  border-color: #7C58B0;
+}
+
+.customize-form .grunion-radio-label .txt {
+  display: block;
+}
+
+.customize-form .required---txt {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: gray;
+  font-size: .75em;
 }

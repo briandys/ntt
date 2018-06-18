@@ -6,7 +6,7 @@ $name = 'ntt';
 
 // Snaps
 //$name = 'daytime';
-//$name = 'misty';
+$name = 'misty';
 
 $GLOBALS['ntt_snaps_name'] = $name;
 

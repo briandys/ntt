@@ -25,6 +25,9 @@ function ntt_features_scripts() {
     $ntt_l10n['showMenuText']     = __( 'Show Menu', 'ntt' );
     $ntt_l10n['hideMenuText']     = __( 'Hide Menu', 'ntt' );
     
+    $ntt_l10n['requiredText']     = __( 'Required', 'ntt' );
+    $ntt_l10n['submitText']     = __( 'Submit', 'ntt' );
+    
     $ntt_l10n['downArrowheadIcon']  = $down_arrowhead_icon;
     $ntt_l10n['upArrowheadIcon']    = $up_arrowhead_icon;
     $ntt_l10n['upArrowIcon']        = $up_arrow_icon;
@@ -40,24 +43,37 @@ add_action('wp_enqueue_scripts', 'ntt_features_scripts', 0);
 function ntt_features_html_css() {
     
     if ( is_active_sidebar( 'main-header-aside' ) ) {
-        echo ' '. 'ntt-primary-menu-f5e';
-    } 
+        $primary_menu = 'primary-menu';
+    } else {
+        $primary_menu = '';
+    }
 
     if ( is_active_sidebar( 'entity-primary-axns' ) ) {
-        echo ' '. 'ntt-primary-axns-overflow-f5e';
+        $overflow_actions = 'overflow-axns';
+    } else {
+        $overflow_actions = '';
+    }
+
+    if ( is_active_sidebar( 'entity-primary-axns' ) ) {
+        $primary_search = 'primary-search';
+    } else {
+        $primary_search = '';
     }
 
     if ( has_custom_logo() ) {
-        echo ' '. 'ntt-custom-logo-f5e';
+        $custom_logo = 'custom-logo';
+    } else {
+        $custom_logo = '';
     }
 
     $r = array(
+        $custom_logo,
         'go-content-nav',
         'go-start-nav',
-        'overflow-axns',
-        'primary-menu',
-        'primary-search',
         'sub-nav',
+        $overflow_actions,
+        $primary_menu,
+        $primary_search,
     );
 
     foreach ( $r as $css ) {
