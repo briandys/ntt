@@ -60,6 +60,3 @@ $r_tags = array(
 foreach ( $r_tags as $file_name ) {
     require( get_parent_theme_file_path( '/includes/tags/'. $file_name. '.php' ) );
 }
-
-// Snaps
-//require( get_parent_theme_file_path( '/snaps/snaps.php' ) );

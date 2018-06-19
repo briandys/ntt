@@ -10,39 +10,41 @@ function ntt_features_scripts() {
     $ellipsis_icon = ntt_get_svg( array( 'icon' => 'ellipsis-icon', ) );
     $burger_icon = ntt_get_svg( array( 'icon' => 'burger-icon', ) );
 
-    $ntt_l10n['showSubNavText']     = __( 'Show Sub-Nav', 'ntt' );
-    $ntt_l10n['hideSubNavText']     = __( 'Hide Sub-Nav', 'ntt' );
-    
-    $ntt_l10n['toggleSearchText']   = __( 'Toggle Search', 'ntt' );
-    $ntt_l10n['showSearchText']     = __( 'Show Search', 'ntt' );
-    $ntt_l10n['hideSearchText']     = __( 'Hide Search', 'ntt' );
-    
-    $ntt_l10n['toggleActionsText']   = __( 'Toggle Actions', 'ntt' );
-    $ntt_l10n['showActionsText']     = __( 'Show Actions', 'ntt' );
-    $ntt_l10n['hideActionsText']     = __( 'Hide Actions', 'ntt' );
-    
-    $ntt_l10n['toggleMenuText']   = __( 'Toggle Menu', 'ntt' );
-    $ntt_l10n['showMenuText']     = __( 'Show Menu', 'ntt' );
-    $ntt_l10n['hideMenuText']     = __( 'Hide Menu', 'ntt' );
-    
-    $ntt_l10n['requiredText']     = __( 'Required', 'ntt' );
-    $ntt_l10n['submitText']     = __( 'Submit', 'ntt' );
-    
-    $ntt_l10n['downArrowheadIcon']  = $down_arrowhead_icon;
-    $ntt_l10n['upArrowheadIcon']    = $up_arrowhead_icon;
-    $ntt_l10n['upArrowIcon']        = $up_arrow_icon;
-    $ntt_l10n['searchIcon']         = $search_icon;
-    $ntt_l10n['dismissIcon']        = $dismiss_icon;
-    $ntt_l10n['ellipsisIcon']       = $ellipsis_icon;
-    $ntt_l10n['burgerIcon']         = $burger_icon;
-    
+    $ntt_l10n = array(
+        'showSubNavText'    => __( 'Show Sub-Nav', 'ntt' ),
+        'hideSubNavText'    => __( 'Hide Sub-Nav', 'ntt' ),
+        
+        'toggleSearchText'  => __( 'Toggle Search', 'ntt' ),
+        'showSearchText'    => __( 'Show Search', 'ntt' ),
+        'hideSearchText'    => __( 'Hide Search', 'ntt' ),
+        
+        'toggleActionsText'     => __( 'Toggle Actions', 'ntt' ),
+        'showActionsText'       => __( 'Show Actions', 'ntt' ),
+        'hideActionsText'       => __( 'Hide Actions', 'ntt' ),
+        
+        'toggleMenuText'    => __( 'Toggle Menu', 'ntt' ),
+        'showMenuText'      => __( 'Show Menu', 'ntt' ),
+        'hideMenuText'      => __( 'Hide Menu', 'ntt' ),
+        
+        'requiredText'  => __( 'Required', 'ntt' ),
+        'submitText'    => __( 'Submit', 'ntt' ),
+        
+        'downArrowheadIcon'     => $down_arrowhead_icon,
+        'upArrowheadIcon'       => $up_arrowhead_icon,
+        'upArrowIcon'           => $up_arrow_icon,
+        'searchIcon'            => $search_icon,
+        'dismissIcon'           => $dismiss_icon,
+        'ellipsisIcon'          => $ellipsis_icon,
+        'burgerIcon'            => $burger_icon,
+    );
+
     wp_localize_script( 'ntt-script', 'nttData', $ntt_l10n );
 }
 add_action('wp_enqueue_scripts', 'ntt_features_scripts', 0);
 
 function ntt_features_html_css() {
     
-    if ( is_active_sidebar( 'main-header-aside' ) ) {
+    if ( is_active_sidebar( 'entity-header-aside' ) ) {
         $primary_menu = 'primary-menu';
     } else {
         $primary_menu = '';
