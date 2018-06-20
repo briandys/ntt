@@ -8,13 +8,38 @@ function ntt_widgets_init() {
 		$widget_end_mu = '</div>';
 	$widget_end_mu .= '</div>';
 	$title_mu_start = '<div class="widget-name name obj">';
-	$title_mu_start .= '<span class="widget-name---txt">';
-	$title_mu_end = '</span>';
+		$title_mu_start .= '<span class="widget-name---txt">';
+		$title_mu_end = '</span>';
 	$title_mu_end .= '</div>';
+	
+	// Entity Primary Actions
+	register_sidebar( array(
+		'name'          => __( '1. Entity Primary Actions', 'ntt' ),
+		'id'            => 'entity-primary-axns',
+		'description'   => __( 'Actions after Primary Info', 'ntt' ),
+		'before_widget' => $widget_start_mu,
+		'after_widget'  => $widget_end_mu,
+		'before_title'  => $title_mu_start,
+		'after_title'   => $title_mu_end,
+	) );
+	
+	function ntt_entity_primary_actions() {
+		$aside = 'entity-primary-axns';
+
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entity-primary-axns" class="entity-primary-axns axns cp aside" data-name="Entity Primary Actions">
+				<div class="entity-primary-axns---cr">
+					<?php dynamic_sidebar( $aside ); ?>
+				</div>
+			</div>
+			<?php
+		}
+	}
 		
 	// Entity Header Aside
 	register_sidebar( array(
-		'name'          => __( '1. Entity Header Aside', 'ntt' ),
+		'name'          => __( '2. Entity Header Aside', 'ntt' ),
 		'id'            => 'entity-header-aside',
 		'description'   => __( 'Aside within Entity Header', 'ntt' ),
 		'before_widget' => $widget_start_mu,
@@ -35,32 +60,6 @@ function ntt_widgets_init() {
 			</div>
 			<?php
 		}
-	}
-	
-	// Entity Primary Actions
-	register_sidebar( array(
-		'name'          => __( '2. Entity Primary Actions', 'ntt' ),
-		'id'            => 'entity-primary-axns',
-		'description'   => __( 'Actions after Primary Info', 'ntt' ),
-		'before_widget' => $widget_start_mu,
-		'after_widget'  => $widget_end_mu,
-		'before_title'  => $title_mu_start,
-		'after_title'   => $title_mu_end,
-	) );
-	
-	function ntt_entity_primary_actions() {
-		$aside = 'entity-primary-axns';
-
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entity-primary-axns" class="entity-primary-axns axns cp aside" data-name="Entity Primary Actions">
-						<div class="entity-primary-axns---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
-				</div>
-		<?php }
-
 	}
 	
 	// Entity Banner Aside
@@ -103,16 +102,15 @@ function ntt_widgets_init() {
 	function ntt_entity_main_header_aside() {
 		$aside = 'entity-main-header-aside';
 
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entity-main-header-aside" class="entity-main-header-aside aside cn" data-name="Entity Main Header Aside">
-						<div class="entity-main-header-aside---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entity-main-header-aside" class="entity-main-header-aside aside cn" data-name="Entity Main Header Aside">
+				<div class="entity-main-header-aside---cr">
+					<?php dynamic_sidebar( $aside ); ?>
 				</div>
-		<?php }
-
+			</div>
+			<?php
+		}
 	}
 	
 	// Entity Main Aside
@@ -129,16 +127,15 @@ function ntt_widgets_init() {
 	function ntt_entity_main_aside() {
 		$aside = 'entity-main-aside';
 
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entity-main-aside" class="entity-main-aside aside cn" data-name="Entity Main Aside">
-						<div class="entity-main-aside---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entity-main-aside" class="entity-main-aside aside cn" data-name="Entity Main Aside">
+				<div class="entity-main-aside---cr">
+					<?php dynamic_sidebar( $aside ); ?>
 				</div>
-		<?php }
-
+			</div>
+			<?php
+		}
 	}
 		
 	// Entity Footer Aside
@@ -156,16 +153,15 @@ function ntt_widgets_init() {
 	function ntt_entity_footer_aside() {
 		$aside = 'entity-footer-aside';
 
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entity-footer-aside" class="entity-footer-aside aside cn" data-name="Entity Footer Aside">
-						<div class="entity-footer-aside---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entity-footer-aside" class="entity-footer-aside aside cn" data-name="Entity Footer Aside">
+				<div class="entity-footer-aside---cr">
+					<?php dynamic_sidebar( $aside ); ?>
 				</div>
-		<?php }
-
+			</div>
+			<?php
+		}
 	}
 	
 	// Entry Banner Aside
@@ -182,16 +178,15 @@ function ntt_widgets_init() {
 	function ntt_entry_banner_aside() {
 		$aside = 'entry-banner-aside';
 
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entry-banner-aside" class="entry-banner-aside aside cp" data-name="Entry Banner Aside">
-						<div class="entry-banner-aside---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entry-banner-aside" class="entry-banner-aside aside cp" data-name="Entry Banner Aside">
+				<div class="entry-banner-aside---cr">
+					<?php dynamic_sidebar( $aside ); ?>
 				</div>
-		<?php }
-
+			</div>
+			<?php
+		}
 	}
 	
 	// Entry Header Aside
@@ -209,16 +204,15 @@ function ntt_widgets_init() {
 	function ntt_entry_header_aside() {
 		$aside = 'entry-header-aside';
 
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entry-header-aside" class="entry-header-aside aside cn" data-name="Entry Header Aside">
-						<div class="entry-header-aside---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entry-header-aside" class="entry-header-aside aside cn" data-name="Entry Header Aside">
+				<div class="entry-header-aside---cr">
+					<?php dynamic_sidebar( $aside ); ?>
 				</div>
-		<?php }
-
+			</div>
+			<?php
+		}
 	}
 	
 	// Entry Main Aside
@@ -236,16 +230,15 @@ function ntt_widgets_init() {
 	function ntt_entry_main_aside() {
 		$aside = 'entry-main-aside';
 
-		if ( is_active_sidebar( $aside )  ) { ?>
-				<div id="entry-main-aside" class="entry-main-aside aside cn" data-name="Entry Main Aside">
-						<div class="entry-main-aside---cr">
-
-				<?php dynamic_sidebar( $aside ); ?>
-
-						</div>
+		if ( is_active_sidebar( $aside )  ) {
+			?>
+			<div id="entry-main-aside" class="entry-main-aside aside cn" data-name="Entry Main Aside">
+				<div class="entry-main-aside---cr">
+					<?php dynamic_sidebar( $aside ); ?>
 				</div>
-		<?php }
-
+			</div>
+			<?php
+		}
 	}
 }
 add_action( 'widgets_init', 'ntt_widgets_init' );

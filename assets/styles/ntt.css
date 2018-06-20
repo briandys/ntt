@@ -8,7 +8,8 @@ video {
   height: auto;
 }
 
-.post-view .view-name, .entity-name-description--disabled .entity-heading, .go-start-navi---txt, .go-content-nav-f5e.go-content-nav.go-content-nav--off, .go-start-nav-f5e .go-start-navi---txt, .overflow-axns-f5e .toggle-actions---txt, .primary-menu-f5e .toggle-menu---txt, .primary-menu-f5e .dismiss-menu---txt, .primary-search-f5e .widget-name,
+.post-view .view-name, .entity-name-description--disabled .entity-primary-name,
+.entity-name-description--disabled .entity-primary-description, .go-start-navi---txt, .go-content-nav-f5e.go-content-nav.go-content-nav--off, .go-start-nav-f5e .go-start-navi---txt, .overflow-axns-f5e .toggle-actions---txt, .primary-menu-f5e .toggle-menu---txt, .primary-menu-f5e .dismiss-menu---txt, .primary-search-f5e .widget-name,
 .primary-search-f5e .toggle-search---txt,
 .primary-search-f5e .search-field-label,
 .primary-search-f5e .go---txt,
@@ -1189,9 +1190,17 @@ textarea {
   max-width: 3rem;
 }
 
+.entity-name-description--disabled .entity-primary-logo {
+  margin-right: 0;
+}
+
 .entity-header---cr {
   display: grid;
-  grid-template: 'a1 b1 c1' 'a2 . .' 'a3 . .' / auto auto 1fr;
+  grid-template: 'a1 b1 c1' 'a2 . .' 'a3 . .' / auto 1fr auto;
+}
+
+.ntt-primary-search-f5e--on .entity-header---cr {
+  grid-template-columns: auto auto 1fr;
 }
 
 .entity-heading {
@@ -1250,20 +1259,22 @@ textarea {
   padding-left: 0;
 }
 
-@media only screen and (max-width: 34.9375em) {
-  .ntt-primary-search-f5e--on .entity-heading---cr {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .ntt-primary-search-f5e--on .entity-primary-logo {
-    visibility: hidden;
-    margin-right: 0;
-    width: 0;
-  }
-  .ntt-primary-search-f5e--on .entity-primary-name,
-  .ntt-primary-search-f5e--on .entity-primary-description {
-    display: none;
-  }
+.ntt-primary-search-f5e--on .entity-primary-axns {
+  grid-column: b1 / -1;
+}
+
+.ntt-primary-search-f5e--on .entity-heading---cr {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ntt-primary-search-f5e--on .entity-heading {
+  visibility: hidden;
+}
+
+.ntt-primary-search-f5e--off .entity-heading---cr,
+.ntt-overflow-axns-f5e--off .entity-heading---cr {
+  padding-right: 0;
 }
 
 .post-categories {
