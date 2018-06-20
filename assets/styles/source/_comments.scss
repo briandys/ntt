@@ -99,3 +99,22 @@
 .add-comment-axn {
     @include m-x-gutter;
 }
+
+.modify-comment-axn {
+    @include x-padding($m-gutter);
+
+    .entry---txt,
+    .comment-id---txt {
+        @extend %vh;
+    }
+}
+
+.comment-user-axns {
+    @include x-padding($m-gutter);
+
+    .to---txt,
+    .comment---txt,
+    .comment-id---txt {
+        @extend %vh;
+    }
+}

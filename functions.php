@@ -2,19 +2,14 @@
 
 $GLOBALS['ntt_name'] = 'NTT';
 
-// Includes
-$r_includes = array(
-    'hooks',
-    'settings',
-    'styles-scripts',
-);
-
-foreach ( $r_includes as $file_name ) {
-    require( get_parent_theme_file_path( '/includes/'. $file_name. '.php' ) );
-}
-
 // Functions
 $r_functions = array(
+    
+    // First things first
+    'settings',
+    'hooks',
+    'styles-scripts',
+    
     'body-css',
     'comment-form',
     'custom-fonts',
@@ -51,6 +46,7 @@ $r_tags = array(
     'entry-author',
     'entry-content-navigation',
     'entry-datetime',
+    'entry-meta',
     'entry-navigation',
     'entry-taxonomy',
     'show-more-action',

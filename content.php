@@ -33,7 +33,9 @@ if ( get_the_title() ) {
 
                             <<?php echo esc_attr( $heading_level ); ?> class="cm-name entry-name name obj h" data-name="Entry Name">
                                 <?php echo $anchor_element_start; ?>
-                                    <span class="entry-name---l l"><?php echo $entry_name; ?></span>
+                                    <span class="entry-name---l l">
+                                        <?php echo $entry_name; ?>
+                                    </span>
                                 <?php echo $anchor_element_end; ?>
                             </<?php echo esc_attr( $heading_level ); ?>>
 
@@ -44,28 +46,14 @@ if ( get_the_title() ) {
 
                         <div class="cm-axns-trunk entry-axns axns-trunk axns cp" data-name="Entry Actions">
                             <div class="cm-axns-trunk---cr entry-axns---cr">
-                            <?php ntt_entry_admin_actions(); ?>
+                                <?php ntt_entry_admin_actions(); ?>
                             </div>
                         </div>
 
                         <?php
                         ntt_breadcrumbs_nav();
                         ntt_entry_content_nav();
-                        ?>
-
-                        <div class="cm-meta entry-meta meta cp" data-name="Entry Meta">
-                            <div class="cm-meta---cr entry-meta---cr">
-
-                            <?php
-                            ntt_entry_datetime();
-                            ntt_entry_author();
-                            ntt_entry_categories();
-                            ?>
-                            
-                            </div>
-                        </div>
-
-                        <?php
+                        ntt_entry_meta_primary();
                         ntt_after_entry_meta_wp_hook();
                         ntt_comments_actions_snippet();
                         
@@ -172,16 +160,14 @@ if ( get_the_title() ) {
                 </div>
 
                 <?php
-                if ( 'post' === get_post_type() && ( $multipage || get_the_tag_list() ) ) {
+                if ( 'post' === get_post_type() && ( $multipage || get_the_tag_list() || has_action( 'ntt_entry_footer_wp_hook' ) ) ) {
                     ?>
                     <div class="cm-footer entry-footer footer cn" data-name="Entry Footer">
                         <div class="cm-footer---cr entry-footer---cr">
-                        <?php ntt_entry_content_nav(); ?>
-                            <div class="cm-meta entry-meta meta cp" data-name="Entry Meta">
-                                <div class="cm-meta---cr entry-meta---cr">
-                                <?php ntt_entry_tags(); ?>
-                                </div>
-                            </div>
+                            <?php
+                            ntt_entry_content_nav();
+                            ntt_entry_footer_wp_hook();
+                            ?>
                         </div>
                     </div>
                     <?php

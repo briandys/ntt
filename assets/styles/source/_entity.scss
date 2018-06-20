@@ -223,4 +223,8 @@
     .ntt-overflow-axns-f5e--off & {
         padding-right: 0;
     }
+
+    .entity-name-description--disabled & {
+        grid-template-columns: 1fr auto;
+    }
 }

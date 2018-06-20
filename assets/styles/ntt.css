@@ -8,7 +8,10 @@ video {
   height: auto;
 }
 
-.post-view .view-name, .entity-name-description--disabled .entity-primary-name,
+.modify-comment-axn .entry---txt,
+.modify-comment-axn .comment-id---txt, .comment-user-axns .to---txt,
+.comment-user-axns .comment---txt,
+.comment-user-axns .comment-id---txt, .post-view .view-name, .entity-name-description--disabled .entity-primary-name,
 .entity-name-description--disabled .entity-primary-description, .go-start-navi---txt, .go-content-nav-f5e.go-content-nav.go-content-nav--off, .go-start-nav-f5e .go-start-navi---txt, .overflow-axns-f5e .toggle-actions---txt, .primary-menu-f5e .toggle-menu---txt, .primary-menu-f5e .dismiss-menu---txt, .primary-search-f5e .widget-name,
 .primary-search-f5e .toggle-search---txt,
 .primary-search-f5e .search-field-label,
@@ -847,10 +850,20 @@ textarea {
   padding-right: 1rem;
 }
 
+.modify-comment-axn {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.comment-user-axns {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .content---cr {
   line-height: 1.6;
   font-size: 1.125em;
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .format-status .content---cr {
@@ -1059,7 +1072,7 @@ textarea {
 }
 
 .cm-name .l {
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cm-author {
@@ -1275,6 +1288,10 @@ textarea {
 .ntt-primary-search-f5e--off .entity-heading---cr,
 .ntt-overflow-axns-f5e--off .entity-heading---cr {
   padding-right: 0;
+}
+
+.entity-name-description--disabled .entity-heading---cr {
+  grid-template-columns: 1fr auto;
 }
 
 .post-categories {

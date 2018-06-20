@@ -6,7 +6,7 @@
     @extend %cf;
     line-height: $m-line-height;
     font-size: $content-font-size;
-    overflow-wrap: break-word;
+    word-break: break-word;
 
     .format-status & {
         font-size: 2em;

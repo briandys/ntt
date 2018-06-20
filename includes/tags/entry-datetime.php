@@ -94,5 +94,6 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
 
             </div>
         </div>
-    <?php }
+        <?php
+    }
 }
