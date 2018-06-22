@@ -100,21 +100,37 @@
     @include m-x-gutter;
 }
 
+.add-comment-axn---a {
+    @extend %aa;
+}
+
+.add-comment-axn---l {
+    @extend %aa-pad;
+}
+
 .modify-comment-axn {
     @include x-padding($m-gutter);
 
-    .entry---txt,
-    .comment-id---txt {
-        @extend %vh;
+    a {
+        @extend %aa;
     }
+}
+
+.modify-comment-axn---l {
+    @extend %aa-pad;
 }
 
 .comment-user-axns {
     @include x-padding($m-gutter);
+}
 
-    .to---txt,
-    .comment---txt,
-    .comment-id---txt {
-        @extend %vh;
+.comment-reply-axn {
+
+    a {
+        @extend %aa;
     }
+}
+
+.comment-reply-axn---l {
+    @extend %aa-pad;
 }

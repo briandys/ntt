@@ -9,6 +9,7 @@ function ntt_features_scripts() {
     $dismiss_icon = ntt_get_svg( array( 'icon' => 'dismiss-icon', ) );
     $ellipsis_icon = ntt_get_svg( array( 'icon' => 'ellipsis-icon', ) );
     $burger_icon = ntt_get_svg( array( 'icon' => 'burger-icon', ) );
+    $plus_icon = ntt_get_svg( array( 'icon' => 'plus-icon', ) );
 
     $ntt_l10n = array(
         'showSubNavText'    => __( 'Show Sub-Nav', 'ntt' ),
@@ -36,6 +37,7 @@ function ntt_features_scripts() {
         'dismissIcon'           => $dismiss_icon,
         'ellipsisIcon'          => $ellipsis_icon,
         'burgerIcon'            => $burger_icon,
+        'plusIcon'              => $plus_icon,
     );
 
     wp_localize_script( 'ntt-script', 'nttData', $ntt_l10n );

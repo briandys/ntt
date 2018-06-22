@@ -525,6 +525,7 @@ var $document,
         if ( $widgets.length && $html.hasClass( 'ntt-overflow-axns-f5e' ) ) {
             $elem.addClass( 'overflow-axns-f5e' );
         } else {
+            $html.removeClass( 'ntt-overflow-axns-f5e' );
             return;
         }
 

@@ -54,10 +54,6 @@
 
     &-datetime {
         @include m-x-gutter;
-
-        .a {
-            @extend %aa;
-        }
     }
     
     &-date {

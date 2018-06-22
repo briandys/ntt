@@ -70,3 +70,18 @@
 .entry-admin-axns {
     @include m-x-gutter;
 }
+
+.entry-published-date---a {
+    @extend %aa;
+}
+
+.modify-entry-axn {
+
+    a {
+        @extend %aa;
+    }
+}
+
+.modify-entry-axn---l {
+    @extend %aa-pad;
+}

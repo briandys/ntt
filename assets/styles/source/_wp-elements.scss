@@ -34,3 +34,24 @@ p > object:only-child {
 	padding: $m-gutter;
 	font-size: .875em;
 }
+
+//--------------------------------------------------------------
+// Comments
+//--------------------------------------------------------------
+
+.comment-form-cookies-consent {
+	display: flex;
+	align-items: center;
+	@include y-margin(0, -1em);
+	padding: $m-gutter;
+
+	label {
+		font-size: .875em;
+	}
+}
+
+#wp-comment-cookies-consent {
+	margin-right: 0;
+	max-width: $min-aa;
+	max-height: $min-aa;
+}

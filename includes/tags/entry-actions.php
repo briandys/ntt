@@ -13,7 +13,7 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
                 $entry_id = get_the_id();
                 
                 $entry_name_title_attr = $entry_text. ' '. $entry_id;
-                $entry_name = '<span class="entry---txt">'. $entry_text. '</span>'. ' '. '<span class="num entry-id---txt">'. $entry_id. '</span>';
+                $entry_name = '<span class="entry---txt txt">'. $entry_text. '</span>'. ' '. '<span class="num entry-id---txt txt">'. $entry_id. '</span>';
             }
             
             $label_mu = '<span class="modify-entry-axn---l" title="Edit'. ' '. $entry_name_title_attr. '"><span class="edit---txt">Edit</span> <span class="entry-name---txt">'. $entry_name. '</span></span>'; ?>

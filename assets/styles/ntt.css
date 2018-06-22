@@ -8,10 +8,7 @@ video {
   height: auto;
 }
 
-.modify-comment-axn .entry---txt,
-.modify-comment-axn .comment-id---txt, .comment-user-axns .to---txt,
-.comment-user-axns .comment---txt,
-.comment-user-axns .comment-id---txt, .post-view .view-name, .entity-name-description--disabled .entity-primary-name,
+.post-view .view-name, .entity-name-description--disabled .entity-primary-name,
 .entity-name-description--disabled .entity-primary-description, .go-start-navi---txt, .go-content-nav-f5e.go-content-nav.go-content-nav--off, .go-start-nav-f5e .go-start-navi---txt, .overflow-axns-f5e .toggle-actions---txt, .primary-menu-f5e .toggle-menu---txt, .primary-menu-f5e .dismiss-menu---txt, .primary-search-f5e .widget-name,
 .primary-search-f5e .toggle-search---txt,
 .primary-search-f5e .search-field-label,
@@ -48,9 +45,9 @@ video {
   padding: 0;
 }
 
-.log-out-admin-account-axn a, .admin-account-name---a, #cancel-comment-reply-link, .comments-count---a, .cm-name .a, .cm-author .a, .cm-datetime .a, .view-name a, .entity-primary-logo a, .post-categories a, .entry-tag-item a, button,
+.log-out-admin-account-axn a, .admin-account-name---a, #cancel-comment-reply-link, .comments-count---a, .add-comment-axn---a, .modify-comment-axn a, .comment-reply-axn a, .cm-name .a, .cm-author .a, .view-name a, .entity-primary-logo a, .post-categories a, .entry-tag-item a, .entry-published-date---a, .modify-entry-axn a, button,
 [type="submit"],
-[type="reset"], .axn a, .go-content-navi---a, .go-start-navi---a, .entity-primary-nav-group a, .entity-secondary-nav-group a, .entries-nav a, .entries-nav .current, .breadcrumb-navi---a, .breadcrumb-navi--current---l, .entry-nav a, .entry-content-nav-group a, .entry-content-navi--current .entry-content-navi---g, .next-comments-navi a,
+[type="reset"], .go-content-navi---a, .go-start-navi---a, .entity-primary-nav-group a, .entity-secondary-nav-group a, .entries-nav a, .entries-nav .current, .breadcrumb-navi---a, .breadcrumb-navi--current---l, .entry-nav a, .entry-content-nav-group a, .entry-content-navi--current .entry-content-navi---g, .next-comments-navi a,
 .previous-comments-navi a, .widget_calendar a, .widget_calendar .txt, .widget_archive a, .widget_categories a, .widget_meta a, .widget_nav_menu a, .widget_pages a, .widget_recent_comments li > *, .widget_recent_entries li > *, .tag-cloud-link {
   display: inline-flex;
   justify-content: center;
@@ -60,10 +57,7 @@ video {
   min-height: 3rem;
 }
 
-.log-out-admin-account-axn a > *, .admin-account-name---a > *, #cancel-comment-reply-link > *, .comments-count---a > *, .cm-name .a > *, .cm-author .a > *, .cm-datetime .a > *, .view-name a > *, .entity-primary-logo a > *, .post-categories a > *, .entry-tag-item a > *, button > *,
-[type="submit"] > *,
-[type="reset"] > *, .axn a > *, .go-content-navi---a > *, .go-start-navi---a > *, .entity-primary-nav-group a > *, .entity-secondary-nav-group a > *, .entries-nav a > *, .entries-nav .current > *, .breadcrumb-navi---a > *, .breadcrumb-navi--current---l > *, .entry-nav a > *, .entry-content-nav-group a > *, .entry-content-navi--current .entry-content-navi---g > *, .next-comments-navi a > *,
-.previous-comments-navi a > *, .widget_calendar a > *, .widget_calendar .txt > *, .widget_archive a > *, .widget_categories a > *, .widget_meta a > *, .widget_nav_menu a > *, .widget_pages a > *, .widget_recent_comments li > * > *, .widget_recent_entries li > * > *, .tag-cloud-link > * {
+.add-comment-axn---l, .modify-comment-axn---l, .comment-reply-axn---l, .modify-entry-axn---l {
   padding-top: .5em;
   padding-bottom: .5em;
 }
@@ -71,8 +65,6 @@ video {
 .comment-reply-axn .note---line, .optional-note-txt {
   display: inline-block;
   padding: .25em .5em;
-  background-color: #f2f2f2;
-  color: gray;
   font-size: .75em;
 }
 
@@ -1971,6 +1963,24 @@ p > object:only-child {
 .wp-caption-text {
   padding: 1rem;
   font-size: .875em;
+}
+
+.comment-form-cookies-consent {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: -1em;
+  padding: 1rem;
+}
+
+.comment-form-cookies-consent label {
+  font-size: .875em;
+}
+
+#wp-comment-cookies-consent {
+  margin-right: 0;
+  max-width: 3rem;
+  max-height: 3rem;
 }
 
 .dom--unready .content---cr code,

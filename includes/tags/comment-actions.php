@@ -9,7 +9,7 @@ if ( ! function_exists( 'ntt_comment_admin_actions') ) {
             $comment_id = get_comment_ID();
             
             $comment_name_title_attr = $comment_text. ' '. $comment_id;
-            $comment_name = '<span class="entry---txt">'. $comment_text. '</span>'. ' '. '<span class="num entry-id---txt">'. $comment_id. '</span>';
+            $comment_name = '<span class="comment---txt txt">'. $comment_text. '</span>'. ' '. '<span class="num comment-id---txt txt">'. $comment_id. '</span>';
             
             $label_mu = '<span class="modify-comment-axn---l" title="Edit'. ' '. $comment_name_title_attr. '"><span class="edit---txt">Edit</span> <span class="comment-name---txt">'. $comment_name. '</span></span>'; ?>
 
