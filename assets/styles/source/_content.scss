@@ -8,6 +8,11 @@
     font-size: $content-font-size;
     word-break: break-word;
 
+    > * {
+        @include box-reset;
+        padding: 1em $m-gutter;
+    }
+
     .format-status & {
         font-size: 2em;
 
@@ -23,12 +28,6 @@
 
     > .show-more-axn {
         @include y-padding();
-    }
-
-    > * {
-        @include box-reset;
-        @include x-padding($m-gutter);
-        @include y-padding(1em);
     }
 
     // Negations

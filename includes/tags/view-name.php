@@ -14,7 +14,7 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
             $property_suffix = 'Entry';
             $property = '<span class="entry---txt txt">'. $property_suffix. '</span>';
 
-            if ( is_single() ) {
+            if ( is_single() && ! is_attachment() ) {
                 $value = 'Post';
             } elseif ( is_page() && ! is_front_page() ) {
                 $value = 'Page';

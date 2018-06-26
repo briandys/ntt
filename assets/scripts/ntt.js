@@ -4,9 +4,17 @@ var $document,
     $body,
     documentHeight,
     windowHeight,
-    $goStartNav,
-    $wildCard,
+    
+    $comments,
     $content,
+    $goStartNav,
+    $entityPrimaryDescription,
+    $entityPrimaryName,
+    $entryContent,
+    $entryHeader,
+    $widgetSearch,
+    $wildCard,
+    $wildCardCr,
     
     wrapTextNode,
     removeEmpty;
@@ -17,10 +25,17 @@ var $document,
     $window = $( window );
     $html = $( document.documentElement );
     $body = $( document.body );
+    
+    $comments = $( '#comments' );
+    $content = $( '.content---cr' );
     $goStartNav = $( '#go-start-nav' );
+    $entityPrimaryDescription = $( '#entity-primary-description' );
+    $entityPrimaryName = $( '#entity-primary-name' );
+    $entryContent = $( '.entry-content' );
+    $entryHeader = $( '.entry-header' );
+    $widgetSearch = $( '.widget_search' );
     $wildCard = $( '#wild-card' );
     $wildCardCr = $wildCard.find( '.wild-card---cr' );
-    $content = $( '.content---cr' );
 
     /**
      * Scrolled
@@ -28,18 +43,24 @@ var $document,
      */
     var scrolledCounter = 0;
     
-    $.fn.scrolled = function ( waitTime, fn ) {
+    $.fn.scrolled = function( waitTime, fn ) {
+        
         if ( typeof waitTime === "function" ) {
             fn = waitTime;
             waitTime = 640;
         }
+        
         var tag = "scrollTimer" + scrolledCounter++;
+        
         this.scroll( function () {
-            var self = $( this );
-            var timer = self.data( tag );
+            
+            var self = $( this ),
+                timer = self.data( tag );
+            
             if ( timer ) {
                 clearTimeout( timer );
             }
+            
             timer = setTimeout(function () {
                 self.removeData( tag );
                 fn.call( self[0] );
@@ -148,6 +169,15 @@ var $document,
                 $this.remove();
             }
         } );
+    }
+
+    /**
+     * Hidden Conditional
+     */
+    isHidden = function( $elem ) {
+        if ( ! $elem.length || $elem.css( 'margin' ) == '-1px' || $elem.is( ':hidden' ) ) {
+            return true;
+        }
     }
 
     /**
@@ -1025,6 +1055,38 @@ var $document,
     contentType( 'pre' );
     contentType( 'select' );
     contentType( 'table' );
+
+    /**
+     * Hidden Entity Description
+     */
+    if ( isHidden( $entityPrimaryDescription ) ) {
+        
+        $html
+            .addClass( 'entity-description--empty' )
+            .removeClass( 'entity-description--populated' );
+    }
+
+    /**
+     * Hidden Entity Name
+     */
+    if ( isHidden( $entityPrimaryName ) ) {
+        
+        $html
+            .addClass( 'entity-name--empty' )
+            .removeClass( 'entity-name--populated' );
+    }
+
+    /**
+     * Skip tabbing on Visually Hidden elements
+     * https://stackoverflow.com/q/2239567
+     */
+    $( 'a:not(#go-content-navi---a), button' ).each( function() {
+        var $this = $( this );
+        
+        if ( $this.parents().filter( function() { return $( this ).css( 'margin' ) == '-1px'; } ).eq( 0 ).css( 'margin' ) ) {
+            $this.attr( 'tabindex', -1 );
+        }
+    } );
 
     /**
      * Document Ready

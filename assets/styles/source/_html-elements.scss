@@ -4,14 +4,16 @@
     box-sizing: border-box;
 }
 
-.html {
+html {
     height: 100%;
     background-color: $paper-color;
-    color: $ink-color;
+	color: $ink-color;
 }
 
-.body {
+body {
+	display: grid;
 	min-height: 100%;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 @each $i in $headings {

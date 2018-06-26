@@ -1,32 +1,38 @@
+// To take them off the grid
+.wild-card,
+.entity-start,
+.entity-end {
+    position: absolute;
+}
+
 .entity---cr {
     display: grid;
     grid-template:
-        'start'
-        'header'
-        'main' 1fr
-        'footer'
-        'end';
-    min-height: 100vh;
+        'a1'
+        'a2'
+        'a3' 1fr
+        'a4'
+        'a5';
+    min-height: 100%;
 }
 
 .entity-start {
-    grid-area: start;
+    grid-area: a1;
 }
 
 .entity-header {
-    grid-area: header;
+    grid-area: a2;
 }
 
 .entity-main {
-    grid-area: main;
-    height: 100%;
+    grid-area: a3;
 }
 .entity-footer {
-    grid-area: footer;
+    grid-area: a4;
 }
 
 .entity-end {
-    grid-area: end;
+    grid-area: a5;
 }
 
 //--------------------------------------------------------------
@@ -173,6 +179,12 @@
 
     a {
         color: gray;
+    }
+
+    .entity-name,
+    .entity-copyright,
+    .maker-tag {
+        @include x-margin( .5em );
     }
 }
 

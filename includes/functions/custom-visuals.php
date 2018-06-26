@@ -32,20 +32,17 @@ function ntt_custom_header_callback() {
     
     if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() ) {
         return;
-    } ?>
-
-    <style id="ntt-custom-header-colors-style">
-
-    <?php if ( 'blank' !== get_header_textcolor() ) { ?>
-
-    .entity-primary-name---a,
-    .entity-primary-description---a
-    {
-        color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
     }
+    
+    if ( 'blank' !== get_header_textcolor() ) {
+        ?>
 
-    <?php } ?>
-
-    </style>
-
+        <style id="ntt-custom-header-colors-style">
+            .entity-primary-name---a,
+            .entity-primary-description---a {
+                color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
+            }
+        </style>
+        <?php
+    } ?>
 <?php }

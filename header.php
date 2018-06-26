@@ -15,12 +15,13 @@
 
         <div id="entity" class="entity" data-name="Entity">
             <div class="entity---cr">
+                
                 <div id="entity-start" class="entity-start cn" data-name="Entity Start">
                     <div class="entity-start---cr">
                         <div id="go-content-nav" class="go-content-nav nav cp" data-name="Go to Content Navigation">
                             <div class="go-content-nav---cr">
                                 <div class="go-content-navi navi obj" data-name="Go to Content Navigation Item">
-                                    <a href="#content" class="go-content-navi---a a" title="<?php esc_attr_e( 'Go to Content', 'ntt' ); ?>">
+                                    <a href="#content" id="go-content-navi---a" class="go-content-navi---a a" title="<?php esc_attr_e( 'Go to Content', 'ntt' ); ?>">
                                         <span class="go-content-navi---l">
                                             <span class="go-content-navi---txt"><?php esc_html_e( 'Go to Content', 'ntt' ); ?></span>
                                         </span>
@@ -30,6 +31,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <header id="entity-header" class="entity-header cn" data-name="Entity Header CN">
                     <div class="entity-header---cr">
                         

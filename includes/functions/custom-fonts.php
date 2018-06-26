@@ -36,15 +36,3 @@ function ntt_custom_fonts_url_style() {
     wp_enqueue_style( 'ntt-custom-fonts-url-style', ntt_custom_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'ntt_custom_fonts_url_style', 0);
-
-// Font Settings
-function ntt_font_settings() { ?>
-
-    <style id="ntt-custom-fonts-style">
-        .body {
-            font-family: 'Noto Sans', sans-serif;
-        }
-    </style>
-    
-<?php }
-add_action( 'wp_head', 'ntt_font_settings' );

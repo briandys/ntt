@@ -16,7 +16,7 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
                 $entry_name = '<span class="entry---txt txt">'. $entry_text. '</span>'. ' '. '<span class="num entry-id---txt txt">'. $entry_id. '</span>';
             }
             
-            $label_mu = '<span class="modify-entry-axn---l" title="Edit'. ' '. $entry_name_title_attr. '"><span class="edit---txt">Edit</span> <span class="entry-name---txt">'. $entry_name. '</span></span>'; ?>
+            $label_mu = '<span class="modify-entry-axn---l l" title="Edit'. ' '. $entry_name_title_attr. '"><span class="edit---txt txt">Edit</span> <span class="entry-name---txt txt">'. $entry_name. '</span></span>'; ?>
 
             <div class="entry-admin-axns admin-axns axns cp" aria-label="Entry Admin Actions">
                 <div class="entry-admin-axns---cr">

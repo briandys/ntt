@@ -9,7 +9,9 @@ if ( ! function_exists( 'ntt_entry_categories' ) ) {
                 <div class="cm-categories---cr entry-categories---cr">
                     
                     <div class="cm-categories-name categories-name name obj" data-name="Categories Name">
-                        <span class="categories---txt txt"><?php esc_html_e( 'Categories', 'ntt' ); ?></span>
+                        <span class="categories---txt txt">
+                            <?php echo apply_filters( 'ntt_cm_categories_name', esc_html__( 'Categories', 'ntt' ) ); ?>
+                        </span>
                     </div>
                     
                 <?php echo get_the_category_list(); ?>
@@ -29,7 +31,9 @@ if ( ! function_exists( 'ntt_entry_tags' ) ) {
                 <div class="cm-tags---cr entry-tags---cr">
                     
                     <div class="cm-tags-name tags-name name obj" data-name="Tags Name">
-                        <span class="tags---txt txt"><?php esc_html_e( 'Tags', 'ntt' ); ?></span>
+                        <span class="tags---txt txt">
+                            <?php echo apply_filters( 'ntt_cm_tags_name', esc_html__( 'Tags', 'ntt' ) ); ?>
+                        </span>
                     </div>
                     
                 <?php the_tags('<ul class="entry-tag-group group list" data-name="Entry Tag Group"><li class="entry-tag-item tag-item p-category obj item">', '</li><li class="entry-tag-item tag-item p-category obj item">', '</li></ul>'); ?>

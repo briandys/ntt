@@ -92,7 +92,13 @@ if ( ! function_exists( 'ntt_comment') ) {
                                             <div class="comment-full-content---cr content---cr">
                                             
                                             <?php if ( $comment->comment_approved == '0' ) {
-                                                '<p>'. esc_html_e( 'Your comment is awaiting moderation.', 'ntt' ). '</p>';
+                                                ?>
+                                                <div class="unapproved-comments-note note cp" data-name="Unapproved Comments Note">
+                                                    <div class="unapproved-comments-note---cr note---cr">
+                                                        <p><?php echo esc_html_x( 'Your comment is awaiting moderation.', 'Component: Comment Full Content | Usage: User note if comment is unapproved.', 'ntt' ); ?></p>
+                                                    </div>
+                                                </div>
+                                                <?php
                                             }
                                             
                                             comment_text(); ?>

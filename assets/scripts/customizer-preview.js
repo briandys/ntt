@@ -22,8 +22,7 @@
 			
             if ( 'blank' === to ) {
 				$html
-                    .addClass( 'entity-name-description--disabled' )
-                    .removeClass( 'entity-name-description--enabled' );
+                    .addClass( 'entity-name-description--disabled' );
 			} else {
 
 				if ( ! to.length ) {
@@ -35,7 +34,6 @@
 				} );
 				
                 $html
-                    .addClass( 'entity-name-description--enabled' )
                     .removeClass( 'entity-name-description--disabled' );
 			}
 		} );

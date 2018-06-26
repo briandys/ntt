@@ -14,11 +14,11 @@
                 $entry_search_count = $entry_search->post_count;
                 
                 if ( $entry_search_count == 0 ) {
-                    $property_text = __( 'No Search Result', 'ntt' );
+                    $search_outcome_text = __( 'No Search Result', 'ntt' );
                 } elseif ( $entry_search_count == 1 ) {
-                    $property_text = __( 'Search Result', 'ntt' );
+                    $search_outcome_text = __( 'Search Result', 'ntt' );
                 } else {
-                    $property_text = __( 'Search Results', 'ntt' );
+                    $search_outcome_text = __( 'Search Results', 'ntt' );
                 }
                 ?>
 
@@ -26,10 +26,12 @@
                     <a href="<?php echo esc_url( get_search_link() ); ?>" class="view-name---a a">
                         <span class="view-name---l l">
                             <span class="value---line line">
-                                <span class="value---txt txt"><?php echo esc_html( $entry_search_count ); ?></span>
+                                <span class="search-count---txt num txt"><?php echo esc_html( $entry_search_count ); ?></span>
                             </span>
                             <span class="property---line line">
-                                <span class="property---txt txt"><?php echo $property_text. ' '. 'for'. ' '. esc_html( get_search_query() ); ?></span>
+                                <span class="search-outcome---txt txt"><?php echo $search_outcome_text ?></span>
+                                <span class="for---txt txt"><?php _ex( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ); ?></span>
+                                <span class="search-term---txt txt"><?php echo esc_html( get_search_query() ); ?></span>
                             </span>
                         </span>
                     </a>

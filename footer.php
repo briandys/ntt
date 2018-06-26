@@ -31,7 +31,7 @@
                                 $product_name = get_bloginfo( 'name', 'display' );
                                 
                                 if ( $product_name || is_customize_preview() ) {
-                                    $ntt_wp_theme_url = '//ntt.dysinelab.com/themes/'. ntt_wp_theme_name_url_fragment();
+                                    $ntt_wp_theme_url = '//ntt.dysinelab.com/themes/'. ntt_wp_theme_name_url_fragment(). '/';
                                     $product_maker_name = 'DysineLab';
                                     ?>
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-name name obj a" title="<?php echo esc_attr( $product_name ); ?>" data-name="Entity Name OBJ">

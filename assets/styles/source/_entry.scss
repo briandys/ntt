@@ -36,35 +36,29 @@
 // Entry Tags
 //--------------------------------------------------------------
 
-.entry-tags {
+.entry-tag-group {
+    @extend %unlist;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+}
 
-    @at-root .entry-tag-group {
-        
-        @extend %unlist;
-        display: flex;
-        flex-wrap: wrap;
+.entry-tag-item {
+    padding: .5rem;
 
-        @at-root .entry-tag-item {
-            @include m-x-gutter;
-
-            a {
-                @extend %aa;
-            }
-        
-        }
-
+    a {
+        @extend %aa;
     }
+}
 
-    @at-root .tags-name {
-        padding: $m-gutter;
-    }
+.tags-name {
+    padding: $m-gutter;
+}
 
-    @at-root .entry-tags---cr {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
+.entry-tags---cr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .entry-admin-axns {

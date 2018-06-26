@@ -55,3 +55,12 @@ p > object:only-child {
 	max-width: $min-aa;
 	max-height: $min-aa;
 }
+
+.wp-admin-bar--enabled {
+	margin-top: 0 !important;
+	padding-top: 32px;
+	
+	@media screen and (max-width: 782px) {
+		padding-top: 46px;
+	}
+}

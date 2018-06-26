@@ -157,6 +157,31 @@ function ntt_html_css() {
         echo ' '. 'plural-view';
         echo ' '. 'hfeed';
     }
+
+    // Category View
+    if ( is_category() ) {
+        echo ' '. 'category-archive-view';
+    }
+
+    // Tag View
+    if ( is_tag() ) {
+        echo ' '. 'tag-archive-view';
+    }
+
+    // Date View
+    if ( is_date() ) {
+        echo ' '. 'date-archive-view';
+    }
+
+    // Author View
+    if ( is_author() ) {
+        echo ' '. 'author-archive-view';
+    }
+
+    // Search View
+    if ( is_search() ) {
+        echo ' '. 'search-view';
+    }
     
     // Sub-Pages Page Template
     if ( is_page_template( 'page-templates/sub-pages.php' ) ) {

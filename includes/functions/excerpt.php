@@ -26,7 +26,7 @@ function ntt_manual_excerpt( $excerpt ) {
     
     if ( is_search() ) { ?>
         
-        <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>"><?php echo wp_strip_all_tags( $excerpt ); ?></a></p>
+        <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" class="content-snippet-link"><?php echo wp_strip_all_tags( $excerpt ); ?></a></p>
 
     <?php echo ntt_show_more_action( $excerpt );
         
