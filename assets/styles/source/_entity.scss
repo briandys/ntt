@@ -184,12 +184,17 @@
     .entity-name,
     .entity-copyright,
     .maker-tag {
+        display: inline-block;
         @include x-margin( .5em );
     }
 }
 
 .entity-secondary-info---cr {
     padding: $m-gutter;
+
+    .ntt-go-start-nav-f5e & {
+        @include x-padding($min-aa);
+    }
 }
 
 //--------------------------------------------------------------

@@ -33,9 +33,7 @@ if ( get_the_title() ) {
 
                             <<?php echo esc_attr( $heading_level ); ?> class="cm-name entry-name name obj h" data-name="Entry Name">
                                 <?php echo $anchor_element_start; ?>
-                                    <span class="entry-name---l l">
-                                        <?php echo $entry_name; ?>
-                                    </span>
+                                    <span class="entry-name---l l"><?php echo $entry_name; ?></span>
                                 <?php echo $anchor_element_end; ?>
                             </<?php echo esc_attr( $heading_level ); ?>>
 

@@ -43,8 +43,8 @@
 	wp.customize( 'colorscheme', function( value ) {
 		value.bind( function( to ) {
 			$html
-				.addClass( 'customizer-color-scheme--default' )
-				.removeClass( 'customizer-color-scheme--custom' );
+				.addClass( 'wp-customizer-color-scheme--default' )
+				.removeClass( 'wp-customizer-color-scheme--custom' );
 		} );
 	} );
 	
@@ -52,8 +52,8 @@
 	wp.customize( 'colorscheme_hue', function( value ) {
 		value.bind( function( to ) {
             $html
-				.addClass( 'customizer-color-scheme--custom' )
-				.removeClass( 'customizer-color-scheme--default' );
+				.addClass( 'wp-customizer-color-scheme--custom' )
+				.removeClass( 'wp-customizer-color-scheme--default' );
 
 			var style = $( '#ntt-custom-theme-colors-style' ),
 				hue = style.data( 'hue' ),

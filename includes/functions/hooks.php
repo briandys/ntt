@@ -30,6 +30,11 @@ function ntt_entry_footer_wp_hook() {
     do_action( 'ntt_entry_footer_wp_hook' );
 }
 
+// content.php
+function ntt_comment_css_wp_hook() {
+    do_action( 'ntt_comment_css_wp_hook' );
+}
+
 // content-none.php
 function ntt_entry_css_wp_hook() {
     do_action( 'ntt_entry_css_wp_hook' );

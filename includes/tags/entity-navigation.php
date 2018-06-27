@@ -1,6 +1,6 @@
 <?php
 
-register_nav_menu( 'main-nav', __( 'Primary Navigation', 'ntt' ) );
+register_nav_menu( 'primary-nav', __( 'Primary Navigation', 'ntt' ) );
 
 if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
     function ntt_entity_primary_nav() {
@@ -10,7 +10,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
         $label_mu_start = '<span class="entity-primary-navi---l l"><span class="navi---txt txt">';
         $label_mu_end = '</span></span>';
         
-        if ( wp_nav_menu( array( 'theme_location' => 'main-nav', 'echo' => false, ) ) !== false) { ?>
+        if ( wp_nav_menu( array( 'theme_location' => 'primary-nav', 'echo' => false, ) ) !== false) { ?>
 
             <nav id="entity-primary-nav" class="entity-primary-nav nav cp" data-name="Entity Primary Navigation">
                 <div class="entity-primary-nav---cr">
@@ -20,11 +20,14 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
                     }
                     add_filter( 'the_title', 'escape_html_the_title', 10, 2 );
                     
-                    if ( ! has_nav_menu( 'main-nav' ) ) {
-                        /* Default Menu
+                    if ( ! has_nav_menu( 'primary-nav' ) ) {
+                        
+                        /*
+                        Default Menu
                         Nav Item <li class="page_item">
                         Current Nav Item <li class="current_page_item">
-                        Sub Navigation <ul class="children"> */
+                        Sub Navigation <ul class="children">
+                        */
                         wp_page_menu( array(
                             'menu_class'        => 'menu',
                             'link_before'       => $label_mu_start,
@@ -34,12 +37,15 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
                             'after'             => $group_mu_end,
                         ) );
                     } else {
-                        /* Apperance > Menus (Custom Menu)
+                        
+                        /*
+                        Apperance > Menus (Custom Menu)
                         Nav Item <li class="menu-item">
                         Current Nav Item <li class="current-menu-item">
-                        Sub Navigation <ul class="sub-menu"> */
+                        Sub Navigation <ul class="sub-menu">
+                        */
                         wp_nav_menu( array(
-                            'theme_location'    => 'main-nav',
+                            'theme_location'    => 'primary-nav',
                             'container'         => 'div',
                             'container_class'   => 'menu',
                             'link_before'       => $label_mu_start,

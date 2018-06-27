@@ -11,7 +11,7 @@ function ntt_custom_theme_colors_style_tag() {
     $hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) ); ?>
 
     <style id="ntt-custom-theme-colors-style"<?php if ( is_customize_preview() ) { echo ' '. 'data-hue="' . esc_attr( $hue ) . '"'; } ?>>
-        <?php echo ntt_customizer_color_patterns(); ?>
+        <?php echo ntt_wp_customizer_color_patterns(); ?>
     </style>
 
 <?php }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> class="ntt no-js <?php ntt_html_css_wp_hook(); ?> html" id="start">
+<html <?php language_attributes(); ?> class="ntt view no-js <?php ntt_html_css_wp_hook(); ?> html" id="start">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">

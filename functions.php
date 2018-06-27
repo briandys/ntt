@@ -11,6 +11,7 @@ $r_functions = array(
     'styles-scripts',
     
     'body-css',
+    'comments-css',
     'comment-form',
     'custom-fonts',
     'custom-visuals',

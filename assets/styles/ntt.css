@@ -1261,12 +1261,18 @@ textarea {
 .entity-secondary-info .entity-name,
 .entity-secondary-info .entity-copyright,
 .entity-secondary-info .maker-tag {
+  display: inline-block;
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
 
 .entity-secondary-info---cr {
   padding: 1rem;
+}
+
+.ntt-go-start-nav-f5e .entity-secondary-info---cr {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .ntt-primary-menu-f5e .entity-heading---cr {
@@ -2297,10 +2303,8 @@ p > object:only-child {
   padding-bottom: 0;
 }
 
-@media only screen and (max-width: 34.9375em) {
-  .ntt-primary-menu-f5e .active-search .search-input {
-    padding-left: 0;
-  }
+.ntt-primary-menu-f5e .active-search .search-input {
+  padding-left: 0;
 }
 
 .ntt-sub-nav-f5e.dom--unready .children,

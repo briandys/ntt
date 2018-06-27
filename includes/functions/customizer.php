@@ -21,7 +21,7 @@ function ntt_register_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'colorscheme', array(
 		'default'           => 'default',
 		'transport'         => 'postMessage',
-		'sanitize_callback' => 'ntt_color_scheme_sanitizer',
+		'sanitize_callback' => 'ntt_wp_customizer_color_scheme_sanitizer',
 	) );
 
 	$wp_customize->add_setting( 'colorscheme_hue', array(
@@ -49,7 +49,7 @@ function ntt_register_customize( $wp_customize ) {
 }
 add_action( 'customize_register', 'ntt_register_customize' );
 
-function ntt_color_scheme_sanitizer( $input ) {
+function ntt_wp_customizer_color_scheme_sanitizer( $input ) {
 	$valid = array( 'default', 'custom', );
 
 	if ( in_array( $input, $valid ) ) {
@@ -66,19 +66,19 @@ function ntt_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
-function ntt_customizer_preview() {
-	wp_enqueue_script( 'ntt-customizer-preview-script', get_theme_file_uri( '/assets/scripts/customizer-preview.js' ), array( 'customize-preview', ), '0.0.0', true );
+function ntt_wp_customizer_preview() {
+	wp_enqueue_script( 'ntt-wp-customizer-preview-script', get_theme_file_uri( '/assets/scripts/wp-customizer-preview.js' ), array( 'customize-preview', ), null, true );
 }
-add_action( 'customize_preview_init', 'ntt_customizer_preview' );
+add_action( 'customize_preview_init', 'ntt_wp_customizer_preview' );
 
-function ntt_customizer_controls() {
-	wp_enqueue_script( 'ntt-customizer-controls-script', get_theme_file_uri( '/assets/scripts/customizer-controls.js' ), array(), '0.0.0', true );
+function ntt_wp_customizer_controls() {
+	wp_enqueue_script( 'ntt-wp-customizer-controls-script', get_theme_file_uri( '/assets/scripts/wp-customizer-controls.js' ), array(), null, true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'ntt_customizer_controls' );
+add_action( 'customize_controls_enqueue_scripts', 'ntt_wp_customizer_controls' );
 
-// Hide the Edit Icon in Customizer Preview
-function ntt_hide_edit_icon_customizer() {
+// Hide the Edit Icon in WP Customizer Preview
+function ntt_hide_edit_icon_wp_customizer() {
     $js = 'wp.customize.selectiveRefresh.Partial.prototype.createEditShortcutForPlacement = function() {};';
     wp_add_inline_script( 'customize-selective-refresh', $js );
 }
-add_action( 'wp_enqueue_scripts', 'ntt_hide_edit_icon_customizer' );
+add_action( 'wp_enqueue_scripts', 'ntt_hide_edit_icon_wp_customizer' );
