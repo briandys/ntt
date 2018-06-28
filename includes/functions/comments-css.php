@@ -1,6 +1,6 @@
 <?php
 
-function comments_css_status() {
+function comments_css() {
     
     if ( is_singular() ) {
         // Comments
@@ -8,31 +8,32 @@ function comments_css_status() {
 
         // Comments Population Status
         if ( $comments_count > 1 ) {
-            echo ' '. 'comments--populated';
+            $css[] = 'comments--populated';
         } else {
-            echo ' '. 'comments--empty';
+            $css[] = 'comments--empty';
         }
 
         // Comments Population Count
         if ( $comments_count == 1 ) {
-            echo ' '. 'comments--single';
+            $css[] = 'comments--single';
         } elseif ( $comments_count > 1 ) {
-            echo ' '. 'comments--multiple';
+            $css[] = 'comments--multiple';
         } elseif ( $comments_count == 0 ) {
-            echo ' '. 'comments--zero';
+            $css[] = 'comments--zero';
         }
 
         // Comment Creation Ability Status
         if ( comments_open() ) {
-            echo ' '. 'comment-creation--enabled';
+            $css[] = 'comment-creation--enabled';
         } else {
-            echo ' '. 'comment-creation--disabled';
+            $css[] = 'comment-creation--disabled';
         }
+
+        echo ' '. implode( ' ', $css );
     }
 }
 
-function ntt_comments_css() {  
-    
-    comments_css_status();
+function ntt_comments_css() {
+    comments_css();
 }
-add_action( 'ntt_comment_css_wp_hook', 'ntt_comments_css');
+add_action( 'ntt_comment_css_wp_hook', 'comments_css');

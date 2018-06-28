@@ -64,3 +64,27 @@ p > object:only-child {
 		padding-top: 46px;
 	}
 }
+
+//--------------------------------------------------------------
+// Post Password Form
+//--------------------------------------------------------------
+.post-password-form {
+
+	label {
+		font-size: 1rem;
+    }
+
+	p {
+		margin: 0;
+        @include y-padding(1em);
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    input {
+		@include y-margin(1em, 0);
+		font-size: 1rem;
+    }
+}

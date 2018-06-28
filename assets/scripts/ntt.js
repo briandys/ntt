@@ -12,6 +12,7 @@ var $document,
     $entityPrimaryName,
     $entryContent,
     $entryHeader,
+    $postPasswordForm,
     $widgetSearch,
     $wildCard,
     $wildCardCr,
@@ -33,6 +34,7 @@ var $document,
     $entityPrimaryName = $( '#entity-primary-name' );
     $entryContent = $( '.entry-content' );
     $entryHeader = $( '.entry-header' );
+    $postPasswordForm = $( '.post-password-form' );
     $widgetSearch = $( '.widget_search' );
     $wildCard = $( '#wild-card' );
     $wildCardCr = $wildCard.find( '.wild-card---cr' );
@@ -989,9 +991,6 @@ var $document,
         // Table
         wrapTextNode( $( 'td, th' ) );
         
-        // Post Password
-        wrapTextNode( $( '.post-password-form label' ) );
-
         // Content
         wrapTextNode( $content );
         wrapTextNode( $contentP );
@@ -1041,6 +1040,13 @@ var $document,
         $( '.cm-singular .content---cr' ).children( 'p:has( [id*=more-]:only-child )' ).addClass( 'show-more-marker');
             
     } ) ();
+
+    /**
+     * Post Password Form
+     */
+    wrapTextNode( $postPasswordForm.find( 'label' ) );
+    $postPasswordForm.find( '[id*="pwbox"]' ).closest( 'p' ).addClass('post-password-form-elements' );
+    $postPasswordForm.find( '[type="password"]' ).attr( 'placeholder', 'Password' );
 
     /**
      * Content Type Feature

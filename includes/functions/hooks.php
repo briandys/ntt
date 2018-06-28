@@ -36,6 +36,6 @@ function ntt_comment_css_wp_hook() {
 }
 
 // content-none.php
-function ntt_entry_css_wp_hook() {
-    do_action( 'ntt_entry_css_wp_hook' );
+function ntt_empty_entry_css_wp_hook() {
+    do_action( 'ntt_empty_entry_css_wp_hook' );
 }

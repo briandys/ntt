@@ -80,8 +80,10 @@ function ntt_features_html_css() {
         $primary_search,
     );
 
-    foreach ( $r as $css ) {
-        echo ' '. 'ntt-'. esc_attr( $css ). '-f5e';
+    foreach ( $r as $val ) {
+        $css[] = 'ntt-'. esc_attr( $val ). '-f5e';
     }
+
+    echo ' '. implode( ' ', $css );
 }
 add_action( 'ntt_html_css_wp_hook', 'ntt_features_html_css');

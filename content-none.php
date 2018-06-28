@@ -1,4 +1,4 @@
-<div <?php post_class(); ?> data-name="No Entry">
+<div class="<?php ntt_empty_entry_css_wp_hook(); ?>" data-name="Empty Entry">
     <div class="cm-singular---cr entry---cr">
 
         <article class="cm-article entry-article article cp" data-name="Entry Article">
@@ -14,8 +14,7 @@
                                     <span class="entry-name---l l"><?php esc_html_e( 'Content Not Found', 'ntt' ); ?></span>
                                 </h1>
 
-                            <?php ntt_after_entry_name_wp_hook(); ?>
-                                    
+                                <?php ntt_after_entry_name_wp_hook(); ?>
                             </div>
                         </div>
                     </div>
@@ -29,17 +28,18 @@
                                 <div class="entry-full-content full-content e-content content cp" data-name="Entry Full Content">
                                     <div class="entry-full-content---cr content---cr">
                                     
-                                    <?php if ( is_404() ) {
-                                        $search_spiel = esc_html__( 'Please try searching.', 'ntt' );
-                                    } else {
-                                        $search_spiel = esc_html__( 'Please try another search term.', 'ntt' );
-                                    } ?>
+                                        <?php
+                                        if ( is_404() ) {
+                                            $search_spiel = esc_html__( 'Please try searching.', 'ntt' );
+                                        } else {
+                                            $search_spiel = esc_html__( 'Please try another search term.', 'ntt' );
+                                        }
+                                        ?>
                                     
                                         <p><?php esc_html_e( 'It seems we can not find what you are looking for.', 'ntt' ); ?></p>
                                         <p><?php echo $search_spiel; ?></p>
                                     
-                                    <?php get_search_form(); ?>
-                                    
+                                        <?php get_search_form(); ?>
                                     </div>
                                 </div>
                             

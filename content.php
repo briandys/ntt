@@ -123,7 +123,7 @@ if ( get_the_title() ) {
                                 <?php
                             }
                             
-                            if ( is_page_template( 'page-templates/sub-pages.php' ) ) {
+                            if ( is_page_template( 'page-templates/sub-pages-page-template.php' ) ) {
                                 $args = array(
                                     'order'         => 'ASC',
                                     'post_parent'   => $post->ID,

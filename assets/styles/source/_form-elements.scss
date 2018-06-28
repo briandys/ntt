@@ -85,34 +85,3 @@ textarea {
 .optional-note-txt {
     @extend %inline-note;
 }
-
-//--------------------------------------------------------------
-// Post Password
-//--------------------------------------------------------------
-
-.post-password-form {
-
-    p {
-        @include y-padding(1em);
-
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
-
-    input {
-        @include y-margin(1em);
-
-        &[type="password"] {
-            margin-bottom: 0;
-        }
-
-        &[type="submit"] {
-            margin-bottom: 0;
-        }
-    }
-
-    label {
-        display: block;
-    }
-}

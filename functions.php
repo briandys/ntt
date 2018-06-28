@@ -13,7 +13,6 @@ $r_functions = array(
     'body-css',
     'comments-css',
     'comment-form',
-    'custom-fonts',
     'custom-visuals',
     'customizer',
     'customizer-custom-colors',

@@ -315,9 +315,6 @@ $caption-fg-color: $gray;
 %number-block-component {
     display: inline-block;
     padding: .0625em .5em;
-    background-color: $primary-link-fg-color;
-    color: $paper-color;
-    border-radius: .125em;
 }
 
 %buttonizer-component {

@@ -107,14 +107,18 @@ function ntt_entry_css( $classes ) {
 add_filter( 'post_class', 'ntt_entry_css' );
 
 function ntt_content_none_entry_css() {
+        
     $r = array(
-        ' '. 'article',
-        ' '. 'post',
-        ' '. 'post--empty',
+        'cm-singular',
+        'entry',
+        'empty-entry',
+        'h-entry',
     );
     
-    foreach ( $r as $class_name ) {
-        echo esc_attr( $class_name );
+    foreach ( $r as $names ) {
+        $css[] = esc_attr( $names );
     }
+
+    echo implode( ' ', $css );
 }
-add_action( 'ntt_entry_css_wp_hook', 'ntt_content_none_entry_css');
+add_action( 'ntt_empty_entry_css_wp_hook', 'ntt_content_none_entry_css');

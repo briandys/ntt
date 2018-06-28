@@ -174,18 +174,11 @@
 //--------------------------------------------------------------
 
 .entity-secondary-info {
-    color: gray;
+    color: $gray;
     font-size: .75em;
 
     a {
-        color: gray;
-    }
-
-    .entity-name,
-    .entity-copyright,
-    .maker-tag {
-        display: inline-block;
-        @include x-margin( .5em );
+        color: $gray;
     }
 }
 
@@ -193,7 +186,7 @@
     padding: $m-gutter;
 
     .ntt-go-start-nav-f5e & {
-        @include x-padding($min-aa);
+        padding-right: $min-aa;
     }
 }
 

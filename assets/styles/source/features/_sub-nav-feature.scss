@@ -14,10 +14,10 @@ $border-color: hsla( 0, 0%, 0%, .125 );
 
         .page_item_has_children,
         .menu-item-has-children {
+            padding-right: $min-aa;
 
             > a {
                 margin-right: 0;
-                padding-right: $min-aa;
             }
         }
     }
@@ -80,22 +80,22 @@ $border-color: hsla( 0, 0%, 0%, .125 );
         align-items: center;
         min-height: $min-aa;
     }
-    
-    li {
-        @include x-padding();
-    }
 
     a {
-        @include m-x-gutter;
         justify-content: unset;
+    }
+
+    .page_item,
+    .menu-item {
+        @include x-padding($m-gutter);
     }
     
     .page_item_has_children,
     .menu-item-has-children {
         position: relative;
+        padding-right: 0;
 
         > a {
-            padding-right: 0;
             margin-right: $min-aa;
         }
     }
@@ -107,6 +107,16 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             visibility: hidden;
             height: 0;
         }
+
+        .page_item,
+        .menu-item {
+            @include x-padding();
+
+            a {
+                @include x-padding($m-gutter);
+            }
+        }
+
     }
 
     &.entity-primary-nav {
@@ -123,7 +133,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
                 > ul {
 
                     ul {
-                        transform: translate(.5rem, -.5rem);
+                        transform: translate(1rem, -.5rem);
                     }
 
                 }

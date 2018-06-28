@@ -9,36 +9,36 @@ function ntt_html_css() {
      * Device Form Factor
      */
     if ( wp_is_mobile() ) {
-        echo ' '. 'mobile-form-factor';
+        $css[] = 'mobile-form-factor';
     } else {
-        echo ' '. 'non-mobile-form-factor';
+        $css[] = 'non-mobile-form-factor';
     }
 
     /**
      * Browser Brand
      */
     if ( $is_chrome ) {
-        echo ' '. 'chrome-browser';
+        $css[] = 'chrome-browser';
     } elseif ( $is_gecko ) {
-        echo ' '. 'gecko-browser';
+        $css[] = 'gecko-browser';
     } elseif ( $is_safari ) {
-        echo ' '. 'safari-browser';
+        $css[] = 'safari-browser';
     } elseif ( $is_opera ) {
-        echo ' '. 'opera-browser';
+        $css[] = 'opera-browser';
     } elseif ( $is_lynx ) {
-        echo ' '. 'lynx-browser';
+        $css[] = 'lynx-browser';
     } elseif ( $is_NS4 ) {
-        echo ' '. 'ns4-browser';
+        $css[] = 'ns4-browser';
     } elseif ( $is_IE ) {
-        echo ' '. 'ie-browser';
+        $css[] = 'ie-browser';
     } elseif ( $is_macIE ) {
-        echo ' '. 'mac-ie-browser';
+        $css[] = 'mac-ie-browser';
     } elseif ( $is_winIE ) {
-        echo ' '. 'win-ie-browser';
+        $css[] = 'win-ie-browser';
     } elseif ( $is_edge ) {
-        echo ' '. 'edge-browser';
+        $css[] = 'edge-browser';
     } else {
-        echo ' '. 'other-browser';
+        $css[] = 'other-browser';
     }
 
     /**
@@ -47,19 +47,19 @@ function ntt_html_css() {
     
     // WP Admin Bar
     if ( is_admin_bar_showing() ) {
-        echo ' '. 'wp-admin-bar--enabled';
+        $css[] = 'wp-admin-bar--enabled';
     } else {
-        echo ' '. 'wp-admin-bar--disabled';
+        $css[] = 'wp-admin-bar--disabled';
     }
 
     // WP Customizer
     if ( is_customize_preview() ) {
-		echo ' '. 'wp-customizer';
+		$css[] = 'wp-customizer';
 	}
 
     // WP Customizer Color Scheme
     $colors = ntt_wp_customizer_color_scheme_sanitizer( get_theme_mod( 'colorscheme', 'default' ) );
-    echo ' '. 'wp-customizer-color-scheme--'. esc_attr( $colors );
+    $css[] = 'wp-customizer-color-scheme--'. esc_attr( $colors );
 
     /**
      * Entity
@@ -67,66 +67,66 @@ function ntt_html_css() {
 
     // Entity Theme Hierarchy
     if ( ! is_child_theme() ) {
-        echo ' '. 'parent-theme';
+        $css[] = 'parent-theme';
     } else {
-        echo ' '. 'child-theme';
+        $css[] = 'child-theme';
     }
 
     // Entity Depth View
     if ( is_front_page() ) {
-        echo ' '. 'front-view';
+        $css[] = 'front-view';
     } else {
-        echo ' '. 'inner-view';
+        $css[] = 'inner-view';
     }
 
     // Entity Granularity View
     if ( is_singular() ) {
-        echo ' '. 'singular-view';
+        $css[] = 'singular-view';
     } else {
-        echo ' '. 'plural-view';
-        echo ' '. 'hfeed';
+        $css[] = 'plural-view';
+        $css[] = 'hfeed';
     }
     
     // Entity Nav
     if ( ! has_nav_menu( 'primary-nav' ) ) {
-        echo ' '. 'entity-primary-nav--default';
+        $css[] = 'entity-primary-nav--default';
     } else {
-        echo ' '. 'entity-primary-nav--custom';
+        $css[] = 'entity-primary-nav--custom';
     }
     
     // Entity Name Population Status
     if ( get_bloginfo( 'name', 'display' ) ) {
-        echo ' '. 'entity-name--populated';
+        $css[] = 'entity-name--populated';
     } else {
-        echo ' '. 'entity-name--empty';
+        $css[] = 'entity-name--empty';
     }
 
     // Entity Description Population Status
     if ( get_bloginfo( 'description', 'display' ) ) {
-        echo ' '. 'entity-description--populated';
+        $css[] = 'entity-description--populated';
     } else {
-        echo ' '. 'entity-description--empty';
+        $css[] = 'entity-description--empty';
     }
     
     // Entity Name, Entity Description Ability Status
     if ( 'blank' === get_header_textcolor() ) {
-        echo ' '. 'entity-name-description--disabled';
+        $css[] = 'entity-name-description--disabled';
     } else {
-        echo ' '. 'entity-name-description--enabled';
+        $css[] = 'entity-name-description--enabled';
     }
 
     // Entity Logo Ability Status
     if ( has_custom_logo() ) {
-        echo ' '. 'entity-logo--enabled';
+        $css[] = 'entity-logo--enabled';
     } else {
-        echo ' '. 'entity-logo--disabled';
+        $css[] = 'entity-logo--disabled';
     }
     
     // Entity Banner Visuals Ability Status
     if ( has_header_image() ) {
-        echo ' '. 'entity-banner-visuals--enabled';
+        $css[] = 'entity-banner-visuals--enabled';
     } else {
-        echo ' '. 'entity-banner-visuals--disabled';
+        $css[] = 'entity-banner-visuals--disabled';
     }
 
     /**
@@ -136,24 +136,46 @@ function ntt_html_css() {
 
         // Entry Type View
         if ( is_single() && ! is_attachment() ) {
-            echo ' '. 'post-view';
+            $css[] = 'post-view';
         } elseif ( is_page() && ! is_front_page() ) {
-            echo ' '. 'page-view';
+            $css[] = 'page-view';
         } elseif ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
-            echo ' '. 'front-page-view';
+            $css[] = 'front-page-view';
         } elseif ( is_attachment() ) {
-            echo ' '. 'attachment-view';
+            $css[] = 'attachment-view';
         } elseif ( is_404() ) {
-            echo ' '. 'unreachable-content-view';
+            $css[] = 'unreachable-content-view';
         } else {
-            echo ' '. 'miscellaneous-view';
+            $css[] = 'miscellaneous-view';
+        }
+    }
+
+    /**
+     * Page Entry
+     */
+    
+    // Sub-Pages Page Template Name
+    if ( is_page_template( 'page-templates/sub-pages-page-template.php' ) ) {
+        $css[] = 'sub-pages-view';
+    }
+
+    // Page Template Name
+    // Page Template Specificity
+    if ( is_page() ) {
+        $template_file = get_post_meta( get_the_ID(), '_wp_page_template', TRUE );
+
+        if ( $template_file ) {
+            $css[] = 'specific-page-template';
+            $css[] = esc_attr( sanitize_title( $template_file ) ). '-page-template';
+        } else {
+            $css[] = 'generic-page-template';
         }
     }
 
     /**
      * Comments
      */ 
-    comments_css_status();
+    comments_css();
 
     /**
      * Entries
@@ -161,7 +183,7 @@ function ntt_html_css() {
     if ( is_archive() ) {
 
         // Post Format
-        $r_archives = array(
+        $r = array(
             is_author()     => 'author',
             is_category()   => 'category',
             is_date()       => 'date',
@@ -169,42 +191,27 @@ function ntt_html_css() {
             is_tag()        => 'tag',
         );
 
-        foreach ( $r_archives as $key => $archive ) {
+        foreach ( $r as $key => $val ) {
 
             if ( $key ) {
-                echo ' '. $archive. '-view';
+                $css[] = $val. '-view';
             }
         }
     }
 
-    // Entries Type
+    // Entries Indexing Type
     if ( is_home() ) {
-        echo ' '. 'index-view';
+        $css[] = 'current-index-view';
     } elseif ( is_archive() ) {
-        echo ' '. 'archive-view';
-    }
-    
-    // Sub-Pages Page Template
-    if ( is_page_template( 'page-templates/sub-pages.php' ) ) {
-        echo ' '. 'sub-pages-view';
-    }
-
-    // Page Template
-    if ( is_page() ) {
-        $template_file = get_post_meta( get_the_ID(), '_wp_page_template', TRUE );
-
-        if ( $template_file ) {
-            echo ' '. 'specific-page-template';
-            echo ' '. esc_attr( sanitize_title( $template_file ) ). '-page-template';
-        } else {
-            echo ' '. 'generic-page-template';
-        }
+        $css[] = 'archive-index-view';
+    } elseif( is_search() ) {
+        $css[] = 'custom-index-view';
     }
 
     /**
      * Widgets Ability Status
      */
-    $r_widgets = array(
+    $r = array(
         'entity-primary-axns',
         'entity-header-aside',
         'entity-banner-aside',
@@ -216,13 +223,15 @@ function ntt_html_css() {
         'entry-main-aside',
     );
 
-    foreach ( $r_widgets as $widgets ) {
+    foreach ( $r as $val ) {
         
-        if ( is_active_sidebar( $widgets ) ) {
-            echo ' '. esc_attr( $widgets ). '--enabled';
+        if ( is_active_sidebar( $val ) ) {
+            $css[] = esc_attr( $val ). '--enabled';
         } else {
-            echo ' '. esc_attr( $widgets ). '--disabled';
+            $css[] = esc_attr( $val ). '--disabled';
         }
     }
+
+    echo ' '. implode( ' ', $css );
 }
 add_action( 'ntt_html_css_wp_hook', 'ntt_html_css');
