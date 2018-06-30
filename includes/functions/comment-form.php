@@ -5,7 +5,7 @@ function ntt_comment_form( $fields ) {
     $req = get_option( 'require_name_email' );
     $aria_req = ( $req ? ' '. 'required'. ' ' : '' );
     
-    $optional_note = ' '. '<span class="optional-note-txt optional---txt txt">'. __( 'Optional', 'ntt' ). '</span>';
+    $optional_note = ' '. '<span class="optional-note-txt txt">'. __( 'Optional', 'ntt' ). '</span>';
     $optional = ( $req ? '' : $optional_note );
 
     // Comment Author Name

@@ -12,28 +12,6 @@
     }
 }
 
-.comment-reply-axn {
-
-    .axn---line {
-        @include y-center-ib;
-    }
-
-    .note---line {
-        @extend %inline-note;
-    }
-
-    @at-root .comment-reply-login {
-        
-        &:hover {
-            text-decoration: none;
-
-            .axn---line {
-                text-decoration: underline;
-            }
-        }
-    }
-}
-
 .compose-comment-name {
     @include name();
 }

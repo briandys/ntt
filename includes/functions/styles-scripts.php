@@ -7,6 +7,9 @@ function ntt_styles_scripts() {
     
     add_editor_style( array( 'assets/css/editor-style.css', ) );
 
+    wp_enqueue_script( 'ntt-html5-script', get_template_directory_uri(). '/assets/scripts/html5.js', null, null, true );
+	wp_script_add_data( 'ntt-html5-script', 'conditional', 'lt IE 9' );
+
     wp_enqueue_script( 'ntt-script', get_template_directory_uri(). '/assets/scripts/ntt.js', array( 'jquery', ), null, true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

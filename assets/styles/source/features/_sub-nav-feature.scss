@@ -107,8 +107,22 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             visibility: hidden;
             height: 0;
         }
+    }
 
-        .page_item,
+    .children {
+        
+        .page_item {
+            @include x-padding();
+
+            a {
+                @include x-padding($m-gutter);
+            }
+        }
+
+    }
+
+    .sub-menu {
+
         .menu-item {
             @include x-padding();
 
@@ -126,14 +140,23 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             white-space: nowrap;
         }
 
-        .entity-primary-nav-group {
+        .entity-primary-nav-group---cr {
 
             > li {
 
+                // Sub-Nav
                 > ul {
 
                     ul {
                         transform: translate(1rem, -.5rem);
+                    }
+
+                    .page_item_has_children,
+                    .menu-item-has-children {
+
+                        > a {
+                            padding-right: $min-aa;
+                        }
                     }
 
                 }

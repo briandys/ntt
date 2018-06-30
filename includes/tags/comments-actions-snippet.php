@@ -89,10 +89,10 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                     $comment_creation_content = '<div class="add-comment-axn add-axn axn obj" data-name="Add Comment Action">';
                         $comment_creation_content .= '<a href="'. esc_url( $href ).'" class="add-comment-axn---a a" title="'. esc_attr__( 'Add Comment', 'ntt' ).'">';
                         $comment_creation_content .= '<span class="add-comment-axn---l l">';
-                                $comment_creation_content .= '<span class="axn---line line"><span class="add-comment---txt txt">'. esc_html__( 'Add Comment', 'ntt' ).'</span></span>';
+                                $comment_creation_content .= '<span class="axn---line line"><span class="add---txt txt">'. esc_html_x( 'Add', 'Object: Add Comment Action | Usage: >Add< Comment', 'ntt' ). '</span><span class="comment---txt txt">'. esc_html_x( 'Comment', 'Object: Add Comment Action | Usage: Add >Comment<', 'ntt' ). '</span></span>';
                             
                             if ( ! is_user_logged_in() && get_option( 'comment_registration' ) ) {
-                                $comment_creation_content .= ' '. '<span class="note---line line"><span class="note---txt txt">'. esc_html__( 'requires Log In', 'ntt' ). '</span></span>';
+                                $comment_creation_content .= ' '. '<span class="requires-log-in-note---txt txt">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>';
                             }
                             
                             $comment_creation_content .= '</span>';

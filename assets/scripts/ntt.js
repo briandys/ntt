@@ -1,3 +1,59 @@
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+      'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+      'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+      'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+      'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+  
+    while (length--) {
+      method = methods[length];
+  
+      // Only stub undefined methods.
+      if (!console[method]) {
+        console[method] = noop;
+      }
+    }
+}());
+
+/**
+ * File skip-link-focus-fix.js.
+ *
+ * Helps with accessibility for keyboard only users.
+ *
+ * Learn more: https://git.io/vWdr2
+ */
+(function() {
+	var isIe = /(trident|msie)/i.test( navigator.userAgent );
+
+	if ( isIe && document.getElementById && window.addEventListener ) {
+		window.addEventListener( 'hashchange', function() {
+			var id = location.hash.substring( 1 ),
+				element;
+
+			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
+				return;
+			}
+
+			element = document.getElementById( id );
+
+			if ( element ) {
+				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
+					element.tabIndex = -1;
+				}
+
+				element.focus();
+			}
+		}, false );
+	}
+})();
+
+
 var $document,
     $window,
     $html,
@@ -185,10 +241,10 @@ var $document,
     /**
      * Sub-Nav Feature
      */
-    function subNav( $cp ) {
+    function subNav( $elem ) {
 
         if ( $html.hasClass( 'ntt-sub-nav-f5e' ) ) {
-            $cp.addClass( 'sub-nav-f5e' );
+            $elem.addClass( 'sub-nav-f5e' );
         } else {
             return;
         }
@@ -204,7 +260,7 @@ var $document,
             $subNavButton,
             $subNavFeature = $( '.sub-nav-f5e' );
         
-        $cp.find( $children ).before(
+        $elem.find( $children ).before(
             htmlOkFn.buttonObj(
                 'sub-nav-toggle-axn',
                 'toggle-axn axn',
@@ -215,7 +271,10 @@ var $document,
             )
         );
 
-        $subNavButton = $cp.find( '.sub-nav-toggle-axn---a' );
+        $subNavButton = $elem.find( '.sub-nav-toggle-axn---a' );
+
+        // Define structure by adding CSS class names
+        $elem.find( 'ul' ).first().addClass( 'first-ul' );
 
         // Functions
         subNavFn = {
@@ -299,7 +358,7 @@ var $document,
                     'title': showText
                 } );
 
-                $cp.find( '.toggle-sub-nav---txt' ).text( showText );
+                $elem.find( '.toggle-sub-nav---txt' ).text( showText );
 
                 $subNavFeature
                     .addClass( 'off-f5e' )
@@ -347,19 +406,19 @@ var $document,
             if ( $parent.hasClass( 'inactive-sub-nav' ) ) {
                 subNavFn.on.apply( this );
                 
-                if ( $cp.is( $entityNav ) ) {
+                if ( $elem.is( $entityNav ) ) {
                     subNavFn.subNavSiblingsOff.apply( this );
                 }
             
             } else if ( $parent.hasClass( 'active-sub-nav' ) ) {
                 subNavFn.off.apply( this );
                 
-                if ( $cp.is( $entityNav ) ) {
+                if ( $elem.is( $entityNav ) ) {
                     subNavFn.subNavSiblingsOn.apply( this );
                 }
             }
 
-            if ( $cp.is( $entityNav ) ) {
+            if ( $elem.is( $entityNav ) ) {
                 subNavFn.siblingsOff.apply( this );
             }
         } );
@@ -709,7 +768,7 @@ var $document,
     } ) ();
 
     /**
-     * Primary Menu
+     * Primary Menu Feature
      */
     ( function() {
 
@@ -880,26 +939,34 @@ var $document,
     } ) ();
 
     /**
-     * Go to Content Nav Feature
+     * Go to Content Navigation Feature
      */
     ( function() {
 
-        var $cp = $( '#go-content-nav' );
+        var $elem = $( '#go-content-nav' );
         
         if ( $html.hasClass( 'ntt-go-content-nav-f5e' ) ) {
-            $cp.addClass( 'go-content-nav-f5e' );
+            $elem.addClass( 'go-content-nav-f5e' );
         } else {
             return;
         }
         
-        var $navi = $cp.find( '.go-content-navi---a' );
+        var $navi = $elem.find( '.go-content-navi---a' );
+
+        // Create Overlay
+        $wildCardCr.append(
+            htmlOkFn.overlayObj(
+                'go-content-nav-overlay',
+                'Go to Content Navigation Overlay'
+            )
+        );
         
         // Functions
         goContentNavFn = {
             
             // Activate
             on: function() {
-                $cp
+                $elem
                     .addClass( 'go-content-nav--on' )
                     .removeClass( 'go-content-nav--off' );
                     
@@ -910,7 +977,7 @@ var $document,
             
             // Deactivate
             off: function() {
-                $cp
+                $elem
                     .addClass( 'go-content-nav--off' )
                     .removeClass( 'go-content-nav--on' );
 
@@ -922,9 +989,9 @@ var $document,
         
         goContentNavFn.off();
 
-        if ( $cp.hasClass( 'go-content-nav--on' ) ) {
+        if ( $elem.hasClass( 'go-content-nav--on' ) ) {
             
-        } else if ( $cp.hasClass( 'go-content-nav--off' ) ) {
+        } else if ( $elem.hasClass( 'go-content-nav--off' ) ) {
             $html
                 .addClass( 'ntt-go-content-nav--off' )
                 .removeClass( 'ntt-go-content-nav--on' );
@@ -945,7 +1012,7 @@ var $document,
 
         // User Action: ESC Key
         $document.on( 'keyup.ntt', function ( e ) {
-            if ( $html.hasClass( 'window--loaded' ) && $cp.hasClass( 'go-content-nav--on' ) && e.keyCode == 27 ) {
+            if ( $html.hasClass( 'window--loaded' ) && $elem.hasClass( 'go-content-nav--on' ) && e.keyCode == 27 ) {
                 goContentNavFn.off();
                 $navi.blur();
             }
@@ -955,7 +1022,6 @@ var $document,
     ( function() {
         var $textWidget = $( '.textwidget' ),
             $htmlWidgetContent,
-            $content = $( '.content---cr' ),
             $contentP = $content.find( '> p' ),
             $visuals,
             $visualsA,
@@ -995,11 +1061,16 @@ var $document,
         wrapTextNode( $content );
         wrapTextNode( $contentP );
 
+        removeEmpty( $content.find( '.txt' ) );
+
         $contentAll = $content.children();
         removeEmpty( $contentAll );
 
+        $content.find( 'img' ).on( "error", function() {
+            $( this ).addClass( 'unloaded-visuals---img');
+        } );
+
         // Content Images
-        
         // <a><img></a>
         $contentImg.each( function() {
             var $this = $( this );

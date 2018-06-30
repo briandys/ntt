@@ -42,13 +42,8 @@ if ( get_the_title() ) {
                             </div>
                         </div>
 
-                        <div class="cm-axns-trunk entry-axns axns-trunk axns cp" data-name="Entry Actions">
-                            <div class="cm-axns-trunk---cr entry-axns---cr">
-                                <?php ntt_entry_admin_actions(); ?>
-                            </div>
-                        </div>
-
                         <?php
+                        ntt_entry_admin_actions();
                         ntt_breadcrumbs_nav();
                         ntt_entry_content_nav();
                         ntt_entry_meta_primary();

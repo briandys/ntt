@@ -47,9 +47,10 @@
 
 .entity-primary-nav---cr {
     @extend %entity-header;
+    min-height: $min-aa;
 }
 
-.entity-primary-nav-group {
+.entity-primary-nav-group---cr {
     display: flex;
     flex-wrap: wrap;
 
@@ -66,7 +67,7 @@
 // Entity Secondary Navigation
 //--------------------------------------------------------------
 
-.entity-secondary-nav-group {
+.entity-secondary-nav-group---cr {
     display: flex;
     flex-wrap: wrap;
 

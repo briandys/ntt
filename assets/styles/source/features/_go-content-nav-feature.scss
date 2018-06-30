@@ -3,12 +3,8 @@
     &.dom--unready {
     
         .go-content-navi {
-            display: none;
+            visibility: hidden;
         }
-    }
-
-    &.ntt-go-content-nav--on {
-        overflow: hidden;
     }
 }
 
@@ -26,4 +22,13 @@
             @extend %vh;
         }
     }
+}
+
+.ntt-go-content-nav--on {
+    overflow: hidden;
+   
+    .go-content-nav-overlay {
+       @extend %overlay;
+       background-color: $paper-color;
+   }
 }

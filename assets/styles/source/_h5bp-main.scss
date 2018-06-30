@@ -137,15 +137,13 @@ textarea {
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
     height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap;
+    white-space: nowrap; /* 1 */
 }
 
 /*
@@ -157,8 +155,6 @@ textarea {
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;
-    -webkit-clip-path: none;
-    clip-path: none;
     height: auto;
     margin: 0;
     overflow: visible;
@@ -189,8 +185,8 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
 
 .clearfix:after {
@@ -217,7 +213,7 @@ textarea {
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
+   https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
 @media print {
@@ -225,8 +221,8 @@ textarea {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }

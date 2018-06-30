@@ -6,7 +6,7 @@ function ntt_custom_theme_colors_style_tag() {
         return;
     }
 
-    require( get_parent_theme_file_path( '/includes/functions/customizer-color-patterns.php' ) );
+    require( get_parent_theme_file_path( '/includes/functions/wp-customizer-color-patterns.php' ) );
 
     $hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) ); ?>
 
@@ -14,5 +14,6 @@ function ntt_custom_theme_colors_style_tag() {
         <?php echo ntt_wp_customizer_color_patterns(); ?>
     </style>
 
-<?php }
+    <?php
+}
 add_action( 'wp_head', 'ntt_custom_theme_colors_style_tag' );

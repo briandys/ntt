@@ -1,0 +1,22 @@
+{
+    "name": "Rokkite",
+    "short_name": "Kite",
+    "description": "Kite is a dumb Virtual Assistant.",
+    "lang": "en-US",
+    "start_url": "/?homescreen=1",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#0f4a73",
+    "icons": [
+        {
+            "src": "/assets/visuals/ntt-icon--m.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/visuals/ntt-icon--l.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+  }

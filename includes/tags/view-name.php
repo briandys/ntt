@@ -8,40 +8,39 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
         $anchor_start = '';
         $anchor_end = '';
         
-        // View Level: Item
-        if ( is_singular() ) {
+        // View Granularity: Singular
+        if ( is_singular() || is_404() ) {
 
             $property_suffix = 'Entry';
             $property = '<span class="entry---txt txt">'. $property_suffix. '</span>';
 
-            if ( is_single() && ! is_attachment() ) {
+            if ( is_single() ) {
                 $value = 'Post';
-            } elseif ( is_page() && ! is_front_page() ) {
+            } elseif ( is_page() ) {
                 $value = 'Page';
-            } elseif ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
-                $value = 'Front Page';
             } elseif ( is_attachment() ) {
                 $value = 'Attachment';
-            } elseif ( is_404() ) {
-                $value = 'Page Not Found';
-            } else {
-                $value = 'Miscellaneous';
+            }
+            
+            if ( is_404() ) {
+                $value = 'Enreachable Resource';
             }
 
             $value = '<span class="'. sanitize_title( $value ).'---txt txt">'. $value. '</span>';
 
-        // View Level: Group (Indexed)
-        } else {
+        // View Granularity: Plural
+        } elseif ( is_home() || is_archive() ) {
 
             $property_suffix = 'Entries';
             $property = '<span class="entries---txt txt">'. $property_suffix. '</span>';
 
-            // Indexing Type: Current
+            // Current Index
             if ( is_home() ) {
                 $value = 'Current';
+            }
             
-            // Indexing Type: Archive
-            } elseif ( is_archive() ) {
+            // Archive Index
+            if ( is_archive() ) {
 
                 $href_attr = '';
                 $property_prefix = '';
@@ -96,13 +95,12 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
 
                 $property = '<span class="'. sanitize_title( $property_prefix ). '---txt txt">'. $property_prefix. '</span>'. ' '. '<span class="archive---txt txt">Archive</span>';
 
-            } else {
-                $property = 'Miscellaneous';
             }
 
             $value = '<span class="'. sanitize_title( $value ).'---txt txt">'. $value. '</span>';
 
-        } ?>
+        }
+        ?>
 
         <h2 class="view-name name obj h" data-name="View Name">
             <?php echo $anchor_start; ?>

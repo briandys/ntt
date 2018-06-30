@@ -55,7 +55,19 @@ function ntt_html_css() {
     // WP Customizer
     if ( is_customize_preview() ) {
 		$css[] = 'wp-customizer';
-	}
+    }
+    
+    // WP User Dashboard Status
+    if ( is_user_logged_in() ) {
+		$css[] = 'wp-user--logged-in';
+    } else {
+        $css[] = 'wp-user--logged-out';
+    }
+
+    // WordPress User Capability Status
+    if ( current_user_can( 'editor' ) ) {
+        $css[] = 'wp-user--editor';
+    }
 
     // WP Customizer Color Scheme
     $colors = ntt_wp_customizer_color_scheme_sanitizer( get_theme_mod( 'colorscheme', 'default' ) );
@@ -77,14 +89,6 @@ function ntt_html_css() {
         $css[] = 'front-view';
     } else {
         $css[] = 'inner-view';
-    }
-
-    // Entity Granularity View
-    if ( is_singular() ) {
-        $css[] = 'singular-view';
-    } else {
-        $css[] = 'plural-view';
-        $css[] = 'hfeed';
     }
     
     // Entity Nav
@@ -132,22 +136,31 @@ function ntt_html_css() {
     /**
      * Entry
      */
+
+    // Entry Granularity View
+    if ( is_singular() ) {
+        $css[] = 'singular-view';
+    } else {
+        $css[] = 'plural-view';
+        $css[] = 'hfeed';
+    }
+    
+    // Entry Type View
+    // Entry Name / Title
     if ( is_singular() ) {
 
-        // Entry Type View
-        if ( is_single() && ! is_attachment() ) {
-            $css[] = 'post-view';
-        } elseif ( is_page() && ! is_front_page() ) {
-            $css[] = 'page-view';
-        } elseif ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
-            $css[] = 'front-page-view';
-        } elseif ( is_attachment() ) {
-            $css[] = 'attachment-view';
-        } elseif ( is_404() ) {
-            $css[] = 'unreachable-content-view';
+        if ( $post->post_title ) {
+            $post_name = $post->post_name;
         } else {
-            $css[] = 'miscellaneous-view';
+            $post_name = 'entry'. '-'. $post->post_name;
         }
+
+        $css[] = esc_attr( $post->post_type ). '-view';
+        $css[] = esc_attr( $post_name. '-'. $post->post_type ). '-view';
+    }
+    
+    if ( is_404() ) {
+        $css[] = 'unreachable-content-view';
     }
 
     /**
@@ -206,6 +219,7 @@ function ntt_html_css() {
         $css[] = 'archive-index-view';
     } elseif( is_search() ) {
         $css[] = 'custom-index-view';
+        $css[] = 'search-results-view';
     }
 
     /**

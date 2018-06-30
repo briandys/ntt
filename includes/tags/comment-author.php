@@ -9,7 +9,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
             <div class="cm-author---cr comment-author---cr">
 
             <?php if ( get_comment_author_url() ) {
-                $anchor_tag_start = '<a href="'. get_comment_author_url(). '" class="comment-author-name---a p-name u-url a" title="'. $comment_author. '">';
+                $anchor_tag_start = '<a href="'. get_comment_author_url(). '" class="comment-author-name---a p-name u-url a">';
                 $anchor_tag_end = '</a>';
                 
             } else {
@@ -18,19 +18,19 @@ if ( ! function_exists( 'ntt_comment_author') ) {
             } ?>
 
                 <span class="cm-glabel commented-by-glabel glabel obj">
-                    <span class="commented---txt txt "><?php echo esc_html_x( 'Commented', 'Component: Comment Author | Usage: >Commented< by <Author Name>', 'ntt' ); ?></span>
-                    <span class="by---txt txt "><?php echo esc_html_x( 'by', 'Component: Comment Author | Usage: Commented >by< <Author Name>', 'ntt' ); ?></span>
+                    <span class="commented---txt txt "><?php echo esc_html_x( 'Commented', 'Component: Comment Author | Usage: >Commented< by <Comment Author Name>', 'ntt' ); ?></span>
+                    <span class="by---txt txt "><?php echo esc_html_x( 'by', 'Component: Comment Author | Usage: Commented >by< <Comment Author Name>', 'ntt' ); ?></span>
                 </span>
                 
                 <span class="cm-author-name comment-author-name author-name name obj" data-name="Comment Author Name">
                     <?php echo $anchor_tag_start; ?>
-                        <span class="comment-author-name---l l">
+                        <span class="comment-author-name---l l" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                             <span class="comment-author-name---txt txt"><?php echo esc_html( $comment_author ); ?></span>
                         </span>
                     <?php echo $anchor_tag_end; ?>
                 </span>
 
-                <span class="cm-avatar comment-author-avatar author-avatar avatar obj" data-name="Comment Author Avatar">
+                <span class="cm-avatar comment-author-avatar author-avatar avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                     <?php echo $anchor_tag_start;
                     echo get_avatar(
                         $comment,

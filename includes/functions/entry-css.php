@@ -41,19 +41,6 @@ function ntt_entry_css( $classes ) {
             $classes[] = esc_attr( $post_format ). '-post';
         }
     }
-        
-    // Entry Name / Title
-    if ( isset( $post ) ) {
-
-        if ( $post->post_title ) {
-            $post_name = $post->post_name;
-        } else {
-            $post_name = 'entry'. '-'. $post->post_name;
-        }
-
-        $classes[] = esc_attr( $post->post_type ). '-entry';
-        $classes[] = esc_attr( $post_name. '-'. $post->post_type ). '-entry';
-    }
 
     // Entry Name Population Status
     if ( get_the_title() ) {

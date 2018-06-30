@@ -62,9 +62,9 @@ $comment_field_mu = '<div class="field comment-message cp" data-name="Comment Me
 $comment_field_mu .= '</div>';
 
 // cancel_reply_link
-$cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l l">';
-$cancel_reply_link_mu .= '<span class="cancel---txt txt">'. esc_html__( 'Cancel', 'ntt' ).'</span>';
-$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt txt">'. esc_html__( 'Reply to Comment', 'ntt' ).'</span>';
+$cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l l" title="'. esc_attr_x( 'Cancel Reply to Comment', 'Usage: Cancel Reply to Comment | Component: Comment Respond', 'ntt' ). '">';
+$cancel_reply_link_mu .= '<span class="cancel---txt txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt txt">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>'; ?>
 
 <section class="cm comment-md md" data-name="Comment Module">
@@ -148,7 +148,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
             // Submit Comment Action
             'id_submit'                 => 'submit-comment-axn---a',
             'class_submit'              => 'submit-comment-axn---a a b',
-            'label_submit'              => esc_attr_x( 'Submit', 'Component: Comment Form | Usage: >Submit< Comment', 'ntt' ),
+            'label_submit'              => esc_attr_x( 'Submit', 'Component: Comment Respond | Usage: >Submit< Comment', 'ntt' ),
         
             // Notes
             'comment_notes_before'      => '',

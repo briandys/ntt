@@ -1,3 +1,10 @@
+.entity-heading {
+
+    .dom--unready & {
+        visibility: hidden;
+    }
+}
+
 // To take them off the grid
 .wild-card,
 .entity-start,
@@ -182,7 +189,7 @@
     }
 }
 
-.entity-secondary-info---cr {
+.entity-secondary-info {
     padding: $m-gutter;
 
     .ntt-go-start-nav-f5e & {

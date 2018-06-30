@@ -5,10 +5,11 @@ register_nav_menu( 'primary-nav', __( 'Primary Navigation', 'ntt' ) );
 if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
     function ntt_entity_primary_nav() {
         
-        $group_mu_start = '<ul class="entity-primary-nav-group group list">';
+        $group_mu_start = '<ul class="entity-primary-nav-group---cr">';
         $group_mu_end = '</ul>';
         $label_mu_start = '<span class="entity-primary-navi---l l"><span class="navi---txt txt">';
         $label_mu_end = '</span></span>';
+        $entity_primary_nav_group_css = 'entity-primary-nav-group nav-group group';
         
         if ( wp_nav_menu( array( 'theme_location' => 'primary-nav', 'echo' => false, ) ) !== false) { ?>
 
@@ -29,7 +30,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
                         Sub Navigation <ul class="children">
                         */
                         wp_page_menu( array(
-                            'menu_class'        => 'menu',
+                            'menu_class'        => $entity_primary_nav_group_css,
                             'link_before'       => $label_mu_start,
                             'link_after'        => $label_mu_end,
                             'show_home'         => true,
@@ -47,7 +48,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
                         wp_nav_menu( array(
                             'theme_location'    => 'primary-nav',
                             'container'         => 'div',
-                            'container_class'   => 'menu',
+                            'container_class'   => $entity_primary_nav_group_css,
                             'link_before'       => $label_mu_start,
                             'link_after'        => $label_mu_end,
                             'items_wrap'        => $group_mu_start. '%3$s'. $group_mu_end,
@@ -75,10 +76,10 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
                     <?php wp_nav_menu( array(
                         'theme_location'    => 'secondary-nav',
                         'container'         => 'div',
-                        'container_class'   => 'menu',
+                        'container_class'   => 'entity-secondary-nav-group nav-group group',
                         'link_before'       => '<span class="entity-secondary-navi---l l"><span class="navi---txt txt">',
                         'link_after'        => '</span></span>',
-                        'items_wrap'        => '<ul class="entity-secondary-nav-group nav-group group list">'. '%3$s'. '</ul>',
+                        'items_wrap'        => '<ul class="entity-secondary-nav-group---cr">'. '%3$s'. '</ul>',
                     ) ); ?>
                 </div>
             </div>

@@ -1,68 +1,50 @@
 //--------------------------------------------------------------
 // Content Module
 //--------------------------------------------------------------
-.cm {
+.cm-name {
+    padding: $m-gutter;
+    font-size: 2em;
 
-    &-nav {
-        flex-basis: 100%;
+    .a {
+        @extend %aa;
     }
 
-    &-meta {
-        flex-basis: 100%;
+    .l {
+        word-break: break-word;
     }
+}
 
-    &-axns {
+.cm-author {
+    @include m-x-gutter;
 
-        &-trunk {
-            flex-basis: 100%;
-        }
+    .a {
+        @extend %aa;
     }
+}
 
-    &-name {
-        padding: $m-gutter;
-        font-size: 2em;
+.cm-author-name {
+    @include y-center-ib;
+}
 
-        .a {
-            @extend %aa;
-        }
-
-        .l {
-            word-break: break-word;
-        }
-    }
-
-    &-author {
-        @include m-x-gutter;
-
-        .a {
-            @extend %aa;
-        }
-    }
-
-    &-author-name {
-        @include y-center-ib;
-    }
-
-    &-avatar {
-        @include y-center-ib;
-        line-height: 0;
-        
-        .img {
-            border-radius: 50%;
-        }
-    }
-
-    &-datetime {
-        @include m-x-gutter;
-    }
+.cm-avatar {
+    @include y-center-ib;
+    line-height: 0;
     
-    &-date {
-        @include y-center-ib;
+    .img {
+        border-radius: 50%;
     }
-    
-    &-time {
-        @include y-center-ib;
-    }
+}
+
+.cm-datetime {
+    @include m-x-gutter;
+}
+
+.cm-date {
+    @include y-center-ib;
+}
+
+.cm-time {
+    @include y-center-ib;
 }
 
 .entry-published-on-glabel {

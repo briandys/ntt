@@ -10,6 +10,7 @@ function ntt_features_scripts() {
     $ellipsis_icon = ntt_get_svg( array( 'icon' => 'ellipsis-icon', ) );
     $burger_icon = ntt_get_svg( array( 'icon' => 'burger-icon', ) );
     $plus_icon = ntt_get_svg( array( 'icon' => 'plus-icon', ) );
+    $pencil_icon = ntt_get_svg( array( 'icon' => 'pencil-icon', ) );
 
     $ntt_l10n = array(
         'showSubNavText'    => __( 'Show Sub-Nav', 'ntt' ),
@@ -29,6 +30,7 @@ function ntt_features_scripts() {
         
         'requiredText'  => __( 'Required', 'ntt' ),
         'submitText'    => __( 'Submit', 'ntt' ),
+        'editText'      => __( 'Edit', 'ntt' ),
         
         'downArrowheadIcon'     => $down_arrowhead_icon,
         'upArrowheadIcon'       => $up_arrowhead_icon,
@@ -38,6 +40,7 @@ function ntt_features_scripts() {
         'ellipsisIcon'          => $ellipsis_icon,
         'burgerIcon'            => $burger_icon,
         'plusIcon'              => $plus_icon,
+        'pencilIcon'            => $pencil_icon,
     );
 
     wp_localize_script( 'ntt-script', 'nttData', $ntt_l10n );

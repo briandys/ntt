@@ -51,9 +51,9 @@ p > object:only-child {
 }
 
 #wp-comment-cookies-consent {
-	margin-right: 0;
-	max-width: $min-aa;
-	max-height: $min-aa;
+	width: $m-gutter;
+	@include min-dimensions($m-gutter, auto);
+	@include max-dimensions($min-aa);
 }
 
 .wp-admin-bar--enabled {

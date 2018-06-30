@@ -37,6 +37,10 @@ $m-line-height: 1.6;
 $active-layer: 100;
 $character-space: .3em;
 
+$scale-s: scale(1.0625);
+
+$radius-s: .125em;
+
 //--------------------------------------------------------------
 // Generic Variables
 //--------------------------------------------------------------
@@ -172,6 +176,16 @@ $caption-fg-color: $gray;
     height: $h;
 }
 
+@mixin min-dimensions($w: auto, $h: $w) {
+    min-width: $w;
+    min-height: $h;
+}
+
+@mixin max-dimensions($w: none, $h: $w) {
+    max-width: $w;
+    max-height: $h;
+}
+
 @mixin space {
     
     & > * {
@@ -186,6 +200,17 @@ $caption-fg-color: $gray;
 @mixin y-center-ib {
     display: inline-block;
     vertical-align: middle;
+}
+
+@mixin y-center($method: '') {
+    @if $method == 'position-absolute' {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    } @else {
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 @mixin name($fs: 1em, $fw: bold) {
@@ -223,6 +248,24 @@ $caption-fg-color: $gray;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin color($bg: $paper-color, $fg: $ink-color) {
+    background-color: $bg;
+    color: $fg;
+}
+
+@mixin transition {
+    transition: all .2s;
+}
+
+@mixin corner-radius($tl: 0, $tr: $tl, $br: $tl, $bl: $tl) {
+    border: {
+        top-left-radius: $tl;
+        top-right-radius: $tr;
+        bottom-right-radius: $br;
+        bottom-left-radius: $bl;
+    }
 }
 
 //--------------------------------------------------------------
