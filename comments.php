@@ -107,7 +107,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
                     <?php } else { ?>
                         <div class="empty-comments-note note cp" data-name="Empty Comments Note">
                             <div class="empty-comments-note---cr note---cr">
-                                <p><?php echo esc_html_x( 'There are no comments.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' ); ?></p>
+                                <p><?php echo esc_html_x( 'Be the first to comment.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' ); ?></p>
                             </div>
                         </div>
                     <?php } ?>

@@ -22,14 +22,6 @@ tbody {
 	}
 }
 
-th, td {
-
-	> *:not(img) {
-		display: inline-block;
-		padding: 1rem;
-	}
-}
-
 td {
 	vertical-align: top;
 }

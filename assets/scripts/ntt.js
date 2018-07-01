@@ -239,7 +239,7 @@ var $document,
     }
 
     /**
-     * Sub-Nav Feature
+     * Sub-Navigation Feature
      */
     function subNav( $elem ) {
 
@@ -258,7 +258,11 @@ var $document,
             icon = $( nttData.downArrowheadIcon ),
             $parent,
             $subNavButton,
-            $subNavFeature = $( '.sub-nav-f5e' );
+            $subNavFeature = $( '.sub-nav-f5e' ),
+            $navTrunk = $elem.find( 'ul' ).first(),
+            $navBranch = $navTrunk.find( 'ul' ),
+            $navItem = $elem.find( 'li' ),
+            $currentNavItem = $elem.find( '.current_page_item, .current-menu-item' );
         
         $elem.find( $children ).before(
             htmlOkFn.buttonObj(
@@ -274,7 +278,10 @@ var $document,
         $subNavButton = $elem.find( '.sub-nav-toggle-axn---a' );
 
         // Define structure by adding CSS class names
-        $elem.find( 'ul' ).first().addClass( 'first-ul' );
+        $navTrunk.addClass( 'nav-trunk' );
+        $navBranch.addClass( 'nav-branch' );
+        $navItem.addClass( 'navi' );
+        $currentNavItem.addClass( 'navi--current' );
 
         // Functions
         subNavFn = {
@@ -606,7 +613,7 @@ var $document,
     } ) ();
 
     /**
-     * Overflow Actions
+     * Overflow Actions Feature
      */
     ( function() {
 
@@ -623,6 +630,7 @@ var $document,
         var $cr = $elem.children(),
             $overflowActions,
             $overflowActionsGroup,
+            $overflowActionsGroupCr,
             toggleText = nttData.toggleActionsText,
             showText = nttData.showActionsText,
             hideText = nttData.hideActionsText,
@@ -653,6 +661,7 @@ var $document,
 
         $overflowActions = $elem.find( '.overflow-axns' );
         $overflowActionsGroup = $overflowActions.find( '.overflow-axns-group' );
+        $overflowActionsGroupCr = $overflowActionsGroup.find( '.overflow-axns-group---cr' );
 
         $cr.append( $overflowActions );
 
@@ -676,7 +685,8 @@ var $document,
 
             // Activate
             on: function() {
-                var $this = $( this );
+                var $this = $( this ),
+                    overflowActionsOffset;
 
                 $this.attr( {
                     'aria-expanded': 'true',
@@ -692,6 +702,11 @@ var $document,
                 $html
                     .addClass( nttF5eOn )
                     .removeClass( nttF5eOff );
+
+                // CSS Max Height
+                overflowActionsOffset = $overflowActionsGroupCr.offset().top + 'px';
+                
+                $overflowActionsGroupCr.css( 'max-height', 'calc( 100vh - ( ( 3rem + ' + overflowActionsOffset + ' ) - .5rem ) )' );
             },
 
             // Deactivate

@@ -260,12 +260,7 @@ $caption-fg-color: $gray;
 }
 
 @mixin corner-radius($tl: 0, $tr: $tl, $br: $tl, $bl: $tl) {
-    border: {
-        top-left-radius: $tl;
-        top-right-radius: $tr;
-        bottom-right-radius: $br;
-        bottom-left-radius: $bl;
-    }
+    border-radius: $tl $tr $br $bl;
 }
 
 //--------------------------------------------------------------

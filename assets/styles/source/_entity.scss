@@ -43,22 +43,22 @@
 }
 
 //--------------------------------------------------------------
-// View Info
+// View Heading
 //--------------------------------------------------------------
+.view-heading {
+
+    .page-view &,
+    .post-view & {
+        @extend %vh;
+    }
+}
 
 .view-name {
-
-    @include m-x-gutter;
-    @include m-y-gutter;
+    padding: $m-gutter;
 
     a {
         @extend %aa;
     }
-
-    .post-view & {
-        @extend %vh;
-    }
-
 }
 
 //--------------------------------------------------------------

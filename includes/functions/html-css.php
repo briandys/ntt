@@ -65,7 +65,7 @@ function ntt_html_css() {
     }
 
     // WordPress User Capability Status
-    if ( current_user_can( 'editor' ) ) {
+    if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
         $css[] = 'wp-user--editor';
     }
 
@@ -91,11 +91,19 @@ function ntt_html_css() {
         $css[] = 'inner-view';
     }
     
-    // Entity Nav
-    if ( ! has_nav_menu( 'primary-nav' ) ) {
-        $css[] = 'entity-primary-nav--default';
+    // Entity Primary Nav Population Status
+    if ( wp_nav_menu( array( 'theme_location' => 'primary-nav', 'echo' => false, ) ) !== false) {
+    
+        $css[] = 'entity-primary-nav--populated';
+
+        // Entity Primary Nav Type
+        if ( ! has_nav_menu( 'primary-nav' ) ) {
+            $css[] = 'entity-primary-nav--default';
+        } else {
+            $css[] = 'entity-primary-nav--custom';
+        }
     } else {
-        $css[] = 'entity-primary-nav--custom';
+        $css[] = 'entity-primary-nav--empty';
     }
     
     // Entity Name Population Status

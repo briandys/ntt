@@ -8,7 +8,8 @@ video {
   height: auto;
 }
 
-.post-view .view-name, .entity-name-description--disabled .entity-primary-name,
+.page-view .view-heading,
+.post-view .view-heading, .entity-name-description--disabled .entity-primary-name,
 .entity-name-description--disabled .entity-primary-description, .go-start-navi---txt, .go-content-nav-f5e.go-content-nav.go-content-nav--off, .go-start-nav-f5e .go-start-navi---txt, .overflow-axns-f5e .toggle-actions---txt, .primary-menu-f5e .toggle-menu---txt, .primary-menu-f5e .dismiss-menu---txt, .primary-search-f5e .widget-name,
 .primary-search-f5e .toggle-search---txt,
 .primary-search-f5e .search-field-label,
@@ -1041,10 +1042,7 @@ textarea {
 }
 
 .view-name {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 .entity-heading---cr {
@@ -1682,11 +1680,6 @@ table ul, table ol {
 tbody th {
   text-align: left;
   vertical-align: top;
-}
-
-th > *:not(img), td > *:not(img) {
-  display: inline-block;
-  padding: 1rem;
 }
 
 td {
