@@ -252,27 +252,26 @@ var $document,
             $navTrunkOverflownNavi,
             $navi,
             $navBranch,
-            $host,
+            $overflownNaviTrunk,
             icon = $( nttData.ellipsisIcon );
 
         $navTrunk.addClass( 'interim-overflow-nav' );
 
         $navTrunkNavi.each( function() {
             var $this = $( this ),
-                offset = parseInt( Math.round( $this.offset().left ) ),
-                width = parseInt( $this.outerWidth() ),
+                naviOffset = parseInt( Math.round( $this.offset().left ) ),
+                naviWidth = parseInt( $this.outerWidth() ),
                 buffer = 48,
-                offsetWidth;
+                naviOffsetWidth,
+                navWidth;
 
-            windowWidth = window.innerWidth - buffer;
-            offsetWidth = offset + width;
+            navWidth = $entityNav.width() - buffer;
+            naviOffsetWidth = naviOffset + naviWidth;
 
-            if ( offsetWidth > windowWidth ) {
+            if ( naviOffsetWidth > navWidth ) {
                 $this.addClass( 'overflown-navi' );
-                console.log( 'overflown-navi' );
             } else {
                 $this.addClass( 'primary-navi' );
-                console.log( 'primary-navi' );
             }
         } );
         
@@ -281,21 +280,20 @@ var $document,
             .removeClass( 'interim-overflow-nav' );
 
         $navTrunkOverflownNavi = $navTrunk.find( '.overflown-navi' );
-        console.log( $navTrunkOverflownNavi.length );
 
         $navBranch = $( '<ul />', {
             'class': 'children nav-branch',
         } );
 
         $navi = $( '<li />', {
-            'class': 'host page_item page_item_has_children navi inside'
+            'class': 'overflown-navi-trunk page_item page_item_has_children menu-item menu-item-has-children navi'
         } ).append( $navBranch );
 
         $navTrunkOverflownNavi.wrapAll( $navi );
 
-        $host = $( $elem ).find( '.host' );
+        $overflownNaviTrunk = $( $elem ).find( '.overflown-navi-trunk' );
 
-        $host.prepend(
+        $overflownNaviTrunk.prepend(
             htmlOkFn.buttonObj(
                 'sub-nav-toggle-axn',
                 'toggle-axn axn',
@@ -997,7 +995,6 @@ var $document,
         $toggle.on( 'click.ntt', function(e) {
             e.preventDefault();
 
-            console.log( 'click toggle' );
             primaryMenuFn.toggle();
         } );
 
@@ -1005,7 +1002,6 @@ var $document,
         $dismiss.on( 'click.ntt', function(e) {
             e.preventDefault();
 
-            console.log( 'click dismiss' );
             primaryMenuFn.off();
         } );
 

@@ -2534,8 +2534,29 @@ p > object:only-child {
   white-space: nowrap;
 }
 
-.sub-nav-f5e.entity-primary-nav .host > ul {
+.sub-nav-f5e.entity-primary-nav .overflown-navi-trunk > ul {
   right: 0;
+}
+
+@media only screen and (max-width: 34.9375em) {
+  .sub-nav-f5e.entity-primary-nav .overflown-navi-trunk > ul {
+    right: auto;
+    max-width: calc( 100vw - 3rem);
+  }
+}
+
+@media only screen and (max-width: 34.9375em) {
+  .sub-nav-f5e.entity-primary-nav .overflown-navi-trunk .entity-primary-navi---l {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 34.9375em) {
+  .sub-nav-f5e.entity-primary-nav .overflown-navi-trunk .navi---txt {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .sub-nav-f5e .widget_nav_menu---cr,

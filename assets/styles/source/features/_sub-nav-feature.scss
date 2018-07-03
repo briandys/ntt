@@ -241,10 +241,31 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             }
         }
 
-        .host {
+        .overflown-navi-trunk {
             
             > ul {
                 right: 0;
+
+                @include mq(xs-vp) {
+                    right: auto;
+                    max-width: calc( 100vw - 3rem );
+                }
+            }
+
+            .entity-primary-navi---l {
+
+                @include mq(xs-vp) {
+                    max-width: 100%;
+                }
+            }
+
+            .navi---txt {
+
+                @include mq(xs-vp) {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
             }
         }
     }
