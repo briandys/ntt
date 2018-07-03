@@ -22,10 +22,8 @@
 }());
 
 /**
- * File skip-link-focus-fix.js.
- *
- * Helps with accessibility for keyboard only users.
- *
+ * File skip-link-focus-fix.js
+ * Helps with accessibility for keyboard only users
  * Learn more: https://git.io/vWdr2
  */
 (function() {
@@ -59,6 +57,7 @@ var $document,
     $html,
     $body,
     documentHeight,
+    windowWidth,
     windowHeight,
     
     $comments,
@@ -66,12 +65,13 @@ var $document,
     $goStartNav,
     $entityPrimaryDescription,
     $entityPrimaryName,
+    $entityNav,
     $entryContent,
     $entryHeader,
     $postPasswordForm,
     $widgetSearch,
     $wildCard,
-    $wildCardCr,
+    $menuItemPageItem,
     
     wrapTextNode,
     removeEmpty;
@@ -88,12 +88,17 @@ var $document,
     $goStartNav = $( '#go-start-nav' );
     $entityPrimaryDescription = $( '#entity-primary-description' );
     $entityPrimaryName = $( '#entity-primary-name' );
+    $entityNav = $( '#entity-primary-nav' );
     $entryContent = $( '.entry-content' );
     $entryHeader = $( '.entry-header' );
     $postPasswordForm = $( '.post-password-form' );
     $widgetSearch = $( '.widget_search' );
-    $wildCard = $( '#wild-card' );
-    $wildCardCr = $wildCard.find( '.wild-card---cr' );
+    $wildCard = $( '#wild-card' ).find( '.wild-card---cr' );
+    $menuItemPageItem = $( '.page_item, .menu-item' );
+    $menuItemPageItem.addClass( 'navi' );
+
+    /* Spinner */
+    $wildCard.append( $( '<div class="spinner"></div>' ) );
 
     /**
      * Scrolled
@@ -237,6 +242,70 @@ var $document,
             return true;
         }
     }
+    
+    /**
+     * Navi Overflow
+     */
+    function navOverflow( $elem ) {
+        var $navTrunk = $elem.find( 'ul:first' ),
+            $navTrunkNavi = $navTrunk.children(),
+            $navTrunkOverflownNavi,
+            $navi,
+            $navBranch,
+            $host,
+            icon = $( nttData.ellipsisIcon );
+
+        $navTrunk.addClass( 'interim-overflow-nav' );
+
+        $navTrunkNavi.each( function() {
+            var $this = $( this ),
+                offset = parseInt( Math.round( $this.offset().left ) ),
+                width = parseInt( $this.outerWidth() ),
+                buffer = 48,
+                offsetWidth;
+
+            windowWidth = window.innerWidth - buffer;
+            offsetWidth = offset + width;
+
+            if ( offsetWidth > windowWidth ) {
+                $this.addClass( 'overflown-navi' );
+                console.log( 'overflown-navi' );
+            } else {
+                $this.addClass( 'primary-navi' );
+                console.log( 'primary-navi' );
+            }
+        } );
+        
+        $navTrunk
+            .addClass( 'overflow-nav' )
+            .removeClass( 'interim-overflow-nav' );
+
+        $navTrunkOverflownNavi = $navTrunk.find( '.overflown-navi' );
+        console.log( $navTrunkOverflownNavi.length );
+
+        $navBranch = $( '<ul />', {
+            'class': 'children nav-branch',
+        } );
+
+        $navi = $( '<li />', {
+            'class': 'host page_item page_item_has_children navi inside'
+        } ).append( $navBranch );
+
+        $navTrunkOverflownNavi.wrapAll( $navi );
+
+        $host = $( $elem ).find( '.host' );
+
+        $host.prepend(
+            htmlOkFn.buttonObj(
+                'sub-nav-toggle-axn',
+                'toggle-axn axn',
+                'Sub-Navigation Toggle Action',
+                'hide',
+                'toggle-sub-nav',
+                icon
+            )
+        );
+    }
 
     /**
      * Sub-Navigation Feature
@@ -249,10 +318,9 @@ var $document,
             return;
         }
         
-        var $entityNav = $( '#entity-primary-nav' ),
-            $navi = $( '.page_item, .menu-item' ),
+        var $navi = $( '.page_item, .menu-item' ),
             $children = $( '.page_item_has_children > .children, .menu-item-has-children > .sub-menu' ),
-            $parents = $( '.page_item_has_children, .menu-item-has-children' ),
+            $parents,
             showText = nttData.showSubNavText,
             hideText = nttData.hideSubNavText,
             icon = $( nttData.downArrowheadIcon ),
@@ -261,7 +329,6 @@ var $document,
             $subNavFeature = $( '.sub-nav-f5e' ),
             $navTrunk = $elem.find( 'ul' ).first(),
             $navBranch = $navTrunk.find( 'ul' ),
-            $navItem = $elem.find( 'li' ),
             $currentNavItem = $elem.find( '.current_page_item, .current-menu-item' );
         
         $elem.find( $children ).before(
@@ -275,13 +342,17 @@ var $document,
             )
         );
 
-        $subNavButton = $elem.find( '.sub-nav-toggle-axn---a' );
-
         // Define structure by adding CSS class names
         $navTrunk.addClass( 'nav-trunk' );
         $navBranch.addClass( 'nav-branch' );
-        $navItem.addClass( 'navi' );
         $currentNavItem.addClass( 'navi--current' );
+    
+        // Implement Navigation Overflow
+        navOverflow( $elem );
+
+        // Defining elements
+        $parents = $( '.page_item_has_children, .menu-item-has-children' );
+        $subNavButton = $elem.find( '.sub-nav-toggle-axn---a' );
 
         // Functions
         subNavFn = {
@@ -862,7 +933,7 @@ var $document,
         $toggleText = $toggleLabel.find( '.toggle-menu---txt' );
 
         // Create Overlay
-        $wildCardCr.append(
+        $wildCard.append(
             htmlOkFn.overlayObj(
                 'primary-menu-overlay',
                 'Primary Menu Overlay'
@@ -969,7 +1040,7 @@ var $document,
         var $navi = $elem.find( '.go-content-navi---a' );
 
         // Create Overlay
-        $wildCardCr.append(
+        $wildCard.append(
             htmlOkFn.overlayObj(
                 'go-content-nav-overlay',
                 'Go to Content Navigation Overlay'
@@ -1199,6 +1270,8 @@ var $document,
         $html
             .addClass( 'window--loaded' )
             .removeClass( 'window--unloaded' );
+
+        $( '.spinner' ).remove();
 
         /**
          * Go to Start Nav Feature

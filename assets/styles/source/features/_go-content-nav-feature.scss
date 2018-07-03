@@ -11,8 +11,8 @@
 .go-content-nav-f5e {
 
     .go-content-navi {
-        position: fixed;
         @include xy-center;
+        position: fixed;
         z-index: $active-layer;
     }
 

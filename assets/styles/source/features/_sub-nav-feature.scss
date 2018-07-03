@@ -8,6 +8,10 @@ $border-color: hsla( 0, 0%, 0%, .125 );
         .sub-menu {
             display: none;
         }
+
+        .entity-primary-nav-group---cr {
+            visibility: hidden;
+        }
     }
 
     .entity-primary-nav {
@@ -213,6 +217,35 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             max-width: 30rem;
             min-width: 100%;
             box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, .05);
+        }
+
+        .nav-trunk {
+
+            > li {
+
+                > a {
+                    white-space: normal;
+                    text-align: center;
+                }
+            }
+
+            &.interim-overflow-nav {
+                flex-wrap: nowrap;
+                justify-content: normal;
+                overflow-x: auto;
+                width: 100vw;
+            
+                > li > a {
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .host {
+            
+            > ul {
+                right: 0;
+            }
         }
     }
 

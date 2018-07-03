@@ -1666,6 +1666,15 @@ blockquote {
   color: #1c1c1c;
 }
 
+.uppercase-em {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.concept-shift {
+  color: #707070;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -1684,6 +1693,11 @@ tbody th {
 
 td {
   vertical-align: top;
+}
+
+td,
+th {
+  padding: 1rem;
 }
 
 .widget-name {
@@ -1987,11 +2001,12 @@ p > object:only-child {
 }
 
 .go-content-nav-f5e .go-content-navi {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  position: fixed;
   z-index: 100;
 }
 
@@ -2037,6 +2052,44 @@ p > object:only-child {
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   opacity: 0;
+}
+
+.spinner {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-right-color: transparent;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 50%;
+  -webkit-animation: rotation .8s linear infinite;
+          animation: rotation .8s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .ntt-overflow-axns-f5e.dom--unready .entity-primary-axns,
@@ -2299,6 +2352,10 @@ p > object:only-child {
   display: none;
 }
 
+.ntt-sub-nav-f5e.dom--unready .entity-primary-nav-group---cr {
+  visibility: hidden;
+}
+
 .ntt-sub-nav-f5e .entity-primary-nav .page_item_has_children,
 .ntt-sub-nav-f5e .entity-primary-nav .menu-item-has-children {
   padding-right: 3rem;
@@ -2456,6 +2513,29 @@ p > object:only-child {
   min-width: 100%;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.sub-nav-f5e.entity-primary-nav .nav-trunk > li > a {
+  white-space: normal;
+  text-align: center;
+}
+
+.sub-nav-f5e.entity-primary-nav .nav-trunk.interim-overflow-nav {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  overflow-x: auto;
+  width: 100vw;
+}
+
+.sub-nav-f5e.entity-primary-nav .nav-trunk.interim-overflow-nav > li > a {
+  white-space: nowrap;
+}
+
+.sub-nav-f5e.entity-primary-nav .host > ul {
+  right: 0;
 }
 
 .sub-nav-f5e .widget_nav_menu---cr,
