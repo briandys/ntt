@@ -1624,10 +1624,6 @@ blockquote {
   padding-right: 1rem;
 }
 
-.entry-navi---i {
-  display: none;
-}
-
 .entry-content-nav {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;

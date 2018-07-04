@@ -42,18 +42,33 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                         <div class="entry-nav-group---cr">
                     
                             <?php if ( get_next_post_link() ) {
+
+                                if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
+                                    $next_post_thumbnail = '<span class="entry-navi---i i">';
+                                    $next_post_thumbnail .= get_the_post_thumbnail( get_next_post()->ID );
+                                    $next_post_thumbnail .= '</span>';
+                                } else {
+                                    $next_post_thumbnail = '';
+                                }
                                 ?>
+                                
                                 <div class="next-entry-navi entry-navi navi obj" data-name="Next Entry Navigation Item">
-                                    <?php next_post_link( '%link', $next_navi ); ?>
+                                    <?php next_post_link( '%link', $next_navi. $next_post_thumbnail ); ?>
                                 </div>
                                 <?php
                             }
                             ?>
                             
                             <?php if ( get_previous_post_link() ) {
-                                $prev_post_thumbnail = '<span class="entry-navi---i i">';
-                                $prev_post_thumbnail .= get_the_post_thumbnail( get_previous_post()->ID );
-                                $prev_post_thumbnail .= '</span>'; ?>
+
+                                if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
+                                    $prev_post_thumbnail = '<span class="entry-navi---i i">';
+                                    $prev_post_thumbnail .= get_the_post_thumbnail( get_previous_post()->ID );
+                                    $prev_post_thumbnail .= '</span>';
+                                } else {
+                                    $prev_post_thumbnail = '';
+                                }
+                                ?>
                                 
                                 <div class="previous-entry-navi entry-navi navi obj" data-name="Previous Entry Navigation Item">
                                     <?php previous_post_link( '%link', $previous_navi. $prev_post_thumbnail ); ?>
