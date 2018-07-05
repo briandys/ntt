@@ -1,9 +1,12 @@
+img {
+	@extend %responsive-visuals;
+}
+
 embed,
 iframe,
-img,
 object,
 video {
-	@extend %responsive-visuals;
+    max-width: 100%;
 }
 
 //--------------------------------------------------------------

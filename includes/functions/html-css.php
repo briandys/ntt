@@ -168,7 +168,7 @@ function ntt_html_css() {
     }
     
     if ( is_404() ) {
-        $css[] = 'unreachable-content-view';
+        $css[] = 'unreachable-resource-view';
     }
 
     /**
@@ -176,7 +176,7 @@ function ntt_html_css() {
      */
     
     // Sub-Pages Page Template Name
-    if ( is_page_template( 'page-templates/sub-pages-page-template.php' ) ) {
+    if ( is_page_template( 'templates/sub-pages-template.php' ) ) {
         $css[] = 'sub-pages-view';
     }
 

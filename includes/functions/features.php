@@ -28,9 +28,11 @@ function ntt_features_scripts() {
         'showMenuText'      => __( 'Show Menu', 'ntt' ),
         'hideMenuText'      => __( 'Hide Menu', 'ntt' ),
         
-        'requiredText'  => __( 'Required', 'ntt' ),
-        'submitText'    => __( 'Submit', 'ntt' ),
-        'editText'      => __( 'Edit', 'ntt' ),
+        'requiredText'      => __( 'Required', 'ntt' ),
+        'submitText'        => __( 'Submit', 'ntt' ),
+        'editText'          => __( 'Edit', 'ntt' ),
+        'privateText'       => __( 'Private', 'ntt' ),
+        'protectedText'     => __( 'Protected', 'ntt' ),
         
         'downArrowheadIcon'     => $down_arrowhead_icon,
         'upArrowheadIcon'       => $up_arrowhead_icon,

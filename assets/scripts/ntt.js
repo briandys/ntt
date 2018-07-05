@@ -60,6 +60,7 @@ var $document,
     windowWidth,
     windowHeight,
     
+    $ae,
     $comments,
     $content,
     $goStartNav,
@@ -68,10 +69,11 @@ var $document,
     $entityNav,
     $entryContent,
     $entryHeader,
+    $entryModule,
+    $menuItemPageItem,
     $postPasswordForm,
     $widgetSearch,
     $wildCard,
-    $menuItemPageItem,
     
     wrapTextNode,
     removeEmpty;
@@ -83,6 +85,7 @@ var $document,
     $html = $( document.documentElement );
     $body = $( document.body );
     
+    $ae = $( 'a, button, input, object, select, textarea' );
     $comments = $( '#comments' );
     $content = $( '.content---cr' );
     $goStartNav = $( '#go-start-nav' );
@@ -91,14 +94,21 @@ var $document,
     $entityNav = $( '#entity-primary-nav' );
     $entryContent = $( '.entry-content' );
     $entryHeader = $( '.entry-header' );
+    $entryModule = $( '#content' );
+    $menuItemPageItem = $( '.page_item, .menu-item' );
     $postPasswordForm = $( '.post-password-form' );
     $widgetSearch = $( '.widget_search' );
     $wildCard = $( '#wild-card' ).find( '.wild-card---cr' );
-    $menuItemPageItem = $( '.page_item, .menu-item' );
-    $menuItemPageItem.addClass( 'navi' );
 
-    /* Spinner */
+    /**
+     * Spinner
+     */
     $wildCard.append( $( '<div class="spinner"></div>' ) );
+
+    /**
+     * Adding Classes
+     */
+    $menuItemPageItem.addClass( 'navi' );
 
     /**
      * Scrolled
@@ -133,7 +143,7 @@ var $document,
     }
 
     /**
-     * HTML_OK
+     * HTML_OK Functions
      */
     htmlOkFn = {
         
@@ -211,7 +221,7 @@ var $document,
     };
 
     /**
-     * Wrap Text Nodes
+     * Wrap Text Node
      * https://stackoverflow.com/a/18727318
      */
     wrapTextNode = function( $elem ) {
@@ -242,6 +252,47 @@ var $document,
             return true;
         }
     }
+
+    /**
+     * Tab Cycle
+     * https://stackoverflow.com/a/21811463
+     */
+    var tabCycleFn = {
+        
+        on: function( $elem ) {
+            var inputs = $elem.find( $ae ).filter( ':visible' ),
+                firstInput = inputs.first(),
+                lastInput = inputs.last();
+
+            // Set focus on first input
+            firstInput.focus();
+
+            // Redirect last tabbing to first input
+            lastInput.on( 'keydown.ntt', function( e ) {
+                if ( e.which === 9 && !e.shiftKey ) {
+                    e.preventDefault();
+                    firstInput.focus();
+                }
+            } );
+
+            // Redirect first shift tabbing to last input
+            firstInput.on( 'keydown.ntt', function( e ) {
+                if ( e.which === 9 && e.shiftKey ) {
+                    e.preventDefault();
+                    lastInput.focus();
+                }
+            } );
+        },
+
+        off: function( $elem ) {
+            var inputs = $elem.find( $ae ).filter( ':visible' ),
+                firstInput = inputs.first(),
+                lastInput = inputs.last();
+
+            lastInput.off( 'keydown.ntt' );
+            firstInput.off( 'keydown.ntt' );
+        }
+    };
     
     /**
      * Navi Overflow
@@ -527,8 +578,8 @@ var $document,
             .attr( 'id', 'primary-search' )
             .attr( 'data-name', 'Primary Search' );
         
-        var $primarySearch = $( '#primary-search' ),
-            $search = $primarySearch.find( '.search' ),
+        var $elem = $( '#primary-search' ),
+            $search = $elem.find( '.search' ),
             toggleText = nttData.toggleSearchText,
             showText = nttData.showSearchText,
             hideText = nttData.hideSearchText,
@@ -537,13 +588,13 @@ var $document,
             toggleSearchIcon = $( nttData.searchIcon ),
             toggleDismissIcon = $( nttData.dismissIcon ),
             $toggle, $toggleText,
-            $submitLabel = $primarySearch.find( '.submit-search-axn---l' ),
-            $reset = $primarySearch.find( '.reset-search-axn---a' ),
-            $resetLabel = $primarySearch.find( '.reset-search-axn---l' ),
-            $input = $primarySearch.find( '.search-input' );
+            $submitLabel = $elem.find( '.submit-search-axn---l' ),
+            $reset = $elem.find( '.reset-search-axn---a' ),
+            $resetLabel = $elem.find( '.reset-search-axn---l' ),
+            $input = $elem.find( '.search-input' );
 
-        if ( $primarySearch.length && $html.hasClass( 'ntt-primary-search-f5e' ) ) {
-            $primarySearch.addClass( 'primary-search-f5e primary-action' )
+        if ( $elem.length && $html.hasClass( 'ntt-primary-search-f5e' ) ) {
+            $elem.addClass( 'primary-search-f5e primary-action' )
         } else {
             $html.removeClass( 'ntt-primary-search-f5e' );
             return;
@@ -565,8 +616,8 @@ var $document,
         $submitLabel.append( searchIcon );
         $resetLabel.append( dismissIcon );
 
-        $toggle = $primarySearch.find( '.primary-search-toggle-axn---a' );
-        $toggleText = $primarySearch.find( '.toggle-search---txt' );
+        $toggle = $elem.find( '.primary-search-toggle-axn---a' );
+        $toggleText = $elem.find( '.toggle-search---txt' );
 
         // Functions
         primarySearchFn = {
@@ -585,13 +636,15 @@ var $document,
 
                 toggleSearchIcon.remove();
                 
-                $primarySearch
+                $elem
                     .addClass( 'active-search on' )
                     .removeClass( 'inactive-search off' );
 
                 $html
                     .addClass( 'ntt-primary-search-f5e--on' )
                     .removeClass( 'ntt-primary-search-f5e--off' );
+                
+                tabCycleFn.on( $elem );
 
                 $input.focus().select();
             },
@@ -610,20 +663,22 @@ var $document,
 
                 toggleDismissIcon.remove();
                 
-                $primarySearch
+                $elem
                     .addClass( 'inactive-search off' )
                     .removeClass( 'active-search on' );
 
                 $html
                     .addClass( 'ntt-primary-search-f5e--off' )
                     .removeClass( 'ntt-primary-search-f5e--on' );
+                
+                tabCycleFn.off( $elem );
             },
 
             // Toggle
             toggle: function() {
-                if ( $primarySearch.hasClass( 'off' ) ) {
+                if ( $elem.hasClass( 'off' ) ) {
                     primarySearchFn.on();
-                } else if ( $primarySearch.hasClass( 'on' ) ) {
+                } else if ( $elem.hasClass( 'on' ) ) {
                     primarySearchFn.off();
                 }
             },
@@ -632,11 +687,11 @@ var $document,
             inputPopulation: function() {
 
                 if ( $input.val() == '' ) {
-                    $primarySearch
+                    $elem
                         .addClass( 'empty-search' )
                         .removeClass( 'populated-search' );
                 } else if ( ! $input.val() == '' ) {
-                    $primarySearch
+                    $elem
                         .addClass( 'populated-search' )
                         .removeClass( 'empty-search' );
                 }
@@ -664,18 +719,19 @@ var $document,
         // User Action: Content Input
         $input.on( 'keypress.ntt input.ntt', function() {
             primarySearchFn.inputPopulation();
+            tabCycleFn.off( $elem );
         } );
 
         // User Action: Document Click
         $document.on( 'touchmove.ntt click.ntt', function ( e ) {
-            if ( $primarySearch.hasClass( 'on' ) && ! $( e.target ).closest( $toggle ).length && ! $( e.target ).closest( $search ).length ) {
+            if ( $elem.hasClass( 'on' ) && ! $( e.target ).closest( $toggle ).length && ! $( e.target ).closest( $search ).length ) {
                 primarySearchFn.off();
             }
         } );
         
         // User Action: ESC Key
         $document.on( 'keyup.ntt', function ( e ) {
-            if ( $html.hasClass( 'window--loaded' ) && $primarySearch.hasClass( 'on' ) && e.keyCode == 27 ) {
+            if ( $html.hasClass( 'window--loaded' ) && $elem.hasClass( 'on' ) && e.keyCode == 27 ) {
                 primarySearchFn.off();
             }
         } );
@@ -776,6 +832,8 @@ var $document,
                 overflowActionsOffset = $overflowActionsGroupCr.offset().top + 'px';
                 
                 $overflowActionsGroupCr.css( 'max-height', 'calc( 100vh - ( ( 3rem + ' + overflowActionsOffset + ' ) - .5rem ) )' );
+                
+                tabCycleFn.on( $elem );
             },
 
             // Deactivate
@@ -796,6 +854,8 @@ var $document,
                 $html
                     .addClass( nttF5eOff )
                     .removeClass( nttF5eOn );
+                    
+                tabCycleFn.off( $elem );
             },
 
             // Deactivate All
@@ -958,6 +1018,8 @@ var $document,
                     .addClass( nttF5eOn )
                     .removeClass( nttF5eOff );
 
+                tabCycleFn.on( $elem );
+
             },
 
             off: function() {
@@ -976,6 +1038,8 @@ var $document,
                 $html
                     .addClass( nttF5eOff )
                     .removeClass( nttF5eOn );
+
+                tabCycleFn.off( $elem );
             },
 
             toggle: function() {
@@ -1246,6 +1310,28 @@ var $document,
             $this.attr( 'tabindex', -1 );
         }
     } );
+
+    /**
+     * Private and Protected Entry Names
+     */
+    ( function() {
+        
+        var $private = $entryModule.find( $( '.entry-name---txt:contains("Private:")' ) ),
+            $protected = $entryModule.find( $( '.entry-name---txt:contains("Protected:")' ) ),
+            $privateText = nttData.privateText,
+            $protectedText = nttData.protectedText,
+            $entryName = $entryModule.find( $( '.entry-name---txt' ) );
+        
+        $private.html( function( _, html ) {
+           return html.split( "Private:" );
+        } ).before( "<span class='classified---line line'><span class='private---txt txt'>"+ $privateText + "</span><span class='colon---txt txt'>:</span></span>" );
+        
+        $protected.html( function( _, html ) {
+           return html.split( "Protected:" );
+        } ).before( "<span class='classified---line line'><span class='protected---txt txt'>"+ $protectedText + "</span><span class='colon---txt txt'>:</span></span>" );
+
+        wrapTextNode( $entryName );
+    } ) ();
 
     /**
      * Document Ready

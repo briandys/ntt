@@ -14,13 +14,6 @@ function ntt_entry_css( $classes ) {
     foreach ( $r_css as $css ) {
         $classes[] = esc_attr( $css );
     }
-
-    // Entry Security Status / Password Protected
-    if ( ! post_password_required() ) {
-        $classes[] = 'entry-security--password-unprotected';
-    } else {
-        $classes[] = 'entry-security--password-protected';
-    }
     
     // Post Format
     $r_post_formats = array(

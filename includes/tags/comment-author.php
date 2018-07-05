@@ -30,17 +30,25 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                     <?php echo $anchor_tag_end; ?>
                 </span>
 
-                <span class="cm-avatar comment-author-avatar author-avatar avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
-                    <?php echo $anchor_tag_start;
-                    echo get_avatar(
-                        $comment,
-                        $size = '48',
-                        $default = '',
-                        $alt = $comment_author. ' '. 'Avatar',
-                        $args = array( 'class' => 'comment-author-avatar---img author-avatar---img avatar---img u-photo img', )
-                    );
-                    echo $anchor_tag_end; ?>
-                </span>
+                <?php
+                if ( get_option( 'show_avatars' ) == 1 ) {
+                    ?>
+
+                    <span class="cm-avatar comment-author-avatar author-avatar avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
+                        <?php echo $anchor_tag_start;
+                        echo get_avatar(
+                            $comment,
+                            $size = '48',
+                            $default = '',
+                            $alt = $comment_author. ' '. 'Avatar',
+                            $args = array( 'class' => 'comment-author-avatar---img author-avatar---img avatar---img u-photo img', )
+                        );
+                        echo $anchor_tag_end; ?>
+                    </span>
+
+                    <?php
+                }
+                ?>
 
             </div>
         </div>

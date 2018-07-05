@@ -52,5 +52,4 @@ if ( $GLOBALS['ntt_name'] == wp_get_theme()->parent_theme ) {
     function ntt_wp_theme_name_url_fragment() {
         return $GLOBALS['ntt_kid_dir'];
     }
-
 }

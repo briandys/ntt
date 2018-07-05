@@ -5,10 +5,7 @@
     }
 }
 
-// To take them off the grid
-.wild-card,
-.entity-start,
-.entity-end {
+.wild-card {
     position: absolute;
 }
 
@@ -25,6 +22,7 @@
 
 .entity-start {
     grid-area: a1;
+    position: absolute;
 }
 
 .entity-header {
@@ -40,6 +38,31 @@
 
 .entity-end {
     grid-area: a5;
+    position: absolute;
+}
+
+//--------------------------------------------------------------
+// Entity Main
+//--------------------------------------------------------------
+.entity-main---cr {
+    display: grid;
+    grid-template:
+        'a1'
+        'a2' 1fr
+        'a3';
+    min-height: 100%;
+}
+
+.entity-main-header {
+    grid-area: a1;
+}
+
+.entity-main-main {
+    grid-area: a2;
+}
+
+.entity-main-footer {
+    grid-area: a3;
 }
 
 //--------------------------------------------------------------

@@ -30,17 +30,25 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                     </a>
                 </span>
 
-                <span class="cm-avatar entry-author-avatar author-avatar avatar obj" data-name="Entry Author Avatar">
-                    <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author-name---a a" title="<?php echo esc_attr_x( 'Published by', 'Usage: >Published by< <Author Name> | Component: Entry Author Avatar', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
-                    <?php echo get_avatar(
-                        get_the_author_meta( 'ID' ),
-                        $size = '48',
-                        $default = '',
-                        $alt = esc_attr( $entry_author ). ' '. 'Avatar',
-                        $args = array( 'class' => 'entry-author-avatar---img author-avatar---img avatar---img u-photo img', )
-                        ); ?>
-                    </a>
-                </span>
+                <?php
+                if ( get_option( 'show_avatars' ) == 1 ) {
+                    ?>
+
+                    <span class="cm-avatar entry-author-avatar author-avatar avatar obj" data-name="Entry Author Avatar">
+                        <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author-name---a a" title="<?php echo esc_attr_x( 'Published by', 'Usage: >Published by< <Author Name> | Component: Entry Author Avatar', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
+                        <?php echo get_avatar(
+                            get_the_author_meta( 'ID' ),
+                            $size = '48',
+                            $default = '',
+                            $alt = esc_attr( $entry_author ). ' '. 'Avatar',
+                            $args = array( 'class' => 'entry-author-avatar---img author-avatar---img avatar---img u-photo img', )
+                            ); ?>
+                        </a>
+                    </span>
+
+                    <?php
+                }
+                ?>
 
             </div>
         </div>
