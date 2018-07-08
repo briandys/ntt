@@ -13,6 +13,7 @@ html {
 body {
 	display: grid;
 	min-height: 100%;
+	font-family: sans-serif;
 }
 
 @each $i in $headings {
@@ -26,9 +27,8 @@ figure {
 }
 
 pre {
+	margin: 0;
 	line-height: 1.6;
-	max-width: 100%;
-	overflow: auto;
 }
 
 dd {

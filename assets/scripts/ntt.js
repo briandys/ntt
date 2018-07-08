@@ -303,10 +303,12 @@ var $document,
             $navTrunkOverflownNavi,
             $navi,
             $navBranch,
+            $subNav = $elem.find( '.children, .sub-menu' ),
             $overflownNaviTrunk,
             icon = $( nttData.ellipsisIcon );
 
         $navTrunk.addClass( 'interim-overflow-nav' );
+        $subNav.addClass( 'nav-branch' );
 
         $navTrunkNavi.each( function() {
             var $this = $( this ),
@@ -333,7 +335,7 @@ var $document,
         $navTrunkOverflownNavi = $navTrunk.find( '.overflown-navi' );
 
         $navBranch = $( '<ul />', {
-            'class': 'children nav-branch',
+            'class': 'children sub-menu nav-branch',
         } );
 
         $navi = $( '<li />', {
@@ -1169,6 +1171,8 @@ var $document,
         var $textWidget = $( '.textwidget' ),
             $htmlWidgetContent,
             $contentP = $content.find( '> p' ),
+            $contentListItem = $content.find( 'li' ),
+            $contentWPCaptionText = $content.find( '.wp-caption-text' ),
             $visuals,
             $visualsA,
             $contentImg = $content.find( 'img' ),
@@ -1203,9 +1207,13 @@ var $document,
         // Table
         wrapTextNode( $( 'td, th' ) );
         
+        // Lists
+        wrapTextNode( $contentListItem );
+        
         // Content
         wrapTextNode( $content );
         wrapTextNode( $contentP );
+        removeEmpty( $contentWPCaptionText.find( '*' ) );
 
         removeEmpty( $content.find( '.txt' ) );
 

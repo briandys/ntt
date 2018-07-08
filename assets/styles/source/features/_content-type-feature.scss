@@ -5,15 +5,20 @@
         code,
         pre,
         table {
-            display: none;
+            visibility: hidden;
         }
     }
 }
 
 .content---cr {
 
+    .code-content {
+        display: inline-block;
+    }
+
     > .code-content {
         @extend %content-type;
+        display: block;
     }
 
     > .pre-content {

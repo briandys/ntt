@@ -6,19 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
 
-        <link rel="manifest" href="<?php echo get_template_directory_uri() ?>/manifest.json">
-
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="Kite">
-        <meta name="apple-mobile-web-app-title" content="Kite">
-        <meta name="msapplication-starturl" content="/?homescreen=1">
-
-        <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri() ?>/assets/visuals/ntt-icon--m.png">
-        <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri() ?>/assets/visuals/ntt-icon--m.png">
-        <link rel="icon" sizes="512x512" href="<?php echo get_template_directory_uri() ?>/assets/visuals/ntt-icon--l.png">
-        <link rel="apple-touch-icon" sizes="512x512" href="<?php echo get_template_directory_uri() ?>/assets/visuals/ntt-icon--l.png">
-
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>

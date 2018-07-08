@@ -16,7 +16,7 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
                 $entry_name_title_attr = $entry_text. ' '. $entry_id;
             }
             
-            $label_mu = '<span class="modify-entry-axn---l l" title="'. esc_attr__( 'Edit', 'ntt' ). ' '. $entry_name_title_attr. '"><span class="edit---txt txt">'. esc_html__( 'Edit', 'ntt' ).'</span>'. $entry_name. '</span>';
+            $label_mu = '<span class="modify-entry-axn---l l" title="'. esc_attr__( 'Edit', 'ntt' ). ' '. $entry_name_title_attr. '"><span class="edit---txt txt">'. esc_html__( 'Edit', 'ntt' ).'</span>'. ' '. $entry_name. '</span>';
             ?>
 
             <div class="cm-axns-trunk entry-axns axns-trunk axns cp" data-name="Entry Actions">

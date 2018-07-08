@@ -66,6 +66,12 @@
 //--------------------------------------------------------------
 // Entity Secondary Navigation
 //--------------------------------------------------------------
+.entity-secondary-nav {
+
+    .sub-menu {
+        @extend %vh;
+    }
+}
 
 .entity-secondary-nav-group---cr {
     display: flex;

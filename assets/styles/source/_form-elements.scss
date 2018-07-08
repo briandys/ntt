@@ -9,6 +9,7 @@ textarea {
     padding: .5em $m-gutter;
     width: 100%;
     background-color: $paper-color;
+    font-family: sans-serif;
     border: 1px solid $ink-color;
 }
 
@@ -49,6 +50,10 @@ button,
     &:hover {
         cursor: pointer;
     }
+}
+
+button {
+    font-family: sans-serif;
 }
 
 [type="reset"] {

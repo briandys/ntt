@@ -13,10 +13,7 @@ $r_functions = array(
     'body-css',
     'comments-css',
     'comment-form',
-    'custom-fonts',
     'custom-visuals',
-    'wp-customizer',
-    'wp-customizer-custom-colors',
     'entry-content',
     'entry-css',
     'excerpt',
@@ -26,6 +23,8 @@ $r_functions = array(
     'icons',
     'pingback-header',
     'widgets-asides',
+    'wp-customizer',
+    'wp-customizer-custom-colors',
 );
 
 foreach ( $r_functions as $file_name ) {
@@ -57,3 +56,5 @@ $r_tags = array(
 foreach ( $r_tags as $file_name ) {
     require( get_parent_theme_file_path( '/includes/tags/'. $file_name. '.php' ) );
 }
+
+require( get_parent_theme_file_path( '/snaps/functions.php' ) );

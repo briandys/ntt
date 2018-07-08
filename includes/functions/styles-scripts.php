@@ -21,18 +21,18 @@ add_action('wp_enqueue_scripts', 'ntt_styles_scripts', 0);
 function ntt_inline_scripts() { ?>
     
     <script>
-        var $html = document.documentElement ;
-            
-        $html.className = $html.className.replace( /\bno-js\b/,'js' );
-        $html.classList.add( 'dom--unready' );
-        $html.classList.add( 'window--unloaded' );
+        ( function( html ) {
+            html.className = html.className.replace( /\bno-js\b/,'js' );
+            html.classList.add( 'dom--unready' );
+            html.classList.add( 'window--unloaded' );
+        } ) ( document.documentElement );
     </script>
 
 <?php }
 add_action( 'wp_head', 'ntt_inline_scripts', 0 );
 
 // Child Theme
-if ( $GLOBALS['ntt_name'] == wp_get_theme()->parent_theme ) {
+if ( is_child_theme() ) {
 
     function ntt_kid_styles() {
         wp_enqueue_style( 'ntt-style', get_template_directory_uri(). '/assets/styles/ntt.min.css' );
@@ -52,4 +52,10 @@ if ( $GLOBALS['ntt_name'] == wp_get_theme()->parent_theme ) {
     function ntt_wp_theme_name_url_fragment() {
         return $GLOBALS['ntt_kid_dir'];
     }
+} elseif ( ! is_child_theme() && 'ntt' !== wp_get_theme()->get( 'TextDomain' ) ) {
+    
+    function ntt_kid_styles() {
+        wp_enqueue_style( 'ntt-kid-style', get_template_directory_uri(). '/snaps/assets/styles/ntt-kid.min.css' );
+    }
+    add_action('wp_enqueue_scripts', 'ntt_kid_styles', 0);
 }

@@ -3,6 +3,10 @@ $border-color: hsla( 0, 0%, 0%, .125 );
 .ntt-sub-nav-f5e {
     
     &.dom--unready {
+
+        .entity-primary-nav {
+            max-width: 100vw;
+        }
     
         .children,
         .sub-menu {
@@ -67,8 +71,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
 
 .inactive-sub-nav {
     
-    > .children,
-    > .sub-menu {
+    > .nav-branch {
         display: none;
     }
 }
@@ -86,7 +89,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
     }
 
     a {
-        justify-content: unset;
+        justify-content: flex-start;
     }
 
     .page_item,
@@ -104,8 +107,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
         }
     }
 
-    .children,
-    .sub-menu {
+    .nav-branch {
 
         .active-other-sub-nav {
             visibility: hidden;
@@ -113,21 +115,9 @@ $border-color: hsla( 0, 0%, 0%, .125 );
         }
     }
 
-    .children {
+    .nav-branch {
         
-        .page_item {
-            @include x-padding();
-
-            a {
-                @include x-padding($m-gutter);
-            }
-        }
-
-    }
-
-    .sub-menu {
-
-        .menu-item {
+        .navi {
             @include x-padding();
 
             a {
@@ -212,8 +202,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             }
         }
 
-        .children,
-        .sub-menu {
+        .nav-branch {
             max-width: 30rem;
             min-width: 100%;
             box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, .05);
@@ -226,6 +215,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
                 > a {
                     white-space: normal;
                     text-align: center;
+                    justify-content: center;
                 }
             }
 
@@ -250,6 +240,10 @@ $border-color: hsla( 0, 0%, 0%, .125 );
                     right: auto;
                     max-width: calc( 100vw - 3rem );
                 }
+            }
+
+            .nav-branch {
+                margin-bottom: $min-aa;
             }
 
             .entity-primary-navi---l {

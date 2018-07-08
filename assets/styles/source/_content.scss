@@ -119,18 +119,18 @@
         }
 
         .alignleft {
-            float: initial;
-            margin-right: initial;
+            float: none;
+            margin-right: 0;
         }
 
         a,
         img {
 
             &.aligncenter {
-                clear: initial;
-                display: initial;
-                margin-left: initial;
-                margin-right: initial;
+                clear: none;
+                display: inline-block;
+                margin-left: 0;
+                margin-right: 0;
             }
 
         }
@@ -149,20 +149,20 @@
         }
 
         .alignleft {
-            float: initial;
-            margin-right: initial;
+            float: none;
+            margin-right: 0;
         }
 
         .alignright {
-            float: initial;
-            margin-left: initial;
+            float: none;
+            margin-left: 0;
         }
         
         .aligncenter {
-            clear: initial;
-            display: initial;
-            margin-left: initial;
-            margin-right: initial;
+            clear: none;
+            display: inline-block;
+            margin-left: 0;
+            margin-right: in0itial;
         }
     }
 
@@ -176,13 +176,13 @@
     blockquote {
 
         > *:first-child {
-            margin-top: initial;
-            padding-top: initial;
+            margin-top: 0;
+            padding-top: 0;
         }
 
         > *:last-child {
-            margin-bottom: initial;
-            padding-bottom: initial;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
 

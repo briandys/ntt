@@ -32,7 +32,11 @@ p > object:only-child {
 
 .wp-caption-text {
 	padding: $m-gutter;
-	font-size: .875em;
+	font-size: .875rem;
+
+	* {
+		font-size: .875rem;
+	}
 }
 
 //--------------------------------------------------------------
