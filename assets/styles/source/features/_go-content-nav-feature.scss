@@ -14,6 +14,8 @@
         @include xy-center;
         position: fixed;
         z-index: $active-layer;
+        width: 100%;
+        text-align: center;
     }
 
     &.go-content-nav {

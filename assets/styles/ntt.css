@@ -2035,6 +2035,8 @@ p > object:only-child {
           transform: translate(-50%, -50%);
   position: fixed;
   z-index: 100;
+  width: 100%;
+  text-align: center;
 }
 
 .ntt-go-content-nav--on {
