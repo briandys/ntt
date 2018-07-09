@@ -1,7 +1,7 @@
 <?php
 
 function ntt_html_css() {   
-    global $post, $is_lynx, $is_gecko, $is_IE, $is_macIE, $is_winIE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+    global $post, $s, $is_lynx, $is_gecko, $is_IE, $is_macIE, $is_winIE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
     $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) : "";
     $is_ipad = preg_match('/ipad/i',$useragent);
 
@@ -64,7 +64,7 @@ function ntt_html_css() {
         $css[] = 'wp-user--logged-out';
     }
 
-    // WordPress User Capability Status
+    // WP User Capability Status
     if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
         $css[] = 'wp-user--editor';
     }
@@ -197,6 +197,24 @@ function ntt_html_css() {
      * Comments
      */ 
     comments_css();
+
+    if ( is_search() ) {
+                
+        $entry_search = new WP_Query( array(
+            's'         => $s,
+            'showposts' => -1,
+        ) );
+        
+        $entry_search_count = $entry_search->post_count;
+        
+        if ( $entry_search_count == 0 ) {
+            $css[] = 'search-results--empty';
+        } else {
+            $css[] = 'search-results--populated';
+        }
+        
+        wp_reset_postdata();
+    }
 
     /**
      * Entries

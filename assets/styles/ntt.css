@@ -2124,6 +2124,14 @@ p > object:only-child {
   display: none;
 }
 
+.ntt-overflow-axns-f5e--on {
+  overflow: hidden;
+}
+
+.ntt-overflow-axns-f5e--on .primary-axns-overflow-overlay {
+  background-color: transparent;
+}
+
 .overflow-axns-f5e.entity-primary-axns .overflow-axns---cr {
   position: relative;
 }
@@ -2176,7 +2184,7 @@ p > object:only-child {
   color: #1c1c1c;
 }
 
-.ntt-go-content-nav--on .go-content-nav-overlay, .ntt-primary-menu-f5e--on .primary-menu-overlay {
+.ntt-go-content-nav--on .go-content-nav-overlay, .ntt-overflow-axns-f5e--on .primary-axns-overflow-overlay, .ntt-primary-menu-f5e--on .primary-menu-overlay {
   bottom: 0%;
   opacity: .75;
 }
@@ -2257,6 +2265,25 @@ p > object:only-child {
 .primary-menu-dismiss-axn---a {
   width: auto;
   background-color: transparent;
+}
+
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
 .ntt-primary-search-f5e.dom--unready .widget_search {

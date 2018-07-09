@@ -2,6 +2,7 @@
 
 if ( ! function_exists( 'ntt_view_name' ) ) {
     function ntt_view_name() {
+        global $s;
         
         $value = '';
         $property = '';
@@ -29,10 +30,11 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
             $value = '<span class="'. sanitize_title( $value ).'---txt txt">'. $value. '</span>';
 
         // View Granularity: Plural
-        } elseif ( is_home() || is_archive() ) {
+        } elseif ( is_home() || is_archive() || is_search() ) {
 
             $property_suffix = 'Entries';
             $property = '<span class="entries---txt txt">'. $property_suffix. '</span>';
+            $value_attr = '';
 
             // Current Index
             if ( is_home() ) {
@@ -89,15 +91,44 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
                 } else {
                     $property_prefix = 'Miscellaneous';
                 }
+            
+                $value_attr = $value;
 
                 $anchor_start = '<a href="'. $href_attr. '" class="view-name---a a">';
                 $anchor_end = '</a>';
 
                 $property = '<span class="'. sanitize_title( $property_prefix ). '---txt txt">'. $property_prefix. '</span>'. ' '. '<span class="archive---txt txt">Archive</span>';
-
             }
 
-            $value = '<span class="'. sanitize_title( $value ).'---txt txt">'. $value. '</span>';
+            // Custom Index (Search Results)
+            if ( is_search() ) {
+                
+                $entry_search = new WP_Query( array(
+                    's'         => $s,
+                    'showposts' => -1,
+                ) );
+                
+                $entry_search_count = $entry_search->post_count;
+                
+                if ( $entry_search_count == 0 ) {
+                    $search_outcome_text = __( 'No Search Result', 'ntt' );
+                } elseif ( $entry_search_count == 1 ) {
+                    $search_outcome_text = __( 'Search Result', 'ntt' );
+                } else {
+                    $search_outcome_text = __( 'Search Results', 'ntt' );
+                }
+
+                $value = esc_html( $entry_search_count );
+                $value_attr = 'search-count';
+                $anchor_start = '<a href="'. esc_url( get_search_link() ). '" class="view-name---a a">';
+                $anchor_end = '</a>';
+                $property = '<span class="search-outcome---txt txt">'. $search_outcome_text. '</span>
+                <span class="for---txt txt">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>
+                <span class="search-term---txt txt">'. esc_html( get_search_query() ). '</span>';
+
+                wp_reset_postdata();
+            }
+            $value = '<span class="'. sanitize_title( $value_attr ).'---txt txt">'. $value. '</span>';
 
         }
         ?>

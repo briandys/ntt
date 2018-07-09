@@ -9,6 +9,15 @@
     }
 }
 
+.ntt-overflow-axns-f5e--on {
+    overflow: hidden;
+   
+    .primary-axns-overflow-overlay {
+       @extend %overlay;
+       background-color: transparent;
+   }
+}
+
 .overflow-axns-f5e {
 
     .toggle-actions---txt {

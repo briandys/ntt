@@ -74,9 +74,13 @@ var $document,
     $postPasswordForm,
     $widgetSearch,
     $wildCard,
+
+    // CSS
+    tab_key_on,
     
-    wrapTextNode,
-    removeEmpty;
+    // Functions
+    removeEmpty,
+    wrapTextNode;
 
 ( function( $ ) {
 
@@ -99,6 +103,9 @@ var $document,
     $postPasswordForm = $( '.post-password-form' );
     $widgetSearch = $( '.widget_search' );
     $wildCard = $( '#wild-card' ).find( '.wild-card---cr' );
+
+    // CSS
+    tab_key_on = 'tab-key--on';
 
     /**
      * Spinner
@@ -618,8 +625,12 @@ var $document,
         $submitLabel.append( searchIcon );
         $resetLabel.append( dismissIcon );
 
+        // Defining Elements
         $toggle = $elem.find( '.primary-search-toggle-axn---a' );
         $toggleText = $elem.find( '.toggle-search---txt' );
+
+        // Adding the newly–created Toggle Button into the Active Elements variable
+        $ae = $ae.add( 'button' );
 
         // Functions
         primarySearchFn = {
@@ -737,6 +748,21 @@ var $document,
                 primarySearchFn.off();
             }
         } );
+
+        // Find if a Child Element Has Focus
+        // Deactivate if no focus is present and if user is Tab key is active
+        // http://ub4.underblob.com/find-if-a-child-element-has-focus/
+        $elem.on( 'focusout.applicator', function() {
+            var $this = $( this );
+            
+            setTimeout( function() {
+                var hasFocus = !! ( $this.find( ':focus' ).length > 0 );
+                
+                if ( $html.hasClass( tab_key_on ) && ! hasFocus ) {
+                    primarySearchFn.off();
+                }
+            }, 20 );
+        } );
     } ) ();
 
     /**
@@ -769,6 +795,14 @@ var $document,
             f5eOff = 'overflow-axns-f5e--off',
             on = 'active-overflow-axns',
             off = 'inactive-overflow-axns-f5e';
+
+        // Create Overlay
+        $wildCard.append(
+            htmlOkFn.overlayObj(
+                'primary-axns-overflow-overlay',
+                'Primary Actions Overflow Overlay'
+            )
+        );
 
         $widgets.wrapAll(
             htmlOkFn.cp(
@@ -1318,6 +1352,41 @@ var $document,
             $this.attr( 'tabindex', -1 );
         }
     } );
+
+    /**
+     * Detect Tab Key
+     */
+    ( function(){
+        var on = tab_key_on,
+            off = 'tab-key--off';
+        
+        // Initialize CSS
+        $html
+            .addClass( off )
+            .removeClass( on );
+
+        // Activate
+        $document.on( 'keydown.ntt', function ( e ) {
+            var keyCode = e.keyCode || e.which; 
+
+            if ( $html.hasClass( off ) && keyCode == 9 ) {
+                $html
+                    .addClass( on )
+                    .removeClass( off );
+              }
+        } );
+
+        // Deactivate
+        $document.on( 'touchmove.ntt click.ntt', function () {
+
+            if ( $html.hasClass( on ) ) {
+                $html
+                    .addClass( off )
+                    .removeClass( on );
+            }
+        } );
+        
+    } ) ();
 
     /**
      * Private and Protected Entry Names
