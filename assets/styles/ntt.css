@@ -2445,7 +2445,7 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: 99;
 }
 
-.active-sub-nav > .toggle-axn .icon {
+.active-sub-nav > .toggle-axn .down-arrowhead-icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }

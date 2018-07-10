@@ -60,8 +60,11 @@ $border-color: hsla( 0, 0%, 0%, .125 );
 .active-sub-nav {
     z-index: 99;
 
-    > .toggle-axn .icon {
-        transform: rotate( 180deg); 
+    > .toggle-axn {
+        
+        .down-arrowhead-icon {
+            transform: rotate( 180deg); 
+        }
     }
 }
 
