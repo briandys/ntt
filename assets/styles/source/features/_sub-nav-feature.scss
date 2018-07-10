@@ -205,6 +205,7 @@ $border-color: hsla( 0, 0%, 0%, .125 );
         .nav-branch {
             max-width: 30rem;
             min-width: 100%;
+            background-color: white;
             box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, .05);
         }
 
@@ -231,17 +232,18 @@ $border-color: hsla( 0, 0%, 0%, .125 );
             }
         }
 
+        .overflow-nav {
+            flex-wrap: nowrap;
+        }
+
         .overflown-navi-trunk {
             
-            > ul {
-                right: 0;
+            @include x-padding();
 
-                @include mq(xs-vp) {
-                    right: auto;
-                    max-width: calc( 100vw - 3rem );
-                }
+            > .axn {
+                position: static;
             }
-
+            
             .nav-branch {
                 margin-bottom: $min-aa;
             }
