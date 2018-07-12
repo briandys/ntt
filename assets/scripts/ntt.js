@@ -1205,6 +1205,7 @@ var $document,
         var $textWidget = $( '.textwidget' ),
             $htmlWidgetContent,
             $contentP = $content.find( '> p' ),
+            $contentDiv = $content.find( '> div' ),
             $contentListItem = $content.find( 'li' ),
             $contentWPCaptionText = $content.find( '.wp-caption-text' ),
             $visuals,
@@ -1265,8 +1266,8 @@ var $document,
             $this.parent( 'a' ).addClass( 'visuals---a' );
         } );
 
-        // Identify <p> that contains only one <img>
-        $contentP.each( function(){
+        // Identify <p> or <div> that contains only one <img>
+        $.each( [$contentP, $contentDiv], function(){
             var $this = $( this ),
                 $count = $this.contents().filter( function(){ return this.nodeType == Node.ELEMENT_NODE || ( this.nodeType == Node.ELEMENT_NODE && !!$.trim( this.nodeValue ) ) } ).length,
                 $text = $this.children( '.txt' ).length,
