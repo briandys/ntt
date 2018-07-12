@@ -79,6 +79,7 @@ var $document,
     tab_key_on,
     
     // Functions
+    idVisuals,
     removeEmpty,
     wrapTextNode;
 
@@ -1267,21 +1268,28 @@ var $document,
         } );
 
         // Identify <p> or <div> that contains only one <img>
-        $.each( [$contentP, $contentDiv], function(){
-            var $this = $( this ),
-                $count = $this.contents().filter( function(){ return this.nodeType == Node.ELEMENT_NODE || ( this.nodeType == Node.ELEMENT_NODE && !!$.trim( this.nodeValue ) ) } ).length,
-                $text = $this.children( '.txt' ).length,
-                $image = $this.children( 'img' ).length,
-                $anchor = $this.children( '.visuals---a' ).length;
+        idVisuals = function( $elem ) {
+            
+            $.each( $elem, function(){
+                var $this = $( this ),
+                    $count = $this.contents().filter( function(){ return this.nodeType == Node.ELEMENT_NODE || ( this.nodeType == Node.ELEMENT_NODE && !!$.trim( this.nodeValue ) ) } ).length,
+                    $text = $this.children( '.txt' ).length,
+                    $image = $this.children( 'img' ).length,
+                    $anchor = $this.children( '.visuals---a' ).length;
+    
+                if ( $count == 1 && ( $image || $anchor ) ) {
+                    $this.addClass( 'solo-visuals' )
+                }
+    
+                if ( $text >= 1 && ( $image >= 1 || $anchor >= 1 ) ) {
+                    $this.addClass( 'textual-visuals' )
+                }
+            } );
+        }
 
-            if ( $count == 1 && ( $image || $anchor ) ) {
-                $this.addClass( 'solo-visuals' )
-            }
-
-            if ( $text >= 1 && ( $image >= 1 || $anchor >= 1 ) ) {
-                $this.addClass( 'textual-visuals' )
-            }
-        } );
+        idVisuals( $contentP );
+        idVisuals( $contentDiv );
+        
 
         $visuals = $( '.solo-visuals' );
         $visualsA = $( '.visuals---a' );
