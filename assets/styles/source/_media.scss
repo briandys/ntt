@@ -15,6 +15,10 @@ video {
 $alignment-gutter: 1.5em;
 
 .alignleft {
+
+    &.wp-caption {
+        margin-right: $alignment-gutter;
+    }
     
     @include mq(m-vp) {
         float: left;
@@ -23,6 +27,10 @@ $alignment-gutter: 1.5em;
 }
 
 .alignright {
+
+    &.wp-caption {
+        margin-left: $alignment-gutter;
+    }
     
     @include mq(m-vp) {
         float: right;

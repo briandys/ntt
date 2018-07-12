@@ -111,7 +111,7 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
                 $entry_search_count = $entry_search->post_count;
                 
                 if ( $entry_search_count == 0 ) {
-                    $search_outcome_text = __( 'No Search Result', 'ntt' );
+                    $search_outcome_text = __( 'Search Result', 'ntt' );
                 } elseif ( $entry_search_count == 1 ) {
                     $search_outcome_text = __( 'Search Result', 'ntt' );
                 } else {

@@ -29,4 +29,8 @@
         @extend %content-type;
         @include x-padding();
     }
+
+    .script-content {
+        display: none;
+    }
 }

@@ -105,16 +105,12 @@
     .wp-caption {
         padding-bottom: 0;
     }
-
-    > figure {
-        max-width: 100vw;
-    }
     
     .solo-visuals {
         @include x-padding();
 
         &.aligncenter {
-            @include x-margin();
+            @include x-margin(auto);
             text-align: center;
         }
 
@@ -129,8 +125,7 @@
             &.aligncenter {
                 clear: none;
                 display: inline-block;
-                margin-left: 0;
-                margin-right: 0;
+                @include x-margin(auto);
             }
 
         }
@@ -144,7 +139,7 @@
     .visuals---a {
 
         &.aligncenter {
-            @include x-margin();
+            @include x-margin(auto);
             text-align: center;
         }
 
@@ -161,8 +156,7 @@
         .aligncenter {
             clear: none;
             display: inline-block;
-            margin-left: 0;
-            margin-right: in0itial;
+            @include x-margin(auto);
         }
     }
 

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="entity-main-header" class="entity-main-header cn" data-name="Entity Main Header">
-    <div class="ntt-main-header---cr">
+    <div class="entity-main-header---cr">
         <div class="view-heading heading cp" data-name="View Heading">
             <div class="view-heading---cr">
                 <?php ntt_view_name(); ?>

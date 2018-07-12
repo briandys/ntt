@@ -218,10 +218,10 @@ var $document,
             return $obj;
         },
 
-        content: function( css ) {
+        content: function( css, customCss ) {
             
             var $content = $( '<div />', {
-                'class': css + '-content',
+                'class': css + '-content' + ' ' + customCss
             } );
 
             return $content;
@@ -1260,11 +1260,20 @@ var $document,
             $( this ).addClass( 'unloaded-visuals---img');
         } );
 
-        // Content Images
-        // <a><img></a>
+        /**
+         * Content Images
+         * <a><img></a>
+         */
         $contentImg.each( function() {
             var $this = $( this );
             $this.parent( 'a' ).addClass( 'visuals---a' );
+        } );
+
+        /**
+         * Solo <script>
+         */
+        $.each( $( '.content---cr > *' ).has( 'script:only-child' ), function() {
+            $( this ).addClass( 'script-content' );
         } );
 
         // Identify <p> or <div> that contains only one <img>
@@ -1320,7 +1329,7 @@ var $document,
      * Content Type Feature
      */
     function contentType( $elem ) {
-        $content.find( $elem ).wrap( htmlOkFn.content( $elem ) );
+        $content.find( $elem ).wrap( htmlOkFn.content( $elem, 'type-2-content' ) );
     }
 
     contentType( 'code' );
