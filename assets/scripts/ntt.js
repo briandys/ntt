@@ -63,6 +63,7 @@ var $document,
     $ae,
     $comments,
     $content,
+    $contentImg,
     $goStartNav,
     $entityPrimaryDescription,
     $entityPrimaryName,
@@ -70,6 +71,7 @@ var $document,
     $entryContent,
     $entryHeader,
     $entryModule,
+    $img,
     $menuItemPageItem,
     $postPasswordForm,
     $widgetSearch,
@@ -80,6 +82,7 @@ var $document,
     
     // Functions
     idVisuals,
+    imgLoading,
     removeEmpty,
     wrapTextNode;
 
@@ -93,6 +96,7 @@ var $document,
     $ae = $( 'a, button, input, object, select, textarea' );
     $comments = $( '#comments' );
     $content = $( '.content---cr' );
+    $contentImg = $content.find( 'img' );
     $goStartNav = $( '#go-start-nav' );
     $entityPrimaryDescription = $( '#entity-primary-description' );
     $entityPrimaryName = $( '#entity-primary-name' );
@@ -100,6 +104,7 @@ var $document,
     $entryContent = $( '.entry-content' );
     $entryHeader = $( '.entry-header' );
     $entryModule = $( '#content' );
+    $img = $( 'img' );
     $menuItemPageItem = $( '.page_item, .menu-item' );
     $postPasswordForm = $( '.post-password-form' );
     $widgetSearch = $( '.widget_search' );
@@ -1202,6 +1207,32 @@ var $document,
         } );
     } ) ();
 
+    /**
+     * Visuals Structure Enhancements
+     */
+    ( function() {
+
+        // By default, tag images as "unloaded"
+        $.each( $contentImg, function() {
+            var $this = $( this );
+
+            $this.wrap(
+                $( '<span />', {
+                    'class': 'image-skin image--unloaded'
+                }
+            ) );
+        } );
+    
+        // Upon loading, tag images as "loaded"
+        $contentImg.load( function() {
+            var $this = $( this );
+            
+            $this.closest( '.image-skin' )
+                .addClass( 'image--loaded' )
+                .removeClass( 'image--unloaded' );
+        } );
+    } ) ();
+
     ( function() {
         var $textWidget = $( '.textwidget' ),
             $htmlWidgetContent,
@@ -1211,7 +1242,6 @@ var $document,
             $contentWPCaptionText = $content.find( '.wp-caption-text' ),
             $visuals,
             $visualsA,
-            $contentImg = $content.find( 'img' ),
             $contentGallery = $content.find( '.gallery' ),
             $contentAll;
 
@@ -1274,6 +1304,13 @@ var $document,
          */
         $.each( $( '.content---cr > *' ).has( 'script:only-child' ), function() {
             $( this ).addClass( 'script-content' );
+        } );
+
+        /**
+         * Solo <img>
+         */
+        $.each( $( '.content---cr > *' ).has( 'img:only-child' ), function() {
+            $( this ).addClass( 'test-visual' );
         } );
 
         // Identify <p> or <div> that contains only one <img>
@@ -1436,7 +1473,6 @@ var $document,
         $html
             .addClass( 'dom--ready' )
             .removeClass( 'dom--unready' );
-    
     } );
     
     /**
