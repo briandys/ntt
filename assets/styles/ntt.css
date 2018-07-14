@@ -45,7 +45,7 @@ img {
 .log-out-admin-account-axn a, .admin-account-name---a, #cancel-comment-reply-link, .comments-count---a, .add-comment-axn---a, .modify-comment-axn a, .comment-reply-axn a, .cm-name .a, .cm-author .a, .view-name a, .entity-primary-logo a, .post-categories a, .entry-tag-item a, .entry-published-date---a, .modify-entry-axn a, button,
 [type="submit"],
 [type="reset"], .go-content-navi---a, .go-start-navi---a, .entity-primary-nav-group---cr a, .entity-secondary-nav-group---cr a, .entries-nav a, .entries-nav .current, .breadcrumb-navi---a, .breadcrumb-navi--current---l, .entry-nav a, .entry-content-nav-group a, .entry-content-navi--current .entry-content-navi---g, .next-comments-navi a,
-.previous-comments-navi a, .widget_calendar a, .widget_calendar .txt, .widget_archive a, .widget_categories a, .widget_meta a, .widget_nav_menu a, .widget_pages a, .widget_recent_comments li > *, .widget_recent_entries li > *, .tag-cloud-link {
+.previous-comments-navi a, .widget_calendar a, .widget_calendar .txt, .widget_archive a, .widget_categories a, .widget_meta a, .widget_nav_menu a, .widget_pages a, .widget_recent_comments li > *, .tag-cloud-link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1733,16 +1733,6 @@ th {
   width: 100%;
 }
 
-.widget_calendar a {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.widget_calendar .txt {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .widget_calendar caption {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1857,18 +1847,6 @@ th {
 .widget_recent_comments---cr {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.widget_recent_entries li > * {
-  margin-right: .3em;
-}
-
-.widget_recent_entries li > *:last-child {
-  margin-right: 0;
-}
-
-.widget_recent_entries li > * {
-  min-width: auto;
 }
 
 .widget_recent_entries---cr {

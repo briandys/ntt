@@ -19,12 +19,10 @@
 
     a {
         @extend %aa;
-        @include m-x-gutter;
     }
 
     .txt {
         @extend %aa;
-        @include m-x-gutter;
     }
 
     caption {
@@ -243,15 +241,6 @@
 
     ul {
         @extend %unlist;
-    }
-
-    li {
-        @include space;
-    }
-
-    li > * {
-        @extend %aa;
-        min-width: auto;
     }
 
 }
