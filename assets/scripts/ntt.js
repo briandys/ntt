@@ -1218,18 +1218,9 @@ var $document,
 
             $this.wrap(
                 $( '<span />', {
-                    'class': 'image-skin image--unloaded'
+                    'class': 'image-skin'
                 }
             ) );
-        } );
-    
-        // Upon loading, tag images as "loaded"
-        $contentImg.load( function() {
-            var $this = $( this );
-            
-            $this.closest( '.image-skin' )
-                .addClass( 'image--loaded' )
-                .removeClass( 'image--unloaded' );
         } );
     } ) ();
 

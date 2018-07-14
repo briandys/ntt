@@ -249,26 +249,41 @@ function ntt_html_css() {
     }
 
     /**
-     * Widgets Ability Status
+     * Entity Widgets Ability Status
      */
-    $r = array(
+    $r_entity_widgets = array(
         'entity-primary-axns',
         'entity-header-aside',
         'entity-banner-aside',
         'entity-main-header-aside',
         'entity-main-aside',
         'entity-footer-aside',
+    );
+
+    foreach ( $r_entity_widgets as $entity_widgets ) {
+        
+        if ( is_active_sidebar( $entity_widgets ) ) {
+            $css[] = esc_attr( $entity_widgets ). '--enabled';
+        } else {
+            $css[] = esc_attr( $entity_widgets ). '--disabled';
+        }
+    }
+
+    /**
+     * Entry Widgets Ability Status
+     */
+    $r_entry_widgets = array(
         'entry-banner-aside',
         'entry-header-aside',
         'entry-main-aside',
     );
 
-    foreach ( $r as $val ) {
+    foreach ( $r_entry_widgets as $entry_widgets ) {
         
-        if ( is_active_sidebar( $val ) ) {
-            $css[] = esc_attr( $val ). '--enabled';
+        if ( is_active_sidebar( $entry_widgets ) && is_singular() ) {
+            $css[] = esc_attr( $entry_widgets ). '--enabled';
         } else {
-            $css[] = esc_attr( $val ). '--disabled';
+            $css[] = esc_attr( $entry_widgets ). '--disabled';
         }
     }
 

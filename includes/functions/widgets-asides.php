@@ -178,7 +178,7 @@ function ntt_widgets_init() {
 	function ntt_entry_banner_aside() {
 		$aside = 'entry-banner-aside';
 
-		if ( is_active_sidebar( $aside )  ) {
+		if ( is_active_sidebar( $aside ) && is_singular()  ) {
 			?>
 			<div id="entry-banner-aside" class="entry-banner-aside aside cp" data-name="Entry Banner Aside">
 				<div class="entry-banner-aside---cr">
@@ -204,7 +204,7 @@ function ntt_widgets_init() {
 	function ntt_entry_header_aside() {
 		$aside = 'entry-header-aside';
 
-		if ( is_active_sidebar( $aside )  ) {
+		if ( is_active_sidebar( $aside ) && is_singular()  ) {
 			?>
 			<div id="entry-header-aside" class="entry-header-aside aside cn" data-name="Entry Header Aside">
 				<div class="entry-header-aside---cr">
@@ -230,7 +230,7 @@ function ntt_widgets_init() {
 	function ntt_entry_main_aside() {
 		$aside = 'entry-main-aside';
 
-		if ( is_active_sidebar( $aside )  ) {
+		if ( is_active_sidebar( $aside ) && is_singular()  ) {
 			?>
 			<div id="entry-main-aside" class="entry-main-aside aside cn" data-name="Entry Main Aside">
 				<div class="entry-main-aside---cr">
