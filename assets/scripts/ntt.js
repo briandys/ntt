@@ -1207,23 +1207,6 @@ var $document,
         } );
     } ) ();
 
-    /**
-     * Visuals Structure Enhancements
-     */
-    ( function() {
-
-        // By default, tag images as "unloaded"
-        $.each( $contentImg, function() {
-            var $this = $( this );
-
-            $this.wrap(
-                $( '<span />', {
-                    'class': 'image-skin'
-                }
-            ) );
-        } );
-    } ) ();
-
     ( function() {
         var $textWidget = $( '.textwidget' ),
             $htmlWidgetContent,
@@ -1297,13 +1280,6 @@ var $document,
             $( this ).addClass( 'script-content' );
         } );
 
-        /**
-         * Solo <img>
-         */
-        $.each( $( '.content---cr > *' ).has( 'img:only-child' ), function() {
-            $( this ).addClass( 'test-visual' );
-        } );
-
         // Identify <p> or <div> that contains only one <img>
         idVisuals = function( $elem ) {
             
@@ -1315,7 +1291,11 @@ var $document,
                     $anchor = $this.children( '.visuals---a' ).length;
     
                 if ( $count == 1 && ( $image || $anchor ) ) {
-                    $this.addClass( 'solo-visuals' )
+                    $this.addClass( 'solo-visuals' );
+                }
+
+                if ( $count >= 2 && ( $image || $anchor ) ) {
+                    $this.addClass( 'multi-visuals' );
                 }
     
                 if ( $text >= 1 && ( $image >= 1 || $anchor >= 1 ) ) {

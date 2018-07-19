@@ -35,6 +35,11 @@ function ntt_comment_css_wp_hook() {
     do_action( 'ntt_comment_css_wp_hook' );
 }
 
+// content.php
+function ntt_after_the_content_wp_hook() {
+    do_action( 'ntt_after_the_content_wp_hook' );
+}
+
 // content-none.php
 function ntt_empty_entry_css_wp_hook() {
     do_action( 'ntt_empty_entry_css_wp_hook' );

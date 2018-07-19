@@ -8,26 +8,22 @@
             if ( is_singular() ) {
                 
                 while ( have_posts() ) {
-                    
                     the_post();
-                
                     ntt_entry_content();
-                    
                     comments_template();
                 }
-            
             } else {
                 
                 if ( have_posts() ) {
                     ?>
                     <div id="entries" class="cm-plural entries cp" data-name="Entries">
                         <div class="cm-plural---cr entries---cr">
-                        <?php
-                        while ( have_posts() ) {
-                            the_post();
-                            ntt_entry_content();
-                        }
-                        ?>
+                            <?php
+                            while ( have_posts() ) {
+                                the_post();
+                                ntt_entry_content();
+                            }
+                            ?>
                         </div>
                     </div>
                     <?php

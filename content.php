@@ -1,48 +1,12 @@
-<?php
-
-global $multipage;
-
-if ( get_the_title() ) {
-    $entry_name = '<span class="entry-name---txt txt">'. get_the_title(). '</span>';
-} else {
-    $entry_name = '<span class="entry---txt txt">'. _x( 'Entry', 'Object: Entry Name | Usage: >Entry< <Entry ID>', 'ntt' ). '</span>'. ' '. '<span class="entry-id---txt num txt">'. get_the_id(). '</span>';
-}
-?>
-
 <div id="entry-<?php the_id(); ?>" <?php post_class(); ?> data-name="Entry">
     <div class="cm-singular---cr entry---cr">
         <article id="entry-article-<?php the_id(); ?>" class="cm-article entry-article-<?php the_id(); ?> entry-article article cp" data-name="Entry Article">
             <div class="cm-article---cr entry-article---cr">
                 <div class="cm-header entry-header header cn" data-name="Entry Header">
                     <div class="cm-header---cr entry-header---cr">
-                        <div class="cm-heading entry-heading heading cp" data-name="Entry Info">
-                            <div class="cm-heading---cr entry-heading---cr">
-                            
-                            <?php
-                            $anchor_element_start = '<a href="'. esc_url( get_permalink() ). '" rel="bookmark" class="cm-name---a entry-name---a u-url a">';
-                            $anchor_element_end = '</a>';
-                            
-                            if ( is_singular() ) {
-                                $heading_level = 'h1';
-                                $anchor_element_start = '';
-                                $anchor_element_end = '';
-                            } else {
-                                $heading_level = 'h3';
-                            }
-                            ?>
-
-                            <<?php echo esc_attr( $heading_level ); ?> class="cm-name entry-name name obj h" data-name="Entry Name">
-                                <?php echo $anchor_element_start; ?>
-                                    <span class="entry-name---l l"><?php echo $entry_name; ?></span>
-                                <?php echo $anchor_element_end; ?>
-                            </<?php echo esc_attr( $heading_level ); ?>>
-
-                            <?php ntt_after_entry_name_wp_hook(); ?>
-                                    
-                            </div>
-                        </div>
 
                         <?php
+                        ntt_entry_heading();
                         ntt_entry_admin_actions();
                         ntt_breadcrumbs_nav();
                         ntt_entry_content_nav();
@@ -93,18 +57,22 @@ if ( get_the_title() ) {
                             if ( is_home() || is_archive() || is_singular() ) {   
                                 
                                 if ( has_excerpt() ) {
-                                ?>
-                                <div class="entry-summary-content summary-content p-summary content cp" data-name="Entry Summary Content">
-                                    <div class="entry-summary-content---cr content---cr">
-                                    <?php echo the_excerpt(); ?>
+                                    ?>
+                                    <div class="entry-summary-content summary-content p-summary content cp" data-name="Entry Summary Content">
+                                        <div class="entry-summary-content---cr content---cr">
+                                            <?php the_excerpt(); ?>
+                                        </div>
                                     </div>
-                                </div>
-                                <?php
+                                    <?php
                                 }
                                 ?>
+                                
                                 <div class="entry-full-content full-content e-content content cp" data-name="Entry Full Content">
                                     <div class="entry-full-content---cr content---cr">
-                                    <?php echo the_content(); ?>
+                                        <?php
+                                        the_content();
+                                        ntt_after_the_content_wp_hook();
+                                        ?>
                                     </div>
                                 </div>
                                 <?php
@@ -112,7 +80,7 @@ if ( get_the_title() ) {
                                 ?>
                                 <div class="entry-summary-content summary-content p-summary content cp" data-name="Entry Summary Content">
                                     <div class="entry-summary-content---cr content---cr">
-                                    <?php echo the_excerpt(); ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                 </div>
                                 <?php
@@ -153,6 +121,7 @@ if ( get_the_title() ) {
                 </div>
 
                 <?php
+                global $multipage;
                 if ( 'post' === get_post_type() && ( $multipage || get_the_tag_list() || has_action( 'ntt_entry_footer_wp_hook' ) ) ) {
                     ?>
                     <div class="cm-footer entry-footer footer cn" data-name="Entry Footer">

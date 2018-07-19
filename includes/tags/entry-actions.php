@@ -32,6 +32,5 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
             </div>
             <?php
         }
-
     }
 }
