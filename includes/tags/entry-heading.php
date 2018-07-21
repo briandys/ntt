@@ -14,27 +14,26 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
             <div class="cm-heading---cr entry-heading---cr">
             
             <?php
-            $anchor_element_start = '<a href="'. esc_url( get_permalink() ). '" rel="bookmark" class="cm-name---a entry-name---a u-url a">';
+            $anchor_element_start = '';
             $anchor_element_end = '</a>';
             
             if ( is_singular() ) {
-                $heading_level = 'h1';
+                $heading_level = apply_filters( 'ntt_entry_heading_level_wp_filter', 'h1' );
             } else {
                 $heading_level = 'h3';
             }
             ?>
 
             <<?php echo esc_attr( $heading_level ); ?> class="cm-name entry-name name obj h" data-name="Entry Name">
-                <?php echo $anchor_element_start; ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="cm-name---a entry-name---a u-url a">
                     <span class="entry-name---l l"><?php echo $entry_name; ?></span>
-                <?php echo $anchor_element_end; ?>
+                </a>
             </<?php echo esc_attr( $heading_level ); ?>>
 
             <?php ntt_after_entry_name_wp_hook(); ?>
                     
             </div>
         </div>
-
-        <?
+        <?php
     }
 }

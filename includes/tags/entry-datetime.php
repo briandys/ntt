@@ -10,7 +10,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                     <div class="cm-datetime---cr entry-published-datetime---cr">
 
                         <?php $day_text = get_the_date( 'j' );
-                        $month_text = get_the_date( apply_filters( 'ntt_cm_datetime_month', 'F' ) );
+                        $month_text = get_the_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
                         $year_text = get_the_date( 'Y' );
                         $date_title_attr = $day_text. ' '. $month_text. ' '. $year_text;
                         $date_mu = '<span class="day---txt txt">'. $day_text. '</span>'. ' '. '<span class="month---txt txt">'. $month_text. '</span>'. ' '. '<span class="year---txt txt">'. $year_text. '</span>';
@@ -53,7 +53,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                     <div class="cm-datetime---cr entry-updated-datetime---cr">
 
                         <?php $updated_day_text = get_the_modified_time( 'j' );
-                        $updated_month_text = get_the_modified_time( apply_filters( 'ntt_cm_datetime_month', 'F' ) );
+                        $updated_month_text = get_the_modified_time( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
                         $updated_year_text = get_the_modified_time( 'Y' );
                         $updated_date_title_attr = $updated_day_text. ' '. $updated_month_text. ' '. $updated_year_text;
                         $updated_date_mu = '<span class="day---txt txt">'. $updated_day_text. '</span>'. ' '. '<span class="month---txt txt">'. $updated_month_text. '</span>'. ' '. '<span class="year---txt txt">'. $updated_year_text. '</span>';

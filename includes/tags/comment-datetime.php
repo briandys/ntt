@@ -11,7 +11,7 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                     <div class="cm-datetime---cr comment-published-datetime---cr">
 
                         <?php $day_text = get_comment_date( 'j' );
-                        $month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month', 'F' ) );
+                        $month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
                         $year_text = get_comment_date( 'Y' );
                         $date_title_attr = $day_text. ' '. $month_text. ' '. $year_text;
                         $date_mu = '<span class="day---txt txt">'. $day_text. '</span>'. ' '. '<span class="month---txt txt">'. $month_text. '</span>'. ' '. '<span class="year---txt txt">'. $year_text. '</span>';

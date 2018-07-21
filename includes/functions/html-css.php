@@ -174,11 +174,6 @@ function ntt_html_css() {
     /**
      * Page Entry
      */
-    
-    // Sub-Pages Page Template Name
-    if ( is_page_template( 'templates/sub-pages-template.php' ) ) {
-        $css[] = 'sub-pages-view';
-    }
 
     // Page Template Name
     // Page Template Specificity

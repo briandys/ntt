@@ -28,7 +28,7 @@ function ntt_manual_excerpt( $excerpt ) {
         
         <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" class="content-snippet-link"><?php echo wp_strip_all_tags( $excerpt ); ?></a></p>
 
-    <?php echo ntt_show_more_action( $excerpt );
+        <?php echo ntt_show_more_action( $excerpt );
         
     } else {
         return $excerpt;

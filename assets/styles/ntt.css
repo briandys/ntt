@@ -2617,9 +2617,3 @@ input[type="search"]::-webkit-search-results-decoration {
   width: .75em;
   height: .75em;
 }
-
-.sub-pages-view .entry-sub-content .breadcrumbs-nav,
-.sub-pages-view .entry-sub-content .entry-datetime,
-.sub-pages-view .entry-sub-content .comments-actions-snippet {
-  display: none;
-}
