@@ -20,9 +20,9 @@ function ntt_auto_excerpt( $more ) {
 add_filter( 'excerpt_more', 'ntt_auto_excerpt' );
 
 /**
- * Manual Excerpt
+ * Manual, Search Excerpt
  */
-function ntt_manual_excerpt( $excerpt ) {
+function ntt_manual_search_excerpt( $excerpt ) {
     
     if ( is_search() ) { ?>
         
@@ -34,4 +34,4 @@ function ntt_manual_excerpt( $excerpt ) {
         return $excerpt;
     }
 }
-add_filter( 'get_the_excerpt', 'ntt_manual_excerpt' );
+add_filter( 'get_the_excerpt', 'ntt_manual_search_excerpt' );

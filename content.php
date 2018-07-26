@@ -27,7 +27,11 @@
                     
                             <?php
                             if ( is_singular() || is_home() || is_archive() ) {
-                                ntt_entry_summary_content();
+                                
+                                if ( has_excerpt() ) {
+                                    ntt_entry_summary_content();
+                                }
+                                
                                 ntt_entry_full_content();
                             } elseif ( is_search() ) {
                                 ntt_entry_summary_content();

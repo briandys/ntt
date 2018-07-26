@@ -14,9 +14,6 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
             <div class="cm-heading---cr entry-heading---cr">
             
             <?php
-            $anchor_element_start = '';
-            $anchor_element_end = '</a>';
-            
             if ( is_singular() ) {
                 $heading_level = apply_filters( 'ntt_entry_heading_level_wp_filter', 'h1' );
             } else {

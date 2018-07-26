@@ -61,9 +61,7 @@
                                 <div id="entity-primary-description" class="entity-primary-description entity-description description obj" data-name="Entity Primary Description">
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-primary-description---a a" title="<?php echo esc_attr ($product_primary_description ); ?>">
                                         <span class="entity-primary-description---l l">
-                                            <span class="entity-primary-description---txt txt">
-                                                <?php echo esc_attr( $product_primary_description ); ?>
-                                            </span>
+                                            <span class="entity-primary-description---txt txt"><?php echo esc_attr( $product_primary_description ); ?></span>
                                         </span>
                                     </a>
                                 </div>
