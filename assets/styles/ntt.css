@@ -42,7 +42,7 @@ img {
   padding: 0;
 }
 
-.log-out-admin-account-axn a, .admin-account-name---a, #cancel-comment-reply-link, .comments-count---a, .add-comment-axn---a, .modify-comment-axn a, .comment-reply-axn a, .cm-name .a, .cm-author .a, .view-name a, .entity-primary-logo a, .post-categories a, .entry-tag-item a, .entry-published-date---a, .modify-entry-axn a, button,
+.log-out-admin-account-axn a, .admin-account-name---a, #cancel-comment-reply-link, .comments-count---a, .add-comment-axn---a, .modify-comment-axn a, .comment-reply-axn a, .cm-author .a, .view-name a, .entity-primary-logo a, .entry-name---a, .post-categories a, .entry-tag-item a, .entry-published-date---a, .modify-entry-axn a, button,
 [type="submit"],
 [type="reset"], .go-content-navi---a, .go-start-navi---a, .entity-primary-nav-group---cr a, .entity-secondary-nav-group---cr a, .entries-nav a, .entries-nav .current, .breadcrumb-navi---a, .breadcrumb-navi--current---l, .entry-nav a, .entry-content-nav-group a, .entry-content-navi--current .entry-content-navi---g, .next-comments-navi a,
 .previous-comments-navi a, .widget_calendar a, .widget_calendar .txt, .widget_archive a, .widget_categories a, .widget_meta a, .widget_nav_menu a, .widget_pages a, .widget_recent_comments li > *, .tag-cloud-link {
@@ -932,15 +932,6 @@ textarea {
   padding-bottom: 1em;
 }
 
-.cm-name {
-  padding: 1rem;
-  font-size: 2em;
-}
-
-.cm-name .l {
-  word-break: break-word;
-}
-
 .cm-author {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1215,6 +1206,15 @@ textarea {
 .entity-name-description--disabled .entity-heading---cr {
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
+}
+
+.entry-name {
+  padding: 1rem;
+  font-size: 2em;
+}
+
+.entry-name---l {
+  word-break: break-word;
 }
 
 .post-categories {
@@ -2183,7 +2183,7 @@ p > object:only-child {
   top: 0;
   bottom: 100%;
   z-index: 99;
-  background-color: #1c1c1c;
+  background-color: black;
   opacity: 0;
 }
 

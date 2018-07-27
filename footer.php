@@ -13,47 +13,39 @@
                                 <div class="entity-secondary-info---cr">
 
                                     <?php
-                                    if ( ! function_exists( 'ntt_wp_theme_name' ) ) {
-                                        function ntt_wp_theme_name() {
-                                            return $GLOBALS['ntt_name'];
-                                        }
-                                    }
+                                
+                                    $entity_name = get_bloginfo( 'name', 'display' );
+                                    $entity_maker_name = 'DysineLab';
                                     
-                                    if ( ! function_exists( 'ntt_wp_theme_name_url_fragment' ) ) {
-                                        function ntt_wp_theme_name_url_fragment() {
-                                            return sanitize_title( ntt_wp_theme_name() );
-                                        }
-                                    }
-                                
-                                    $product_name = get_bloginfo( 'name', 'display' );
-                                
-                                    if ( $product_name || is_customize_preview() ) {
-                                        $ntt_wp_theme_url = '//ntt.dysinelab.com/themes/'. ntt_wp_theme_name_url_fragment(). '/';
-                                        $product_maker_name = 'DysineLab';
+                                    if ( $entity_name || is_customize_preview() ) {
                                         ?>
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-name name obj a" title="<?php echo esc_attr( $product_name ); ?>" data-name="Entity Name">
-                                            <span class="entity-name---l">
-                                                <span class="entity-name---txt"><?php echo esc_html( $product_name ); ?></span>
-                                            </span>
-                                        </a>
+                                        <span class="entity-name name obj" data-name="Entity Name">
+                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-name---a a" title="<?php echo esc_attr( $entity_name ); ?>">
+                                                <span class="entity-name---l">
+                                                    <span class="entity-name---txt"><?php echo esc_html( $entity_name ); ?></span>
+                                                </span>
+                                            </a>
+                                        </span>
                                         <?php
                                     }
                                     ?>
                                     
-                                    <span class="entity-copyright g obj" data-name="Entity Copyright" title="<?php esc_attr_e( 'Copyright', 'ntt' ); ?> <?php echo esc_attr( date_i18n( 'Y' ) ); ?>">
+                                    <span class="entity-copyright g obj" data-name="Entity Copyright" title="<?php esc_attr_e( 'Copyright', 'ntt' ); ?> <?php echo esc_attr( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?>">
                                         <span class="entity-copyright---l">
                                             <span class="copyright---txt"><?php esc_html_e( 'Copyright', 'ntt' ); ?></span>
-                                            <span class="copyright-year---txt"><?php echo date_i18n( 'Y' ); ?></span>
+                                            <span class="copyright-year---txt"><?php echo esc_html( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?></span>
                                         </span>
                                     </span>     
                                     
-                                    <a href="<?php echo esc_url( $ntt_wp_theme_url ); ?>" class="maker-tag g obj a" title="Made with <?php echo esc_attr( ntt_wp_theme_name(). ' '. 'by'. ' '. $product_maker_name ); ?>" data-name="Maker Tag">
-                                        <span class="maker-tag---l">
-                                            <span class="wp-theme-name---txt"><?php echo esc_html( ntt_wp_theme_name() ); ?></span>
-                                            <span class="by---txt"><?php echo esc_html_x( 'by', 'Usage: <Theme Name> >by< DysineLab', 'ntt' ); ?></span>
-                                            <span class="entity-maker---txt"><?php echo esc_html( $product_maker_name ); ?></span>
-                                        </span>
-                                    </a>
+                                    <span class="entity-maker-tag g obj" data-name="Entity Maker Tag">
+                                        <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_wp_filter', '//ntt.dysinelab.com/themes/' ) ); ?>" class="entity-maker-tag---a a" title="<?php echo esc_attr_x( 'Made with', 'Usage: >Made with< <Theme Name> by <Entity Maker Name> | Object: Entity Maker Tag', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ). ' '. esc_attr_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ) ); ?>">
+                                            <span class="entity-maker-tag---l">
+                                                <span class="wp-theme-name---txt"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ) ); ?></span>
+                                                <span class="by---txt"><?php echo esc_html_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ); ?></span>
+                                                <span class="entity-maker---txt"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ); ?></span>
+                                            </span>
+                                        </a>
+                                    </span>
                                 </div>
                             </div>
 

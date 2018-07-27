@@ -1,3 +1,16 @@
+.entry-name {
+    padding: $m-gutter;
+    font-size: 2em;
+}
+
+.entry-name---a {
+    @extend %aa;
+}
+
+.entry-name---l {
+    word-break: break-word;
+}
+
 //--------------------------------------------------------------
 // Entry Categories
 //--------------------------------------------------------------

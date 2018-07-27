@@ -337,7 +337,7 @@ var $document,
             if ( naviOffsetWidth > navWidth ) {
                 $this.addClass( 'overflown-navi' );
             } else {
-                $this.addClass( 'primary-navi' );
+                $this.addClass( 'starter-navi' );
             }
         } );
         

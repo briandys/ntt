@@ -1,19 +1,6 @@
 //--------------------------------------------------------------
 // Content Module
 //--------------------------------------------------------------
-.cm-name {
-    padding: $m-gutter;
-    font-size: 2em;
-
-    .a {
-        @extend %aa;
-    }
-
-    .l {
-        word-break: break-word;
-    }
-}
-
 .cm-author {
     @include m-x-gutter;
 
