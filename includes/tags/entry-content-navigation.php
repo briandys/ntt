@@ -26,8 +26,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
             'echo' => 1,
         );
         
-        $r = wp_parse_args( $args, $defaults );
-        $r = apply_filters( 'wp_link_pages_args', $r );
+        $r = apply_filters( 'wp_link_pages_args', wp_parse_args( $args, $defaults ) );
         extract( $r, EXTR_SKIP );
 
         global $post, $page, $numpages, $multipage, $more, $pagenow;
@@ -66,9 +65,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                     $content_pagination_group .= '</li>';
                 }
                 $content_pagination_group .= $after;
-            }
-
-            else {
+            } else {
                 
                 if ( $more ) {
                     $content_pagination_group .= $before;
@@ -86,7 +83,8 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                     }
                     $content_pagination_group .= $after;
                 }
-            } ?>
+            }
+            ?>
 
             <div role="navigation" class="entry-content-nav nav pagination cp" data-name="Entry Content Navigation">
                 <div class="entry-content-nav---cr">
@@ -95,11 +93,11 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                         <span class="content-nav---txt txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
                     </div>
                 
-                <?php echo $content_pagination_group; ?>
+                    <?php echo $content_pagination_group; ?>
                 
                 </div>
             </div>
-            
-        <?php }
+            <?php
+        }
     }
 }

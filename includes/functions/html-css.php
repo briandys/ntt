@@ -166,6 +166,14 @@ function ntt_html_css() {
         $css[] = esc_attr( $post->post_type ). '-view';
         $css[] = esc_attr( $post_name. '-'. $post->post_type ). '-view';
     }
+
+    // Entry Category View
+    if ( is_single() ) {
+        
+        foreach ( ( get_the_category( $post->ID ) ) as $category ) {
+            $css[] = esc_attr( $category->category_nicename. '-category-view' );
+        }
+    }
     
     if ( is_404() ) {
         $css[] = 'unreachable-resource-view';

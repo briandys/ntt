@@ -14,11 +14,12 @@ if ( ! function_exists( 'ntt_entry_categories' ) ) {
                         </span>
                     </div>
                     
-                <?php echo get_the_category_list(); ?>
+                    <?php echo get_the_category_list(); ?>
                 
                 </div>
             </div>
-        <?php }
+            <?php
+        }
     }
 }
 
@@ -40,6 +41,7 @@ if ( ! function_exists( 'ntt_entry_tags' ) ) {
                 
                 </div>
             </div>
-        <?php }  
+            <?php
+        }
     }
 }

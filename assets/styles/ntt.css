@@ -44,7 +44,7 @@ img {
 
 .log-out-admin-account-axn a, .admin-account-name---a, #cancel-comment-reply-link, .comments-count---a, .add-comment-axn---a, .modify-comment-axn a, .comment-reply-axn a, .cm-author .a, .view-name a, .entity-primary-logo a, .entry-name---a, .post-categories a, .entry-tag-item a, .entry-published-date---a, .modify-entry-axn a, button,
 [type="submit"],
-[type="reset"], .go-content-navi---a, .go-start-navi---a, .entity-primary-nav-group---cr a, .entity-secondary-nav-group---cr a, .entries-nav a, .entries-nav .current, .breadcrumb-navi---a, .breadcrumb-navi--current---l, .entry-nav a, .entry-content-nav-group a, .entry-content-navi--current .entry-content-navi---g, .next-comments-navi a,
+[type="reset"], .go-content-navi---a, .go-start-navi---a, .entity-primary-nav-group---cr a, .entity-secondary-nav-group---cr a, .entries-nav a, .entries-nav .current, .entry-sub-content-nav a, .entry-sub-content-nav .current, .breadcrumb-navi---a, .breadcrumb-navi--current---l, .entry-nav a, .entry-content-nav-group a, .entry-content-navi--current .entry-content-navi---g, .next-comments-navi a,
 .previous-comments-navi a, .widget_calendar a, .widget_calendar .txt, .widget_archive a, .widget_categories a, .widget_meta a, .widget_nav_menu a, .widget_pages a, .widget_recent_comments li > *, .tag-cloud-link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1637,6 +1637,12 @@ blockquote {
 }
 
 .entries-nav li {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.entry-sub-content-nav li {
   display: inline-block;
   padding-left: 1rem;
   padding-right: 1rem;

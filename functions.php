@@ -51,6 +51,7 @@ $r_tags = array(
     'entry-heading',
     'entry-meta',
     'entry-navigation',
+    'entry-sub-content-navigation',
     'entry-summary-content',
     'entry-taxonomy',
     'show-more-action',
