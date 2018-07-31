@@ -1,6 +1,6 @@
 <?php
 
-function comments_css() {
+function ntt_comments_css() {
     
     if ( is_singular() ) {
         // Comments
@@ -32,8 +32,39 @@ function comments_css() {
         echo ' '. implode( ' ', $css );
     }
 }
+add_action( 'ntt_comments_css_wp_hook', 'ntt_comments_css');
 
-function ntt_comments_css() {
-    comments_css();
+function ntt_comments_html_css() {
+    
+    if ( is_singular() ) {
+        // Comments
+        $comments_count = (int) get_comments_number( get_the_ID() );
+
+        // Comments Population Status
+        if ( $comments_count > 1 ) {
+            $css[] = 'populated-comments-view';
+        } else {
+            $css[] = 'empty-comments-view';
+        }
+
+        // Comments Population Count
+        if ( $comments_count == 1 ) {
+            $css[] = 'single-comment-view';
+        } elseif ( $comments_count > 1 ) {
+            $css[] = 'multiple-comments-view';
+        } elseif ( $comments_count == 0 ) {
+            $css[] = 'zero-comment-view';
+        }
+
+        // Comment Creation Ability Status
+        if ( comments_open() ) {
+            $css[] = 'enabled-comment-creation-view';
+        } else {
+            $css[] = 'disabled-comment-creation-view';
+        }
+
+        echo ' '. implode( ' ', $css );
+    }
 }
-add_action( 'ntt_comment_css_wp_hook', 'comments_css');
+add_action( 'ntt_html_css_wp_hook', 'ntt_comments_html_css');
+

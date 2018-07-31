@@ -86,7 +86,7 @@ function ntt_entry_css( $classes ) {
 }
 add_filter( 'post_class', 'ntt_entry_css' );
 
-function ntt_content_none_entry_css() {
+function ntt_empty_entry_entry_css() {
         
     $r = array(
         'cm-singular',
@@ -101,4 +101,4 @@ function ntt_content_none_entry_css() {
 
     echo implode( ' ', $css );
 }
-add_action( 'ntt_empty_entry_css_wp_hook', 'ntt_content_none_entry_css');
+add_action( 'ntt_empty_entry_css_wp_hook', 'ntt_empty_entry_entry_css');

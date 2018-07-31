@@ -23,7 +23,6 @@ function ntt_custom_visuals() {
         'flex-width'  => true,
         'flex-height' => true,
      ) ) );
-
 }
 add_action( 'after_setup_theme', 'ntt_custom_visuals' );
 
@@ -36,7 +35,6 @@ function ntt_custom_header_callback() {
     
     if ( 'blank' !== get_header_textcolor() ) {
         ?>
-
         <style id="ntt-custom-header-colors-style">
             .entity-primary-name---a,
             .entity-primary-description---a {
@@ -44,5 +42,5 @@ function ntt_custom_header_callback() {
             }
         </style>
         <?php
-    } ?>
-<?php }
+    }
+}

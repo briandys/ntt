@@ -609,7 +609,8 @@ var $document,
             $input = $elem.find( '.search-input' );
 
         if ( $elem.length && $html.hasClass( 'ntt-primary-search-f5e' ) ) {
-            $elem.addClass( 'primary-search-f5e primary-action' )
+            $elem.addClass( 'primary-search-f5e primary-action' );
+            $search.removeClass( 'default-search' );
         } else {
             $html.removeClass( 'ntt-primary-search-f5e' );
             return;

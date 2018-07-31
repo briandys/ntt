@@ -1,6 +1,6 @@
 <?php $unique_id = uniqid( 'search-' ); ?>
 
-<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search cp form" data-name="Search">
+<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search default-search cp form" data-name="Search">
     <div class="search---cr">
         <div class="search-field field cp" data-name="Search Field">
             <div class="search-field---cr field---cr">

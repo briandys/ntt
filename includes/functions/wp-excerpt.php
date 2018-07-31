@@ -24,12 +24,13 @@ add_filter( 'excerpt_more', 'ntt_auto_excerpt' );
  */
 function ntt_manual_search_excerpt( $excerpt ) {
     
-    if ( is_search() ) { ?>
+    if ( is_search() ) {
+        ?>
         
         <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" class="content-snippet-link"><?php echo wp_strip_all_tags( $excerpt ); ?></a></p>
 
-        <?php echo ntt_show_more_action( $excerpt );
-        
+        <?php
+        echo ntt_show_more_action( $excerpt );
     } else {
         return $excerpt;
     }

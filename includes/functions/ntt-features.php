@@ -1,6 +1,6 @@
 <?php
 
-function ntt_features_scripts() {
+function ntt_features_script() {
     
     $down_arrowhead_icon = ntt_get_svg( array( 'icon' => 'down-arrowhead-icon', ) );
     $up_arrowhead_icon = ntt_get_svg( array( 'icon' => 'up-arrowhead-icon', ) );
@@ -47,7 +47,7 @@ function ntt_features_scripts() {
 
     wp_localize_script( 'ntt-script', 'nttData', $ntt_l10n );
 }
-add_action('wp_enqueue_scripts', 'ntt_features_scripts', 0);
+add_action('wp_enqueue_scripts', 'ntt_features_script', 0);
 
 function ntt_features_html_css() {
     

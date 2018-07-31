@@ -1,7 +1,7 @@
 <?php
 
 function ntt_html_css() {   
-    global $post, $s, $is_lynx, $is_gecko, $is_IE, $is_macIE, $is_winIE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+    global $post, $is_lynx, $is_gecko, $is_IE, $is_macIE, $is_winIE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
     $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) : "";
     $is_ipad = preg_match('/ipad/i',$useragent);
 
@@ -196,13 +196,8 @@ function ntt_html_css() {
         }
     }
 
-    /**
-     * Comments
-     */ 
-    comments_css();
-
     if ( is_search() ) {
-                
+        global $s;
         $entry_search = new WP_Query( array(
             's'         => $s,
             'showposts' => -1,

@@ -1,7 +1,6 @@
 //--------------------------------------------------------------
 // General
 //--------------------------------------------------------------
-
 input,
 textarea {
     @include box-reset;
@@ -15,7 +14,7 @@ textarea {
 
 input[type="checkbox"],
 input[type="radio"] {
-    margin-right: .5rem;
+    min-width: 1rem;
     height: $min-aa;
     vertical-align: middle;
 }

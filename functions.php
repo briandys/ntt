@@ -15,15 +15,15 @@ $r_functions = array(
     'comment-form',
     'custom-visuals',
     'entry-css',
-    'excerpt',
     'gallery',
-    'features',
     'html-css',
     'icons',
+    'ntt-features',
     'pingback-header',
     'widgets-asides',
     'wp-customizer',
     'wp-customizer-custom-colors',
+    'wp-excerpt',
 );
 
 foreach ( $r_functions as $file_name ) {

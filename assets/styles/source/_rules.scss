@@ -321,15 +321,6 @@ $caption-fg-color: $gray;
     padding: 0;
 }
 
-%aa {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-width: $min-aa;
-    min-height: $min-aa;
-}
-
 %aa-pad {
     padding-top: .5em;
     padding-bottom: .5em;
@@ -380,4 +371,13 @@ $caption-fg-color: $gray;
             color: $paper-color;
         }
     }
+}
+
+%aa {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: $min-aa;
+    min-height: $min-aa;
 }
