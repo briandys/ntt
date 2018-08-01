@@ -206,6 +206,7 @@ $caption-fg-color: $gray;
 @mixin y-center($method: '') {
     @if $method == 'position-absolute' {
         position: absolute;
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
     } @else {

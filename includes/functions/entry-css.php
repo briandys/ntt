@@ -81,6 +81,13 @@ function ntt_entry_css( $classes ) {
     } else {
         $classes[] = 'entry-summary-content--disabled';
     }
+
+    // Entry More Tag
+    if ( strpos( $post->post_content, '<!--more-->' ) ) {
+        $classes[] = 'entry-more-tag--enabled';
+    } else {
+        $classes[] = 'entry-more-tag--disabled';
+    }
     
     return $classes;
 }
