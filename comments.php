@@ -4,25 +4,25 @@ if ( post_password_required() ) {
 	return;
 }
 
- // title_reply
- $title_reply_mu = '<div class="compose-comment-name name obj" data-name="Compose Comment Name">';
-    $title_reply_mu .= '<span class="compose-comment-name---l l">';
-        $title_reply_mu .= '<span class="compose---txt txt">';
-            $title_reply_mu .= esc_html_x( 'Compose', 'Component: Comment Creation | Usage: >Compose< Comment', 'ntt' );
-        $title_reply_mu .= '</span>';
-        $title_reply_mu .= ' '. '<span class="comment---txt txt">';
-            $title_reply_mu .= esc_html_x( 'Comment', 'Component: Comment Creation | Usage: Compose >Comment<', 'ntt' );
-        $title_reply_mu .= '</span>';
+// title_reply
+$title_reply_mu = '<div class="compose-comment-name name obj" data-name="Compose Comment Name">';
+$title_reply_mu .= '<span class="compose-comment-name---l l">';
+    $title_reply_mu .= '<span class="compose---txt txt">';
+        $title_reply_mu .= esc_html_x( 'Compose', 'Component: Comment Creation | Usage: >Compose< Comment', 'ntt' );
     $title_reply_mu .= '</span>';
- $title_reply_mu .= '</div>';
+    $title_reply_mu .= ' '. '<span class="comment---txt txt">';
+        $title_reply_mu .= esc_html_x( 'Comment', 'Component: Comment Creation | Usage: Compose >Comment<', 'ntt' );
+    $title_reply_mu .= '</span>';
+$title_reply_mu .= '</span>';
+$title_reply_mu .= '</div>';
 
- // title_reply_to
- $title_reply_to_mu = '<div class="comment-reply-name name obj" data-name="Comment Reply Name">';
-    $title_reply_to_mu .= '<div class="comment-reply-name---l l">';
-        $title_reply_to_mu .= '<span class="reply-to---txt txt">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
-        $title_reply_to_mu .= ' '. '%s';
-    $title_reply_to_mu .= '</div>';
- $title_reply_to_mu .= '</div>';
+// title_reply_to
+$title_reply_to_mu = '<div class="comment-reply-name name obj" data-name="Comment Reply Name">';
+$title_reply_to_mu .= '<div class="comment-reply-name---l l">';
+    $title_reply_to_mu .= '<span class="reply-to---txt txt">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
+    $title_reply_to_mu .= ' '. '%s';
+$title_reply_to_mu .= '</div>';
+$title_reply_to_mu .= '</div>';
 
 // logged_in_as
 $log_out_title_attr = esc_attr__( 'Log Out', 'ntt' );
@@ -93,32 +93,44 @@ $cancel_reply_link_mu .= '</span>'; ?>
                 <div class="cm-plural-main comments-main main cn" data-name="Comments Main">
                     <div class="cm-plural-main---cr comments-main---cr">
                 
-                    <?php if ( have_comments() ) { ?>
+                        <?php
+                        if ( have_comments() ) {
+                            ?>
+                            <ul class="comments---group group list">
+                                <?php
+                                wp_list_comments( array(
+                                    'style'         => 'ul',
+                                    'avatar_size'   => 48,
+                                    'callback'      => 'ntt_comment',
+                                    'echo'          => true,
+                                ) );
+                                ?>
+                            </ul>
+                            <?php
+                        } else {
 
-                        <ul class="comments---group group list">
-                        <?php wp_list_comments( array(
-                            'style'         => 'ul',
-                            'avatar_size'   => 48,
-                            'callback'      => 'ntt_comment',
-                            'echo'          => true,
-                        ) ); ?>
-                        </ul>
-
-                    <?php } else { ?>
-                        <div class="empty-comments-note note cp" data-name="Empty Comments Note">
-                            <div class="empty-comments-note---cr note---cr">
-                                <p><?php echo esc_html_x( 'Be the first to comment.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' ); ?></p>
+                            if ( comments_open() ) {
+                                $comments_note = esc_html_x( 'Be the first to comment.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' );
+                            } else {
+                                $comments_note = esc_html__( 'There are no comments.', 'ntt' );
+                            }
+                            ?>
+                            <div class="empty-comments-note note cp" data-name="Empty Comments Note">
+                                <div class="empty-comments-note---cr note---cr">
+                                    <p><?php echo $comments_note ?></p>
+                                </div>
                             </div>
-                        </div>
-                    <?php } ?>
-                        
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 
             </div>
         </div>
         
-        <?php // comment-form.php
+        <?php
+        // comment-form.php
         comment_form( array(
             'id_form'                   => 'commentform',
         
@@ -153,6 +165,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
             // Notes
             'comment_notes_before'      => '',
             'comment_notes_after'       => '',
-        ) ); ?>
+        ) );
+        ?>
     </div>
 </section>

@@ -9,7 +9,18 @@ table {
 	word-break: normal;
 
 	ul, ol {
+		margin: 0;
+		padding: 1em 1rem;
 		padding-left: 2.25em;
+	}
+
+	td,
+	th {
+
+		> .txt {
+			display: block;
+			padding: 1em 1rem;
+		}
 	}
 
 }
@@ -24,9 +35,4 @@ tbody {
 
 td {
 	vertical-align: top;
-}
-
-td,
-th {
-	padding: $m-gutter;
 }
