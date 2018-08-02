@@ -55,7 +55,7 @@
 				.addClass( 'wp-customizer-color-scheme--custom' )
 				.removeClass( 'wp-customizer-color-scheme--default' );
 
-			var style = $( '#ntt-custom-theme-colors-style' ),
+			var style = $( '#ntt-wp-customizer-custom-color-scheme-style' ),
 				hue = style.data( 'hue' ),
 				css = style.html();
 

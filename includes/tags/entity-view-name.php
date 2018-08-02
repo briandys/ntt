@@ -1,7 +1,7 @@
 <?php
 
-if ( ! function_exists( 'ntt_view_name' ) ) {
-    function ntt_view_name() {
+if ( ! function_exists( 'ntt_entity_view_name' ) ) {
+    function ntt_entity_view_name() {
         global $s;
         
         $value = '';
@@ -81,7 +81,10 @@ if ( ! function_exists( 'ntt_view_name' ) ) {
                     }
                 
                 } elseif ( is_category() ) {
-                    $value = single_term_title( '', false );
+                    $category = new WP_Query( 'cat='. get_query_var( 'cat' ) );
+                    $category_count = $category->found_posts;
+                    
+                    $value = single_term_title( '', false ). ' '. esc_attr( $category_count );
                     $property_prefix = 'Category';
                     $href_attr = esc_url( get_category_link( get_queried_object()->term_id ) );
                 } elseif ( is_tag() ) {

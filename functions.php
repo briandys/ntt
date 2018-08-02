@@ -6,6 +6,7 @@ $GLOBALS['ntt_name'] = 'NTT';
 $r_functions = array(
     
     // First things first
+    'back-compatibility',
     'settings',
     'hooks',
     'styles-scripts',
@@ -22,7 +23,6 @@ $r_functions = array(
     'pingback-header',
     'widgets-asides',
     'wp-customizer',
-    'wp-customizer-custom-colors',
     'wp-excerpt',
 );
 
@@ -40,6 +40,7 @@ $r_tags = array(
     'comments-actions-snippet',
     'comments-nav',
     'entity-navigation',
+    'entity-view-name',
     'entries-navigation',
     'entry-actions',
     'entry-author',
@@ -55,7 +56,6 @@ $r_tags = array(
     'entry-summary-content',
     'entry-taxonomy',
     'show-more-action',
-    'view-name',
 );
 
 foreach ( $r_tags as $file_name ) {

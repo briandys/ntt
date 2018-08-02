@@ -3,7 +3,7 @@
     <div class="entity-main-header---cr">
         <div class="view-heading heading cp" data-name="View Heading">
             <div class="view-heading---cr">
-                <?php ntt_view_name(); ?>
+                <?php ntt_entity_view_name(); ?>
             </div>
         </div>
         <?php

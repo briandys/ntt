@@ -1,6 +1,6 @@
 <?php
 
-function ntt_register_customize( $wp_customize ) {	
+function ntt_register_wp_customize( $wp_customize ) {	
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -8,20 +8,20 @@ function ntt_register_customize( $wp_customize ) {
 	// Entity Name
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.entity-name .txt',
-		'render_callback' => 'ntt_customize_partial_blogname',
+		'render_callback' => 'ntt_wp_customize_partial_blogname',
 	) );
 
 	// Entity Description
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 		'selector' => '.entity-description .txt',
-		'render_callback' => 'ntt_customize_partial_blogdescription',
+		'render_callback' => 'ntt_wp_customize_partial_blogdescription',
 	) );
 
 	// Custom Colors
 	$wp_customize->add_setting( 'colorscheme', array(
 		'default'           => 'default',
 		'transport'         => 'postMessage',
-		'sanitize_callback' => 'ntt_wp_customizer_color_scheme_sanitizer',
+		'sanitize_callback' => 'ntt_wp_customize_color_scheme_sanitizer',
 	) );
 
 	$wp_customize->add_setting( 'colorscheme_hue', array(
@@ -47,10 +47,21 @@ function ntt_register_customize( $wp_customize ) {
 		'priority'    => 6,
 	 ) ) );
 }
-add_action( 'customize_register', 'ntt_register_customize' );
+add_action( 'customize_register', 'ntt_register_wp_customize' );
 
-function ntt_wp_customizer_color_scheme_sanitizer( $input ) {
-	$valid = array( 'default', 'custom', );
+function ntt_wp_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+function ntt_wp_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+function ntt_wp_customize_color_scheme_sanitizer( $input ) {
+	$valid = array(
+		'default',
+		'custom',
+	);
 
 	if ( in_array( $input, $valid ) ) {
 		return $input;
@@ -58,27 +69,58 @@ function ntt_wp_customizer_color_scheme_sanitizer( $input ) {
 	return 'default';
 }
 
-function ntt_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-function ntt_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-function ntt_wp_customizer_preview() {
+/**
+ * WP Customizer Preview Script
+ */
+function ntt_wp_customizer_preview_script() {
 	wp_enqueue_script( 'ntt-wp-customizer-preview-script', get_theme_file_uri( '/assets/scripts/wp-customizer-preview.js' ), array( 'customize-preview', ), null, true );
 }
-add_action( 'customize_preview_init', 'ntt_wp_customizer_preview' );
+add_action( 'customize_preview_init', 'ntt_wp_customizer_preview_script' );
 
-function ntt_wp_customizer_controls() {
+/**
+ * WP Customizer Controls Script
+ */
+function ntt_wp_customizer_controls_script() {
 	wp_enqueue_script( 'ntt-wp-customizer-controls-script', get_theme_file_uri( '/assets/scripts/wp-customizer-controls.js' ), array(), null, true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'ntt_wp_customizer_controls' );
+add_action( 'customize_controls_enqueue_scripts', 'ntt_wp_customizer_controls_script' );
 
-// Hide the Edit Icon in WP Customizer Preview
-function ntt_hide_edit_icon_wp_customizer() {
+/**
+ * WP Customizer Edit Icon Script
+ * Hide the Modify Action in WP Customizer Preview
+ */
+function ntt_wp_customizer_modify_action_script() {
     $js = 'wp.customize.selectiveRefresh.Partial.prototype.createEditShortcutForPlacement = function() {};';
     wp_add_inline_script( 'customize-selective-refresh', $js );
 }
-add_action( 'wp_enqueue_scripts', 'ntt_hide_edit_icon_wp_customizer' );
+add_action( 'wp_enqueue_scripts', 'ntt_wp_customizer_modify_action_script' );
+
+/**
+ * WP Customizer Custom Color Scheme Style
+ */
+function ntt_wp_customizer_custom_color_scheme_style() {
+    
+    if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
+        return;
+    }
+    
+    function ntt_wp_customizer_color_patterns() {
+        $hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+        $saturation = absint( apply_filters( 'ntt_custom_colors_saturation', 50 ) ). '%';
+        $css = '
+        .wp-customizer-color-scheme--custom .entity-header---cr {
+            background-color: hsl('. $hue. ', '. $saturation. ', 50%);
+        }
+        ';
+        return apply_filters( 'ntt_wp_customizer_color_patterns', $css, $hue, $saturation );
+    }
+    
+    $hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+    ?>
+
+    <style id="ntt-wp-customizer-custom-color-scheme-style"<?php if ( is_customize_preview() ) { echo ' '. 'data-hue="' . esc_attr( $hue ) . '"'; } ?>>
+        <?php echo ntt_wp_customizer_color_patterns(); ?>
+    </style>
+    <?php
+}
+add_action( 'wp_head', 'ntt_wp_customizer_custom_color_scheme_style' );

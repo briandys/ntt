@@ -1,6 +1,6 @@
 <?php
 
-function ntt_widgets_init() {
+function ntt_widgets_asides() {
 		
 	// Markup
 	$widget_start_mu = '<div id="%1$s" class="%2$s widget cp" data-name="Widget">';
@@ -241,4 +241,4 @@ function ntt_widgets_init() {
 		}
 	}
 }
-add_action( 'widgets_init', 'ntt_widgets_init' );
+add_action( 'widgets_init', 'ntt_widgets_asides' );

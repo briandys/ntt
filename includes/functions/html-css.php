@@ -70,7 +70,7 @@ function ntt_html_css() {
     }
 
     // WP Customizer Color Scheme
-    $colors = ntt_wp_customizer_color_scheme_sanitizer( get_theme_mod( 'colorscheme', 'default' ) );
+    $colors = ntt_wp_customize_color_scheme_sanitizer( get_theme_mod( 'colorscheme', 'default' ) );
     $css[] = 'wp-customizer-color-scheme--'. esc_attr( $colors );
 
     /**
@@ -174,6 +174,7 @@ function ntt_html_css() {
             $css[] = esc_attr( $category->category_nicename. '-category-view' );
         }
     }
+    
     
     if ( is_404() ) {
         $css[] = 'unreachable-resource-view';
