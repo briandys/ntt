@@ -7,9 +7,10 @@ if ( ! function_exists( 'ntt_show_more_action' ) ) {
         $show_text = _x( 'Show', 'Object: Show More Action | Usage: >Show< more of <Entry Name>', 'ntt' );
         $more_text = _x( 'more', 'Object: Show More Action | Usage: Show >more< of <Entry Name>', 'ntt' );
         $of_text = _x( 'of', 'Object: Show More Action | Usage: Show more >of< <Entry Name>', 'ntt' );
+        $entry_get_the_title = get_the_title( get_the_ID() );
         
-        if ( get_the_title( get_the_ID() ) ) {
-            $entry_name_text = get_the_title( get_the_ID() );
+        if ( $entry_get_the_title ) {
+            $entry_name_text = $entry_get_the_title;
             $entry_name = '<span class="entry-name---txt">'. esc_html( $entry_name_text ). '</span>';
         } else {
             $entry_name_text = $entry_text. ' '. $entry_id;

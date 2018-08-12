@@ -2,8 +2,8 @@
 
 if ( ! function_exists( 'ntt_entity_view_name' ) ) {
     function ntt_entity_view_name() {
-        global $s;
-        
+        global $wp_query;
+        $query_found_posts = $wp_query->found_posts;
         $value = '';
         $property = '';
         $anchor_start = '';
@@ -81,10 +81,7 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                     }
                 
                 } elseif ( is_category() ) {
-                    $category = new WP_Query( 'cat='. get_query_var( 'cat' ) );
-                    $category_count = $category->found_posts;
-                    
-                    $value = single_term_title( '', false ). ' '. esc_attr( $category_count );
+                    $value = single_term_title( '', false );
                     $property_prefix = 'Category';
                     $href_attr = esc_url( get_category_link( get_queried_object()->term_id ) );
                 } elseif ( is_tag() ) {
@@ -97,7 +94,7 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
             
                 $value_attr = $value;
 
-                $anchor_start = '<a href="'. $href_attr. '" class="view-name---a a">';
+                $anchor_start = '<a href="'. $href_attr. '" class="entity-view-name---a a">';
                 $anchor_end = '</a>';
 
                 $property = '<span class="'. sanitize_title( $property_prefix ). '---txt txt">'. $property_prefix. '</span>'. ' '. '<span class="archive---txt txt">Archive</span>';
@@ -105,25 +102,21 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
 
             // Custom Index (Search Results)
             if ( is_search() ) {
-                
                 $entry_search = new WP_Query( array(
-                    's'         => $s,
                     'showposts' => -1,
                 ) );
                 
-                $entry_search_count = $entry_search->post_count;
-                
-                if ( $entry_search_count == 0 ) {
+                if ( $query_found_posts == 0 ) {
                     $search_outcome_text = __( 'Search Result', 'ntt' );
-                } elseif ( $entry_search_count == 1 ) {
+                } elseif ( $query_found_posts == 1 ) {
                     $search_outcome_text = __( 'Search Result', 'ntt' );
                 } else {
                     $search_outcome_text = __( 'Search Results', 'ntt' );
                 }
 
-                $value = esc_html( $entry_search_count );
+                $value = esc_html( $query_found_posts );
                 $value_attr = 'search-count';
-                $anchor_start = '<a href="'. esc_url( get_search_link() ). '" class="view-name---a a">';
+                $anchor_start = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-name---a a">';
                 $anchor_end = '</a>';
                 $property = '<span class="search-outcome---txt txt">'. $search_outcome_text. '</span>
                 <span class="for---txt txt">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>
@@ -136,14 +129,19 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
         }
         ?>
 
-        <h2 class="view-name name obj h" data-name="View Name">
+        <h2 class="entity-view-name name obj h" data-name="Entity View Name">
             <?php echo $anchor_start; ?>
-                <span class="view-name---l l">
+                <span class="entity-view-name---l l">
                     <span class="value---line line"><?php echo $value; ?></span>
                     <span class="property---line line"><?php echo $property; ?></span>
+                    <span class="count obj" data-name="Count">
+                        <span class="count---l l">
+                            <span class="count---txt num txt"><?php echo $query_found_posts; ?></span>
+                        </span>
+                    </span>
                 </span>
             <?php echo $anchor_end; ?>
         </h2>
-        
-    <?php }
+        <?php
+    }
 }

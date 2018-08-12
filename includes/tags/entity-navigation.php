@@ -15,8 +15,9 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
 
             <nav id="entity-primary-nav" class="entity-primary-nav nav cp" data-name="Entity Primary Navigation">
                 <div class="entity-primary-nav---cr">
-                    <h2 class="entity-primary-nav-name nav-name name obj h">Primary Navigation</h2>
-                    <?php function escape_html_the_title( $title, $id = null ) {
+                    <h2 class="entity-primary-nav-name nav-name name obj h"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
+                    <?php
+                    function escape_html_the_title( $title, $id = null ) {
                         return esc_html( $title );
                     }
                     add_filter( 'the_title', 'escape_html_the_title', 10, 2 );
@@ -53,7 +54,8 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
                             'link_after'        => $label_mu_end,
                             'items_wrap'        => $group_mu_start. '%3$s'. $group_mu_end,
                         ) );
-                    } ?>
+                    }
+                    ?>
                 </div>
             </nav>
             

@@ -6,7 +6,7 @@
             <div class="search-field---cr field---cr">
                 <label for="<?php echo esc_attr( $unique_id ); ?>" class="search-field-label label obj" data-name="Search Field Label">
                     <span class="search-field-label---l l">
-                        <span class="search---txt txt">Search</span>
+                        <span class="search---txt txt"><?php esc_html_e( 'Search', 'ntt' ); ?></span>
                     </span>
                 </label>
                 <div class="search-textbox textbox obj" data-name="Search Textbox">

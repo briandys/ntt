@@ -9,7 +9,7 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
                 <div class="comments-nav---cr">
                     <div class="comments-nav-name nav-name name obj h">
                         <span class="comments-nav-name---l l">
-                            <span class="comments-nav---txt txt">Comments Nav</span>
+                            <span class="comments-nav---txt txt"><?php esc_html_e( 'Comments Nav', 'ntt' ); ?></span>
                         </span>
                     </div>
             

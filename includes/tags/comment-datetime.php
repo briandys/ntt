@@ -22,7 +22,9 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                         $time_title_attr = $hour_text. ':'. $minute_text. ':'. $second_text;
                         $time_mu = '<span class="hour---txt txt">'. $hour_text. '</span>'. '<span class="colon---txt txt">:</span>'. '<span class="minute---txt txt">'. $minute_text. '</span>'. '<span class="colon---txt txt">:</span>'. '<span class="second---txt txt">'. $second_text. '</span>'; ?>
 
-                        <span class="comment-published-on-glabel glabel obj"><span class="commented-on---txt txt"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span></span>
+                        <span class="comment-published-on-glabel glabel obj">
+                            <span class="commented-on---txt txt"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
+                        </span>
 
                         <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="cm-date comment-published-date dt-published published-date date obj time">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>" class="comment-published-date---a a">
@@ -36,7 +38,7 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                             <span class="at---txt txt"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
                         </span>
                         
-                        <span class="cm-time comment-published-time published-time time obj">
+                        <time class="cm-time comment-published-time published-time time obj">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Component: DateTime | Usage: >Commented at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>" class="comment-published-time---a a">
                                 <span class="comment-published-time---l l">
                                 <?php echo $time_mu; ?>
