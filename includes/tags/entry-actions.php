@@ -6,7 +6,7 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
         if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
             
             if ( get_the_title() ) {
-                $entry_name = '<span class="entry-name---txt txt">'. get_the_title(). '</span>';
+                $entry_name = '<span class="entry-name---txt txt">'. esc_html( get_the_title() ). '</span>';
                 $entry_name_title_attr = esc_attr( get_the_title() );
             } else {
                 $entry_text = esc_html__( 'Entry', 'ntt' );

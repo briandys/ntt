@@ -19,7 +19,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
                 $navi_ancestors = '<div class="breadcrumb-navi--ancestor breadcrumb-navi breadcrumb-navi obj item">';
                     $navi_ancestors .= '<a href="'. esc_url( get_permalink( $ancestor ) ). '" title="'. esc_attr( get_the_title( $ancestor ) ). '" class="breadcrumb-navi---a a">';
                         $navi_ancestors .= '<span class="breadcrumb-navi---l l">';
-                           $navi_ancestors .= '<span class="navi---txt txt">'. get_the_title( $ancestor ). '</span>';
+                           $navi_ancestors .= '<span class="navi---txt txt">'. esc_html( get_the_title( $ancestor ) ). '</span>';
                         $navi_ancestors .= '</span>';
                     $navi_ancestors .= '</a>';
                 $navi_ancestors .= '</div>';
@@ -29,7 +29,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
 
             $navi_current = '<div class="breadcrumb-navi--current breadcrumb-navi obj item">';
                 $navi_current .= '<span class="breadcrumb-navi--current---l breadcrumb-navi---l l">';
-                    $navi_current .= '<span class="navi---txt txt">'. get_the_title(). '</span>';
+                    $navi_current .= '<span class="navi---txt txt">'. esc_html( get_the_title() ). '</span>';
                 $navi_current .= '</span>';
             $navi_current .= '</div>'; ?>
 
