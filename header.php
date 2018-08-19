@@ -92,16 +92,17 @@
                         <div id="entity-banner" class="entity-banner banner cp" data-name="Entity Banner">
                             <div class="entity-banner---cr">
 
-                            <?php if ( has_header_image() ) {
-                                ?>
-                                <div class="entity-banner-visuals banner-visuals visuals obj " data-name="Entity Banner Visuals">
-                                <?php the_custom_header_markup(); ?>
-                                </div>
                                 <?php
-                            }
-                            
-                            ntt_entity_banner_aside();
-                            ?>
+                                if ( has_header_image() ) {
+                                    ?>
+                                    <div class="entity-banner-visuals banner-visuals visuals obj " data-name="Entity Banner Visuals">
+                                        <?php the_custom_header_markup(); ?>
+                                    </div>
+                                    <?php
+                                }
+                                
+                                ntt_entity_banner_aside();
+                                ?>
 
                             </div>
                         </div>

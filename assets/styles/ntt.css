@@ -813,6 +813,12 @@ textarea {
   margin-bottom: -0.25em;
 }
 
+.content---cr li ul,
+.content---cr li ol {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
 .content---cr > table {
   margin-top: 1rem;
   margin-bottom: 1rem;

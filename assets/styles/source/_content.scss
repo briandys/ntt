@@ -72,6 +72,11 @@
         &:last-child {
             margin-bottom: -$space;
         }
+
+        ul,
+        ol {
+            @include y-padding($space);
+        }
     }
 
     > table {
