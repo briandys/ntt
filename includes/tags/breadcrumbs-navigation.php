@@ -44,19 +44,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
                 
                 </div>
             </div>
-
-        <?php }
-    }
-}
-
-if ( ! function_exists( 'ntt_breadcrumbs_nav_body_css' ) ) {
-    function ntt_breadcrumbs_nav_body_css( $classes ) {
-        global $post;
-        
-        if ( is_page() && $post->post_parent && ! is_attachment() ) {
-            $classes[] = 'ntt-breadcrumbs';
+            <?php    
         }
-        return $classes;
     }
-    add_filter( 'body_class', 'ntt_breadcrumbs_nav_body_css' );
 }

@@ -55,7 +55,6 @@ $r_tags = array(
     'entry-sub-content-navigation',
     'entry-summary-content',
     'entry-taxonomy',
-    'show-more-action',
 );
 
 foreach ( $r_tags as $file_name ) {
