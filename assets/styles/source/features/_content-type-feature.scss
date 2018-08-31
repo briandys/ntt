@@ -21,10 +21,6 @@
         display: block;
     }
 
-    > .pre-content {
-        @extend %content-type;
-    }
-
     > .table-content {
         @extend %content-type;
         @include x-padding();

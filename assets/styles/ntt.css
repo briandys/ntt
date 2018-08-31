@@ -57,7 +57,7 @@ img {
   min-height: 3.5rem;
 }
 
-.content---cr > .code-content, .content---cr > .pre-content, .content---cr > .table-content {
+.content---cr > .code-content, .content---cr > .table-content {
   max-width: 100vw;
   overflow-x: auto;
 }
@@ -1939,10 +1939,6 @@ p > object:only-child {
 .wp-caption,
 .gallery-caption {
   max-width: 100%;
-}
-
-.wp-caption-text {
-  padding: 1rem;
 }
 
 .comment-form-cookies-consent {

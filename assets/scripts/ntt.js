@@ -1338,7 +1338,7 @@ var $document,
      * Content Type Feature
      */
     function contentType( $elem ) {
-        $content.find( $elem ).wrap( htmlOkFn.content( $elem, 'type-2-content' ) );
+        $content.find( $elem ).wrap( htmlOkFn.content( $elem, '' ) );
     }
 
     contentType( 'code' );
@@ -1347,6 +1347,11 @@ var $document,
     contentType( 'pre' );
     contentType( 'select' );
     contentType( 'table' );
+
+    // Detecting nested Table Content
+    $( '.table-content' ).closest( '.content---cr > *' ).addClass( 'table-content' );
+
+    $( 'figcaption' ).closest( 'figure' ).addClass( 'captioned-figure' );
 
     /**
      * Hidden Entity Description
