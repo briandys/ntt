@@ -1,22 +1,25 @@
 <?php
 
-function ntt_entry_css( $classes ) {
+/**
+ * Entry
+ */
+function ntt_entry_css( $css ) {
     global $post;
     
     // Default
-    $r_css = array(
+    $r_defaults_css = array(
         'cm-singular',
         'entry',
         'entry-'. $post->ID,
         'h-entry',
     );
     
-    foreach ( $r_css as $css ) {
-        $classes[] = esc_attr( $css );
+    foreach ( $r_defaults_css as $default_css ) {
+        $css[] = esc_attr( $default_css );
     }
     
     // Post Format
-    $r_post_formats = array(
+    $r_post_formats_css = array(
         'aside',
         'audio',
         'chat',
@@ -28,84 +31,89 @@ function ntt_entry_css( $classes ) {
         'video',
     );
 
-    foreach ( $r_post_formats as $post_format ) {
+    foreach ( $r_post_formats_css as $post_format_css ) {
 
-        if ( has_post_format( $post_format ) ) {
-            $classes[] = esc_attr( $post_format ). '-post';
+        if ( has_post_format( $post_format_css ) ) {
+            $css[] = esc_attr( $post_format_css. '-post' );
+        } else {
+            $css[] = 'standard-post';
         }
     }
 
     // Entry Name Population Status
     if ( get_the_title() ) {
-        $classes[] = 'entry-name--populated';
+        $css[] = 'entry-name--populated';
     } else {
-        $classes[] = 'entry-name--empty';
+        $css[] = 'entry-name--empty';
     }
     
     // Entry Author Avatar Ability Status
     if ( get_option( 'show_avatars' ) == 0 ) {
-        $classes[] = 'entry-author-avatar--disabled';
+        $css[] = 'entry-author-avatar--disabled';
     } else {
-        $classes[] = 'entry-author-avatar--enabled';
+        $css[] = 'entry-author-avatar--enabled';
     }
 
     // Entry Categories Population Status
     if ( has_category( '', $post->ID ) ) {
-        $classes[] = 'entry-categories--populated';
+        $css[] = 'entry-categories--populated';
     } else {
-        $classes[] = 'entry-categories--empty';
+        $css[] = 'entry-categories--empty';
     }
         
     // Entry Category
     foreach ( ( get_the_category( $post->ID ) ) as $category ) {
-        $classes[] = esc_attr( $category->category_nicename ). '-category';
+        $css[] = esc_attr( $category->category_nicename ). '-category';
     }
 
     // Entry Tags Population Status
     if ( get_the_tag_list( '', '', '', $post->ID ) ) {
-        $classes[] = 'entry-tags--populated';
+        $css[] = 'entry-tags--populated';
     } else {
-        $classes[] = 'entry-tags--empty';
+        $css[] = 'entry-tags--empty';
     }
 
     // Entry Banner Visuals / Featured Image Ability Status
     if ( '' !== get_the_post_thumbnail() ) {
-        $classes[] = 'entry-banner-visuals--enabled';
+        $css[] = 'entry-banner-visuals--enabled';
     } else {
-        $classes[] = 'entry-banner-visuals--disabled';
+        $css[] = 'entry-banner-visuals--disabled';
     }
 
     // Entry Summary Content / Excerpt Ability Status
     if ( has_excerpt() ) {
-        $classes[] = 'entry-summary-content--enabled';
+        $css[] = 'entry-summary-content--enabled';
     } else {
-        $classes[] = 'entry-summary-content--disabled';
+        $css[] = 'entry-summary-content--disabled';
     }
 
     // Entry More Tag
     if ( strpos( $post->post_content, '<!--more-->' ) ) {
-        $classes[] = 'entry-more-tag--enabled';
+        $css[] = 'entry-more-tag--enabled';
     } else {
-        $classes[] = 'entry-more-tag--disabled';
+        $css[] = 'entry-more-tag--disabled';
     }
     
-    return $classes;
+    return $css;
 }
 add_filter( 'post_class', 'ntt_entry_css' );
 
+/**
+ * Empty Entry, 404, 0 Search Results
+ */
 function ntt_empty_entry_entry_css() {
         
-    $r = array(
+    $r_defaults_css = array(
         'cm-singular',
         'entry',
         'empty-entry',
         'h-entry',
     );
     
-    foreach ( $r as $names ) {
-        $css[] = esc_attr( $names );
+    foreach ( $r_defaults_css as $default_css ) {
+        $css[] = esc_attr( $default_css );
     }
 
-    echo implode( ' ', $css );
+    echo esc_attr( implode( ' ', $css ) );
 }
 add_action( 'ntt_empty_entry_css_wp_hook', 'ntt_empty_entry_entry_css');

@@ -286,6 +286,6 @@ function ntt_html_css() {
         }
     }
 
-    echo ' '. implode( ' ', $css );
+    echo esc_attr( ' '. implode( ' ', $css ) );
 }
 add_action( 'ntt_html_css_wp_hook', 'ntt_html_css');

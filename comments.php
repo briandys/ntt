@@ -110,14 +110,14 @@ $cancel_reply_link_mu .= '</span>'; ?>
                         } else {
 
                             if ( comments_open() ) {
-                                $comments_note = esc_html_x( 'Be the first to comment.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' );
+                                $comments_content_esc = esc_html_x( 'Be the first to comment.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' );
                             } else {
-                                $comments_note = esc_html__( 'There are no comments.', 'ntt' );
+                                $comments_content_esc = esc_html__( 'There are no comments.', 'ntt' );
                             }
                             ?>
                             <div class="empty-comments-note note cp" data-name="Empty Comments Note">
                                 <div class="empty-comments-note---cr note---cr">
-                                    <p><?php echo $comments_note ?></p>
+                                    <p><?php echo $comments_content_esc ?></p>
                                 </div>
                             </div>
                             <?php

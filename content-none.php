@@ -30,14 +30,14 @@
                                     
                                         <?php
                                         if ( is_404() ) {
-                                            $search_spiel = esc_html__( 'Please try searching.', 'ntt' );
+                                            $search_content_esc = esc_html__( 'Please try searching.', 'ntt' );
                                         } else {
-                                            $search_spiel = esc_html__( 'Please try another search term.', 'ntt' );
+                                            $search_content_esc = esc_html__( 'Please try another search term.', 'ntt' );
                                         }
                                         ?>
                                     
                                         <p><?php esc_html_e( 'It seems we can not find what you are looking for.', 'ntt' ); ?></p>
-                                        <p><?php echo $search_spiel; ?></p>
+                                        <p><?php echo $search_content_esc; ?></p>
                                     
                                         <?php get_search_form(); ?>
                                     </div>
