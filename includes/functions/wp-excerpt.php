@@ -60,7 +60,7 @@ function ntt_manual_search_excerpt( $excerpt ) {
     if ( is_search() ) {
         ?>
         
-        <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" class="content-snippet-link"><?php echo $excerpt; ?></a></p>
+        <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" class="content-snippet-link"><?php echo esc_html( $excerpt ); ?></a></p>
 
         <?php
         echo ntt_show_more_action( $excerpt );

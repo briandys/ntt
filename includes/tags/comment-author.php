@@ -9,12 +9,12 @@ if ( ! function_exists( 'ntt_comment_author') ) {
             <div class="cm-author---cr comment-author---cr">
 
             <?php if ( get_comment_author_url() ) {
-                $anchor_tag_start = '<a href="'. get_comment_author_url(). '" class="comment-author-name---a p-name u-url a">';
-                $anchor_tag_end = '</a>';
+                $anchor_start_mu = '<a href="'. get_comment_author_url(). '" class="comment-author-name---a p-name u-url a">';
+                $anchor_end_mu = '</a>';
                 
             } else {
-                $anchor_tag_start = '';
-                $anchor_tag_end = '';
+                $anchor_start_mu = '';
+                $anchor_end_mu = '';
             } ?>
 
                 <span class="cm-glabel commented-by-glabel glabel obj">
@@ -23,11 +23,11 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 </span>
                 
                 <span class="cm-author-name comment-author-name author-name name obj" data-name="Comment Author Name">
-                    <?php echo $anchor_tag_start; ?>
+                    <?php echo $anchor_start_mu; ?>
                         <span class="comment-author-name---l l" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                             <span class="comment-author-name---txt txt"><?php echo esc_html( $comment_author ); ?></span>
                         </span>
-                    <?php echo $anchor_tag_end; ?>
+                    <?php echo $anchor_end_mu; ?>
                 </span>
 
                 <?php
@@ -35,7 +35,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                     ?>
 
                     <span class="cm-avatar comment-author-avatar author-avatar avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
-                        <?php echo $anchor_tag_start;
+                        <?php echo $anchor_start_mu;
                         echo get_avatar(
                             $comment,
                             $size = '48',
@@ -43,7 +43,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                             $alt = $comment_author. ' '. 'Avatar',
                             $args = array( 'class' => 'comment-author-avatar---img author-avatar---img avatar---img u-photo img', )
                         );
-                        echo $anchor_tag_end; ?>
+                        echo $anchor_end_mu; ?>
                     </span>
 
                     <?php

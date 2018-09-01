@@ -33,55 +33,55 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         
         if ( $multipage ) {
 
-            $content_pagination_group = '';
+            $content_pagination_group_mu = '';
 
             if ( 'number' == $next_or_number ) {
-                $content_pagination_group .= $before;
+                $content_pagination_group_mu .= $before;
                 
                 for ( $i = 1; $i < ( $numpages + 1 ); $i = $i + 1 ) {
                     $j = str_replace( '%', $i, $pagelink );
                     
-                    $content_pagination_group .= ' ';
+                    $content_pagination_group_mu .= ' ';
                     
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
-                        $content_pagination_group .= '<li class="entry-content-navi navi obj item">';
-                        $content_pagination_group .= _wp_link_page( $i );
-                        $content_pagination_group .= '<span class="entry-content-navi---l l">';
+                        $content_pagination_group_mu .= '<li class="entry-content-navi navi obj item">';
+                        $content_pagination_group_mu .= _wp_link_page( $i );
+                        $content_pagination_group_mu .= '<span class="entry-content-navi---l l">';
                     } else {
-                        $content_pagination_group .= '<li class="entry-content-navi--current entry-content-navi navi obj item">';
-                        $content_pagination_group .= '<span class="entry-content-navi---g g">';
-                        $content_pagination_group .= '<span class="entry-content-navi---l l">';
+                        $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi navi obj item">';
+                        $content_pagination_group_mu .= '<span class="entry-content-navi---g g">';
+                        $content_pagination_group_mu .= '<span class="entry-content-navi---l l">';
                     }
 
-                    $content_pagination_group .= $text_before . $j . $text_after;
+                    $content_pagination_group_mu .= $text_before . $j . $text_after;
                     
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
-                        $content_pagination_group .= '</span>';
-                        $content_pagination_group .= '</a>';
+                        $content_pagination_group_mu .= '</span>';
+                        $content_pagination_group_mu .= '</a>';
                     } else {
-                        $content_pagination_group .= '</span>';
-                        $content_pagination_group .= '</span>';
+                        $content_pagination_group_mu .= '</span>';
+                        $content_pagination_group_mu .= '</span>';
                     }
-                    $content_pagination_group .= '</li>';
+                    $content_pagination_group_mu .= '</li>';
                 }
-                $content_pagination_group .= $after;
+                $content_pagination_group_mu .= $after;
             } else {
                 
                 if ( $more ) {
-                    $content_pagination_group .= $before;
+                    $content_pagination_group_mu .= $before;
                     $i = $page - 1;
                     
                     if ( $i && $more ) {
-                        $content_pagination_group .= _wp_link_page( $i );
-                        $content_pagination_group .= $text_before . $previouspagelink . $text_after . '</a>';
+                        $content_pagination_group_mu .= _wp_link_page( $i );
+                        $content_pagination_group_mu .= $text_before . $previouspagelink . $text_after . '</a>';
                     }
                     $i = $page + 1;
                     
                     if ( $i <= $numpages && $more ) {
-                        $content_pagination_group .= _wp_link_page( $i );
-                        $content_pagination_group .= $text_before . $nextpagelink . $text_after . '</a>';
+                        $content_pagination_group_mu .= _wp_link_page( $i );
+                        $content_pagination_group_mu .= $text_before . $nextpagelink . $text_after . '</a>';
                     }
-                    $content_pagination_group .= $after;
+                    $content_pagination_group_mu .= $after;
                 }
             }
             ?>
@@ -93,7 +93,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                         <span class="content-nav---txt txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
                     </div>
                 
-                    <?php echo $content_pagination_group; ?>
+                    <?php echo $content_pagination_group_mu; ?>
                 
                 </div>
             </div>

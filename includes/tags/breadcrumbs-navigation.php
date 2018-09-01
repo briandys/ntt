@@ -11,8 +11,8 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
             $anc = get_post_ancestors( $post->ID );
             $anc = array_reverse( $anc );
 
-            if ( ! isset( $breadcrumbs_ancestors ) ) {
-                $breadcrumbs_ancestors = null;
+            if ( ! isset( $breadcrumbs_ancestors_mu ) ) {
+                $breadcrumbs_ancestors_mu = null;
             }
 
             foreach ( $anc as $ancestor ) {
@@ -24,14 +24,14 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
                     $navi_ancestors .= '</a>';
                 $navi_ancestors .= '</div>';
 
-                $breadcrumbs_ancestors .= $navi_ancestors;
+                $breadcrumbs_ancestors_mu .= $navi_ancestors;
             }
 
-            $navi_current = '<div class="breadcrumb-navi--current breadcrumb-navi obj item">';
-                $navi_current .= '<span class="breadcrumb-navi--current---l breadcrumb-navi---l l">';
-                    $navi_current .= '<span class="navi---txt txt">'. esc_html( get_the_title() ). '</span>';
-                $navi_current .= '</span>';
-            $navi_current .= '</div>'; ?>
+            $navi_current_mu = '<div class="breadcrumb-navi--current breadcrumb-navi obj item">';
+                $navi_current_mu .= '<span class="breadcrumb-navi--current---l breadcrumb-navi---l l">';
+                    $navi_current_mu .= '<span class="navi---txt txt">'. esc_html( get_the_title() ). '</span>';
+                $navi_current_mu .= '</span>';
+            $navi_current_mu .= '</div>'; ?>
 
             <div class="cm-nav breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
                 <div class="cm-nav---cr breadcrumbs-nav---cr">
@@ -39,7 +39,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
                     <div class="cm-nav-name breadcrumbs-nav-name nav-name name obj" aria-label="Breadcrumbs Navigation Name"><?php echo esc_html__( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
 
                     <div class="breadcrumbs-nav-group nav-group group">
-                    <?php echo $breadcrumbs_ancestors. ' '. $navi_current; ?>
+                    <?php echo $breadcrumbs_ancestors_mu. ' '. $navi_current_mu; ?>
                     </div>
                 
                 </div>

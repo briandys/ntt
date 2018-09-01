@@ -41,7 +41,7 @@ if ( is_child_theme() ) {
     add_action('wp_enqueue_scripts', 'ntt_kid_styles', 0);
     
     function ntt_kid_html_css() {
-        echo ' '. sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme';
+        echo ' '. esc_attr( sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme' );
     }
     add_action( 'ntt_html_css_wp_hook', 'ntt_kid_html_css');
 }
