@@ -16,10 +16,6 @@
 .cm-avatar {
     @include y-center-ib;
     line-height: 0;
-    
-    .img {
-        border-radius: 50%;
-    }
 }
 
 .cm-datetime {

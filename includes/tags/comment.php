@@ -13,7 +13,7 @@ if ( ! function_exists( 'ntt_comment') ) {
         }
 
         if ( get_option( 'avatar_default' ) == 'blank' ) {
-            $commenter_avatar_type_css = 'default-commenter-avatar--blank';
+            $commenter_avatar_type_css = 'default-commenter-avatar--default';
         } else {
             $commenter_avatar_type_css = 'default-commenter-avatar--custom';
         } ?>

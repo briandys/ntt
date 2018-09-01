@@ -954,10 +954,6 @@ textarea {
   line-height: 0;
 }
 
-.cm-avatar .img {
-  border-radius: 50%;
-}
-
 .cm-datetime {
   padding-left: 1rem;
   padding-right: 1rem;

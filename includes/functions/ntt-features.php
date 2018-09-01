@@ -11,6 +11,7 @@ function ntt_features_script() {
     $burger_icon = ntt_get_svg( array( 'icon' => 'burger-icon', ) );
     $plus_icon = ntt_get_svg( array( 'icon' => 'plus-icon', ) );
     $pencil_icon = ntt_get_svg( array( 'icon' => 'pencil-icon', ) );
+    $paper_plane_icon = ntt_get_svg( array( 'icon' => 'paper-plane-icon', ) );
 
     $ntt_l10n = array(
         'showSubNavText'    => __( 'Show Sub-Nav', 'ntt' ),
@@ -43,6 +44,7 @@ function ntt_features_script() {
         'burgerIcon'            => $burger_icon,
         'plusIcon'              => $plus_icon,
         'pencilIcon'            => $pencil_icon,
+        'paperPlaneIcon'        => $paper_plane_icon,
     );
 
     wp_localize_script( 'ntt-script', 'nttData', $ntt_l10n );
