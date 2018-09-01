@@ -31,8 +31,7 @@
     }
 
     // Negations
-    > .microtheme,
-    > .wp-caption {
+    > .microtheme {
         @include x-padding(0);
     }
 

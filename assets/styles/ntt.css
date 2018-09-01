@@ -772,8 +772,7 @@ textarea {
   font-size: 1rem;
 }
 
-.content---cr > .microtheme,
-.content---cr > .wp-caption {
+.content---cr > .microtheme {
   padding-left: 0;
   padding-right: 0;
 }
