@@ -13,7 +13,10 @@
 }
 
 .ntt-primary-menu-f5e--on {
-     overflow: hidden;
+    
+    body {
+        overflow: hidden;
+    }
     
      .primary-menu-overlay {
         @extend %overlay;

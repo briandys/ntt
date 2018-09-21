@@ -2032,7 +2032,7 @@ p > object:only-child {
   text-align: center;
 }
 
-.ntt-go-content-nav--on {
+.ntt-go-content-nav--on body {
   overflow: hidden;
 }
 
@@ -2119,7 +2119,7 @@ p > object:only-child {
   display: none;
 }
 
-.ntt-overflow-axns-f5e--on {
+.ntt-overflow-axns-f5e--on body {
   overflow: hidden;
 }
 
@@ -2204,7 +2204,7 @@ p > object:only-child {
   display: none;
 }
 
-.ntt-primary-menu-f5e--on {
+.ntt-primary-menu-f5e--on body {
   overflow: hidden;
 }
 

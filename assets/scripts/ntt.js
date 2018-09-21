@@ -1323,7 +1323,8 @@ var $document,
         $contentGallery.has( '.gallery-caption' ).addClass( 'captioned-gallery' )
             .closest( '.gallery-wrapper' ).addClass( 'captioned-gallery' );
 
-        $( '.cm-singular .content---cr' ).children( 'p:has( [id*=more-]:only-child )' ).addClass( 'show-more-marker');
+        // More Tag <!--more-->
+        $( '.cm-singular .content---cr' ).children( 'p:has( [id^=more-]:only-child )' ).addClass( 'show-more-marker');
             
     } ) ();
 

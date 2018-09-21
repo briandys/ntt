@@ -27,7 +27,10 @@
 }
 
 .ntt-go-content-nav--on {
-    overflow: hidden;
+    
+    body {
+        overflow: hidden;
+    }
    
     .go-content-nav-overlay {
        @extend %overlay;
