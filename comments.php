@@ -6,11 +6,11 @@ if ( post_password_required() ) {
 
 // title_reply
 $title_reply_mu = '<div class="compose-comment-name name obj" data-name="Compose Comment Name">';
-$title_reply_mu .= '<span class="compose-comment-name---l l">';
-    $title_reply_mu .= '<span class="compose---txt txt">';
+$title_reply_mu .= '<span class="compose-comment-name---l">';
+    $title_reply_mu .= '<span class="compose---txt">';
         $title_reply_mu .= esc_html_x( 'Compose', 'Component: Comment Creation | Usage: >Compose< Comment', 'ntt' );
     $title_reply_mu .= '</span>';
-    $title_reply_mu .= ' '. '<span class="comment---txt txt">';
+    $title_reply_mu .= ' '. '<span class="comment---txt">';
         $title_reply_mu .= esc_html_x( 'Comment', 'Component: Comment Creation | Usage: Compose >Comment<', 'ntt' );
     $title_reply_mu .= '</span>';
 $title_reply_mu .= '</span>';
@@ -18,8 +18,8 @@ $title_reply_mu .= '</div>';
 
 // title_reply_to
 $title_reply_to_mu = '<div class="comment-reply-name name obj" data-name="Comment Reply Name">';
-$title_reply_to_mu .= '<div class="comment-reply-name---l l">';
-    $title_reply_to_mu .= '<span class="reply-to---txt txt">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
+$title_reply_to_mu .= '<div class="comment-reply-name---l">';
+    $title_reply_to_mu .= '<span class="reply-to---txt">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
     $title_reply_to_mu .= ' '. '%s';
 $title_reply_to_mu .= '</div>';
 $title_reply_to_mu .= '</div>';
@@ -32,11 +32,11 @@ $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Ac
     $logged_in_as_mu .= '<div class="admin-account-log-status---cr">';
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
             $logged_in_as_mu .= '<div class="logged-in-admin-account---cr">';
-                $logged_in_as_mu .= '<span class="logged-in-as---glabel glabel obj"><span class="logged-in-as---txt txt">'. esc_html_x( 'Logged in as', 'Component: Comment Admin Account | Usage: The admin name who is logged in.', 'ntt' ). '</span></span>';
-                $logged_in_as_mu .= ' '. '<span class="admin-account-name name obj"><a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'" class="admin-account-name---a a"><span class="admin-account-name---l l"><span class="admin-account-name---txt txt">'. $user_identity.'</span></span></a></span>';
+                $logged_in_as_mu .= '<span class="logged-in-as---glabel glabel obj"><span class="logged-in-as---txt">'. esc_html_x( 'Logged in as', 'Component: Comment Admin Account | Usage: The admin name who is logged in.', 'ntt' ). '</span></span>';
+                $logged_in_as_mu .= ' '. '<span class="admin-account-name name obj"><a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'" class="admin-account-name---a a"><span class="admin-account-name---l"><span class="admin-account-name---txt">'. $user_identity.'</span></span></a></span>';
             $logged_in_as_mu .= '</div>';
         $logged_in_as_mu .= '</div>';
-        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn obj" data-name="Log Out Admin Account Action"><a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. $log_out_title_attr.'"><span class="log-out-admin-account-axn---l l"><span class="log-out---txt txt">'. $log_out_l.'</span></span></a></div>';
+        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn obj" data-name="Log Out Admin Account Action"><a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. $log_out_title_attr.'"><span class="log-out-admin-account-axn---l"><span class="log-out---txt">'. $log_out_l.'</span></span></a></div>';
     $logged_in_as_mu .= '</div>';
 $logged_in_as_mu .= '</div>';
 
@@ -51,8 +51,8 @@ $must_log_in_mu .= '</div>';
 $comment_field_mu = '<div class="field comment-message cp" data-name="Comment Message">';
     $comment_field_mu .= '<div class="field---cr comment-message---cr">';
     $comment_field_mu .= '<label for="comment" class="comment-message-label label obj" data-name="Comment Message Label">';
-        $comment_field_mu .= '<span class="comment-message-label---l l">';
-            $comment_field_mu .= '<span class="comment---txt txt">'. esc_attr__( 'Comment', 'ntt' ). '</span>';
+        $comment_field_mu .= '<span class="comment-message-label---l">';
+            $comment_field_mu .= '<span class="comment---txt">'. esc_attr__( 'Comment', 'ntt' ). '</span>';
         $comment_field_mu .= '</span>';
     $comment_field_mu .= '</label>';
         $comment_field_mu .= '<div class="comment-message-textbox textbox felem obj" data-name="Comment Message Textbox">';
@@ -63,8 +63,8 @@ $comment_field_mu .= '</div>';
 
 // cancel_reply_link
 $cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l l" title="'. esc_attr_x( 'Cancel Reply to Comment', 'Usage: Cancel Reply to Comment | Component: Comment Respond', 'ntt' ). '">';
-$cancel_reply_link_mu .= '<span class="cancel---txt txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
-$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt txt">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= '<span class="cancel---txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>'; ?>
 
 <section class="cm comment-md md" data-name="Comment Module">
@@ -76,7 +76,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
                 <div class="cm-plural-header comments-header header cn" data-name="Comments Header">
                     <div class="cm-plural-header---cr comments-header---cr">
                         <h2 class="comments-name name obj h">
-                            <span class="comments-name---l l">
+                            <span class="comments-name---l">
                                 <span class="comments---txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
                             </span>
                         </h2>

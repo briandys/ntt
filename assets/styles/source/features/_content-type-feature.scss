@@ -21,11 +21,6 @@
         display: block;
     }
 
-    > .table-content {
-        @extend %content-type;
-        @include x-padding();
-    }
-
     .script-content {
         display: none;
     }

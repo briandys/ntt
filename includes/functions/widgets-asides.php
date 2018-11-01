@@ -16,19 +16,19 @@ function ntt_widgets_asides() {
 	register_sidebar( array(
 		'name'          => __( '1. Entity Primary Actions', 'ntt' ),
 		'id'            => 'entity-primary-axns',
-		'description'   => __( 'Actions after Primary Info', 'ntt' ),
+		'description'   => __( 'Actions after Entity Primary Information', 'ntt' ),
 		'before_widget' => $widget_start_mu,
 		'after_widget'  => $widget_end_mu,
 		'before_title'  => $title_mu_start,
 		'after_title'   => $title_mu_end,
 	) );
 	
-	function ntt_entity_primary_actions() {
+	function ntt_entity_primary_axns() {
 		$aside = 'entity-primary-axns';
 
 		if ( is_active_sidebar( $aside )  ) {
 			?>
-			<div id="entity-primary-axns" class="entity-primary-axns axns cp aside" data-name="Entity Primary Actions">
+			<div id="entity-primary-axns" class="entity-primary-axns axns aside cp" data-name="Entity Primary Actions">
 				<div class="entity-primary-axns---cr">
 					<?php dynamic_sidebar( $aside ); ?>
 				</div>

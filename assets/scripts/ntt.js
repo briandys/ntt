@@ -1,4 +1,6 @@
-// Avoid `console` errors in browsers that lack a console.
+/**
+ * Avoid `console` errors in browsers that lack a console.
+ */ 
 (function() {
     var method;
     var noop = function () {};
@@ -22,7 +24,7 @@
 }());
 
 /**
- * File skip-link-focus-fix.js
+ * Skip Link Focus Fix
  * Helps with accessibility for keyboard only users
  * Learn more: https://git.io/vWdr2
  */
@@ -51,11 +53,12 @@
 	}
 })();
 
-
+// Variables in global scope
 var $document,
     $window,
     $html,
     $body,
+    
     documentHeight,
     windowWidth,
     windowHeight,
@@ -67,7 +70,7 @@ var $document,
     $goStartNav,
     $entityPrimaryDescription,
     $entityPrimaryName,
-    $entityNav,
+    $entityPrimaryNav,
     $entryContent,
     $entryHeader,
     $entryModule,
@@ -99,8 +102,8 @@ var $document,
     $contentImg = $content.find( 'img' );
     $goStartNav = $( '#go-start-nav' );
     $entityPrimaryDescription = $( '#entity-primary-description' );
-    $entityPrimaryName = $( '#entity-primary-name' );
-    $entityNav = $( '#entity-primary-nav' );
+    $entityPrimaryName = $( '#entity-heading' );
+    $entityPrimaryNav = $( '#entity-primary-nav' );
     $entryContent = $( '.entry-content' );
     $entryHeader = $( '.entry-header' );
     $entryModule = $( '#content' );
@@ -185,6 +188,7 @@ var $document,
             return $obj;
         },
 
+        // Group CP
         group: function( css, customCss, dataName ) {
 
             var $cr = $( '<div />', {
@@ -199,6 +203,7 @@ var $document,
             return $group;
         },
 
+        // CP
         cp: function( css, customCss, dataName ) {
             
             var $cr = $( '<div />', {
@@ -213,6 +218,7 @@ var $document,
             return $cp;
         },
 
+        // Overlay OBJ
         overlayObj: function( css, dataName ) {
             
             var $obj = $( '<div />', {
@@ -223,6 +229,7 @@ var $document,
             return $obj;
         },
 
+        // Content
         content: function( css, customCss ) {
             
             var $content = $( '<div />', {
@@ -257,9 +264,7 @@ var $document,
         } );
     }
 
-    /**
-     * Hidden Conditional
-     */
+    // Is Hidden Conditional
     isHidden = function( $elem ) {
         if ( ! $elem.length || $elem.css( 'margin' ) == '-1px' || $elem.is( ':hidden' ) ) {
             return true;
@@ -308,67 +313,84 @@ var $document,
     };
     
     /**
-     * Navi Overflow
+     * Starter Navigation
+     * Measures the width of the navigation container and puts excess items in a new container
+     * The remaining navigation items are the starters.
      */
-    function navOverflow( $elem ) {
-        var $navTrunk = $elem.find( 'ul:first' ),
-            $navTrunkNavi = $navTrunk.children(),
-            $navTrunkOverflownNavi,
-            $navi,
-            $navBranch,
-            $subNav = $elem.find( '.children, .sub-menu' ),
-            $overflownNaviTrunk,
-            icon = $( nttData.ellipsisIcon );
-
-        $navTrunk.addClass( 'interim-overflow-nav' );
-        $subNav.addClass( 'nav-branch' );
-
-        $navTrunkNavi.each( function() {
-            var $this = $( this ),
-                naviOffset = parseInt( Math.round( $this.offset().left ) ),
-                naviWidth = parseInt( $this.outerWidth() ),
-                buffer = 48,
-                naviOffsetWidth,
-                navWidth;
-
-            navWidth = $entityNav.width() - buffer;
-            naviOffsetWidth = naviOffset + naviWidth;
-
-            if ( naviOffsetWidth > navWidth ) {
-                $this.addClass( 'overflown-navi' );
-            } else {
-                $this.addClass( 'starter-navi' );
-            }
-        } );
+    function starterNav( $el ) {
         
-        $navTrunk
-            .addClass( 'overflow-nav' )
-            .removeClass( 'interim-overflow-nav' );
+        // 1. Define Elements
+        var $navTrunk = $el.find( 'ul:first' ),
+            $navTrunkNavi = $navTrunk.children(),
+            $subNav = $el.find( '.children, .sub-menu' ),
+            icon = $( nttData.ellipsisIcon );
+        
+        // 2. Add initial CSS class names
+        ( function() {
+            $subNav.addClass( 'js--nav-branch' );
 
-        $navTrunkOverflownNavi = $navTrunk.find( '.overflown-navi' );
+            /**
+             * Classify Starter and Non-Starter Navigation Items
+             * Measures the combined widths of navigation items and compares it to the viewport.
+             * Items within the viewport are considered the Starter navigation items.
+             */
 
-        $navBranch = $( '<ul />', {
-            'class': 'children sub-menu nav-branch',
-        } );
+            // This CSS class name enables a proper width detection of the succeeding function via CSS
+            $navTrunk.addClass( 'js--interim-starter-nav' );
 
-        $navi = $( '<li />', {
-            'class': 'overflown-navi-trunk page_item page_item_has_children menu-item menu-item-has-children navi'
-        } ).append( $navBranch );
+            $navTrunkNavi.each( function() {
+                var $this = $( this ),
+                    naviWidth = parseInt( $this.outerWidth() ),
+                    naviOffset = parseInt( Math.round( $this.offset().left ) ),
+                    buffer = 48,
+                    navWidth = $entityPrimaryNav.width() - buffer,
+                    naviOffsetWidth = naviOffset + naviWidth;
 
-        $navTrunkOverflownNavi.wrapAll( $navi );
+                if ( naviOffsetWidth > navWidth ) {
+                    $this.addClass( 'js--non-starter-navi' );
+                } else {
+                    $this.addClass( 'js--starter-navi' );
+                }
+            } );
 
-        $overflownNaviTrunk = $( $elem ).find( '.overflown-navi-trunk' );
+            // Removing the interim CSS class name and replacing it with the actual nav CSS class name
+            $navTrunk
+                .addClass( 'js--starter-nav' )
+                .removeClass( 'js--interim-starter-nav' );
+        } )();
+        
+        // 3. Creating new HTML structure to contain all non-starter nav items
+        ( function() {
+            var $nonStarterNavi = $navTrunk.find( '.js--non-starter-navi' ),
+                $navi,
+                $nonStarterNavBranch,
+                $overflownNaviTrunk;
+            
+            $nonStarterNavBranch = $( '<ul />', {
+                'class': 'js--non-starter-nav-branch js--nav-branch children sub-menu',
+            } );
 
-        $overflownNaviTrunk.prepend(
-            htmlOkFn.buttonObj(
-                'sub-nav-toggle-axn',
-                'toggle-axn axn',
-                'Sub-Navigation Toggle Action',
-                'hide',
-                'toggle-sub-nav',
-                icon
-            )
-        );
+            $navi = $( '<li />', {
+                'class': 'js--non-starter-nav-trunk page_item page_item_has_children menu-item menu-item-has-children navi'
+            } ).append( $nonStarterNavBranch );
+
+            $nonStarterNavi.wrapAll( $navi );
+
+            // Defining the navigation item trunk element
+            $overflownNaviTrunk = $( $el ).find( '.js--non-starter-nav-trunk' );
+
+            // Creating a button
+            $overflownNaviTrunk.prepend(
+                htmlOkFn.buttonObj(
+                    'sub-nav-toggle-axn',
+                    'toggle-axn axn',
+                    'Sub-Navigation Toggle Action',
+                    'hide',
+                    'toggle-sub-nav',
+                    icon
+                )
+            );
+        }() );
     }
 
     /**
@@ -408,11 +430,11 @@ var $document,
 
         // Define structure by adding CSS class names
         $navTrunk.addClass( 'nav-trunk' );
-        $navBranch.addClass( 'nav-branch' );
+        $navBranch.addClass( 'js--nav-branch' );
         $currentNavItem.addClass( 'navi--current' );
     
-        // Implement Navigation Overflow
-        navOverflow( $elem );
+        // Run Starter Navigation
+        starterNav( $elem );
 
         // Defining elements
         $parents = $( '.page_item_has_children, .menu-item-has-children' );
@@ -548,19 +570,19 @@ var $document,
             if ( $parent.hasClass( 'inactive-sub-nav' ) ) {
                 subNavFn.on.apply( this );
                 
-                if ( $elem.is( $entityNav ) ) {
+                if ( $elem.is( $entityPrimaryNav ) ) {
                     subNavFn.subNavSiblingsOff.apply( this );
                 }
             
             } else if ( $parent.hasClass( 'active-sub-nav' ) ) {
                 subNavFn.off.apply( this );
                 
-                if ( $elem.is( $entityNav ) ) {
+                if ( $elem.is( $entityPrimaryNav ) ) {
                     subNavFn.subNavSiblingsOn.apply( this );
                 }
             }
 
-            if ( $elem.is( $entityNav ) ) {
+            if ( $elem.is( $entityPrimaryNav ) ) {
                 subNavFn.siblingsOff.apply( this );
             }
         } );

@@ -4,9 +4,9 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
     function ntt_entry_heading() {
 
         if ( get_the_title() ) {
-            $entry_name_mu = '<span class="entry-name---txt txt">'. esc_html( get_the_title() ). '</span>';
+            $entry_name_mu = '<span class="entry-name---txt">'. esc_html( get_the_title() ). '</span>';
         } else {
-            $entry_name_mu = '<span class="entry---txt txt">'. _x( 'Entry', 'Object: Entry Name | Usage: >Entry< <Entry ID>', 'ntt' ). '</span>'. ' '. '<span class="entry-id---txt num txt">'. get_the_id(). '</span>';
+            $entry_name_mu = '<span class="entry---txt">'. _x( 'Entry', 'Object: Entry Name | Usage: >Entry< <Entry ID>', 'ntt' ). '</span>'. ' '. '<span class="entry-id---txt num txt">'. get_the_id(). '</span>';
         }
         ?>
 
@@ -23,7 +23,7 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
 
             <<?php echo esc_attr( $heading_level ); ?> class="cm-name entry-name name obj h" data-name="Entry Name">
                 <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="cm-name---a entry-name---a u-url a">
-                    <span class="entry-name---l l"><?php echo $entry_name_mu; ?></span>
+                    <span class="entry-name---l"><?php echo $entry_name_mu; ?></span>
                 </a>
             </<?php echo esc_attr( $heading_level ); ?>>
 

@@ -10,14 +10,14 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             }
             
             $l_mu = '';
-            $l_mu .= '<span class="entry-navi---l l">';
+            $l_mu .= '<span class="entry-navi---l">';
                 $l_mu .= '<span class="property---line line">';
-                    $l_mu .= '<span class="%2$s---txt txt">%1$s</span>';
-                    $l_mu .= ' '. '<span class="entry---txt txt">'. esc_html__( 'Entry', 'ntt' ) .'</span>';
-                    $l_mu .= '<span class="colon---txt txt">:</span>';
+                    $l_mu .= '<span class="%2$s---txt">%1$s</span>';
+                    $l_mu .= ' '. '<span class="entry---txt">'. esc_html__( 'Entry', 'ntt' ) .'</span>';
+                    $l_mu .= '<span class="colon---txt">:</span>';
                 $l_mu .= '</span>';
                 $l_mu .= ' <span class="value---line line">';
-                    $l_mu .= '<span class="entry-name---txt txt">%3$s</span>';
+                    $l_mu .= '<span class="entry-name---txt">%3$s</span>';
                 $l_mu .= '</span>';
             $l_mu .= '</span>';
             

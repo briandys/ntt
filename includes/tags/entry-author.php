@@ -18,14 +18,14 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
             <div class="cm-author---cr entry-author---cr">
 
                 <span class="published-by-glabel glabel obj">
-                    <span class="published---txt txt"><?php echo esc_html_x( 'Published', 'Component: Entry Author | Usage: >Published< by <Entry Author Name>', 'ntt' ); ?></span>
-                    <span class="by---txt txt"><?php echo esc_html_x( 'by', 'Component: Entry Author | Usage: Published >by< <Entry Author Name>', 'ntt' ); ?></span>
+                    <span class="published---txt"><?php echo esc_html_x( 'Published', 'Component: Entry Author | Usage: >Published< by <Entry Author Name>', 'ntt' ); ?></span>
+                    <span class="by-text"><?php echo esc_html_x( 'by', 'Component: Entry Author | Usage: Published >by< <Entry Author Name>', 'ntt' ); ?></span>
                 </span>
                 
                 <span class="cm-author-name entry-author-name author-name p-name name obj" data-name="Entry Author Name">
-                    <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author-name---a u-url a" title="<?php echo esc_attr_x( 'Published by', 'Usage: >Published by< <Author Name> | Component: Entry Author Avatar', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
-                        <span class="entry-author-name---l l">
-                            <span class="entry-author-name---txt txt"><?php echo esc_html( $entry_author ); ?></span>
+                    <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author-name---a u-url" title="<?php echo esc_attr_x( 'Published by', 'Usage: >Published by< <Author Name> | Component: Entry Author Avatar', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
+                        <span class="entry-author-name---l">
+                            <span class="entry-author-name---txt"><?php echo esc_html( $entry_author ); ?></span>
                         </span>
                     </a>
                 </span>

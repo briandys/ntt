@@ -5,8 +5,8 @@
         <div class="search-field field cp" data-name="Search Field">
             <div class="search-field---cr field---cr">
                 <label for="<?php echo esc_attr( $unique_id ); ?>" class="search-field-label label obj" data-name="Search Field Label">
-                    <span class="search-field-label---l l">
-                        <span class="search---txt txt"><?php esc_html_e( 'Search', 'ntt' ); ?></span>
+                    <span class="search-field-label---l">
+                        <span class="search---txt"><?php esc_html_e( 'Search', 'ntt' ); ?></span>
                     </span>
                 </label>
                 <div class="search-textbox textbox obj" data-name="Search Textbox">
@@ -18,15 +18,15 @@
             <div class="search-axns---cr form-axns---cr">
                 <div class="submit-search-axn submit-axn axn obj" data-name="Submit Action">
                     <button type="submit" class="submit-search-axn---a a b" title="<?php esc_attr_e( 'Go', 'ntt' ); ?>">
-                        <span class="submit-search-axn---l l">
-                            <span class="go---txt txt"><?php esc_html_e( 'Go', 'ntt' ); ?></span>
+                        <span class="submit-search-axn---l">
+                            <span class="go---txt"><?php esc_html_e( 'Go', 'ntt' ); ?></span>
                         </span>
                     </button>
                 </div>
                 <div class="reset-search-axn reset-axn axn obj" data-name="Reset Action">
                     <button type="reset" class="reset-search-axn---a a b" title="<?php esc_attr_e( 'Reset', 'ntt' ); ?>">
-                        <span class="reset-search-axn---l l">
-                            <span class="reset---txt txt"><?php esc_html_e( 'Reset', 'ntt' ); ?></span>
+                        <span class="reset-search-axn---l">
+                            <span class="reset---txt"><?php esc_html_e( 'Reset', 'ntt' ); ?></span>
                         </span>
                     </button>
                 </div>

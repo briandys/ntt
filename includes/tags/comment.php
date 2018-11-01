@@ -29,9 +29,9 @@ if ( ! function_exists( 'ntt_comment') ) {
                                 <div class="cm-heading comment-heading heading cp" data-name="Comment Heading">
                                     <div class="cm-heading---cr comment-heading---cr">
                                         <div class="cm-name comment-name name obj" data-name="Comment Name">
-                                            <span class="comment-name---l l">
-                                                <span class="comment-name---txt txt"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
-                                                <span class="comment-id---txt txt"><?php echo esc_html( $comment_id ); ?></span>
+                                            <span class="comment-name---l">
+                                                <span class="comment-name---txt"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
+                                                <span class="comment-id---txt"><?php echo esc_html( $comment_id ); ?></span>
                                             </span>
                                         </div>
                                     </div>
@@ -44,8 +44,8 @@ if ( ! function_exists( 'ntt_comment') ) {
                                         
                                     if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
 
-                                        $reply_text_mu = '<span class="reply---txt txt">'. esc_html_x( 'Reply', 'Usage: >Reply< to Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="to---txt txt">'. esc_html_x( 'to', 'Usage: Reply >to< Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="comment-name---line line"><span class="comment---txt txt">'. esc_html_x( 'Comment', 'Usage: Reply to >Comment< <ID> | Component: Comment Actions', 'ntt' ). '</span>'. ' '. '<span class="comment-id---txt txt">'. esc_html( $comment_id ). '</span></span>';
-                                        $login_text_mu = '<span class="requires-log-in-note---txt txt">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>'; ?>
+                                        $reply_text_mu = '<span class="reply---txt">'. esc_html_x( 'Reply', 'Usage: >Reply< to Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="to---txt">'. esc_html_x( 'to', 'Usage: Reply >to< Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="comment-name---line line"><span class="comment---txt">'. esc_html_x( 'Comment', 'Usage: Reply to >Comment< <ID> | Component: Comment Actions', 'ntt' ). '</span>'. ' '. '<span class="comment-id---txt">'. esc_html( $comment_id ). '</span></span>';
+                                        $login_text_mu = '<span class="requires-log-in-note---txt">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>'; ?>
 
                                         <div class="cm-axns comment-user-axns user-axns axns cp" arial-label="Comment User Actions">
                                             <div class="cm-axns---cr comment-user-axns---cr">
@@ -58,7 +58,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                                         'depth'         => $depth,
                                                         'max_depth'     => $args['max_depth'],
                                                         'reply_text'    => '<span class="comment-reply-axn---l l" title="'. esc_attr_x( 'Reply to Comment', 'Usage: >Reply to Comment< <ID> | Component: Comment Actions', 'ntt' ). ' '. esc_html( $comment_id ). '">'. $reply_text_mu. '</span>',
-                                                        'login_text'    => '<span class="log-in-axn---l l"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
+                                                        'login_text'    => '<span class="log-in-axn---l"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
                                                     )
                                                 ) ); ?>
                                                 </div>

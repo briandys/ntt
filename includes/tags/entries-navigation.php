@@ -9,15 +9,15 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
 
         $page_term = esc_html__( 'Page', 'ntt' );
         
-        $l_mu_start = '<span class="entries-navi---l l">';
-            $l_mu_start .= '<span class="page---txt txt">'. $page_term. '</span>';
+        $l_mu_start = '<span class="entries-navi---l">';
+            $l_mu_start .= '<span class="page---txt">'. $page_term. '</span>';
             $l_mu_start .= ' '. '<span class="page-number---txt num txt">';
             $l_mu_end = '</span>';
         $l_mu_end .= '</span>';
 
         $adjacent_navi_mu = '<span class="entries-navi---l adjacent-navi---l '. sanitize_title( '%1$s' ).'-adjacent-navi---l l" title="%2$s">';
-            $adjacent_navi_mu .= '<span class="'. sanitize_title( '%1$s' ).'---txt txt">%1$s</span>';
-            $adjacent_navi_mu .= ' '. '<span class="page---txt txt">'. $page_term. '</span>';
+            $adjacent_navi_mu .= '<span class="'. sanitize_title( '%1$s' ).'---txt">%1$s</span>';
+            $adjacent_navi_mu .= ' '. '<span class="page---txt">'. $page_term. '</span>';
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,

@@ -14,33 +14,33 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                         $month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
                         $year_text = get_comment_date( 'Y' );
                         $date_title_attr = $day_text. ' '. $month_text. ' '. $year_text;
-                        $date_mu = '<span class="day---txt txt">'. $day_text. '</span>'. ' '. '<span class="month---txt txt">'. $month_text. '</span>'. ' '. '<span class="year---txt txt">'. $year_text. '</span>';
+                        $date_mu = '<span class="day---txt">'. $day_text. '</span>'. ' '. '<span class="month---txt">'. $month_text. '</span>'. ' '. '<span class="year---txt">'. $year_text. '</span>';
                         
                         $hour_text = get_comment_time( 'H' );
                         $minute_text = get_comment_time( 'i' );
                         $second_text = get_comment_time( 's' );
                         $time_title_attr = $hour_text. ':'. $minute_text. ':'. $second_text;
-                        $time_mu = '<span class="hour---txt txt">'. $hour_text. '</span>'. '<span class="colon---txt txt">:</span>'. '<span class="minute---txt txt">'. $minute_text. '</span>'. '<span class="colon---txt txt">:</span>'. '<span class="second---txt txt">'. $second_text. '</span>'; ?>
+                        $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
 
                         <span class="comment-published-on-glabel glabel obj">
-                            <span class="commented-on---txt txt"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
+                            <span class="commented-on---txt"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
                         </span>
 
                         <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="cm-date comment-published-date dt-published published-date date obj time">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>" class="comment-published-date---a a">
-                                <span class="comment-published-date---l l">
+                                <span class="comment-published-date---l">
                                 <?php echo $date_mu; ?>
                                 </span>
                             </a>
                         </time>
 
                         <span class="comment-at-glabel glabel obj">
-                            <span class="at---txt txt"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
+                            <span class="at---txt"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
                         </span>
                         
                         <time class="cm-time comment-published-time published-time time obj">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Component: DateTime | Usage: >Commented at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>" class="comment-published-time---a a">
-                                <span class="comment-published-time---l l">
+                                <span class="comment-published-time---l">
                                 <?php echo $time_mu; ?>
                                 </span>
                             </a>

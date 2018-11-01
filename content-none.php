@@ -11,7 +11,7 @@
                             <div class="cm-heading---cr entry-heading---cr">
                             
                                 <h1 class="cm-name entry-name name obj h" data-name="Entry Name">
-                                    <span class="entry-name---l l"><?php esc_html_e( 'Content Not Found', 'ntt' ); ?></span>
+                                    <span class="entry-name---l"><?php esc_html_e( 'Content Not Found', 'ntt' ); ?></span>
                                 </h1>
 
                                 <?php ntt_after_entry_name_wp_hook(); ?>

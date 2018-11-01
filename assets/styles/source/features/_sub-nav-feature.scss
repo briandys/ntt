@@ -72,7 +72,7 @@
 
 .inactive-sub-nav {
     
-    > .nav-branch {
+    > .js--nav-branch {
         display: none;
     }
 }
@@ -108,7 +108,7 @@
         }
     }
 
-    .nav-branch {
+    .js--nav-branch {
 
         .active-other-sub-nav {
             visibility: hidden;
@@ -116,7 +116,7 @@
         }
     }
 
-    .nav-branch {
+    .js--nav-branch {
         
         .navi {
             @include x-padding();
@@ -203,7 +203,7 @@
             }
         }
 
-        .nav-branch {
+        .js--nav-branch {
             max-width: 30rem;
             min-width: 100%;
             background-color: white;
@@ -219,7 +219,7 @@
                 }
             }
 
-            &.interim-overflow-nav {
+            &.js--interim-starter-nav {
                 flex-wrap: nowrap;
                 justify-content: normal;
                 overflow-x: auto;
@@ -231,11 +231,11 @@
             }
         }
 
-        .overflow-nav {
+        .js--starter-nav {
             flex-wrap: nowrap;
         }
 
-        .overflown-navi-trunk {
+        .js--non-starter-nav-trunk {
             
             @include x-padding();
 
@@ -243,7 +243,7 @@
                 position: static;
             }
             
-            .nav-branch {
+            .js--nav-branch {
                 margin-bottom: $min-aa;
             }
 
@@ -254,7 +254,7 @@
                 }
             }
 
-            .navi---txt {
+            .navi-text {
 
                 @include mq(xs-vp) {
                     white-space: nowrap;

@@ -13,7 +13,7 @@ function ntt_show_more_action( $excerpt ) {
         $entry_name = '<span class="entry-name---txt">'. esc_html( $entry_name_text ). '</span>';
     } else {
         $entry_name_text = $entry_text. ' '. $entry_id;
-        $entry_name = '<span class="entry-name---txt"><span class="entry---txt txt">'. $entry_text. '</span>'. ' '. '<span class="entry-id---txt num txt">'. $entry_id. '</span></span>';
+        $entry_name = '<span class="entry-name---txt"><span class="entry---txt">'. $entry_text. '</span>'. ' '. '<span class="entry-id---txt num txt">'. $entry_id. '</span></span>';
     }
 
     $title_attr = $show_text. ' '. $more_text. ' '. $of_text. ' '. $entry_name_text;
@@ -26,7 +26,7 @@ function ntt_show_more_action( $excerpt ) {
 
     $excerpt = '<div class="show-more-axn axn obj" data-name="Show More Action">';
         $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). $more_hash. '" class="show-more-axn---a a" title="'. esc_attr( $title_attr ).'">';
-            $excerpt .= '<span class="show-more-axn---l l"><span class="show---txt txt">Show</span> <span class="more---txt txt">more</span> <span class="of---txt txt">of</span> '. $entry_name. '</span>';
+            $excerpt .= '<span class="show-more-axn---l"><span class="show---txt">Show</span> <span class="more---txt">more</span> <span class="of---txt">of</span> '. $entry_name. '</span>';
         $excerpt .= '</a>';
     $excerpt .= '</div>';
 

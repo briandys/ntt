@@ -14,7 +14,7 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
         if ( is_singular() || is_404() ) {
 
             $property_suffix = 'Entry';
-            $property_mu = '<span class="entry---txt txt">'. $property_suffix. '</span>';
+            $property_mu = '<span class="entry---txt">'. $property_suffix. '</span>';
 
             if ( is_single() ) {
                 $value = 'Post';
@@ -28,13 +28,13 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                 $value = 'Enreachable Resource';
             }
 
-            $value_mu = '<span class="'. sanitize_title( $value ).'---txt txt">'. $value. '</span>';
+            $value_mu = '<span class="'. sanitize_title( $value ).'---txt">'. $value. '</span>';
 
         // View Granularity: Plural
         } elseif ( is_home() || is_archive() || is_search() ) {
 
             $property_suffix = 'Entries';
-            $property_mu = '<span class="entries---txt txt">'. $property_suffix. '</span>';
+            $property_mu = '<span class="entries---txt">'. $property_suffix. '</span>';
             $value_attr = '';
 
             // Current Index
@@ -98,7 +98,7 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                 $anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-name---a a">';
                 $anchor_end_mu = '</a>';
 
-                $property_mu = '<span class="'. sanitize_title( $property_prefix ). '---txt txt">'. $property_prefix. '</span>'. ' '. '<span class="archive---txt txt">Archive</span>';
+                $property_mu = '<span class="'. sanitize_title( $property_prefix ). '---txt">'. $property_prefix. '</span>'. ' '. '<span class="archive---txt">Archive</span>';
             }
 
             // Custom Index (Search Results)
@@ -119,24 +119,24 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                 $value_attr = 'search-count';
                 $anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-name---a a">';
                 $anchor_end_mu = '</a>';
-                $property_mu = '<span class="search-outcome---txt txt">'. $search_outcome_text. '</span>
-                <span class="for---txt txt">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>
-                <span class="search-term---txt txt">'. esc_html( get_search_query() ). '</span>';
+                $property_mu = '<span class="search-outcome---txt">'. $search_outcome_text. '</span>
+                <span class="for---txt">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>
+                <span class="search-term---txt">'. esc_html( get_search_query() ). '</span>';
 
                 wp_reset_postdata();
             }
-            $value_mu = '<span class="'. sanitize_title( $value_attr ).'---txt txt">'. $value. '</span>';
+            $value_mu = '<span class="'. sanitize_title( $value_attr ).'---txt">'. $value. '</span>';
 
         }
         ?>
 
         <h2 class="entity-view-name name obj h" data-name="Entity View Name">
             <?php echo $anchor_start_mu; ?>
-                <span class="entity-view-name---l l">
+                <span class="entity-view-name---l">
                     <span class="value---line line"><?php echo $value_mu; ?></span>
                     <span class="property---line line"><?php echo $property_mu; ?></span>
                     <span class="count obj" data-name="Count">
-                        <span class="count---l l">
+                        <span class="count---l">
                             <span class="count---txt num txt"><?php echo esc_html( $query_found_posts ); ?></span>
                         </span>
                     </span>

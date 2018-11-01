@@ -9,7 +9,7 @@ if ( ! function_exists( 'ntt_entry_categories' ) ) {
                 <div class="cm-categories---cr entry-categories---cr">
                     
                     <div class="cm-categories-name categories-name name obj" data-name="Categories Name">
-                        <span class="categories---txt txt">
+                        <span class="categories---txt">
                             <?php echo apply_filters( 'ntt_cm_categories_name', esc_html__( 'Categories', 'ntt' ) ); ?>
                         </span>
                     </div>
@@ -32,7 +32,7 @@ if ( ! function_exists( 'ntt_entry_tags' ) ) {
                 <div class="cm-tags---cr entry-tags---cr">
                     
                     <div class="cm-tags-name tags-name name obj" data-name="Tags Name">
-                        <span class="tags---txt txt">
+                        <span class="tags---txt">
                             <?php echo apply_filters( 'ntt_cm_tags_name', esc_html__( 'Tags', 'ntt' ) ); ?>
                         </span>
                     </div>

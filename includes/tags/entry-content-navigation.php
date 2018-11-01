@@ -11,7 +11,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         ob_end_clean();
         
         $navi_text = '';
-        $navi_text .= '<span class="page---txt txt">'. esc_html__( 'Page', 'ntt' ). '</span>';
+        $navi_text .= '<span class="page---txt">'. esc_html__( 'Page', 'ntt' ). '</span>';
         $navi_text .= ' '. '<span class="page-number---txt num txt">%</span>';
 
         $defaults = array(
@@ -46,11 +46,11 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
                         $content_pagination_group_mu .= '<li class="entry-content-navi navi obj item">';
                         $content_pagination_group_mu .= _wp_link_page( $i );
-                        $content_pagination_group_mu .= '<span class="entry-content-navi---l l">';
+                        $content_pagination_group_mu .= '<span class="entry-content-navi---l">';
                     } else {
                         $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi navi obj item">';
                         $content_pagination_group_mu .= '<span class="entry-content-navi---g g">';
-                        $content_pagination_group_mu .= '<span class="entry-content-navi---l l">';
+                        $content_pagination_group_mu .= '<span class="entry-content-navi---l">';
                     }
 
                     $content_pagination_group_mu .= $text_before . $j . $text_after;
@@ -90,7 +90,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                 <div class="entry-content-nav---cr">
                 
                     <div class="entry-content-nav-name nav-name name obj" data-name="Entry Content Navigation Name">
-                        <span class="content-nav---txt txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
+                        <span class="content-nav---txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
                     </div>
                 
                     <?php echo $content_pagination_group_mu; ?>
