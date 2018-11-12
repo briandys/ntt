@@ -9,7 +9,7 @@ $r_functions = array(
     'back-compatibility',
     'settings',
     'hooks',
-    'styles-scripts',
+    //'styles-scripts',
     
     'body-css',
     'comments-css',
@@ -21,7 +21,7 @@ $r_functions = array(
     'icons',
     'ntt-features',
     'pingback-header',
-    'widgets-asides',
+    'widgets',
     'wp-customizer',
     'wp-excerpt',
 );

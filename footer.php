@@ -1,5 +1,5 @@
-                        </div>
-                    </section>
+                        </section>
+                    </main>
                     
                     <footer id="entity-footer" class="entity-footer cn" data-name="Entity Footer">
                         <div class="entity-footer---cr">
@@ -9,7 +9,7 @@
                             ntt_entity_footer_aside();
                             ?>
                             
-                            <div id="entity-secondary-info" class="entity-secondary-info entity-info info cp" data-name="Entity Secondary Information">
+                            <div id="entity-secondary-info" class="entity-secondary-info info cp" data-name="Entity Secondary Information">
                                 <div class="entity-secondary-info---cr">
 
                                     <?php
@@ -19,30 +19,22 @@
                                     if ( $get_bloginfo_name || is_customize_preview() ) {
                                         ?>
                                         <span class="entity-name name obj" data-name="Entity Name">
-                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>" class="entity-name---a">
-                                                <span class="entity-name---l">
-                                                    <span class="entity-name---txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
-                                                </span>
-                                            </a>
+                                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-name---link"><?php echo esc_html( $get_bloginfo_name ); ?></a>
                                         </span>
                                         <?php
                                     }
                                     ?>
                                     
-                                    <span class="entity-copyright copyright obj" data-name="Entity Copyright" title="<?php esc_attr_e( 'Copyright', 'ntt' ); ?> <?php echo esc_attr( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?>">
-                                        <span class="entity-copyright---l">
-                                            <span class="copyright-text"><?php esc_html_e( 'Copyright', 'ntt' ); ?></span>
-                                            <span class="copyright-year-text"><?php echo esc_html( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?></span>
-                                        </span>
+                                    <span class="entity-copyright copyright obj" data-name="Entity Copyright">
+                                        <span class="copyright-text"><?php esc_html_e( 'Copyright', 'ntt' ); ?></span>
+                                        <span class="copyright-year---txt"><?php echo esc_html( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?></span>
                                     </span>
                                     
                                     <span class="entity-maker-tag maker-tag obj" data-name="Entity Maker Tag">
-                                        <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_wp_filter', '//ntt.dysinelab.com/themes/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Usage: >Made with< <Theme Name> by <Entity Maker Name> | Object: Entity Maker Tag', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ). ' '. esc_attr_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ) ); ?>" class="entity-maker-tag---a a">
-                                            <span class="entity-maker-tag---l">
-                                                <span class="wp-theme-name-text"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ) ); ?></span>
-                                                <span class="preposition-text"><?php echo esc_html_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ); ?></span>
-                                                <span class="maker-name-text"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ); ?></span>
-                                            </span>
+                                        <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_wp_filter', '//ntt.dysinelab.com/themes/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Usage: >Made with< <Theme Name> by <Entity Maker Name> | Object: Entity Maker Tag', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ). ' '. esc_attr_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ) ); ?>" class="entity-maker-tag---link">
+                                            <span class="wp-theme-name---txt"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ) ); ?></span>
+                                            <span class="by-text"><?php echo esc_html_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ); ?></span>
+                                            <span class="maker-name---txt"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ); ?></span>
                                         </a>
                                     </span>
                                 </div>

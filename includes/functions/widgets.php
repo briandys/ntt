@@ -1,16 +1,14 @@
 <?php
 
-function ntt_widgets_asides() {
+function ntt_widgets() {
 		
 	// Markup
 	$widget_start_mu = '<div id="%1$s" class="%2$s widget cp" data-name="Widget">';
-		$widget_start_mu .= '<div class="%2$s---cr">';
-		$widget_end_mu = '</div>';
-	$widget_end_mu .= '</div>';
-	$title_mu_start = '<div class="widget-name name obj">';
-		$title_mu_start .= '<span class="widget-name---txt">';
-		$title_mu_end = '</span>';
-	$title_mu_end .= '</div>';
+		$widget_start_mu .= '<div class="%2$s---cr widget---cr">';
+	$widget_end_mu = '</div>';
+		$widget_end_mu .= '</div>';
+	$title_mu_start = '<div class="widget-name name obj" data-name="Widget Name">';
+	$title_mu_end = '</div>';
 	
 	// Entity Primary Actions
 	register_sidebar( array(
@@ -28,9 +26,14 @@ function ntt_widgets_asides() {
 
 		if ( is_active_sidebar( $aside )  ) {
 			?>
-			<div id="entity-primary-axns" class="entity-primary-axns axns aside cp" data-name="Entity Primary Actions">
+			<div id="entity-primary-axns" class="entity-primary-axns axns cp" data-name="Entity Primary Actions">
 				<div class="entity-primary-axns---cr">
-					<?php dynamic_sidebar( $aside ); ?>
+					<div class="entity-primary-axn-name name obj" data-name="Primary Actions"><?php _e( 'Primary Actions', 'ntt' ); ?></div>
+					<div class="entity-primary-axns-group widget-group group cp" data-name="Entity Primary Actions Group">
+						<div class="entity-primary-axns-group---cr">
+							<?php dynamic_sidebar( $aside ); ?>
+						</div>
+					</div>
 				</div>
 			</div>
 			<?php
@@ -241,4 +244,4 @@ function ntt_widgets_asides() {
 		}
 	}
 }
-add_action( 'widgets_init', 'ntt_widgets_asides' );
+add_action( 'widgets_init', 'ntt_widgets' );

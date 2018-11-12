@@ -72,7 +72,7 @@
 
 .inactive-sub-nav {
     
-    > .js--nav-branch {
+    > .nav-branch {
         display: none;
     }
 }
@@ -108,7 +108,7 @@
         }
     }
 
-    .js--nav-branch {
+    .nav-branch {
 
         .active-other-sub-nav {
             visibility: hidden;
@@ -116,7 +116,7 @@
         }
     }
 
-    .js--nav-branch {
+    .nav-branch {
         
         .navi {
             @include x-padding();
@@ -203,7 +203,7 @@
             }
         }
 
-        .js--nav-branch {
+        .nav-branch {
             max-width: 30rem;
             min-width: 100%;
             background-color: white;
@@ -243,7 +243,7 @@
                 position: static;
             }
             
-            .js--nav-branch {
+            .nav-branch {
                 margin-bottom: $min-aa;
             }
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> id="start" class="ntt view no-js <?php ntt_html_css_wp_hook(); ?>">
+<html <?php language_attributes(); ?> id="start" class="ntt view no-js<?php ntt_html_css_wp_hook(); ?>">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -37,17 +37,17 @@
                 <header id="entity-header" class="entity-header cn" data-name="Entity Header">
                     <div class="entity-header---cr">
                         
-                        <div id="entity-primary-info" class="entity-primary-info entity-info info cp" data-name="Entity Primary Information">
+                        <div id="entity-primary-info" class="entity-primary-info info cp" data-name="Entity Primary Information">
                             <div class="entity-primary-info---cr">
                             
                                 <?php
                                 $get_bloginfo_name = get_bloginfo( 'name', 'display' );
                                 if ( $get_bloginfo_name || is_customize_preview() ) {
                                     ?>
-                                    <h1 id="entity-heading" class="entity-heading heading obj" data-name="Entity Heading">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>" class="entity-heading---a">
-                                            <span class="entity-heading---l">
-                                                <span class="entity-heading---txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
+                                    <h1 id="entity-primary-name" class="entity-primary-name name obj h" data-name="Entity Primary Name">
+                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-primary-name---a">
+                                            <span class="entity-primary-name---l">
+                                                <span class="entity-primary-name---txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
                                             </span>
                                         </a>
                                     </h1>
@@ -59,13 +59,7 @@
                                 $get_bloginfo_description = get_bloginfo( 'description', 'display' );
                                 if ( $get_bloginfo_description || is_customize_preview() ) {
                                     ?>
-                                    <div id="entity-primary-description" class="entity-primary-description entity-description description obj" data-name="Entity Primary Description">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="entity-primary-description---a" title="<?php echo esc_attr ($get_bloginfo_description ); ?>">
-                                            <span class="entity-primary-description---l">
-                                                <span class="entity-primary-description---txt"><?php echo esc_attr( $get_bloginfo_description ); ?></span>
-                                            </span>
-                                        </a>
-                                    </div>
+                                    <div id="entity-primary-description" class="entity-primary-description entity-description description obj" data-name="Entity Primary Description"><?php echo esc_attr( $get_bloginfo_description ); ?></div>
                                     <?php
                                 }
                             
@@ -82,8 +76,8 @@
                         </div>
 
                         <?php
-                        ntt_entity_primary_axns();
                         ntt_entity_primary_nav();
+                        ntt_entity_primary_axns();
                         ntt_after_entity_primary_nav_wp_hook();
                         
                         if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
@@ -112,5 +106,5 @@
                         
                     </div>
                 </header>
-                <section id="entity-main" class="entity-main cn" data-name="Entity Main">
-                    <div class="entity-main---cr">
+                <main id="entity-main" class="entity-main cn" data-name="Entity Main">
+                    <section class="entity-main---cr">

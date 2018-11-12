@@ -3,11 +3,11 @@
 if ( ! function_exists( 'ntt_entry_datetime' ) ) {
     function ntt_entry_datetime() { ?>
 
-        <div class="cm-datetime-trunk entry-datetime datetime-trunk cp" data-name="Entry DateTime">
-            <div class="cm-datetime-trunk---cr entry-datetime---cr">
+        <div class="entry-datetime datetime-trunk cm-datetime-trunk cp" data-name="Entry DateTime">
+            <div class="entry-datetime---cr cm-datetime-trunk---cr">
 
-                <div class="cm-datetime entry-published-datetime published-datetime datetime cp" data-name="Entry Published DateTime">
-                    <div class="cm-datetime---cr entry-published-datetime---cr">
+                <div class="entry-published-datetime published-datetime cm-datetime datetime cp" data-name="Entry Published DateTime">
+                    <div class="entry-published-datetime---cr cm-datetime---cr">
 
                         <?php $day_text = get_the_date( 'j' );
                         $month_text = get_the_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
@@ -26,7 +26,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             <span class="on---txt"><?php echo esc_html_x( 'on', 'Component: DateTime | Usage: Published >on< <date> at <time>', 'ntt' ); ?></span>
                         </span>
                 
-                        <time datetime="<?php echo get_the_date( DATE_W3C ); ?>" class="cm-date entry-published-date dt-published published-date date obj time" data-name="Entry Published Date">
+                        <time datetime="<?php echo get_the_date( DATE_W3C ); ?>" class="entry-published-date dt-published published-date cm-date date obj time" data-name="Entry Published Date">
                             <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-published-date---a a" title="<?php echo esc_attr_x( 'Published on', 'Component: DateTime | Usage: >Published on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">
                                 <span class="entry-published-date---l">
                                 <?php echo $date_mu; ?>
@@ -38,7 +38,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             <span class="at---txt"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Published on <date> >at< <time>', 'ntt' ); ?></span>
                         </span>
                 
-                        <span class="cm-time entry-published-time published-time time obj" data-name="Entry Published Time">
+                        <span class="entry-published-time published-time cm-time time obj" data-name="Entry Published Time">
                             <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-published-time---a a" title="<?php echo esc_attr_x( 'Published at', 'Component: DateTime | Usage: >Published at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>">
                                 <span class="entry-published-time---l">
                                 <?php echo $time_mu; ?>
@@ -49,7 +49,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                     </div>
                 </div>
 
-                <div class="cm-datetime entry-updated-datetime updated-datetime datetime cp" data-name="Entry Updated DateTime">
+                <div class="entry-updated-datetime updated-datetime cm-datetime datetime cp" data-name="Entry Updated DateTime">
                     <div class="cm-datetime---cr entry-updated-datetime---cr">
 
                         <?php $updated_day_text = get_the_modified_time( 'j' );

@@ -102,7 +102,7 @@ var $document,
     $contentImg = $content.find( 'img' );
     $goStartNav = $( '#go-start-nav' );
     $entityPrimaryDescription = $( '#entity-primary-description' );
-    $entityPrimaryName = $( '#entity-heading' );
+    $entityPrimaryName = $( '#entity-primary-name' );
     $entityPrimaryNav = $( '#entity-primary-nav' );
     $entryContent = $( '.entry-content' );
     $entryHeader = $( '.entry-header' );
@@ -311,99 +311,21 @@ var $document,
             firstInput.off( 'keydown.ntt' );
         }
     };
-    
-    /**
-     * Starter Navigation
-     * Measures the width of the navigation container and puts excess items in a new container
-     * The remaining navigation items are the starters.
-     */
-    function starterNav( $el ) {
-        
-        // 1. Define Elements
-        var $navTrunk = $el.find( 'ul:first' ),
-            $navTrunkNavi = $navTrunk.children(),
-            $subNav = $el.find( '.children, .sub-menu' ),
-            icon = $( nttData.ellipsisIcon );
-        
-        // 2. Add initial CSS class names
-        ( function() {
-            $subNav.addClass( 'js--nav-branch' );
-
-            /**
-             * Classify Starter and Non-Starter Navigation Items
-             * Measures the combined widths of navigation items and compares it to the viewport.
-             * Items within the viewport are considered the Starter navigation items.
-             */
-
-            // This CSS class name enables a proper width detection of the succeeding function via CSS
-            $navTrunk.addClass( 'js--interim-starter-nav' );
-
-            $navTrunkNavi.each( function() {
-                var $this = $( this ),
-                    naviWidth = parseInt( $this.outerWidth() ),
-                    naviOffset = parseInt( Math.round( $this.offset().left ) ),
-                    buffer = 48,
-                    navWidth = $entityPrimaryNav.width() - buffer,
-                    naviOffsetWidth = naviOffset + naviWidth;
-
-                if ( naviOffsetWidth > navWidth ) {
-                    $this.addClass( 'js--non-starter-navi' );
-                } else {
-                    $this.addClass( 'js--starter-navi' );
-                }
-            } );
-
-            // Removing the interim CSS class name and replacing it with the actual nav CSS class name
-            $navTrunk
-                .addClass( 'js--starter-nav' )
-                .removeClass( 'js--interim-starter-nav' );
-        } )();
-        
-        // 3. Creating new HTML structure to contain all non-starter nav items
-        ( function() {
-            var $nonStarterNavi = $navTrunk.find( '.js--non-starter-navi' ),
-                $navi,
-                $nonStarterNavBranch,
-                $overflownNaviTrunk;
-            
-            $nonStarterNavBranch = $( '<ul />', {
-                'class': 'js--non-starter-nav-branch js--nav-branch children sub-menu',
-            } );
-
-            $navi = $( '<li />', {
-                'class': 'js--non-starter-nav-trunk page_item page_item_has_children menu-item menu-item-has-children navi'
-            } ).append( $nonStarterNavBranch );
-
-            $nonStarterNavi.wrapAll( $navi );
-
-            // Defining the navigation item trunk element
-            $overflownNaviTrunk = $( $el ).find( '.js--non-starter-nav-trunk' );
-
-            // Creating a button
-            $overflownNaviTrunk.prepend(
-                htmlOkFn.buttonObj(
-                    'sub-nav-toggle-axn',
-                    'toggle-axn axn',
-                    'Sub-Navigation Toggle Action',
-                    'hide',
-                    'toggle-sub-nav',
-                    icon
-                )
-            );
-        }() );
-    }
 
     /**
      * Sub-Navigation Feature
+     * Enables sub-navigation to have controls
      */
-    function subNav( $elem ) {
+    function subNav( $el ) {
 
+        // 0. Gatekeeper
         if ( $html.hasClass( 'ntt-sub-nav-f5e' ) ) {
-            $elem.addClass( 'sub-nav-f5e' );
+            $el.addClass( 'sub-nav-f5e' );
         } else {
             return;
         }
         
+        // 1. Define Elements
         var $navi = $( '.page_item, .menu-item' ),
             $children = $( '.page_item_has_children > .children, .menu-item-has-children > .sub-menu' ),
             $parents,
@@ -413,11 +335,12 @@ var $document,
             $parent,
             $subNavButton,
             $subNavFeature = $( '.sub-nav-f5e' ),
-            $navTrunk = $elem.find( 'ul' ).first(),
+            $navTrunk = $el.find( 'ul' ).first(),
             $navBranch = $navTrunk.find( 'ul' ),
-            $currentNavItem = $elem.find( '.current_page_item, .current-menu-item' );
+            $currentNavItem = $el.find( '.current_page_item, .current-menu-item' );
         
-        $elem.find( $children ).before(
+        // Add controls to navigation items with sub-items
+        $el.find( $children ).before(
             htmlOkFn.buttonObj(
                 'sub-nav-toggle-axn',
                 'toggle-axn axn',
@@ -430,15 +353,12 @@ var $document,
 
         // Define structure by adding CSS class names
         $navTrunk.addClass( 'nav-trunk' );
-        $navBranch.addClass( 'js--nav-branch' );
+        $navBranch.addClass( 'nav-branch' );
         $currentNavItem.addClass( 'navi--current' );
-    
-        // Run Starter Navigation
-        starterNav( $elem );
 
         // Defining elements
         $parents = $( '.page_item_has_children, .menu-item-has-children' );
-        $subNavButton = $elem.find( '.sub-nav-toggle-axn---a' );
+        $subNavButton = $el.find( '.sub-nav-toggle-axn---a' );
 
         // Functions
         subNavFn = {
@@ -522,7 +442,7 @@ var $document,
                     'title': showText
                 } );
 
-                $elem.find( '.toggle-sub-nav---txt' ).text( showText );
+                $el.find( '.toggle-sub-nav---txt' ).text( showText );
 
                 $subNavFeature
                     .addClass( 'off-f5e' )
@@ -570,19 +490,19 @@ var $document,
             if ( $parent.hasClass( 'inactive-sub-nav' ) ) {
                 subNavFn.on.apply( this );
                 
-                if ( $elem.is( $entityPrimaryNav ) ) {
+                if ( $el.is( $entityPrimaryNav ) ) {
                     subNavFn.subNavSiblingsOff.apply( this );
                 }
             
             } else if ( $parent.hasClass( 'active-sub-nav' ) ) {
                 subNavFn.off.apply( this );
                 
-                if ( $elem.is( $entityPrimaryNav ) ) {
+                if ( $el.is( $entityPrimaryNav ) ) {
                     subNavFn.subNavSiblingsOn.apply( this );
                 }
             }
 
-            if ( $elem.is( $entityPrimaryNav ) ) {
+            if ( $el.is( $entityPrimaryNav ) ) {
                 subNavFn.siblingsOff.apply( this );
             }
         } );

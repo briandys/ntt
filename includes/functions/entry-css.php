@@ -8,10 +8,10 @@ function ntt_entry_css( $css ) {
     
     // Default
     $r_defaults_css = array(
-        'cm-singular',
-        'entry',
         'entry-'. $post->ID,
+        'entry',
         'h-entry',
+        'cm-singular',
     );
     
     foreach ( $r_defaults_css as $default_css ) {
@@ -104,10 +104,10 @@ add_filter( 'post_class', 'ntt_entry_css' );
 function ntt_empty_entry_entry_css() {
         
     $r_defaults_css = array(
-        'cm-singular',
-        'entry',
         'empty-entry',
+        'entry',
         'h-entry',
+        'cm-singular',
     );
     
     foreach ( $r_defaults_css as $default_css ) {

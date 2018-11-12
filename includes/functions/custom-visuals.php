@@ -36,8 +36,8 @@ function ntt_custom_header_callback() {
     if ( 'blank' !== get_header_textcolor() ) {
         ?>
         <style id="ntt-custom-header-colors-style">
-            .entity-heading---a,
-            .entity-primary-description---a {
+            .entity-primary-name---a,
+            .entity-primary-description {
                 color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
             }
         </style>

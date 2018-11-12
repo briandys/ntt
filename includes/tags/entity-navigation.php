@@ -20,7 +20,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
             <nav role="navigation" id="entity-primary-nav" class="entity-primary-nav entity-nav nav cp" data-name="Entity Primary Navigation">
                 <div class="entity-primary-nav---cr">
                     
-                    <h2 class="entity-primary-nav-name nav-name name obj" data-name="Entity Primary Navigation Name"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
+                    <h2 class="entity-primary-nav-name nav-name name obj h" data-name="Entity Primary Navigation Name"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
                     
                     <?php
                     function escape_html_the_title( $title, $id = null ) {

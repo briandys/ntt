@@ -68,7 +68,7 @@
 //--------------------------------------------------------------
 // View Heading
 //--------------------------------------------------------------
-.view-heading {
+.entity-view-info {
 
     .page-view &,
     .post-view & {
@@ -98,7 +98,7 @@
     @include m-x-gutter;
 }
 
-.entity-heading {
+.entity-primary-name {
     grid-area: b1;
     align-self: center;
     grid-row: b1 / -1;
@@ -137,7 +137,7 @@
 
 .entity-name-description--disabled {
     
-    .entity-heading,
+    .entity-primary-name,
     .entity-primary-description {
         @extend %vh;
     }

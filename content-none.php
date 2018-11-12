@@ -1,16 +1,16 @@
 <div class="<?php ntt_empty_entry_css_wp_hook(); ?>" data-name="Empty Entry">
-    <div class="cm-singular---cr entry---cr">
+    <div class="entry---cr cm-singular---cr">
 
-        <article class="cm-article entry-article article cp" data-name="Entry Article">
-            <div class="cm-article---cr entry-article---cr">
+        <article class="entry-article cm-article article cp" data-name="Entry Article">
+            <div class="entry-article---cr cm-article---cr">
                 
-                <div class="cm-header entry-header header cn" data-name="Entry Header">
-                    <div class="cm-header---cr entry-header---cr">
+                <div class="entry-header cm-header header cn" data-name="Entry Header">
+                    <div class="entry-header---cr cm-header---cr">
 
-                        <div class="cm-heading entry-heading heading cp" data-name="Entry Info">
-                            <div class="cm-heading---cr entry-heading---cr">
+                        <div class="entry-heading cm-heading heading cp" data-name="Entry Info">
+                            <div class="entry-heading---cr cm-heading---cr">
                             
-                                <h1 class="cm-name entry-name name obj h" data-name="Entry Name">
+                                <h1 class="entry-name cm-name name obj h" data-name="Entry Name">
                                     <span class="entry-name---l"><?php esc_html_e( 'Content Not Found', 'ntt' ); ?></span>
                                 </h1>
 

@@ -5,10 +5,10 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
         
         $comment_url = get_comment_link( $comment->comment_ID ); ?>
         
-        <div class="cm-datetime-trunk comment-datetime datetime-trunk cp" data-name="Comment DateTime">
-            <div class="cm-datetime-trunk---cr comment-datetime---cr">
-                <div class="cm-datetime comment-published-datetime published-datetime datetime cp" data-name="Comment Published DateTime">
-                    <div class="cm-datetime---cr comment-published-datetime---cr">
+        <div class="comment-datetime datetime-trunk cm-datetime-trunk cp" data-name="Comment DateTime">
+            <div class="comment-datetime---cr cm-datetime-trunk---cr">
+                <div class="comment-published-datetime published-datetime cm-datetime datetime cp" data-name="Comment Published DateTime">
+                    <div class="comment-published-datetime---cr cm-datetime---cr">
 
                         <?php $day_text = get_comment_date( 'j' );
                         $month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
@@ -26,7 +26,7 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                             <span class="commented-on---txt"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
                         </span>
 
-                        <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="cm-date comment-published-date dt-published published-date date obj time">
+                        <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="comment-published-date dt-published published-date cm-date date obj time">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>" class="comment-published-date---a a">
                                 <span class="comment-published-date---l">
                                 <?php echo $date_mu; ?>
@@ -38,13 +38,13 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                             <span class="at---txt"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
                         </span>
                         
-                        <time class="cm-time comment-published-time published-time time obj">
+                        <span class="comment-published-time published-time cm-time time obj">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Component: DateTime | Usage: >Commented at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>" class="comment-published-time---a a">
                                 <span class="comment-published-time---l">
                                 <?php echo $time_mu; ?>
                                 </span>
                             </a>
-                        </time>
+                        </span>
 
                     </div>
                 </div>

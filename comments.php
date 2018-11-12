@@ -1,4 +1,5 @@
 <?php
+// comments_template()
 
 if ( post_password_required() ) {
 	return;
@@ -67,14 +68,14 @@ $cancel_reply_link_mu .= '<span class="cancel---txt">'. esc_html_x( 'Cancel', 'U
 $cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>'; ?>
 
-<section class="cm comment-md md" data-name="Comment Module">
-    <div class="cm---cr comment-md---cr">
+<section class="comment-md cm md" data-name="Comment Module">
+    <div class="comment-md---cr cm---cr">
 
-        <div id="comments" class="cm-plural comments<?php ntt_comments_css_wp_hook(); ?> cp" data-name="Comments">
-            <div class="cm-plural---cr comments---cr">
+        <div id="comments" class="comments<?php ntt_comments_css_wp_hook(); ?> cm-plural cp" data-name="Comments">
+            <div class="comments---cr cm-plural---cr">
                 
-                <div class="cm-plural-header comments-header header cn" data-name="Comments Header">
-                    <div class="cm-plural-header---cr comments-header---cr">
+                <div class="comments-header cm-plural-header header cn" data-name="Comments Header">
+                    <div class="comments-header---cr cm-plural-header---cr">
                         <h2 class="comments-name name obj h">
                             <span class="comments-name---l">
                                 <span class="comments---txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
@@ -90,8 +91,8 @@ $cancel_reply_link_mu .= '</span>'; ?>
                         ?>
                     </div>
                 </div>
-                <div class="cm-plural-main comments-main main cn" data-name="Comments Main">
-                    <div class="cm-plural-main---cr comments-main---cr">
+                <div class="comments-main cm-plural-main main cn" data-name="Comments Main">
+                    <div class="comments-main---cr cm-plural-main---cr">
                 
                         <?php
                         if ( have_comments() ) {
