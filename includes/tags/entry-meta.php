@@ -26,5 +26,4 @@ if ( ! function_exists( 'ntt_entry_meta_secondary' ) ) {
         </div>
         <?php
     }
-    add_action( 'ntt_entry_footer_wp_hook', 'ntt_entry_meta_secondary');
 }

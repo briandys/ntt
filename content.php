@@ -52,13 +52,14 @@
 
                 <?php
                 global $multipage;
-                if ( 'post' === get_post_type() && ( $multipage || get_the_tag_list() || has_action( 'ntt_entry_footer_wp_hook' ) ) ) {
+                if ( 'post' === get_post_type() && ( $multipage || get_the_tag_list() || is_active_sidebar( 'entry-footer-aside' ) ) ) {
                     ?>
                     <div class="entry-footer cm-footer footer cn" data-name="Entry Footer">
                         <div class="entry-footer---cr cm-footer---cr">
                             <?php
                             ntt_entry_content_nav();
-                            ntt_entry_footer_wp_hook();
+                            ntt_entry_meta_secondary();
+                            ntt_entry_footer_aside();
                             ?>
                         </div>
                     </div>
