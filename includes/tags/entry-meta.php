@@ -3,8 +3,8 @@
 if ( ! function_exists( 'ntt_entry_meta_primary' ) ) {
     function ntt_entry_meta_primary() {
         ?>
-        <div class="cm-meta entry-meta meta cp" data-name="Entry Meta">
-            <div class="cm-meta---cr entry-meta---cr">
+        <div class="entry-meta cm-meta meta cp" data-name="Entry Meta">
+            <div class="entry-meta---cr cm-meta---cr">
                 <?php
                 ntt_entry_datetime();
                 ntt_entry_author();
@@ -18,12 +18,15 @@ if ( ! function_exists( 'ntt_entry_meta_primary' ) ) {
 
 if ( ! function_exists( 'ntt_entry_meta_secondary' ) ) {
     function ntt_entry_meta_secondary() {
-        ?>
-        <div class="cm-meta entry-meta meta cp" data-name="Entry Meta">
-            <div class="cm-meta---cr entry-meta---cr">
-                <?php ntt_entry_tags(); ?>
+
+        if ( get_the_tag_list() ) {
+            ?>
+            <div class="entry-meta cm-meta meta cp" data-name="Entry Meta">
+                <div class="entry-meta---cr cm-meta---cr">
+                    <?php ntt_entry_tags(); ?>
+                </div>
             </div>
-        </div>
-        <?php
+            <?php
+        }
     }
 }

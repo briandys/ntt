@@ -14,15 +14,15 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
         }
         ?>
 
-        <div class="cm-author entry-author <?php echo esc_attr( $author_avatar_type_class ); ?> p-author author h-card cp" data-name="Entry Author">
-            <div class="cm-author---cr entry-author---cr">
+        <div class="entry-author cm-author <?php echo esc_attr( $author_avatar_type_class ); ?> p-author author h-card cp" data-name="Entry Author">
+            <div class="entry-author---cr cm-author---cr">
 
                 <span class="published-by-glabel glabel obj">
-                    <span class="published---txt"><?php echo esc_html_x( 'Published', 'Component: Entry Author | Usage: >Published< by <Entry Author Name>', 'ntt' ); ?></span>
-                    <span class="by-text"><?php echo esc_html_x( 'by', 'Component: Entry Author | Usage: Published >by< <Entry Author Name>', 'ntt' ); ?></span>
+                    <span class="published---text"><?php echo esc_html_x( 'Published', 'Component: Entry Author | Usage: >Published< by <Entry Author Name>', 'ntt' ); ?></span>
+                    <span class="by---text"><?php echo esc_html_x( 'by', 'Component: Entry Author | Usage: Published >by< <Entry Author Name>', 'ntt' ); ?></span>
                 </span>
                 
-                <span class="cm-author-name entry-author-name author-name p-name name obj" data-name="Entry Author Name">
+                <span class="entry-author-name cm-author-name author-name p-name name obj" data-name="Entry Author Name">
                     <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author-name---a u-url" title="<?php echo esc_attr_x( 'Published by', 'Usage: >Published by< <Author Name> | Component: Entry Author Avatar', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
                         <span class="entry-author-name---l">
                             <span class="entry-author-name---txt"><?php echo esc_html( $entry_author ); ?></span>
@@ -34,7 +34,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                 if ( get_option( 'show_avatars' ) == 1 ) {
                     ?>
 
-                    <span class="cm-avatar entry-author-avatar author-avatar avatar obj" data-name="Entry Author Avatar">
+                    <span class="entry-author-avatar cm-avatar author-avatar avatar obj" data-name="Entry Author Avatar">
                         <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author-name---a a" title="<?php echo esc_attr_x( 'Published by', 'Usage: >Published by< <Author Name> | Component: Entry Author Avatar', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
                         <?php echo get_avatar(
                             get_the_author_meta( 'ID' ),

@@ -1,5 +1,4 @@
 <?php
-
 // https://bavotasan.com/2012/a-better-wp_link_pages-for-wordpress/
 
 if ( ! function_exists('ntt_entry_content_nav' ) ) {
@@ -11,7 +10,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         ob_end_clean();
         
         $navi_text = '';
-        $navi_text .= '<span class="page---txt">'. esc_html__( 'Page', 'ntt' ). '</span>';
+        $navi_text .= '<span class="page---text">'. esc_html__( 'Page', 'ntt' ). '</span>';
         $navi_text .= ' '. '<span class="page-number---txt num txt">%</span>';
 
         $defaults = array(
@@ -89,9 +88,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
             <div role="navigation" class="entry-content-nav nav pagination cp" data-name="Entry Content Navigation">
                 <div class="entry-content-nav---cr">
                 
-                    <div class="entry-content-nav-name nav-name name obj" data-name="Entry Content Navigation Name">
-                        <span class="content-nav---txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
-                    </div>
+                    <div class="entry-content-nav-name nav-name name obj" data-name="Entry Content Navigation Name"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></div>
                 
                     <?php echo $content_pagination_group_mu; ?>
                 

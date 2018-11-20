@@ -1,7 +1,7 @@
 <?php
 
-if ( ! function_exists( 'ntt_entity_view_name' ) ) {
-    function ntt_entity_view_name() {
+if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
+    function ntt_entity_view_heading() {
         global $wp_query;
         $query_found_posts = $wp_query->found_posts;
         $value = '';
@@ -15,7 +15,7 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
         if ( is_singular() || is_404() ) {
 
             $property_suffix = 'Entry';
-            $property_mu = '<span class="'. sanitize_title( $property_suffix ).'-text">'. $property_suffix. '</span>';
+            $property_mu = '<span class="'. sanitize_title( $property_suffix ).'---text">'. $property_suffix. '</span>';
 
             if ( is_single() ) {
                 $value = 'Post';
@@ -29,13 +29,13 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                 $value = 'Unreachable Resource';
             }
 
-            $value_mu = '<span class="'. sanitize_title( $value ).'-text">'. $value. '</span>';
+            $value_mu = '<span class="'. sanitize_title( $value ).'---text">'. $value. '</span>';
 
         // View Granularity: Plural
         } elseif ( is_home() || is_archive() || is_search() ) {
 
             $property_suffix = 'Entries';
-            $property_mu = '<span class="'. sanitize_title( $property_suffix ).'-text">'. $property_suffix. '</span>';
+            $property_mu = '<span class="'. sanitize_title( $property_suffix ).'---text">'. $property_suffix. '</span>';
             $value_attr = '';
 
             // Current Index
@@ -100,7 +100,7 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                 $entity_view_item_count_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-item-count---a a">';
                 $entity_view_name_item_count_anchor_end_mu = '</a>';
 
-                $property_mu = '<span class="'. sanitize_title( $property_prefix ). '-text">'. $property_prefix. '</span>'. ' '. '<span class="archive-text">Archive</span>';
+                $property_mu = '<span class="'. sanitize_title( $property_prefix ). '---text">'. $property_prefix. '</span>'. ' '. '<span class="archive---text">Archive</span>';
             }
 
             // Custom Index (Search Results)
@@ -124,18 +124,18 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                 $entity_view_item_count_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-item-count---a a">';
                 $entity_view_name_item_count_anchor_end_mu = '</a>';
                 
-                $property_mu = '<span class="search-outcome-text">'. $search_outcome_text. '</span>
-                <span class="for-text">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>';
+                $property_mu = '<span class="search-outcome---txt">'. $search_outcome_text. '</span>
+                <span class="for---text">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>';
 
                 wp_reset_postdata();
             }
-            $value_mu = '<span class="'. sanitize_title( $value_attr ).'-text">'. $value. '</span>';
+            $value_mu = '<span class="'. sanitize_title( $value_attr ).'---text">'. $value. '</span>';
         }
         ?>
 
         <div class="entity-view-heading heading cp" data-name="Entity View heading">
             <div class="entity-view-heading---cr">
-                <h2 class="entity-view-name name obj h" data-name="Entity View Name">
+                <div class="entity-view-name name obj" data-name="Entity View Name">
                     <?php echo $entity_view_name_anchor_start_mu; ?>
                         <span class="entity-view-name---l">
                             <?php
@@ -153,11 +153,11 @@ if ( ! function_exists( 'ntt_entity_view_name' ) ) {
                             ?>
                         </span>
                     <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
-                </h2>
+                </div>
                 <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
                     <span class="entity-view-item-count---l">
                         <?php echo $entity_view_item_count_anchor_start_mu; ?>
-                            <span class="number-of-entries-text"><?php esc_html_e( 'Number of Entries', 'ntt' ); ?></span>
+                            <span class="number-of-entries---text"><?php esc_html_e( 'Number of Entries', 'ntt' ); ?></span>
                             <span class="entity-view-item-count---txt num"><?php echo esc_html( $query_found_posts ); ?></span>
                         <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
                     </span>

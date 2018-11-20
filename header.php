@@ -37,8 +37,8 @@
                 <header id="entity-header" class="entity-header cn" data-name="Entity Header">
                     <div class="entity-header---cr">
                         
-                        <div id="entity-primary-info" class="entity-primary-info info cp" data-name="Entity Primary Information">
-                            <div class="entity-primary-info---cr">
+                        <div id="entity-primary-heading" class="entity-primary-heading heading cp" data-name="Entity Primary Heading">
+                            <div class="entity-primary-heading---cr">
                             
                                 <?php
                                 $get_bloginfo_name = get_bloginfo( 'name', 'display' );
@@ -107,4 +107,4 @@
                     </div>
                 </header>
                 <main id="entity-main" class="entity-main cn" data-name="Entity Main">
-                    <section class="entity-main---cr">
+                    <div class="entity-main---cr">

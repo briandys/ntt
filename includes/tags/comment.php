@@ -30,8 +30,8 @@ if ( ! function_exists( 'ntt_comment') ) {
                                     <div class="comment-heading---cr cm-heading---cr">
                                         <div class="comment-name cm-name name obj" data-name="Comment Name">
                                             <span class="comment-name---l">
-                                                <span class="comment-name---txt"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
-                                                <span class="comment-id---txt"><?php echo esc_html( $comment_id ); ?></span>
+                                                <span class="comment---text"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
+                                                <span class="comment-id---txt num"><?php echo esc_html( $comment_id ); ?></span>
                                             </span>
                                         </div>
                                     </div>
@@ -45,8 +45,8 @@ if ( ! function_exists( 'ntt_comment') ) {
                                             
                                         if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
 
-                                            $reply_text_mu = '<span class="reply---txt">'. esc_html_x( 'Reply', 'Usage: >Reply< to Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="to---txt">'. esc_html_x( 'to', 'Usage: Reply >to< Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="comment-name---line line"><span class="comment---txt">'. esc_html_x( 'Comment', 'Usage: Reply to >Comment< <ID> | Component: Comment Actions', 'ntt' ). '</span>'. ' '. '<span class="comment-id---txt">'. esc_html( $comment_id ). '</span></span>';
-                                            $login_text_mu = '<span class="requires-log-in-note---txt">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>'; ?>
+                                            $reply_text_mu = '<span class="reply---text">'. esc_html_x( 'Reply', 'Usage: >Reply< to Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="to---text">'. esc_html_x( 'to', 'Usage: Reply >to< Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="comment-name---line line"><span class="comment---text">'. esc_html_x( 'Comment', 'Usage: Reply to >Comment< <ID> | Component: Comment Actions', 'ntt' ). '</span>'. ' '. '<span class="comment-id---txt num">'. esc_html( $comment_id ). '</span></span>';
+                                            $login_text_mu = '<span class="requires-log-in---text">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>'; ?>
 
                                             <div class="comment-user-axns user-axns cm-axns axns cp" data-name="Comment User Actions">
                                                 <div class="comment-user-axns---cr cm-axns---cr">
@@ -58,7 +58,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                                                 'add_below'     => 'comment',
                                                                 'depth'         => $depth,
                                                                 'max_depth'     => $args['max_depth'],
-                                                                'reply_text'    => '<span class="comment-reply-axn---l l" title="'. esc_attr_x( 'Reply to Comment', 'Usage: >Reply to Comment< <ID> | Component: Comment Actions', 'ntt' ). ' '. esc_html( $comment_id ). '">'. $reply_text_mu. '</span>',
+                                                                'reply_text'    => '<span class="comment-reply-axn---l" title="'. esc_attr_x( 'Reply to Comment', 'Usage: >Reply to Comment< <ID> | Component: Comment Actions', 'ntt' ). ' '. esc_html( $comment_id ). '">'. $reply_text_mu. '</span>',
                                                                 'login_text'    => '<span class="log-in-axn---l"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
                                                             )
                                                         ) );

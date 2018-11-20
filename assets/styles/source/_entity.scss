@@ -1,4 +1,4 @@
-.entity-primary-info {
+.entity-primary-heading {
 
     .dom--unready & {
         visibility: hidden;
@@ -68,7 +68,7 @@
 //--------------------------------------------------------------
 // View Heading
 //--------------------------------------------------------------
-.entity-view-info {
+.entity-view-heading {
 
     .page-view &,
     .post-view & {
@@ -88,7 +88,7 @@
 // Entity Heading
 //--------------------------------------------------------------
 
-.entity-primary-info---cr {
+.entity-primary-heading---cr {
     @extend %entity-header;
     display: grid;
     grid-template:
@@ -160,7 +160,7 @@
     }
 }
 
-.entity-primary-info {
+.entity-primary-heading {
     grid-area: b1;
     align-self: center;
 }
@@ -233,7 +233,7 @@
 
 .ntt-primary-menu-f5e {
 
-    .entity-primary-info---cr {
+    .entity-primary-heading---cr {
         padding-left: 0;
     }
     
@@ -248,16 +248,16 @@
         grid-column: b1 / -1;
     }
 
-    .entity-primary-info---cr {
+    .entity-primary-heading---cr {
         @include x-padding();
     }
     
-    .entity-primary-info {
+    .entity-primary-heading {
         visibility: hidden;
     }
 }
 
-.entity-primary-info---cr {
+.entity-primary-heading---cr {
 
     .ntt-primary-search-f5e--off &,
     .ntt-overflow-axns-f5e--off & {

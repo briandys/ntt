@@ -1,0 +1,284 @@
+@import 'source/h5bp-normalize';
+@import 'source/h5bp-main';
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+	min-height: 100%;
+}
+
+p:empty,
+br {
+    display: none;
+}
+
+/* First Level CSS of Text Inputs - Wireframe */
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+.text-input {
+    /* Nature */
+    padding: .25em .5em;
+    min-height: 2.25rem;
+    /* Visual */
+    background-color: white;
+    border: .0625em solid black;
+}
+
+button {
+    /* Nature */
+    padding: .5em;
+}
+
+.home-page-view {
+
+    .entity-view-heading,
+    .entry-nav,
+    .comment-md,
+    .entity-secondary-info,
+    .entry-heading,
+    .entry-meta,
+    .comments-actions-snippet,
+    .entity-start,
+    .entity-end,
+    .entity-main-header,
+    .entity-main-footer {
+        display: none;
+    }
+
+    .entity-primary-name {
+        margin: 0;
+    }
+
+    .entry-axns {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .entry-name---txt {
+            display: none;
+        }
+    }
+
+    .entity {
+        display: grid;
+        grid-template:
+            'a1'
+            'a2' 1fr
+            'a3'
+            'a4'
+            'a5'
+            'a6' 1fr
+            'a7'
+            'a8';
+        height: 100vh;
+    }
+
+    .entity---cr,
+    .entity-header,
+    .entity-header---cr,
+    .entity-footer,
+    .entity-footer---cr,
+    .entity-main,
+    .entity-main---cr,
+    .entity-main-main,
+    .entity-main-main---cr,
+    .entry-md,
+    .entry-md---cr,
+    .entry,
+    .entry---cr,
+    .entry-article,
+    .entry-article---cr,
+    .entry-main,
+    .entry-main---cr,
+    .entry-content,
+    .entry-content---cr,
+    .entry-full-content,
+    .entry-full-content---cr,
+    .internationalization {
+        display: contents;
+    }
+
+    .entity-primary-axns {
+        grid-area: a1;
+        justify-self: flex-end;
+
+        .widget-name {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .entity-primary-axns---cr {
+        display: flex;
+    }
+
+    .entity-primary-heading {
+        grid-area: a3;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
+    .entity-secondary-nav {
+        grid-area: a8;
+    }
+
+    .entity-secondary-nav-name {
+        display: none;
+    }
+
+    .entity-secondary-nav-group---cr {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .entity-primary-name {
+        /* Visually Hidden */
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+    }
+    
+    .entity-primary-logo {
+        max-width: 280px;
+    
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .entry-content {
+        
+        .search {
+            grid-area: a4;
+            justify-self: center;
+
+            label {
+                display: none;
+            }
+        }
+
+        .search-channels {
+            position: relative;
+            display: grid;
+            grid-template:
+                'a1 b1'
+                'a2 b2'
+                / 1fr;
+        }
+            
+        .text-search {
+            display: contents;
+
+            .textbox-skin {
+                grid-area: a1;
+            }
+    
+            .text-input {
+                /* Reset */
+                background-color: transparent;
+                border: 0;
+                /* Set */
+                position: relative;
+                z-index: 1;
+                width: 100%;
+            }
+    
+            .search-textbox {
+                grid-area: a1;
+    
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    min-height: 2.25rem;
+                    background-color: white;
+                    border: .0625em solid black;
+                }
+            }
+        }
+
+        .search-actions {
+            grid-area: a2;
+            grid-column: a2/-1;
+            justify-self: center;
+        }
+
+        .voice-search {
+            grid-area: b1;
+            position: relative;
+            z-index: 1;
+    
+            a {
+                /* Nature */
+                display: block;
+                min-width: 48px;
+                height: 32px;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path d="M15 22c2.761 0 5-2.239 5-5v-12c0-2.761-2.239-5-5-5s-5 2.239-5 5v12c0 2.761 2.239 5 5 5zM22 14v3c0 3.866-3.134 7-7 7s-7-3.134-7-7v-3h-2v3c0 4.632 3.5 8.447 8 8.944v4.056h-4v2h10v-2h-4v-4.056c4.5-0.497 8-4.312 8-8.944v-3h-2z"></path></svg>');
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+
+        .localization {
+            grid-area: a5;
+            justify-self: center;
+            display: flex;
+        }
+
+        .languages {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .current-country-location {
+            grid-area: a7;
+        }
+
+        .search-by-voice-text {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+        }
+    }
+}
+
+/* First Level CSS of Text Inputs - Wireframe */

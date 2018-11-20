@@ -9,7 +9,7 @@ $r_functions = array(
     'back-compatibility',
     'settings',
     'hooks',
-    //'styles-scripts',
+    'styles-scripts',
     
     'body-css',
     'comments-css',
@@ -40,7 +40,7 @@ $r_tags = array(
     'comments-actions-snippet',
     'comments-nav',
     'entity-navigation',
-    'entity-view-name',
+    'entity-view-heading',
     'entries-navigation',
     'entry-actions',
     'entry-author',

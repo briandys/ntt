@@ -63,7 +63,7 @@ $comment_field_mu = '<div class="field comment-message cp" data-name="Comment Me
 $comment_field_mu .= '</div>';
 
 // cancel_reply_link
-$cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l l" title="'. esc_attr_x( 'Cancel Reply to Comment', 'Usage: Cancel Reply to Comment | Component: Comment Respond', 'ntt' ). '">';
+$cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l" title="'. esc_attr_x( 'Cancel Reply to Comment', 'Usage: Cancel Reply to Comment | Component: Comment Respond', 'ntt' ). '">';
 $cancel_reply_link_mu .= '<span class="cancel---txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>'; ?>

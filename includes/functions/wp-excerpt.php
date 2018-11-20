@@ -26,7 +26,7 @@ function ntt_show_more_action( $excerpt ) {
 
     $excerpt = '<div class="show-more-axn axn obj" data-name="Show More Action">';
         $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). $more_hash. '" class="show-more-axn---a a" title="'. esc_attr( $title_attr ).'">';
-            $excerpt .= '<span class="show-more-axn---l"><span class="show---txt">Show</span> <span class="more---txt">more</span> <span class="of---txt">of</span> '. $entry_name. '</span>';
+            $excerpt .= '<span class="show-more-axn---l"><span class="show---text">Show</span> <span class="more---text">more</span> <span class="of---text">of</span> '. $entry_name. '</span>';
         $excerpt .= '</a>';
     $excerpt .= '</div>';
 

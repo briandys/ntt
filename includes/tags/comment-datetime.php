@@ -20,10 +20,10 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                         $minute_text = get_comment_time( 'i' );
                         $second_text = get_comment_time( 's' );
                         $time_title_attr = $hour_text. ':'. $minute_text. ':'. $second_text;
-                        $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
+                        $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="colon---text">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="colon---text">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
 
                         <span class="comment-published-on-glabel glabel obj">
-                            <span class="commented-on---txt"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
+                            <span class="commented-on---text"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
                         </span>
 
                         <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="comment-published-date dt-published published-date cm-date date obj time">
@@ -35,7 +35,7 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                         </time>
 
                         <span class="comment-at-glabel glabel obj">
-                            <span class="at---txt"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
+                            <span class="at---text"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
                         </span>
                         
                         <span class="comment-published-time published-time cm-time time obj">

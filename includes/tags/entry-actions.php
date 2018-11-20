@@ -4,29 +4,34 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
     function ntt_entry_admin_actions() {
 
         if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
+
+            // Variables: Entry Name
+            $get_the_title = get_the_title();
             
-            if ( get_the_title() ) {
-                $entry_name = '<span class="entry-name---txt">'. esc_html( get_the_title() ). '</span>';
-                $entry_name_title_attr = esc_attr( get_the_title() );
+            if ( $get_the_title ) {
+                $entry_name = '<span class="entry-name---txt">'. esc_html( $get_the_title ). '</span>';
+                $entry_name_title_attr = esc_attr( $get_the_title );
             } else {
-                $entry_text = esc_html__( 'Entry', 'ntt' );
-                $entry_id = get_the_id();
+                $entry_text = __( 'Entry', 'ntt' );
+                $get_the_id = get_the_id();
                 
-                $entry_name = '<span class="entry-name---line line"><span class="entry---txt">'. $entry_text. '</span>'. ' '. '<span class="entry-id---txt num txt">'. $entry_id. '</span></span>';
-                $entry_name_title_attr = $entry_text. ' '. $entry_id;
+                $entry_name = '<span class="entry-name---line">';
+                $entry_name .= '<span class="entry---text">'. esc_html( $entry_text ). '</span>'. ' ';
+                $entry_name .= '<span class="entry-id---txt num">'. esc_html( $get_the_id ). '</span>';
+                $entry_name .= '</span>';
+                $entry_name_title_attr = esc_attr( $entry_text ). ' '. esc_attr( $get_the_id );
             }
             
-            $label_mu = '<span class="modify-entry-axn---l l" title="'. esc_attr__( 'Edit', 'ntt' ). ' '. $entry_name_title_attr. '"><span class="edit---txt">'. esc_html__( 'Edit', 'ntt' ).'</span>'. ' '. $entry_name. '</span>';
+            // Variables: Entry Name Label
+            $edit_text = __( 'Edit', 'ntt' );
+            $entry_name_label = '<span class="modify-entry-axn---l" title="'. esc_attr( $edit_text ). ' '. $entry_name_title_attr. '">';
+            $entry_name_label .= '<span class="edit---text">'. esc_html( $edit_text ).'</span>'. ' '. $entry_name. '</span>';
             ?>
-
-            <div class="cm-axns-trunk entry-axns axns-trunk axns cp" data-name="Entry Actions">
-                <div class="cm-axns-trunk---cr entry-axns---cr">
-                    <div class="entry-admin-axns admin-axns axns cp" aria-label="Entry Admin Actions">
-                        <div class="entry-admin-axns---cr">
-                            <div class="modify-entry-axn modify-axn p-modify axn obj" aria-label="Modify Entry Action">
-                                <?php echo edit_post_link( $label_mu, '', '' ); ?>
-                            </div>
-                        </div>
+            
+            <div class="entry-axns axns cp" data-name="Entry Actions">
+                <div class="entry-axns---cr">
+                    <div class="modify-entry-axn modify-axn p-modify axn obj" aria-label="Edit Entry">
+                        <?php echo edit_post_link( $entry_name_label, '', '' ); ?>
                     </div>
                 </div>
             </div>

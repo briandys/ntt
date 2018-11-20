@@ -6,14 +6,14 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         $page_term = esc_html__( 'Page', 'ntt' );
         
         $l_mu_start = '<span class="entry-sub-content-navi---l">';
-            $l_mu_start .= '<span class="page---txt">'. $page_term. '</span>';
+            $l_mu_start .= '<span class="page---text">'. $page_term. '</span>';
             $l_mu_start .= ' '. '<span class="page-number---txt num txt">';
             $l_mu_end = '</span>';
         $l_mu_end .= '</span>';
 
-        $adjacent_navi_mu = '<span class="entry-sub-content-navi---l adjacent-navi---l '. sanitize_title( '%1$s' ).'-adjacent-navi---l l" title="%2$s">';
+        $adjacent_navi_mu = '<span class="entry-sub-content-navi---l adjacent-navi---l '. sanitize_title( '%1$s' ).'-adjacent-navi---l" title="%2$s">';
             $adjacent_navi_mu .= '<span class="'. sanitize_title( '%1$s' ).'---txt">%1$s</span>';
-            $adjacent_navi_mu .= ' '. '<span class="page---txt">'. $page_term. '</span>';
+            $adjacent_navi_mu .= ' '. '<span class="page---text">'. $page_term. '</span>';
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,

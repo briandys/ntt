@@ -31,17 +31,17 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                         
                         $single_count_label = '<span class="comments-count---l">';
                             $single_count_label .= '<span class="one---txt comments-count---txt num txt">&#49;</span>';
-                            $single_count_label .= ' '. '<span class="comment---txt">'. esc_html_x( 'Comment', 'Component: Comments Population | Usage: 1 >Comment<', 'ntt' ). '</span>';
+                            $single_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Component: Comments Population | Usage: 1 >Comment<', 'ntt' ). '</span>';
                         $single_count_label .= '</span>';
                     
                         $multi_count_label = '<span class="comments-count---l">';
                             $multi_count_label .= '<span class="number---txt comments-count---txt num txt">%</span>';
-                            $multi_count_label .= ' '. '<span class="comment---txt">'. esc_html_x( 'Comments', 'Component: Comments Population | Usage: 2 >Comments<', 'ntt' ). '</span>';
+                            $multi_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comments', 'Component: Comments Population | Usage: 2 >Comments<', 'ntt' ). '</span>';
                         $multi_count_label .= '</span>';
                     
                         $zero_count_label_mu = '<span class="comments-count---l">';
                             $zero_count_label_mu .= '<span class="zero---txt comments-count---txt num txt">&#48;</span>';
-                            $zero_count_label_mu .= ' '. '<span class="comment---txt">'. esc_html_x( 'Comment', 'Component: Comments Population | Usage: 0 >Comment<', 'ntt' ). '</span>';
+                            $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Component: Comments Population | Usage: 0 >Comment<', 'ntt' ). '</span>';
                         $zero_count_label_mu .= '</span>';
             
                         // Populated Comments
@@ -89,7 +89,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                     $comment_creation_content_mu = '<div class="add-comment-axn add-axn axn obj" data-name="Add Comment Action">';
                         $comment_creation_content_mu .= '<a href="'. esc_url( $href ).'" class="add-comment-axn---a a" title="'. esc_attr__( 'Add Comment', 'ntt' ).'">';
                         $comment_creation_content_mu .= '<span class="add-comment-axn---l">';
-                                $comment_creation_content_mu .= '<span class="axn---line line"><span class="add---txt">'. esc_html_x( 'Add', 'Object: Add Comment Action | Usage: >Add< Comment', 'ntt' ). ' '. '</span><span class="comment---txt">'. esc_html_x( 'Comment', 'Object: Add Comment Action | Usage: Add >Comment<', 'ntt' ). '</span></span>';
+                                $comment_creation_content_mu .= '<span class="axn---line line"><span class="add---text">'. esc_html_x( 'Add', 'Object: Add Comment Action | Usage: >Add< Comment', 'ntt' ). ' '. '</span><span class="comment---text">'. esc_html_x( 'Comment', 'Object: Add Comment Action | Usage: Add >Comment<', 'ntt' ). '</span></span>';
                             
                             if ( ! is_user_logged_in() && get_option( 'comment_registration' ) ) {
                                 $comment_creation_content_mu .= ' '. '<span class="requires-log-in-note---txt">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>';

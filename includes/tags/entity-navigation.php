@@ -10,7 +10,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
         
         $group_mu_start = '<ul class="entity-primary-nav-group---cr">';
         $group_mu_end   = '</ul>';
-        $label_mu_start = '<span class="entity-primary-navi---l"><span class="entity-primary-navi---txt navi-text">';
+        $label_mu_start = '<span class="entity-primary-navi---l"><span class="entity-primary-navi---txt navi---txt">';
         $label_mu_end   = '</span></span>';
         $nav_group_css  = 'entity-primary-nav-group nav-group group cp';
         
@@ -20,7 +20,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
             <nav role="navigation" id="entity-primary-nav" class="entity-primary-nav entity-nav nav cp" data-name="Entity Primary Navigation">
                 <div class="entity-primary-nav---cr">
                     
-                    <h2 class="entity-primary-nav-name nav-name name obj h" data-name="Entity Primary Navigation Name"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
+                    <h2 class="entity-primary-nav-name nav-name name obj h" data-name="Entity Primary Navigation Name"><?php esc_html_e( 'Navigation', 'ntt' ); ?></h2>
                     
                     <?php
                     function escape_html_the_title( $title, $id = null ) {
@@ -89,7 +89,7 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
                         'theme_location'    => 'entity-secondary-nav',
                         'container'         => 'div',
                         'container_class'   => 'entity-secondary-nav-group nav-group group cp',
-                        'link_before'       => '<span class="entity-secondary-navi---l"><span class="entity-secondary-navi---txt navi-text">',
+                        'link_before'       => '<span class="entity-secondary-navi---l"><span class="entity-secondary-navi---txt navi---txt">',
                         'link_after'        => '</span></span>',
                         'items_wrap'        => '<ul class="entity-secondary-nav-group---cr">'. '%3$s'. '</ul>',
                     ) ); ?>

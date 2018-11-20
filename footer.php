@@ -1,4 +1,4 @@
-                        </section>
+                        </div>
                     </main>
                     
                     <footer id="entity-footer" class="entity-footer cn" data-name="Entity Footer">
@@ -26,14 +26,14 @@
                                     ?>
                                     
                                     <span class="entity-copyright copyright obj" data-name="Entity Copyright">
-                                        <span class="copyright-text"><?php esc_html_e( 'Copyright', 'ntt' ); ?></span>
+                                        <span class="copyright---text"><?php esc_html_e( 'Copyright', 'ntt' ); ?></span>
                                         <span class="copyright-year---txt"><?php echo esc_html( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?></span>
                                     </span>
                                     
                                     <span class="entity-maker-tag maker-tag obj" data-name="Entity Maker Tag">
                                         <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_wp_filter', '//ntt.dysinelab.com/themes/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Usage: >Made with< <Theme Name> by <Entity Maker Name> | Object: Entity Maker Tag', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ). ' '. esc_attr_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ). ' '. esc_attr( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ) ); ?>" class="entity-maker-tag---link">
                                             <span class="wp-theme-name---txt"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_theme_name_wp_filter', $GLOBALS['ntt_name'] ) ); ?></span>
-                                            <span class="by-text"><?php echo esc_html_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ); ?></span>
+                                            <span class="by---text"><?php echo esc_html_x( 'by', 'Usage: <Theme Name> >by< <Entity Maker Name>', 'ntt' ); ?></span>
                                             <span class="maker-name---txt"><?php echo esc_html( apply_filters( 'ntt_entity_maker_tag_maker_name_wp_filter', $entity_maker_name ) ); ?></span>
                                         </a>
                                     </span>
