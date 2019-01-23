@@ -25,7 +25,7 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
             // Variables: Entry Name Label
             $edit_text = __( 'Edit', 'ntt' );
             $entry_name_label = '<span class="modify-entry-axn---l" title="'. esc_attr( $edit_text ). ' '. $entry_name_title_attr. '">';
-            $entry_name_label .= '<span class="edit---text">'. esc_html( $edit_text ).'</span>'. ' '. $entry_name. '</span>';
+            $entry_name_label .= '<span class="modify-entry-axn---txt">'. esc_html( $edit_text ).'</span>'. ' '. $entry_name. '</span>';
             ?>
             
             <div class="entry-axns axns cp" data-name="Entry Actions">

@@ -19,11 +19,11 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                         $minute_text = get_the_date( 'i' );
                         $second_text = get_the_date( 's' );
                         $time_title_attr = $hour_text. ':'. $minute_text. ':'. $second_text;
-                        $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
+                        $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
 
-                        <span class="entry-published-on-glabel glabel obj" data-name="Entry Published On Generic Label">
-                            <span class="published---txt"><?php echo esc_html_x( 'Published', 'Component: DateTime | Usage: >Published< on <date> at <time>', 'ntt' ); ?></span>
-                            <span class="on---txt"><?php echo esc_html_x( 'on', 'Component: DateTime | Usage: Published >on< <date> at <time>', 'ntt' ); ?></span>
+                        <span class="entry-published-datetime-glabel glabel obj" data-name="Entry Published DateTime Generic Label">
+                            <span class="published---text"><?php echo esc_html_x( 'Published', 'Component: DateTime | Usage: >Published< on <date> at <time>', 'ntt' ); ?></span>
+                            <span class="on---text"><?php echo esc_html_x( 'on', 'Component: DateTime | Usage: Published >on< <date> at <time>', 'ntt' ); ?></span>
                         </span>
                 
                         <time datetime="<?php echo get_the_date( DATE_W3C ); ?>" class="entry-published-date dt-published published-date cm-date date obj time" data-name="Entry Published Date">
@@ -58,7 +58,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                         $modified_minute_text = get_the_modified_time( 'i' );
                         $modified_second_text = get_the_modified_time( 's' );
                         $modified_time_title_attr = $modified_hour_text. ':'. $modified_minute_text. ':'. $modified_second_text;
-                        $modified_time_mu = '<span class="hour---txt">'. $modified_hour_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="minute---txt">'. $modified_minute_text. '</span>'. '<span class="colon---txt">:</span>'. '<span class="second---txt">'. $modified_second_text. '</span>'; ?>
+                        $modified_time_mu = '<span class="hour---txt">'. $modified_hour_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="minute---txt">'. $modified_minute_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="second---txt">'. $modified_second_text. '</span>'; ?>
 
                         <span class="entry-modified-on-glabel glabel obj" data-name="Entry Modified On Generic Label">
                             <span class="modified---txt"><?php echo esc_html_x( 'Modified', 'Component: DateTime | Usage: >Modified< on <date> at <time>', 'ntt' ); ?></span>

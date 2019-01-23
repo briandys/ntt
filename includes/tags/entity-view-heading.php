@@ -156,6 +156,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 </div>
 
                 <?php
+                if ( ! is_singular() ) {
                 $entry_text = esc_html( 'Entry', 'ntt' );
                 
                 if ( $query_found_posts == 0 ) {
@@ -175,6 +176,10 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                         </span>
                     <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
                 </div>
+
+                <?php
+                }
+                ?>
             </div>
         </div>
         <?php

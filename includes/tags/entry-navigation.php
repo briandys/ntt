@@ -36,7 +36,9 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             <div role="navigation" class="entry-nav adjacent-nav nav cp" data-name="Entry Navigation">
                 <div class="entry-nav---cr">
 
-                    <div class="entry-nav-name nav-name name obj" data-name="Entry Navigation Name"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></div>
+                    <div class="entry-nav-ename nav-ename ename obj" data-name="Entry Navigation Element Name">
+                        <span class="entry-nav-ename---txt"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></span>
+                    </div>
 
                     <div class="entry-nav-group nav-group group">
                         <div class="entry-nav-group---cr">
@@ -44,7 +46,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                             <?php if ( get_next_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
-                                    $next_post_thumbnail = '<span class="entry-navi---i i">';
+                                    $next_post_thumbnail = '<span class="entry-navi---i">';
                                     $next_post_thumbnail .= get_the_post_thumbnail( get_next_post()->ID );
                                     $next_post_thumbnail .= '</span>';
                                 } else {
@@ -62,7 +64,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                             <?php if ( get_previous_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
-                                    $prev_post_thumbnail = '<span class="entry-navi---i i">';
+                                    $prev_post_thumbnail = '<span class="entry-navi---i">';
                                     $prev_post_thumbnail .= get_the_post_thumbnail( get_previous_post()->ID );
                                     $prev_post_thumbnail .= '</span>';
                                 } else {

@@ -146,7 +146,7 @@ function ntt_html_css() {
      */
 
     // Entry Granularity View
-    if ( is_singular() ) {
+    if ( is_singular() || is_404() ) {
         $css[] = 'singular-view';
     } else {
         $css[] = 'plural-view';

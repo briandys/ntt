@@ -36,10 +36,12 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
             <div class="cm-nav breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
                 <div class="cm-nav---cr breadcrumbs-nav---cr">
 
-                    <div class="cm-nav-name breadcrumbs-nav-name nav-name name obj" data-name="Breadcrumbs Navigation Name"><?php echo esc_html__( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
+                    <div class="breadcrumbs-nav-ename cm-nav-ename nav-ename ename obj" data-name="Breadcrumbs Navigation Element Name">
+                        <span class="breadcrumbs-nav-ename---txt"><?php echo esc_html__( 'Breadcrumbs Navigation', 'ntt' ); ?></span>
+                    </div>
 
                     <div class="breadcrumbs-nav-group nav-group group">
-                    <?php echo $breadcrumbs_ancestors_mu. ' '. $navi_current_mu; ?>
+                        <?php echo $breadcrumbs_ancestors_mu. ' '. $navi_current_mu; ?>
                     </div>
                 
                 </div>

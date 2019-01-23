@@ -88,7 +88,9 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
             <div role="navigation" class="entry-content-nav nav pagination cp" data-name="Entry Content Navigation">
                 <div class="entry-content-nav---cr">
                 
-                    <div class="entry-content-nav-name nav-name name obj" data-name="Entry Content Navigation Name"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></div>
+                    <div class="entry-content-nav-ename nav-ename ename obj" data-name="Entry Content Navigation Element Name">
+                        <span class="entry-content-nav-ename---txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
+                    </div>
                 
                     <?php echo $content_pagination_group_mu; ?>
                 

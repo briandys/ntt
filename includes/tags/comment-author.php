@@ -17,9 +17,8 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 $anchor_end_mu = '';
             } ?>
 
-                <span class="commented-by-glabel cm-glabel glabel obj" data-name="Commented by Generic Label">
-                    <span class="commented---text"><?php echo esc_html_x( 'Commented', 'Component: Comment Author | Usage: >Commented< by <Comment Author Name>', 'ntt' ); ?></span>
-                    <span class="by---text"><?php echo esc_html_x( 'by', 'Component: Comment Author | Usage: Commented >by< <Comment Author Name>', 'ntt' ); ?></span>
+                <span class="comment-author-glabel cm-glabel glabel obj" data-name="Comment Author Generic Label">
+                    <span class="comment-author-glabel---txt"><?php echo esc_html_x( 'Commented by', '->Commented by<- [Comment Author Name]', 'ntt' ); ?></span>
                 </span>
                 
                 <span class="comment-author-name cm-author-name author-name name obj" data-name="Comment Author Name">
@@ -41,7 +40,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                             $size = '48',
                             $default = '',
                             $alt = $comment_author. ' '. 'Avatar',
-                            $args = array( 'class' => 'comment-author-avatar---img author-avatar---img avatar---img u-photo img', )
+                            $args = array( 'class' => 'comment-author-avatar---img u-photo', )
                         );
                         echo $anchor_end_mu; ?>
                     </span>

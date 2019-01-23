@@ -45,7 +45,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                             
                                         if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
 
-                                            $reply_text_mu = '<span class="reply---text">'. esc_html_x( 'Reply', 'Usage: >Reply< to Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="to---text">'. esc_html_x( 'to', 'Usage: Reply >to< Comment <ID> | Component: Comment Actions', 'ntt' ). '</span> <span class="comment-name---line line"><span class="comment---text">'. esc_html_x( 'Comment', 'Usage: Reply to >Comment< <ID> | Component: Comment Actions', 'ntt' ). '</span>'. ' '. '<span class="comment-id---txt num">'. esc_html( $comment_id ). '</span></span>';
+                                            $reply_text_mu = '<span class="comment-reply-axn---txt">'. esc_html_x( 'Reply', '->Reply<- to [Comment Name]', 'ntt' ). '</span> <span class="to---text">'. esc_html_x( 'to', 'Reply ->to<- [Comment Name]', 'ntt' ). '</span> <span class="comment-name---txt">'. esc_html_x( 'Comment', 'Reply to ->Comment Name<-', 'ntt' ). ' '. esc_html( $comment_id ). '</span>';
                                             $login_text_mu = '<span class="requires-log-in---text">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>'; ?>
 
                                             <div class="comment-user-axns user-axns cm-axns axns cp" data-name="Comment User Actions">
@@ -58,7 +58,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                                                 'add_below'     => 'comment',
                                                                 'depth'         => $depth,
                                                                 'max_depth'     => $args['max_depth'],
-                                                                'reply_text'    => '<span class="comment-reply-axn---l" title="'. esc_attr_x( 'Reply to Comment', 'Usage: >Reply to Comment< <ID> | Component: Comment Actions', 'ntt' ). ' '. esc_html( $comment_id ). '">'. $reply_text_mu. '</span>',
+                                                                'reply_text'    => '<span class="comment-reply-axn---l" title="'. esc_attr_x( 'Reply to Comment', '->Reply to Comment Name<-', 'ntt' ). ' '. esc_html( $comment_id ). '">'. $reply_text_mu. '</span>',
                                                                 'login_text'    => '<span class="log-in-axn---l"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
                                                             )
                                                         ) );
@@ -93,7 +93,10 @@ if ( ! function_exists( 'ntt_comment') ) {
                                         <div class="comment-full-content full-content e-content content cp" data-name="Comment Full Content">
                                             <div class="comment-full-content---cr content---cr">
                                             
-                                            <?php if ( $comment->comment_approved == '0' ) {
+                                            <?php
+                                            // Appears for not logged in users and those who opt-in to save info in cookie
+                                            // Settings > Discussion > Show comments cookies opt-in checkbox.
+                                            if ( $comment->comment_approved == '0' ) {
                                                 ?>
                                                 <div class="unapproved-comments-note note cp" data-name="Unapproved Comments Note">
                                                     <div class="unapproved-comments-note---cr note---cr">

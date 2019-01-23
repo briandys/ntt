@@ -8,7 +8,7 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
 
             <div class="comments-nav adjacent-nav nav cp" data-name="Comments Navigation">
                 <div class="comments-nav---cr">
-                    <div class="comments-nav-name nav-name name obj"><?php esc_html_e( 'Comments Nav', 'ntt' ); ?></div>
+                    <div class="comments-nav-ename nav-ename ename obj"><?php esc_html_e( 'Comments Navigation Element Name', 'ntt' ); ?></div>
             
                     <?php if ( get_next_comments_link() ) { ?>
 
