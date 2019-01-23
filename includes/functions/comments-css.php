@@ -7,7 +7,7 @@ function ntt_comments_css() {
         $comments_count = (int) get_comments_number( get_the_ID() );
 
         // Comments Population Status
-        if ( $comments_count > 1 ) {
+        if ( $comments_count >= 1 ) {
             $css[] = 'comments--populated';
         } else {
             $css[] = 'comments--empty';

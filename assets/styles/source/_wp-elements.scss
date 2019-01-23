@@ -2,84 +2,14 @@
 // WP Elements
 //--------------------------------------------------------------
 
-// WP Required Elements
+.bypostauthor,
+.gallery-caption,
+.screen-reader-text,
+.sticky,
 .wp-caption,
 .wp-caption-text,
-.sticky,
-.screen-reader-text,
-.gallery-caption,
-.bypostauthor {
-    position: inherit;
-}
-
-.wp-smiley {
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-	border: none;
-}
-
-p > embed:only-child,
-p > iframe:only-child,
-p > object:only-child {
-	margin-bottom: 0;
-}
-
-.wp-caption,
-.gallery-caption {
-	max-width: 100%;
-}
-
-//--------------------------------------------------------------
-// Comments
-//--------------------------------------------------------------
-
-.comment-form-cookies-consent {
-	display: flex;
-	align-items: center;
-	@include y-margin(0, -1em);
-	padding: $m-gutter;
-
-	label {
-		font-size: .875em;
-	}
-}
-
-#wp-comment-cookies-consent {
-	width: $m-gutter;
-	@include min-dimensions($m-gutter, auto);
-	@include max-dimensions($min-aa);
-}
-
-.wp-admin-bar--enabled {
-	margin-top: 0 !important;
-	padding-top: 32px;
-	
-	@media screen and (max-width: 782px) {
-		padding-top: 46px;
-	}
-}
-
-//--------------------------------------------------------------
-// Post Password Form
-//--------------------------------------------------------------
-.post-password-form {
-
-	label {
-		font-size: 1rem;
-    }
-
-	p {
-		margin: 0;
-        @include y-padding(1em);
-
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
-
-    input {
-		@include y-margin(1em, 0);
-		font-size: 1rem;
-    }
+.alignright,
+.alignleft,
+.aligncenter {
+    position: inherit; // A random rule
 }

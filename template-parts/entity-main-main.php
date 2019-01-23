@@ -16,12 +16,14 @@
                         ?>
                         <div id="entries" class="entries cm-plural cp" data-name="Entries">
                             <div class="entries---cr cm-plural---cr">
-                                <?php
-                                while ( have_posts() ) {
-                                    the_post();
-                                    ntt_entry_content();
-                                }
-                                ?>
+                                <div class="entries-group group">
+                                    <?php
+                                    while ( have_posts() ) {
+                                        the_post();
+                                        ntt_entry_content();
+                                    }
+                                    ?>
+                                </div>
                             </div>
                         </div>
                         <?php

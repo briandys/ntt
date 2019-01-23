@@ -17,7 +17,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
 
             foreach ( $anc as $ancestor ) {
                 $navi_ancestors = '<div class="breadcrumb-navi--ancestor breadcrumb-navi obj item">';
-                    $navi_ancestors .= '<a href="'. esc_url( get_permalink( $ancestor ) ). '" title="'. esc_attr( get_the_title( $ancestor ) ). '" class="breadcrumb-navi---a a">';
+                    $navi_ancestors .= '<a href="'. esc_url( get_permalink( $ancestor ) ). '" title="'. esc_attr( get_the_title( $ancestor ) ). '" class="breadcrumb-navi---a">';
                         $navi_ancestors .= '<span class="breadcrumb-navi---l">';
                            $navi_ancestors .= '<span class="breadcrumb-navi---txt">'. esc_html( get_the_title( $ancestor ) ). '</span>';
                         $navi_ancestors .= '</span>';

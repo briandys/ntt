@@ -6,23 +6,19 @@ if ( post_password_required() ) {
 }
 
 // title_reply
-$title_reply_mu = '<div class="compose-comment-name name obj" data-name="Compose Comment Name">';
-$title_reply_mu .= '<span class="compose-comment-name---l">';
-    $title_reply_mu .= '<span class="compose---txt">';
+$title_reply_mu = '<div class="compose-comment-ename ename obj" data-name="Compose Comment Element Name">';
+    $title_reply_mu .= '<span class="compose---text">';
         $title_reply_mu .= esc_html_x( 'Compose', 'Component: Comment Creation | Usage: >Compose< Comment', 'ntt' );
     $title_reply_mu .= '</span>';
-    $title_reply_mu .= ' '. '<span class="comment---txt">';
+    $title_reply_mu .= ' '. '<span class="comment---text">';
         $title_reply_mu .= esc_html_x( 'Comment', 'Component: Comment Creation | Usage: Compose >Comment<', 'ntt' );
     $title_reply_mu .= '</span>';
-$title_reply_mu .= '</span>';
 $title_reply_mu .= '</div>';
 
 // title_reply_to
-$title_reply_to_mu = '<div class="comment-reply-name name obj" data-name="Comment Reply Name">';
-$title_reply_to_mu .= '<div class="comment-reply-name---l">';
-    $title_reply_to_mu .= '<span class="reply-to---txt">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
+$title_reply_to_mu = '<div class="comment-reply-ename ename obj" data-name="Comment Reply Element Name">';
+    $title_reply_to_mu .= '<span class="reply-to---text">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
     $title_reply_to_mu .= ' '. '%s';
-$title_reply_to_mu .= '</div>';
 $title_reply_to_mu .= '</div>';
 
 // logged_in_as
@@ -33,39 +29,45 @@ $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Ac
     $logged_in_as_mu .= '<div class="admin-account-log-status---cr">';
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
             $logged_in_as_mu .= '<div class="logged-in-admin-account---cr">';
-                $logged_in_as_mu .= '<span class="logged-in-as---glabel glabel obj"><span class="logged-in-as---txt">'. esc_html_x( 'Logged in as', 'Component: Comment Admin Account | Usage: The admin name who is logged in.', 'ntt' ). '</span></span>';
-                $logged_in_as_mu .= ' '. '<span class="admin-account-name name obj"><a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'" class="admin-account-name---a a"><span class="admin-account-name---l"><span class="admin-account-name---txt">'. $user_identity.'</span></span></a></span>';
+                $logged_in_as_mu .= '<span class="logged-in-admin-account---glabel glabel obj" data-name="Logged In Admin Account Generic Label">';
+                    $logged_in_as_mu .= '<span class="logged-in-admin-account---txt">'. esc_html_x( 'Logged in as', 'Component: Comment Admin Account | Usage: The admin name who is logged in.', 'ntt' ). '</span>';
+                $logged_in_as_mu .= '</span>';
+                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name name obj" data-name="Logged In Admin Account Name">';
+                    $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'" class="logged-in-admin-account-name---a">';
+                        $logged_in_as_mu .= '<span class="logged-in-admin-account-name---txt">'. $user_identity.'</span>';
+                    $logged_in_as_mu .= '</a>';
+                $logged_in_as_mu .= '</span>';
             $logged_in_as_mu .= '</div>';
         $logged_in_as_mu .= '</div>';
-        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn obj" data-name="Log Out Admin Account Action"><a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. $log_out_title_attr.'"><span class="log-out-admin-account-axn---l"><span class="log-out---txt">'. $log_out_l.'</span></span></a></div>';
+        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn axn obj" data-name="Log Out Admin Account Action"><a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. $log_out_title_attr.'" class="log-out-admin-account-axn---a"><span class="log-out-admin-account-axn---l"><span class="log-out-admin-account-axn---txt">'. $log_out_l.'</span></span></a></div>';
     $logged_in_as_mu .= '</div>';
 $logged_in_as_mu .= '</div>';
 
 // must_log_in
 $must_log_in_mu = '<div class="log-in-required-note note cp" data-name="Log In Required Note">';
     $must_log_in_mu .= '<div class="log-in-required-note---cr note---cr">';
-        $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr__( 'Log In', 'ntt' ).'" class="log-in-required-note---a a">'. esc_html_x( 'Log In', 'Object: Log In Required Note | Usage: >Log In< to comment.', 'ntt' ). '</a> '. ' '. '<span class="to-comment---txt">'. esc_html_x( 'to comment.', 'Object: Log In Required Note | Usage: Log In >to comment<.', 'ntt' ). '</span>'. '</p>';
+        $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr__( 'Log In', 'ntt' ).'" class="log-in-link">'. esc_html_x( 'Log In', 'Object: Log In Required Note | Usage: >Log In< to comment.', 'ntt' ). '</a> '. ' '. '<span class="to-comment-text">'. esc_html_x( 'to comment.', 'Object: Log In Required Note | Usage: Log In >to comment<.', 'ntt' ). '</span>'. '</p>';
     $must_log_in_mu .= '</div>';
 $must_log_in_mu .= '</div>';
 
 // comment_field
-$comment_field_mu = '<div class="field comment-message cp" data-name="Comment Message">';
-    $comment_field_mu .= '<div class="field---cr comment-message---cr">';
-    $comment_field_mu .= '<label for="comment" class="comment-message-label label obj" data-name="Comment Message Label">';
-        $comment_field_mu .= '<span class="comment-message-label---l">';
-            $comment_field_mu .= '<span class="comment---txt">'. esc_attr__( 'Comment', 'ntt' ). '</span>';
+$comment_field_mu = '<div class="comment-message-field field cp" data-name="Comment Message Field">';
+    $comment_field_mu .= '<div class="comment-message-field---cr field---cr ">';
+    $comment_field_mu .= '<label for="comment" class="comment-message-field-label label obj" data-name="Comment Message Field Label">';
+        $comment_field_mu .= '<span class="comment-message-field-label---l">';
+            $comment_field_mu .= '<span class="comment-message-field-label---txt">'. esc_attr__( 'Comment', 'ntt' ). '</span>';
         $comment_field_mu .= '</span>';
     $comment_field_mu .= '</label>';
-        $comment_field_mu .= '<div class="comment-message-textbox textbox felem obj" data-name="Comment Message Textbox">';
-            $comment_field_mu .= '<textarea name="comment" placeholder="'. esc_html__( 'Comment', 'ntt' ).'" title="'. esc_html__( 'Comment', 'ntt' ).'" maxlength="65525" required id="comment" class="comment-message-input text-input textarea"></textarea>';
+        $comment_field_mu .= '<div class="comment-message-field-textbox textbox felem obj" data-name="Comment Message Field Textbox">';
+            $comment_field_mu .= '<textarea name="comment" placeholder="'. esc_html__( 'Comment', 'ntt' ).'" title="'. esc_html__( 'Comment', 'ntt' ).'" maxlength="65525" required id="comment" class="comment-message-field-input text-input textarea"></textarea>';
         $comment_field_mu .= '</div>';
     $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
 
 // cancel_reply_link
 $cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l" title="'. esc_attr_x( 'Cancel Reply to Comment', 'Usage: Cancel Reply to Comment | Component: Comment Respond', 'ntt' ). '">';
-$cancel_reply_link_mu .= '<span class="cancel---txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
-$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---txt">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= '<span class="cancel-comment-reply-axn---txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---text">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>'; ?>
 
 <section class="comment-md cm md" data-name="Comment Module">
@@ -76,10 +78,8 @@ $cancel_reply_link_mu .= '</span>'; ?>
                 
                 <div class="comments-header cm-plural-header header cn" data-name="Comments Header">
                     <div class="comments-header---cr cm-plural-header---cr">
-                        <h2 class="comments-name name obj h">
-                            <span class="comments-name---l">
-                                <span class="comments---txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
-                            </span>
+                        <h2 class="comments-name name obj h" data-name="Comments Name">
+                            <span class="comments-name---txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
                         </h2>
                         
                         <?php
@@ -134,6 +134,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
         // comment-form.php
         comment_form( array(
             'id_form'                   => 'commentform',
+            'class_form'                => 'comment-form form cp',
         
             'title_reply_before'        => '',
             'title_reply_after'         => '',
@@ -141,7 +142,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
             // Comment Creation Name and Compose Comment Generic Label
             'title_reply'               => $title_reply_mu,
             
-            // Reply to <Comment Author Name> | Appears if JS is not supported of comment-reply.js is not loaded
+            // Reply to <Comment Author Name> | Appears only if JS is not supported or if comment-reply.js is not loaded; it replaces title_reply
             'title_reply_to'            =>  $title_reply_to_mu,
         
             // Cancel Reply Action
@@ -160,7 +161,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
         
             // Submit Comment Action
             'id_submit'                 => 'submit-comment-axn---a',
-            'class_submit'              => 'submit-comment-axn---a a b',
+            'class_submit'              => 'submit-comment-axn---a',
             'label_submit'              => esc_attr_x( 'Submit', 'Component: Comment Respond | Usage: >Submit< Comment', 'ntt' ),
         
             // Notes

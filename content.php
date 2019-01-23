@@ -34,11 +34,6 @@
                                     ntt_entry_full_content();
                                 }
 
-                                // Temp
-                                if ( is_page( 'home' ) ) {
-                                    get_template_part( 'temp-google' );
-                                }
-
                                 ntt_after_entry_content_wp_hook();
                                 ?>
                             </div>
@@ -48,7 +43,7 @@
                 </div>
                 <?php
                 global $multipage;
-                if ( is_singular() && ( $multipage || get_the_tag_list() ) || is_active_sidebar( 'entry-footer-aside' ) ) {
+                if ( is_singular() || $multipage || get_the_category_list() || get_the_tag_list() || is_active_sidebar( 'entry-footer-aside' ) ) {
                     ?>
                     <div class="entry-footer cm-footer footer cn" data-name="Entry Footer">
                         <div class="entry-footer---cr cm-footer---cr">

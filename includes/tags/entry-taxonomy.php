@@ -7,7 +7,9 @@ if ( ! function_exists( 'ntt_entry_categories' ) ) {
 
             <div class="entry-categories cm-categories cp" data-name="Entry Categories">
                 <div class="entry-categories---cr cm-categories---cr">
-                    <div class="categories-name cm-categories-name name obj" data-name="Categories Name"><?php echo apply_filters( 'ntt_cm_categories_name', esc_html__( 'Categories', 'ntt' ) ); ?></div>
+                    <div class="categories-name cm-categories-name name obj" data-name="Categories Name">
+                        <span class="entry-categories---text"><?php echo apply_filters( 'ntt_cm_categories_name', esc_html__( 'Categories', 'ntt' ) ); ?></span>
+                    </div>
                     <?php echo get_the_category_list(); ?>
                 </div>
             </div>

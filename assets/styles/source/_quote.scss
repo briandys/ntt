@@ -1,9 +1,0 @@
-blockquote {
-	margin: 0;
-	font-size: $quote-font-size;
-	quotes: "“" "”" "'" "'";
-
-	.wp-caption-text & {
-		font-size: 1em;
-	}
-}

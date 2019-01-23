@@ -14,61 +14,78 @@ $black-blue--color: hsl(215, 100%, 10%);
 $eerie-black: hsl(0, 0%, 11%);
 $baby-powder: hsl(60, 67%, 99%);
 
-$gray: #707070;
-$faint-gray: hsla(0, 0%, 0%, .125);
-$faded-gray: hsla(0, 0%, 0%, .03125);
-
 // Elements
 $headings: 'h1, h2, h3, h4, h5, h6';
 $lists: 'ul, ol';
 
 // Viewport Widths
+$px: .0625em;
 $s-vp: 35em;
 $m-vp: 48em;
 $l-vp: 64em;
 $xl-vp: 80em;
 
-// Dimensions
-$m-gutter: 1rem;
-$min-aa: 3rem;
-$responsive-y-content-space: 1.5em;
-$content-font-size: 1.125rem;
-$quote-font-size: $content-font-size * 1.25;
-$m-line-height: 1.6;
-$active-layer: 100;
-$character-space: .3em;
-
-$scale-s: scale(1.0625);
-
-$radius-s: .125em;
-
 //--------------------------------------------------------------
-// Generic Variables
+// Helpers - Extensions
 //--------------------------------------------------------------
 
-// Colors
-$primary-color: $panda-blue;
-$ink-color: $eerie-black;
-$paper-color: $baby-powder;
+%vh {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
 
-$visited-link-color: $panda-purple;
+%cf:before,
+%cf:after {
+    content: " ";
+    display: table;
+}
 
-// Element Colors
-$primary-link-fg-color: $primary-color;
-$caption-fg-color: $gray;
+%cf:after {
+    clear: both;
+}
 
-$sub-nav-border-color: $ink-color;
+%unlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+%aa {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 3rem;
+    min-height: 3rem;
+}
 
 //--------------------------------------------------------------
-// Mixins (@include)
+// Helpers - Mixins
 //--------------------------------------------------------------
+
+@mixin unline {
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
 
 @mixin mq($media) {
   
     @if $media == xs-vp {
 
         // Exclusive for Narrow and Below
-        @media only screen and ( max-width: $s-vp - .0625em ) {
+        @media only screen and ( max-width: $s-vp - $px ) {
             @content;
         }
     } @else if $media == s-vp {
@@ -90,297 +107,4 @@ $sub-nav-border-color: $ink-color;
             @content;
         }
     }
-}
-
-@mixin unline {
-    text-decoration: none;
-    
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-@mixin link-line {
-    text-decoration: underline;
-    
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-@mixin m-x-gutter {
-    padding-left: $m-gutter;
-    padding-right: $m-gutter;
-}
-
-@mixin m-y-gutter {
-    padding-top: $m-gutter;
-    padding-bottom: $m-gutter;
-}
-
-@mixin box-reset {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-@mixin xy-size( $w: 100%, $h: $w ) {
-    width: $w;
-    height: $h;
-}
-
-@mixin min-xy-size( $w: $min-aa, $h: $w ) {
-    min-width: $w;
-    min-height: $h;
-}
-
-@mixin lr-margin( $l: 0, $r: $l ) {
-    margin-left: $l;
-    margin-right: $r;
-}
-
-@mixin tb-margin( $t: 0, $b: $t ) {
-    margin-top: $t;
-    margin-bottom: $b;
-}
-
-@mixin x-padding($l: 0, $r: $l) {
-    padding: {
-        left: $l;
-        right: $r;
-    }
-}
-
-@mixin y-padding($t: 0, $b: $t) {
-    padding: {
-        top: $t;
-        bottom: $b;
-    }
-}
-
-@mixin x-margin($l: 0, $r: $l) {
-    margin: {
-        left: $l;
-        right: $r;
-    }
-}
-
-@mixin y-margin($t: 0, $b: $t) {
-    
-    margin: {
-        top: $t;
-        bottom: $b;
-    }
-
-}
-
-@mixin dimensions($w: 100%, $h: $w) {
-    width: $w;
-    height: $h;
-}
-
-@mixin min-dimensions($w: auto, $h: $w) {
-    min-width: $w;
-    min-height: $h;
-}
-
-@mixin max-dimensions($w: none, $h: $w) {
-    max-width: $w;
-    max-height: $h;
-}
-
-@mixin space {
-    
-    & > * {
-        margin-right: .3em;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
-
-@mixin y-center-ib {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-@mixin y-center($method: '') {
-    @if $method == 'position-absolute' {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    } @else {
-        display: inline-block;
-        vertical-align: middle;
-    }
-}
-
-@mixin name($fs: 1em, $fw: bold) {
-    padding: $m-gutter;
-    font-size: $fs;
-    font-weight: $fw;
-}
-
-@mixin xy-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin placeholder($c: $ink-color) {
-
-    &::-webkit-input-placeholder {
-        color: $c;
-    }
-    
-    &::-moz-placeholder {
-        color: $c;
-    }
-    
-    &:-moz-placeholder {
-        color: $c;
-    }
-    
-    &:-ms-input-placeholder {
-        color: $c;
-    }
-}
-
-@mixin center-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin color($bg: $paper-color, $fg: $ink-color) {
-    background-color: $bg;
-    color: $fg;
-}
-
-@mixin transition {
-    transition: all .2s;
-}
-
-@mixin corner-radius($tl: 0, $tr: $tl, $br: $tl, $bl: $tl) {
-    border-radius: $tl $tr $br $bl;
-}
-
-//--------------------------------------------------------------
-// Extensions (@extend)
-//--------------------------------------------------------------
-
-%responsive-visuals {
-    max-width: 100%;
-    height: auto;
-}
-
-%hidden {
-    display: none !important;
-}
-
-%vh {
-    border: 0;
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap;
-}
-
-%vh-focusable:active,
-%vh-focusable:focus {
-    clip: auto;
-    -webkit-clip-path: none;
-    clip-path: none;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
-}
-
-%cf:before,
-%cf:after {
-    content: " ";
-    display: table;
-}
-
-%cf:after {
-    clear: both;
-}
-
-%unlist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-%aa-pad {
-    padding-top: .5em;
-    padding-bottom: .5em;
-}
-
-%inline-note {
-    display: inline-block;
-    padding: .25em .5em;
-    font-size: .75em;
-}
-
-%entity-header {
-    display: flex;
-    align-items: center;
-    min-height: 3.5rem;
-}
-
-%content-type {
-    max-width: 100vw;
-    overflow-x: auto;
-}
-
-%number-block-component {
-    display: inline-block;
-    padding: .0625em .5em;
-}
-
-%buttonizer-component {
-    @include center-flex;
-    padding: .25em .5em;
-    min-width: 2rem;
-    min-height: 2rem;
-}
-
-%buttonizer-text-component {
-
-    .l {
-        @extend %buttonizer-component;
-        min-width: 5rem;
-        border: .0625em solid $primary-color;
-        border-radius: .125em;
-    }
-
-    a:hover {
-
-        .l {
-            background-color: $primary-color;
-            color: $paper-color;
-        }
-    }
-}
-
-%aa {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    min-width: $min-aa;
-    min-height: $min-aa;
 }

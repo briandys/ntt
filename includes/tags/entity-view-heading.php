@@ -96,8 +96,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
             
                 $value_attr = $value;
 
-                $entity_view_name_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-name---a a">';
-                $entity_view_item_count_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-item-count---a a">';
+                $entity_view_name_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-name---a">';
+                $entity_view_item_count_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-item-count---a">';
                 $entity_view_name_item_count_anchor_end_mu = '</a>';
 
                 $property_mu = '<span class="'. sanitize_title( $property_prefix ). '---text">'. $property_prefix. '</span>'. ' '. '<span class="archive---text">Archive</span>';
@@ -120,8 +120,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 $value = esc_html( get_search_query() );
                 $value_attr = 'search-term';
 
-                $entity_view_name_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-name---a a">';
-                $entity_view_item_count_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-item-count---a a">';
+                $entity_view_name_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-name---a">';
+                $entity_view_item_count_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-item-count---a">';
                 $entity_view_name_item_count_anchor_end_mu = '</a>';
                 
                 $property_mu = '<span class="search-outcome---txt">'. $search_outcome_text. '</span>
@@ -133,7 +133,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         }
         ?>
 
-        <div class="entity-view-heading heading cp" data-name="Entity View heading">
+        <div class="entity-view-heading heading cp" data-name="Entity View Heading">
             <div class="entity-view-heading---cr">
                 <div class="entity-view-name name obj" data-name="Entity View Name">
                     <?php echo $entity_view_name_anchor_start_mu; ?>
@@ -154,13 +154,26 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                         </span>
                     <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
                 </div>
+
+                <?php
+                $entry_text = esc_html( 'Entry', 'ntt' );
+                
+                if ( $query_found_posts == 0 ) {
+                    $item_count_glabel = $entry_text;
+                } elseif ( $query_found_posts == 1 ) {
+                    $item_count_glabel = $entry_text;
+                } else {
+                    $item_count_glabel = esc_html( 'Entries', 'ntt' );
+                }
+                ?>
+
                 <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
-                    <span class="entity-view-item-count---l">
-                        <?php echo $entity_view_item_count_anchor_start_mu; ?>
-                            <span class="number-of-entries---text"><?php esc_html_e( 'Number of Entries', 'ntt' ); ?></span>
-                            <span class="entity-view-item-count---txt num"><?php echo esc_html( $query_found_posts ); ?></span>
-                        <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
-                    </span>
+                    <?php echo $entity_view_item_count_anchor_start_mu; ?>
+                        <span class="entity-view-item-count---l">
+                            <span class="entity-view-item-count-number---text num"><?php echo esc_html( $query_found_posts ); ?></span>
+                            <span class="entity-view-item-count-glabel---text"><?php echo $item_count_glabel; ?></span>
+                        </span>
+                    <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
                 </div>
             </div>
         </div>

@@ -4,31 +4,7 @@
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-}
-
-body {
-	display: grid;
-	min-height: 100%;
-	font-family: sans-serif;
-}
-
-@each $i in $headings {
-	#{$i} {
-		@include y-margin(0);
-	}
-}
-
-figure {
-	margin: 0;
-}
-
-pre {
-	margin: 0;
-	line-height: 1.6;
-}
-
-dd {
-	word-break: break-word;
+img {
+    max-width: 100%;
+    height: auto;
 }

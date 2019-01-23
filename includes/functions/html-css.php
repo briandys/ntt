@@ -78,10 +78,10 @@ function ntt_html_css() {
      */
 
     // Entity Theme Hierarchy
-    if ( ! is_child_theme() ) {
-        $css[] = 'parent-theme';
-    } else {
+    if ( is_child_theme() ) {
         $css[] = 'child-theme';
+    } else {
+        $css[] = 'parent-theme';
     }
 
     // Entity Depth View
@@ -252,10 +252,10 @@ function ntt_html_css() {
      */
     $r_entity_widgets = array(
         'entity-primary-axns',
-        'entity-header-aside',
         'entity-banner-aside',
+        'entity-header-aside',
         'entity-main-header-aside',
-        'entity-main-aside',
+        'entity-main-main-aside',
         'entity-footer-aside',
     );
 
@@ -275,6 +275,7 @@ function ntt_html_css() {
         'entry-banner-aside',
         'entry-header-aside',
         'entry-main-aside',
+        'entry-footer-aside',
     );
 
     foreach ( $r_entry_widgets as $entry_widgets ) {

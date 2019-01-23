@@ -12,6 +12,7 @@ function ntt_entry_css( $css ) {
         'entry',
         'h-entry',
         'cm-singular',
+        'cp',
     );
     
     foreach ( $r_defaults_css as $default_css ) {
@@ -108,6 +109,7 @@ function ntt_empty_entry_entry_css() {
         'entry',
         'h-entry',
         'cm-singular',
+        'cp',
     );
     
     foreach ( $r_defaults_css as $default_css ) {

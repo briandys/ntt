@@ -23,10 +23,8 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
             <div class="entry-heading---cr cm-heading---cr">
 
             <<?php echo esc_attr( $heading_level ); ?> class="entry-name cm-name name obj h" data-name="Entry Name">
-                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="entry-name---a cm-name---a u-url a">
-                    <span class="entry-name---l">
-                        <?php echo $entry_name; ?>
-                    </span>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="entry-name---a cm-name---a u-url">
+                    <span class="entry-name---text"><?php echo $entry_name; ?></span>
                 </a>
             </<?php echo esc_attr( $heading_level ); ?>>
 

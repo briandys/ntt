@@ -22,24 +22,20 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                         $time_title_attr = $hour_text. ':'. $minute_text. ':'. $second_text;
                         $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="colon---text">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="colon---text">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
 
-                        <span class="comment-published-on-glabel glabel obj">
+                        <span class="comment-published-datetime-glabel glabel obj" data-name="Comment Published DateTime Generic Label">
                             <span class="commented-on---text"><?php echo esc_html_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ); ?></span>
                         </span>
 
-                        <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="comment-published-date dt-published published-date cm-date date obj time">
-                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>" class="comment-published-date---a a">
+                        <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="comment-published-date dt-published published-date cm-date date obj time" data-name="Comment Published Date">
+                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Component: DateTime | Usage: >Commented on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>" class="comment-published-date---a">
                                 <span class="comment-published-date---l">
                                 <?php echo $date_mu; ?>
                                 </span>
                             </a>
                         </time>
-
-                        <span class="comment-at-glabel glabel obj">
-                            <span class="at---text"><?php echo esc_html_x( 'at', 'Component: DateTime | Usage: Commented on <date> >at< <time>', 'ntt' ); ?></span>
-                        </span>
                         
-                        <span class="comment-published-time published-time cm-time time obj">
-                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Component: DateTime | Usage: >Commented at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>" class="comment-published-time---a a">
+                        <span class="comment-published-time published-time cm-time time obj" data-name="Comment Published Time">
+                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Component: DateTime | Usage: >Commented at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>" class="comment-published-time---a">
                                 <span class="comment-published-time---l">
                                 <?php echo $time_mu; ?>
                                 </span>

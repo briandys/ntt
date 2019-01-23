@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> id="start" class="ntt view no-js<?php ntt_html_css_wp_hook(); ?>">
+<html <?php language_attributes(); ?> id="start" class="ntt view no-js<?php ntt_html_css_wp_hook(); ?>" data-name="View">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,10 +9,6 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-
-        <div id="wild-card" class="wild-card" data-name="Wild Card">
-            <div class="wild-card---cr"></div>
-        </div>
 
         <div id="entity" class="entity" data-name="Entity">
             <div class="entity---cr">
@@ -59,7 +55,9 @@
                                 $get_bloginfo_description = get_bloginfo( 'description', 'display' );
                                 if ( $get_bloginfo_description || is_customize_preview() ) {
                                     ?>
-                                    <div id="entity-primary-description" class="entity-primary-description entity-description description obj" data-name="Entity Primary Description"><?php echo esc_attr( $get_bloginfo_description ); ?></div>
+                                    <div id="entity-primary-description" class="entity-primary-description entity-description description obj" data-name="Entity Primary Description">
+                                        <span class="entity-primary-description---txt"><?php echo esc_attr( $get_bloginfo_description ); ?></span>
+                                    </div>
                                     <?php
                                 }
                             
@@ -77,8 +75,8 @@
 
                         <?php
                         ntt_entity_primary_nav();
-                        ntt_entity_primary_axns();
                         ntt_after_entity_primary_nav_wp_hook();
+                        ntt_entity_primary_axns();
                         
                         if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
                             ?>

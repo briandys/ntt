@@ -14,9 +14,9 @@ if ( ! function_exists( 'ntt_comment_admin_actions') ) {
             
             $label_mu = '<span class="modify-comment-axn---l" title="Edit'. ' '. $comment_name_title_attr. '"><span class="edit---text">Edit</span> <span class="comment-name---txt">'. $comment_name. '</span></span>'; ?>
 
-            <div class="comment-admin-axns admin-axns axns cp" aria-label="Comment Admin Actions">
+            <div class="comment-admin-axns admin-axns axns cp" data-name="Comment Admin Actions">
                 <div class="comment-admin-axns---cr">
-                    <div class="modify-comment-axn modify-axn p-modify axn obj" aria-label="Modify Comment Action">
+                    <div class="modify-comment-axn modify-axn p-modify axn obj" aria-label="Edit Comment" data-name="Modify Comment Action">
                     <?php echo edit_comment_link( $label_mu, '', '' ); ?>
                     </div>
                 </div>

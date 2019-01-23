@@ -1,16 +1,11 @@
-<?php
-// Conditions depend on the nested functions
-
-    ?>
-    <div id="entity-main-footer" class="entity-main-footer cn" data-name="Entity Main Footer">
-        <div class="entity-main-footer---cr">
-            <?php
-            ntt_entry_nav();
-            ntt_entries_nav();
-            ?>
-        </div>
+<?php if ( ( ( is_single() || is_page() ) && ( get_adjacent_post( false, '', false ) && get_adjacent_post( false, '', true ) ) ) || get_the_posts_pagination() ) { ?>
+<div id="entity-main-footer" class="entity-main-footer cn" data-name="Entity Main Footer">
+    <div class="entity-main-footer---cr">
+        <?php
+        ntt_entry_nav();
+        ntt_entries_nav();
+        ?>
     </div>
-    <?php
-
-get_footer();
-?>
+</div>
+<?php } ?>
+<?php get_footer(); ?>

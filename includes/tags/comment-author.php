@@ -5,7 +5,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
         
         $comment_author = get_comment_author(); ?>
 
-        <div class="comment-author cm-author p-author h-card author cp" data-name="Comment Author CP">
+        <div class="comment-author cm-author p-author h-card author cp" data-name="Comment Author">
             <div class="comment-author---cr cm-author---cr">
 
             <?php if ( get_comment_author_url() ) {
@@ -17,7 +17,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 $anchor_end_mu = '';
             } ?>
 
-                <span class="commented-by-glabel cm-glabel glabel obj">
+                <span class="commented-by-glabel cm-glabel glabel obj" data-name="Commented by Generic Label">
                     <span class="commented---text"><?php echo esc_html_x( 'Commented', 'Component: Comment Author | Usage: >Commented< by <Comment Author Name>', 'ntt' ); ?></span>
                     <span class="by---text"><?php echo esc_html_x( 'by', 'Component: Comment Author | Usage: Commented >by< <Comment Author Name>', 'ntt' ); ?></span>
                 </span>

@@ -4,13 +4,12 @@ $GLOBALS['ntt_name'] = 'NTT';
 
 // Functions
 $r_functions = array(
-    
     // First things first
     'back-compatibility',
     'settings',
     'hooks',
     'styles-scripts',
-    
+    // Second things second
     'body-css',
     'comments-css',
     'comment-form',
@@ -18,8 +17,6 @@ $r_functions = array(
     'entry-css',
     'gallery',
     'html-css',
-    'icons',
-    'ntt-features',
     'pingback-header',
     'widgets',
     'wp-customizer',

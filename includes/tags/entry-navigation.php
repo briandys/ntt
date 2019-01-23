@@ -3,7 +3,7 @@
 if ( ! function_exists('ntt_entry_nav' ) ) {
     function ntt_entry_nav() {
         
-        if ( is_singular() && ! is_attachment() ) {
+        if ( is_single() || is_page() ) {
 
             if ( ! get_adjacent_post( false, '', false ) && ! get_adjacent_post( false, '', true ) ) {
                 return;
