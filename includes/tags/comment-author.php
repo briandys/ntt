@@ -23,7 +23,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 
                 <span class="comment-author-name cm-author-name author-name name obj" data-name="Comment Author Name">
                     <?php echo $anchor_start_mu; ?>
-                        <span class="comment-author-name---l" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
+                        <span class="comment-author-name---l" title="<?php echo esc_attr_x( 'Commented by', '->Commented by<- [Comment Author Name]', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                             <span class="comment-author-name---txt"><?php echo esc_html( $comment_author ); ?></span>
                         </span>
                     <?php echo $anchor_end_mu; ?>
@@ -33,7 +33,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 if ( get_option( 'show_avatars' ) == 1 ) {
                     ?>
 
-                    <span class="comment-author-avatar cm-avatar author-avatar avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Usage: >Commented by< <Comment Author Name> | Component: Comment Author', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
+                    <span class="comment-author-avatar cm-avatar author-avatar avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', '->Commented by<- [Comment Author Name]', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                         <?php echo $anchor_start_mu;
                         echo get_avatar(
                             $comment,

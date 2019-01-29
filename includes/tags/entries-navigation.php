@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_entries_nav' ) ) {
     function ntt_entries_nav() {
 
@@ -27,13 +26,13 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Next', 'Usage: >Next< Page | Component: Entries Navigation', 'ntt' ),
+            esc_html_x( 'Next', '->Next<- Page', 'ntt' ),
             sanitize_title( $next_term ),
             esc_attr__( 'Next Page', 'ntt' )
         );
         
         $previous = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Previous', 'Usage: >Previous< Page | Component: Entries Navigation', 'ntt' ),
+            esc_html_x( 'Previous', '->Previous<- Page', 'ntt' ),
             sanitize_title( $previous_term ),
             esc_attr__( 'Previous Page', 'ntt' )
         );

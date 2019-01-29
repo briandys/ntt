@@ -125,7 +125,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 $entity_view_name_item_count_anchor_end_mu = '</a>';
                 
                 $property_mu = '<span class="search-outcome---txt">'. $search_outcome_text. '</span>
-                <span class="for---text">'. _x( 'for', 'Object: View Name | Usage: Search Result >for< <Search Term>', 'ntt' ). '</span>';
+                <span class="for---text">'. _x( 'for', 'Search Result ->for<- [Search Term]', 'ntt' ). '</span>';
 
                 wp_reset_postdata();
             }

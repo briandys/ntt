@@ -8,10 +8,10 @@ if ( post_password_required() ) {
 // title_reply
 $title_reply_mu = '<div class="compose-comment-ename ename obj" data-name="Compose Comment Element Name">';
     $title_reply_mu .= '<span class="compose---text">';
-        $title_reply_mu .= esc_html_x( 'Compose', 'Component: Comment Creation | Usage: >Compose< Comment', 'ntt' );
+        $title_reply_mu .= esc_html_x( 'Compose', '->Compose<- Comment', 'ntt' );
     $title_reply_mu .= '</span>';
     $title_reply_mu .= ' '. '<span class="comment---text">';
-        $title_reply_mu .= esc_html_x( 'Comment', 'Component: Comment Creation | Usage: Compose >Comment<', 'ntt' );
+        $title_reply_mu .= esc_html_x( 'Comment', 'Compose ->Comment<-', 'ntt' );
     $title_reply_mu .= '</span>';
 $title_reply_mu .= '</div>';
 
@@ -30,7 +30,7 @@ $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Ac
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
             $logged_in_as_mu .= '<div class="logged-in-admin-account---cr">';
                 $logged_in_as_mu .= '<span class="logged-in-admin-account---glabel glabel obj" data-name="Logged In Admin Account Generic Label">';
-                    $logged_in_as_mu .= '<span class="logged-in-admin-account---txt">'. esc_html_x( 'Logged in as', 'Component: Comment Admin Account | Usage: The admin name who is logged in.', 'ntt' ). '</span>';
+                    $logged_in_as_mu .= '<span class="logged-in-admin-account---txt">'. esc_html__( 'Logged in as', 'ntt' ). '</span>';
                 $logged_in_as_mu .= '</span>';
                 $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name name obj" data-name="Logged In Admin Account Name">';
                     $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'" class="logged-in-admin-account-name---a">';
@@ -46,7 +46,7 @@ $logged_in_as_mu .= '</div>';
 // must_log_in
 $must_log_in_mu = '<div class="log-in-required-note note cp" data-name="Log In Required Note">';
     $must_log_in_mu .= '<div class="log-in-required-note---cr note---cr">';
-        $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr__( 'Log In', 'ntt' ).'" class="log-in-link">'. esc_html_x( 'Log In', 'Object: Log In Required Note | Usage: >Log In< to comment.', 'ntt' ). '</a> '. ' '. '<span class="to-comment-text">'. esc_html_x( 'to comment.', 'Object: Log In Required Note | Usage: Log In >to comment<.', 'ntt' ). '</span>'. '</p>';
+        $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr__( 'Log In', 'ntt' ).'" class="log-in-link">'. esc_html_x( 'Log In', '->Log In<- to comment.', 'ntt' ). '</a> '. ' '. '<span class="to-comment-text">'. esc_html_x( 'to comment.', 'Log In ->to comment<-.', 'ntt' ). '</span>'. '</p>';
     $must_log_in_mu .= '</div>';
 $must_log_in_mu .= '</div>';
 
@@ -65,9 +65,9 @@ $comment_field_mu = '<div class="comment-message-field field cp" data-name="Comm
 $comment_field_mu .= '</div>';
 
 // cancel_reply_link
-$cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l" title="'. esc_attr_x( 'Cancel Reply to Comment', 'Usage: Cancel Reply to Comment | Component: Comment Respond', 'ntt' ). '">';
-$cancel_reply_link_mu .= '<span class="cancel-comment-reply-axn---txt">'. esc_html_x( 'Cancel', 'Usage: >Cancel< Reply to Comment | Component: Comment Respond', 'ntt' ). '</span>';
-$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---text">'. esc_html_x( 'Reply to Comment', 'Usage: Cancel >Reply to Comment< | Component: Comment Respond', 'ntt' ). '</span>';
+$cancel_reply_link_mu = '<span class="cancel-comment-reply-axn---l" title="'. esc_attr__( 'Cancel Reply to Comment', 'ntt' ). '">';
+$cancel_reply_link_mu .= '<span class="cancel-comment-reply-axn---txt">'. esc_html_x( 'Cancel', '->Cancel<- Reply to Comment', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---text">'. esc_html_x( 'Reply to Comment', 'Cancel ->Reply to Comment<-', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>'; ?>
 
 <section class="comment-md cm md" data-name="Comment Module">
@@ -111,7 +111,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
                         } else {
 
                             if ( comments_open() ) {
-                                $comments_content_esc = esc_html_x( 'Be the first to comment.', 'Component: Comments | Usage: User note if there are no comments.', 'ntt' );
+                                $comments_content_esc = esc_html__( 'Be the first to comment.', 'ntt' );
                             } else {
                                 $comments_content_esc = esc_html__( 'There are no comments.', 'ntt' );
                             }
@@ -162,7 +162,7 @@ $cancel_reply_link_mu .= '</span>'; ?>
             // Submit Comment Action
             'id_submit'                 => 'submit-comment-axn---a',
             'class_submit'              => 'submit-comment-axn---a',
-            'label_submit'              => esc_attr_x( 'Submit', 'Component: Comment Respond | Usage: >Submit< Comment', 'ntt' ),
+            'label_submit'              => esc_attr_x( 'Submit', '->Submit<- Comment', 'ntt' ),
         
             // Notes
             'comment_notes_before'      => '',

@@ -22,23 +22,19 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                         $time_mu = '<span class="hour---txt">'. $hour_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="minute---txt">'. $minute_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="second---txt">'. $second_text. '</span>'; ?>
 
                         <span class="entry-published-datetime-glabel glabel obj" data-name="Entry Published DateTime Generic Label">
-                            <span class="published---text"><?php echo esc_html_x( 'Published', 'Component: DateTime | Usage: >Published< on <date> at <time>', 'ntt' ); ?></span>
-                            <span class="on---text"><?php echo esc_html_x( 'on', 'Component: DateTime | Usage: Published >on< <date> at <time>', 'ntt' ); ?></span>
+                            <span class="entry-published-datetime---txt"><?php echo esc_html_x( 'Published', '->Published<- on [date] [time]', 'ntt' ); ?></span>
+                            <span class="on---text"><?php echo esc_html_x( 'on', 'Published ->on<- [date] [time]', 'ntt' ); ?></span>
                         </span>
                 
                         <time datetime="<?php echo get_the_date( DATE_W3C ); ?>" class="entry-published-date dt-published published-date cm-date date obj time" data-name="Entry Published Date">
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-published-date---a" title="<?php echo esc_attr_x( 'Published on', 'Component: DateTime | Usage: >Published on< <date>', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">
-                                <span class="entry-published-date---l">
-                                <?php echo $date_mu; ?>
-                                </span>
+                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-published-date---a" title="<?php echo esc_attr_x( 'Published on', '->Published on<- [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">
+                                <span class="entry-published-date---l"><?php echo $date_mu; ?></span>
                             </a>
                         </time>
                 
                         <span class="entry-published-time published-time cm-time time obj" data-name="Entry Published Time">
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-published-time---a" title="<?php echo esc_attr_x( 'Published at', 'Component: DateTime | Usage: >Published at< <time>', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>">
-                                <span class="entry-published-time---l">
-                                <?php echo $time_mu; ?>
-                                </span>
+                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-published-time---a" title="<?php echo esc_attr_x( 'Published at', '->Published at<- [time]', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>">
+                                <span class="entry-published-time---l"><?php echo $time_mu; ?></span>
                             </a>
                         </span>
 
@@ -46,7 +42,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                 </div>
 
                 <div class="entry-modified-datetime modified-datetime cm-datetime datetime cp" data-name="Entry Modified DateTime">
-                    <div class="cm-datetime---cr entry-modified-datetime---cr">
+                    <div class="entry-modified-datetime---cr cm-datetime---cr">
 
                         <?php $modified_day_text = get_the_modified_time( 'j' );
                         $modified_month_text = get_the_modified_time( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
@@ -60,24 +56,20 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                         $modified_time_title_attr = $modified_hour_text. ':'. $modified_minute_text. ':'. $modified_second_text;
                         $modified_time_mu = '<span class="hour---txt">'. $modified_hour_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="minute---txt">'. $modified_minute_text. '</span>'. '<span class="delimiter---txt">:</span>'. '<span class="second---txt">'. $modified_second_text. '</span>'; ?>
 
-                        <span class="entry-modified-on-glabel glabel obj" data-name="Entry Modified On Generic Label">
-                            <span class="modified---txt"><?php echo esc_html_x( 'Modified', 'Component: DateTime | Usage: >Modified< on <date> at <time>', 'ntt' ); ?></span>
-                            <span class="on---txt"><?php echo esc_html_x( 'on', 'Component: DateTime | Usage: Modified >on< <date> at <time>', 'ntt' ); ?></span>
+                        <span class="entry-modified-datetime-glabel glabel obj" data-name="Entry Modified DateTime Generic Label">
+                            <span class="entry-modified-datetime---txt"><?php echo esc_html_x( 'Updated', '->Updated<- on [date] [time]', 'ntt' ); ?></span>
+                            <span class="preposition---txt"><?php echo esc_html_x( 'on', 'Updated ->on<- [date] [time]', 'ntt' ); ?></span>
                         </span>
                 
                         <time datetime="<?php echo get_the_date( DATE_W3C ); ?>" class="cm-date entry-modified-date dt-updated modified-date date obj time" data-name="Entry Modified Date">
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-modified-date---a" title="<?php echo esc_attr_x( 'Modified on', 'Component: DateTime | Usage: >Modified on< <date>', 'ntt' ). ' '. esc_attr( $modified_date_title_attr ); ?>">
-                                <span class="entry-modified-date---l">
-                                <?php echo $modified_date_mu; ?>
-                                </span>
+                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-modified-date---a" title="<?php echo esc_attr_x( 'Updated on', '->Updated on<- [date]', 'ntt' ). ' '. esc_attr( $modified_date_title_attr ); ?>">
+                                <span class="entry-modified-date---l"><?php echo $modified_date_mu; ?></span>
                             </a>
                         </time>
                 
-                        <span class="cm-time entry-modified-time modified-time time obj" data-name="Entry Modified Time">
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-modified-time---a" title="<?php echo esc_attr_x( 'Modified at', 'Component: DateTime | Usage: >Modified at< <time>', 'ntt' ). ' '. esc_attr( $modified_time_title_attr ); ?>">
-                                <span class="entry-modified-time---l">
-                                <?php echo $modified_time_mu; ?>
-                                </span>
+                        <span class="entry-modified-time modified-time cm-time time obj" data-name="Entry Modified Time">
+                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="entry-modified-time---a" title="<?php echo esc_attr_x( 'Updated at', '->Updated at<- [time]', 'ntt' ). ' '. esc_attr( $modified_time_title_attr ); ?>">
+                                <span class="entry-modified-time---l"><?php echo $modified_time_mu; ?></span>
                             </a>
                         </span>
 

@@ -42,8 +42,8 @@ function ntt_comment_form( $fields ) {
         $fields['url'] .= '<div class="field---cr comment-author-url---cr">';
             $fields['url'] .= '<label for="comment-author-url-input" class="comment-author-url-label label obj" data-name="Comment Author URL Label">';
                 $fields['url'] .= '<span class="comment-author-url-label---l">';
-                    $fields['url'] .= '<span class="website---text">'. _x( 'Website', 'Object: Comment Author URL Label | Usage: >Website< URL', 'ntt' ). '</span>';
-                    $fields['url'] .= ' '. '<span class="url---text">'. _x( 'URL', 'Object: Comment Author URL Label | Usage: Website >URL<', 'ntt' ). '</span>';
+                    $fields['url'] .= '<span class="website---text">'. _x( 'Website', '->Website<- URL', 'ntt' ). '</span>';
+                    $fields['url'] .= ' '. '<span class="url---text">'. _x( 'URL', 'Website ->URL<-', 'ntt' ). '</span>';
                     $fields['url'] .= $optional_note;
                 $fields['url'] .= '</span>';
             $fields['url'] .= '</label>';

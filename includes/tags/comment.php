@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_comment') ) {
     function ntt_comment( $comment, $args, $depth ) {
         $commenter = wp_get_current_commenter();
@@ -100,7 +99,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                                 ?>
                                                 <div class="unapproved-comments-note note cp" data-name="Unapproved Comments Note">
                                                     <div class="unapproved-comments-note---cr note---cr">
-                                                        <p><?php echo esc_html_x( 'Your comment is awaiting moderation.', 'Component: Comment Full Content | Usage: User note if comment is unapproved.', 'ntt' ); ?></p>
+                                                        <p><?php esc_html_e( 'Your comment is awaiting moderation.', 'ntt' ); ?></p>
                                                     </div>
                                                 </div>
                                                 <?php

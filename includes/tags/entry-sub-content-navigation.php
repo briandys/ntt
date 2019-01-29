@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists('ntt_sub_content_nav' ) ) {
     function ntt_sub_content_nav( $total ) {
 
@@ -17,17 +16,17 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Next', 'Usage: >Next< Page | Component: WP Custom Query Navigation', 'ntt' ),
+            esc_html_x( 'Next', '->Next<- Page', 'ntt' ),
             esc_attr__( 'Next Page', 'ntt' )
         );
         
         $previous = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Previous', 'Usage: >Previous< Page | Component: WP Custom Query Navigation', 'ntt' ),
+            esc_html_x( 'Previous', '->Previous<- Page', 'ntt' ),
             esc_attr__( 'Previous Page', 'ntt' )
         );
 
         ?>
-        <div role="navigation" class="entry-sub-content-nav nav pagination cp" data-name="WP Custom Query Navigation">
+        <div role="navigation" class="entry-sub-content-nav nav pagination cp" data-name="Entry Sub-Content Navigation">
             <div class="entry-sub-content-nav---cr">
                 <?php
                 $big_number = 999999999;

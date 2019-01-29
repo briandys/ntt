@@ -14,7 +14,7 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
         if ( get_the_title() ) {
             $entry_name = '<span class="entry-name---txt">'. esc_html( get_the_title() ). '</span>';
         } else {
-            $entry_name = '<span class="entry---text">'. _x( 'Entry', 'Object: Entry Name | Usage: >Entry< <Entry ID>', 'ntt' ). '</span>'. ' ';
+            $entry_name = '<span class="entry---text">'. _x( 'Entry', '->Entry<- [Entry ID]', 'ntt' ). '</span>'. ' ';
             $entry_name .= '<span class="entry-id---txt num">'. get_the_id(). '</span>';
         }
         ?>

@@ -3,9 +3,9 @@
 function ntt_show_more_action( $excerpt ) {
     $entry_text = __( 'Entry', 'ntt' );
     $entry_id = get_the_id();
-    $show_text = _x( 'Show', 'Object: Show More Action | Usage: >Show< more of <Entry Name>', 'ntt' );
-    $more_text = _x( 'more', 'Object: Show More Action | Usage: Show >more< of <Entry Name>', 'ntt' );
-    $of_text = _x( 'of', 'Object: Show More Action | Usage: Show more >of< <Entry Name>', 'ntt' );
+    $show_text = _x( 'Show', '->Show<- more of [Entry Name]', 'ntt' );
+    $more_text = _x( 'more', 'Show ->more<- of [Entry Name]', 'ntt' );
+    $of_text = _x( 'of', 'Show more ->of<- [Entry Name]', 'ntt' );
     $entry_get_the_title = get_the_title( get_the_ID() );
     
     if ( $entry_get_the_title ) {
