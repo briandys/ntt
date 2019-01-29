@@ -17,9 +17,9 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
         <div class="entry-author cm-author <?php echo esc_attr( $author_avatar_type_class ); ?> p-author author h-card cp" data-name="Entry Author">
             <div class="entry-author---cr cm-author---cr">
 
-                <span class="entry-author-glabel cm-glabel glabel obj" data-name="Entry Author Generic Label">
+                <span class="entry-author-glabel glabel obj" data-name="Entry Author Generic Label">
                     <span class="published---text"><?php echo esc_html_x( 'Published', '->Published<- by [Entry Author Name]', 'ntt' ); ?></span>
-                    <span class="by---text"><?php echo esc_html_x( 'by', 'Published ->by<- [Entry Author Name]', 'ntt' ); ?></span>
+                    <span class="preposition---txt"><?php echo esc_html_x( 'by', 'Published ->by<- [Entry Author Name]', 'ntt' ); ?></span>
                 </span>
                 
                 <span class="entry-author-name cm-author-name author-name p-name name obj" data-name="Entry Author Name">

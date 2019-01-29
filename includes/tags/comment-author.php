@@ -17,7 +17,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 $anchor_end_mu = '';
             } ?>
 
-                <span class="comment-author-glabel cm-glabel glabel obj" data-name="Comment Author Generic Label">
+                <span class="comment-author-glabel glabel obj" data-name="Comment Author Generic Label">
                     <span class="comment-author-glabel---txt"><?php echo esc_html_x( 'Commented by', '->Commented by<- [Comment Author Name]', 'ntt' ); ?></span>
                 </span>
                 
