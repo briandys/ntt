@@ -11,7 +11,7 @@ function ntt_comment_form( $fields ) {
     // Comment Author Name
     $fields['author'] = '<div class="field comment-author-name cp" data-name="Comment Author Name">';
         $fields['author'] .= '<div class="field---cr comment-author-name---cr">';
-            $fields['author'] .= '<label for="comment-author-name-input" class="comment-author-name-label label obj" data-name="Comment Author Name Label">';
+            $fields['author'] .= '<label for="comment-author-name-input" class="comment-author-name-label obj" data-name="Comment Author Name Label">';
                 $fields['author'] .= '<span class="comment-author-name-label---l">';
                     $fields['author'] .= '<span class="name---text">'. __( 'Name', 'ntt' ). '</span>';
                     $fields['author'] .= $optional;
@@ -26,7 +26,7 @@ function ntt_comment_form( $fields ) {
     // Comment Author Email
     $fields['email'] = '<div class="field comment-author-email cp" data-name="Comment Author Email">';
         $fields['email'] .= '<div class="field---cr comment-author-email---cr">';
-            $fields['email'] .= '<label for="comment-author-email-input" class="comment-author-email-label label obj" data-name="Comment Author Email Label">';
+            $fields['email'] .= '<label for="comment-author-email-input" class="comment-author-email-label obj" data-name="Comment Author Email Label">';
                 $fields['email'] .= '<span class="comment-author-email-label---l">';
                     $fields['email'] .= '<span class="email---text">'. __( 'Email', 'ntt' ). '</span>';
                 $fields['email'] .= '</span>';
@@ -40,7 +40,7 @@ function ntt_comment_form( $fields ) {
     // Comment Author Website URL
     $fields['url'] = '<div class="field comment-author-url cp" data-name="Comment Author URL">';
         $fields['url'] .= '<div class="field---cr comment-author-url---cr">';
-            $fields['url'] .= '<label for="comment-author-url-input" class="comment-author-url-label label obj" data-name="Comment Author URL Label">';
+            $fields['url'] .= '<label for="comment-author-url-input" class="comment-author-url-label obj" data-name="Comment Author URL Label">';
                 $fields['url'] .= '<span class="comment-author-url-label---l">';
                     $fields['url'] .= '<span class="website---text">'. _x( 'Website', '->Website<- URL', 'ntt' ). '</span>';
                     $fields['url'] .= ' '. '<span class="url---text">'. _x( 'URL', 'Website ->URL<-', 'ntt' ). '</span>';

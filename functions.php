@@ -1,5 +1,4 @@
 <?php
-
 $GLOBALS['ntt_name'] = 'NTT';
 
 // Functions
@@ -35,7 +34,7 @@ $r_tags = array(
     'comment-author',
     'comment-datetime',
     'comments-actions-snippet',
-    'comments-nav',
+    'comments-navigation',
     'entity-navigation',
     'entity-view-heading',
     'entries-navigation',

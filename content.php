@@ -1,6 +1,6 @@
 <div id="entry-<?php the_id(); ?>" <?php post_class(); ?> data-name="Entry">
     <div class="entry---cr cm-singular---cr">
-        <article id="entry-article-<?php the_id(); ?>" class="entry-article-<?php the_id(); ?> entry-article cm-article article cp" data-name="Entry Article">
+        <article id="entry-article-<?php the_id(); ?>" class="entry-article-<?php the_id(); ?> entry-article cm-article cp" data-name="Entry Article">
             <div class="entry-article---cr cm-article---cr">
                 <div class="entry-header cm-header header cn" data-name="Entry Header">
                     <div class="entry-header---cr cm-header---cr ">

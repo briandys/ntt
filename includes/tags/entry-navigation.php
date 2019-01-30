@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists('ntt_entry_nav' ) ) {
     function ntt_entry_nav() {
         
@@ -10,15 +9,13 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             }
             
             $l_mu = '';
-            $l_mu .= '<span class="entry-navi---l">';
-                $l_mu .= '<span class="property---line line">';
-                    $l_mu .= '<span class="%2$s---text">%1$s</span>';
-                    $l_mu .= ' '. '<span class="entry---text">'. esc_html__( 'Entry', 'ntt' ) .'</span>';
-                    $l_mu .= '<span class="colon---text">:</span>';
-                $l_mu .= '</span>';
-                $l_mu .= ' <span class="value---line line">';
-                    $l_mu .= '<span class="entry-name---txt">%3$s</span>';
-                $l_mu .= '</span>';
+            $l_mu .= '<span class="property---line line">';
+                $l_mu .= '<span class="%2$s---text">%1$s</span>';
+                $l_mu .= ' '. '<span class="entry---text">'. esc_html__( 'Entry', 'ntt' ) .'</span>';
+                $l_mu .= '<span class="delimiter---txt">:</span>';
+            $l_mu .= '</span>';
+            $l_mu .= ' <span class="value---line line">';
+                $l_mu .= '<span class="entry-name---txt">%3$s</span>';
             $l_mu .= '</span>';
             
             $next_navi = sprintf( $l_mu,
@@ -31,19 +28,21 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                 esc_html__( 'Previous', 'ntt' ),
                 'previous',
                 '%title'
-            ); ?>
+            );
+            ?>
 
             <div role="navigation" class="entry-nav adjacent-nav nav cp" data-name="Entry Navigation">
                 <div class="entry-nav---cr">
 
-                    <div class="entry-nav-ename nav-ename ename obj" data-name="Entry Navigation Element Name">
-                        <span class="entry-nav-ename---txt"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></span>
+                    <div class="entry-nav-name nav-name obj h" data-name="Entry Navigation Element Name">
+                        <span class="txt"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></span>
                     </div>
 
-                    <div class="entry-nav-group nav-group group">
+                    <div class="entry-nav-group nav-group group cp" data-name="Entry Navigation Group">
                         <div class="entry-nav-group---cr">
                     
-                            <?php if ( get_next_post_link() ) {
+                            <?php
+                            if ( get_next_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
                                     $next_post_thumbnail = '<span class="entry-navi---i">';
@@ -59,9 +58,8 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                                 </div>
                                 <?php
                             }
-                            ?>
                             
-                            <?php if ( get_previous_post_link() ) {
+                            if ( get_previous_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
                                     $prev_post_thumbnail = '<span class="entry-navi---i">';
@@ -82,8 +80,8 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                     </div>
                 </div>
             </div>
-
-        <?php }
+            <?php
+        }
         
     }
 }
