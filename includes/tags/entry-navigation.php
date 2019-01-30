@@ -34,7 +34,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             <div role="navigation" class="entry-nav adjacent-nav nav cp" data-name="Entry Navigation">
                 <div class="entry-nav---cr">
 
-                    <div class="entry-nav-name nav-name obj h" data-name="Entry Navigation Element Name">
+                    <div class="entry-nav-name nav-name obj h" data-name="Entry Navigation Name">
                         <span class="txt"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></span>
                     </div>
 

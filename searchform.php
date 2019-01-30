@@ -8,19 +8,19 @@
                     <span class="txt"><?php esc_html_e( 'Search', 'ntt' ); ?></span>
                 </label>
                 <div class="search-field-textbox textbox obj" data-name="Search Field Textbox">
-                    <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php echo esc_html( 'Search' ); ?>" id="<?php echo esc_attr( $unique_id ); ?>" class="text-input">
+                    <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php esc_attr_e( 'Search', 'ntt' ); ?>" title="<?php esc_attr_e( 'Search', 'ntt' ); ?>" id="<?php echo esc_attr( $unique_id ); ?>" class="text-input">
                 </div>
             </div>
         </div>
         <div class="search-axns form-axns cp" data-name="Search Actions">
             <div class="search-axns---cr form-axns---cr">
                 <div class="submit-search-axn submit-axn axn obj" data-name="Submit Search Action">
-                    <button type="submit" title="<?php echo esc_attr( 'Go' ); ?>">
+                    <button type="submit" title="<?php esc_attr_e( 'Go', 'ntt' ); ?>">
                         <span class="txt"><?php esc_html_e( 'Go', 'ntt' ); ?></span>
                     </button>
                 </div>
                 <div class="reset-search-axn reset-axn axn obj" data-name="Reset Search Action">
-                    <button type="reset" title="<?php echo esc_attr( 'Reset' ); ?>">
+                    <button type="reset" title="<?php esc_attr_e( 'Reset', 'ntt' ); ?>">
                         <span class="txt"><?php esc_html_e( 'Reset', 'ntt' ); ?></span>
                     </button>
                 </div>

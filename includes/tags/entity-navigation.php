@@ -20,8 +20,8 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
             <nav role="navigation" id="entity-primary-nav" class="entity-primary-nav entity-nav nav cp" data-name="Entity Primary Navigation">
                 <div class="entity-primary-nav---cr">
                     
-                    <h2 class="entity-primary-nav-name nav-name obj h" data-name="Entity Primary Navigation Element Name">
-                        <span class="txt"><?php esc_html_e( 'Navigation', 'ntt' ); ?></span>
+                    <h2 class="entity-primary-nav-name nav-name obj h" data-name="Entity Primary Navigation Name">
+                        <span class="txt"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></span>
                     </h2>
                     
                     <?php
@@ -85,7 +85,7 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
             <div role="navigation" id="entity-secondary-nav" class="entity-secondary-nav entity-nav nav cp" data-name="Entity Secondary Navigation">
                 <div class="entity-secondary-nav---cr">
                     
-                    <div class="entity-secondary-nav-name nav-name obj h" data-name="Entity Secondary Navigation Element Name">
+                    <div class="entity-secondary-nav-name nav-name obj h" data-name="Entity Secondary Navigation Name">
                         <span class="txt"><?php esc_html_e( 'Secondary Navigation', 'ntt' ); ?></span>
                     </div>
 

@@ -16,12 +16,12 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Next', '->Next<- Page', 'ntt' ),
+            esc_html_x( 'Next', 'Next Page', 'ntt' ),
             esc_attr__( 'Next Page', 'ntt' )
         );
         
         $previous = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Previous', '->Previous<- Page', 'ntt' ),
+            esc_html_x( 'Previous', 'Previous Page', 'ntt' ),
             esc_attr__( 'Previous Page', 'ntt' )
         );
 

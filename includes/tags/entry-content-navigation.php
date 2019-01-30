@@ -14,7 +14,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         $navi_text .= ' '. '<span class="page-number---txt num txt">%</span>';
 
         $defaults = array(
-            'before' => '<ul class="entry-content-nav-group nav-group group list">',
+            'before' => '<ul class="entry-content-nav-group nav-group group list cp">',
             'after' => '</ul>',
             'text_before' => '',
             'text_after' => '',
@@ -88,8 +88,8 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
             <div role="navigation" class="entry-content-nav nav pagination cp" data-name="Entry Content Navigation">
                 <div class="entry-content-nav---cr">
                 
-                    <div class="entry-content-nav-name nav-name obj h" data-name="Entry Content Navigation Element Name">
-                        <span class="txt"><?php echo esc_html__( 'Entry Content Navigation', 'ntt' ); ?></span>
+                    <div class="entry-content-nav-name nav-name obj h" data-name="Entry Content Navigation Name">
+                        <span class="txt"><?php esc_html_e( 'Content Navigation', 'ntt' ); ?></span>
                     </div>
                 
                     <?php echo $content_pagination_group_mu; ?>
