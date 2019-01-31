@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_entry_datetime' ) ) {
     function ntt_entry_datetime() { ?>
 

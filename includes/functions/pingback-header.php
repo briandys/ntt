@@ -1,5 +1,4 @@
 <?php
-
 function ntt_pingback_header() {
         
     if ( is_singular() && pings_open() ) {

@@ -1,5 +1,4 @@
 <?php
-
 function ntt_comments_css() {
     
     if ( is_singular() ) {

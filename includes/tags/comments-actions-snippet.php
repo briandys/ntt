@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
     function ntt_comments_actions_snippet() {
         
@@ -30,17 +29,17 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                         <?php $comments_count_css = 'comments-count---a a';
                         
                         $single_count_label = '<span class="comments-count---l">';
-                            $single_count_label .= '<span class="one---txt comments-count---txt num txt">&#49;</span>';
+                            $single_count_label .= '<span class="one---txt comments-count---txt num">&#49;</span>';
                             $single_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '1 ->Comment<-', 'ntt' ). '</span>';
                         $single_count_label .= '</span>';
                     
                         $multi_count_label = '<span class="comments-count---l">';
-                            $multi_count_label .= '<span class="number---txt comments-count---txt num txt">%</span>';
+                            $multi_count_label .= '<span class="number---txt comments-count---txt num">%</span>';
                             $multi_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comments', '[Number of Comments] ->Comments<-', 'ntt' ). '</span>';
                         $multi_count_label .= '</span>';
                     
                         $zero_count_label_mu = '<span class="comments-count---l">';
-                            $zero_count_label_mu .= '<span class="zero---txt comments-count---txt num txt">&#48;</span>';
+                            $zero_count_label_mu .= '<span class="zero---txt comments-count---txt num">&#48;</span>';
                             $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '0 ->Comment<-', 'ntt' ). '</span>';
                         $zero_count_label_mu .= '</span>';
             

@@ -1,5 +1,4 @@
 <?php
-
 // header.php
 function ntt_html_css_wp_hook() {
     do_action( 'ntt_html_css_wp_hook' );

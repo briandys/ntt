@@ -1,5 +1,4 @@
 <?php
-
 function ntt_show_more_action( $excerpt ) {
     $entry_text = __( 'Entry', 'ntt' );
     $entry_id = get_the_id();
@@ -13,7 +12,7 @@ function ntt_show_more_action( $excerpt ) {
         $entry_name = '<span class="entry-name---txt">'. esc_html( $entry_name_text ). '</span>';
     } else {
         $entry_name_text = $entry_text. ' '. $entry_id;
-        $entry_name = '<span class="entry-name---txt"><span class="entry---txt">'. $entry_text. '</span>'. ' '. '<span class="entry-id---txt num txt">'. $entry_id. '</span></span>';
+        $entry_name = '<span class="entry-name---txt"><span class="entry---txt">'. $entry_text. '</span>'. ' '. '<span class="entry-id---txt num">'. $entry_id. '</span></span>';
     }
 
     $title_attr = $show_text. ' '. $more_text. ' '. $of_text. ' '. $entry_name_text;

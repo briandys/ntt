@@ -11,7 +11,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         
         $navi_text = '';
         $navi_text .= '<span class="page---text">'. esc_html__( 'Page', 'ntt' ). '</span>';
-        $navi_text .= ' '. '<span class="page-number---txt num txt">%</span>';
+        $navi_text .= ' '. '<span class="page-number---txt num">%</span>';
 
         $defaults = array(
             'before' => '<ul class="entry-content-nav-group nav-group group list cp">',

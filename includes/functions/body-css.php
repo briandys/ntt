@@ -1,5 +1,4 @@
 <?php
-
 function ntt_body_css( $css ) {
     
     $css[] = 'body';

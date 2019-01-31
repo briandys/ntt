@@ -1,5 +1,4 @@
 <?php
-
 function ntt_widgets() {
 		
 	// Markup

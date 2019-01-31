@@ -1,7 +1,7 @@
 <?php
-
 if ( ! function_exists( 'ntt_entry_full_content' ) ) {
     function ntt_entry_full_content() {
+        
         global $post;
         
         if( $post->post_content !== '' || is_attachment() || has_action( 'ntt_after_the_content_wp_hook' ) ) {

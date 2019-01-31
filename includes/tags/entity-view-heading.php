@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
     function ntt_entity_view_heading() {
         global $wp_query;

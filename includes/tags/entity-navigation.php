@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Entity Primary Navigation
  */

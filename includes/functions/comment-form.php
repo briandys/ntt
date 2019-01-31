@@ -46,7 +46,7 @@ function ntt_comment_form( $fields ) {
                 $fields['url'] .= '</span>';
             $fields['url'] .= '</label>';
             $fields['url'] .= '<div class="comment-author-url-field-textbox textbox obj" data-name="Comment Author URL Field Textbox">';
-                $fields['url'] .= '<input type="url" name="url" value="'. esc_attr( $commenter['comment_author_url'] ). '" size="64" placeholder="http://" title="'. __( 'Website URL', 'ntt' ). '" id="comment-author-url-field-input" class="text-input">';
+                $fields['url'] .= '<input type="url" name="url" value="'. esc_attr( $commenter['comment_author_url'] ). '" size="64" placeholder="URL" title="'. __( 'Website URL', 'ntt' ). '" id="comment-author-url-field-input" class="text-input">';
             $fields['url'] .= '</div>';
         $fields['url'] .= '</div>';
     $fields['url'] .= '</div>';

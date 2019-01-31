@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Entry Content
  * To enable Child Themes to hook up conditionals in displaying single content without duplicating index.php

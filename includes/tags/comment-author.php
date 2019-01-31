@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_comment_author') ) {
     function ntt_comment_author( $comment, $args ) {
         
@@ -40,7 +39,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                             $size = '48',
                             $default = '',
                             $alt = $comment_author. ' '. 'Avatar',
-                            $args = array( 'class' => 'comment-author-avatar---img u-photo', )
+                            $args = array( 'class' => 'u-photo', )
                         );
                         echo $anchor_end_mu; ?>
                     </span>

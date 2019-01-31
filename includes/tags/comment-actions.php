@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'ntt_comment_admin_actions') ) {
     function ntt_comment_admin_actions() {
 

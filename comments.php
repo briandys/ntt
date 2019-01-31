@@ -19,14 +19,11 @@ $title_reply_to_mu = '<div class="comment-reply-glabel obj" data-name="Comment R
 $title_reply_to_mu .= '</div>';
 
 // logged_in_as
-$log_out_title_attr = esc_attr( 'Log Out' );
-$log_out_l = esc_html__( 'Log Out', 'ntt' );
-
 $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Account Log Status">';
     $logged_in_as_mu .= '<div class="admin-account-log-status---cr">';
         $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn axn obj" data-name="Log Out Admin Account Action">';
-            $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. $log_out_title_attr.'">';
-                $logged_in_as_mu .= '<span class="txt">'. $log_out_l. '</span>';
+            $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. esc_attr( 'Log Out' ).'">';
+                $logged_in_as_mu .= '<span class="txt">'. esc_html__( 'Log Out', 'ntt' ). '</span>';
             $logged_in_as_mu .= '</a>';
         $logged_in_as_mu .= '</div>';
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
@@ -64,8 +61,10 @@ $comment_field_mu = '<div class="comment-author-message-field field cp" data-nam
 $comment_field_mu .= '</div>';
 
 // cancel_reply_link
-$cancel_reply_link_mu = '<span class="cancel---text">'. esc_html_x( 'Cancel', 'Cancel Reply to Comment', 'ntt' ). '</span>';
-$cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---text">'. esc_html_x( 'Reply to Comment', 'Cancel Reply to Comment', 'ntt' ). '</span>';
+$cancel_reply_link_mu = '<span class="l">';
+    $cancel_reply_link_mu .= '<span class="cancel---text">'. esc_html_x( 'Cancel', 'Cancel Reply to Comment', 'ntt' ). '</span>';
+    $cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---text">'. esc_html_x( 'Reply to Comment', 'Cancel Reply to Comment', 'ntt' ). '</span>';
+$cancel_reply_link_mu .= '</span>';
 ?>
 
 <section class="comment-md cm md" data-name="Comment Module">

@@ -6,7 +6,7 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         
         $l_mu_start = '<span class="entry-sub-content-navi---l">';
             $l_mu_start .= '<span class="page---text">'. $page_term. '</span>';
-            $l_mu_start .= ' '. '<span class="page-number---txt num txt">';
+            $l_mu_start .= ' '. '<span class="page-number---txt num">';
             $l_mu_end = '</span>';
         $l_mu_end .= '</span>';
 

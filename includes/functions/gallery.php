@@ -1,5 +1,4 @@
 <?php
-
 /**
  * HTML Wrapper - Support for a custom class attribute in the native gallery shortcode
  * Usage: Add class attribute to Gallery Shortcode [gallery ids="<ids>" class="<class name>"]

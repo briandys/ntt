@@ -1,5 +1,4 @@
 <?php
-
 function ntt_custom_visuals() {
     
     // Custom Background

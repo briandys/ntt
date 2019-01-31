@@ -1,5 +1,5 @@
 <?php
-
+// Within Entry Header
 if ( ! function_exists( 'ntt_entry_meta_primary' ) ) {
     function ntt_entry_meta_primary() {
         ?>
@@ -16,6 +16,7 @@ if ( ! function_exists( 'ntt_entry_meta_primary' ) ) {
     }
 }
 
+// Within Entry Footer
 if ( ! function_exists( 'ntt_entry_meta_secondary' ) ) {
     function ntt_entry_meta_secondary() {
 
