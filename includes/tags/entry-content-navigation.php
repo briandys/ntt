@@ -10,19 +10,19 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         ob_end_clean();
         
         $navi_text = '';
-        $navi_text .= '<span class="page---text">'. esc_html__( 'Page', 'ntt' ). '</span>';
-        $navi_text .= ' '. '<span class="page-number---txt num">%</span>';
+        $navi_text .= '<span class="page---text">'. esc_html__( 'Page', 'ntt' ). '</span>'. ' ';
+        $navi_text .= '<span class="page-number---txt num">%</span>';
 
         $defaults = array(
-            'before' => '<ul class="entry-content-nav-group nav-group group list cp">',
-            'after' => '</ul>',
-            'text_before' => '',
-            'text_after' => '',
-            'next_or_number' => 'number', 
-            'nextpagelink' => __( 'Next Page', 'ntt' ),
-            'previouspagelink' => __( 'Previous Page', 'ntt' ),
-            'pagelink' => $navi_text,
-            'echo' => 1,
+            'before'            => '<ul class="entry-content-nav-group nav-group group list cp">',
+            'after'             => '</ul>',
+            'text_before'       => '',
+            'text_after'        => '',
+            'next_or_number'    => 'number', 
+            'nextpagelink'      => __( 'Next Page', 'ntt' ),
+            'previouspagelink'  => __( 'Previous Page', 'ntt' ),
+            'pagelink'          => $navi_text,
+            'echo'              => 1,
         );
         
         $r = apply_filters( 'wp_link_pages_args', wp_parse_args( $args, $defaults ) );
@@ -43,11 +43,11 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                     $content_pagination_group_mu .= ' ';
                     
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
-                        $content_pagination_group_mu .= '<li class="entry-content-navi navi obj item">';
+                        $content_pagination_group_mu .= '<li class="entry-content-navi navi obj">';
                         $content_pagination_group_mu .= _wp_link_page( $i );
                         $content_pagination_group_mu .= '<span class="entry-content-navi---l">';
                     } else {
-                        $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi navi obj item">';
+                        $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi navi obj">';
                         $content_pagination_group_mu .= '<span class="entry-content-navi---g g">';
                         $content_pagination_group_mu .= '<span class="entry-content-navi---l">';
                     }

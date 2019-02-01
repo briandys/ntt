@@ -53,8 +53,8 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
                 ) );
                 ?>
 
-                <div class="page-indicator cp" data-name="Page Indicator">
-                    <div class="page-indicator---cr">
+                <div class="page-indicator obj" data-name="Page Indicator">
+                    <div class="l">
                         <span class="page-indicator---glabel"><?php echo $page_term; ?></span>
                         <span class="current-page---txt num"><?php echo $current_page; ?></span>
                         <span class="preposition---txt"><?php esc_html_e( 'of', 'ntt' ); ?></span>

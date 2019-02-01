@@ -3,10 +3,11 @@
 
 if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
     function ntt_breadcrumbs_nav() {
+
         global $post;
         
         if ( is_page() && $post->post_parent && ! is_attachment() ) {
-            
+
             $anc = get_post_ancestors( $post->ID );
             $anc = array_reverse( $anc );
 
@@ -15,7 +16,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
             }
 
             foreach ( $anc as $ancestor ) {
-                $navi_ancestors = '<div class="breadcrumb-navi--ancestor breadcrumb-navi obj item">';
+                $navi_ancestors = '<div class="breadcrumb-navi--ancestor breadcrumb-navi obj">';
                     $navi_ancestors .= '<a href="'. esc_url( get_permalink( $ancestor ) ). '" title="'. esc_attr( get_the_title( $ancestor ) ). '">';
                         $navi_ancestors .= '<span class="txt">'. esc_html( get_the_title( $ancestor ) ). '</span>';
                     $navi_ancestors .= '</a>';
@@ -24,7 +25,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
                 $breadcrumbs_ancestors_mu .= $navi_ancestors;
             }
 
-            $navi_current_mu = '<div class="breadcrumb-navi--current breadcrumb-navi obj item">';
+            $navi_current_mu = '<div class="breadcrumb-navi--current breadcrumb-navi obj">';
                 $navi_current_mu .= '<span class="txt">'. esc_html( get_the_title() ). '</span>';
             $navi_current_mu .= '</div>'; ?>
 
@@ -34,12 +35,23 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
                         <span class="txt"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></span>
                     </div>
                     <div class="breadcrumbs-nav-group nav-group group cp" data-name="Breadcrumbs Navigation Group">
-                        <?php echo $breadcrumbs_ancestors_mu. ' '. $navi_current_mu; ?>
+                        <div class="breadcrumbs-nav-ancestors-group group cp" data-name="Breadcrumbs Navigation Ancestors Group">
+                            <?php echo $breadcrumbs_ancestors_mu; ?>
+                        </div>
+                        <?php echo $navi_current_mu; ?>
                     </div>
                 
                 </div>
             </div>
             <?php    
+        }
+
+        if ( is_singular( 'attachment' ) ) {
+            the_post_navigation(
+                array(
+                    'prev_text' => sprintf( '<span class="published-in---text">'. _x( 'Published in', 'Published in [Entry Name]', 'ntt' ).'</span> <span class="entry-name---txt">%s</span>', '%title' ),
+                )
+            );
         }
     }
 }
