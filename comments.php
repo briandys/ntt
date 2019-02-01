@@ -51,11 +51,11 @@ $must_log_in_mu .= '</div>';
 // Comment Author Message Field | comment_field
 $comment_field_mu = '<div class="comment-author-message-field field cp" data-name="Comment Author Message Field">';
     $comment_field_mu .= '<div class="comment-author-message-field---cr field---cr ">';
-    $comment_field_mu .= '<label for="comment-author-message-field-input" class="comment-author-message-field-label obj" data-name="Comment Author Message Field Label">';
+    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label obj" data-name="Comment Author Message Field Label">';
         $comment_field_mu .= '<span class="txt">'. esc_attr__( 'Comment', 'ntt' ). '</span>';
     $comment_field_mu .= '</label>';
         $comment_field_mu .= '<div class="comment-author-message-field-textbox textbox obj" data-name="Comment Author Message Field Textbox">';
-            $comment_field_mu .= '<textarea name="comment" placeholder="'. __( 'Comment', 'ntt' ).'" title="'. __( 'Comment', 'ntt' ).'" maxlength="65525" required id="comment-author-message-field-input" class="text-input"></textarea>';
+            $comment_field_mu .= '<textarea name="comment" placeholder="'. __( 'Comment', 'ntt' ).'" title="'. __( 'Comment', 'ntt' ).'" maxlength="65525" required id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
     $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';

@@ -26,22 +26,15 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
 
                         <div class="comments-count count obj" data-name="Comments Count">
         
-                        <?php $comments_count_css = 'comments-count---a a';
+                        <?php
+                        $single_count_label = '<span class="comment-count---txt num">&#49;</span>';
+                        $single_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '1 Comment', 'ntt' ). '</span>';
                         
-                        $single_count_label = '<span class="comments-count---l">';
-                            $single_count_label .= '<span class="one---txt comments-count---txt num">&#49;</span>';
-                            $single_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '1 ->Comment<-', 'ntt' ). '</span>';
-                        $single_count_label .= '</span>';
+                        $multi_count_label = '<span class="comment-count---txt num">%</span>';
+                        $multi_count_label .= ' '. '<span class="comments---text">'. esc_html_x( 'Comments', '[Number of Comments] Comments', 'ntt' ). '</span>';
                     
-                        $multi_count_label = '<span class="comments-count---l">';
-                            $multi_count_label .= '<span class="number---txt comments-count---txt num">%</span>';
-                            $multi_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comments', '[Number of Comments] ->Comments<-', 'ntt' ). '</span>';
-                        $multi_count_label .= '</span>';
-                    
-                        $zero_count_label_mu = '<span class="comments-count---l">';
-                            $zero_count_label_mu .= '<span class="zero---txt comments-count---txt num">&#48;</span>';
-                            $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '0 ->Comment<-', 'ntt' ). '</span>';
-                        $zero_count_label_mu .= '</span>';
+                        $zero_count_label_mu = '<span class="comment-count---txt num">&#48;</span>';
+                        $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '0 Comment', 'ntt' ). '</span>';
             
                         // Populated Comments
                         if ( $comments_int >= 1 ) {
@@ -49,7 +42,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                                 '',                     // Zero Count
                                 $single_count_label,    // Single Count
                                 $multi_count_label,     // Multiple Count
-                                $comments_count_css,    // <a class="">
+                                '',                     // <a class="">
                                 ''                      // Comments Disabled
                             );
                         
@@ -60,17 +53,21 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                                 $comments_count_link = '';
                             } else {
                                 $comments_count_link = get_permalink();
-                            } ?>
+                            }
+                            ?>
                             
-                            <a href="<?php echo esc_url( $comments_count_link ). '#comments' ?>" class="<?php echo esc_attr( $comments_count_css ); ?>"><?php echo $zero_count_label_mu; ?></a>
-                        
-                        <?php } ?>
-
+                            <a href="<?php echo esc_url( $comments_count_link ). '#comments' ?>">
+                                <?php echo $zero_count_label_mu; ?>
+                            </a>
+                            <?php
+                        }
+                        ?>
                         </div>
                     </div>
                 </div>
 
-                <?php // Enabled Comments
+                <?php
+                // Enabled Comments
                 if ( comments_open() ) {
                     
                     // Add Comment Action Anchor Href
@@ -106,13 +103,11 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                             $comment_creation_content_mu .= '<p>'. esc_html__( 'Commenting is disabled.', 'ntt' ) . '</p>';
                         $comment_creation_content_mu .= '</div>';
                     $comment_creation_content_mu .= '</div>';
-                    
                 }
-                
                 echo $comment_creation_content_mu; ?>
                 
             </div>
         </div>
-
-    <?php }
+        <?php
+    }
 }
