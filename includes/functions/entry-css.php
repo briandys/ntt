@@ -1,8 +1,7 @@
 <?php
-/**
- * Entry
- */
-function ntt_entry_css( $css ) {
+// Entry CSS
+function ntt_entry_css( $classes ) {
+    
     global $post;
     
     // Default
@@ -15,10 +14,10 @@ function ntt_entry_css( $css ) {
     );
     
     foreach ( $r_defaults_css as $default_css ) {
-        $css[] = esc_attr( $default_css );
+        $classes[] = $default_css;
     }
     
-    // Post Format
+    // Post Formats
     $r_post_formats_css = array(
         'aside',
         'audio',
@@ -34,75 +33,89 @@ function ntt_entry_css( $css ) {
     foreach ( $r_post_formats_css as $post_format_css ) {
 
         if ( has_post_format( $post_format_css ) ) {
-            $css[] = esc_attr( $post_format_css ). '-post';
+            $classes[] = $post_format_css. '-post';
         } else {
-            $css[] = 'standard-post';
+            $classes[] = 'standard-post';
         }
     }
+        
+    // Entry Categories
+    foreach ( ( get_the_category( $post->ID ) ) as $category ) {
+        $classes[] = $category->category_nicename. '-category';
+    }
+    
+    return $classes;
+}
+add_filter( 'post_class', 'ntt_entry_css' );
+
+// Entry CSS Status Classes
+function ntt_entry_css_status_classes( $classes ) {
+    
+    global $post;
 
     // Entry Name Population Status
     if ( get_the_title() ) {
-        $css[] = 'entry-name--populated';
+        $classes[] = 'entry-name--populated';
     } else {
-        $css[] = 'entry-name--empty';
+        $classes[] = 'entry-name--empty';
     }
     
     // Entry Author Avatar Ability Status
     if ( get_option( 'show_avatars' ) == 0 ) {
-        $css[] = 'entry-author-avatar--disabled';
+        $classes[] = 'entry-author-avatar--disabled';
     } else {
-        $css[] = 'entry-author-avatar--enabled';
+        $classes[] = 'entry-author-avatar--enabled';
     }
 
     // Entry Categories Population Status
     if ( has_category( '', $post->ID ) ) {
-        $css[] = 'entry-categories--populated';
+        $classes[] = 'entry-categories--populated';
     } else {
-        $css[] = 'entry-categories--empty';
-    }
-        
-    // Entry Category
-    foreach ( ( get_the_category( $post->ID ) ) as $category ) {
-        $css[] = esc_attr( $category->category_nicename ). '-category';
+        $classes[] = 'entry-categories--empty';
     }
 
     // Entry Tags Population Status
     if ( get_the_tag_list( '', '', '', $post->ID ) ) {
-        $css[] = 'entry-tags--populated';
+        $classes[] = 'entry-tags--populated';
     } else {
-        $css[] = 'entry-tags--empty';
+        $classes[] = 'entry-tags--empty';
     }
 
     // Entry Banner Visuals / Featured Image Ability Status
     if ( '' !== get_the_post_thumbnail() ) {
-        $css[] = 'entry-banner-visuals--enabled';
+        $classes[] = 'entry-banner-visuals--enabled';
     } else {
-        $css[] = 'entry-banner-visuals--disabled';
+        $classes[] = 'entry-banner-visuals--disabled';
     }
 
     // Entry Summary Content / Excerpt Ability Status
     if ( has_excerpt() ) {
-        $css[] = 'entry-summary-content--enabled';
+        $classes[] = 'entry-summary-content--enabled';
     } else {
-        $css[] = 'entry-summary-content--disabled';
+        $classes[] = 'entry-summary-content--disabled';
     }
 
-    // Entry More Tag
+    // Entry More Tag Ability Status
     if ( strpos( $post->post_content, '<!--more-->' ) ) {
-        $css[] = 'entry-more-tag--enabled';
+        $classes[] = 'entry-more-tag--enabled';
     } else {
-        $css[] = 'entry-more-tag--disabled';
+        $classes[] = 'entry-more-tag--disabled';
     }
     
-    return $css;
+    return $classes;
 }
-add_filter( 'post_class', 'ntt_entry_css' );
+add_filter( 'post_class', 'ntt_entry_css_status_classes' );
 
-/**
- * Empty Entry, 404, 0 Search Results
- */
-function ntt_empty_entry_entry_css() {
-        
+// Entry CSS Status Classes added to HTML Element
+add_filter( 'ntt_html_css', function( $classes ) {
+    return is_singular() ? ntt_entry_css_status_classes( $classes ) : $classes;
+} );
+
+// Empty Entry, 404, 0 Search Results CSS
+function ntt_get_empty_entry_css( $class='' ) {   
+    
+    $classes = array();
+
     $r_defaults_css = array(
         'empty-entry',
         'entry',
@@ -112,9 +125,44 @@ function ntt_empty_entry_entry_css() {
     );
     
     foreach ( $r_defaults_css as $default_css ) {
-        $css[] = $default_css;
+        $classes[] = $default_css;
     }
 
-    echo esc_attr( implode( ' ', $css ) );
+    if ( ! empty( $class ) ) {
+        if ( !is_array( $class ) )
+            $class = preg_split( '#\s+#', $class );
+        $classes = array_merge( $classes, $class );
+    } else {
+        // Ensure that we always coerce class to being an array.
+        $class = array();
+    }
+ 
+    $classes = array_map( 'esc_attr', $classes );
+
+    /**
+     * Filters the list of CSS html classes.
+     *
+     * @since NTT 0.0.91
+     *
+     * @param array $classes An array of classes.
+     * @param array $class   An array of additional classes.
+     */
+    $classes = apply_filters( 'ntt_empty_entry_css', $classes, $class );
+ 
+    return array_unique( $classes );
 }
-add_action( 'ntt_empty_entry_css_wp_hook', 'ntt_empty_entry_entry_css');
+
+function ntt_empty_entry_css( $class='' ) {
+    echo join( ' ', ntt_get_empty_entry_css( $class ) );
+}
+
+function ntt_empty_entry_css_type_classes( $classes ) {
+    if ( is_404() ) {
+        $classes[] = 'empty-entry-404';
+    } else {
+        $classes[] = 'empty-entry-zero-search';
+    }
+    
+    return $classes;
+}
+add_filter( 'ntt_empty_entry_css', 'ntt_empty_entry_css_type_classes' );

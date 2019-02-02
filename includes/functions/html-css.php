@@ -1,7 +1,11 @@
 <?php
-function get_ntt_html_css( $class='' ) {   
+function ntt_get_html_css( $class='' ) {   
     
     global $post, $is_lynx, $is_gecko, $is_IE, $is_macIE, $is_winIE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+
+    global $wp_query;
+    
+    $query_found_posts = $wp_query->found_posts;
     
     $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) : "";
     
@@ -173,7 +177,6 @@ function get_ntt_html_css( $class='' ) {
 
     // Entry Category View
     if ( is_single() ) {
-        
         foreach ( ( get_the_category( $post->ID ) ) as $category ) {
             $classes[] = $category->category_nicename. '-category-view';
         }
@@ -182,6 +185,8 @@ function get_ntt_html_css( $class='' ) {
     
     if ( is_404() ) {
         $classes[] = 'unreachable-resource-view';
+    } elseif ( is_search && $query_found_posts == 0 ) {
+        $classes[] = 'zero-search-results-view';
     }
 
     /**
@@ -316,13 +321,5 @@ function get_ntt_html_css( $class='' ) {
 }
 
 function ntt_html_css( $class='' ) {
-    echo join( ' ', get_ntt_html_css( $class ) );
+    echo join( ' ', ntt_get_html_css( $class ) );
 }
-
-function ntt_html_css_mod( $classes ) {
-    if ( is_404() ) {
-        $classes[] = 'ka-boom';
-    }
-    return $classes;
-}
-add_filter( 'ntt_html_css', 'ntt_html_css_mod' );

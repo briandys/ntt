@@ -10,22 +10,6 @@
     </head>
     <body <?php body_class(); ?>>
 
-    <?php
-function dodo() {
-    $title = 'tata';
-    $id = 'baba';
-    echo apply_filters( 'bibo', $title, $id );
-}
-
-function example_callback() {
-    $title = 'some';
-    return $title;
-}
-add_filter( 'bibo', 'example_callback' );
-
-
-    ?>
-
         <div id="entity" class="entity" data-name="Entity">
             <div class="entity---cr">
                 
