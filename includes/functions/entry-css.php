@@ -34,7 +34,7 @@ function ntt_entry_css( $css ) {
     foreach ( $r_post_formats_css as $post_format_css ) {
 
         if ( has_post_format( $post_format_css ) ) {
-            $css[] = esc_attr( $post_format_css. '-post' );
+            $css[] = esc_attr( $post_format_css ). '-post';
         } else {
             $css[] = 'standard-post';
         }
@@ -112,7 +112,7 @@ function ntt_empty_entry_entry_css() {
     );
     
     foreach ( $r_defaults_css as $default_css ) {
-        $css[] = esc_attr( $default_css );
+        $css[] = $default_css;
     }
 
     echo esc_attr( implode( ' ', $css ) );

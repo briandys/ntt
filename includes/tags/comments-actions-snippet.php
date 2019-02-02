@@ -4,6 +4,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
         
         $comments_int = (int) get_comments_number( get_the_ID() );
         
+        // Population Status
         if ( $comments_int == 1 ) {
             $population_status = 'populated-comments populated-comments--single';
         } elseif ( $comments_int > 1 ) {
@@ -12,13 +13,22 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
             $population_status = 'empty-comments';
         }
         
+        // Ability Status
         if ( comments_open() ) {
             $ability_status = 'enabled-comments';
         } else {
             $ability_status = 'disabled-comments';
-        } ?>
+        }
 
-        <div class="comments-actions-snippet <?php echo esc_attr( $population_status ). ' '. esc_attr( $ability_status ); ?> cp" data-name="Comments Actions Snippet">
+        // Comment Order
+        if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+            $comment_order_status = 'ascending-comments';
+        } elseif ( comments_open() && 'asc' !== strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+            $comment_order_status = 'descending-comments';
+        }
+        ?>
+
+        <div class="comments-actions-snippet <?php echo esc_attr( $population_status ). ' '. esc_attr( $ability_status ). ' '. esc_attr( $comment_order_status ); ?> cp" data-name="Comments Actions Snippet">
             <div class="comments-actions-snippet---cr">
 
                 <div class="comments-population cp" data-name="Comments Population">

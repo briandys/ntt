@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> id="start" class="ntt view no-js<?php ntt_html_css_wp_hook(); ?>" data-name="View">
+<html <?php language_attributes(); ?> id="start" class="ntt view no-js <?php ntt_html_css(); ?>" data-name="View">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,6 +9,22 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+
+    <?php
+function dodo() {
+    $title = 'tata';
+    $id = 'baba';
+    echo apply_filters( 'bibo', $title, $id );
+}
+
+function example_callback() {
+    $title = 'some';
+    return $title;
+}
+add_filter( 'bibo', 'example_callback' );
+
+
+    ?>
 
         <div id="entity" class="entity" data-name="Entity">
             <div class="entity---cr">

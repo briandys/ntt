@@ -1,43 +1,48 @@
 <?php
-function ntt_html_css() {   
+function get_ntt_html_css( $class='' ) {   
+    
     global $post, $is_lynx, $is_gecko, $is_IE, $is_macIE, $is_winIE, $is_edge, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+    
     $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) : "";
-    $is_ipad = preg_match('/ipad/i',$useragent);
+    
+    $is_ipad = preg_match( '/ipad/i', $useragent );
+
+    $classes = array();
 
     /**
      * Device Form Factor
      */
     if ( wp_is_mobile() ) {
-        $css[] = 'mobile-form-factor';
+        $classes[] = 'mobile-form-factor';
     } else {
-        $css[] = 'non-mobile-form-factor';
+        $classes[] = 'non-mobile-form-factor';
     }
 
     /**
      * Browser Brand
      */
     if ( $is_chrome ) {
-        $css[] = 'chrome-browser';
+        $classes[] = 'chrome-browser';
     } elseif ( $is_gecko ) {
-        $css[] = 'gecko-browser';
+        $classes[] = 'gecko-browser';
     } elseif ( $is_safari ) {
-        $css[] = 'safari-browser';
+        $classes[] = 'safari-browser';
     } elseif ( $is_opera ) {
-        $css[] = 'opera-browser';
+        $classes[] = 'opera-browser';
     } elseif ( $is_lynx ) {
-        $css[] = 'lynx-browser';
+        $classes[] = 'lynx-browser';
     } elseif ( $is_NS4 ) {
-        $css[] = 'ns4-browser';
+        $classes[] = 'ns4-browser';
     } elseif ( $is_IE ) {
-        $css[] = 'ie-browser';
+        $classes[] = 'ie-browser';
     } elseif ( $is_macIE ) {
-        $css[] = 'mac-ie-browser';
+        $classes[] = 'mac-ie-browser';
     } elseif ( $is_winIE ) {
-        $css[] = 'win-ie-browser';
+        $classes[] = 'win-ie-browser';
     } elseif ( $is_edge ) {
-        $css[] = 'edge-browser';
+        $classes[] = 'edge-browser';
     } else {
-        $css[] = 'other-browser';
+        $classes[] = 'other-browser';
     }
 
     /**
@@ -46,31 +51,31 @@ function ntt_html_css() {
     
     // WP Admin Bar
     if ( is_admin_bar_showing() ) {
-        $css[] = 'wp-admin-bar--enabled';
+        $classes[] = 'wp-admin-bar--enabled';
     } else {
-        $css[] = 'wp-admin-bar--disabled';
+        $classes[] = 'wp-admin-bar--disabled';
     }
 
     // WP Customizer
     if ( is_customize_preview() ) {
-		$css[] = 'wp-customizer';
+		$classes[] = 'wp-customizer';
     }
     
     // WP User Dashboard Status
     if ( is_user_logged_in() ) {
-		$css[] = 'wp-user--logged-in';
+		$classes[] = 'wp-user--logged-in';
     } else {
-        $css[] = 'wp-user--logged-out';
+        $classes[] = 'wp-user--logged-out';
     }
 
     // WP User Capability Status
     if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
-        $css[] = 'wp-user--editor';
+        $classes[] = 'wp-user--editor';
     }
 
     // WP Customizer Color Scheme
     $colors = ntt_wp_customize_color_scheme_sanitizer( get_theme_mod( 'colorscheme', 'default' ) );
-    $css[] = 'wp-customizer-color-scheme--'. esc_attr( $colors );
+    $classes[] = 'wp-customizer-color-scheme--'. $colors;
 
     /**
      * Entity
@@ -78,66 +83,66 @@ function ntt_html_css() {
 
     // Entity Theme Hierarchy
     if ( is_child_theme() ) {
-        $css[] = 'child-theme';
+        $classes[] = 'child-theme';
     } else {
-        $css[] = 'parent-theme';
+        $classes[] = 'parent-theme';
     }
 
     // Entity Depth View
     if ( is_front_page() ) {
-        $css[] = 'front-view';
+        $classes[] = 'front-view';
     } else {
-        $css[] = 'inner-view';
+        $classes[] = 'inner-view';
     }
     
     // Entity Primary Nav Population Status
     if ( wp_nav_menu( array( 'theme_location' => 'primary-nav', 'echo' => false, ) ) !== false) {
     
-        $css[] = 'entity-primary-nav--populated';
+        $classes[] = 'entity-primary-nav--populated';
 
         // Entity Primary Nav Type
         if ( ! has_nav_menu( 'primary-nav' ) ) {
-            $css[] = 'entity-primary-nav--default';
+            $classes[] = 'entity-primary-nav--default';
         } else {
-            $css[] = 'entity-primary-nav--custom';
+            $classes[] = 'entity-primary-nav--custom';
         }
     } else {
-        $css[] = 'entity-primary-nav--empty';
+        $classes[] = 'entity-primary-nav--empty';
     }
     
     // Entity Name Population Status
     if ( get_bloginfo( 'name', 'display' ) ) {
-        $css[] = 'entity-name--populated';
+        $classes[] = 'entity-name--populated';
     } else {
-        $css[] = 'entity-name--empty';
+        $classes[] = 'entity-name--empty';
     }
 
     // Entity Description Population Status
     if ( get_bloginfo( 'description', 'display' ) ) {
-        $css[] = 'entity-description--populated';
+        $classes[] = 'entity-description--populated';
     } else {
-        $css[] = 'entity-description--empty';
+        $classes[] = 'entity-description--empty';
     }
     
     // Entity Name, Entity Description Ability Status
     if ( 'blank' === get_header_textcolor() ) {
-        $css[] = 'entity-name-description--disabled';
+        $classes[] = 'entity-name-description--disabled';
     } else {
-        $css[] = 'entity-name-description--enabled';
+        $classes[] = 'entity-name-description--enabled';
     }
 
     // Entity Logo Ability Status
     if ( has_custom_logo() ) {
-        $css[] = 'entity-logo--enabled';
+        $classes[] = 'entity-logo--enabled';
     } else {
-        $css[] = 'entity-logo--disabled';
+        $classes[] = 'entity-logo--disabled';
     }
     
     // Entity Banner Visuals Ability Status
     if ( has_header_image() ) {
-        $css[] = 'entity-banner-visuals--enabled';
+        $classes[] = 'entity-banner-visuals--enabled';
     } else {
-        $css[] = 'entity-banner-visuals--disabled';
+        $classes[] = 'entity-banner-visuals--disabled';
     }
 
     /**
@@ -146,10 +151,10 @@ function ntt_html_css() {
 
     // Entry Granularity View
     if ( is_singular() || is_404() ) {
-        $css[] = 'singular-view';
+        $classes[] = 'singular-view';
     } else {
-        $css[] = 'plural-view';
-        $css[] = 'hfeed';
+        $classes[] = 'plural-view';
+        $classes[] = 'hfeed';
     }
     
     // Entry Type View
@@ -162,21 +167,21 @@ function ntt_html_css() {
             $post_name = 'entry'. '-'. $post->post_name;
         }
 
-        $css[] = esc_attr( $post->post_type ). '-view';
-        $css[] = esc_attr( $post_name. '-'. $post->post_type ). '-view';
+        $classes[] = $post->post_type. '-view';
+        $classes[] = $post_name. '-'. $post->post_type. '-view';
     }
 
     // Entry Category View
     if ( is_single() ) {
         
         foreach ( ( get_the_category( $post->ID ) ) as $category ) {
-            $css[] = esc_attr( $category->category_nicename. '-category-view' );
+            $classes[] = $category->category_nicename. '-category-view';
         }
     }
     
     
     if ( is_404() ) {
-        $css[] = 'unreachable-resource-view';
+        $classes[] = 'unreachable-resource-view';
     }
 
     /**
@@ -189,10 +194,10 @@ function ntt_html_css() {
         $template_file = get_post_meta( get_the_ID(), '_wp_page_template', TRUE );
 
         if ( $template_file ) {
-            $css[] = 'specific-page-template';
-            $css[] = esc_attr( sanitize_title( $template_file ) ). '-page-template';
+            $classes[] = 'specific-page-template';
+            $classes[] = sanitize_title( $template_file ). '-page-template';
         } else {
-            $css[] = 'generic-page-template';
+            $classes[] = 'generic-page-template';
         }
     }
 
@@ -206,9 +211,9 @@ function ntt_html_css() {
         $entry_search_count = $entry_search->post_count;
         
         if ( $entry_search_count == 0 ) {
-            $css[] = 'search-results--empty';
+            $classes[] = 'search-results--empty';
         } else {
-            $css[] = 'search-results--populated';
+            $classes[] = 'search-results--populated';
         }
         
         wp_reset_postdata();
@@ -231,19 +236,19 @@ function ntt_html_css() {
         foreach ( $r as $key => $val ) {
 
             if ( $key ) {
-                $css[] = $val. '-view';
+                $classes[] = $val. '-view';
             }
         }
     }
 
     // Entries Indexing Type
     if ( is_home() ) {
-        $css[] = 'current-index-view';
+        $classes[] = 'current-index-view';
     } elseif ( is_archive() ) {
-        $css[] = 'archive-index-view';
+        $classes[] = 'archive-index-view';
     } elseif( is_search() ) {
-        $css[] = 'custom-index-view';
-        $css[] = 'search-results-view';
+        $classes[] = 'custom-index-view';
+        $classes[] = 'search-results-view';
     }
 
     /**
@@ -261,9 +266,9 @@ function ntt_html_css() {
     foreach ( $r_entity_widgets as $entity_widgets ) {
         
         if ( is_active_sidebar( $entity_widgets ) ) {
-            $css[] = esc_attr( $entity_widgets ). '--enabled';
+            $classes[] = $entity_widgets. '--enabled';
         } else {
-            $css[] = esc_attr( $entity_widgets ). '--disabled';
+            $classes[] = $entity_widgets. '--disabled';
         }
     }
 
@@ -280,12 +285,44 @@ function ntt_html_css() {
     foreach ( $r_entry_widgets as $entry_widgets ) {
         
         if ( is_active_sidebar( $entry_widgets ) && is_singular() ) {
-            $css[] = esc_attr( $entry_widgets ). '--enabled';
+            $classes[] = $entry_widgets. '--enabled';
         } else {
-            $css[] = esc_attr( $entry_widgets ). '--disabled';
+            $classes[] = $entry_widgets. '--disabled';
         }
     }
 
-    echo esc_attr( ' '. implode( ' ', $css ) );
+    if ( ! empty( $class ) ) {
+        if ( !is_array( $class ) )
+            $class = preg_split( '#\s+#', $class );
+        $classes = array_merge( $classes, $class );
+    } else {
+        // Ensure that we always coerce class to being an array.
+        $class = array();
+    }
+ 
+    $classes = array_map( 'esc_attr', $classes );
+
+    /**
+     * Filters the list of CSS html classes.
+     *
+     * @since NTT 0.0.91
+     *
+     * @param array $classes An array of body classes.
+     * @param array $class   An array of additional classes added to the body.
+     */
+    $classes = apply_filters( 'ntt_html_css', $classes, $class );
+ 
+    return array_unique( $classes );
 }
-add_action( 'ntt_html_css_wp_hook', 'ntt_html_css');
+
+function ntt_html_css( $class='' ) {
+    echo join( ' ', get_ntt_html_css( $class ) );
+}
+
+function ntt_html_css_mod( $classes ) {
+    if ( is_404() ) {
+        $classes[] = 'ka-boom';
+    }
+    return $classes;
+}
+add_filter( 'ntt_html_css', 'ntt_html_css_mod' );

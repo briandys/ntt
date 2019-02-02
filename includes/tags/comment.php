@@ -1,6 +1,7 @@
 <?php
 if ( ! function_exists( 'ntt_comment') ) {
     function ntt_comment( $comment, $args, $depth ) {
+        
         $commenter = wp_get_current_commenter();
         $comment_url = get_comment_link( $comment->comment_ID );
         $comment_id = get_comment_ID();
@@ -15,7 +16,8 @@ if ( ! function_exists( 'ntt_comment') ) {
             $commenter_avatar_type_css = 'default-commenter-avatar--default';
         } else {
             $commenter_avatar_type_css = 'default-commenter-avatar--custom';
-        } ?>
+        }
+        ?>
 
         <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( 'comment-'. esc_attr( $comment_id ). ' '. 'p-comment h-entry cm-singular item cp'. ' '. $comment_hierarchy_css. ' '. $commenter_avatar_type_css ); ?> data-name="Comment">
             <div class="comment---cr cm-singular---cr">
@@ -73,7 +75,6 @@ if ( ! function_exists( 'ntt_comment') ) {
 
                                 <div class="comment-meta cm-meta meta cp" data-name="Comment Meta">
                                     <div class="comment-meta---cr cm-meta---cr">
-                                        
                                         <?php
                                         ntt_comment_datetime( $comment );
                                         ntt_comment_author( $comment, $args );
@@ -116,5 +117,6 @@ if ( ! function_exists( 'ntt_comment') ) {
                 </div>
             </div>
         </li>
-    <?php }
+        <?php
+    }
 }
