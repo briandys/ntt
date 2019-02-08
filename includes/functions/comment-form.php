@@ -12,7 +12,7 @@ function ntt_comment_form( $fields ) {
     $fields['author'] = '<div class="comment-author-name-field field cp" data-name="Comment Author Name Field">';
         $fields['author'] .= '<div class="comment-author-name-field---cr field---cr ">';
             $fields['author'] .= '<label for="comment-author-name-field-input" class="comment-author-name-field-label obj" data-name="Comment Author Name Field Label">';
-                $fields['author'] .= '<span class="comment-author-name-label---l">';
+                $fields['author'] .= '<span class="l">';
                     $fields['author'] .= '<span class="name---text">'. __( 'Name', 'ntt' ). '</span>';
                     $fields['author'] .= $optional;
                 $fields['author'] .= '</span>';

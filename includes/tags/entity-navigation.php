@@ -9,8 +9,10 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
         
         $group_mu_start = '<ul class="entity-primary-nav-group---cr">';
         $group_mu_end   = '</ul>';
-        $label_mu_start = '<span class="entity-primary-navi---l"><span class="entity-primary-navi---txt navi---txt">';
-        $label_mu_end   = '</span></span>';
+        
+        $label_mu_start = '<span class="txt">';
+        $label_mu_end   = '</span>';
+        
         $nav_group_css  = 'entity-primary-nav-group nav-group group cp';
         
         if ( wp_nav_menu( array( 'theme_location' => 'entity-primary-nav', 'echo' => false, ) ) !== false) {

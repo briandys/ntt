@@ -16,19 +16,20 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
         // Ability Status
         if ( comments_open() ) {
             $ability_status = 'enabled-comments';
+
+            // Comment Order
+            if ( 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+                $comment_order_status = ' '. 'ascending-comments';
+            } elseif ( 'asc' !== strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+                $comment_order_status = ' '. 'descending-comments';
+            }
         } else {
             $ability_status = 'disabled-comments';
-        }
-
-        // Comment Order
-        if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
-            $comment_order_status = 'ascending-comments';
-        } elseif ( comments_open() && 'asc' !== strtolower( get_option( 'comment_order', 'asc' ) ) ) {
-            $comment_order_status = 'descending-comments';
+            $comment_order_status = '';
         }
         ?>
 
-        <div class="comments-actions-snippet <?php echo esc_attr( $population_status ). ' '. esc_attr( $ability_status ). ' '. esc_attr( $comment_order_status ); ?> cp" data-name="Comments Actions Snippet">
+        <div class="comments-actions-snippet <?php echo esc_attr( $population_status ). ' '. esc_attr( $ability_status ). esc_attr( $comment_order_status ); ?> cp" data-name="Comments Actions Snippet">
             <div class="comments-actions-snippet---cr">
 
                 <div class="comments-population cp" data-name="Comments Population">
@@ -79,10 +80,13 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                 <?php
                 // Enabled Comments
                 if ( comments_open() ) {
-                    
+
                     // Add Comment Action Anchor Href
-                    if ( ! is_user_logged_in() && get_option( 'comment_registration' ) ) {   
+                    if ( ! is_user_logged_in() && get_option( 'comment_registration' ) ) {
                         $href = wp_login_url( get_permalink(). '#comment' );
+                        $requires_log_in_text = __( 'Requires Log In', 'ntt' );
+                        $requires_log_in_mu = ' '. '<span class="requires-log-in---text">'. esc_html( $requires_log_in_text ). '</span>';
+                        $requires_log_in_text_attr = ' '. '('. $requires_log_in_text. ')';
                     } else {
                         
                         if ( is_singular() ) {
@@ -90,18 +94,18 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                         } else {
                             $href = get_permalink(). '#comment';
                         }
+                        $requires_log_in_text = '';
+                        $requires_log_in_mu = '';
+                        $requires_log_in_text_attr = '';
                     }
 
                     $comment_creation_content_mu = '<div class="add-comment-axn add-axn axn obj" data-name="Add Comment Action">';
-                        $comment_creation_content_mu .= '<a href="'. esc_url( $href ).'" class="add-comment-axn---a" title="'. esc_attr__( 'Add Comment', 'ntt' ).'">';
-                        $comment_creation_content_mu .= '<span class="add-comment-axn---l">';
-                                $comment_creation_content_mu .= '<span class="axn---line line"><span class="add---text">'. esc_html_x( 'Add', '->Add<- Comment', 'ntt' ). ' '. '</span><span class="comment---text">'. esc_html_x( 'Comment', 'Add ->Comment<-', 'ntt' ). '</span></span>';
-                            
-                            if ( ! is_user_logged_in() && get_option( 'comment_registration' ) ) {
-                                $comment_creation_content_mu .= ' '. '<span class="requires-log-in-note---txt">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>';
-                            }
-                            
+                        $comment_creation_content_mu .= '<a href="'. esc_url( $href ).'" title="'. esc_attr__( 'Add Comment', 'ntt' ). esc_attr( $requires_log_in_text_attr ). '">';
+                            $comment_creation_content_mu .= '<span class="axn---line line">';
+                                $comment_creation_content_mu .= '<span class="add---text">'. esc_html_x( 'Add', 'Add Comment', 'ntt' ). '</span>';
+                                $comment_creation_content_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Add Comment', 'ntt' ). '</span>';
                             $comment_creation_content_mu .= '</span>';
+                            $comment_creation_content_mu .= $requires_log_in_mu;
                         $comment_creation_content_mu .= '</a>';
                     $comment_creation_content_mu .= '</div>';
 
@@ -114,6 +118,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                         $comment_creation_content_mu .= '</div>';
                     $comment_creation_content_mu .= '</div>';
                 }
+
                 echo $comment_creation_content_mu; ?>
                 
             </div>

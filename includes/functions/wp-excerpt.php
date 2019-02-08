@@ -2,9 +2,9 @@
 function ntt_show_more_action( $excerpt ) {
     $entry_text = __( 'Entry', 'ntt' );
     $entry_id = get_the_id();
-    $show_text = _x( 'Show', '->Show<- more of [Entry Name]', 'ntt' );
-    $more_text = _x( 'more', 'Show ->more<- of [Entry Name]', 'ntt' );
-    $of_text = _x( 'of', 'Show more ->of<- [Entry Name]', 'ntt' );
+    $show_text = _x( 'Show', 'Show more of [Entry Name]', 'ntt' );
+    $more_text = _x( 'more', 'Show more of [Entry Name]', 'ntt' );
+    $of_text = _x( 'of', 'Show more of [Entry Name]', 'ntt' );
     $entry_get_the_title = get_the_title( get_the_ID() );
     
     if ( $entry_get_the_title ) {
@@ -12,7 +12,7 @@ function ntt_show_more_action( $excerpt ) {
         $entry_name = '<span class="entry-name---txt">'. esc_html( $entry_name_text ). '</span>';
     } else {
         $entry_name_text = $entry_text. ' '. $entry_id;
-        $entry_name = '<span class="entry-name---txt"><span class="entry---txt">'. $entry_text. '</span>'. ' '. '<span class="entry-id---txt num">'. $entry_id. '</span></span>';
+        $entry_name = '<span class="entry-name---txt"><span class="entry---txt">'. esc_html( $entry_text ). '</span>'. ' '. '<span class="entry-id---txt num">'. esc_html( $entry_id ). '</span></span>';
     }
 
     $title_attr = $show_text. ' '. $more_text. ' '. $of_text. ' '. $entry_name_text;
@@ -24,8 +24,8 @@ function ntt_show_more_action( $excerpt ) {
     }
 
     $excerpt = '<div class="show-more-axn axn obj" data-name="Show More Action">';
-        $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). $more_hash. '" class="show-more-axn---a" title="'. esc_attr( $title_attr ).'">';
-            $excerpt .= '<span class="show-more-axn---l"><span class="show---text">Show</span> <span class="more---text">more</span> <span class="of---text">of</span> '. $entry_name. '</span>';
+        $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). esc_attr( $more_hash ). '" title="'. esc_attr( $title_attr ).'">';
+            $excerpt .= '<span class="show---text">Show</span> <span class="more---text">more</span> <span class="preposition---txt">of</span> '. $entry_name. '</span>';
         $excerpt .= '</a>';
     $excerpt .= '</div>';
 
@@ -58,8 +58,9 @@ function ntt_manual_search_excerpt( $excerpt ) {
     
     if ( is_search() ) {
         ?>
-        
-        <p><a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" class="content-snippet-link"><?php echo esc_html( $excerpt ); ?></a></p>
+        <p class="content-snippet obj" data-name="Content Snippet">
+            <a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>"><?php echo esc_html( $excerpt ); ?></a>
+        </p>
 
         <?php
         echo ntt_show_more_action( $excerpt );

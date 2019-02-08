@@ -185,7 +185,7 @@ function ntt_get_html_css( $class='' ) {
     
     if ( is_404() ) {
         $classes[] = 'unreachable-resource-view';
-    } elseif ( is_search && $query_found_posts == 0 ) {
+    } elseif ( is_search() && $query_found_posts == 0 ) {
         $classes[] = 'zero-search-results-view';
     }
 
@@ -315,7 +315,7 @@ function ntt_get_html_css( $class='' ) {
      * @param array $classes An array of body classes.
      * @param array $class   An array of additional classes added to the body.
      */
-    $classes = apply_filters( 'ntt_html_css', $classes, $class );
+    $classes = apply_filters( 'ntt_html_css_wp_filter', $classes, $class );
  
     return array_unique( $classes );
 }

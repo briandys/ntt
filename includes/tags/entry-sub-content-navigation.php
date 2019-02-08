@@ -2,30 +2,28 @@
 if ( ! function_exists('ntt_sub_content_nav' ) ) {
     function ntt_sub_content_nav( $total ) {
 
-        $page_term = esc_html__( 'Page', 'ntt' );
+        $page_term = __( 'Page', 'ntt' );
         
-        $l_mu_start = '<span class="entry-sub-content-navi---l">';
-            $l_mu_start .= '<span class="page---text">'. $page_term. '</span>';
-            $l_mu_start .= ' '. '<span class="page-number---txt num">';
-            $l_mu_end = '</span>';
-        $l_mu_end .= '</span>';
+        $l_mu_start = '<span class="page---text">'. esc_html( $page_term ). '</span>';
+        $l_mu_start .= ' '. '<span class="page-number---txt num">';
+        $l_mu_end = '</span>';
 
-        $adjacent_navi_mu = '<span class="entry-sub-content-navi---l adjacent-navi---l '. sanitize_title( '%1$s' ).'-adjacent-navi---l" title="%2$s">';
-            $adjacent_navi_mu .= '<span class="'. sanitize_title( '%1$s' ).'---txt">%1$s</span>';
-            $adjacent_navi_mu .= ' '. '<span class="page---text">'. $page_term. '</span>';
+        $adjacent_navi_mu = '<span title="'. esc_attr( '%2$s' ). '">';
+            $adjacent_navi_mu .= '<span class="'. esc_attr( sanitize_title( '%1$s' ) ).'---text">'. esc_html( '%1$s' ). '</span>';
+            $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_term ). '</span>';
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Next', 'Next Page', 'ntt' ),
-            esc_attr__( 'Next Page', 'ntt' )
+            _x( 'Next', 'Next Page', 'ntt' ),
+            __( 'Next Page', 'ntt' )
         );
         
         $previous = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Previous', 'Previous Page', 'ntt' ),
-            esc_attr__( 'Previous Page', 'ntt' )
+            _x( 'Previous', 'Previous Page', 'ntt' ),
+            __( 'Previous Page', 'ntt' )
         );
-
         ?>
+        
         <div role="navigation" class="entry-sub-content-nav nav pagination cp" data-name="Entry Sub-Content Navigation">
             <div class="entry-sub-content-nav---cr">
                 <?php

@@ -69,7 +69,7 @@ $cancel_reply_link_mu .= '</span>';
 
 <section class="comment-md cm md" data-name="Comment Module">
     <div class="comment-md---cr cm---cr">
-        <div id="comments" class="comments<?php ntt_comments_css_wp_hook(); ?> cm-plural cp" data-name="Comments">
+        <div id="comments" class="comments <?php ntt_comments_css(); ?> cm-plural cp" data-name="Comments">
             <div class="comments---cr cm-plural---cr">
                 <div class="comments-header cm-plural-header header cn" data-name="Comments Header">
                     <div class="comments-header---cr cm-plural-header---cr">

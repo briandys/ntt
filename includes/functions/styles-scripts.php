@@ -38,9 +38,20 @@ if ( is_child_theme() ) {
         wp_enqueue_style( 'ntt-kid-style', get_stylesheet_directory_uri(). '/assets/styles/ntt-kid.min.css' );
     }
     add_action('wp_enqueue_scripts', 'ntt_kid_styles', 0);
+
+
+
+    /*
+    function ntt_html_css( $class='' ) {
+        $class = ' '. sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme';
+        echo join( ' ', $class );
+    }
+    */
     
+    /*
     function ntt_kid_html_css() {
         echo ' '. esc_attr( sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme' );
     }
     add_action( 'ntt_html_css_wp_hook', 'ntt_kid_html_css');
+    */
 }

@@ -75,6 +75,8 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                                 </div>
                                 <?php 
                             }
+
+                            ntt_after_entry_nav_wp_hook();
                             ?>
                         </div>
                     </div>

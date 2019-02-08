@@ -30,7 +30,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                 <div class="comment-heading cm-heading heading cp" data-name="Comment Heading">
                                     <div class="comment-heading---cr cm-heading---cr">
                                         <div class="comment-name cm-name name obj" data-name="Comment Name">
-                                            <span class="comment-name---l">
+                                            <span class="l">
                                                 <span class="comment---text"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
                                                 <span class="comment-id---txt num"><?php echo esc_html( $comment_id ); ?></span>
                                             </span>
@@ -46,8 +46,14 @@ if ( ! function_exists( 'ntt_comment') ) {
                                             
                                         if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
 
-                                            $reply_text_mu = '<span class="comment-reply-axn---txt">'. esc_html_x( 'Reply', '->Reply<- to [Comment Name]', 'ntt' ). '</span> <span class="to---text">'. esc_html_x( 'to', 'Reply ->to<- [Comment Name]', 'ntt' ). '</span> <span class="comment-name---txt">'. esc_html_x( 'Comment', 'Reply to ->Comment Name<-', 'ntt' ). ' '. esc_html( $comment_id ). '</span>';
-                                            $login_text_mu = '<span class="requires-log-in---text">'. esc_html__( 'Requires Log In', 'ntt' ). '</span>'; ?>
+                                            $reply_text_mu = '<span class="reply---text">'. esc_html_x( 'Reply', 'Reply to [Comment Name]', 'ntt' ). '</span>';
+                                            $reply_text_mu .= ' '. '<span class="to---text">'. esc_html_x( 'to', 'Reply to [Comment Name]', 'ntt' ). '</span>';
+                                            $reply_text_mu .= ' '. '<span class="comment-name---txt">'. esc_html_x( 'Comment', 'Reply to ->Comment Name<-', 'ntt' ). ' '. esc_html( $comment_id ). '</span>';
+                                            
+                                            $requires_log_in_text = __( 'Requires Log In', 'ntt' );
+                                            $login_text_mu = '<span class="requires-log-in---text">'. esc_html( $requires_log_in_text ). '</span>';
+                                            $requires_log_in_text_attr = ' '. '('. $requires_log_in_text. ')';
+                                            ?>
 
                                             <div class="comment-user-axns user-axns cm-axns axns cp" data-name="Comment User Actions">
                                                 <div class="comment-user-axns---cr cm-axns---cr">
@@ -59,8 +65,8 @@ if ( ! function_exists( 'ntt_comment') ) {
                                                                 'add_below'     => 'comment',
                                                                 'depth'         => $depth,
                                                                 'max_depth'     => $args['max_depth'],
-                                                                'reply_text'    => '<span class="comment-reply-axn---l" title="'. esc_attr_x( 'Reply to Comment', '->Reply to Comment Name<-', 'ntt' ). ' '. esc_html( $comment_id ). '">'. $reply_text_mu. '</span>',
-                                                                'login_text'    => '<span class="log-in-axn---l"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
+                                                                'reply_text'    => '<span title="'. esc_attr_x( 'Reply to Comment', 'Reply to Comment [Comment ID]', 'ntt' ). ' '. esc_attr( $comment_id ). '">'. $reply_text_mu. '</span>',
+                                                                'login_text'    => '<span title="'. esc_attr_x( 'Reply to Comment', 'Reply to Comment [Comment ID]', 'ntt' ). ' '. esc_attr( $comment_id ). esc_attr( $requires_log_in_text_attr ). '"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
                                                             )
                                                         ) );
                                                         ?>

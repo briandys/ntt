@@ -45,20 +45,16 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
                         $content_pagination_group_mu .= '<li class="entry-content-navi navi obj">';
                         $content_pagination_group_mu .= _wp_link_page( $i );
-                        $content_pagination_group_mu .= '<span class="entry-content-navi---l">';
                     } else {
                         $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi navi obj">';
-                        $content_pagination_group_mu .= '<span class="entry-content-navi---g g">';
-                        $content_pagination_group_mu .= '<span class="entry-content-navi---l">';
+                        $content_pagination_group_mu .= '<span class="l">';
                     }
 
                     $content_pagination_group_mu .= $text_before . $j . $text_after;
                     
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
-                        $content_pagination_group_mu .= '</span>';
                         $content_pagination_group_mu .= '</a>';
                     } else {
-                        $content_pagination_group_mu .= '</span>';
                         $content_pagination_group_mu .= '</span>';
                     }
                     $content_pagination_group_mu .= '</li>';
@@ -87,13 +83,11 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
 
             <div role="navigation" class="entry-content-nav nav pagination cp" data-name="Entry Content Navigation">
                 <div class="entry-content-nav---cr">
-                
                     <div class="entry-content-nav-name nav-name obj h" data-name="Entry Content Navigation Name">
                         <span class="txt"><?php esc_html_e( 'Content Navigation', 'ntt' ); ?></span>
                     </div>
                 
                     <?php echo $content_pagination_group_mu; ?>
-                
                 </div>
             </div>
             <?php

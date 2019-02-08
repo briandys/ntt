@@ -107,7 +107,7 @@ function ntt_entry_css_status_classes( $classes ) {
 add_filter( 'post_class', 'ntt_entry_css_status_classes' );
 
 // Entry CSS Status Classes added to HTML Element
-add_filter( 'ntt_html_css', function( $classes ) {
+add_filter( 'ntt_html_css_wp_filter', function( $classes ) {
     return is_singular() ? ntt_entry_css_status_classes( $classes ) : $classes;
 } );
 

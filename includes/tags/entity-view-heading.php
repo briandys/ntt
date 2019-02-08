@@ -93,7 +93,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                     $property_prefix = 'Miscellaneous';
                 }
             
-                $value_attr = $value;
+                $value_attr = sanitize_title( $value ). '---text';
 
                 $entity_view_name_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-name---a">';
                 $entity_view_item_count_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-item-count---a">';
@@ -117,18 +117,18 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 }
 
                 $value = esc_html( get_search_query() );
-                $value_attr = 'search-term';
+                $value_attr = 'search-term---txt';
 
                 $entity_view_name_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-name---a">';
                 $entity_view_item_count_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-item-count---a">';
                 $entity_view_name_item_count_anchor_end_mu = '</a>';
                 
                 $property_mu = '<span class="search-outcome---txt">'. $search_outcome_text. '</span>
-                <span class="for---text">'. _x( 'for', 'Search Result ->for<- [Search Term]', 'ntt' ). '</span>';
+                <span class="preposition---txt">'. _x( 'for', 'Search Result for [Search Term]', 'ntt' ). '</span>';
 
                 wp_reset_postdata();
             }
-            $value_mu = '<span class="'. sanitize_title( $value_attr ).'---text">'. $value. '</span>';
+            $value_mu = '<span class="'. esc_attr( $value_attr ).'">'. esc_html( $value ). '</span>';
         }
         ?>
 
@@ -136,7 +136,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
             <div class="entity-view-heading---cr">
                 <div class="entity-view-name name obj" data-name="Entity View Name">
                     <?php echo $entity_view_name_anchor_start_mu; ?>
-                        <span class="entity-view-name---l">
+                        <span class="l">
                             <?php
                             if ( is_search() ) {
                                 ?>
