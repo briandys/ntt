@@ -19,7 +19,7 @@
                         <div id="go-content-nav" class="go-content-nav nav cp" data-name="Go to Content Navigation">
                             <div class="go-content-nav---cr">
                                 <div class="go-content-navi navi obj" data-name="Go to Content Navigation Item">
-                                    <a href="#content" title="<?php esc_attr_e( 'Go to Content', 'ntt' ); ?>" id="go-content-navi---a">
+                                    <a href="#content" title="<?php esc_attr_e( 'Go to Content', 'ntt' ); ?>" id="go-content-navi-axn">
                                         <span class="txt"><?php esc_html_e( 'Go to Content', 'ntt' ); ?></span>
                                     </a>
                                 </div>
@@ -39,7 +39,7 @@
                                 if ( $get_bloginfo_name || is_customize_preview() ) {
                                     ?>
                                     <h1 id="entity-primary-name" class="h entity-primary-name obj" data-name="Entity Primary Name">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>">
+                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>" class="l">
                                             <span class="txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
                                         </a>
                                     </h1>

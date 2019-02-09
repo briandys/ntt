@@ -101,7 +101,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
 
                     $comment_creation_content_mu = '<div class="add-comment-axn add-axn axn obj" data-name="Add Comment Action">';
                         $comment_creation_content_mu .= '<a href="'. esc_url( $href ).'" title="'. esc_attr__( 'Add Comment', 'ntt' ). esc_attr( $requires_log_in_text_attr ). '">';
-                            $comment_creation_content_mu .= '<span class="axn---line line">';
+                            $comment_creation_content_mu .= '<span class="axn---line">';
                                 $comment_creation_content_mu .= '<span class="add---text">'. esc_html_x( 'Add', 'Add Comment', 'ntt' ). '</span>';
                                 $comment_creation_content_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Add Comment', 'ntt' ). '</span>';
                             $comment_creation_content_mu .= '</span>';

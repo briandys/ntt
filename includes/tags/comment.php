@@ -66,7 +66,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                                                 'depth'         => $depth,
                                                                 'max_depth'     => $args['max_depth'],
                                                                 'reply_text'    => '<span title="'. esc_attr_x( 'Reply to Comment', 'Reply to Comment [Comment ID]', 'ntt' ). ' '. esc_attr( $comment_id ). '">'. $reply_text_mu. '</span>',
-                                                                'login_text'    => '<span title="'. esc_attr_x( 'Reply to Comment', 'Reply to Comment [Comment ID]', 'ntt' ). ' '. esc_attr( $comment_id ). esc_attr( $requires_log_in_text_attr ). '"><span class="axn---line line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
+                                                                'login_text'    => '<span title="'. esc_attr_x( 'Reply to Comment', 'Reply to Comment [Comment ID]', 'ntt' ). ' '. esc_attr( $comment_id ). esc_attr( $requires_log_in_text_attr ). '"><span class="axn---line">'. $reply_text_mu. '</span>'. ' '. $login_text_mu. '</span>',
                                                             )
                                                         ) );
                                                         ?>

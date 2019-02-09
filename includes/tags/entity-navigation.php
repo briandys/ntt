@@ -90,14 +90,16 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
                         <span class="txt"><?php esc_html_e( 'Secondary Navigation', 'ntt' ); ?></span>
                     </div>
 
-                    <?php wp_nav_menu( array(
+                    <?php
+                    wp_nav_menu( array(
                         'theme_location'    => 'entity-secondary-nav',
                         'container'         => 'div',
                         'container_class'   => 'entity-secondary-nav-group nav-group group cp',
-                        'link_before'       => '<span class="entity-secondary-navi---l"><span class="entity-secondary-navi---txt navi---txt">',
-                        'link_after'        => '</span></span>',
+                        'link_before'       => '<span class="txt">',
+                        'link_after'        => '</span>',
                         'items_wrap'        => '<ul class="entity-secondary-nav-group---cr">'. '%3$s'. '</ul>',
-                    ) ); ?>
+                    ) );
+                    ?>
                 </div>
             </div>
             <?php

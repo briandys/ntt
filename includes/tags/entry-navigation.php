@@ -7,37 +7,42 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             if ( ! get_adjacent_post( false, '', false ) && ! get_adjacent_post( false, '', true ) ) {
                 return;
             }
+
+            $next_text = _x( 'Next', 'Next Entry', 'ntt' );
+            $previous_text = _x( 'Previous', 'Previous Entry', 'ntt' );
+            $entry_text = _x( 'Entry', '[Next / Previous] Entry', 'ntt' );
             
-            $l_mu = '';
-            $l_mu .= '<span class="property---line line">';
-                $l_mu .= '<span class="%2$s---text">%1$s</span>';
-                $l_mu .= ' '. '<span class="entry---text">'. esc_html__( 'Entry', 'ntt' ) .'</span>';
-                $l_mu .= '<span class="delimiter---txt">:</span>';
-            $l_mu .= '</span>';
-            $l_mu .= ' <span class="value---line line">';
-                $l_mu .= '<span class="entry-name---txt">%3$s</span>';
+            $l_mu = '<span title="'. esc_attr( '%4$s' ). '">';
+                $l_mu .= '<span class="property---line">';
+                    $l_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
+                    $l_mu .= ' '. '<span class="entry---text">'. esc_html( $entry_text ) .'</span>';
+                    $l_mu .= '<span class="delimiter---txt">:</span>';
+                $l_mu .= '</span>';
+                $l_mu .= ' <span class="value---line">';
+                    $l_mu .= '<span class="txt">'. esc_html( '%3$s' ). '</span>';
+                $l_mu .= '</span>';
             $l_mu .= '</span>';
             
             $next_navi = sprintf( $l_mu,
-                esc_html__( 'Next', 'ntt' ),
-                'next',
-                '%title'
+                $next_text,
+                'next---text',
+                '%title',
+                $next_text. ' '. $entry_text. ':'. ' '. '%title'
             );
             
             $previous_navi = sprintf( $l_mu,
-                esc_html__( 'Previous', 'ntt' ),
-                'previous',
-                '%title'
+                $previous_text,
+                'previous---text',
+                '%title',
+                $previous_text. ' '. $entry_text. ':'. ' '. '%title'
             );
             ?>
 
             <div role="navigation" class="entry-nav adjacent-nav nav cp" data-name="Entry Navigation">
                 <div class="entry-nav---cr">
-
                     <div class="entry-nav-name nav-name obj h" data-name="Entry Navigation Name">
                         <span class="txt"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></span>
                     </div>
-
                     <div class="entry-nav-group nav-group group cp" data-name="Entry Navigation Group">
                         <div class="entry-nav-group---cr">
                     
@@ -84,6 +89,5 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             </div>
             <?php
         }
-        
     }
 }

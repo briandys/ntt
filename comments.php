@@ -162,8 +162,8 @@ $cancel_reply_link_mu .= '</span>';
             'comment_field'             => $comment_field_mu,
         
             // Submit Comment Action
-            'id_submit'                 => 'submit-comment-axn---a',
-            'class_submit'              => 'submit-comment-axn---a',
+            'id_submit'                 => 'submit-comment-axn',
+            'class_submit'              => 'submit-comment-axn',
             'label_submit'              => esc_attr_x( 'Submit', 'Submit Comment', 'ntt' ),
         
             // Notes

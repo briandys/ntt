@@ -12,16 +12,36 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
                     </div>
             
                     <?php
+                    // Texts
+                    $next_text = _x( 'Next', 'Next Comments', 'ntt' );
+                    $previous_text = _x( 'Previous', 'Previous Comments', 'ntt' );
+                    $comments_text = _x( 'Comments', '[Next / Previous] Comments', 'ntt' );
+
+                    // Text Label Markup
+                    $l_mu = '<span title="'. esc_attr( '%3$s' ). '">';
+                        $l_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
+                        $l_mu .= ' '. '<span class="comments---text">'. esc_html( $comments_text ) .'</span>';
+                    $l_mu .= '</span>';
+
+                    // Next Navigation Item sprintf
+                    $next_navi = sprintf( $l_mu,
+                        $next_text,
+                        'next---text',
+                        $next_text. ' '. $comments_text
+                    );
+
+                    // Previous Navigation Item sprintf
+                    $previous_navi = sprintf( $l_mu,
+                        $previous_text,
+                        'previous---text',
+                        $previous_text. ' '. $comments_text
+                    );
+
                     if ( get_next_comments_link() ) {
                         ?>
 
                         <div class="next-comments-navi adjacent-navi navi obj" data-name="Next Comments Navigation Item">
-                            <?php
-                            $next_comments_navi = '<span class="l">';
-                                $next_comments_navi .= '<span class="next---text">'. esc_html_x( 'Next', '->Next<- Comments', 'ntt' ).'</span>';
-                                $next_comments_navi .= ' '. '<span class="comments---text">'. esc_html_x( 'Comments', 'Previous ->Comments<-', 'ntt' ). '</span>';
-                            $next_comments_navi .= '</span>';
-                            next_comments_link( $next_comments_navi ); ?>
+                            <?php next_comments_link( $next_navi ); ?>
                         </div>
                         <?php
                     }
@@ -30,12 +50,7 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
                         ?>
 
                         <div class="previous-comments-navi adjacent-navi navi obj" data-name="Previous Comments Navigation Item">
-                            <?php
-                            $prev_comments_navi = '<span class="l">';
-                                $prev_comments_navi .= '<span class="previous---text">'. esc_html_x( 'Previous', '->Previous<- Comments', 'ntt' ).'</span>';
-                                $prev_comments_navi .= ' '. '<span class="comments---text">'. esc_html_x( 'Comments', 'Previous ->Comments<-', 'ntt' ). '</span>';
-                            $prev_comments_navi .= '</span>';
-                            previous_comments_link( $prev_comments_navi ); ?>
+                            <?php previous_comments_link( $previous_navi ); ?>
                         </div>
                         <?php
                     }

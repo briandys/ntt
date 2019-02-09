@@ -24,7 +24,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                 </span>
                 
                 <span class="entry-author-name cm-author-name author-name p-name obj" data-name="Entry Author Name">
-                    <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>" class="u-url">
+                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>" class="u-url">
                         <span class="txt"><?php echo esc_html( $entry_author ); ?></span>
                     </a>
                 </span>
@@ -32,8 +32,8 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                 <?php
                 if ( get_option( 'show_avatars' ) == 1 ) {
                     ?>
-                    <span class="entry-author-avatar cm-avatar author-avatar obj" data-name="Entry Author Avatar">
-                        <a href="<?php echo esc_url ( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
+                    <span class="entry-author-avatar cm-avatar obj" data-name="Entry Author Avatar">
+                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
                             <?php
                             echo get_avatar(
                                 get_the_author_meta( 'ID' ),
@@ -45,13 +45,11 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                             ?>
                         </a>
                     </span>
-
                     <?php
                 }
                 ?>
-
             </div>
         </div>
-    
-    <?php }
+        <?php
+    }
 }

@@ -10,35 +10,33 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         $current_page = ( get_query_var('paged') ? get_query_var('paged') : 1 );
         $total_pages = $wp_query->max_num_pages;
 
-        $next_term = __( 'Next', 'ntt' );
-        $previous_term = __( 'Previous', 'ntt' );
-        $page_term = __( 'Page', 'ntt' );
+        $next_text = _x( 'Next', 'Next Page', 'ntt' );
+        $previous_text = _x( 'Previous', 'Previous Page', 'ntt' );
+        $page_text = _x( 'Page', '[Next / Previous] Page', 'ntt' );
         
-        $l_mu_start = '<span class="entries-navi---l">';
-            $l_mu_start .= '<span class="entries-navi---glabel page---text">'. esc_html( $page_term ). '</span>';
-            $l_mu_start .= ' '. '<span class="entries-navi---txt page-number---txt num">';
-            $l_mu_end = '</span>';
-        $l_mu_end .= '</span>';
+        $l_mu_start = '<span class="page---text">'. esc_html( $page_text ). '</span>';
+        $l_mu_start .= ' '. '<span class="page-number---txt num">';
+        $l_mu_end = '</span>';
 
-        $adjacent_navi_mu = '<span class="entries-navi---l adjacent-navi---l '. esc_attr( '%2$s' ). '-adjacent-navi---l" title="%3$s">';
-            $adjacent_navi_mu .= '<span class="'. esc_attr( '%2$s' ). '---text entries-navi---txt">%1$s</span>';
-            $adjacent_navi_mu .= ' '. '<span class="page---text entries-navi---glabel">'. esc_html( $page_term ). '</span>';
+        $adjacent_navi_mu = '<span title="'. esc_attr( '%3$s' ). '">';
+            $adjacent_navi_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
+            $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_text ). '</span>';
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Next', '->Next<- Page', 'ntt' ),
-            sanitize_title( $next_term ),
-            esc_attr__( 'Next Page', 'ntt' )
+            $next_text,
+            'next---text',
+            $next_text. ' '. $page_text
         );
         
         $previous = sprintf( $adjacent_navi_mu,
-            esc_html_x( 'Previous', '->Previous<- Page', 'ntt' ),
-            sanitize_title( $previous_term ),
-            esc_attr__( 'Previous Page', 'ntt' )
+            $previous_text,
+            'previous---text',
+            $previous_text. ' '. $page_text
         );
         ?>
         
-        <div role="navigation" class="entries-nav adjacent-nav nav pagination cp" data-name="Entries Navigation">
+        <div role="navigation" class="entries-nav pagination adjacent-nav nav cp" data-name="Entries Navigation">
             <div class="entries-nav---cr">
                 <?php
                 the_posts_pagination( array(
@@ -54,12 +52,12 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
                 ?>
 
                 <div class="page-indicator obj" data-name="Page Indicator">
-                    <div class="l">
-                        <span class="page-indicator---glabel"><?php echo $page_term; ?></span>
-                        <span class="current-page---txt num"><?php echo $current_page; ?></span>
-                        <span class="preposition---txt"><?php esc_html_e( 'of', 'ntt' ); ?></span>
-                        <span class="total-pages---txt num"><?php echo $total_pages; ?></span>
-                    </div>
+                    <span class="l">
+                        <span class="page---text"><?php echo esc_html( $page_text ); ?></span>
+                        <span class="current-page---txt num"><?php echo esc_html( $current_page ); ?></span>
+                        <span class="of---text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
+                        <span class="total-pages---txt num"><?php echo esc_html( $total_pages ); ?></span>
+                    </span>
                 </div>
             </div>
         </div>

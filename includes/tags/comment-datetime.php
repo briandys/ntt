@@ -41,14 +41,14 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                             <span class="txt"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
                         </span>
 
-                        <time datetime="<?php echo get_comment_date( DATE_W3C ); ?>" class="comment-published-date published-date cm-date dt-published date obj" data-name="Comment Published Date">
-                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Commented on [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">
+                        <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="comment-published-date published-date cm-date dt-published date obj" data-name="Comment Published Date">
+                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Commented on [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>" class="l">
                                 <?php echo $date_mu; ?>
                             </a>
                         </time>
                         
                         <span class="comment-published-time published-time cm-time time obj" data-name="Comment Published Time">
-                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', '->Commented at<- [time]', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>">
+                            <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Commented at [time]', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>" class="l">
                                 <?php echo $time_mu; ?>
                             </a>
                         </span>

@@ -5,14 +5,14 @@
     // Entity Name
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.entity-primary-name---txt' ).text( to );
+			$( '.entity-primary-name .txt' ).text( to );
 		} );
 	} );
     
     // Entity Description
     wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.entity-primary-description---txt' ).text( to );
+			$( '.entity-primary-description .txt' ).text( to );
 		} );
 	} );
 	
@@ -29,7 +29,7 @@
 					$( '#ntt-custom-header-colors-style' ).remove();
 				}
 				
-                $( '.entity-primary-name---a, .entity-primary-description---txt' ).css( {
+                $( '.entity-primary-name a, .entity-primary-description .txt' ).css( {
 					color: to
 				} );
 				

@@ -6,7 +6,7 @@ function ntt_register_wp_customize( $wp_customize ) {
 	
 	// Entity Name
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
-		'selector' => '.entity-primary-name---txt',
+		'selector' => '.entity-primary-name .txt',
 		'render_callback' => 'ntt_wp_customize_partial_blogname',
 	) );
 

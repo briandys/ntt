@@ -1,45 +1,49 @@
 <?php
 if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
     function ntt_entity_view_heading() {
+        
         global $wp_query;
         $query_found_posts = $wp_query->found_posts;
+        
         $value = '';
         $value_mu = '';
         $property_mu = '';
-        $entity_view_name_anchor_start_mu = '';
+        
+        $text_label_start_mu = '<span class="l">';
+        $text_label_end_mu = '</span>';
         $entity_view_item_count_anchor_start_mu = '';
-        $entity_view_name_item_count_anchor_end_mu = '';
+        $anchor_end_mu = '';
         
         // View Granularity: Singular
         if ( is_singular() || is_404() ) {
 
-            $property_suffix = 'Entry';
-            $property_mu = '<span class="'. sanitize_title( $property_suffix ).'---text">'. $property_suffix. '</span>';
+            $property_suffix = __( 'Entry', 'ntt' );
+            $property_mu = '<span class="property---txt">'. esc_html( $property_suffix ). '</span>';
 
             if ( is_single() ) {
-                $value = 'Post';
+                $value = __( 'Post', 'ntt' );
             } elseif ( is_page() ) {
-                $value = 'Page';
+                $value = __( 'Page', 'ntt' );
             } elseif ( is_attachment() ) {
-                $value = 'Attachment';
+                $value = __( 'Attachment', 'ntt' );
             }
             
             if ( is_404() ) {
-                $value = 'Unreachable Resource';
+                $value = __( 'Unreachable Resource', 'ntt' );
             }
 
-            $value_mu = '<span class="'. sanitize_title( $value ).'---text">'. $value. '</span>';
+            $value_mu = '<span class="txt">'. esc_html( $value ). '</span>';
 
         // View Granularity: Plural
         } elseif ( is_home() || is_archive() || is_search() ) {
 
-            $property_suffix = 'Entries';
-            $property_mu = '<span class="'. sanitize_title( $property_suffix ).'---text">'. $property_suffix. '</span>';
+            $property_suffix = __( 'Entries', 'ntt' );
+            $property_mu = '<span class="property---txt">'. esc_html( $property_suffix ). '</span>';
             $value_attr = '';
 
             // Current Index
             if ( is_home() ) {
-                $value = 'Current';
+                $value = __( 'Current', 'ntt' );
             }
             
             // Archive Index
@@ -59,47 +63,47 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                     
                     if ( is_day() ) {
                         $value = $day. ' '. $month. ' '. $year;
-                        $property_prefix = 'Daily';
-                        $href_attr = esc_url( get_day_link( $year_link, $month_link, $day_link ) );
+                        $property_prefix = __( 'Daily', 'ntt' );
+                        $href_attr = get_day_link( $year_link, $month_link, $day_link );
                     } elseif ( is_month() ) {
                         $value = $month. ' '. $year;
-                        $property_prefix = 'Monthly';
-                        $href_attr = esc_url( get_month_link( $year_link, $month_link ) );
+                        $property_prefix = __( 'Monthly', 'ntt' );
+                        $href_attr = get_month_link( $year_link, $month_link );
                     } elseif ( is_year() ) {
                         $value = $year;
-                        $property_prefix = 'Yearly';
-                        $href_attr = esc_url( get_year_link( $year_link ) );
+                        $property_prefix = __( 'Yearly', 'ntt' );
+                        $href_attr = get_year_link( $year_link );
                     } else {
-                        $property_prefix = 'Miscellaneous';
+                        $property_prefix = __( 'Miscellaneous', 'ntt' );
                     }
                 
                 } elseif ( is_author() && ! is_post_type_archive() ) {
-                    $property_prefix = 'Author';
+                    $property_prefix = __( 'Author', 'ntt' );
 
                     if ( get_queried_object() ) {
                         $value = get_queried_object()->display_name;
-                        $href_attr = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+                        $href_attr = get_author_posts_url( get_the_author_meta( 'ID' ) );
                     }
                 
                 } elseif ( is_category() ) {
                     $value = single_term_title( '', false );
-                    $property_prefix = 'Category';
-                    $href_attr = esc_url( get_category_link( get_queried_object()->term_id ) );
+                    $property_prefix = __( 'Category', 'ntt' );
+                    $href_attr = get_category_link( get_queried_object()->term_id );
                 } elseif ( is_tag() ) {
                     $value = single_term_title( '', false );
-                    $property_prefix = 'Tag';
-                    $href_attr = esc_url( get_tag_link( get_queried_object()->term_id ) );
+                    $property_prefix = __( 'Tag', 'ntt' );
+                    $href_attr = get_tag_link( get_queried_object()->term_id );
                 } else {
-                    $property_prefix = 'Miscellaneous';
+                    $property_prefix = __( 'Miscellaneous', 'ntt' );
                 }
             
-                $value_attr = sanitize_title( $value ). '---text';
+                $value_attr = 'txt';
 
-                $entity_view_name_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-name---a">';
-                $entity_view_item_count_anchor_start_mu = '<a href="'. $href_attr. '" class="entity-view-item-count---a">';
-                $entity_view_name_item_count_anchor_end_mu = '</a>';
+                $text_label_start_mu = '<a href="'. esc_url( $href_attr ). '" class="l">';
+                $text_label_end_mu = '</a>';
 
-                $property_mu = '<span class="'. sanitize_title( $property_prefix ). '---text">'. $property_prefix. '</span>'. ' '. '<span class="archive---text">Archive</span>';
+                $property_mu = '<span class="property---txt">'. esc_html( $property_prefix ). '</span>';
+                $property_mu .= ' '. '<span class="archive---text">'. esc_html__( 'Archive', 'ntt' ). '</span>';
             }
 
             // Custom Index (Search Results)
@@ -116,15 +120,14 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                     $search_outcome_text = __( 'Search Results', 'ntt' );
                 }
 
-                $value = esc_html( get_search_query() );
+                $value = get_search_query();
                 $value_attr = 'search-term---txt';
 
-                $entity_view_name_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-name---a">';
-                $entity_view_item_count_anchor_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="entity-view-item-count---a">';
-                $entity_view_name_item_count_anchor_end_mu = '</a>';
+                $text_label_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="l">';
+                $text_label_end_mu = '</a>';
                 
-                $property_mu = '<span class="search-outcome---txt">'. $search_outcome_text. '</span>
-                <span class="preposition---txt">'. _x( 'for', 'Search Result for [Search Term]', 'ntt' ). '</span>';
+                $property_mu = '<span class="search-outcome---txt">'. esc_html( $search_outcome_text ). '</span>';
+                $property_mu .= ' '. '<span class="for---text">'. esc_html_x( 'for', 'Search Result for [Search Term]', 'ntt' ). '</span>';
 
                 wp_reset_postdata();
             }
@@ -135,50 +138,49 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         <div class="entity-view-heading heading cp" data-name="Entity View Heading">
             <div class="entity-view-heading---cr">
                 <div class="entity-view-name name obj" data-name="Entity View Name">
-                    <?php echo $entity_view_name_anchor_start_mu; ?>
-                        <span class="l">
-                            <?php
-                            if ( is_search() ) {
-                                ?>
-                                <span class="property---line"><?php echo $property_mu; ?></span>
-                                <span class="value---line"><?php echo $value_mu; ?></span>
-                                <?php
-                            } else {
-                                ?>
-                                <span class="value---line"><?php echo $value_mu; ?></span>
-                                <span class="property---line"><?php echo $property_mu; ?></span>
-                                <?php
-                            }
-                            ?>
-                        </span>
-                    <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
+                    
+                    <?php
+                    echo $text_label_start_mu;
+                    
+                    if ( is_search() ) {
+                        ?>
+                        <span class="property---line"><?php echo $property_mu; ?></span>
+                        <span class="value---line"><?php echo $value_mu; ?></span>
+                        <?php
+                    } else {
+                        ?>
+                        <span class="value---line"><?php echo $value_mu; ?></span>
+                        <span class="property---line"><?php echo $property_mu; ?></span>
+                        <?php
+                    }
+                    
+                    echo $text_label_end_mu;
+                    ?>
                 </div>
 
                 <?php
-                if ( ! is_singular() ) {
-                $entry_text = esc_html( 'Entry', 'ntt' );
+                // Item Count is displayed only in Plural View
+                if ( ! is_singular() && ! is_404() ) {
                 
-                if ( $query_found_posts == 0 ) {
-                    $item_count_glabel = $entry_text;
-                } elseif ( $query_found_posts == 1 ) {
-                    $item_count_glabel = $entry_text;
-                } else {
-                    $item_count_glabel = esc_html( 'Entries', 'ntt' );
-                }
-                ?>
+                    $entry_text = __( 'Entry', 'ntt' );
+                
+                    if ( $query_found_posts == 0 ) {
+                        $item_count_glabel = $entry_text;
+                    } elseif ( $query_found_posts == 1 ) {
+                        $item_count_glabel = $entry_text;
+                    } else {
+                        $item_count_glabel = __( 'Entries', 'ntt' );
+                    }
+                    ?>
 
-                <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
-                    <?php echo $entity_view_item_count_anchor_start_mu; ?>
-                        <span class="entity-view-item-count---l">
+                    <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
+                        <?php echo $text_label_start_mu; ?>
                             <span class="entity-view-item-count-number---text num"><?php echo esc_html( $query_found_posts ); ?></span>
-                            <span class="entity-view-item-count-glabel---text"><?php echo $item_count_glabel; ?></span>
-                        </span>
-                    <?php echo $entity_view_name_item_count_anchor_end_mu; ?>
-                </div>
+                            <span class="entity-view-item-count-glabel---text"><?php echo esc_html( $item_count_glabel ); ?></span>
+                        <?php echo $text_label_end_mu; ?>
+                    </div>
 
-                <?php
-                }
-                ?>
+                <?php } ?>
             </div>
         </div>
         <?php
