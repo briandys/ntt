@@ -24,14 +24,14 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
 
         // Date Markup
         $date_mu = '<time datetime="'. esc_attr( '%4$s' ).'" class="'. esc_attr( '%5$s' ). ' '. 'cm-date date obj time" data-name="'. esc_attr( '%6$s' ). '">';
-            $date_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '" class="l">';
+            $date_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '">';
                 $date_mu .= '%1$s';
             $date_mu .= '</a>';
         $date_mu .= '</time>';
 
         // Time Markup
         $time_mu = ' '. '<span class="'. esc_attr( '%4$s' ). ' '. 'cm-time time obj" data-name="'. esc_attr( '%5$s' ). '">';
-            $time_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '" class="l">';
+            $time_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '">';
                 $time_mu .= '%1$s';
             $time_mu .= '</a>';
         $time_mu .= '</span>';

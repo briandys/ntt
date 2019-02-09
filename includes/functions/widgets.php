@@ -6,7 +6,7 @@ function ntt_widgets() {
 		$widget_start_mu .= '<div class="%2$s---cr widget---cr">';
 	$widget_end_mu = '</div>';
 		$widget_end_mu .= '</div>';
-	$title_mu_start = '<div class="widget-name name obj" data-name="Widget Name"><span class="widget-name---text">';
+	$title_mu_start = '<div class="widget-name obj" data-name="Widget Name"><span class="widget-name---text">';
 	$title_mu_end = '</span></div>';
 	
 	// Entity Primary Actions

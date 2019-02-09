@@ -99,7 +99,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
             
                 $value_attr = 'txt';
 
-                $text_label_start_mu = '<a href="'. esc_url( $href_attr ). '" class="l">';
+                $text_label_start_mu = '<a href="'. esc_url( $href_attr ). '">';
                 $text_label_end_mu = '</a>';
 
                 $property_mu = '<span class="property---txt">'. esc_html( $property_prefix ). '</span>';
@@ -123,7 +123,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 $value = get_search_query();
                 $value_attr = 'search-term---txt';
 
-                $text_label_start_mu = '<a href="'. esc_url( get_search_link() ). '" class="l">';
+                $text_label_start_mu = '<a href="'. esc_url( get_search_link() ). '">';
                 $text_label_end_mu = '</a>';
                 
                 $property_mu = '<span class="search-outcome---txt">'. esc_html( $search_outcome_text ). '</span>';
@@ -137,7 +137,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
 
         <div class="entity-view-heading heading cp" data-name="Entity View Heading">
             <div class="entity-view-heading---cr">
-                <div class="entity-view-name name obj" data-name="Entity View Name">
+                <div class="entity-view-name obj" data-name="Entity View Name">
                     
                     <?php
                     echo $text_label_start_mu;

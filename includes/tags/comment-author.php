@@ -24,10 +24,10 @@ if ( ! function_exists( 'ntt_comment_author') ) {
             ?>
 
                 <span class="comment-author-glabel glabel obj" data-name="Comment Author Generic Label">
-                    <span class="txt"><?php echo esc_html_x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' ); ?></span>
+                    <span class="txt"><?php echo esc_html_x( 'Commented by', 'Commented by [Name]', 'ntt' ); ?></span>
                 </span>
                 
-                <span class="comment-author-name cm-author-name author-name name obj" data-name="Comment Author Name">
+                <span class="comment-author-name cm-author-name author-name obj" data-name="Comment Author Name">
                     <?php echo $text_label_start_mu; ?>
                         <span title="<?php echo esc_attr_x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                             <span class="txt"><?php echo esc_html( $comment_author ); ?></span>

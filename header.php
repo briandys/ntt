@@ -39,7 +39,7 @@
                                 if ( $get_bloginfo_name || is_customize_preview() ) {
                                     ?>
                                     <h1 id="entity-primary-name" class="h entity-primary-name obj" data-name="Entity Primary Name">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>" class="l">
+                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>">
                                             <span class="txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
                                         </a>
                                     </h1>

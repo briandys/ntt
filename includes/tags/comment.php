@@ -29,7 +29,7 @@ if ( ! function_exists( 'ntt_comment') ) {
 
                                 <div class="comment-heading cm-heading heading cp" data-name="Comment Heading">
                                     <div class="comment-heading---cr cm-heading---cr">
-                                        <div class="comment-name cm-name name obj" data-name="Comment Name">
+                                        <div class="comment-name cm-name obj" data-name="Comment Name">
                                             <span class="l">
                                                 <span class="comment---text"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
                                                 <span class="comment-id---txt num"><?php echo esc_html( $comment_id ); ?></span>
@@ -48,7 +48,7 @@ if ( ! function_exists( 'ntt_comment') ) {
 
                                             $reply_text_mu = '<span class="reply---text">'. esc_html_x( 'Reply', 'Reply to [Comment Name]', 'ntt' ). '</span>';
                                             $reply_text_mu .= ' '. '<span class="to---text">'. esc_html_x( 'to', 'Reply to [Comment Name]', 'ntt' ). '</span>';
-                                            $reply_text_mu .= ' '. '<span class="comment-name---txt">'. esc_html_x( 'Comment', 'Reply to ->Comment Name<-', 'ntt' ). ' '. esc_html( $comment_id ). '</span>';
+                                            $reply_text_mu .= ' '. '<span class="comment-name---txt">'. esc_html_x( 'Comment', 'Reply to Comment Name', 'ntt' ). ' '. esc_html( $comment_id ). '</span>';
                                             
                                             $requires_log_in_text = __( 'Requires Log In', 'ntt' );
                                             $login_text_mu = '<span class="requires-log-in---text">'. esc_html( $requires_log_in_text ). '</span>';

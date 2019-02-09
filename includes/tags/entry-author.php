@@ -19,7 +19,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                 <span class="entry-author-glabel glabel obj" data-name="Entry Author Generic Label">
                     <span class="l">
                         <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
-                        <span class="preposition---txt"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
+                        <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
                     </span>
                 </span>
                 
