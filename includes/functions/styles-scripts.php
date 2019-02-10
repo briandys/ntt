@@ -9,7 +9,7 @@ function ntt_styles_scripts() {
 
     wp_enqueue_style( 'ntt-print-style', get_template_directory_uri() . '/assets/styles/print.min.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
-    wp_enqueue_script( 'ntt-script', get_template_directory_uri(). '/assets/scripts/ntt.js', array( 'jquery', ), null, true );
+    wp_enqueue_script( 'ntt-script', get_template_directory_uri(). '/assets/scripts/ntt.js', array(), '0.0.0', true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -20,11 +20,12 @@ add_action( 'wp_enqueue_scripts', 'ntt_styles_scripts', 0 );
 function ntt_inline_scripts() {
     ?>
     <script>
-        ( function( html ) {
+        ( function() {
+            var html = document.documentElement;
             html.className = html.className.replace( /\bno-js\b/,'js' );
-            html.classList.add( 'dom--unready' );
-            html.classList.add( 'window--unloaded' );
-        } ) ( document.documentElement );
+            html.className += ' ' + 'dom--unready';
+            html.className += ' ' + 'window--unloaded';
+        } )();
     </script>
     <?php
 }
@@ -39,19 +40,9 @@ if ( is_child_theme() ) {
     }
     add_action('wp_enqueue_scripts', 'ntt_kid_styles', 0);
 
-
-
-    /*
-    function ntt_html_css( $class='' ) {
-        $class = ' '. sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme';
-        echo join( ' ', $class );
+    function ntt_kid_theme_html_css( $classes ) {
+        $classes[] = sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme';
+        return $classes;
     }
-    */
-    
-    /*
-    function ntt_kid_html_css() {
-        echo ' '. esc_attr( sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme' );
-    }
-    add_action( 'ntt_html_css_wp_hook', 'ntt_kid_html_css');
-    */
+    add_filter( 'ntt_html_css_wp_filter', 'ntt_kid_theme_html_css' );
 }

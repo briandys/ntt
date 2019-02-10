@@ -14,7 +14,7 @@ function ntt_get_html_css( $class='' ) {
     $classes = array();
 
     /**
-     * Device Form Factor
+     * External: Device Form Factor
      */
     if ( wp_is_mobile() ) {
         $classes[] = 'mobile-form-factor';
@@ -23,7 +23,7 @@ function ntt_get_html_css( $class='' ) {
     }
 
     /**
-     * Browser Brand
+     * External: Browser Brand
      */
     if ( $is_chrome ) {
         $classes[] = 'chrome-browser';
@@ -50,7 +50,7 @@ function ntt_get_html_css( $class='' ) {
     }
 
     /**
-     * WP
+     * External: WP
      */
     
     // WP Admin Bar
@@ -149,6 +149,25 @@ function ntt_get_html_css( $class='' ) {
         $classes[] = 'entity-banner-visuals--disabled';
     }
 
+    // Entity Widgets Ability Status
+    $r_entity_widgets = array(
+        'entity-primary-axns',
+        'entity-banner-aside',
+        'entity-header-aside',
+        'entity-main-header-aside',
+        'entity-main-main-aside',
+        'entity-footer-aside',
+    );
+
+    foreach ( $r_entity_widgets as $entity_widgets ) {
+        
+        if ( is_active_sidebar( $entity_widgets ) ) {
+            $classes[] = $entity_widgets. '--enabled';
+        } else {
+            $classes[] = $entity_widgets. '--disabled';
+        }
+    }
+
     /**
      * Entry
      */
@@ -182,7 +201,7 @@ function ntt_get_html_css( $class='' ) {
         }
     }
     
-    
+    // Entry 404 or Zero Search Results
     if ( is_404() ) {
         $classes[] = 'unreachable-resource-view';
     } elseif ( is_search() && $query_found_posts == 0 ) {
@@ -190,7 +209,7 @@ function ntt_get_html_css( $class='' ) {
     }
 
     /**
-     * Page Entry
+     * Entry
      */
 
     // Page Template Name
@@ -206,6 +225,7 @@ function ntt_get_html_css( $class='' ) {
         }
     }
 
+    // Entry: Entries / Plural - Search Results
     if ( is_search() ) {
         global $s;
         $entry_search = new WP_Query( array(
@@ -225,7 +245,7 @@ function ntt_get_html_css( $class='' ) {
     }
 
     /**
-     * Entries
+     * Entry: Entries / Plural
      */
     if ( is_archive() ) {
 
@@ -246,7 +266,7 @@ function ntt_get_html_css( $class='' ) {
         }
     }
 
-    // Entries Indexing Type
+    // Entry: Entries Indexing Type
     if ( is_home() ) {
         $classes[] = 'current-index-view';
     } elseif ( is_archive() ) {
@@ -254,27 +274,6 @@ function ntt_get_html_css( $class='' ) {
     } elseif( is_search() ) {
         $classes[] = 'custom-index-view';
         $classes[] = 'search-results-view';
-    }
-
-    /**
-     * Entity Widgets Ability Status
-     */
-    $r_entity_widgets = array(
-        'entity-primary-axns',
-        'entity-banner-aside',
-        'entity-header-aside',
-        'entity-main-header-aside',
-        'entity-main-main-aside',
-        'entity-footer-aside',
-    );
-
-    foreach ( $r_entity_widgets as $entity_widgets ) {
-        
-        if ( is_active_sidebar( $entity_widgets ) ) {
-            $classes[] = $entity_widgets. '--enabled';
-        } else {
-            $classes[] = $entity_widgets. '--disabled';
-        }
     }
 
     /**
@@ -309,8 +308,6 @@ function ntt_get_html_css( $class='' ) {
 
     /**
      * Filters the list of CSS html classes.
-     *
-     * @since NTT 0.0.91
      *
      * @param array $classes An array of body classes.
      * @param array $class   An array of additional classes added to the body.

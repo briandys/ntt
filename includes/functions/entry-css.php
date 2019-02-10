@@ -147,7 +147,7 @@ function ntt_get_empty_entry_css( $class='' ) {
      * @param array $classes An array of classes.
      * @param array $class   An array of additional classes.
      */
-    $classes = apply_filters( 'ntt_empty_entry_css', $classes, $class );
+    $classes = apply_filters( 'ntt_empty_entry_css_wp_filter', $classes, $class );
  
     return array_unique( $classes );
 }
@@ -165,4 +165,4 @@ function ntt_empty_entry_css_type_classes( $classes ) {
     
     return $classes;
 }
-add_filter( 'ntt_empty_entry_css', 'ntt_empty_entry_css_type_classes' );
+add_filter( 'ntt_empty_entry_css_wp_filter', 'ntt_empty_entry_css_type_classes' );

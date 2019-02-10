@@ -57,36 +57,59 @@
 	}
 } )();
 
-var $document,
-    $window,
-    $html,
-    $body;
+/**
+ * Basic NTT Scripts
+ * From Twenty Nineteen WP Theme
+ */
+( function() {
 
-( function( $ ) {
+	var html = document.documentElement;
 
-  $document = $( document );
-  $window = $( window );
-  $html = $( document.documentElement );
-  $body = $( document.body );
+	/**
+	 * Add class
+	 *
+	 * @param {Object} el
+	 * @param {string} cls
+	 */
+	function addClass(el, cls) {
+		if ( ! el.className.match( '(?:^|\\s)' + cls + '(?!\\S)') ) {
+			el.className += ' ' + cls;
+		}
+	}
 
-  /**
-   * Document Ready
-   */
-  $document.ready( function() {
-      
-    $html
-        .addClass( 'dom--ready' )
-        .removeClass( 'dom--unready' );
-  } );
+	/**
+	 * Delete class
+	 *
+	 * @param {Object} el
+	 * @param {string} cls
+	 */
+	function deleteClass(el, cls) {
+		el.className = el.className.replace( new RegExp( '(?:^|\\s)' + cls + '(?!\\S)' ),'' );
+	}
 
-  /**
-   * Window Load
-   */
-  $window.load( function() {
+	function updateDomReadyCss() {
+		addClass( html, 'dom--ready');
+		deleteClass( html, 'dom--unready');
+	}
 
-      $html
-          .addClass( 'window--loaded' )
-          .removeClass( 'window--unloaded' );
-  } );
+	function updateWindowLoadedCss() {
+		addClass( html, 'window--loaded');
+		deleteClass( html, 'window--unloaded');
+	}
 
-} )( jQuery );
+	/**
+	 * Run our priority+ function as soon as the document is `ready`
+	 */
+	document.addEventListener( 'DOMContentLoaded', function() {
+		updateDomReadyCss();
+	});
+
+	/**
+	 * Run our priority+ function on load
+	 */
+	window.addEventListener( 'load', function() {
+		updateWindowLoadedCss();
+	});
+
+} )();
+
