@@ -69,10 +69,10 @@ $cancel_reply_link_mu .= '</span>';
 
 <section class="comment-md cm md" data-name="Comment Module">
     <div class="comment-md---cr cm---cr">
-        <div id="comments" class="comments <?php ntt_comments_css(); ?> cm-plural cp" data-name="Comments">
-            <div class="comments---cr cm-plural---cr">
-                <div class="comments-header cm-plural-header header cn" data-name="Comments Header">
-                    <div class="comments-header---cr cm-plural-header---cr">
+        <div id="comments" class="comments <?php ntt_comments_css(); ?> cp" data-name="Comments">
+            <div class="comments---cr">
+                <div class="comments-header header cn" data-name="Comments Header">
+                    <div class="comments-header---cr">
                         <h2 class="comments-name obj h" data-name="Comments Name">
                             <span class="txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
                         </h2>
@@ -82,13 +82,13 @@ $cancel_reply_link_mu .= '</span>';
                         ?>
                     </div>
                 </div>
-                <div class="comments-main cm-plural-main main cn" data-name="Comments Main">
-                    <div class="comments-main---cr cm-plural-main---cr">
+                <div class="comments-main main cn" data-name="Comments Main">
+                    <div class="comments-main---cr">
                 
                         <?php
                         if ( have_comments() ) {
                             ?>
-                            <ul class="comments---group group list">
+                            <ul class="comments-group group list">
                                 <?php
                                 wp_list_comments( array(
                                     'style'         => 'ul',
@@ -121,8 +121,8 @@ $cancel_reply_link_mu .= '</span>';
                 <?php
                 if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
                     ?>
-                    <div class="comments-footer cm-plural-footer footer cn" data-name="Comments Footer">
-                        <div class="comments-footer---cr cm-plural-footer---cr">
+                    <div class="comments-footer footer cn" data-name="Comments Footer">
+                        <div class="comments-footer---cr">
                             <?php ntt_comments_nav(); ?>
                         </div>
                     </div>

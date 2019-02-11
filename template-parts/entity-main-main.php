@@ -14,8 +14,8 @@
                     
                     if ( have_posts() ) {
                         ?>
-                        <div id="entries" class="entries cm-plural cp" data-name="Entries">
-                            <div class="entries---cr cm-plural---cr">
+                        <div id="entries" class="entries cp" data-name="Entries">
+                            <div class="entries---cr">
                                 <div class="entries-group group">
                                     <?php
                                     while ( have_posts() ) {
