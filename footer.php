@@ -49,10 +49,10 @@
                         
                         <div id="go-start-nav" class="go-start-nav nav cp" data-name="Go to Start Navigation">
                             <div class="go-start-nav---cr">
-                                
-                                <div title="<?php echo esc_attr( 'Go to Start' ); ?>" class="go-start-navi navi obj" data-name="Go to Start Navigation Item">
-                                    <a href="#start" title="<?php echo esc_attr( 'Go to Start' ); ?>">
-                                        <span class="txt"><?php esc_html_e( 'Go to Start', 'ntt' ); ?></span>
+                                <?php $go_start_text = __( 'Go to Start', 'ntt' ); ?>
+                                <div class="go-start-navi navi obj" data-name="Go to Start Navigation Item">
+                                    <a href="#start" title="<?php echo esc_attr( $go_start_text ); ?>">
+                                        <span class="txt"><?php echo esc_html( $go_start_text ); ?></span>
                                     </a>
                                 </div>
                             </div>

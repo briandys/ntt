@@ -3,6 +3,11 @@ function ntt_get_html_css( $class='' ) {
     
     $classes = array();
 
+    // Default CSS Class Names
+    $classes[] = 'ntt';
+    $classes[] = 'view';
+    $classes[] = 'no-js';
+
     if ( ! empty( $class ) ) {
         if ( !is_array( $class ) )
             $class = preg_split( '#\s+#', $class );
@@ -17,8 +22,8 @@ function ntt_get_html_css( $class='' ) {
     /**
      * Filters the list of CSS html classes.
      *
-     * @param array $classes An array of body classes.
-     * @param array $class   An array of additional classes added to the body.
+     * @param array $classes An array of classes.
+     * @param array $class   An array of additional classes.
      */
     $classes = apply_filters( 'ntt_html_css_wp_filter', $classes, $class );
  
@@ -30,6 +35,8 @@ function ntt_html_css( $class='' ) {
 }
 
 function ntt_widgets_html_css( $classes ) {
+
+    $enabled = '--1';
 	
 	// Entity Widgets Ability Status
     $r_entity_widgets = array(
@@ -43,9 +50,7 @@ function ntt_widgets_html_css( $classes ) {
 
     foreach ( $r_entity_widgets as $entity_widgets ) {
         if ( is_active_sidebar( $entity_widgets ) ) {
-            $classes[] = $entity_widgets. '--enabled';
-        } else {
-            $classes[] = $entity_widgets. '--disabled';
+            $classes[] = $entity_widgets. $enabled;
         }
     }
 	
@@ -58,10 +63,8 @@ function ntt_widgets_html_css( $classes ) {
     );
 
     foreach ( $r_entry_widgets as $entry_widgets ) {
-        if ( is_active_sidebar( $entry_widgets ) && is_singular() ) {
-            $classes[] = $entry_widgets. '--enabled';
-        } else {
-            $classes[] = $entry_widgets. '--disabled';
+        if ( is_singular() && is_active_sidebar( $entry_widgets ) ) {
+            $classes[] = $entry_widgets. $enabled;
         }
     }
 

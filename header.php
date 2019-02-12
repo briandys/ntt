@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> id="start" class="ntt view no-js <?php ntt_html_css(); ?>" data-name="View">
+<html <?php language_attributes(); ?> id="start" class="<?php ntt_html_css(); ?>" data-name="View">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">

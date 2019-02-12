@@ -2,34 +2,10 @@
 if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
     function ntt_comments_actions_snippet() {
         
-        $comments_int = (int) get_comments_number( get_the_ID() );
-        
-        // Population Status
-        if ( $comments_int == 1 ) {
-            $population_status = 'populated-comments populated-comments--single';
-        } elseif ( $comments_int > 1 ) {
-            $population_status = 'populated-comments populated-comments--multi';
-        } elseif ( $comments_int == 0 ) {
-            $population_status = 'empty-comments';
-        }
-        
-        // Ability Status
-        if ( comments_open() ) {
-            $ability_status = 'enabled-comments';
-
-            // Comment Order
-            if ( 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
-                $comment_order_status = ' '. 'ascending-comments';
-            } elseif ( 'asc' !== strtolower( get_option( 'comment_order', 'asc' ) ) ) {
-                $comment_order_status = ' '. 'descending-comments';
-            }
-        } else {
-            $ability_status = 'disabled-comments';
-            $comment_order_status = '';
-        }
+        $comments_count = (int) get_comments_number( get_the_ID() );
         ?>
 
-        <div class="comments-actions-snippet <?php echo esc_attr( $population_status ). ' '. esc_attr( $ability_status ). esc_attr( $comment_order_status ); ?> cp" data-name="Comments Actions Snippet">
+        <div class="comments-actions-snippet cp" data-name="Comments Actions Snippet">
             <div class="comments-actions-snippet---cr">
 
                 <div class="comments-population cp" data-name="Comments Population">
@@ -48,7 +24,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                         $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '0 Comment', 'ntt' ). '</span>';
             
                         // Populated Comments
-                        if ( $comments_int >= 1 ) {
+                        if ( $comments_count >= 1 ) {
                             comments_popup_link(
                                 '',                     // Zero Count
                                 $single_count_label,    // Single Count
@@ -119,7 +95,8 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                     $comment_creation_content_mu .= '</div>';
                 }
 
-                echo $comment_creation_content_mu; ?>
+                echo $comment_creation_content_mu;
+                ?>
                 
             </div>
         </div>

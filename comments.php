@@ -69,7 +69,7 @@ $cancel_reply_link_mu .= '</span>';
 
 <section class="comment-md cm md" data-name="Comment Module">
     <div class="comment-md---cr cm---cr">
-        <div id="comments" class="comments <?php ntt_comments_css(); ?> cp" data-name="Comments">
+        <div id="comments" class="comments cp" data-name="Comments">
             <div class="comments---cr">
                 <div class="comments-header header cn" data-name="Comments Header">
                     <div class="comments-header---cr">
@@ -88,16 +88,19 @@ $cancel_reply_link_mu .= '</span>';
                         <?php
                         if ( have_comments() ) {
                             ?>
-                            <ul class="comments-group group list">
-                                <?php
-                                wp_list_comments( array(
-                                    'style'         => 'ul',
-                                    'avatar_size'   => 48,
-                                    'callback'      => 'ntt_comment',
-                                    'echo'          => true,
-                                ) );
-                                ?>
-                            </ul>
+                            <div class="comments-group cp" data-name="Comments Group">
+                                <ul class="comments-group---cr">
+                                    
+                                    <?php
+                                    wp_list_comments( array(
+                                        'style'         => 'ul',
+                                        'avatar_size'   => 48,
+                                        'callback'      => 'ntt_comment',
+                                        'echo'          => true,
+                                    ) );
+                                    ?>
+                                </ul>
+                            </div>
                             <?php
                         } else {
 

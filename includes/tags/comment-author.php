@@ -39,7 +39,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 if ( get_option( 'show_avatars' ) == 1 ) {
                     ?>
 
-                    <span class="comment-author-avatar cm-avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
+                    <span class="comment-author-avatar cm-author-avatar obj" data-name="Comment Author Avatar" title="<?php echo esc_attr_x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' ). ' '. esc_attr( $comment_author ); ?>">
                         <?php
                         echo $image_label_start_mu;
                         echo get_avatar(

@@ -11,11 +11,11 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         
         $navi_text = '';
         $navi_text .= '<span class="page---text">'. esc_html__( 'Page', 'ntt' ). '</span>'. ' ';
-        $navi_text .= '<span class="page-number---txt num">%</span>';
+        $navi_text .= '<span class="page-number---txt num">'. esc_html( '%' ). '</span>';
 
         $defaults = array(
-            'before'            => '<ul class="entry-content-nav-group nav-group group list cp">',
-            'after'             => '</ul>',
+            'before'            => '<div class="entry-content-nav-group nav-group cp" data-name="Entry Content Navigation Group"><ul class="entry-content-nav-group---cr">',
+            'after'             => '</ul></div>',
             'text_before'       => '',
             'text_after'        => '',
             'next_or_number'    => 'number', 

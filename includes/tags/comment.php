@@ -19,8 +19,8 @@ if ( ! function_exists( 'ntt_comment') ) {
         }
         ?>
 
-        <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( 'comment-'. esc_attr( $comment_id ). ' '. 'p-comment h-entry cm-singular item cp'. ' '. $comment_hierarchy_css. ' '. $commenter_avatar_type_css ); ?> data-name="Comment">
-            <div class="comment---cr cm-singular---cr">
+        <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( 'comment-'. esc_attr( $comment_id ). ' '. 'p-comment h-entry item cp'. ' '. $comment_hierarchy_css. ' '. $commenter_avatar_type_css ); ?> data-name="Comment">
+            <div class="comment---cr">
                 <div class="comment-header cm-header header cn" data-name="Comment Header">
                     <div class="comment-header---cr cm-header---cr">
 

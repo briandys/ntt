@@ -1,7 +1,7 @@
-<article id="entry-<?php the_id(); ?>" <?php post_class(); ?> data-name="Entry">
-    <div class="entry---cr cm-singular---cr">
-        <div class="entry-header cm-header header cn" data-name="Entry Header">
-            <div class="entry-header---cr cm-header---cr ">
+<article id="entry-<?php the_id(); ?>" <?php post_class( ntt_get_comments_css() ); ?> data-name="Entry">
+    <div class="entry---cr">
+        <div class="entry-header header cn" data-name="Entry Header">
+            <div class="entry-header---cr">
                 <?php
                 ntt_entry_heading();
                 ntt_entry_admin_actions();
@@ -15,10 +15,10 @@
                 ?>
             </div>
         </div>
-        <div class="entry-main cm-main main cn" data-name="Entry Main">
-            <div class="entry-main---cr cm-main---cr">
-                <div class="entry-content cm-content-trunk content-trunk cp" data-name="Entry Content">
-                    <div class="entry-content---cr cm-content-trunk---cr">
+        <div class="entry-main main cn" data-name="Entry Main">
+            <div class="entry-main---cr">
+                <div class="entry-content content-trunk cp" data-name="Entry Content">
+                    <div class="entry-content---cr">
             
                         <?php
                         if ( is_singular() || is_home() || is_archive() ) {
@@ -43,8 +43,8 @@
         global $multipage;
         if ( is_singular() || $multipage || get_the_category_list() || get_the_tag_list() || is_active_sidebar( 'entry-footer-aside' ) ) {
             ?>
-            <div class="entry-footer cm-footer footer cn" data-name="Entry Footer">
-                <div class="entry-footer---cr cm-footer---cr">
+            <div class="entry-footer footer cn" data-name="Entry Footer">
+                <div class="entry-footer---cr">
                     <?php
                     ntt_entry_content_nav();
                     ntt_entry_meta_secondary();

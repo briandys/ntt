@@ -43,3 +43,23 @@ function ntt_custom_header_callback() {
         <?php
     }
 }
+
+/**
+ * Callback for WordPress 'prepend_attachment' filter.
+ * 
+ * Change the attachment page image size
+ * 
+ * @package WordPress
+ * @category Attachment
+ * @see wp-includes/post-template.php
+ * 
+ * @param string $attachment_content the attachment html
+ * @return string $attachment_content the attachment html
+ */
+function ntt_prepend_attachment( $attachment_content ){
+        
+    $attachment_content = sprintf( '<p class="attachment-visuals obj" data-name="Attachment Visuals">%s</p>', wp_get_attachment_link( 0, 'ntt-medium', false ) );
+    
+    return $attachment_content;
+}
+add_filter( 'prepend_attachment', 'ntt_prepend_attachment' );

@@ -10,8 +10,8 @@ function ntt_settings() {
     add_theme_support( 'post-thumbnails' );
     
     add_image_size( 'ntt-large', 1920, 1440 );
-    add_image_size( 'ntt-thumbnail', 1280, 960 );
-    add_image_size( 'ntt-hd-thumbnail', 1280, 800 );
+    add_image_size( 'ntt-medium', 1280, 960 );
+    add_image_size( 'ntt-medium-hd', 1280, 800 );
     
     add_theme_support( 'html5', array(
 		'search-form',
