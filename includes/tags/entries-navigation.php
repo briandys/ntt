@@ -37,7 +37,7 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         ?>
         
         <div role="navigation" class="entries-nav pagination adjacent-nav nav cp" data-name="Entries Navigation">
-            <div class="entries-nav---cr">
+            <div class="cr">
                 <?php
                 the_posts_pagination( array(
                     'screen_reader_text'    => __( 'Entries Navigation', 'ntt' ),
@@ -52,12 +52,10 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
                 ?>
 
                 <div class="page-indicator obj" data-name="Page Indicator">
-                    <span class="l">
-                        <span class="page---text"><?php echo esc_html( $page_text ); ?></span>
-                        <span class="current-page---txt num"><?php echo esc_html( $current_page ); ?></span>
-                        <span class="of---text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
-                        <span class="total-pages---txt num"><?php echo esc_html( $total_pages ); ?></span>
-                    </span>
+                    <span class="page---text"><?php echo esc_html( $page_text ); ?></span>
+                    <span class="current-page---txt num"><?php echo esc_html( $current_page ); ?></span>
+                    <span class="of---text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
+                    <span class="total-pages---txt num"><?php echo esc_html( $total_pages ); ?></span>
                 </div>
             </div>
         </div>

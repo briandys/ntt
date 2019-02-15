@@ -12,18 +12,13 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
             $author_avatar_type_class = $author_avatar_class . '--custom';
         }
         ?>
-
         <div class="entry-author cm-author <?php echo esc_attr( $author_avatar_type_class ); ?> p-author author h-card cp" data-name="Entry Author">
-            <div class="entry-author---cr cm-author---cr">
-
-                <span class="entry-author-glabel glabel obj" data-name="Entry Author Generic Label">
-                    <span class="l">
-                        <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
-                        <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
-                    </span>
+            <div class="cr">
+                <span class="entry-author-glabel obj">
+                    <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
+                    <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
                 </span>
-                
-                <span class="entry-author-name cm-author-name author-name p-name obj" data-name="Entry Author Name">
+                <span class="entry-author-name cm-author-name author-name p-name obj">
                     <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>" class="u-url">
                         <span class="txt"><?php echo esc_html( $entry_author ); ?></span>
                     </a>

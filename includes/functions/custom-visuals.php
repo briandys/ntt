@@ -36,7 +36,7 @@ function ntt_custom_header_callback() {
         ?>
         <style id="ntt-custom-header-colors-style">
             .entity-primary-name a,
-            .entity-primary-description .txt {
+            .entity-primary-description {
                 color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
             }
         </style>

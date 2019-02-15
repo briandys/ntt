@@ -2,7 +2,6 @@
 function ntt_register_wp_customize( $wp_customize ) {	
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
 	// Entity Name
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -101,7 +100,7 @@ function ntt_wp_customizer_color_patterns() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 	$saturation = absint( apply_filters( 'ntt_custom_colors_saturation', 50 ) ). '%';
 	$css = '
-	.wp-customizer-color-scheme--custom .entity-header---cr {
+	.wp-customizer-color-scheme--custom .entity-header > .cr {
 		background-color: hsl('. $hue. ', '. $saturation. ', 50%);
 	}
 	';

@@ -15,11 +15,9 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
         $delimeter_mu = '<span class="delimiter---txt">:</span>';
 
         // Generic Label Markup
-        $glabel_mu = '<span class="entry-'. esc_attr( '%4$s' ). '-datetime-glabel glabel obj" data-name="Entry'. ' '. esc_attr( '%3$s' ). ' '. 'DateTime Generic Label">';
-            $glabel_mu .= '<span class="l">';
-                $glabel_mu .= '<span class="'. esc_attr( '%5$s' ). '">'. esc_html( '%1$s' ). '</span>';
-                $glabel_mu .= ' '. '<span class="on---text">'. esc_html( '%2$s' ). '</span>';
-            $glabel_mu .= '</span>';
+        $glabel_mu = '<span class="entry-'. esc_attr( '%3$s' ). '-datetime-glabel obj">';
+            $glabel_mu .= '<span class="'. esc_attr( '%4$s' ). '">'. esc_html( '%1$s' ). '</span>';
+            $glabel_mu .= ' '. '<span class="on---text">'. esc_html( '%2$s' ). '</span>';
         $glabel_mu .= '</span>'. ' ';
 
         // Date Markup
@@ -38,10 +36,10 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
         ?>              
 
         <div class="entry-datetime datetime-trunk cm-datetime-trunk cp" data-name="Entry DateTime">
-            <div class="entry-datetime---cr cm-datetime-trunk---cr">
+            <div class="cr">
 
                 <div class="entry-published-datetime published-datetime cm-datetime datetime cp" data-name="Entry Published DateTime">
-                    <div class="entry-published-datetime---cr cm-datetime---cr">
+                    <div class="cr">
 
                         <?php 
                         // Date
@@ -72,7 +70,6 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                         printf( $glabel_mu,
                             $published_text,
                             $on_text,
-                            $published_text,
                             'published',
                             'published---text'
                         );
@@ -100,7 +97,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                 </div>
 
                 <div class="entry-modified-datetime modified-datetime cm-datetime datetime cp" data-name="Entry Modified DateTime">
-                    <div class="entry-modified-datetime---cr cm-datetime---cr">
+                    <div class="cr">
 
                         <?php
                         // Date
@@ -131,7 +128,6 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                         printf( $glabel_mu,
                             $updated_text,
                             $on_text,
-                            $updated_text,
                             'modified',
                             'updated---text'
                         );

@@ -1,7 +1,7 @@
 <article id="entry-<?php the_id(); ?>" <?php post_class( ntt_get_comments_css() ); ?> data-name="Entry">
-    <div class="entry---cr">
+    <div class="cr">
         <div class="entry-header header cn" data-name="Entry Header">
-            <div class="entry-header---cr">
+            <div class="cr">
                 <?php
                 ntt_entry_heading();
                 ntt_entry_admin_actions();
@@ -16,9 +16,9 @@
             </div>
         </div>
         <div class="entry-main main cn" data-name="Entry Main">
-            <div class="entry-main---cr">
+            <div class="cr">
                 <div class="entry-content content-trunk cp" data-name="Entry Content">
-                    <div class="entry-content---cr">
+                    <div class="cr">
             
                         <?php
                         if ( is_singular() || is_home() || is_archive() ) {
@@ -39,12 +39,14 @@
                 <?php ntt_entry_main_aside(); ?>
             </div>
         </div>
+        
         <?php
         global $multipage;
+        
         if ( is_singular() || $multipage || get_the_category_list() || get_the_tag_list() || is_active_sidebar( 'entry-footer-aside' ) ) {
             ?>
             <div class="entry-footer footer cn" data-name="Entry Footer">
-                <div class="entry-footer---cr">
+                <div class="cr">
                     <?php
                     ntt_entry_content_nav();
                     ntt_entry_meta_secondary();

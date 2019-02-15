@@ -30,29 +30,23 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
             $navi_current_mu .= '</div>'; ?>
 
             <div class="breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
-                <div class="breadcrumbs-nav---cr">
-                    <div class="breadcrumbs-nav-name nav-name obj h" data-name="Breadcrumbs Navigation Name">
-                        <span class="txt"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></span>
-                    </div>
-                    <div class="breadcrumbs-nav-group nav-group cp" data-name="Breadcrumbs Navigation Group">
-                        <div class="breadcrumbs-nav-ancestors-group cp" data-name="Breadcrumbs Navigation Ancestors Group">
-                            <?php echo $breadcrumbs_ancestors_mu; ?>
+                <div class="cr">
+                    <div class="breadcrumbs-nav-name nav-name obj"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
+                    <div class="breadcrumbs-nav-content cp" data-name="Breadcrumbs Navigation Content">
+                        <div class="cr">
+                            <div class="breadcrumbs-nav-ancestors-group cp"><?php echo $breadcrumbs_ancestors_mu; ?></div>
+                            <?php echo $navi_current_mu; ?>
                         </div>
-                        <?php echo $navi_current_mu; ?>
                     </div>
-                
                 </div>
             </div>
             <?php    
         }
 
         if ( is_attachment() ) {
-            the_post_navigation(
-                array(
-                    'prev_text' => sprintf( '<span class="published-in---text">'. _x( 'Published in', 'Published in [Entry Name]', 'ntt' ). '</span>'. ' '. '<span class="entry-name---txt">'. esc_html( '%s' ). '</span>',
-                        '%title'
-                    ),
-                )
+            the_post_navigation( array(
+                'prev_text' => sprintf( '<span class="published-in---text">'. _x( 'Published in', 'Published in [Entry Name]', 'ntt' ). '</span>'. ' '. '<span class="entry-name---txt">'. esc_html( '%s' ). '</span>',
+                '%title' ), )
             );
         }
     }

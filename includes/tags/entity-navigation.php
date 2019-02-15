@@ -7,23 +7,21 @@ register_nav_menu( 'entity-primary-nav', __( 'Primary Navigation', 'ntt' ) );
 if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
     function ntt_entity_primary_nav() {
         
-        $group_mu_start = '<ul class="entity-primary-nav-group---cr">';
+        $group_mu_start = '<ul class="cr">';
         $group_mu_end   = '</ul>';
         
         $label_mu_start = '<span class="txt">';
         $label_mu_end   = '</span>';
         
-        $nav_group_css  = 'entity-primary-nav-group nav-group group cp';
+        $nav_group_css  = 'entity-primary-nav-group nav-group cp';
         
         if ( wp_nav_menu( array( 'theme_location' => 'entity-primary-nav', 'echo' => false, ) ) !== false) {
             ?>
 
             <nav role="navigation" id="entity-primary-nav" class="entity-primary-nav entity-nav nav cp" data-name="Entity Primary Navigation">
-                <div class="entity-primary-nav---cr">
+                <div class="cr">
                     
-                    <h2 class="entity-primary-nav-name nav-name obj h" data-name="Entity Primary Navigation Name">
-                        <span class="txt"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></span>
-                    </h2>
+                    <h2 class="entity-primary-nav-name nav-name obj"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
                     
                     <?php
                     function escape_html_the_title( $title, $id = null ) {
@@ -84,20 +82,18 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
             ?>
 
             <div role="navigation" id="entity-secondary-nav" class="entity-secondary-nav entity-nav nav cp" data-name="Entity Secondary Navigation">
-                <div class="entity-secondary-nav---cr">
+                <div class="cr">
                     
-                    <div class="entity-secondary-nav-name nav-name obj h" data-name="Entity Secondary Navigation Name">
-                        <span class="txt"><?php esc_html_e( 'Secondary Navigation', 'ntt' ); ?></span>
-                    </div>
+                    <div class="entity-secondary-nav-name nav-name obj"><?php esc_html_e( 'Secondary Navigation', 'ntt' ); ?></div>
 
                     <?php
                     wp_nav_menu( array(
                         'theme_location'    => 'entity-secondary-nav',
                         'container'         => 'div',
-                        'container_class'   => 'entity-secondary-nav-group nav-group group cp',
+                        'container_class'   => 'entity-secondary-nav-group nav-group cp',
                         'link_before'       => '<span class="txt">',
                         'link_after'        => '</span>',
-                        'items_wrap'        => '<ul class="entity-secondary-nav-group---cr">'. '%3$s'. '</ul>',
+                        'items_wrap'        => '<ul class="cr">'. '%3$s'. '</ul>',
                     ) );
                     ?>
                 </div>

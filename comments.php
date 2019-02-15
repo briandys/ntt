@@ -5,33 +5,31 @@ if ( post_password_required() ) {
 	return;
 }
 
+$comment_text = __( 'Comment', 'ntt' );
+$log_in_text = __( 'Log In', 'ntt' );
+$log_out_text = __( 'Log Out', 'ntt' );
+
 // title_reply
-$title_reply_mu = '<div class="compose-comment-glabel obj" data-name="Compose Comment Generic Label">';
-    $title_reply_mu .= '<span class="l">';
-        $title_reply_mu .= '<span class="compose---text">'. esc_html_x( 'Compose', 'Compose Comment', 'ntt' ). '</span>';
-        $title_reply_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Compose Comment', 'ntt' ). '</span>';
-    $title_reply_mu .= '</span>';
+$title_reply_mu = '<div class="compose-comment-glabel obj">';
+    $title_reply_mu .= '<span class="compose---text">'. esc_html_x( 'Compose', 'Compose Comment', 'ntt' ). '</span>';
+    $title_reply_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Compose Comment', 'ntt' ). '</span>';
 $title_reply_mu .= '</div>';
 
 // title_reply_to
-$title_reply_to_mu = '<div class="comment-reply-glabel obj" data-name="Comment Reply  Generic Label">';
-    $title_reply_to_mu .= '<span class="txt">'. esc_html__( 'Reply to', 'ntt' ). ' '. '%s'. '</span>';
-$title_reply_to_mu .= '</div>';
+$title_reply_to_mu = '<div class="comment-reply-glabel obj">'. esc_html__( 'Reply to', 'ntt' ). ' '. '%s'. '</div>';
 
 // logged_in_as
 $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Account Log Status">';
-    $logged_in_as_mu .= '<div class="admin-account-log-status---cr">';
+    $logged_in_as_mu .= '<div class="cr">';
         $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn axn obj" data-name="Log Out Admin Account Action">';
-            $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. esc_attr( 'Log Out' ).'">';
-                $logged_in_as_mu .= '<span class="txt">'. esc_html__( 'Log Out', 'ntt' ). '</span>';
+            $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. esc_attr( $log_out_text ).'">';
+                $logged_in_as_mu .= '<span class="txt">'. esc_html( $log_out_text ). '</span>';
             $logged_in_as_mu .= '</a>';
         $logged_in_as_mu .= '</div>';
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
-            $logged_in_as_mu .= '<div class="logged-in-admin-account---cr">';
-                $logged_in_as_mu .= '<span class="logged-in-admin-account-glabel obj" data-name="Logged In Admin Account Generic Label">';
-                    $logged_in_as_mu .= '<span class="txt">'. esc_html__( 'Logged in as', 'ntt' ). '</span>';
-                $logged_in_as_mu .= '</span>';
-                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name obj" data-name="Logged In Admin Account Name">';
+            $logged_in_as_mu .= '<div class="cr">';
+                $logged_in_as_mu .= '<span class="logged-in-admin-account-glabel obj">'. esc_html_x( 'Logged in as', 'Logged in as [Name]', 'ntt' ). '</span>';
+                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name obj">';
                     $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'">';
                         $logged_in_as_mu .= '<span class="txt">'. $user_identity.'</span>';
                     $logged_in_as_mu .= '</a>';
@@ -43,19 +41,17 @@ $logged_in_as_mu .= '</div>';
 
 // must_log_in
 $must_log_in_mu = '<div class="log-in-required-note note cp" data-name="Log In Required Note">';
-    $must_log_in_mu .= '<div class="log-in-required-note---cr note---cr">';
-        $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr__( 'Log In', 'ntt' ).'">'. esc_html_x( 'Log In', 'Log In to comment.', 'ntt' ). '</a> '. ' '. '<span class="to-comment-text">'. esc_html_x( 'to comment.', 'Log In to comment.', 'ntt' ). '</span>'. '</p>';
+    $must_log_in_mu .= '<div class="cr">';
+        $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr( $log_in_text ).'">'. esc_html( $log_in_text ). '</a> '. ' '. '<span class="to-comment---text">'. esc_html_x( 'to comment.', 'Log In to comment.', 'ntt' ). '</span>'. '</p>';
     $must_log_in_mu .= '</div>';
 $must_log_in_mu .= '</div>';
 
 // Comment Author Message Field | comment_field
 $comment_field_mu = '<div class="comment-author-message-field field cp" data-name="Comment Author Message Field">';
-    $comment_field_mu .= '<div class="comment-author-message-field---cr field---cr ">';
-    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label obj" data-name="Comment Author Message Field Label">';
-        $comment_field_mu .= '<span class="txt">'. esc_attr__( 'Comment', 'ntt' ). '</span>';
-    $comment_field_mu .= '</label>';
-        $comment_field_mu .= '<div class="comment-author-message-field-textbox textbox obj" data-name="Comment Author Message Field Textbox">';
-            $comment_field_mu .= '<textarea name="comment" placeholder="'. __( 'Comment', 'ntt' ).'" title="'. __( 'Comment', 'ntt' ).'" maxlength="65525" required id="comment" class="text-input"></textarea>';
+    $comment_field_mu .= '<div class="cr ">';
+    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label obj">'. esc_html( $comment_text ). '</label>';
+        $comment_field_mu .= '<div class="comment-author-message-field-textbox textbox obj">';
+            $comment_field_mu .= '<textarea name="comment" placeholder="'. esc_attr( $comment_text ).'" title="'. esc_attr( $comment_text ).'" maxlength="65525" required id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
     $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
@@ -68,14 +64,12 @@ $cancel_reply_link_mu .= '</span>';
 ?>
 
 <section class="comment-md cm md" data-name="Comment Module">
-    <div class="comment-md---cr cm---cr">
+    <div class="cr">
         <div id="comments" class="comments cp" data-name="Comments">
-            <div class="comments---cr">
+            <div class="cr">
                 <div class="comments-header header cn" data-name="Comments Header">
-                    <div class="comments-header---cr">
-                        <h2 class="comments-name obj h" data-name="Comments Name">
-                            <span class="txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
-                        </h2>
+                    <div class="cr">
+                        <h2 class="comments-name obj"><?php esc_html_e( 'Comments', 'ntt' ); ?></h2>
                         <?php
                         ntt_comments_actions_snippet();
                         ntt_comments_nav();
@@ -83,13 +77,13 @@ $cancel_reply_link_mu .= '</span>';
                     </div>
                 </div>
                 <div class="comments-main main cn" data-name="Comments Main">
-                    <div class="comments-main---cr">
+                    <div class="cr">
                 
                         <?php
                         if ( have_comments() ) {
                             ?>
-                            <div class="comments-group cp" data-name="Comments Group">
-                                <ul class="comments-group---cr">
+                            <div class="comments-group cp">
+                                <ul class="cr">
                                     
                                     <?php
                                     wp_list_comments( array(
@@ -111,7 +105,7 @@ $cancel_reply_link_mu .= '</span>';
                             }
                             ?>
                             <div class="empty-comments-note note cp" data-name="Empty Comments Note">
-                                <div class="empty-comments-note---cr note---cr">
+                                <div class="cr">
                                     <p><?php echo $comments_content_esc ?></p>
                                 </div>
                             </div>
@@ -125,7 +119,7 @@ $cancel_reply_link_mu .= '</span>';
                 if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
                     ?>
                     <div class="comments-footer footer cn" data-name="Comments Footer">
-                        <div class="comments-footer---cr">
+                        <div class="cr">
                             <?php ntt_comments_nav(); ?>
                         </div>
                     </div>

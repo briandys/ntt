@@ -3,12 +3,12 @@ $GLOBALS['ntt_name'] = 'NTT';
 
 // Functions
 $r_functions = array(
-    // First things first
+    // Primary
     'back-compatibility',
     'settings',
     'hooks',
     'styles-scripts',
-    // Second things second
+    // Secondary
     'comments-css',
     'comment-form',
     'custom-visuals',

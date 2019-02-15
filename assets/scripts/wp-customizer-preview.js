@@ -12,7 +12,7 @@
     // Entity Description
     wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.entity-primary-description .txt' ).text( to );
+			$( '.entity-primary-description' ).text( to );
 		} );
 	} );
 	
@@ -22,19 +22,19 @@
 			
             if ( 'blank' === to ) {
 				$html
-                    .addClass( 'entity-name-description--disabled' );
+                    .addClass( 'entity-name-description--0' );
 			} else {
 
 				if ( ! to.length ) {
 					$( '#ntt-custom-header-colors-style' ).remove();
 				}
 				
-                $( '.entity-primary-name a, .entity-primary-description .txt' ).css( {
+                $( '.entity-primary-name a, .entity-primary-description' ).css( {
 					color: to
 				} );
 				
                 $html
-                    .removeClass( 'entity-name-description--disabled' );
+                    .removeClass( 'entity-name-description--0' );
 			}
 		} );
 	} );

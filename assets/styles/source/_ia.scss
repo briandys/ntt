@@ -47,7 +47,7 @@
 .entity-copyright > *,
 .entity-maker-tag > *,
 .go-start-navi > *,
-.widget---cr:not(.widget_search---cr) > *:not(.widget-name) {
+.widget > .cr:not(.widget_search > .cr) > *:not(.widget-name) {
 	display: none;
 }
 */

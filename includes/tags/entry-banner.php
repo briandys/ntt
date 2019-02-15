@@ -5,7 +5,7 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
         if ( '' !== get_the_post_thumbnail() || is_active_sidebar( 'entry-banner-aside' ) ) {
             ?>
             <div class="entry-banner banner cp" data-name="Entry Banner">
-                <div class="entry-banner---cr">
+                <div class="cr">
 
                 <?php
                 if ( '' !== get_the_post_thumbnail() ) {

@@ -6,10 +6,8 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
             ?>
 
             <div class="comments-nav adjacent-nav nav cp" data-name="Comments Navigation">
-                <div class="comments-nav---cr">
-                    <div class="comments-nav-name nav-name obj h" data-name="Comments Navigation Name">
-                        <span class="txt"><?php esc_html_e( 'Comments Navigation', 'ntt' ); ?></span>
-                    </div>
+                <div class="cr">
+                    <div class="comments-nav-name nav-name obj"><?php esc_html_e( 'Comments Navigation', 'ntt' ); ?></div>
             
                     <?php
                     // Texts
@@ -40,16 +38,14 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
                     if ( get_next_comments_link() ) {
                         ?>
 
-                        <div class="next-comments-navi adjacent-navi navi obj" data-name="Next Comments Navigation Item">
-                            <?php next_comments_link( $next_navi ); ?>
-                        </div>
+                        <div class="next-comments-navi adjacent-navi obj"><?php next_comments_link( $next_navi ); ?></div>
                         <?php
                     }
                 
                     if ( get_previous_comments_link() ) {
                         ?>
 
-                        <div class="previous-comments-navi adjacent-navi navi obj" data-name="Previous Comments Navigation Item">
+                        <div class="previous-comments-navi adjacent-navi obj">
                             <?php previous_comments_link( $previous_navi ); ?>
                         </div>
                         <?php

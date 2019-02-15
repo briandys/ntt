@@ -6,9 +6,9 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
         ?>
         
         <div class="comment-datetime cm-datetime-trunk datetime-trunk cp" data-name="Comment DateTime">
-            <div class="comment-datetime---cr cm-datetime-trunk---cr">
+            <div class="cr">
                 <div class="comment-published-datetime published-datetime cm-datetime datetime cp" data-name="Comment Published DateTime">
-                    <div class="comment-published-datetime---cr cm-datetime---cr">
+                    <div class="cr">
 
                         <?php
                         // Date
@@ -37,9 +37,7 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                         $time_mu .= '<span class="second---txt">'. esc_html( $second_text ). '</span>';
                         ?>
 
-                        <span class="comment-published-datetime-glabel glabel obj" data-name="Comment Published DateTime Generic Label">
-                            <span class="txt"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
-                        </span>
+                        <span class="comment-published-datetime-glabel obj"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
 
                         <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="comment-published-date published-date cm-date dt-published date obj" data-name="Comment Published Date">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Commented on [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">

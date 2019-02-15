@@ -1,7 +1,7 @@
 <div id="entity-main-main" class="entity-main-main main cn" data-name="Entity Main Main">
-    <div class="entity-main-main---cr">
+    <div class="cr">
         <div id="content" class="entry-md cm md" data-name="Entry Module">
-            <div class="entry-md---cr cm---cr">
+            <div class="cr">
 
                 <?php
                 if ( is_singular() ) {
@@ -15,7 +15,7 @@
                     if ( have_posts() ) {
                         ?>
                         <div id="entries" class="entries cp" data-name="Entries">
-                            <div class="entries---cr">
+                            <div class="cr">
                                 <?php
                                 while ( have_posts() ) {
                                     the_post();

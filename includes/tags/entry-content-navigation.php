@@ -14,7 +14,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         $navi_text .= '<span class="page-number---txt num">'. esc_html( '%' ). '</span>';
 
         $defaults = array(
-            'before'            => '<div class="entry-content-nav-group nav-group cp" data-name="Entry Content Navigation Group"><ul class="entry-content-nav-group---cr">',
+            'before'            => '<div class="entry-content-nav-group nav-group cp"><ul class="cr">',
             'after'             => '</ul></div>',
             'text_before'       => '',
             'text_after'        => '',
@@ -43,10 +43,10 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
                     $content_pagination_group_mu .= ' ';
                     
                     if ( $i != $page || ( ( ! $more ) && ( $page == 1 ) ) ) {
-                        $content_pagination_group_mu .= '<li class="entry-content-navi navi obj">';
+                        $content_pagination_group_mu .= '<li class="entry-content-navi obj">';
                         $content_pagination_group_mu .= _wp_link_page( $i );
                     } else {
-                        $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi navi obj">';
+                        $content_pagination_group_mu .= '<li class="entry-content-navi--current entry-content-navi obj">';
                         $content_pagination_group_mu .= '<span class="l">';
                     }
 
@@ -82,10 +82,8 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
             ?>
 
             <div role="navigation" class="entry-content-nav nav pagination cp" data-name="Entry Content Navigation">
-                <div class="entry-content-nav---cr">
-                    <div class="entry-content-nav-name nav-name obj h" data-name="Entry Content Navigation Name">
-                        <span class="txt"><?php esc_html_e( 'Entry Content Navigation', 'ntt' ); ?></span>
-                    </div>
+                <div class="cr">
+                    <div class="entry-content-nav-name nav-name obj"><?php esc_html_e( 'Entry Content Navigation', 'ntt' ); ?></div>
                 
                     <?php echo $content_pagination_group_mu; ?>
                 </div>

@@ -22,9 +22,9 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
         ?>
 
         <div class="entry-heading heading cp" data-name="Entry Heading">
-            <div class="entry-heading---cr">
+            <div class="cr">
 
-            <<?php echo esc_attr( $heading_level ); ?> class="entry-name obj h" data-name="Entry Name">
+            <<?php echo esc_attr( $heading_level ); ?> class="entry-name obj">
                 <?php echo $anchor_mu_start. $entry_name. $anchor_mu_end; ?>
             </<?php echo esc_attr( $heading_level ); ?>>
 

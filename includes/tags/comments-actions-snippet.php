@@ -6,10 +6,10 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
         ?>
 
         <div class="comments-actions-snippet cp" data-name="Comments Actions Snippet">
-            <div class="comments-actions-snippet---cr">
+            <div class="cr">
 
                 <div class="comments-population cp" data-name="Comments Population">
-                    <div class="comments-population---cr">
+                    <div class="cr">
 
                         <div class="comments-count count obj" data-name="Comments Count">
         
@@ -89,7 +89,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                 } else {
                     
                     $comment_creation_content_mu = '<div class="disabled-comments-note note cp" data-name="Disabled Comments Note">';
-                        $comment_creation_content_mu .= '<div class="disabled-comments-note---cr note---cr">';
+                        $comment_creation_content_mu .= '<div class="cr">';
                             $comment_creation_content_mu .= '<p>'. esc_html__( 'Commenting is disabled.', 'ntt' ) . '</p>';
                         $comment_creation_content_mu .= '</div>';
                     $comment_creation_content_mu .= '</div>';

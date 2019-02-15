@@ -9,8 +9,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         $value_mu = '';
         $property_mu = '';
         
-        $text_label_start_mu = '<span class="l">';
-        $text_label_end_mu = '</span>';
+        $text_label_start_mu = '';
+        $text_label_end_mu = '';
         $entity_view_item_count_anchor_start_mu = '';
         $anchor_end_mu = '';
         
@@ -136,8 +136,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         ?>
 
         <div class="entity-view-heading heading cp" data-name="Entity View Heading">
-            <div class="entity-view-heading---cr">
-                <div class="entity-view-name obj" data-name="Entity View Name">
+            <div class="cr">
+                <div class="entity-view-name obj">
                     
                     <?php
                     echo $text_label_start_mu;
@@ -175,8 +175,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
 
                     <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
                         <?php echo $text_label_start_mu; ?>
-                            <span class="entity-view-item-count-number---text num"><?php echo esc_html( $query_found_posts ); ?></span>
-                            <span class="entity-view-item-count-glabel---text"><?php echo esc_html( $item_count_glabel ); ?></span>
+                            <span class="count---txt num"><?php echo esc_html( $query_found_posts ); ?></span>
+                            <span class="glabel---txt"><?php echo esc_html( $item_count_glabel ); ?></span>
                         <?php echo $text_label_end_mu; ?>
                     </div>
 

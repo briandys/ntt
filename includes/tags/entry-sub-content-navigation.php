@@ -24,8 +24,8 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         );
         ?>
         
-        <div role="navigation" class="entry-sub-content-nav nav pagination cp" data-name="Entry Sub-Content Navigation">
-            <div class="entry-sub-content-nav---cr">
+        <div role="navigation" class="entry-sub-content-nav pagination nav cp" data-name="Entry Sub-Content Navigation">
+            <div class="cr">
                 <?php
                 $big_number = 999999999;
                 echo paginate_links( array(

@@ -39,12 +39,10 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             ?>
 
             <div role="navigation" class="entry-nav adjacent-nav nav cp" data-name="Entry Navigation">
-                <div class="entry-nav---cr">
-                    <div class="entry-nav-name nav-name obj h" data-name="Entry Navigation Name">
-                        <span class="txt"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></span>
-                    </div>
-                    <div class="entry-nav-group nav-group group cp" data-name="Entry Navigation Group">
-                        <div class="entry-nav-group---cr">
+                <div class="-cr">
+                    <div class="entry-nav-name nav-name obj"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></div>
+                    <div class="entry-nav-group nav-group cp">
+                        <div class="cr">
                     
                             <?php
                             if ( get_next_post_link() ) {
@@ -58,7 +56,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                                 }
                                 ?>
                                 
-                                <div class="next-entry-navi entry-navi navi obj" data-name="Next Entry Navigation Item">
+                                <div class="next-entry-navi entry-navi obj">
                                     <?php next_post_link( '%link', $next_navi. $next_post_thumbnail ); ?>
                                 </div>
                                 <?php
@@ -75,9 +73,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                                 }
                                 ?>
                                 
-                                <div class="previous-entry-navi entry-navi navi obj" data-name="Previous Entry Navigation Item">
-                                    <?php previous_post_link( '%link', $previous_navi. $prev_post_thumbnail ); ?>
-                                </div>
+                                <div class="previous-entry-navi entry-navi obj"><?php previous_post_link( '%link', $previous_navi. $prev_post_thumbnail ); ?></div>
                                 <?php 
                             }
 
