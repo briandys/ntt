@@ -18,7 +18,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         if ( is_singular() || is_404() ) {
 
             $property_suffix = __( 'Entry', 'ntt' );
-            $property_mu = '<span class="property---txt">'. esc_html( $property_suffix ). '</span>';
+            $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
 
             if ( is_single() ) {
                 $value = __( 'Post', 'ntt' );
@@ -38,12 +38,13 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         } elseif ( is_home() || is_archive() || is_search() ) {
 
             $property_suffix = __( 'Entries', 'ntt' );
-            $property_mu = '<span class="property---txt">'. esc_html( $property_suffix ). '</span>';
+            $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
             $value_attr = '';
 
             // Current Index
             if ( is_home() ) {
                 $value = __( 'Current', 'ntt' );
+                $value_attr = 'txt';
             }
             
             // Archive Index

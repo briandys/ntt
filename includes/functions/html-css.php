@@ -1,12 +1,41 @@
 <?php
 function ntt_get_html_css( $class='' ) {
     
+    global $wp_query;
+    $query_found_posts = $wp_query->found_posts;
+    $zero_search_index = ( is_search() && $query_found_posts == 0 );
+    $search_index = ( is_search() && $query_found_posts !== 0 );
+    
     $classes = array();
 
     // Default CSS Class Names
     $classes[] = 'ntt';
     $classes[] = 'view';
     $classes[] = 'no-js';
+
+
+
+    // Entry Indexing Type
+    if ( is_home() ) {
+        $classes[] = 'current-index-view';
+    } elseif ( is_archive() ) {
+        $classes[] = 'archive-index-view';
+    } elseif( $search_index ) {
+        $classes[] = 'search-index-view';
+    }
+
+    /**
+     * Entry
+     */
+
+    // Entity Count Types
+    if ( is_singular() ) {
+        $classes[] = 'singular-view';
+	} elseif ( is_404() || $zero_search_index ) {
+		$classes[] = 'none-view';
+	} elseif ( is_home() || is_archive() || $search_index ) {
+        $classes[] = 'plural-view';
+    }
 
     if ( ! empty( $class ) ) {
         if ( !is_array( $class ) )

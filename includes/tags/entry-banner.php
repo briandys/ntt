@@ -20,9 +20,19 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
                     ?>
                     
                     <div class="entry-banner-visuals banner-visuals obj" data-name="Entry Banner Visuals">
-                        <?php echo $anchor_mu_start; ?>
-                            <?php the_post_thumbnail( 'ntt-large', array( 'class' => 'u-featured', ) ); ?>
-                        <?php echo $anchor_mu_end; ?>
+                        <?php
+                        echo $anchor_mu_start;
+                            
+                        if ( is_singular() ) {
+                            $featured_image_size = 'ntt-large';
+                        } else {
+                            $featured_image_size = 'ntt-small';
+                        }
+
+                        the_post_thumbnail( $featured_image_size, array( 'class' => 'u-featured', ) );
+                        
+                        echo $anchor_mu_end;
+                        ?>
                     </div>
                     <?php
                 }

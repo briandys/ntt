@@ -12,6 +12,8 @@ function ntt_settings() {
     add_image_size( 'ntt-large', 1920, 1440 );
     add_image_size( 'ntt-medium', 1280, 960 );
     add_image_size( 'ntt-medium-hd', 1280, 800 );
+    add_image_size( 'ntt-small', 1024, 768 );
+    add_image_size( 'ntt-thumbnail', 640, 480 );
     
     add_theme_support( 'html5', array(
 		'search-form',

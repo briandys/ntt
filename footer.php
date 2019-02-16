@@ -31,9 +31,9 @@
                                 <div class="entity-copyright obj" data-name="Entity Copyright"><?php esc_html_e( 'Copyright', 'ntt' ); echo ' '. esc_html( apply_filters( 'ntt_entity_copyright_year_wp_filter', date_i18n( 'Y' ) ) ); ?></div>
                                 <div class="entity-maker-tag obj" data-name="Entity Maker Tag">
                                     <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_wp_filter', '//ntt.dysinelab.com/themes/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Made with [Theme Name] by [Entity Maker Name]', 'ntt' ). ' '. esc_attr( $entity_maker_tag_theme_name_wp_filter ). ' '. esc_attr_x( 'by', 'Made with [Theme Name] by [Entity Maker Name]', 'ntt' ). ' '. esc_attr( $entity_maker_tag_maker_name_wp_filter ); ?>">
-                                        <span class="wp-theme-name---txt"><?php echo esc_html( $entity_maker_tag_theme_name_wp_filter ); ?></span>
+                                        <span class="theme---txt"><?php echo esc_html( $entity_maker_tag_theme_name_wp_filter ); ?></span>
                                         <span class="by---text"><?php echo esc_html_x( 'by', 'Made with [Theme Name] by [Entity Maker Name]', 'ntt' ); ?></span>
-                                        <span class="entity-maker-name---txt"><?php echo esc_html( $entity_maker_tag_maker_name_wp_filter ); ?></span>
+                                        <span class="maker-name---txt"><?php echo esc_html( $entity_maker_tag_maker_name_wp_filter ); ?></span>
                                     </a>
                                 </div>
                             </div>

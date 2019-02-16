@@ -23,7 +23,7 @@ function ntt_inline_scripts() {
         ( function() {
             var html = document.documentElement;
             html.className = html.className.replace( /\bno-js\b/,'js' );
-            html.className += ' ' + 'dom--unready';
+            html.className += ' ' + 'dom--unloaded';
             html.className += ' ' + 'window--unloaded';
         } )();
     </script>
@@ -41,7 +41,7 @@ if ( is_child_theme() ) {
     add_action('wp_enqueue_scripts', 'ntt_kid_styles', 0);
 
     function ntt_kid_theme_html_css( $classes ) {
-        $classes[] = sanitize_title( $GLOBALS['ntt_kid_name'] ). '-theme';
+        $classes[] = sanitize_title( $GLOBALS['ntt_kid_name'] );
         return $classes;
     }
     add_filter( 'ntt_html_css_wp_filter', 'ntt_kid_theme_html_css' );

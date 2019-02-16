@@ -14,22 +14,19 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
 
         // Entry Name
         if ( get_the_title() ) {
-            $entry_name = '<span class="entry-name---txt">'. esc_html( get_the_title() ). '</span>';
+            $entry_name = '<span class="txt">'. esc_html( get_the_title() ). '</span>';
         } else {
-            $entry_name = '<span class="entry---text">'. _x( 'Entry', 'Entry [Entry ID]', 'ntt' ). '</span>'. ' ';
-            $entry_name .= '<span class="entry-id---txt num">'. get_the_id(). '</span>';
+            $entry_name = '<span class="txt">'. _x( 'Entry', 'Entry [Entry ID]', 'ntt' ). get_the_id(). '</span>';
         }
         ?>
 
         <div class="entry-heading heading cp" data-name="Entry Heading">
             <div class="cr">
+                <<?php echo esc_attr( $heading_level ); ?> class="entry-name obj">
+                    <?php echo $anchor_mu_start. $entry_name. $anchor_mu_end; ?>
+                </<?php echo esc_attr( $heading_level ); ?>>
 
-            <<?php echo esc_attr( $heading_level ); ?> class="entry-name obj">
-                <?php echo $anchor_mu_start. $entry_name. $anchor_mu_end; ?>
-            </<?php echo esc_attr( $heading_level ); ?>>
-
-            <?php ntt_after_entry_name_wp_hook(); ?>
-                    
+                <?php ntt_after_entry_name_wp_hook(); ?>
             </div>
         </div>
         <?php

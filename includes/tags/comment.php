@@ -44,7 +44,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                     $requires_log_in_text_attr = ' '. '('. $requires_log_in_text. ')';
                                     ?>
 
-                                    <div class="comment-user-axns user-axns cm-axns axns cp" data-name="Comment User Actions">
+                                    <div class="comment-user-axns user-axns cm-axns cp" data-name="Comment User Actions">
                                         <div class="cr">
 
                                             <div class="comment-reply-axn reply-axn cm-axn axn p-modify obj" data-name="Comment Reply Action">

@@ -88,8 +88,8 @@
 	}
 
 	function updateDomReadyCss() {
-		addClass( html, 'dom--ready');
-		deleteClass( html, 'dom--unready');
+		addClass( html, 'dom--loaded');
+		deleteClass( html, 'dom--unloaded');
 	}
 
 	function updateWindowLoadedCss() {

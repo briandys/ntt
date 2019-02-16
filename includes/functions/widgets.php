@@ -25,7 +25,7 @@ function ntt_widgets() {
 
 		if ( is_active_sidebar( $aside )  ) {
 			?>
-			<div id="entity-primary-axns" class="entity-primary-axns axns cp" data-name="Entity Primary Actions">
+			<div id="entity-primary-axns" class="entity-primary-axns cp" data-name="Entity Primary Actions">
 				<div class="cr">
 					<?php dynamic_sidebar( $aside ); ?>
 				</div>
