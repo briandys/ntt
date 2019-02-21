@@ -1,9 +1,12 @@
 <?php
-// Within Entry Header
-if ( ! function_exists( 'ntt_entry_meta_primary' ) ) {
-    function ntt_entry_meta_primary() {
+/** Entry Primary Meta
+ * 
+ * Located in Entry Header
+ */
+if ( ! function_exists( 'ntt_entry_primary_meta' ) ) {
+    function ntt_entry_primary_meta() {
         ?>
-        <div class="entry-meta cp" data-name="Entry Meta">
+        <div class="entry-primary-meta cp" data-name="Entry Primary Meta">
             <div class="cr">
                 <?php
                 ntt_entry_datetime();
@@ -16,13 +19,16 @@ if ( ! function_exists( 'ntt_entry_meta_primary' ) ) {
     }
 }
 
-// Within Entry Footer
-if ( ! function_exists( 'ntt_entry_meta_secondary' ) ) {
-    function ntt_entry_meta_secondary() {
+/** Entry Secondary Meta
+ * 
+ * Located in Entry Footer
+ */
+if ( ! function_exists( 'ntt_entry_secondary_meta' ) ) {
+    function ntt_entry_secondary_meta() {
 
         if ( get_the_tag_list() ) {
             ?>
-            <div class="entry-meta cp" data-name="Entry Meta">
+            <div class="entry-secondary-meta cp" data-name="Entry Secondary Meta">
                 <div class="cr">
                     <?php ntt_entry_tags(); ?>
                 </div>

@@ -7,8 +7,8 @@
                 ntt_entry_admin_actions();
                 ntt_breadcrumbs_nav();
                 ntt_entry_content_nav();
-                ntt_entry_meta_primary();
-                ntt_after_entry_meta_wp_hook();
+                ntt_entry_primary_meta();
+                ntt_after_entry_primary_meta_wp_hook();
                 ntt_comments_actions_snippet();
                 ntt_entry_banner();
                 ntt_entry_header_aside();
@@ -49,7 +49,7 @@
                 <div class="cr">
                     <?php
                     ntt_entry_content_nav();
-                    ntt_entry_meta_secondary();
+                    ntt_entry_secondary_meta();
                     ntt_entry_footer_aside();
                     comments_template();
                     ?>

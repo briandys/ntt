@@ -20,8 +20,8 @@ function ntt_after_entry_name_wp_hook() {
 }
 
 // content.php
-function ntt_after_entry_meta_wp_hook() {
-    do_action( 'ntt_after_entry_meta_wp_hook' );
+function ntt_after_entry_primary_meta_wp_hook() {
+    do_action( 'ntt_after_entry_primary_meta_wp_hook' );
 }
 
 // content.php

@@ -38,7 +38,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             );
             ?>
 
-            <div role="navigation" class="entry-nav adjacent-nav nav cp" data-name="Entry Navigation">
+            <div role="navigation" class="entry-nav nav cp" data-name="Entry Navigation">
                 <div class="-cr">
                     <div class="entry-nav-name nav-name obj"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></div>
                     <div class="entry-nav-group nav-group cp">
@@ -50,9 +50,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                             if ( get_next_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
-                                    $next_post_thumbnail = '<span class="entry-navi---i">';
-                                    $next_post_thumbnail .= get_the_post_thumbnail( get_next_post()->ID, $featured_image_size );
-                                    $next_post_thumbnail .= '</span>';
+                                    $next_post_thumbnail = get_the_post_thumbnail( get_next_post()->ID, $featured_image_size );
                                 } else {
                                     $next_post_thumbnail = '';
                                 }
@@ -67,9 +65,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                             if ( get_previous_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
-                                    $prev_post_thumbnail = '<span class="entry-navi---i">';
-                                    $prev_post_thumbnail .= get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size );
-                                    $prev_post_thumbnail .= '</span>';
+                                    $prev_post_thumbnail = get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size );
                                 } else {
                                     $prev_post_thumbnail = '';
                                 }

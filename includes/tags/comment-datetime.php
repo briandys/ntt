@@ -5,9 +5,9 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
         $comment_url = get_comment_link( $comment->comment_ID );
         ?>
         
-        <div class="comment-datetime cm-datetime-trunk datetime-trunk cp" data-name="Comment DateTime">
+        <div class="comment-datetime cm-datetime-trunk cp" data-name="Comment DateTime">
             <div class="cr">
-                <div class="comment-published-datetime published-datetime cm-datetime datetime cp" data-name="Comment Published DateTime">
+                <div class="comment-published-datetime cm-datetime cp" data-name="Comment Published DateTime">
                     <div class="cr">
 
                         <?php
@@ -39,13 +39,13 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
 
                         <span class="comment-published-datetime-glabel obj"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
 
-                        <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="comment-published-date published-date cm-date dt-published date obj" data-name="Comment Published Date">
+                        <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="comment-published-date cm-date dt-published obj" data-name="Comment Published Date">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Commented on [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">
                                 <?php echo $date_mu; ?>
                             </a>
                         </time>
                         
-                        <span class="comment-published-time published-time cm-time time obj" data-name="Comment Published Time">
+                        <span class="comment-published-time cm-time obj" data-name="Comment Published Time">
                             <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Commented at [time]', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>">
                                 <?php echo $time_mu; ?>
                             </a>

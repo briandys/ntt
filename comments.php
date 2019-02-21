@@ -21,11 +21,6 @@ $title_reply_to_mu = '<div class="comment-reply-glabel obj">'. esc_html__( 'Repl
 // logged_in_as
 $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Account Log Status">';
     $logged_in_as_mu .= '<div class="cr">';
-        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn axn obj" data-name="Log Out Admin Account Action">';
-            $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. esc_attr( $log_out_text ).'">';
-                $logged_in_as_mu .= '<span class="txt">'. esc_html( $log_out_text ). '</span>';
-            $logged_in_as_mu .= '</a>';
-        $logged_in_as_mu .= '</div>';
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
             $logged_in_as_mu .= '<div class="cr">';
                 $logged_in_as_mu .= '<span class="logged-in-admin-account-glabel obj">'. esc_html_x( 'Logged in as', 'Logged in as [Name]', 'ntt' ). '</span>';
@@ -35,6 +30,11 @@ $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Ac
                     $logged_in_as_mu .= '</a>';
                 $logged_in_as_mu .= '</span>';
             $logged_in_as_mu .= '</div>';
+        $logged_in_as_mu .= '</div>';
+        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn axn obj" data-name="Log Out Admin Account Action">';
+            $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. esc_attr( $log_out_text ).'">';
+                $logged_in_as_mu .= '<span class="txt">'. esc_html( $log_out_text ). '</span>';
+            $logged_in_as_mu .= '</a>';
         $logged_in_as_mu .= '</div>';
     $logged_in_as_mu .= '</div>';
 $logged_in_as_mu .= '</div>';

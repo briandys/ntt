@@ -21,24 +21,24 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
         $glabel_mu .= '</span>'. ' ';
 
         // Date Markup
-        $date_mu = '<time datetime="'. esc_attr( '%4$s' ).'" class="'. esc_attr( '%5$s' ). ' '. 'cm-date date obj time" data-name="'. esc_attr( '%6$s' ). '">';
+        $date_mu = '<time datetime="'. esc_attr( '%4$s' ).'" class="'. esc_attr( '%5$s' ). ' '. 'cm-date obj" data-name="'. esc_attr( '%6$s' ). '">';
             $date_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '">';
                 $date_mu .= '%1$s';
             $date_mu .= '</a>';
         $date_mu .= '</time>';
 
         // Time Markup
-        $time_mu = ' '. '<span class="'. esc_attr( '%4$s' ). ' '. 'cm-time time obj" data-name="'. esc_attr( '%5$s' ). '">';
+        $time_mu = ' '. '<span class="'. esc_attr( '%4$s' ). ' '. 'cm-time obj" data-name="'. esc_attr( '%5$s' ). '">';
             $time_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '">';
                 $time_mu .= '%1$s';
             $time_mu .= '</a>';
         $time_mu .= '</span>';
         ?>              
 
-        <div class="entry-datetime datetime-trunk cm-datetime-trunk cp" data-name="Entry DateTime">
+        <div class="entry-datetime cm-datetime-trunk cp" data-name="Entry DateTime">
             <div class="cr">
 
-                <div class="entry-published-datetime published-datetime cm-datetime datetime cp" data-name="Entry Published DateTime">
+                <div class="entry-published-datetime cm-datetime cp" data-name="Entry Published DateTime">
                     <div class="cr">
 
                         <?php 
@@ -80,7 +80,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             get_permalink(),
                             $published_on_text. ' '. $published_date_title_attr,
                             get_the_date( DATE_W3C ),
-                            'entry-published-date dt-published published-date',
+                            'entry-published-date dt-published',
                             'Entry Published Date'
                         );
 
@@ -89,14 +89,14 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             $published_time_mu,
                             get_permalink(),
                             $published_at_text. ' '. $published_time_title_attr,
-                            'entry-published-time published-time',
+                            'entry-published-time',
                             'Entry Published Time'
                         );
                         ?>
                     </div>
                 </div>
 
-                <div class="entry-modified-datetime modified-datetime cm-datetime datetime cp" data-name="Entry Modified DateTime">
+                <div class="entry-modified-datetime cm-datetime cp" data-name="Entry Modified DateTime">
                     <div class="cr">
 
                         <?php
@@ -138,7 +138,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             get_permalink(),
                             $updated_on_text. ' '. $modified_date_title_attr,
                             get_the_modified_time( DATE_W3C ),
-                            'entry-modified-date dt-updated modified-date',
+                            'entry-modified-date dt-updated',
                             'Entry Modified Date'
                         );
 
@@ -147,7 +147,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             $modified_time_mu,
                             get_permalink(),
                             $updated_at_text. ' '. $modified_time_title_attr,
-                            'entry-modified-time modified-time',
+                            'entry-modified-time',
                             'Entry Modified Time'
                         );
                         ?>

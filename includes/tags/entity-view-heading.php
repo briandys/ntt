@@ -4,6 +4,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         
         global $wp_query;
         $query_found_posts = $wp_query->found_posts;
+        $zero_search_index = ( is_search() && $query_found_posts == 0 );
+        $search_index = ( is_search() && $query_found_posts >= 1 );
         
         $value = '';
         $value_mu = '';
@@ -13,31 +15,15 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         $text_label_end_mu = '';
         $entity_view_item_count_anchor_start_mu = '';
         $anchor_end_mu = '';
+
+        /**
+         * Entity View Count Type
+         */
         
-        // View Granularity: Singular
-        if ( is_singular() || is_404() ) {
+        // Plural
+        if ( is_home() || is_archive() || is_search() ) {
 
-            $property_suffix = __( 'Entry', 'ntt' );
-            $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
-
-            if ( is_single() ) {
-                $value = __( 'Post', 'ntt' );
-            } elseif ( is_page() ) {
-                $value = __( 'Page', 'ntt' );
-            } elseif ( is_attachment() ) {
-                $value = __( 'Attachment', 'ntt' );
-            }
-            
-            if ( is_404() ) {
-                $value = __( 'Unreachable Resource', 'ntt' );
-            }
-
-            $value_mu = '<span class="txt">'. esc_html( $value ). '</span>';
-
-        // View Granularity: Plural
-        } elseif ( is_home() || is_archive() || is_search() ) {
-
-            $property_suffix = __( 'Entries', 'ntt' );
+            $property_suffix = __( 'Index', 'ntt' );
             $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
             $value_attr = '';
 
@@ -107,8 +93,9 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 $property_mu .= ' '. '<span class="archive---text">'. esc_html__( 'Archive', 'ntt' ). '</span>';
             }
 
-            // Custom Index (Search Results)
+            // Search Index
             if ( is_search() ) {
+                
                 $entry_search = new WP_Query( array(
                     'showposts' => -1,
                 ) );
@@ -133,6 +120,28 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 wp_reset_postdata();
             }
             $value_mu = '<span class="'. esc_attr( $value_attr ).'">'. esc_html( $value ). '</span>';
+
+        // Singular
+        } elseif ( is_singular() ) {
+
+            $property_suffix = __( 'Entry', 'ntt' );
+            $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
+
+            if ( is_single() ) {
+                $value = __( 'Post', 'ntt' );
+            } elseif ( is_page() ) {
+                $value = __( 'Page', 'ntt' );
+            } elseif ( is_attachment() ) {
+                $value = __( 'Attachment', 'ntt' );
+            }
+
+            $value_mu = '<span class="txt">'. esc_html( $value ). '</span>';
+
+        // None
+        } elseif ( is_404() ) {
+            
+            $property_mu = '<span class="txt">'. esc_html__( 'Page', 'ntt' ). '</span>';
+            $value_mu = '<span class="txt">'. esc_html__( 'Four Zero Four', 'ntt' ). '</span>';
         }
         ?>
 
@@ -161,16 +170,17 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
 
                 <?php
                 // Item Count is displayed only in Plural View
-                if ( ! is_singular() && ! is_404() ) {
+                if ( is_home() || is_archive() || is_search() ) {
                 
                     $entry_text = __( 'Entry', 'ntt' );
+                    $entries_text = __( 'Entries', 'ntt' );
                 
                     if ( $query_found_posts == 0 ) {
                         $item_count_glabel = $entry_text;
                     } elseif ( $query_found_posts == 1 ) {
                         $item_count_glabel = $entry_text;
                     } else {
-                        $item_count_glabel = __( 'Entries', 'ntt' );
+                        $item_count_glabel = $entries_text;
                     }
                     ?>
 
