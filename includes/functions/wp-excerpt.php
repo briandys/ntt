@@ -27,7 +27,7 @@ function ntt_show_more_action( $excerpt ) {
     }
 
     $excerpt = '<div class="show-more-axn axn obj" data-name="Show More Action">';
-        $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). esc_attr( $more_hash ). '" title="'. esc_attr( $title_attr ).'">';
+        $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ). $more_hash ). '" title="'. esc_attr( $title_attr ).'">';
             $excerpt .= '<span class="txt">'. esc_html( $show_more_text ). '</span>';
         $excerpt .= '</a>';
     $excerpt .= '</div>';
@@ -40,7 +40,7 @@ function ntt_show_more_action( $excerpt ) {
  */
 function ntt_more_quicktag_excerpt( $excerpt ) {
     
-    if ( is_home() || is_page() || is_archive() ) {
+    if ( is_home() || is_archive() ) {
         return ntt_show_more_action( $excerpt );
     }
 }

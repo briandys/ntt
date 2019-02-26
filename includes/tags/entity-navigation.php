@@ -13,7 +13,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
         $label_mu_start = '<span class="txt">';
         $label_mu_end   = '</span>';
         
-        $nav_group_css  = 'entity-primary-nav-group nav-group cp';
+        $nav_group_css  = 'entity-primary-nav-group cp';
         
         if ( wp_nav_menu( array( 'theme_location' => 'entity-primary-nav', 'echo' => false, ) ) !== false) {
             ?>
@@ -21,7 +21,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
             <nav role="navigation" id="entity-primary-nav" class="entity-primary-nav entity-nav nav cp" data-name="Entity Primary Navigation">
                 <div class="cr">
                     
-                    <h2 class="entity-primary-nav-name nav-name obj"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
+                    <h2 class="entity-primary-nav-name obj"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
                     
                     <?php
                     function escape_html_the_title( $title, $id = null ) {

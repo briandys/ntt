@@ -7,7 +7,7 @@ if ( ! function_exists( 'ntt_entry_primary_meta' ) ) {
     function ntt_entry_primary_meta() {
         ?>
         <div class="entry-primary-meta cp" data-name="Entry Primary Meta">
-            <div class="cr">
+            <div class="entry-primary-meta---cr">
                 <?php
                 ntt_entry_datetime();
                 ntt_entry_author();

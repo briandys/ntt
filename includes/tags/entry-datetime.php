@@ -138,7 +138,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             get_permalink(),
                             $updated_on_text. ' '. $modified_date_title_attr,
                             get_the_modified_time( DATE_W3C ),
-                            'entry-modified-date dt-updated',
+                            'entry-modified-date',
                             'Entry Modified Date'
                         );
 

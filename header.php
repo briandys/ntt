@@ -10,14 +10,15 @@
     </head>
     <body <?php body_class(); ?>>
         <div id="entity" class="entity" data-name="Entity">
-            <div class="cr">
+            <div class="entity---cr">
                 <div id="entity-start" class="entity-start cn" data-name="Entity Start">
-                    <div class="cr">
+                    <div class="entity-start---cr">
                         <div id="go-content-nav" class="go-content-nav nav cp" data-name="Go to Content Navigation">
-                            <div class="cr">
+                            <div class="go-content-nav---cr">
                                 <div class="go-content-navi obj">
-                                    <a href="#content" title="<?php esc_attr_e( 'Go to Content', 'ntt' ); ?>" id="go-content-navi-axn">
-                                        <span class="txt"><?php esc_html_e( 'Go to Content', 'ntt' ); ?></span>
+                                    <?php $go_content_text = __( 'Go to Content', 'ntt' ); ?>
+                                    <a href="#content" title="<?php echo esc_attr( $go_content_text ); ?>" id="go-content-navi-axn">
+                                        <span class="txt"><?php echo esc_html( $go_content_text ); ?></span>
                                     </a>
                                 </div>
                             </div>
@@ -25,9 +26,9 @@
                     </div>
                 </div>
                 <header id="entity-header" class="entity-header cn" data-name="Entity Header">
-                    <div class="cr">
+                    <div class="entity-header---cr">
                         <div id="entity-primary-heading" class="entity-primary-heading cp" data-name="Entity Primary Heading">
-                            <div class="cr">
+                            <div class="entity-primary-heading---cr">
                             
                                 <?php
                                 $get_bloginfo_name = get_bloginfo( 'name', 'display' );
@@ -61,13 +62,11 @@
 
                         <?php
                         ntt_entity_primary_nav();
-                        ntt_after_entity_primary_nav_wp_hook();
-                        ntt_entity_primary_axns();
                         
                         if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
                             ?>
                             <div id="entity-banner" class="entity-banner cp" data-name="Entity Banner">
-                                <div class="cr">
+                                <div class="entity-banner---cr">
 
                                     <?php
                                     if ( has_header_image() ) {
@@ -75,8 +74,6 @@
                                         <div class="entity-banner-visuals obj" data-name="Entity Banner Visuals"><?php the_custom_header_markup(); ?></div>
                                         <?php
                                     }
-                                    
-                                    ntt_entity_banner_aside();
                                     ?>
                                 </div>
                             </div>
@@ -88,4 +85,4 @@
                     </div>
                 </header>
                 <main id="entity-main" class="entity-main cn" data-name="Entity Main">
-                    <div class="cr">
+                    <div class="entity-main---cr">

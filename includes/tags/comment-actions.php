@@ -17,7 +17,7 @@ if ( ! function_exists( 'ntt_comment_admin_actions') ) {
 
             <div class="comment-admin-axns admin-axns cp" data-name="Comment Admin Actions">
                 <div class="cr">
-                    <div class="modify-comment-axn modify-axn p-modify axn obj" aria-label="Edit Comment" data-name="Modify Comment Action">
+                    <div class="modify-comment-axn obj" aria-label="Edit Comment" data-name="Modify Comment Action">
                         <?php echo edit_comment_link( $label_mu, '', '' ); ?>
                     </div>
                 </div>

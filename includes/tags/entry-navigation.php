@@ -12,7 +12,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             $previous_text = _x( 'Previous', 'Previous Entry', 'ntt' );
             $entry_text = _x( 'Entry', '[Next / Previous] Entry', 'ntt' );
             
-            $l_mu = '<span title="'. esc_attr( '%4$s' ). '">';
+            $l_mu = '<span class="l" title="'. esc_attr( '%4$s' ). '">';
                 $l_mu .= '<span class="property---line">';
                     $l_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
                     $l_mu .= ' '. '<span class="entry---text">'. esc_html( $entry_text ) .'</span>';
@@ -39,10 +39,10 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             ?>
 
             <div role="navigation" class="entry-nav nav cp" data-name="Entry Navigation">
-                <div class="-cr">
+                <div class="entry-nav---cr">
                     <div class="entry-nav-name nav-name obj"><?php esc_html_e( 'Entry Navigation', 'ntt' ); ?></div>
-                    <div class="entry-nav-group nav-group cp">
-                        <div class="cr">
+                    <div class="entry-nav-group cp">
+                        <div class="entry-nav-group---cr">
                     
                             <?php
                             $featured_image_size = 'ntt-thumbnail';
@@ -74,8 +74,6 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                                 <div class="previous-entry-navi entry-navi obj"><?php previous_post_link( '%link', $previous_navi. $prev_post_thumbnail ); ?></div>
                                 <?php 
                             }
-
-                            ntt_after_entry_nav_wp_hook();
                             ?>
                         </div>
                     </div>

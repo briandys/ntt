@@ -23,10 +23,10 @@ if ( ! function_exists( 'ntt_entry_tags' ) ) {
               
             <div class="entry-tags cp" data-name="Entry Tags">
                 <div class="cr">
-                    <div class="entry-tags-name obj"><?php echo apply_filters( 'ntt_tags_name_wp_filter', esc_html__( 'Tags', 'ntt' ) ); ?></div>
+                    <div class="entry-tags-name obj"><?php echo apply_filters( 'ntt_entry_tags_name_wp_filter', esc_html__( 'Tags', 'ntt' ) ); ?></div>
                     
                     <?php
-                    $entry_tag_item_mu = '<li class="entry-tag-item p-category obj" data-name="Entry Tag Item">';
+                    $entry_tag_item_mu = '<li>';
                     $entry_tag_item_before_mu = '<div class="entry-tag-group cp"><ul class="cr">'. $entry_tag_item_mu;
                     $entry_tag_item_separator_mu = '</li>'. $entry_tag_item_mu;
                     $entry_tag_item_after_mu = '</li></ul></div>';

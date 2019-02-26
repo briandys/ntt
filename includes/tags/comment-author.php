@@ -5,7 +5,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
         $comment_author = get_comment_author();
         ?>
 
-        <div class="comment-author cm-author p-author h-card cp" data-name="Comment Author">
+        <div class="comment-author cm-author cp" data-name="Comment Author">
             <div class="cr">
 
                 <?php
@@ -38,7 +38,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                             $comment,
                             $size = '48',
                             $default = '',
-                            $alt = $comment_author. ' '. 'Avatar',
+                            $alt = esc_attr__( 'Avatar', 'ntt' ),
                             $args = array( 'class' => 'u-photo', )
                         ).
                         $image_label_end_mu;

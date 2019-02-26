@@ -8,7 +8,7 @@ function ntt_get_html_css( $class='' ) {
     
     $classes = array();
 
-    $enabled_css = '--1';
+    $enabled_css = '1';
 
     /**
      * Defaults
@@ -29,6 +29,27 @@ function ntt_get_html_css( $class='' ) {
     }
 
     /**
+     * Entity Logo Ability Status
+     */
+    if ( has_custom_logo() ) {
+        $classes[] = 'entity-logo--'. $enabled_css;
+    }
+    
+    /**
+     * Entity Banner Visuals Ability Status
+     */
+    if ( has_header_image() ) {
+        $classes[] = 'entity-banner-visuals--'. $enabled_css;
+    }
+
+    /**
+     * WP Customizer Color Scheme
+     */
+    if ( 'custom' == get_theme_mod( 'colorscheme' ) ) {
+        $classes[] = 'wp-customizer-color-scheme--'. ntt_wp_customize_color_scheme_sanitizer( get_theme_mod( 'colorscheme' ) );
+	}
+
+    /**
      * Entry Index Types
      */
     if ( is_home() ) {
@@ -37,40 +58,6 @@ function ntt_get_html_css( $class='' ) {
         $classes[] = 'archive-index-view';
     } elseif( $search_index ) {
         $classes[] = 'search-index-view';
-    }
-	
-	/**
-     * Entity Widgets Ability Status
-     */
-    $r_entity_widgets = array(
-        'entity-primary-axns',
-        'entity-banner-aside',
-        'entity-header-aside',
-        'entity-main-header-aside',
-        'entity-main-main-aside',
-        'entity-footer-aside',
-    );
-
-    foreach ( $r_entity_widgets as $entity_widgets ) {
-        if ( is_active_sidebar( $entity_widgets ) ) {
-            $classes[] = $entity_widgets. $enabled_css;
-        }
-    }
-	
-	/**
-     * Entry Widgets Ability Status
-     */
-    $r_entry_widgets = array(
-        'entry-banner-aside',
-        'entry-header-aside',
-        'entry-main-aside',
-        'entry-footer-aside',
-    );
-
-    foreach ( $r_entry_widgets as $entry_widgets ) {
-        if ( is_singular() && is_active_sidebar( $entry_widgets ) ) {
-            $classes[] = $entry_widgets. $enabled_css;
-        }
     }
 
     if ( ! empty( $class ) ) {

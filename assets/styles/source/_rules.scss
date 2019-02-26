@@ -54,6 +54,19 @@ $xl-vp: 80em;
     clear: both;
 }
 
+%ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+}
+ 
+%ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
 %unlist {
     list-style: none;
     margin: 0;

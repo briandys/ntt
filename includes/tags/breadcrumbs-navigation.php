@@ -16,25 +16,27 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
             }
 
             foreach ( $anc as $ancestor ) {
-                $navi_ancestors = '<div class="breadcrumb-navi--ancestor breadcrumb-navi obj">';
+                $navi_ancestors = '<li>';
                     $navi_ancestors .= '<a href="'. esc_url( get_permalink( $ancestor ) ). '" title="'. esc_attr( get_the_title( $ancestor ) ). '">';
                         $navi_ancestors .= '<span class="txt">'. esc_html( get_the_title( $ancestor ) ). '</span>';
                     $navi_ancestors .= '</a>';
-                $navi_ancestors .= '</div>';
+                $navi_ancestors .= '</li>';
 
                 $breadcrumbs_ancestors_mu .= $navi_ancestors;
             }
 
-            $navi_current_mu = '<div class="breadcrumb-navi--current breadcrumb-navi obj">';
-                $navi_current_mu .= '<span class="txt">'. esc_html( get_the_title() ). '</span>';
-            $navi_current_mu .= '</div>'; ?>
+            $navi_current_mu = '<div class="breadcrumb-navi--current obj">'. esc_html( get_the_title() ). '</div>'; ?>
 
-            <div class="breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
-                <div class="cr">
-                    <div class="breadcrumbs-nav-name nav-name obj"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
-                    <div class="breadcrumbs-nav-content cp" data-name="Breadcrumbs Navigation Content">
-                        <div class="cr">
-                            <div class="breadcrumbs-nav-ancestors-group cp"><?php echo $breadcrumbs_ancestors_mu; ?></div>
+            <div class="breadcrumbs-nav cp" data-name="Breadcrumbs Navigation">
+                <div class="breadcrumbs-nav---cr">
+                    <div class="breadcrumbs-nav-name obj"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
+                    <div class="breadcrumbs-nav-group cp">
+                        <div class="breadcrumbs-nav-group---cr">
+                            <div class="breadcrumbs-nav-ancestors-group cp">
+                                <ul class="breadcrumbs-nav-ancestors-group---cr">
+                                    <?php echo $breadcrumbs_ancestors_mu; ?>
+                                </ul>
+                            </div>
                             <?php echo $navi_current_mu; ?>
                         </div>
                     </div>

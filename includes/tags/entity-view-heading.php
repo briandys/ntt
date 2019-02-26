@@ -145,8 +145,8 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         }
         ?>
 
-        <div class="entity-view-heading heading cp" data-name="Entity View Heading">
-            <div class="cr">
+        <div class="entity-view-heading cp" data-name="Entity View Heading">
+            <div class="entity-view-heading---cr">
                 <div class="entity-view-name obj">
                     
                     <?php

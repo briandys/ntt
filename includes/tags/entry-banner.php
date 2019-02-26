@@ -2,9 +2,9 @@
 if ( ! function_exists( 'ntt_entry_banner' ) ) {
     function ntt_entry_banner() {
 
-        if ( '' !== get_the_post_thumbnail() || is_active_sidebar( 'entry-banner-aside' ) ) {
+        if ( '' !== get_the_post_thumbnail() ) {
             ?>
-            <div class="entry-banner banner cp" data-name="Entry Banner">
+            <div class="entry-banner cp" data-name="Entry Banner">
                 <div class="cr">
 
                 <?php
@@ -19,7 +19,7 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
                     }
                     ?>
                     
-                    <div class="entry-banner-visuals banner-visuals obj" data-name="Entry Banner Visuals">
+                    <div class="entry-banner-visuals obj" data-name="Entry Banner Visuals">
                         <?php
                         echo $anchor_mu_start;
                             
@@ -36,8 +36,6 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
                     </div>
                     <?php
                 }
-                
-                ntt_entry_banner_aside();
                 ?>
                 </div>
             </div>

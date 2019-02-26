@@ -34,8 +34,6 @@
                         </div>
                     </div>
                 </div>
-
-                <?php ntt_entry_main_aside(); ?>
             </div>
         </div>
     </div>

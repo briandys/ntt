@@ -14,11 +14,13 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         $previous_text = _x( 'Previous', 'Previous Page', 'ntt' );
         $page_text = _x( 'Page', '[Next / Previous] Page', 'ntt' );
         
-        $l_mu_start = '<span class="page---text">'. esc_html( $page_text ). '</span>';
+        $l_mu_start = '<span class="l">';
+        $l_mu_start .= '<span class="page---text">'. esc_html( $page_text ). '</span>';
         $l_mu_start .= ' '. '<span class="page-number---txt num">';
         $l_mu_end = '</span>';
+        $l_mu_end .= '</span>';
 
-        $adjacent_navi_mu = '<span title="'. esc_attr( '%3$s' ). '">';
+        $adjacent_navi_mu = '<span title="'. esc_attr( '%3$s' ). '" class="l">';
             $adjacent_navi_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
             $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_text ). '</span>';
         $adjacent_navi_mu .= '</span>';

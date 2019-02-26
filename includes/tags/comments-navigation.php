@@ -16,7 +16,7 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
                     $comments_text = _x( 'Comments', '[Next / Previous] Comments', 'ntt' );
 
                     // Text Label Markup
-                    $l_mu = '<span title="'. esc_attr( '%3$s' ). '">';
+                    $l_mu = '<span class="l" title="'. esc_attr( '%3$s' ). '">';
                         $l_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
                         $l_mu .= ' '. '<span class="comments---text">'. esc_html( $comments_text ) .'</span>';
                     $l_mu .= '</span>';

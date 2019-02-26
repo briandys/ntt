@@ -21,7 +21,7 @@ if ( ! function_exists( 'ntt_entry_admin_actions') ) {
             
             <div class="entry-axns cp" data-name="Entry Actions">
                 <div class="cr">
-                    <div class="modify-entry-axn modify-axn p-modify axn obj" aria-label="Edit Entry" data-name="Modify Entry Action">
+                    <div class="modify-entry-axn obj" aria-label="Edit Entry" data-name="Modify Entry Action">
                         <?php echo edit_post_link( $entry_name_label, '', '' ); ?>
                     </div>
                 </div>

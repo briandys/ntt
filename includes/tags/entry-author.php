@@ -2,16 +2,9 @@
 if ( ! function_exists( 'ntt_entry_author' ) ) {
     function ntt_entry_author() {
         
-        $avatar_css = 'entry-author-default-avatar';
         $entry_author = get_the_author();
-        
-        if ( get_option( 'avatar_default' ) == 'blank' ) {
-            $avatar_type_css = $avatar_css . '--blank';
-        } else {
-            $avatar_type_css = $avatar_css . '--custom';
-        }
         ?>
-        <div class="entry-author cm-author <?php echo esc_attr( $avatar_type_css ); ?> p-author h-card cp" data-name="Entry Author">
+        <div class="entry-author cm-author cp" data-name="Entry Author">
             <div class="cr">
                 <span class="entry-author-glabel obj">
                     <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
@@ -33,7 +26,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                                 get_the_author_meta( 'ID' ),
                                 $size = '48',
                                 $default = '',
-                                $alt = esc_attr( $entry_author ). ' '. esc_attr_x( 'Avatar', '[Entry Author Name] Avatar', 'ntt' ),
+                                $alt = esc_attr__( 'Avatar', 'ntt' ),
                                 $args = array( 'class' => 'u-photo', )
                                 );
                             ?>
