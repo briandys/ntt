@@ -23,23 +23,27 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
         // Date Markup
         $date_mu = '<time datetime="'. esc_attr( '%4$s' ).'" class="'. esc_attr( '%5$s' ). ' '. 'cm-date obj" data-name="'. esc_attr( '%6$s' ). '">';
             $date_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '">';
-                $date_mu .= '%1$s';
+                $date_mu .= '<span class="l">';
+                    $date_mu .= '%1$s';
+                $date_mu .= '</span>';
             $date_mu .= '</a>';
         $date_mu .= '</time>';
 
         // Time Markup
         $time_mu = ' '. '<span class="'. esc_attr( '%4$s' ). ' '. 'cm-time obj" data-name="'. esc_attr( '%5$s' ). '">';
             $time_mu .= '<a href="'. esc_url( '%2$s' ). '" title="'. esc_attr( '%3$s' ). '">';
-                $time_mu .= '%1$s';
+                $time_mu .= '<span class="l">';
+                    $time_mu .= '%1$s';
+                $time_mu .= '</span>';
             $time_mu .= '</a>';
         $time_mu .= '</span>';
         ?>              
 
         <div class="entry-datetime cm-datetime-trunk cp" data-name="Entry DateTime">
-            <div class="cr">
+            <div class="entry-datetime---cr">
 
                 <div class="entry-published-datetime cm-datetime cp" data-name="Entry Published DateTime">
-                    <div class="cr">
+                    <div class="entry-published-datetime---cr">
 
                         <?php 
                         // Date
@@ -97,7 +101,7 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                 </div>
 
                 <div class="entry-modified-datetime cm-datetime cp" data-name="Entry Modified DateTime">
-                    <div class="cr">
+                    <div class="entry-modified-datetime---cr">
 
                         <?php
                         // Date

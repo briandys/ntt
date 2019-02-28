@@ -5,7 +5,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
         $entry_author = get_the_author();
         ?>
         <div class="entry-author cm-author cp" data-name="Entry Author">
-            <div class="cr">
+            <div class="entry-author---cr">
                 <span class="entry-author-glabel obj">
                     <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
                     <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>

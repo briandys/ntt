@@ -585,27 +585,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
-*,
-:after,
-:before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.bypostauthor,
-.gallery-caption,
-.screen-reader-text,
-.sticky,
-.wp-caption,
-.wp-caption-text,
-.alignright,
-.alignleft,
-.aligncenter {
-  position: inherit;
-}

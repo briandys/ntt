@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 A Hypertext Document
 
-For more information about NTT please go to http://ntt.dysinelab.com.
+For more information about NTT please go to http://ntt.briandys.com.
 
 == Copyright ==
 

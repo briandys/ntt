@@ -29,7 +29,7 @@ if ( ! function_exists( 'ntt_entry_secondary_meta' ) ) {
         if ( get_the_tag_list() ) {
             ?>
             <div class="entry-secondary-meta cp" data-name="Entry Secondary Meta">
-                <div class="cr">
+                <div class="entry-secondary-meta---cr">
                     <?php ntt_entry_tags(); ?>
                 </div>
             </div>

@@ -8,7 +8,7 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         $l_mu_start .= ' '. '<span class="page-number---txt num">';
         $l_mu_end = '</span>';
 
-        $adjacent_navi_mu = '<span title="'. esc_attr( '%2$s' ). '">';
+        $adjacent_navi_mu = '<span class="l" title="'. esc_attr( '%2$s' ). '">';
             $adjacent_navi_mu .= '<span class="'. esc_attr( sanitize_title( '%1$s' ) ).'---text">'. esc_html( '%1$s' ). '</span>';
             $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_term ). '</span>';
         $adjacent_navi_mu .= '</span>';
@@ -24,8 +24,8 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         );
         ?>
         
-        <div role="navigation" class="entry-sub-content-nav pagination nav cp" data-name="Entry Sub-Content Navigation">
-            <div class="cr">
+        <div role="navigation" class="entry-sub-content-nav nav cp" data-name="Entry Sub-Content Navigation">
+            <div class="entry-sub-content-nav---cr">
                 <?php
                 $big_number = 999999999;
                 echo paginate_links( array(

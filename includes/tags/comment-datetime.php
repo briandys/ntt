@@ -6,9 +6,9 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
         ?>
         
         <div class="comment-datetime cm-datetime-trunk cp" data-name="Comment DateTime">
-            <div class="cr">
+            <div class="comment-datetime---cr">
                 <div class="comment-published-datetime cm-datetime cp" data-name="Comment Published DateTime">
-                    <div class="cr">
+                    <div class="comment-published-datetime---cr">
 
                         <?php
                         // Date

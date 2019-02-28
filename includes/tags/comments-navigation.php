@@ -5,8 +5,8 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
             ?>
 
-            <div class="comments-nav adjacent-nav nav cp" data-name="Comments Navigation">
-                <div class="cr">
+            <div class="comments-nav nav cp" data-name="Comments Navigation">
+                <div class="comments-nav---cr">
                     <div class="comments-nav-name nav-name obj"><?php esc_html_e( 'Comments Navigation', 'ntt' ); ?></div>
             
                     <?php

@@ -1,11 +1,11 @@
 <article id="entry-<?php the_id(); ?>" <?php post_class( ntt_get_comments_css() ); ?> data-name="Entry">
-    <div class="cr">
+    <div class="entry---cr">
 
         <?php ntt_entry_header(); ?>
         <div class="entry-main main cn" data-name="Entry Main">
-            <div class="cr">
+            <div class="entry-main---cr">
                 <div class="entry-content content-trunk cp" data-name="Entry Content">
-                    <div class="cr">
+                    <div class="entry-content---cr">
             
                         <?php
                         if ( is_singular() || is_home() || is_archive() ) {

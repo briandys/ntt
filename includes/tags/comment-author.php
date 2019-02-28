@@ -6,7 +6,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
         ?>
 
         <div class="comment-author cm-author cp" data-name="Comment Author">
-            <div class="cr">
+            <div class="comment-author---cr">
 
                 <?php
                 $commented_by_text = _x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' );

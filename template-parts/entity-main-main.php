@@ -1,7 +1,7 @@
 <div id="entity-main-main" class="entity-main-main main cn" data-name="Entity Main Main">
     <div class="entity-main-main---cr">
         <div id="content" class="entry-md cm md" data-name="Entry Module">
-            <div class="cr">
+            <div class="entry-md---cr">
 
                 <?php
                 if ( is_singular() ) {

@@ -1,6 +1,6 @@
 <?php
 function ntt_styles_scripts() {
-    
+
     wp_enqueue_style( 'ntt-style', get_template_directory_uri(). '/assets/styles/ntt.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
     wp_style_add_data( 'ntt-style', 'rtl', 'replace' );

@@ -38,8 +38,8 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         );
         ?>
         
-        <div role="navigation" class="entries-nav pagination adjacent-nav nav cp" data-name="Entries Navigation">
-            <div class="cr">
+        <div role="navigation" class="entries-nav nav cp" data-name="Entries Navigation">
+            <div class="entries-nav---cr">
                 <?php
                 the_posts_pagination( array(
                     'screen_reader_text'    => __( 'Entries Navigation', 'ntt' ),

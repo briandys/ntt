@@ -53,3 +53,7 @@ function ntt_status_css_comments_css( $classes ) {
     return $classes;
 }
 add_filter( 'ntt_comments_css_wp_filter', 'ntt_status_css_comments_css' );
+
+add_filter( 'ntt_html_css_wp_filter', function( $classes ) {
+    return is_singular() ? ntt_status_css_comments_css( $classes ) : $classes;
+} );

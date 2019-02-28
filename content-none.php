@@ -1,9 +1,9 @@
-<article class="empty-entry entry cp" data-name="Empty Entry">
-    <div class="cr">
+<article class="entry empty-entry cp" data-name="Empty Entry">
+    <div class="entry---cr">
         <div class="entry-header header cn" data-name="Entry Header">
-            <div class="cr">
+            <div class="entry-header---cr">
                 <div class="entry-heading cp" data-name="Entry Heading">
-                    <div class="cr">
+                    <div class="entry-heading---cr">
                         <h1 class="entry-name obj"><?php esc_html_e( 'Content Not Found', 'ntt' ); ?></h1>
 
                         <?php ntt_after_entry_name_wp_hook(); ?>
@@ -12,11 +12,11 @@
             </div>
         </div>
         <div class="entry-main main cn" data-name="Entry Main">
-            <div class="cr">
+            <div class="entry-main---cr">
                 <div class="entry-content content-trunk cp" data-name="Entry Content">
-                    <div class="cr">
+                    <div class="entry-content---cr">
                         <div class="entry-full-content e-content content cp" data-name="Entry Full Content">
-                            <div class="cr">
+                            <div class="entry-full-content---cr">
                             
                                 <?php
                                 if ( is_404() ) {

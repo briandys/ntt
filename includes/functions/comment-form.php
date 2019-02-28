@@ -29,7 +29,7 @@ function ntt_comment_form( $fields ) {
 
     // Comment Author Email
     $fields['email'] = '<div class="comment-author-email-field field cp" data-name="Comment Author Email Field">';
-        $fields['email'] .= '<div class="cr">';
+        $fields['email'] .= '<div class="comment-author-email-field---cr">';
             $fields['email'] .= '<label for="comment-author-email-field-input" class="comment-author-email-field-label obj">';
                 $fields['email'] .= esc_html( $email_text );
             $fields['email'] .= '</label>';
@@ -41,7 +41,7 @@ function ntt_comment_form( $fields ) {
 
     // Comment Author Website URL
     $fields['url'] = '<div class="comment-author-url-field field cp" data-name="Comment Author URL Field">';
-        $fields['url'] .= '<div class="cr">';
+        $fields['url'] .= '<div class="comment-author-url-field---cr">';
             $fields['url'] .= '<label for="comment-author-url-field-input" class="comment-author-url-field-label obj">';
                 $fields['url'] .= '<span class="website---text">'. esc_html( $website_text ). '</span>';
                 $fields['url'] .= ' '. '<span class="url---text">'. esc_html( $url_text ). '</span>';

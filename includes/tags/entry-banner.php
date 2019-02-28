@@ -5,7 +5,7 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
         if ( '' !== get_the_post_thumbnail() ) {
             ?>
             <div class="entry-banner cp" data-name="Entry Banner">
-                <div class="cr">
+                <div class="entry-banner---cr">
 
                 <?php
                 if ( '' !== get_the_post_thumbnail() ) {
