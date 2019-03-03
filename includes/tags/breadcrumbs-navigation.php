@@ -47,7 +47,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
 
         if ( is_attachment() ) {
             the_post_navigation( array(
-                'prev_text' => sprintf( '<span class="published-in---text">'. _x( 'Published in', 'Published in [Entry Name]', 'ntt' ). '</span>'. ' '. '<span class="entry-name---txt">'. esc_html( '%s' ). '</span>',
+                'prev_text' => sprintf( '<span class="l"><span class="published-in---text">'. _x( 'Published in', 'Published in [Entry Name]', 'ntt' ). '</span>'. ' '. '<span class="entry-name---txt">'. esc_html( '%s' ). '</span></span>',
                 '%title' ), )
             );
         }

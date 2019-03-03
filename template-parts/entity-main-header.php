@@ -5,7 +5,6 @@
         <?php
         ntt_entity_view_heading();
         ntt_entry_nav();
-        ntt_entries_nav();
         ?>
     </div>
 </div>
