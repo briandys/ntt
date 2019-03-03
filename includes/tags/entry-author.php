@@ -11,7 +11,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                     <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
                 </span>
                 <span class="entry-author-name cm-author-name obj">
-                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>" class="u-url">
+                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>" class="p-name u-url">
                         <span class="txt"><?php echo esc_html( $entry_author ); ?></span>
                     </a>
                 </span>
@@ -21,15 +21,17 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                     ?>
                     <span class="entry-author-avatar cm-author-avatar obj" data-name="Entry Author Avatar">
                         <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
-                            <?php
-                            echo get_avatar(
-                                get_the_author_meta( 'ID' ),
-                                $size = '48',
-                                $default = '',
-                                $alt = esc_attr__( 'Avatar', 'ntt' ),
-                                $args = array( 'class' => 'u-photo', )
-                                );
-                            ?>
+                            <span class="img">
+                                <?php
+                                echo get_avatar(
+                                    get_the_author_meta( 'ID' ),
+                                    $size = '48',
+                                    $default = '',
+                                    $alt = esc_attr__( 'Avatar', 'ntt' ),
+                                    $args = array( 'class' => 'u-photo', )
+                                    );
+                                ?>
+                            </span>
                         </a>
                     </span>
                     <?php

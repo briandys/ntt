@@ -22,10 +22,12 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
 
         <div class="entry-heading cp" data-name="Entry Heading">
             <div class="entry-heading---cr">
+                <?php ntt_before_entry_name_wp_hook(); ?>
+                
                 <<?php echo esc_attr( $heading_level ); ?> class="entry-name obj">
                     <?php echo $anchor_mu_start. $entry_name. $anchor_mu_end; ?>
                 </<?php echo esc_attr( $heading_level ); ?>>
-
+                
                 <?php ntt_after_entry_name_wp_hook(); ?>
             </div>
         </div>

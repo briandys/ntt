@@ -154,13 +154,17 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                     
                     if ( is_search() ) {
                         ?>
-                        <span class="property---line"><?php echo $property_mu; ?></span>
-                        <span class="value---line"><?php echo $value_mu; ?></span>
+                        <span class="l">
+                            <span class="property---line"><?php echo $property_mu; ?></span>
+                            <span class="value---line"><?php echo $value_mu; ?></span>
+                        </span>
                         <?php
                     } else {
                         ?>
-                        <span class="value---line"><?php echo $value_mu; ?></span>
-                        <span class="property---line"><?php echo $property_mu; ?></span>
+                        <span class="l">
+                            <span class="value---line"><?php echo $value_mu; ?></span>
+                            <span class="property---line"><?php echo $property_mu; ?></span>
+                        </span>
                         <?php
                     }
                     
@@ -186,8 +190,10 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
 
                     <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
                         <?php echo $text_label_start_mu; ?>
-                            <span class="count---txt num"><?php echo esc_html( $query_found_posts ); ?></span>
-                            <span class="glabel---txt"><?php echo esc_html( $item_count_glabel ); ?></span>
+                            <span class="l">
+                                <span class="count---txt num"><?php echo esc_html( $query_found_posts ); ?></span>
+                                <span class="glabel---txt"><?php echo esc_html( $item_count_glabel ); ?></span>
+                            </span>
                         <?php echo $text_label_end_mu; ?>
                     </div>
 

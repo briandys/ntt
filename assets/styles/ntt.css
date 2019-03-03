@@ -585,3 +585,15 @@ textarea {
     page-break-after: avoid;
   }
 }
+
+.bypostauthor,
+.gallery-caption,
+.screen-reader-text,
+.sticky,
+.wp-caption,
+.wp-caption-text,
+.alignright,
+.alignleft,
+.aligncenter {
+  position: inherit;
+}

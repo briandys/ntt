@@ -31,6 +31,12 @@
                             <div class="entity-primary-heading---cr">
                             
                                 <?php
+                                if ( has_custom_logo() ) {
+                                    ?>
+                                    <div id="entity-primary-logo" class="entity-primary-logo obj" data-name="Entity Primary Logo"><?php the_custom_logo(); ?></div>
+                                    <?php
+                                }
+                                
                                 $get_bloginfo_name = get_bloginfo( 'name', 'display' );
                                 
                                 if ( $get_bloginfo_name || is_customize_preview() ) {
@@ -48,12 +54,6 @@
                                 if ( $get_bloginfo_description || is_customize_preview() ) {
                                     ?>
                                     <div id="entity-primary-description" class="entity-primary-description obj" data-name="Entity Primary Description"><?php echo esc_attr( $get_bloginfo_description ); ?></div>
-                                    <?php
-                                }
-                            
-                                if ( has_custom_logo() ) {
-                                    ?>
-                                    <div id="entity-primary-logo" class="entity-primary-logo obj" data-name="Entity Primary Logo"><?php the_custom_logo(); ?></div>
                                     <?php
                                 }
                                 ?>

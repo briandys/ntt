@@ -155,7 +155,6 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                             'Entry Modified Time'
                         );
                         ?>
-
                     </div>
                 </div>
             </div>

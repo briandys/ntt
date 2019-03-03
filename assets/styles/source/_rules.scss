@@ -27,7 +27,7 @@ $l-vp: 64em;
 $xl-vp: 80em;
 
 //--------------------------------------------------------------
-// Helpers - Extensions
+// Helpers - Extensions - @extend
 //--------------------------------------------------------------
 
 %vh {
@@ -83,7 +83,7 @@ $xl-vp: 80em;
 }
 
 //--------------------------------------------------------------
-// Helpers - Mixins
+// Helpers - Mixins - @include
 //--------------------------------------------------------------
 
 @mixin unline {
@@ -91,6 +91,34 @@ $xl-vp: 80em;
     
     &:hover {
         text-decoration: underline;
+    }
+}
+
+@mixin x-padding($l: 0, $r: $l) {
+    padding: {
+        left: $l;
+        right: $r;
+    }
+}
+
+@mixin y-padding($t: 0, $b: $t) {
+    padding: {
+        top: $t;
+        bottom: $b;
+    }
+}
+
+@mixin x-margin($l: 0, $r: $l) {
+    margin: {
+        left: $l;
+        right: $r;
+    }
+}
+
+@mixin y-margin($t: 0, $b: $t) {
+    margin: {
+        top: $t;
+        bottom: $b;
     }
 }
 

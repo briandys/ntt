@@ -7,7 +7,7 @@ if ( ! function_exists( 'ntt_entry_full_content' ) ) {
         if( $post->post_content !== '' || is_attachment() ) {
             ?>
             <div class="entry-full-content e-content content cp" data-name="Entry Full Content">
-                <div class="entry-full-content---cr">
+                <div class="entry-full-content---cr content---cr">
                     <?php
                     the_content();
                     ?>

@@ -7,56 +7,50 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
 
         <div class="comments-actions-snippet cp" data-name="Comments Actions Snippet">
             <div class="comments-actions-snippet---cr">
-
-                <div class="comments-population cp" data-name="Comments Population">
-                    <div class="comments-population---cr">
-
-                        <div class="comments-count count obj" data-name="Comments Count">
-        
-                        <?php
-                        $single_count_label = '<span class="l">';
-                        $single_count_label .= '<span class="comment-count---txt num">&#49;</span>';
-                        $single_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '1 Comment', 'ntt' ). '</span>';
-                        $single_count_label .= '</span>';
-                        
-                        $multi_count_label = '<span class="l">';
-                        $multi_count_label .= '<span class="comment-count---txt num">%</span>';
-                        $multi_count_label .= ' '. '<span class="comments---text">'. esc_html_x( 'Comments', '[Number of Comments] Comments', 'ntt' ). '</span>';
-                        $multi_count_label .= '</span>';
-                    
-                        $zero_count_label_mu = '<span class="comment-count---txt num">&#48;</span>';
-                        $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '0 Comment', 'ntt' ). '</span>';
+                <div class="comments-count count obj" data-name="Comments Count">
             
-                        // Populated Comments
-                        if ( $comments_count >= 1 ) {
-                            comments_popup_link(
-                                '',                     // Zero Count
-                                $single_count_label,    // Single Count
-                                $multi_count_label,     // Multiple Count
-                                '',                     // <a class="">
-                                ''                      // Comments Disabled
-                            );
+                    <?php
+                    $single_count_label = '<span class="l">';
+                    $single_count_label .= '<span class="comment-count---txt num">&#49;</span>';
+                    $single_count_label .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '1 Comment', 'ntt' ). '</span>';
+                    $single_count_label .= '</span>';
+                    
+                    $multi_count_label = '<span class="l">';
+                    $multi_count_label .= '<span class="comment-count---txt num">%</span>';
+                    $multi_count_label .= ' '. '<span class="comments---text">'. esc_html_x( 'Comments', '[Number of Comments] Comments', 'ntt' ). '</span>';
+                    $multi_count_label .= '</span>';
+                
+                    $zero_count_label_mu = '<span class="comment-count---txt num">&#48;</span>';
+                    $zero_count_label_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', '0 Comment', 'ntt' ). '</span>';
+
+                    // Populated Comments
+                    if ( $comments_count >= 1 ) {
+                        comments_popup_link(
+                            '',                     // Zero Count
+                            $single_count_label,    // Single Count
+                            $multi_count_label,     // Multiple Count
+                            '',                     // <a class="">
+                            ''                      // Comments Disabled
+                        );
+                    
+                    // Empty Comments
+                    } else {
                         
-                        // Empty Comments
+                        if ( is_singular() ) {
+                            $comments_count_link = '';
                         } else {
-                            
-                            if ( is_singular() ) {
-                                $comments_count_link = '';
-                            } else {
-                                $comments_count_link = get_permalink();
-                            }
-                            ?>
-                            
-                            <a href="<?php echo esc_url( $comments_count_link ). '#comments' ?>">
-                                <span class="l">
-                                    <?php echo $zero_count_label_mu; ?>
-                                </span>
-                            </a>
-                            <?php
+                            $comments_count_link = get_permalink();
                         }
                         ?>
-                        </div>
-                    </div>
+                        
+                        <a href="<?php echo esc_url( $comments_count_link ). '#comments' ?>">
+                            <span class="l">
+                                <?php echo $zero_count_label_mu; ?>
+                            </span>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
 
                 <?php
@@ -96,7 +90,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                 } else {
                     
                     $comment_creation_content_mu = '<div class="disabled-comments-note note cp" data-name="Disabled Comments Note">';
-                        $comment_creation_content_mu .= '<div class="disabled-comments-note---cr">';
+                        $comment_creation_content_mu .= '<div class="disabled-comments-note---cr note---cr">';
                             $comment_creation_content_mu .= '<p>'. esc_html__( 'Commenting is disabled.', 'ntt' ) . '</p>';
                         $comment_creation_content_mu .= '</div>';
                     $comment_creation_content_mu .= '</div>';

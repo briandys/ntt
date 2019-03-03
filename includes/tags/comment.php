@@ -21,43 +21,22 @@ if ( ! function_exists( 'ntt_comment') ) {
 
         <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( 'comment-'. esc_attr( $comment_id ). ' '. 'p-comment h-entry cp'. ' '. $comment_hierarchy_css. ' '. $commenter_avatar_type_css ); ?> data-name="Comment">
             <div class="comment---cr">
-                <div class="comment-header cm-header cn" data-name="Comment Header">
+                <div class="comment-header cn" data-name="Comment Header">
                     <div class="comment-header---cr">
-                        <div class="comment-name obj">
-                            <span class="comment---text"><?php esc_html_e( 'Comment', 'ntt' ); ?></span>
-                            <span class="comment-id---txt num"><?php echo esc_html( $comment_id ); ?></span>
-                        </div>
-                        <div class="comment-axns cm-axns-trunk cp" data-name="Comment Actions">
-                            <div class="comment-axns---cr">
-
-                                <?php
-                                ntt_comment_admin_actions();
-                                    
-                                if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
-                                    $reply_text = __( 'Reply', 'ntt' );
-                                    $requires_log_in_text = __( 'Requires Log In', 'ntt' );
-                                    ?>
-
-                                    <div class="comment-reply-axn obj">
-                                        <?php
-                                        comment_reply_link(
-                                            array_merge(
-                                                $args,
-                                                array(
-                                                    'add_below'     => 'comment',
-                                                    'depth'         => $depth,
-                                                    'max_depth'     => $args['max_depth'],
-                                                    'reply_text'    => '<span title="'. esc_attr( $reply_text ). '" class="txt">'. esc_html( $reply_text ). '</span>',
-                                                    'login_text'    => '<span title="'. esc_attr( $reply_text ). ' '. '('. esc_attr( $requires_log_in_text ). ')'. '" class="l"><span class="reply---text">'. esc_html( $reply_text ). '</span>'. ' '. '<span class="requires-log-in---text">'. esc_html( $requires_log_in_text ). '</span>'. '</span>',
-                                                )
-                                            ) );
-                                            ?>
-                                        </div>
-                                    <?php
-                                }
-                                ?>
+                        <?php
+                        if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
+                            ?>
+                            <div class="comment-name obj">
+                                <span class="txt"><?php echo esc_html__( 'Comment', 'ntt' ). ' '. esc_html( $comment_id ); ?></span>
                             </div>
-                        </div>
+                            <div class="comment-axns cm-axns-trunk cp" data-name="Comment Actions">
+                                <div class="comment-axns---cr">
+                                    <?php ntt_comment_admin_actions(); ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <div class="comment-meta cm-meta cp" data-name="Comment Meta">
                             <div class="comment-meta---cr">
                                 <?php
@@ -70,10 +49,10 @@ if ( ! function_exists( 'ntt_comment') ) {
                 </div>
                 <div class="comment-main cm-main cn" data-name="Comment Main">
                     <div class="comment-main---cr">
-                        <div class="comment-content cm-content-trunk content-trunk cp" data-name="Comment Content">
+                        <div class="comment-content content-trunk cp" data-name="Comment Content">
                             <div class="comment-content---cr">
                                 <div class="comment-full-content e-content content cp" data-name="Comment Full Content">
-                                    <div class="comment-full-content---cr">
+                                    <div class="comment-full-content---cr content---cr">
                                     
                                     <?php
                                     // Appears for not logged in users and those who opt-in to save info in cookie
@@ -81,7 +60,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                     if ( $comment->comment_approved == '0' ) {
                                         ?>
                                         <div class="unapproved-comments-note note cp" data-name="Unapproved Comments Note">
-                                            <div class="unapproved-comments-note---cr">
+                                            <div class="unapproved-comments-note---cr note---cr">
                                                 <p><?php esc_html_e( 'Your comment is awaiting moderation.', 'ntt' ); ?></p>
                                             </div>
                                         </div>
@@ -95,6 +74,42 @@ if ( ! function_exists( 'ntt_comment') ) {
                         </div>
                     </div>
                 </div>
+
+                <?php
+                if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
+                    ?>
+                    <div class="comment-footer cm-footer cn" data-name="Comment Footer">
+                        <div class="comment-footer---cr">
+                            <div class="comment-axns cm-axns-trunk cp" data-name="Comment Actions">
+                                <div class="comment-axns---cr">
+
+                                    <?php
+                                    $reply_text = __( 'Reply', 'ntt' );
+                                    $requires_log_in_text = __( 'Requires Log In', 'ntt' );
+                                    ?>
+                                    <div class="comment-reply-axn obj">
+                                        <?php
+                                        comment_reply_link(
+                                            array_merge(
+                                                $args,
+                                                array(
+                                                    'add_below'     => 'comment',
+                                                    'depth'         => $depth,
+                                                    'max_depth'     => $args['max_depth'],
+                                                    'reply_text'    => '<span title="'. esc_attr( $reply_text ). '" class="reply---text">'. esc_html( $reply_text ). '</span>',
+                                                    'login_text'    => '<span title="'. esc_attr( $reply_text ). ' '. '('. esc_attr( $requires_log_in_text ). ')'. '" class="l"><span class="reply---text">'. esc_html( $reply_text ). '</span>'. ' '. '<span class="requires-log-in---text">'. esc_html( $requires_log_in_text ). '</span>'. '</span>',
+                                                )
+                                            )
+                                        );
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
         </li>
         <?php

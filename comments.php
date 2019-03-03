@@ -24,14 +24,14 @@ $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Ac
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
             $logged_in_as_mu .= '<div class="logged-in-admin-account---cr">';
                 $logged_in_as_mu .= '<span class="logged-in-admin-account-glabel obj">'. esc_html_x( 'Logged in as', 'Logged in as [Name]', 'ntt' ). '</span>';
-                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name obj">';
+                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name obj" data-name="Logged In Admin Account Name">';
                     $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'">';
                         $logged_in_as_mu .= '<span class="txt">'. $user_identity.'</span>';
                     $logged_in_as_mu .= '</a>';
                 $logged_in_as_mu .= '</span>';
             $logged_in_as_mu .= '</div>';
         $logged_in_as_mu .= '</div>';
-        $logged_in_as_mu .= '<div class="log-out-admin-account-axn log-out-axn axn obj" data-name="Log Out Admin Account Action">';
+        $logged_in_as_mu .= '<div class="log-out-admin-account-axn axn obj" data-name="Log Out Admin Account Action">';
             $logged_in_as_mu .= '<a href="'. esc_url( wp_logout_url( get_permalink() ) ).'" title="'. esc_attr( $log_out_text ).'">';
                 $logged_in_as_mu .= '<span class="txt">'. esc_html( $log_out_text ). '</span>';
             $logged_in_as_mu .= '</a>';
@@ -41,7 +41,7 @@ $logged_in_as_mu .= '</div>';
 
 // must_log_in
 $must_log_in_mu = '<div class="log-in-required-note note cp" data-name="Log In Required Note">';
-    $must_log_in_mu .= '<div class="log-in-required-note--cr">';
+    $must_log_in_mu .= '<div class="log-in-required-note--cr note---cr">';
         $must_log_in_mu .= '<p><a href="'. esc_url( wp_login_url( get_permalink() ) ). '" title="'. esc_attr( $log_in_text ).'">'. esc_html( $log_in_text ). '</a> '. ' '. '<span class="to-comment---text">'. esc_html_x( 'to comment.', 'Log In to comment.', 'ntt' ). '</span>'. '</p>';
     $must_log_in_mu .= '</div>';
 $must_log_in_mu .= '</div>';
@@ -56,10 +56,18 @@ $comment_field_mu = '<div class="comment-author-message-field field cp" data-nam
     $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
 
+// cancel_reply_before
+$cancel_reply_axn_start_mu = '<span class="cancel-reply-axn axn obj" data-name="Cancel Reply Action">';
+
+// cancel_reply_after
+$cancel_reply_axn_end_mu = '</span>';
+
 // cancel_reply_link
-$cancel_reply_link_mu = '<span class="l">';
-    $cancel_reply_link_mu .= '<span class="cancel---text">'. esc_html_x( 'Cancel', 'Cancel Reply to Comment', 'ntt' ). '</span>';
-    $cancel_reply_link_mu .= ' '. '<span class="reply-to-comment---text">'. esc_html_x( 'Reply to Comment', 'Cancel Reply to Comment', 'ntt' ). '</span>';
+$cancel_reply_text = __( 'Cancel Reply', 'ntt' );
+
+$cancel_reply_link_mu = '<span title="'. esc_attr( $cancel_reply_text ). '" class="l">';
+    $cancel_reply_link_mu .= '<span class="cancel---text">'. esc_html_x( 'Cancel', 'Cancel Reply', 'ntt' ). '</span>';
+    $cancel_reply_link_mu .= ' '. '<span class="reply---text">'. esc_html_x( 'Reply', 'Cancel Reply', 'ntt' ). '</span>';
 $cancel_reply_link_mu .= '</span>';
 ?>
 
@@ -105,7 +113,7 @@ $cancel_reply_link_mu .= '</span>';
                             }
                             ?>
                             <div class="empty-comments-note note cp" data-name="Empty Comments Note">
-                                <div class="empty-comments-note---cr">
+                                <div class="empty-comments-note---cr note---cr">
                                     <p><?php echo $comments_content_esc ?></p>
                                 </div>
                             </div>
@@ -133,7 +141,7 @@ $cancel_reply_link_mu .= '</span>';
         // comment-form.php
         comment_form( array(
             'id_form'                   => 'commentform',
-            'class_form'                => 'comment-form form cp',
+            'class_form'                => 'comment-form cp',
         
             'title_reply_before'        => '',
             'title_reply_after'         => '',
@@ -145,8 +153,8 @@ $cancel_reply_link_mu .= '</span>';
             'title_reply_to'            =>  $title_reply_to_mu,
         
             // Cancel Reply Action
-            'cancel_reply_before'       => '',
-            'cancel_reply_after'        => '',
+            'cancel_reply_before'       => $cancel_reply_axn_start_mu,
+            'cancel_reply_after'        => $cancel_reply_axn_end_mu,
             'cancel_reply_link'         => $cancel_reply_link_mu,
         
             // Signed in as <Admin Account Name>

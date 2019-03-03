@@ -1,3 +1,19 @@
 @import 'source/rules';
 @import 'source/h5bp-normalize';
 @import 'source/h5bp-main';
+
+//--------------------------------------------------------------
+// WP Elements
+//--------------------------------------------------------------
+
+.bypostauthor,
+.gallery-caption,
+.screen-reader-text,
+.sticky,
+.wp-caption,
+.wp-caption-text,
+.alignright,
+.alignleft,
+.aligncenter {
+    position: inherit;
+}
