@@ -4,7 +4,6 @@
     <div class="entity-main-header---cr">
         <?php
         ntt_entity_view_heading();
-        ntt_entry_nav();
         ?>
     </div>
 </div>

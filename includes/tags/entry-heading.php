@@ -16,7 +16,7 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
         if ( get_the_title() ) {
             $entry_name = '<span class="txt">'. esc_html( get_the_title() ). '</span>';
         } else {
-            $entry_name = '<span class="txt">'. _x( 'Entry', 'Entry [Entry ID]', 'ntt' ). get_the_id(). '</span>';
+            $entry_name = '<span class="txt">'. _x( 'Entry', 'Entry [Entry ID]', 'ntt' ). ' '. get_the_id(). '</span>';
         }
         ?>
 
