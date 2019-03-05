@@ -78,10 +78,7 @@ $cancel_reply_link_mu .= '</span>';
                 <div class="comments-header header cn" data-name="Comments Header">
                     <div class="comments-header---cr">
                         <h2 class="comments-name obj"><?php esc_html_e( 'Comments', 'ntt' ); ?></h2>
-                        <?php
-                        ntt_comments_actions_snippet();
-                        ntt_comments_nav();
-                        ?>
+                        <?php ntt_comments_actions_snippet(); ?>
                     </div>
                 </div>
                 <div class="comments-main main cn" data-name="Comments Main">

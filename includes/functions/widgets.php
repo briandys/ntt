@@ -66,6 +66,7 @@ add_action( 'widgets_init', 'ntt_widgets' );
  */
 function ntt_widgets_html_css( $classes ) {
 
+    $disabled_css = '0';
     $enabled_css = '1';
 
     /**
@@ -79,6 +80,8 @@ function ntt_widgets_html_css( $classes ) {
     foreach ( $r_entity_widgets as $entity_widgets ) {
         if ( is_active_sidebar( $entity_widgets ) ) {
             $classes[] = $entity_widgets. '--'. $enabled_css;
+        } else {
+            $classes[] = $entity_widgets. '--'. $disabled_css;
         }
     }
 

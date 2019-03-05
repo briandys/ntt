@@ -5,21 +5,46 @@ if ( ! function_exists( 'ntt_comment') ) {
         $commenter = wp_get_current_commenter();
         $comment_url = get_comment_link( $comment->comment_ID );
         $comment_id = get_comment_ID();
-        
+
+        // Comment Hierarchy CSS
         if ( true === $args['has_children'] ) {
             $comment_hierarchy_css = 'parent-comment';
         } else {
             $comment_hierarchy_css = 'single-comment';
         }
 
+        // Default Commenter Avatar Type
         if ( get_option( 'avatar_default' ) == 'blank' ) {
             $commenter_avatar_type_css = 'default-commenter-avatar--default';
         } else {
             $commenter_avatar_type_css = 'default-commenter-avatar--custom';
         }
+
+        // Threaded Comments Limit Status
+        if ( get_option( 'thread_comments' ) && $depth == $args['max_depth'] ) {
+            $comments_thread_limit_css = 'comments-thread-limit--max';
+        } else {
+            $comments_thread_limit_css = '';
+        }
+
+        $r_comment_css = array(
+            'comment-'. $comment_id,
+            'p-comment',
+            'h-entry',
+            'cp',
+            $comment_hierarchy_css,
+            $commenter_avatar_type_css,
+            $comments_thread_limit_css,
+        );
+        
+        foreach ( $r_comment_css as $comment_css ) {
+            $classes[] = $comment_css;
+        }
+
+        $classes = implode( ' ', $classes );
         ?>
 
-        <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( 'comment-'. esc_attr( $comment_id ). ' '. 'p-comment h-entry cp'. ' '. $comment_hierarchy_css. ' '. $commenter_avatar_type_css ); ?> data-name="Comment">
+        <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( $classes ); ?> data-name="Comment">
             <div class="comment---cr">
                 <div class="comment-header cn" data-name="Comment Header">
                     <div class="comment-header---cr">

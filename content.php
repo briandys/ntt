@@ -21,6 +21,7 @@
                         ?>
                     </div>
                 </div>
+                <?php ntt_after_entry_content_wp_hook(); ?>
             </div>
         </div>
         
