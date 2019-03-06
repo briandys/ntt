@@ -12,7 +12,6 @@ if ( ! function_exists( 'ntt_entry_header' ) ) {
                 ntt_entry_heading();
                 ntt_entry_admin_actions();
                 ntt_breadcrumbs_nav();
-                ntt_entry_content_nav();
                 ntt_entry_primary_meta();
                 ntt_comments_actions_snippet();
                 ntt_entry_banner();
