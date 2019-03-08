@@ -20,7 +20,7 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
                 if ( get_option( 'show_avatars' ) == 1 ) {
                     ?>
                     <span class="entry-author-avatar cm-author-avatar obj" data-name="Entry Author Avatar">
-                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>">
+                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( $entry_author ); ?>">
                             <span class="img">
                                 <?php
                                 echo get_avatar(

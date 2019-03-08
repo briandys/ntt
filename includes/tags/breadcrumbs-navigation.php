@@ -27,11 +27,11 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
 
             $navi_current_mu = '<div class="breadcrumb-navi--current obj">'. esc_html( get_the_title() ). '</div>'; ?>
 
-            <div class="breadcrumbs-nav cp" data-name="Breadcrumbs Navigation">
-                <div class="breadcrumbs-nav---cr">
-                    <div class="breadcrumbs-nav-name obj"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
-                    <div class="breadcrumbs-nav-group cp">
-                        <div class="breadcrumbs-nav-group---cr">
+            <div class="breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
+                <div class="breadcrumbs-nav---cr nav---cr">
+                    <div class="breadcrumbs-nav-name nav-name obj"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
+                    <div class="breadcrumbs-nav-group nav-group cp">
+                        <div class="breadcrumbs-nav-group---cr nav-group---cr">
                             <div class="breadcrumbs-nav-ancestors-group cp">
                                 <ul class="breadcrumbs-nav-ancestors-group---cr">
                                     <?php echo $breadcrumbs_ancestors_mu; ?>

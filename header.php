@@ -14,10 +14,10 @@
                 <div id="entity-start" class="entity-start cn" data-name="Entity Start">
                     <div class="entity-start---cr">
                         <div id="go-content-nav" class="go-content-nav nav cp" data-name="Go to Content Navigation">
-                            <div class="go-content-nav---cr">
-                                <div class="go-content-navi obj">
+                            <div class="go-content-nav---cr nav---cr">
+                                <div class="go-content-navi navi obj">
                                     <?php $go_content_text = __( 'Go to Content', 'ntt' ); ?>
-                                    <a href="#content" title="<?php echo esc_attr( $go_content_text ); ?>" id="go-content-navi-axn">
+                                    <a href="#content" title="<?php echo esc_attr( $go_content_text ); ?>">
                                         <span class="txt"><?php echo esc_html( $go_content_text ); ?></span>
                                     </a>
                                 </div>

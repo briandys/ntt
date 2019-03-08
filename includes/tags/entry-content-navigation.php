@@ -14,7 +14,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         $navi_text .= '<span class="page-number---txt num">'. esc_html( '%' ). '</span>';
 
         $defaults = array(
-            'before'            => '<div class="entry-content-nav-group nav-group cp"><ul class="entry-content-nav-group---cr">',
+            'before'            => '<div class="entry-content-nav-group nav-group cp"><ul class="entry-content-nav-group---cr nav-group---cr">',
             'after'             => '</ul></div>',
             'text_before'       => '',
             'text_after'        => '',
@@ -82,7 +82,7 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
             }
             ?>
             <div role="navigation" class="entry-content-nav nav cp" data-name="Entry Content Navigation">
-                <div class="entry-content-nav---cr">
+                <div class="entry-content-nav---cr nav---cr">
                     <div class="entry-content-nav-name nav-name obj"><?php esc_html_e( 'Entry Content Navigation', 'ntt' ); ?></div>
                     <?php echo $content_pagination_group_mu; ?>
                 </div>

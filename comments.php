@@ -49,7 +49,7 @@ $must_log_in_mu .= '</div>';
 // Comment Author Message Field | comment_field
 $comment_field_mu = '<div class="comment-author-message-field field cp" data-name="Comment Author Message Field">';
     $comment_field_mu .= '<div class="comment-author-message-field---cr field---cr">';
-    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label obj">'. esc_html( $comment_text ). '</label>';
+    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label field-label obj">'. esc_html( $comment_text ). '</label>';
         $comment_field_mu .= '<div class="comment-author-message-field-textbox textbox obj">';
             $comment_field_mu .= '<textarea name="comment" placeholder="'. esc_attr( $comment_text ).'" title="'. esc_attr( $comment_text ).'" maxlength="65525" required id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';

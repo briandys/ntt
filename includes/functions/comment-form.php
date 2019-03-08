@@ -17,7 +17,7 @@ function ntt_comment_form( $fields ) {
     // Comment Author Name
     $fields['author'] = '<div class="comment-author-name-field field cp" data-name="Comment Author Name Field">';
         $fields['author'] .= '<div class="cr ">';
-            $fields['author'] .= '<label for="comment-author-name-field-input" class="comment-author-name-field-label obj">';
+            $fields['author'] .= '<label for="comment-author-name-field-input" class="comment-author-name-field-label field-label obj">';
                 $fields['author'] .= '<span class="name---text">'. esc_html( $name_text ). '</span>';
                 $fields['author'] .= $optional;
             $fields['author'] .= '</label>';
@@ -30,7 +30,7 @@ function ntt_comment_form( $fields ) {
     // Comment Author Email
     $fields['email'] = '<div class="comment-author-email-field field cp" data-name="Comment Author Email Field">';
         $fields['email'] .= '<div class="comment-author-email-field---cr">';
-            $fields['email'] .= '<label for="comment-author-email-field-input" class="comment-author-email-field-label obj">';
+            $fields['email'] .= '<label for="comment-author-email-field-input" class="comment-author-email-field-label field-label obj">';
                 $fields['email'] .= esc_html( $email_text );
             $fields['email'] .= '</label>';
             $fields['email'] .= '<div class="comment-author-email-field-textbox textbox obj" data-name="Comment Author Email Field Textbox">';
@@ -42,7 +42,7 @@ function ntt_comment_form( $fields ) {
     // Comment Author Website URL
     $fields['url'] = '<div class="comment-author-url-field field cp" data-name="Comment Author URL Field">';
         $fields['url'] .= '<div class="comment-author-url-field---cr">';
-            $fields['url'] .= '<label for="comment-author-url-field-input" class="comment-author-url-field-label obj">';
+            $fields['url'] .= '<label for="comment-author-url-field-input" class="comment-author-url-field-label field-label obj">';
                 $fields['url'] .= '<span class="website---text">'. esc_html( $website_text ). '</span>';
                 $fields['url'] .= ' '. '<span class="url---text">'. esc_html( $url_text ). '</span>';
                 $fields['url'] .= $optional_note;

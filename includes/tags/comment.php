@@ -46,7 +46,7 @@ if ( ! function_exists( 'ntt_comment') ) {
 
         <li id="comment-<?php echo esc_attr( $comment_id ); ?>" <?php comment_class( $classes ); ?> data-name="Comment">
             <div class="comment---cr">
-                <div class="comment-header cn" data-name="Comment Header">
+                <div class="comment-header header cn" data-name="Comment Header">
                     <div class="comment-header---cr">
                         <?php
                         if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {

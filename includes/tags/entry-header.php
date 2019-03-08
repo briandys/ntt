@@ -5,7 +5,7 @@
 if ( ! function_exists( 'ntt_entry_header' ) ) {
     function ntt_entry_header() {
         ?>
-        <div class="entry-header cn" data-name="Entry Header">
+        <div class="entry-header header cn" data-name="Entry Header">
             <div class="entry-header---cr">
                 
                 <?php

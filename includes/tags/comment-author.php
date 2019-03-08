@@ -11,7 +11,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                 $commented_by_text = _x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' );
                 
                 if ( get_comment_author_url() ) {
-                    $anchor_start_mu = '<a href="'. get_comment_author_url(). '" title="'. esc_attr( $commented_by_text ). ' '. esc_attr( $comment_author ). '">';
+                    $anchor_start_mu = '<a href="'. get_comment_author_url(). '" title="'. esc_attr( $comment_author ). '">';
                     $anchor_end_mu = '</a>';
                     $img_start_mu = $anchor_start_mu. '<span class="img">';
                     $img_end_mu = '</span>'. $anchor_end_mu;

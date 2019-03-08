@@ -4,7 +4,6 @@
                     <div class="entity-footer---cr">
 
                         <?php ntt_entity_secondary_nav(); ?>
-                        
                         <div id="entity-secondary-info" class="entity-secondary-info cp" data-name="Entity Secondary Information">
                             <div class="entity-secondary-info---cr">
 
@@ -36,17 +35,14 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </footer>
-                
                 <div id="entity-end" class="entity-end cn" data-name="Entity End">
                     <div class="entity-end---cr">
-                        
                         <div id="go-start-nav" class="go-start-nav nav cp" data-name="Go to Start Navigation">
-                            <div class="go-start-nav---cr">
+                            <div class="go-start-nav---cr nav---cr">
                                 <?php $go_start_text = __( 'Go to Start', 'ntt' ); ?>
-                                <div class="go-start-navi obj">
+                                <div class="go-start-navi navi obj">
                                     <a href="#start" title="<?php echo esc_attr( $go_start_text ); ?>">
                                         <span class="txt"><?php echo esc_html( $go_start_text ); ?></span>
                                     </a>
@@ -59,7 +55,7 @@
         </div>
         <div id="wild-card" class="wild-card" data-name="Wild Card">
             <div class="wild-card---cr">
-                <!-- Dynamically-created Content -->
+                <!-- Dynamically-Created Content -->
             </div>
         </div>
 
