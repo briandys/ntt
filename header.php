@@ -60,6 +60,7 @@
                                 ?>
                             </div>
                         </div>
+                        <?php ntt_after_entity_primary_heading_wp_hook(); ?>
 
                         <?php
                         ntt_entity_primary_nav();
