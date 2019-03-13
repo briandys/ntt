@@ -1,3 +1,8 @@
+:root {
+  --customizer-hue: var(--wp-customizer-custom-color-scheme--hue);
+  --customizer-sat: var(--wp-customizer-custom-color-scheme--saturation);
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */

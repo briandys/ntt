@@ -1,6 +1,6 @@
                     </div>
                 </main>
-                <footer id="entity-footer" class="entity-footer cn" data-name="Entity Footer">
+                <footer id="entity-footer" class="entity-footer footer cn" data-name="Entity Footer">
                     <div class="entity-footer---cr">
 
                         <?php ntt_entity_secondary_nav(); ?>

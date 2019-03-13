@@ -99,11 +99,16 @@ add_action( 'wp_enqueue_scripts', 'ntt_wp_customizer_modify_action_script' );
 function ntt_wp_customizer_color_patterns() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 	$saturation = absint( apply_filters( 'ntt_custom_colors_saturation', 50 ) ). '%';
-	$css = '
-	.wp-customizer-color-scheme--custom .entity-header {
-		background-color: hsl('. $hue. ', '. $saturation. ', 50%);
-	}
-	';
+    $css = '
+    :root {
+        --wp-customizer-custom-color-scheme--hue: '. $hue.';
+        --wp-customizer-custom-color-scheme--saturation: '. $saturation.';
+    }
+    
+    .wp-customizer-color-scheme--custom .entity-header {
+        background-color: hsl('. $hue. ', '. $saturation. ', 50%);
+    }
+    ';
 	return apply_filters( 'ntt_wp_customizer_color_patterns', $css, $hue, $saturation );
 }
 

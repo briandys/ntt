@@ -103,7 +103,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                 <?php
                 if ( comments_open() && get_option( 'thread_comments' ) && $depth < $args['max_depth'] ) {
                     ?>
-                    <div class="comment-footer cm-footer cn" data-name="Comment Footer">
+                    <div class="comment-footer footer cn" data-name="Comment Footer">
                         <div class="comment-footer---cr">
                             <div class="comment-axns cm-axns-trunk cp" data-name="Comment Actions">
                                 <div class="comment-axns---cr">

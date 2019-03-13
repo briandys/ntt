@@ -7,7 +7,6 @@ if ( ! function_exists( 'ntt_entry_header' ) ) {
         ?>
         <div class="entry-header header cn" data-name="Entry Header">
             <div class="entry-header---cr">
-                
                 <?php
                 ntt_entry_heading();
                 ntt_entry_admin_actions();

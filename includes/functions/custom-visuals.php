@@ -32,7 +32,7 @@ function ntt_custom_header_callback() {
         return;
     }
     
-    if ( 'blank' !== get_header_textcolor() ) {
+    if ( get_header_textcolor() !== 'blank' ) {
         ?>
         <style id="ntt-custom-header-colors-style">
             .entity-primary-name a,
