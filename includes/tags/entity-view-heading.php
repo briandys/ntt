@@ -173,31 +173,11 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 </div>
 
                 <?php
-                // Item Count is displayed only in Plural View
+                // Entry Count is displayed only in Plural View
                 if ( is_home() || is_archive() || is_search() ) {
-                
-                    $entry_text = __( 'Entry', 'ntt' );
-                    $entries_text = __( 'Entries', 'ntt' );
-                
-                    if ( $query_found_posts == 0 ) {
-                        $item_count_glabel = $entry_text;
-                    } elseif ( $query_found_posts == 1 ) {
-                        $item_count_glabel = $entry_text;
-                    } else {
-                        $item_count_glabel = $entries_text;
-                    }
-                    ?>
-
-                    <div class="entity-view-item-count count obj" data-name="Entity View Item Count">
-                        <?php echo $text_label_start_mu; ?>
-                            <span class="l">
-                                <span class="count---txt num"><?php echo esc_html( $query_found_posts ); ?></span>
-                                <span class="glabel---txt"><?php echo esc_html( $item_count_glabel ); ?></span>
-                            </span>
-                        <?php echo $text_label_end_mu; ?>
-                    </div>
-
-                <?php } ?>
+                    ntt_entry_count( $args = '', $entry_count_name = 'Entity View', $entry_count_css = 'entity-view' );
+                }
+                ?>
             </div>
         </div>
         <?php

@@ -1,26 +1,39 @@
 <?php
+/**
+ * Sub-Content Navigation
+ * 
+ * Similar to entries-navigation.php
+ * 
+ * Navigation to use for pages that display all entries within a specific category.
+ */
 if ( ! function_exists('ntt_sub_content_nav' ) ) {
     function ntt_sub_content_nav( $total ) {
 
-        $page_term = __( 'Page', 'ntt' );
+        $next_text = _x( 'Next', 'Next Page', 'ntt' );
+        $previous_text = _x( 'Previous', 'Previous Page', 'ntt' );
+        $page_text = _x( 'Page', '[Next / Previous] Page', 'ntt' );
         
-        $l_mu_start = '<span class="page---text">'. esc_html( $page_term ). '</span>';
+        $l_mu_start = '<span class="l">';
+        $l_mu_start .= '<span class="page---text">'. esc_html( $page_text ). '</span>';
         $l_mu_start .= ' '. '<span class="page-number---txt num">';
         $l_mu_end = '</span>';
+        $l_mu_end .= '</span>';
 
-        $adjacent_navi_mu = '<span class="l" title="'. esc_attr( '%2$s' ). '">';
-            $adjacent_navi_mu .= '<span class="'. esc_attr( sanitize_title( '%1$s' ) ).'---text">'. esc_html( '%1$s' ). '</span>';
-            $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_term ). '</span>';
+        $adjacent_navi_mu = '<span title="'. esc_attr( '%3$s' ). '" class="l">';
+            $adjacent_navi_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
+            $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_text ). '</span>';
         $adjacent_navi_mu .= '</span>';
         
         $next = sprintf( $adjacent_navi_mu,
-            _x( 'Next', 'Next Page', 'ntt' ),
-            __( 'Next Page', 'ntt' )
+            $next_text,
+            'next---text',
+            $next_text. ' '. $page_text
         );
         
         $previous = sprintf( $adjacent_navi_mu,
-            _x( 'Previous', 'Previous Page', 'ntt' ),
-            __( 'Previous Page', 'ntt' )
+            $previous_text,
+            'previous---text',
+            $previous_text. ' '. $page_text
         );
         ?>
         

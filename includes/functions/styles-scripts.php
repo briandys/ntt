@@ -7,8 +7,6 @@ function ntt_styles_scripts() {
     
     add_editor_style( array( 'assets/css/editor-style.css', ) );
 
-    wp_enqueue_style( 'ntt-print-style', get_template_directory_uri() . '/assets/styles/print.min.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
-
     wp_enqueue_script( 'ntt-script', get_template_directory_uri(). '/assets/scripts/ntt.js', array(), wp_get_theme()->get( 'Version' ), true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -42,6 +42,7 @@ $r_tags = array(
     'entry-banner',
     'entry-content',
     'entry-content-navigation',
+    'entry-count',
     'entry-datetime',
     'entry-footer',
     'entry-full-content',
