@@ -54,7 +54,9 @@
                                 
                                 if ( $get_bloginfo_description || is_customize_preview() ) {
                                     ?>
-                                    <div id="entity-primary-description" class="entity-primary-description obj" data-name="Entity Primary Description"><?php echo esc_attr( $get_bloginfo_description ); ?></div>
+                                    <div id="entity-primary-description" class="entity-primary-description obj" data-name="Entity Primary Description">
+                                        <span class="txt"><?php echo esc_attr( $get_bloginfo_description ); ?></span>
+                                    </div>
                                     <?php
                                 }
                                 ?>

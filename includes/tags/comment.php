@@ -7,7 +7,7 @@ if ( ! function_exists( 'ntt_comment') ) {
         $comment_id = get_comment_ID();
 
         // Comment Hierarchy CSS
-        if ( true === $args['has_children'] ) {
+        if ( $args['has_children'] === true ) {
             $comment_hierarchy_css = 'parent-comment';
         } else {
             $comment_hierarchy_css = 'single-comment';
@@ -21,7 +21,7 @@ if ( ! function_exists( 'ntt_comment') ) {
         }
 
         // Threaded Comments Limit Status
-        if ( get_option( 'thread_comments' ) && $depth == $args['max_depth'] ) {
+        if ( get_option( 'thread_comments' ) && $args['max_depth'] == $depth ) {
             $comments_thread_limit_css = 'comments-thread-limit--max';
         } else {
             $comments_thread_limit_css = '';
@@ -54,7 +54,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                             <div class="comment-name obj">
                                 <span class="txt"><?php echo esc_html__( 'Comment', 'ntt' ). ' '. esc_html( $comment_id ); ?></span>
                             </div>
-                            <div class="comment-axns cm-axns-trunk cp" data-name="Comment Actions">
+                            <div class="comment-axns cp" data-name="Comment Actions">
                                 <div class="comment-axns---cr">
                                     <?php ntt_comment_admin_actions(); ?>
                                 </div>
@@ -72,7 +72,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                         </div>
                     </div>
                 </div>
-                <div class="comment-main cm-main cn" data-name="Comment Main">
+                <div class="comment-main cn" data-name="Comment Main">
                     <div class="comment-main---cr">
                         <div class="comment-content content-trunk cp" data-name="Comment Content">
                             <div class="comment-content---cr">
@@ -105,7 +105,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                     ?>
                     <div class="comment-footer footer cn" data-name="Comment Footer">
                         <div class="comment-footer---cr">
-                            <div class="comment-axns cm-axns-trunk cp" data-name="Comment Actions">
+                            <div class="comment-axns cp" data-name="Comment Actions">
                                 <div class="comment-axns---cr">
 
                                     <?php

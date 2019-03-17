@@ -9,6 +9,7 @@ $r_functions = array(
     'hooks',
     'styles-scripts',
     // Secondary
+    'comment-css',
     'comments-css',
     'comment-form',
     'custom-visuals',

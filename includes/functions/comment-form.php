@@ -16,12 +16,14 @@ function ntt_comment_form( $fields ) {
 
     // Comment Author Name
     $fields['author'] = '<div class="comment-author-name-field field cp" data-name="Comment Author Name Field">';
-        $fields['author'] .= '<div class="cr ">';
+        $fields['author'] .= '<div class="comment-author-name-field field---cr">';
             $fields['author'] .= '<label for="comment-author-name-field-input" class="comment-author-name-field-label field-label obj">';
-                $fields['author'] .= '<span class="name---text">'. esc_html( $name_text ). '</span>';
-                $fields['author'] .= $optional;
+                $fields['author'] .= '<span class="l">';
+                    $fields['author'] .= '<span class="field-label---txt">'. esc_html( $name_text ). '</span>';
+                    $fields['author'] .= $optional;
+                $fields['author'] .= '</span>';
             $fields['author'] .= '</label>';
-            $fields['author'] .= '<div class="comment-author-name-field-textbox textbox obj" data-name="Comment Author Name Field Textbox">';
+            $fields['author'] .= '<div class="comment-author-name-field-textbox form-element obj" data-name="Comment Author Name Field Textbox">';
                 $fields['author'] .= '<input type="text" name="author" value="'. esc_attr( $commenter['comment_author'] ). '" size="64" placeholder="'. esc_attr( $name_text ). '" title="'. esc_attr( $name_text ). '"'. $aria_req. 'id="comment-author-name-field-input" class="text-input">';
             $fields['author'] .= '</div>';
         $fields['author'] .= '</div>';
@@ -29,11 +31,13 @@ function ntt_comment_form( $fields ) {
 
     // Comment Author Email
     $fields['email'] = '<div class="comment-author-email-field field cp" data-name="Comment Author Email Field">';
-        $fields['email'] .= '<div class="comment-author-email-field---cr">';
+        $fields['email'] .= '<div class="comment-author-email-field---cr field---cr">';
             $fields['email'] .= '<label for="comment-author-email-field-input" class="comment-author-email-field-label field-label obj">';
-                $fields['email'] .= esc_html( $email_text );
+                $fields['email'] .= '<span class="l">';
+                    $fields['email'] .= '<span class="field-label---txt">'. esc_html( $email_text ). '</span>';
+                $fields['email'] .= '</span>';
             $fields['email'] .= '</label>';
-            $fields['email'] .= '<div class="comment-author-email-field-textbox textbox obj" data-name="Comment Author Email Field Textbox">';
+            $fields['email'] .= '<div class="comment-author-email-field-textbox form-element obj" data-name="Comment Author Email Field Textbox">';
                 $fields['email'] .= '<input type="email" name="email" value="'. esc_attr( $commenter['comment_author_email'] ). '" size="64" placeholder="'. esc_attr( $email_text ).'" title="'. esc_attr( $email_text ). '" required id="comment-author-email-field-input" class="text-input">';
             $fields['email'] .= '</div>';
         $fields['email'] .= '</div>';
@@ -41,13 +45,14 @@ function ntt_comment_form( $fields ) {
 
     // Comment Author Website URL
     $fields['url'] = '<div class="comment-author-url-field field cp" data-name="Comment Author URL Field">';
-        $fields['url'] .= '<div class="comment-author-url-field---cr">';
+        $fields['url'] .= '<div class="comment-author-url-field---cr field---cr">';
             $fields['url'] .= '<label for="comment-author-url-field-input" class="comment-author-url-field-label field-label obj">';
-                $fields['url'] .= '<span class="website---text">'. esc_html( $website_text ). '</span>';
-                $fields['url'] .= ' '. '<span class="url---text">'. esc_html( $url_text ). '</span>';
-                $fields['url'] .= $optional_note;
+                $fields['url'] .= '<span class="l">';
+                    $fields['url'] .= '<span class="field-label---txt">'. esc_html( $website_text ). '</span>';
+                    $fields['url'] .= $optional_note;
+                $fields['url'] .= '</span>';
             $fields['url'] .= '</label>';
-            $fields['url'] .= '<div class="comment-author-url-field-textbox textbox obj" data-name="Comment Author URL Field Textbox">';
+            $fields['url'] .= '<div class="comment-author-url-field-textbox form-element obj" data-name="Comment Author URL Field Textbox">';
                 $fields['url'] .= '<input type="url" name="url" value="'. esc_attr( $commenter['comment_author_url'] ). '" size="64" placeholder="'. esc_attr( $url_text ). '" title="'. esc_attr( $website_url_text ). '" id="comment-author-url-field-input" class="text-input">';
             $fields['url'] .= '</div>';
         $fields['url'] .= '</div>';

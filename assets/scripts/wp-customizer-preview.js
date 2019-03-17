@@ -12,7 +12,7 @@
     // Entity Description
     wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.entity-primary-description' ).text( to );
+			$( '.entity-primary-description .txt' ).text( to );
 		} );
 	} );
 	

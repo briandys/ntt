@@ -11,8 +11,10 @@ $log_out_text = __( 'Log Out', 'ntt' );
 
 // title_reply
 $title_reply_mu = '<div class="compose-comment-glabel obj">';
-    $title_reply_mu .= '<span class="compose---text">'. esc_html_x( 'Compose', 'Compose Comment', 'ntt' ). '</span>';
-    $title_reply_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Compose Comment', 'ntt' ). '</span>';
+    $title_reply_mu .= '<span class="l">';
+        $title_reply_mu .= '<span class="compose---text">'. esc_html_x( 'Compose', 'Compose Comment', 'ntt' ). '</span>';
+        $title_reply_mu .= ' '. '<span class="comment---text">'. esc_html_x( 'Comment', 'Compose Comment', 'ntt' ). '</span>';
+    $title_reply_mu .= '</span>';
 $title_reply_mu .= '</div>';
 
 // title_reply_to
@@ -23,8 +25,10 @@ $logged_in_as_mu = '<div class="admin-account-log-status cp" data-name="Admin Ac
     $logged_in_as_mu .= '<div class="admin-account-log-status---cr">';
         $logged_in_as_mu .= '<div class="logged-in-admin-account cp" data-name="Logged In Admin Account">';
             $logged_in_as_mu .= '<div class="logged-in-admin-account---cr">';
-                $logged_in_as_mu .= '<span class="logged-in-admin-account-glabel obj">'. esc_html_x( 'Logged in as', 'Logged in as [Name]', 'ntt' ). '</span>';
-                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name obj" data-name="Logged In Admin Account Name">';
+                $logged_in_as_mu .= '<span class="logged-in-admin-account-glabel obj">';
+                    $logged_in_as_mu .= '<span class="txt">'. esc_html_x( 'Logged in as', 'Logged in as [Name]', 'ntt' ). '</span>';
+                $logged_in_as_mu .= '</span>';
+                $logged_in_as_mu .= ' '. '<span class="logged-in-admin-account-name obj">';
                     $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" title="'. $user_identity.'">';
                         $logged_in_as_mu .= '<span class="txt">'. $user_identity.'</span>';
                     $logged_in_as_mu .= '</a>';
@@ -49,8 +53,12 @@ $must_log_in_mu .= '</div>';
 // Comment Author Message Field | comment_field
 $comment_field_mu = '<div class="comment-author-message-field field cp" data-name="Comment Author Message Field">';
     $comment_field_mu .= '<div class="comment-author-message-field---cr field---cr">';
-    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label field-label obj">'. esc_html( $comment_text ). '</label>';
-        $comment_field_mu .= '<div class="comment-author-message-field-textbox textbox obj">';
+    $comment_field_mu .= '<label for="comment" class="comment-author-message-field-label field-label obj">';
+        $comment_field_mu .= '<span class="l">';
+            $comment_field_mu .= '<span class="field-label---txt">'. esc_html( $comment_text ). '</span>';
+        $comment_field_mu .= '</span>';
+    $comment_field_mu .= '</label>';
+        $comment_field_mu .= '<div class="comment-author-message-field-textbox form-element obj">';
             $comment_field_mu .= '<textarea name="comment" placeholder="'. esc_attr( $comment_text ).'" title="'. esc_attr( $comment_text ).'" maxlength="65525" required id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
     $comment_field_mu .= '</div>';
@@ -77,7 +85,9 @@ $cancel_reply_link_mu .= '</span>';
             <div class="comments---cr">
                 <div class="comments-header header cn" data-name="Comments Header">
                     <div class="comments-header---cr">
-                        <h2 class="comments-name obj"><?php esc_html_e( 'Comments', 'ntt' ); ?></h2>
+                        <h2 class="comments-name obj">
+                            <span class="txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
+                        </h2>
                         <?php ntt_comments_actions_snippet(); ?>
                     </div>
                 </div>

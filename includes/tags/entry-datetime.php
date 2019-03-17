@@ -16,8 +16,10 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
 
         // Generic Label Markup
         $glabel_mu = '<span class="entry-'. esc_attr( '%3$s' ). '-datetime-glabel obj">';
-            $glabel_mu .= '<span class="'. esc_attr( '%4$s' ). '">'. esc_html( '%1$s' ). '</span>';
-            $glabel_mu .= ' '. '<span class="on---text">'. esc_html( '%2$s' ). '</span>';
+            $glabel_mu .= '<span class="l">';
+                $glabel_mu .= '<span class="'. esc_attr( '%4$s' ). '">'. esc_html( '%1$s' ). '</span>';
+                $glabel_mu .= ' '. '<span class="on---text">'. esc_html( '%2$s' ). '</span>';
+            $glabel_mu .= '</span>';
         $glabel_mu .= '</span>'. ' ';
 
         // Date Markup

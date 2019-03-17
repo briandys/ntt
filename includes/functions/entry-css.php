@@ -5,14 +5,14 @@ function ntt_entry_css( $classes ) {
     global $post;
     
     // Default
-    $r_defaults_css = array(
+    $r_defaults = array(
         'entry-'. $post->ID,
         'entry',
         'cp',
     );
     
-    foreach ( $r_defaults_css as $default_css ) {
-        $classes[] = $default_css;
+    foreach ( $r_defaults as $css ) {
+        $classes[] = $css;
     }
     
     return $classes;
