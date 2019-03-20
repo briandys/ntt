@@ -6,7 +6,9 @@ if ( ! function_exists( 'ntt_comments_nav' ) ) {
             ?>
             <div class="comments-nav nav cp" data-name="Comments Navigation">
                 <div class="comments-nav---cr nav---cr">
-                    <div class="comments-nav-name nav-name obj"><?php esc_html_e( 'Comments Navigation', 'ntt' ); ?></div>
+                    <div class="comments-nav-name nav-name obj">
+                        <span class="txt"><?php esc_html_e( 'Comments Navigation', 'ntt' ); ?></span>
+                    </div>
             
                     <?php
                     $next_text = _x( 'Next', 'Next Comments', 'ntt' );

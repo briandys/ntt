@@ -1,8 +1,11 @@
 <?php
-// https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
-
-if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
-    function ntt_breadcrumbs_nav() {
+/**
+ * Entry Breadcrumbs Navigation
+ * 
+ * https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
+ */
+if ( ! function_exists( 'ntt_entry_breadcrumbs_nav' ) ) {
+    function ntt_entry_breadcrumbs_nav() {
 
         global $post;
         
@@ -16,7 +19,7 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
             }
 
             foreach ( $anc as $ancestor ) {
-                $navi_ancestors = '<li>';
+                $navi_ancestors = '<li class="entry-breadcrumbs-navi navi obj">';
                     $navi_ancestors .= '<a href="'. esc_url( get_permalink( $ancestor ) ). '" title="'. esc_attr( get_the_title( $ancestor ) ). '">';
                         $navi_ancestors .= '<span class="txt">'. esc_html( get_the_title( $ancestor ) ). '</span>';
                     $navi_ancestors .= '</a>';
@@ -24,20 +27,23 @@ if ( ! function_exists( 'ntt_breadcrumbs_nav' ) ) {
 
                 $breadcrumbs_ancestors_mu .= $navi_ancestors;
             }
+            ?>
 
-            $navi_current_mu = '<div class="breadcrumb-navi--current obj">'. esc_html( get_the_title() ). '</div>'; ?>
-
-            <div class="breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
-                <div class="breadcrumbs-nav---cr nav---cr">
-                    <div class="breadcrumbs-nav-name nav-name obj"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></div>
-                    <div class="breadcrumbs-nav-group nav-group cp">
-                        <div class="breadcrumbs-nav-group---cr nav-group---cr">
-                            <div class="breadcrumbs-nav-ancestors-group cp">
-                                <ul class="breadcrumbs-nav-ancestors-group---cr">
+            <div class="entry-breadcrumbs-nav nav cp" data-name="Breadcrumbs Navigation">
+                <div class="entry-breadcrumbs-nav---cr nav---cr">
+                    <div class="entry-breadcrumbs-nav-name nav-name obj">
+                        <span class="txt"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></span>
+                    </div>
+                    <div class="entry-breadcrumbs-nav-group nav-group cp">
+                        <div class="entry-breadcrumbs-nav-group---cr nav-group---cr">
+                            <div class="entry-breadcrumbs-nav-ancestors-group cp">
+                                <ul class="entry-breadcrumbs-nav-ancestors-group---cr">
                                     <?php echo $breadcrumbs_ancestors_mu; ?>
                                 </ul>
                             </div>
-                            <?php echo $navi_current_mu; ?>
+                            <div class="entry-breadcrumbs-navi--current entry-breadcrumbs-navi navi obj">
+                                <span class="txt"><?php echo esc_html( get_the_title() ); ?></span>
+                            </div>
                         </div>
                     </div>
                 </div>

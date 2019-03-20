@@ -53,11 +53,13 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
                 ) );
                 ?>
 
-                <div class="page-indicator obj" data-name="Page Indicator">
-                    <span class="page---text"><?php echo esc_html( $page_text ); ?></span>
-                    <span class="current-page---txt num"><?php echo esc_html( $current_page ); ?></span>
-                    <span class="of---text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
-                    <span class="total-pages---txt num"><?php echo esc_html( $total_pages ); ?></span>
+                <div class="entries-page-indicator obj" data-name="Entries Page Indicator">
+                    <span class="l">
+                        <span class="page---text"><?php echo esc_html( $page_text ); ?></span>
+                        <span class="current-page---txt num"><?php echo esc_html( $current_page ); ?></span>
+                        <span class="of---text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
+                        <span class="total-pages---txt num"><?php echo esc_html( $total_pages ); ?></span>
+                    </span>
                 </div>
             </div>
         </div>

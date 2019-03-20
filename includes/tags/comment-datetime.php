@@ -34,7 +34,9 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                 $time_mu .= '<span class="second---txt">'. esc_html( $second_text ). '</span>';
                 ?>
 
-                <span class="comment-published-datetime-glabel obj"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
+                <span class="comment-published-datetime-glabel obj">
+                    <span class="txt"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
+                </span>
 
                 <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="comment-published-date cm-date dt-published obj" data-name="Comment Published Date">
                     <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Commented on [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">

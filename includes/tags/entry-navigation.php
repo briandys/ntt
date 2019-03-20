@@ -50,7 +50,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                             if ( get_next_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
-                                    $next_post_thumbnail = get_the_post_thumbnail( get_next_post()->ID, $featured_image_size );
+                                    $next_post_thumbnail = '<span class="img">'. get_the_post_thumbnail( get_next_post()->ID, $featured_image_size ). '</span>';
                                 } else {
                                     $next_post_thumbnail = '';
                                 }
@@ -65,7 +65,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                             if ( get_previous_post_link() ) {
 
                                 if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
-                                    $prev_post_thumbnail = get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size );
+                                    $prev_post_thumbnail = '<span class="img">'. get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size ). '</span>';
                                 } else {
                                     $prev_post_thumbnail = '';
                                 }

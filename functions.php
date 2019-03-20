@@ -28,7 +28,6 @@ foreach ( $r_functions as $file_name ) {
 
 // Tags
 $r_tags = array(
-    'breadcrumbs-navigation',
     'comment',
     'comment-actions',
     'comment-author',
@@ -41,6 +40,7 @@ $r_tags = array(
     'entry-actions',
     'entry-author',
     'entry-banner',
+    'entry-breadcrumbs-navigation',
     'entry-content',
     'entry-content-navigation',
     'entry-count',
