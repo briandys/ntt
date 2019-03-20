@@ -39,22 +39,25 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         
         <div role="navigation" class="entry-sub-content-nav nav cp" data-name="Entry Sub-Content Navigation">
             <div class="entry-sub-content-nav---cr nav---cr">
-                <?php
-                $big_number = 999999999;
-                echo paginate_links( array(
-                    'base'                  => str_replace( $big_number, '%#%', esc_url( get_pagenum_link( $big_number ) ) ),
-                    'format'                => '?paged=%#%',
-                    'current'               => max( 1, get_query_var( 'paged' ) ),
-                    'total'                 => $total,
-                    'show_all'              => true,
-                    'mid_size'              => 0,
-                    'type'                  => 'list',
-                    'before_page_number'    => $l_mu_start,
-                    'after_page_number'     => $l_mu_end,
-                    'next_text'             => $next,
-                    'prev_text'             => $previous,
-                ) );
-                ?>
+                <div class="entry-sub-content-nav-name nav-name obj"><?php esc_html_e( 'Entry Sub-Content Navigation', 'ntt' ); ?></div>
+                <div class="entry-sub-content-nav-group nav-group cp">
+                    <?php
+                    $big_number = 999999999;
+                    echo paginate_links( array(
+                        'base'                  => str_replace( $big_number, '%#%', esc_url( get_pagenum_link( $big_number ) ) ),
+                        'format'                => '?paged=%#%',
+                        'current'               => max( 1, get_query_var( 'paged' ) ),
+                        'total'                 => $total,
+                        'show_all'              => true,
+                        'mid_size'              => 0,
+                        'type'                  => 'list',
+                        'before_page_number'    => $l_mu_start,
+                        'after_page_number'     => $l_mu_end,
+                        'next_text'             => $next,
+                        'prev_text'             => $previous,
+                    ) );
+                    ?>
+                </div>
             </div>
         </div>
         <?php

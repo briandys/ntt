@@ -85,7 +85,7 @@
 	 */
 	function deleteClass(el, cls) {
 		el.className = el.className.replace( new RegExp( '(?:^|\\s)' + cls + '(?!\\S)' ),'' );
-	}
+    }
 
 	function updateDomReadyCss() {
 		addClass( html, 'dom--loaded');
