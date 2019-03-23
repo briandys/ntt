@@ -21,10 +21,13 @@ function ntt_widgets() {
 	// Markup
 	$widget_start_mu = '<div id="%1$s" class="%2$s widget cp" data-name="Widget">';
 		$widget_start_mu .= '<div class="widget---cr">';
-	$widget_end_mu = '</div>';
-		$widget_end_mu .= '</div>';
-	$title_mu_start = '<div class="widget-name obj">';
-	$title_mu_end = '</div>';
+	    $widget_end_mu = '</div>';
+    $widget_end_mu .= '</div>';
+    
+    $title_mu_start = '<div class="widget-name obj">';
+        $title_mu_start .= '<span class="txt">';
+        $title_mu_end = '</span>';
+	$title_mu_end .= '</div>';
 	
 	// Entity Header Aside
 	register_sidebar( array(
