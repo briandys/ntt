@@ -8,7 +8,9 @@ $go_text = __( 'Go', 'ntt' );
     <div class="search---cr">
         <div class="search-field field cp" data-name="Search Field">
             <div class="search-field---cr field---cr">
-                <label for="<?php echo esc_attr( $unique_id ); ?>" class="search-field-label field-label obj"><?php echo esc_html( $search_text ); ?></label>
+                <label for="<?php echo esc_attr( $unique_id ); ?>" class="search-field-label field-label obj">
+                    <span class="txt"><?php echo esc_html( $search_text ); ?></span>
+                </label>
                 <div class="search-field-textbox textbox obj" data-name="Search Field Textbox">
                     <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php echo esc_attr( $search_text ); ?>" title="<?php echo esc_attr( $search_text ); ?>" id="<?php echo esc_attr( $unique_id ); ?>" class="text-input">
                 </div>
