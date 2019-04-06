@@ -7,8 +7,10 @@ if ( ! function_exists( 'ntt_entry_author' ) ) {
         <div class="entry-author cm-author cp" data-name="Entry Author">
             <div class="entry-author---cr">
                 <span class="entry-author-glabel obj">
-                    <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
-                    <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
+                    <span class="l">
+                        <span class="published---text"><?php echo esc_html_x( 'Published', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
+                        <span class="by---text"><?php echo esc_html_x( 'by', 'Published by [Entry Author Name]', 'ntt' ); ?></span>
+                    </span>
                 </span>
                 <span class="entry-author-name cm-author-name obj">
                     <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr_x( 'Published by', 'Published by [Entry Author Name]', 'ntt' ). ' '. esc_attr( $entry_author ); ?>" class="p-name u-url">
