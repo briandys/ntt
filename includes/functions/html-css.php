@@ -45,7 +45,7 @@ function ntt_get_html_css( $class='' ) {
     /**
      * WP Customizer Color Scheme
      */
-    if ( 'custom' == get_theme_mod( 'colorscheme' ) ) {
+    if ( get_theme_mod( 'colorscheme' ) == 'custom' ) {
         $classes[] = 'wp-customizer-color-scheme--'. ntt_wp_customize_color_scheme_sanitizer( get_theme_mod( 'colorscheme' ) );
 	}
 

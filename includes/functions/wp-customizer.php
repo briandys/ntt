@@ -1,5 +1,9 @@
 <?php
-function ntt_register_wp_customize( $wp_customize ) {	
+function ntt_wp_customizer( $wp_customize ) {	
+    
+    /**
+     * Entity Name, Entity Description
+     */
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	
@@ -45,7 +49,7 @@ function ntt_register_wp_customize( $wp_customize ) {
 		'priority'    => 6,
 	 ) ) );
 }
-add_action( 'customize_register', 'ntt_register_wp_customize' );
+add_action( 'customize_register', 'ntt_wp_customizer' );
 
 function ntt_wp_customize_partial_blogname() {
 	bloginfo( 'name' );
