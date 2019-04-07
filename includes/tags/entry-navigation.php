@@ -16,7 +16,6 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                 $l_mu .= '<span class="property---line">';
                     $l_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
                     $l_mu .= ' '. '<span class="entry---text">'. esc_html( $entry_text ) .'</span>';
-                    $l_mu .= '<span class="delimiter---txt">:</span>';
                 $l_mu .= '</span>';
                 $l_mu .= ' <span class="value---line">';
                     $l_mu .= '<span class="txt">'. esc_html( '%3$s' ). '</span>';
