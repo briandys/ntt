@@ -68,7 +68,8 @@ function ntt_wp_customizer( $wp_customize ) {
     ) );
  
     $wp_customize->add_setting( 'ntt_settings_site_id', array(
-        'default' => '',
+        'default'           => '',
+        'sanitize_callback' => 'esc_attr',
     ) );
 
     $wp_customize->add_control( 'ntt_settings_site_id', array(
@@ -94,12 +95,19 @@ function ntt_wp_customizer_html_css( $classes ) {
 add_filter( 'ntt_html_css_wp_filter', 'ntt_wp_customizer_html_css' );
 
 /**
- * Callbacks
+ * Render Entity Name for the selective refresh partial.
+ *
+ * @return void
  */
 function ntt_wp_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
+/**
+ * Render Entity Description for the selective refresh partial.
+ *
+ * @return void
+ */
 function ntt_wp_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
