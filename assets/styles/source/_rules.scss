@@ -45,27 +45,31 @@ $xl-vp: 80em;
     white-space: nowrap;
 }
 
-%cf:before,
-%cf:after {
-    content: " ";
-    display: table;
-}
+%cf {
 
-%cf:after {
-    clear: both;
+    &:before {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
 }
 
 %ir {
     background-color: transparent;
     border: 0;
     overflow: hidden;
-}
- 
-%ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 150%;
+    }
 }
 
 %unlist {

@@ -74,25 +74,11 @@ function ntt_wp_customizer( $wp_customize ) {
 
     $wp_customize->add_control( 'ntt_settings_site_id', array(
         'label'         => 'Site ID',
-        'description'   => 'Activate a specific theme and functionalities for the current site.',
         'section'       => 'ntt_settings',
+		'priority'      => 1,
     ) );
 }
 add_action( 'customize_register', 'ntt_wp_customizer' );
-
-/**
- * WP Customizer HTML CSS
- */
-function ntt_wp_customizer_html_css( $classes ) {
-
-    $css = get_theme_mod( 'ntt_settings_site_id' );
-    $css = sanitize_html_class( $css );
-    
-    $classes[] = esc_attr( $css );
-    
-    return $classes;
-}
-add_filter( 'ntt_html_css_wp_filter', 'ntt_wp_customizer_html_css' );
 
 /**
  * Render Entity Name for the selective refresh partial.
@@ -189,3 +175,18 @@ function ntt_wp_customizer_custom_color_scheme_style() {
     <?php
 }
 add_action( 'wp_head', 'ntt_wp_customizer_custom_color_scheme_style' );
+
+/**
+ * WP Customizer HTML CSS
+ */
+function ntt_wp_customizer_html_css( $classes ) {
+
+    $site_id = get_theme_mod( 'ntt_settings_site_id' );
+
+    if ( $site_id ) {
+        $classes[] = esc_attr( 'ntt-site-id--'. sanitize_title( $site_id ) );
+    }
+    
+    return $classes;
+}
+add_filter( 'ntt_html_css_wp_filter', 'ntt_wp_customizer_html_css' );

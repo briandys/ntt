@@ -22,7 +22,7 @@
 			
             if ( 'blank' === to ) {
 				$html
-                    .addClass( 'entity-name-description--0' );
+                    .addClass( 'entity-primary-name-description--0' );
 			} else {
 
 				if ( ! to.length ) {
@@ -34,7 +34,7 @@
 				} );
 				
                 $html
-                    .removeClass( 'entity-name-description--0' );
+                    .removeClass( 'entity-primary-name-description--0' );
 			}
 		} );
 	} );

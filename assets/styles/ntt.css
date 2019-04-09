@@ -602,3 +602,8 @@ textarea {
 .aligncenter {
   position: inherit;
 }
+
+.entity-primary-name-description--0 .entity-primary-name,
+.entity-primary-name-description--0 .entity-primary-description {
+  display: none;
+}

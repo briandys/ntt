@@ -8,8 +8,6 @@ function ntt_get_html_css( $class='' ) {
     
     $classes = array();
 
-    $enabled_css = '1';
-
     /**
      * Defaults
      */
@@ -32,14 +30,25 @@ function ntt_get_html_css( $class='' ) {
      * Entity Logo Ability Status
      */
     if ( has_custom_logo() ) {
-        $classes[] = 'entity-logo--'. $enabled_css;
+        $classes[] = 'entity-logo--1';
+    } else {
+        $classes[] = 'entity-logo--0';
+    }
+
+    /**
+     * Entity Primary Name, Entity Description Ability Status
+     */
+    if ( get_header_textcolor() === 'blank' || ( ! get_bloginfo( 'name', 'display' ) && ! get_bloginfo( 'description', 'display' ) ) ) {
+        $classes[] = 'entity-primary-name-description--0';
+    } else {
+        $classes[] = 'entity-primary-name-description--1';
     }
     
     /**
      * Entity Banner Visuals Ability Status
      */
     if ( has_header_image() ) {
-        $classes[] = 'entity-banner-visuals--'. $enabled_css;
+        $classes[] = 'entity-banner-visuals--1';
     }
 
     /**
