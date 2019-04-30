@@ -4,7 +4,8 @@ function ntt_show_more_action( $excerpt ) {
     $entry_text = __( 'Entry', 'ntt' );
     $entry_id = get_the_id();
     
-    $show_more_text = __( 'Show More', 'ntt' );
+    $show_text = _x( 'Show', 'Show More', 'ntt' );
+    $more_text = _x( 'More', 'Show More', 'ntt' );
     $show_more_of_text = _x( 'Show more of', 'Show more of [Entry Name]', 'ntt' );
     
     $entry_get_the_title = get_the_title( get_the_ID() );
@@ -28,7 +29,10 @@ function ntt_show_more_action( $excerpt ) {
 
     $excerpt = '<div class="show-more-axn axn obj" data-name="Show More Action">';
         $excerpt .= '<a href="'. esc_url( get_permalink( get_the_ID() ). $more_hash ). '" title="'. esc_attr( $title_attr ).'">';
-            $excerpt .= '<span class="txt">'. esc_html( $show_more_text ). '</span>';
+            $excerpt .= '<span class="l">';
+                $excerpt .= '<span class="show---text">'. esc_html( $show_text ). '</span>';
+                $excerpt .= ' <span class="more---text">'. esc_html( $more_text ). '</span>';
+            $excerpt .= '</span>';
         $excerpt .= '</a>';
     $excerpt .= '</div>';
 
