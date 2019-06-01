@@ -29,7 +29,7 @@ $lists: 'ul, ol';
 $px: .0625em;
 $s-vp: 36em;
 $m-vp: 48em;
-$l-vp: 64em;
+$l-vp: 61.25em;
 $xl-vp: 80em;
 
 //--------------------------------------------------------------
@@ -37,6 +37,20 @@ $xl-vp: 80em;
 //--------------------------------------------------------------
 
 %vh {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+@mixin vh {
     border: 0;
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(50%);

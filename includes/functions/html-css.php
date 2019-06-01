@@ -69,6 +69,12 @@ function ntt_get_html_css( $class='' ) {
         $classes[] = 'search-index-view';
     }
 
+    if ( is_front_page() ) {
+        $classes[] = 'front-view';
+    } else {
+        $classes[] = 'inner-view';
+    }
+
     if ( ! empty( $class ) ) {
         if ( !is_array( $class ) )
             $class = preg_split( '#\s+#', $class );

@@ -12,7 +12,7 @@ $go_text = __( 'Go', 'ntt' );
                     <span class="txt"><?php echo esc_html( $search_text ); ?></span>
                 </label>
                 <div class="search-field-textbox textbox obj" data-name="Search Field Textbox">
-                    <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php echo esc_attr( $search_text ); ?>" title="<?php echo esc_attr( $search_text ); ?>" id="<?php echo esc_attr( $unique_id ); ?>" class="text-input">
+                    <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php echo esc_attr( $search_text ); ?>" title="<?php echo esc_attr( $search_text ); ?>" inputmode="search" id="<?php echo esc_attr( $unique_id ); ?>" class="text-input">
                 </div>
             </div>
         </div>
