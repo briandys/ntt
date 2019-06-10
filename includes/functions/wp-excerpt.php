@@ -1,4 +1,8 @@
 <?php
+/**
+ * NTT Show More Action
+ */
+
 function ntt_show_more_action( $excerpt ) {
     
     $entry_text = __( 'Entry', 'ntt' );
@@ -42,6 +46,7 @@ function ntt_show_more_action( $excerpt ) {
 /**
  * <!--more--> Quicktag
  */
+
 function ntt_more_quicktag_excerpt( $excerpt ) {
     
     if ( is_home() || is_archive() ) {
@@ -53,15 +58,17 @@ add_filter( 'the_content_more_link', 'ntt_more_quicktag_excerpt' );
 /**
  * Auto-Excerpt Delimiter
  */
+
 function ntt_auto_excerpt_delimiter( $more ) {
     return '&hellip;';
 }
 add_filter( 'excerpt_more', 'ntt_auto_excerpt_delimiter' );
 
 /**
- * Manual, Search Excerpt
+ * Manual Excerpt, Search Excerpt
  */
-function ntt_manual_search_excerpt( $excerpt ) {
+
+function ntt_manual_excerpt_search_excerpt( $excerpt ) {
     
     if ( is_search() ) {
         ?>
@@ -75,4 +82,4 @@ function ntt_manual_search_excerpt( $excerpt ) {
         return $excerpt;
     }
 }
-add_filter( 'get_the_excerpt', 'ntt_manual_search_excerpt' );
+add_filter( 'get_the_excerpt', 'ntt_manual_excerpt_search_excerpt' );

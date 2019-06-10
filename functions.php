@@ -49,6 +49,7 @@ $r_tags = array(
     'entry-full-content',
     'entry-header',
     'entry-heading',
+    'entry-main',
     'entry-meta',
     'entry-navigation',
     'entry-sub-content-navigation',

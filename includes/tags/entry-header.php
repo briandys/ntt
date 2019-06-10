@@ -1,7 +1,8 @@
 <?php
 /**
- * Entry Header
+ * NTT Entry Header
  */
+
 if ( ! function_exists( 'ntt_entry_header' ) ) {
     function ntt_entry_header() {
         ?>
@@ -14,6 +15,10 @@ if ( ! function_exists( 'ntt_entry_header' ) ) {
                 ntt_entry_primary_meta();
                 ntt_comments_actions_snippet();
                 ntt_entry_banner();
+                
+                if ( ( ( is_singular() || is_home() || is_archive() ) && has_excerpt() ) || is_search() ) {
+                    ntt_entry_summary_content();
+                }
                 ?>
             </div>
         </header>

@@ -1,4 +1,8 @@
 <?php
+/**
+ * NTT Entry Summary Content
+ */
+
 if ( ! function_exists( 'ntt_entry_summary_content' ) ) {
     function ntt_entry_summary_content() {
         ?>
