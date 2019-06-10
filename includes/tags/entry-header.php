@@ -5,7 +5,7 @@
 if ( ! function_exists( 'ntt_entry_header' ) ) {
     function ntt_entry_header() {
         ?>
-        <div class="entry-header header cn" data-name="Entry Header">
+        <header class="entry-header cn" data-name="Entry Header">
             <div class="entry-header---cr">
                 <?php
                 ntt_entry_heading();
@@ -16,7 +16,7 @@ if ( ! function_exists( 'ntt_entry_header' ) ) {
                 ntt_entry_banner();
                 ?>
             </div>
-        </div>
+        </header>
         <?php
     }
 }

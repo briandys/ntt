@@ -2,7 +2,7 @@
     <div class="entry---cr">
 
         <?php ntt_entry_header(); ?>
-        <div class="entry-main main cn" data-name="Entry Main">
+        <main class="entry-main cn" data-name="Entry Main">
             <div class="entry-main---cr">
                 <div class="entry-content content-trunk cp" data-name="Entry Content">
                     <div class="entry-content---cr">
@@ -23,7 +23,7 @@
                 </div>
                 <?php ntt_after_entry_content_wp_hook(); ?>
             </div>
-        </div>
+        </main>
         
         <?php ntt_entry_footer(); ?>
     </div>

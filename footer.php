@@ -1,6 +1,6 @@
                     </div>
                 </main>
-                <footer id="entity-footer" class="entity-footer footer cn" data-name="Entity Footer">
+                <footer id="entity-footer" class="entity-footer cn" data-name="Entity Footer">
                     <div class="entity-footer---cr">
 
                         <?php ntt_entity_secondary_nav(); ?>
@@ -27,8 +27,7 @@
                                 <div class="entity-maker-tag obj" data-name="Entity Maker Tag">
                                     <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_wp_filter', '//ntt.briandys.com/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Made with [Theme Name] by [Entity Maker Name]', 'ntt' ). ' '. esc_attr( $entity_maker_tag_theme_name_wp_filter ). ' '. esc_attr_x( 'by', 'Made with [Theme Name] by [Entity Maker Name]', 'ntt' ). ' '. esc_attr( $entity_maker_tag_maker_name_wp_filter ); ?>">
                                         <span class="l">
-                                            <span class="theme---txt"><?php echo esc_html( $entity_maker_tag_theme_name_wp_filter ); ?></span>
-                                            <span class="by---text"><?php echo esc_html_x( 'by', 'Made with [Theme Name] by [Entity Maker Name]', 'ntt' ); ?></span>
+                                            <span class="theme---txt"><?php echo esc_html_x( 'Design by', 'Design by [Entity Maker Name]', 'ntt' ); ?></span>
                                             <span class="maker-name---txt"><?php echo esc_html( $entity_maker_tag_maker_name_wp_filter ); ?></span>
                                         </span>
                                     </a>

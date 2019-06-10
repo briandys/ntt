@@ -9,7 +9,7 @@ if ( ! function_exists( 'ntt_entry_footer' ) ) {
 
 		if ( $multipage || get_the_tag_list() || is_singular() ) {
 			?>
-			<div class="entry-footer footer cn" data-name="Entry Footer">
+			<footer class="entry-footer cn" data-name="Entry Footer">
 				<div class="entry-footer---cr">
 					<?php
 					ntt_entry_content_nav();
@@ -17,7 +17,7 @@ if ( ! function_exists( 'ntt_entry_footer' ) ) {
 					comments_template();
 					?>
 				</div>
-			</div>
+			</footer>
 			<?php
 		}
 	}

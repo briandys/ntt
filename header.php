@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                <header id="entity-header" class="entity-header header cn" data-name="Entity Header">
+                <header id="entity-header" class="entity-header cn" data-name="Entity Header">
                     <div class="entity-header---cr">
                         <?php ntt_before_entity_primary_heading_wp_hook(); ?>
                         <div id="entity-primary-heading" class="entity-primary-heading cp" data-name="Entity Primary Heading">
