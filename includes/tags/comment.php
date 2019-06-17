@@ -6,7 +6,7 @@
 if ( ! function_exists( 'ntt_comment') ) {
     function ntt_comment( $comment, $args, $depth ) {
         
-        $commenter = wp_get_current_commenter();
+        $comment_author = wp_get_current_commenter();
         $comment_url = get_comment_link( $comment->comment_ID );
         $comment_id = get_comment_ID();
 
@@ -17,11 +17,11 @@ if ( ! function_exists( 'ntt_comment') ) {
             $comment_hierarchy_css = 'ntt--single-comment';
         }
 
-        // Default Commenter Avatar Type
+        // Default Comment Author Avatar Type
         if ( get_option( 'avatar_default' ) == 'blank' ) {
-            $commenter_avatar_type_css = 'ntt--default-commenter-avatar---default';
+            $comment_author_avatar_type_css = 'ntt--default-comment-author-avatar---default';
         } else {
-            $commenter_avatar_type_css = 'ntt--default-commenter-avatar---custom';
+            $comment_author_avatar_type_css = 'ntt--default-comment-author-avatar---custom';
         }
 
         // Threaded Comments Limit Status
@@ -38,7 +38,7 @@ if ( ! function_exists( 'ntt_comment') ) {
             'h-entry',
             'ntt--cp',
             $comment_hierarchy_css,
-            $commenter_avatar_type_css,
+            $comment_author_avatar_type_css,
             $comments_thread_limit_css,
         );
         
@@ -107,8 +107,8 @@ if ( ! function_exists( 'ntt_comment') ) {
                                         'add_below'     => 'comment',
                                         'depth'         => $depth,
                                         'max_depth'     => $args['max_depth'],
-                                        'reply_text'    => '<span title="'. esc_attr( $reply_text ). '" class="reply-text">'. esc_html( $reply_text ). '</span>',
-                                        'login_text'    => '<span title="'. esc_attr( $reply_text ). ' '. '('. esc_attr( $requirement_txt ). ')'. '" class="ntt--txt"><span class="reply-text">'. esc_html( $reply_text ). '</span>'. ' '. '<span class="requirement-txt">'. esc_html( $requirement_txt ). '</span>'. '</span>',
+                                        'reply_text'    => '<span title="'. esc_attr( $reply_text ). '" class="ntt--reply-text">'. esc_html( $reply_text ). '</span>',
+                                        'login_text'    => '<span title="'. esc_attr( $reply_text ). ' '. '('. esc_attr( $requirement_txt ). ')'. '" class="ntt--txt"><span class="ntt--reply-text">'. esc_html( $reply_text ). '</span>'. ' '. '<span class="ntt--requirement-txt">'. esc_html( $requirement_txt ). '</span>'. '</span>',
                                     )
                                 )
                             );

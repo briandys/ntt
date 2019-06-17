@@ -1,3 +1,8 @@
+<?php
+/**
+ * Entity Main Main
+ */
+?>
 <div class="ntt--entity-main-main ntt--cn" data-name="Entity Main Main">
     <div id="content" class="ntt--entry-md ntt--cm ntt--md" data-name="Entry Module">
         <?php

@@ -1,3 +1,7 @@
+/**
+ * WordPress Customizer Controls
+ */
+
 ( function() {
 	wp.customize.bind( 'ready', function() {
 		wp.customize( 'colorscheme', function( setting ) {

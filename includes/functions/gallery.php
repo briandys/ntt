@@ -6,13 +6,12 @@
  */
 function ntt_gallery_wrapper( $html, $attr, $instance ) {
     
-    if( isset( $attr['class'] ) && $class = $attr['class'] ) {
+    if ( isset( $attr['class'] ) && $class = $attr['class'] ) {
         
         // Unset attribute to avoid infinite recursive loops
         unset( $attr['class'] ); 
 
-        $html = sprintf( 
-            '<div class="%s-gallery gallery-wrapper">%s</div>',
+        $html = sprintf( '<div class="ntt--%s-gallery ntt--gallery cn" data-name="Gallery">%s</div>',
             esc_attr( $class ),
             gallery_shortcode( $attr )
         );

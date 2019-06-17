@@ -33,16 +33,16 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                 <time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>" class="ntt--entry-published-date ntt--cm-date dt-published ntt--obj" data-name="Entry Published Date">
                     <a href="<?php echo esc_attr( get_permalink() ); ?>" title="<?php echo esc_attr( $published_on_text. ' '. $published_day_txt. ' '. $published_month_txt. ' '. $published_year_txt. ','. ' '. $published_hour_txt. ':'. $published_minute_txt. ':'. $published_second_txt ); ?>">
                         <span class="ntt--txt">
-                            <span class="day-txt"><?php echo esc_html( $published_day_txt ); ?></span>
-                            <span class="month-txt"><?php echo esc_html( $published_month_txt ); ?></span>
-                            <span class="year-txt"><?php echo esc_html( $published_year_txt ); ?></span>
+                            <span class="ntt--day-txt"><?php echo esc_html( $published_day_txt ); ?></span>
+                            <span class="ntt--month-txt"><?php echo esc_html( $published_month_txt ); ?></span>
+                            <span class="ntt--year-txt"><?php echo esc_html( $published_year_txt ); ?></span>
                         </span>
                     </a>
                 </time>
                 <span class="ntt--entry-published-time ntt--cm-time ntt--obj" data-name="Entry Published Time">
                     <a href="<?php echo esc_attr( get_permalink() ); ?>" title="<?php echo esc_attr( $published_on_text. ' '. $published_day_txt. ' '. $published_month_txt. ' '. $published_year_txt. ','. ' '. $published_hour_txt. ':'. $published_minute_txt. ':'. $published_second_txt ); ?>">
                         <span class="ntt--txt">
-                            <span class="hour-txt"><?php echo esc_html( $published_hour_txt ); ?></span><span class="delimiter-txt">:</span><span class="minute-txt"><?php echo esc_html( $published_minute_txt ); ?></span><span class="delimiter-txt">:</span><span class="second-txt"><?php echo esc_html( $published_second_txt ); ?></span>
+                            <span class="ntt--hour-txt"><?php echo esc_html( $published_hour_txt ); ?></span><span class="ntt--delimiter-txt">:</span><span class="ntt--minute-txt"><?php echo esc_html( $published_minute_txt ); ?></span><span class="ntt--delimiter-txt">:</span><span class="ntt--second-txt"><?php echo esc_html( $published_second_txt ); ?></span>
                         </span>
                     </a>
                 </span>
@@ -54,16 +54,16 @@ if ( ! function_exists( 'ntt_entry_datetime' ) ) {
                 <time datetime="<?php echo esc_attr( get_the_modified_time( DATE_W3C ) ); ?>" class="ntt--entry-modified-date ntt--cm-date ntt--obj" data-name="Entry Modified Date">
                     <a href="<?php echo esc_attr( get_permalink() ); ?>" title="<?php echo esc_attr( $updated_on_text. ' '. $modified_day_txt. ' '. $modified_month_txt. ' '. $modified_year_txt. ','. ' '. $modified_hour_txt. ':'. $modified_minute_txt. ':'. $modified_second_txt ); ?>">
                         <span class="ntt--txt">
-                            <span class="day-txt"><?php echo esc_html( $modified_day_txt ); ?></span>
-                            <span class="month-txt"><?php echo esc_html( $modified_month_txt ); ?></span>
-                            <span class="year-txt"><?php echo esc_html( $modified_year_txt ); ?></span>
+                            <span class="ntt--day-txt"><?php echo esc_html( $modified_day_txt ); ?></span>
+                            <span class="ntt--month-txt"><?php echo esc_html( $modified_month_txt ); ?></span>
+                            <span class="ntt--year-txt"><?php echo esc_html( $modified_year_txt ); ?></span>
                         </span>
                     </a>
                 </time>
                 <span class="ntt--entry-modified-time ntt--cm-time ntt--obj" data-name="Entry Modified Time">
                     <a href="<?php echo esc_attr( get_permalink() ); ?>" title="<?php echo esc_attr( $updated_on_text. ' '. $modified_day_txt. ' '. $modified_month_txt. ' '. $modified_year_txt. ','. ' '. $modified_hour_txt. ':'. $modified_minute_txt. ':'. $modified_second_txt ); ?>">
                         <span class="ntt--txt">
-                            <span class="hour-txt"><?php echo esc_html( $modified_hour_txt ); ?></span><span class="delimiter-txt">:</span><span class="minute-txt"><?php echo esc_html( $modified_minute_txt ); ?></span><span class="delimiter-txt">:</span><span class="second-txt"><?php echo esc_html( $modified_second_txt ); ?></span>
+                            <span class="ntt--hour-txt"><?php echo esc_html( $modified_hour_txt ); ?></span><span class="ntt--delimiter-txt">:</span><span class="ntt--minute-txt"><?php echo esc_html( $modified_minute_txt ); ?></span><span class="ntt--delimiter-txt">:</span><span class="ntt--second-txt"><?php echo esc_html( $modified_second_txt ); ?></span>
                         </span>
                     </a>
                 </span>

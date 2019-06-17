@@ -1,9 +1,14 @@
 <?php
+/**
+ * WordPress Customizer
+ */
+
 function ntt_wp_customizer( $wp_customize ) {	
     
     /**
      * Entity Name, Entity Description
      */
+
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
     
@@ -23,7 +28,7 @@ function ntt_wp_customizer( $wp_customize ) {
         $wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
-				'selector'        => '.entity-description .txt',
+				'selector'        => '.ntt--entity-description .txt',
 				'render_callback' => 'ntt_wp_customize_partial_blogdescription',
 			)
 		);
@@ -32,6 +37,7 @@ function ntt_wp_customizer( $wp_customize ) {
     /**
      * NTT Settings
      */
+
 	$wp_customize->add_setting( 'colorscheme', array(
 		'default'           => 'default',
 		'transport'         => 'postMessage',
@@ -64,6 +70,7 @@ function ntt_wp_customizer( $wp_customize ) {
     /**
      * NTT Settings
      */
+
     $wp_customize->add_section( 'ntt_settings', array(
         'title'         => 'NTT Settings',
         'description'   => 'Customize NTT',
@@ -72,6 +79,7 @@ function ntt_wp_customizer( $wp_customize ) {
     /**
      * Site ID
      */
+
     $wp_customize->add_setting( 'ntt_settings_site_id', array(
         'default'           => '',
         'sanitize_callback' => 'esc_attr',
@@ -86,6 +94,7 @@ function ntt_wp_customizer( $wp_customize ) {
     /**
      * Features
      */
+
     $wp_customize->add_setting( 'ntt_settings_features', array(
         'default'           => '',
         'sanitize_callback' => 'esc_attr',
@@ -104,6 +113,7 @@ add_action( 'customize_register', 'ntt_wp_customizer' );
  *
  * @return void
  */
+
 function ntt_wp_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
@@ -113,6 +123,7 @@ function ntt_wp_customize_partial_blogname() {
  *
  * @return void
  */
+
 function ntt_wp_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
@@ -132,6 +143,7 @@ function ntt_wp_customize_color_scheme_sanitizer( $input ) {
 /**
  * WP Customizer Preview Script
  */
+
 function ntt_wp_customizer_preview_script() {
 	wp_enqueue_script( 'ntt-wp-customizer-preview-script', get_theme_file_uri( '/assets/scripts/wp-customizer-preview.js' ), array( 'customize-preview', ), null, true );
 }
@@ -140,6 +152,7 @@ add_action( 'customize_preview_init', 'ntt_wp_customizer_preview_script' );
 /**
  * WP Customizer Controls Script
  */
+
 function ntt_wp_customizer_controls_script() {
 	wp_enqueue_script( 'ntt-wp-customizer-controls-script', get_theme_file_uri( '/assets/scripts/wp-customizer-controls.js' ), array(), null, true );
 }
@@ -149,6 +162,7 @@ add_action( 'customize_controls_enqueue_scripts', 'ntt_wp_customizer_controls_sc
  * WP Customizer Edit Icon Script
  * Hide the Modify Action in WP Customizer Preview
  */
+
 function ntt_wp_customizer_modify_action_script() {
     $js = 'wp.customize.selectiveRefresh.Partial.prototype.createEditShortcutForPlacement = function() {};';
     wp_add_inline_script( 'customize-selective-refresh', $js );
@@ -158,17 +172,18 @@ add_action( 'wp_enqueue_scripts', 'ntt_wp_customizer_modify_action_script' );
 /**
  * WP Customizer Color Patterns
  */ 
+
 function ntt_wp_customizer_color_patterns() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 	$saturation = absint( apply_filters( 'ntt_custom_colors_saturation', 50 ) ). '%';
     $css = '
-    :root {
-        --wp-customizer-custom-color-scheme--hue: '. $hue.';
-        --wp-customizer-custom-color-scheme--saturation: '. $saturation.';
-    }
-    
-    .ntt--wp-customizer-color-scheme---custom .entity-header {
+    .ntt--wp-customizer-color-scheme---custom .ntt--entity-header {
         background-color: hsl('. $hue. ', '. $saturation. ', 50%);
+    }
+
+    .ntt--wp-customizer-color-scheme---custom .ntt--entity-header,
+    .ntt--wp-customizer-color-scheme---custom .ntt--entity-header a {
+        color: white;
     }
     ';
 	return apply_filters( 'ntt_wp_customizer_color_patterns', $css, $hue, $saturation );
@@ -177,6 +192,7 @@ function ntt_wp_customizer_color_patterns() {
 /**
  * WP Customizer Custom Color Scheme Style
  */
+
 function ntt_wp_customizer_custom_color_scheme_style() {
     
     if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
@@ -188,7 +204,7 @@ function ntt_wp_customizer_custom_color_scheme_style() {
     $hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
     ?>
 
-    <style id="ntt-wp-customizer-custom-color-scheme-style"<?php if ( is_customize_preview() ) { echo ' '. 'data-hue="' . esc_attr( $hue ) . '"'; } ?>>
+    <style id="ntt--wp-customizer-custom-color-scheme-style"<?php if ( is_customize_preview() ) { echo ' '. 'data-hue="' . esc_attr( $hue ) . '"'; } ?>>
         <?php echo ntt_wp_customizer_color_patterns(); ?>
     </style>
     <?php
@@ -198,13 +214,14 @@ add_action( 'wp_head', 'ntt_wp_customizer_custom_color_scheme_style' );
 /**
  * WP Customizer HTML CSS
  */
+
 function ntt_wp_customizer_html_css( $classes ) {
 
     $site_id = get_theme_mod( 'ntt_settings_site_id' );
     $features = get_theme_mod( 'ntt_settings_features' );
 
     if ( $site_id ) {
-        $classes[] = 'ntt-site-id--'. sanitize_title( $site_id );
+        $classes[] = 'ntt--site-id--'. sanitize_title( $site_id );
     }
 
     if ( $features ) {

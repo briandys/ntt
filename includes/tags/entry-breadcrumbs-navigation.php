@@ -31,7 +31,7 @@
             ?>
 
             <div aria-label="Breadcrumbs" role="navigation" class="ntt--entry-breadcrumbs-nav ntt--nav ntt--cp" data-name="Breadcrumbs Navigation">
-                <div class="ntt--entry-breadcrumbs-nav-name ntt--av-name ntt--obj">
+                <div class="ntt--entry-breadcrumbs-nav-name ntt--nav-name ntt--obj">
                     <span class="ntt--txt"><?php esc_html_e( 'Breadcrumbs Navigation', 'ntt' ); ?></span>
                 </div>
                 <div class="ntt--entry-breadcrumbs-nav-group ntt--nav-group ntt--cp">

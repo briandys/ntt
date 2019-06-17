@@ -1,3 +1,8 @@
+<?php
+/**
+ * Header
+ */
+?>
 <!doctype html>
 <html <?php language_attributes(); ?> id="start" class="<?php ntt_html_css(); ?>" data-name="View">
     <head>

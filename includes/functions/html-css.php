@@ -4,7 +4,7 @@ function ntt_get_html_css( $class='' ) {
     // Making conditionals out of search results
     global $wp_query;
     $query_found_posts = $wp_query->found_posts;
-    $is_zero_search_results = ( is_search() && $query_found_posts == 0 );
+    $is_no_search_results = ( is_search() && $query_found_posts == 0 );
     $is_with_search_results = ( is_search() && $query_found_posts >= 1 );
     
     $classes = array();
@@ -23,7 +23,7 @@ function ntt_get_html_css( $class='' ) {
         $classes[] = 'ntt--plural-view';
 	} elseif ( is_singular() ) {
 		$classes[] = 'ntt--singular-view';
-	} elseif ( is_404() || $is_zero_search_results ) {
+	} elseif ( is_404() || $is_no_search_results ) {
         $classes[] = 'ntt--none-view';
     }
 

@@ -17,7 +17,7 @@ function ntt_aside_markup( $aside_name ) {
 function ntt_widgets() {
 		
 	// Markup
-	$widget_start_mu = '<div id="ntt--%1$s" class="ntt--%2$s widget ntt--cp" data-name="Widget">';
+	$widget_start_mu = '<div id="ntt--%1$s" class="ntt--%2$s ntt--widget ntt--cp" data-name="Widget">';
     $widget_end_mu = '</div>';
     
     $title_mu_start = '<div class="ntt--widget-name ntt--obj" data-name="Widget Name">';

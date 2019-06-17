@@ -17,8 +17,6 @@ function ntt_get_comments_css( $class='' ) {
     /**
      * Filters the list of CSS html classes.
      *
-     * @since NTT 0.0.91
-     *
      * @param array $classes An array of classes.
      * @param array $class   An array of additional classes.
      */

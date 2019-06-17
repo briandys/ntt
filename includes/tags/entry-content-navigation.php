@@ -1,5 +1,9 @@
 <?php
-// https://bavotasan.com/2012/a-better-wp_link_pages-for-wordpress/
+/**
+ * Entry Content Navigation
+ * 
+ * https://bavotasan.com/2012/a-better-wp_link_pages-for-wordpress/
+ */
 
 if ( ! function_exists('ntt_entry_content_nav' ) ) {
     function ntt_entry_content_nav( $args = '' ) {
@@ -9,8 +13,8 @@ if ( ! function_exists('ntt_entry_content_nav' ) ) {
         wp_link_pages( $args );
         ob_end_clean();
         
-        $navi_text = '<span class="page-text">'. esc_html__( 'Page', 'ntt' ). '</span>'. ' ';
-        $navi_text .= '<span class="page-number-txt ntt--num">'. esc_html( '%' ). '</span>';
+        $navi_text = '<span class="ntt--page-text">'. esc_html__( 'Page', 'ntt' ). '</span>'. ' ';
+        $navi_text .= '<span class="ntt--page-number-txt ntt--num">'. esc_html( '%' ). '</span>';
 
         $defaults = array(
             'before'            => '<ul class="ntt--entry-content-nav-group ntt--nav-group ntt--cp">',

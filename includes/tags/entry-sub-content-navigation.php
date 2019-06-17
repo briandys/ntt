@@ -6,6 +6,7 @@
  * 
  * Navigation to use for pages that display all entries within a specific category.
  */
+
 if ( ! function_exists('ntt_sub_content_nav' ) ) {
     function ntt_sub_content_nav( $total ) {
 
@@ -14,8 +15,8 @@ if ( ! function_exists('ntt_sub_content_nav' ) ) {
         $big_number = 99999999;
 
         $before_page_number_mu = '<span class="ntt--txt">';
-            $before_page_number_mu .= '<span class="page-text">'. esc_html_x( 'Page', 'Next Page, Previous Page', 'ntt' ). '</span>';
-            $before_page_number_mu .= ' '. '<span class="page-number-txt ntt--num">';
+            $before_page_number_mu .= '<span class="ntt--page-text">'. esc_html_x( 'Page', 'Next Page, Previous Page', 'ntt' ). '</span>';
+            $before_page_number_mu .= ' '. '<span class="ntt--page-number-txt ntt--num">';
             $after_page_number_mu = '</span>';
         $after_page_number_mu .= '</span>';
         ?>

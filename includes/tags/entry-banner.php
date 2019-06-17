@@ -1,12 +1,14 @@
 <?php
+/**
+ * Entry Banner
+ */
+
 if ( ! function_exists( 'ntt_entry_banner' ) ) {
     function ntt_entry_banner() {
 
         if ( get_the_post_thumbnail() !== '' ) {
             ?>
-            <div class="entry-banner ntt--cp" data-name="Entry Banner">
-                <div class="entry-banner---cr">
-
+            <div class="ntt--entry-banner ntt--cp" data-name="Entry Banner">
                 <?php
                 if ( get_the_post_thumbnail() !== '' ) {
 
@@ -19,7 +21,7 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
                     }
                     ?>
                     
-                    <div class="entry-banner-visuals ntt--obj" data-name="Entry Banner Visuals">
+                    <div class="ntt--entry-banner-visuals ntt--obj" data-name="Entry Banner Visuals">
                         <?php
                         echo $anchor_mu_start;
                             
@@ -37,7 +39,6 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
                     <?php
                 }
                 ?>
-                </div>
             </div>
             <?php
         }

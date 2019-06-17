@@ -1,57 +1,50 @@
 <?php
+/**
+ * Comment Author
+ */
+
 if ( ! function_exists( 'ntt_comment_author') ) {
     function ntt_comment_author( $comment, $args ) {
-        
-        $comment_author = get_comment_author();
         ?>
-        <div class="comment-author ntt--cm-author ntt--cp" data-name="Comment Author">
-            <div class="comment-author---cr">
+        <div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">
+            <label class="ntt--comment-author-label ntt--obj">
+                <span class="ntt--txt"><?php echo apply_filters( 'ntt_comment_author_label_wp_filter', esc_html_x( 'Commented by', 'Commented by Author', 'ntt' ) ); ?></span>
+            </label>
+            
+            <?php
+            if ( get_comment_author_url() ) {
+                $link_start_mu = '<a href="'. get_comment_author_url(). '" class="p-name u-url">';
+                $link_end_mu = '</a>';
+                $img_start_mu = $link_start_mu. '<span class="ntt--img">';
+                $img_end_mu = '</span>'. $link_end_mu;
+            } else {
+                $link_start_mu = '';
+                $link_end_mu = '';
+                $img_start_mu = '<span class="ntt--img">';
+                $img_end_mu = '</span>';
+            }
 
-                <?php
-                $commented_by_text = _x( 'Commented by', 'Commented by [Comment Author Name]', 'ntt' );
-                
-                if ( get_comment_author_url() ) {
-                    $anchor_start_mu = '<a href="'. get_comment_author_url(). '" title="'. esc_attr( $comment_author ). '">';
-                    $anchor_end_mu = '</a>';
-                    $img_start_mu = $anchor_start_mu. '<span class="img">';
-                    $img_end_mu = '</span>'. $anchor_end_mu;
-                    
-                } else {
-                    $anchor_start_mu = '';
-                    $anchor_end_mu = '';
-                    $img_start_mu = '<span class="img">';
-                    $img_end_mu = '</span>';
-                }
+            if ( get_option( 'show_avatars' ) == 1 ) {
                 ?>
-                <span class="comment-author-glabel ntt--obj"><?php echo esc_html( $commented_by_text); ?></span>
-                <span class="comment-author-name ntt--cm-author-name ntt--obj">
-                    <?php echo $anchor_start_mu; ?>
-                        <span class="ntt--txt"><?php echo esc_html( $comment_author ); ?></span>
-                    <?php echo $anchor_end_mu; ?>
-                </span>
-
-                <?php
-                if ( get_option( 'show_avatars' ) == 1 ) {
-                    ?>
-                    <span class="comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">
-                        <?php
-                        echo $img_start_mu;
-                        
-                        echo get_avatar(
-                            $comment,
-                            $size = '48',
-                            $default = '',
-                            $alt = esc_attr__( 'Avatar', 'ntt' ),
-                            $args = array( 'class' => 'u-photo', )
-                        );
-
-                        echo $img_end_mu;
-                        ?>
-                    </span>
+                <span title="<?php echo apply_filters( 'ntt_comment_author_label_wp_filter', esc_html_x( 'Commented by', 'Commented by Author', 'ntt' ) ). ' '. esc_attr( get_comment_author() ); ?>" class="ntt--comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">
                     <?php
-                }
-                ?>
-            </div>
+                    echo $img_start_mu;
+                    echo get_avatar(
+                        $comment,
+                        $size = apply_filters( 'ntt_author_avatar_wp_filter', '48' ),
+                        $default = '',
+                        $alt = esc_attr__( 'Avatar', 'ntt' ),
+                        $args = array( 'class' => 'u-photo', )
+                    );
+                    echo $img_end_mu;
+                    ?>
+                </span>
+                <?php
+            }
+            ?>
+            <span title="<?php echo apply_filters( 'ntt_comment_author_label_wp_filter', esc_html_x( 'Commented by', 'Commented by Author', 'ntt' ) ). ' '. esc_attr( get_comment_author() ); ?>" class="ntt--comment-author-name ntt--cm-author-name ntt--obj">
+                <?php echo $link_start_mu; ?><span class="ntt--txt"><?php echo esc_html( get_comment_author() ); ?></span><?php echo $link_end_mu; ?>
+            </span>
         </div>
         <?php
     }

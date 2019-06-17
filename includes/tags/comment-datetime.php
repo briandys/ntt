@@ -23,19 +23,19 @@ if ( ! function_exists( 'ntt_comment_datetime') ) {
                 <label class="ntt--comment-published-datetime-label ntt--obj" data-name="Comment Published DateTime Label">
                     <span class="ntt--txt"><?php echo esc_html( $commented_on_text ); ?></span>
                 </label>
-                <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="ntt--comment-published-date ntt--cm-date dt-published ntt--obj" data-name="Comment Published Date">
+                <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="ntt--comment-published-date ntt--cm-date ntt--obj dt-published" data-name="Comment Published Date">
                     <a href="<?php echo esc_attr( $comment_url ); ?>" title="<?php echo esc_attr( $commented_on_text. ' '. $published_day_text. ' '. $published_month_text. ' '. $published_year_text. ','. ' '. $published_hour_text. ':'. $published_minute_text. ':'. $published_second_text ); ?>">
                         <span class="ntt--txt">
-                            <span class="day-txt"><?php echo esc_html( $published_day_text ); ?></span>
-                            <span class="month-txt"><?php echo esc_html( $published_month_text ); ?></span>
-                            <span class="year-txt"><?php echo esc_html( $published_year_text ); ?></span>
+                            <span class="ntt--day-txt"><?php echo esc_html( $published_day_text ); ?></span>
+                            <span class="ntt--month-txt"><?php echo esc_html( $published_month_text ); ?></span>
+                            <span class="ntt--year-txt"><?php echo esc_html( $published_year_text ); ?></span>
                         </span>
                     </a>
                 </time>
                 <span class="ntt--comment-published-time ntt--cm-time ntt--obj" data-name="Comment Published Time">
                     <a href="<?php echo esc_attr( $comment_url ); ?>" title="<?php echo esc_attr( $commented_on_text. ' '. $published_day_text. ' '. $published_month_text. ' '. $published_year_text. ','. ' '. $published_hour_text. ':'. $published_minute_text. ':'. $published_second_text ); ?>">
                         <span class="ntt--txt">
-                            <span class="hour-txt"><?php echo esc_html( $published_hour_text ); ?></span><span class="delimiter-txt">:</span><span class="minute-txt"><?php echo esc_html( $published_minute_text ); ?></span><span class="delimiter-txt">:</span><span class="second-txt"><?php echo esc_html( $published_second_text ); ?></span>
+                            <span class="ntt--hour-txt"><?php echo esc_html( $published_hour_text ); ?></span><span class="ntt--delimiter-txt">:</span><span class="ntt--minute-txt"><?php echo esc_html( $published_minute_text ); ?></span><span class="ntt--delimiter-txt">:</span><span class="ntt--second-txt"><?php echo esc_html( $published_second_text ); ?></span>
                         </span>
                     </a>
                 </span>

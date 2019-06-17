@@ -1,4 +1,8 @@
 <?php
+/**
+ * Custom Visuals
+ */
+
 function ntt_custom_visuals() {
     
     // Custom Background
@@ -25,7 +29,10 @@ function ntt_custom_visuals() {
 }
 add_action( 'after_setup_theme', 'ntt_custom_visuals' );
 
-// Custom Header Callback
+/**
+ * Custom Header Callback
+ */
+
 function ntt_custom_header_callback() {
     
     if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() ) {
@@ -34,9 +41,11 @@ function ntt_custom_header_callback() {
     
     if ( get_header_textcolor() !== 'blank' ) {
         ?>
-        <style id="ntt-custom-header-colors-style">
-            .ntt--entity-name a,
-            .ntt--entity-description {
+        <style id="ntt--custom-header-colors-style">
+            .ntt--entity-header,
+            .ntt--entity-header a,
+            .ntt--wp-customizer-color-scheme---custom .ntt--entity-header,
+            .ntt--wp-customizer-color-scheme---custom .ntt--entity-header a {
                 color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
             }
         </style>
@@ -58,7 +67,7 @@ function ntt_custom_header_callback() {
  */
 function ntt_prepend_attachment( $attachment_content ){
         
-    $attachment_content = sprintf( '<p class="attachment-visuals ntt--obj" data-name="Attachment Visuals">%s</p>', wp_get_attachment_link( 0, 'ntt-medium', false ) );
+    $attachment_content = sprintf( '<p class="ntt--attachment-visuals ntt--obj" data-name="Attachment Visuals">%s</p>', wp_get_attachment_link( 0, 'ntt-medium', false ) );
     
     return $attachment_content;
 }

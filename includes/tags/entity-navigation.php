@@ -8,63 +8,52 @@ register_nav_menu( 'entity-primary-nav', __( 'Primary Navigation', 'ntt' ) );
 if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
     function ntt_entity_primary_nav() {
         
-        $group_mu_start = '<ul class="entity-primary-nav-group---cr nav-group---cr">';
-        $group_mu_end   = '</ul>';
-        
-        $label_mu_start = '<span class="ntt--txt">';
-        $label_mu_end   = '</span>';
-        
-        $nav_group_css  = 'entity-primary-nav-group nav-group cp';
-        
         if ( wp_nav_menu( array( 'theme_location' => 'entity-primary-nav', 'echo' => false, ) ) !== false) {
             ?>
+            <nav aria-label="<?php esc_attr_e( 'Primary', 'ntt' ); ?>" role="navigation" id="ntt--entity-primary-nav" class="ntt--entity-primary-nav ntt--nav ntt--cp" data-name="Entity Primary Navigation">
+                <h2 class="ntt--entity-primary-nav-name ntt--nav-name ntt--obj">
+                    <span class="ntt--txt"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></span>
+                </h2>
+                <?php
+                function escape_html_the_title( $title, $id = null ) {
+                    return esc_html( $title );
+                }
+                add_filter( 'the_title', 'escape_html_the_title', 10, 2 );
+                
+                if ( ! has_nav_menu( 'entity-primary-nav' ) ) {
 
-            <nav aria-label="Primary" role="navigation" id="entity-primary-nav" class="entity-primary-nav nav ntt--cp" data-name="Entity Primary Navigation">
-                <div class="entity-primary-nav---cr nav---cr">
+                    /**
+                     * Default Menu
+                     * Navigation Item <li class="page_item">
+                     * Current Navigation Item <li class="current_page_item">
+                     * Sub-Navigation <ul class="children">
+                     */
+                    wp_page_menu( array(
+                        'menu_class'        => 'menu',
+                        'link_before'       => '<span class="ntt--txt">',
+                        'link_after'        => '</span>',
+                        'show_home'         => true,
+                        'before'            => '<ul class="ntt--entity-primary-nav-group ntt--nav-group">',
+                        'after'             => '</ul>',
+                    ) );
+                } else {
                     
-                    <h2 class="entity-primary-nav-name nav-name ntt--obj"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></h2>
-                    
-                    <?php
-                    function escape_html_the_title( $title, $id = null ) {
-                        return esc_html( $title );
-                    }
-                    add_filter( 'the_title', 'escape_html_the_title', 10, 2 );
-                    
-                    if ( ! has_nav_menu( 'entity-primary-nav' ) ) {
-
-                        /**
-                         * Default Menu
-                         * Navigation Item <li class="page_item">
-                         * Current Navigation Item <li class="current_page_item">
-                         * Sub-Navigation <ul class="children">
-                         */
-                        wp_page_menu( array(
-                            'menu_class'        => $nav_group_css,
-                            'link_before'       => $label_mu_start,
-                            'link_after'        => $label_mu_end,
-                            'show_home'         => true,
-                            'before'            => $group_mu_start,
-                            'after'             => $group_mu_end,
-                        ) );
-                    } else {
-                        
-                        /**
-                         * Custom Menu (WP Admin > Apperance > Menus)
-                         * Navigation Item <li class="menu-item">
-                         * Current Navigation Item <li class="current-menu-item">
-                         * Sub-Navigation <ul class="sub-menu">
-                         */
-                        wp_nav_menu( array(
-                            'theme_location'    => 'entity-primary-nav',
-                            'container'         => 'div',
-                            'container_class'   => $nav_group_css,
-                            'link_before'       => $label_mu_start,
-                            'link_after'        => $label_mu_end,
-                            'items_wrap'        => $group_mu_start. '%3$s'. $group_mu_end,
-                        ) );
-                    }
-                    ?>
-                </div>
+                    /**
+                     * Custom Menu (WP Admin > Apperance > Menus)
+                     * Navigation Item <li class="menu-item">
+                     * Current Navigation Item <li class="current-menu-item">
+                     * Sub-Navigation <ul class="sub-menu">
+                     */
+                    wp_nav_menu( array(
+                        'theme_location'    => 'entity-primary-nav',
+                        'container'         => 'div',
+                        'container_class'   => '',
+                        'link_before'       => '<span class="ntt--txt">',
+                        'link_after'        => '</span>',
+                        'items_wrap'        => '<ul class="ntt--entity-primary-nav-group ntt--nav-group">'. '%3$s'. '</ul>',
+                    ) );
+                }
+                ?>
             </nav>
             <?php
         }
@@ -82,22 +71,20 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
         if ( has_nav_menu( 'entity-secondary-nav' ) ) {
             ?>
 
-            <div aria-label="Secondary" role="navigation" id="entity-secondary-nav" class="entity-secondary-nav nav ntt--cp" data-name="Entity Secondary Navigation">
-                <div class="entity-secondary-nav---cr nav---cr">
-                    
-                    <div class="entity-secondary-nav-name nav-name ntt--obj"><?php esc_html_e( 'Secondary Navigation', 'ntt' ); ?></div>
-
-                    <?php
-                    wp_nav_menu( array(
-                        'theme_location'    => 'entity-secondary-nav',
-                        'container'         => 'div',
-                        'container_class'   => 'entity-secondary-nav-group nav-group cp',
-                        'link_before'       => '<span class="ntt--txt">',
-                        'link_after'        => '</span>',
-                        'items_wrap'        => '<ul class="entity-secondary-nav-group---cr nav-group---cr">'. '%3$s'. '</ul>',
-                    ) );
-                    ?>
+            <div aria-label="<?php esc_attr_e( 'Secondary', 'ntt' ); ?>" role="navigation" id="ntt--entity-secondary-nav" class="ntt--entity-secondary-nav ntt--nav ntt--cp" data-name="Entity Secondary Navigation">
+                <div class="ntt--entity-secondary-nav-name ntt--nav-name ntt--obj">
+                    <span class="ntt--txt"><?php esc_html_e( 'Secondary Navigation', 'ntt' ); ?></span>
                 </div>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'    => 'entity-secondary-nav',
+                    'container'         => 'div',
+                    'container_class'   => '',
+                    'link_before'       => '<span class="ntt--txt">',
+                    'link_after'        => '</span>',
+                    'items_wrap'        => '<ul class="ntt--entity-secondary-nav-group ntt--nav-group ntt--cp">'. '%3$s'. '</ul>',
+                ) );
+                ?>
             </div>
             <?php
         }

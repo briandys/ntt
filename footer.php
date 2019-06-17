@@ -1,3 +1,8 @@
+<?php
+/**
+ * Footer
+ */
+?>
             </main>
             <footer class="ntt--entity-footer ntt--cn" data-name="Entity Footer">
                 <?php ntt_entity_secondary_nav(); ?>

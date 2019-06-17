@@ -600,7 +600,7 @@ textarea {
 .alignright,
 .alignleft,
 .aligncenter {
-  position: inherit;
+  display: initial;
 }
 
 .ntt--entity-name-description---0 .ntt--entity-name,

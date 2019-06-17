@@ -65,15 +65,15 @@ $must_log_in_mu = '<div class="ntt--log-in-required-note ntt--note ntt--cp" data
     $must_log_in_mu .= '<p>'. $log_in_required_note_content.'</p>';
 $must_log_in_mu .= '</div>';
 
-// Commenter Message Field | comment_field
+// Comment Author Message Field | comment_field
 // Other fields are in comment-form.php
 $comment_text = __( 'Comment', 'ntt' );
 
-$comment_field_mu = '<div class="ntt--commenter-message-field ntt--form-field ntt--cp" data-name="Commenter Message Field">';
-    $comment_field_mu .= '<label for="comment" class="ntt--commenter-message-label ntt--form-label ntt--obj">';
+$comment_field_mu = '<div class="ntt--comment-author-message-field ntt--form-field ntt--cp" data-name="Comment Author Message Field">';
+    $comment_field_mu .= '<label for="comment" class="ntt--comment-author-message-label ntt--form-label ntt--obj">';
         $comment_field_mu .= '<span class="ntt--txt">'. esc_html( $comment_text ).'</span>';
     $comment_field_mu .= '</label>';
-        $comment_field_mu .= '<div class="ntt--commenter-message-textbox ntt--form-element ntt--obj" data-name="Commenter Message Textbox">';
+        $comment_field_mu .= '<div class="ntt--comment-author-message-textbox ntt--form-element ntt--obj" data-name="Comment Author Message Textbox">';
             $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr( $comment_text ).'" id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';

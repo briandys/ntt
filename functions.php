@@ -1,4 +1,8 @@
 <?php
+/**
+ * Functions
+ */
+
 $GLOBALS['ntt_name'] = 'NTT';
 
 // Functions
@@ -6,7 +10,7 @@ $r_functions = array(
     // Primary
     'back-compatibility',
     'settings',
-    'hooks',
+    'wp-hooks',
     'styles-scripts',
     // Secondary
     'comments-css',

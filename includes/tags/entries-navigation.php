@@ -21,8 +21,8 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         $previous_page_text = __( 'Previous Page', 'ntt' );
         
         $before_page_number_mu = '<span class="ntt--txt">';
-            $before_page_number_mu .= '<span class="page-text">'. esc_html( $page_text ). '</span>';
-            $before_page_number_mu .= ' '. '<span class="page-number-txt ntt--num">';
+            $before_page_number_mu .= '<span class="ntt--page-text">'. esc_html( $page_text ). '</span>';
+            $before_page_number_mu .= ' '. '<span class="ntt--page-number-txt ntt--num">';
             $after_page_number_mu = '</span>';
         $after_page_number_mu .= '</span>';
         ?>
@@ -42,10 +42,10 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
             ?>
             <div class="ntt--entries-page-indicator ntt--obj" data-name="Entries Page Indicator">
                 <span class="ntt--txt">
-                    <span class="page-text"><?php echo esc_html( $page_text ); ?></span>
-                    <span class="current-page-txt ntt--num"><?php echo esc_html( $current_page ); ?></span>
-                    <span class="of-text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
-                    <span class="total-pages-txt ntt--num"><?php echo esc_html( $total_pages ); ?></span>
+                    <span class="ntt--page-text"><?php echo esc_html( $page_text ); ?></span>
+                    <span class="ntt--current-page-txt ntt--num"><?php echo esc_html( $current_page ); ?></span>
+                    <span class="ntt--of-text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
+                    <span class="ntt--total-pages-txt ntt--num"><?php echo esc_html( $total_pages ); ?></span>
                 </span>
             </div>
         </div>

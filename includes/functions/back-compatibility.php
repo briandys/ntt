@@ -1,7 +1,10 @@
 <?php
 /**
+ * Back Compatibility
+ * 
  * Theme only works in WordPress 4.7 or later.
  */
+
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	
 	// Prevent switching to theme on old versions of WordPress.
@@ -15,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	// Add message for unsuccessful theme switch.
 	function ntt_upgrade_note() {
 		$message = sprintf( __( 'Theme requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'ntt' ), $GLOBALS['wp_version'] );
-		printf( '<div class="wp-upgrade-note note ntt--cp" data-name="WP Upgrade Note"><div class="wp-upgrade-note---cr note---cr"><p>%s</p></div></div>', $message );
+		printf( '<div class="ntt--wp-upgrade-note ntt--note ntt--cp" data-name="WordPress Upgrade Note"><p>%s</p></div>', $message );
 	}
 
 	// Prevent the Customizer from being loaded on WordPress versions prior to 4.7.
