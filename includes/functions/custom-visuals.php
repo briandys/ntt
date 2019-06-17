@@ -35,8 +35,8 @@ function ntt_custom_header_callback() {
     if ( get_header_textcolor() !== 'blank' ) {
         ?>
         <style id="ntt-custom-header-colors-style">
-            .entity-primary-name a,
-            .entity-primary-description {
+            .ntt--entity-name a,
+            .ntt--entity-description {
                 color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
             }
         </style>
@@ -58,7 +58,7 @@ function ntt_custom_header_callback() {
  */
 function ntt_prepend_attachment( $attachment_content ){
         
-    $attachment_content = sprintf( '<p class="attachment-visuals obj" data-name="Attachment Visuals">%s</p>', wp_get_attachment_link( 0, 'ntt-medium', false ) );
+    $attachment_content = sprintf( '<p class="attachment-visuals ntt--obj" data-name="Attachment Visuals">%s</p>', wp_get_attachment_link( 0, 'ntt-medium', false ) );
     
     return $attachment_content;
 }

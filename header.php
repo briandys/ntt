@@ -5,88 +5,74 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <div id="entity" class="entity" data-name="Entity">
-            <div class="entity---cr">
-                <div id="entity-start" class="entity-start cn" data-name="Entity Start">
-                    <div class="entity-start---cr">
-                        <div id="go-content-nav" class="go-content-nav nav cp" data-name="Go to Content Navigation">
-                            <div class="go-content-nav---cr nav---cr">
-                                <div class="go-content-navi navi obj">
-                                    <?php $go_content_text = __( 'Go to Content', 'ntt' ); ?>
-                                    <a href="#content" title="<?php echo esc_attr( $go_content_text ); ?>">
-                                        <span class="txt"><?php echo esc_html( $go_content_text ); ?></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="ntt--entity" data-name="Entity">
+            <div class="ntt--entity-start ntt--cn" data-name="Entity Start">
+                <?php $go_content_text = __( 'Go to Content', 'ntt' ); ?>
+                <div aria-label="<?php echo esc_attr( $go_content_text ); ?>" role="navigation" class="ntt--go-content-nav ntt--nav ntt--cp" data-name="Go to Content Navigation">
+                    <div class="ntt--go-content-navi ntt--navi ntt--obj">
+                        
+                        <a href="#content" title="<?php echo esc_attr( $go_content_text ); ?>">
+                            <span class="ntt--txt"><?php echo esc_html( $go_content_text ); ?></span>
+                        </a>
                     </div>
                 </div>
-                <header id="entity-header" class="entity-header cn" data-name="Entity Header">
-                    <div class="entity-header---cr">
-                        <?php ntt_before_entity_primary_heading_wp_hook(); ?>
-                        <div id="entity-primary-heading" class="entity-primary-heading cp" data-name="Entity Primary Heading">
-                            <div class="entity-primary-heading---cr">
-                            
-                                <?php
-                                if ( has_custom_logo() ) {
-                                    ?>
-                                    <div id="entity-primary-logo" class="entity-primary-logo obj" data-name="Entity Primary Logo"><?php the_custom_logo(); ?></div>
-                                    <?php
-                                }
-                                
-                                $get_bloginfo_name = get_bloginfo( 'name', 'display' );
-                                
-                                if ( $get_bloginfo_name || is_customize_preview() ) {
-                                    ?>
-                                    <h1 id="entity-primary-name" class="entity-primary-name obj">
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>">
-                                            <span class="txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
-                                        </a>
-                                    </h1>
-                                    <?php
-                                }
-                                
-                                $get_bloginfo_description = get_bloginfo( 'description', 'display' );
-                                
-                                if ( $get_bloginfo_description || is_customize_preview() ) {
-                                    ?>
-                                    <div id="entity-primary-description" class="entity-primary-description obj" data-name="Entity Primary Description">
-                                        <span class="txt"><?php echo esc_attr( $get_bloginfo_description ); ?></span>
-                                    </div>
-                                    <?php
-                                }
-                                ?>
-                            </div>
-                        </div>
-                        <?php ntt_after_entity_primary_heading_wp_hook(); ?>
-
+            </div>
+            <header class="ntt--entity-header ntt--cn" data-name="Entity Header">
+                <?php ntt_before_entity_primary_heading_wp_hook(); ?>
+                <div class="ntt--entity-heading ntt--cp" data-name="Entity Heading">
+                    <?php
+                    if ( has_custom_logo() ) {
+                        ?>
+                        <div class="ntt--entity-logo ntt--obj" data-name="Entity Logo"><?php the_custom_logo(); ?></div>
                         <?php
-                        ntt_entity_primary_nav();
-                        
-                        if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
-                            ?>
-                            <div id="entity-banner" class="entity-banner cp" data-name="Entity Banner">
-                                <div class="entity-banner---cr">
+                    }
+                    
+                    $get_bloginfo_name = get_bloginfo( 'name', 'display' );
+                    
+                    if ( $get_bloginfo_name || is_customize_preview() ) {
+                        ?>
+                        <h1 class="ntt--entity-name ntt--obj" data-name="Entity Name">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $get_bloginfo_name ); ?>">
+                                <span class="ntt--txt"><?php echo esc_html( $get_bloginfo_name ); ?></span>
+                            </a>
+                        </h1>
+                        <?php
+                    }
+                    
+                    $get_bloginfo_description = get_bloginfo( 'description', 'display' );
+                    
+                    if ( $get_bloginfo_description || is_customize_preview() ) {
+                        ?>
+                        <div class="ntt--entity-description ntt--obj" data-name="Entity Description">
+                            <span class="ntt--txt"><?php echo esc_attr( $get_bloginfo_description ); ?></span>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <?php ntt_after_entity_primary_heading_wp_hook(); ?>
 
-                                    <?php
-                                    if ( has_header_image() ) {
-                                        ?>
-                                        <div class="entity-banner-visuals obj" data-name="Entity Banner Visuals"><?php the_custom_header_markup(); ?></div>
-                                        <?php
-                                    }
-                                    ?>
-                                </div>
-                            </div>
+                <?php
+                ntt_entity_primary_nav();
+                
+                if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
+                    ?>
+                    <div class="ntt--entity-banner ntt--cp" data-name="Entity Banner">
+                        <?php
+                        if ( has_header_image() ) {
+                            ?>
+                            <div class="ntt--entity-banner-visuals ntt--obj" data-name="Entity Banner Visuals"><?php the_custom_header_markup(); ?></div>
                             <?php
                         }
-                        
-                        ntt_entity_header_aside();
                         ?>
                     </div>
-                </header>
-                <main id="entity-main" class="entity-main cn" data-name="Entity Main">
-                    <div class="entity-main---cr">
+                    <?php
+                }
+                
+                ntt_entity_header_aside();
+                ?>
+            </header>
+            <main class="ntt--entity-main ntt--cn" data-name="Entity Main">

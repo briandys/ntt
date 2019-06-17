@@ -1,6 +1,6 @@
 <?php
 /**
- * Sub-Content Navigation
+ * Entry Subcontent Navigation
  * 
  * Similar to entries-navigation.php
  * 
@@ -9,55 +9,37 @@
 if ( ! function_exists('ntt_sub_content_nav' ) ) {
     function ntt_sub_content_nav( $total ) {
 
-        $next_text = _x( 'Next', 'Next Page', 'ntt' );
-        $previous_text = _x( 'Previous', 'Previous Page', 'ntt' );
-        $page_text = _x( 'Page', '[Next / Previous] Page', 'ntt' );
-        
-        $l_mu_start = '<span class="l">';
-        $l_mu_start .= '<span class="page---text">'. esc_html( $page_text ). '</span>';
-        $l_mu_start .= ' '. '<span class="page-number---txt num">';
-        $l_mu_end = '</span>';
-        $l_mu_end .= '</span>';
+        $next_page_text = __( 'Next Page', 'ntt' );
+        $previous_page_text = __( 'Previous Page', 'ntt' );
+        $big_number = 99999999;
 
-        $adjacent_navi_mu = '<span title="'. esc_attr( '%3$s' ). '" class="l">';
-            $adjacent_navi_mu .= '<span class="'. esc_attr( '%2$s' ). '">'. esc_html( '%1$s' ). '</span>';
-            $adjacent_navi_mu .= ' '. '<span class="page---text">'. esc_html( $page_text ). '</span>';
-        $adjacent_navi_mu .= '</span>';
-        
-        $next = sprintf( $adjacent_navi_mu,
-            $next_text,
-            'next---text',
-            $next_text. ' '. $page_text
-        );
-        
-        $previous = sprintf( $adjacent_navi_mu,
-            $previous_text,
-            'previous---text',
-            $previous_text. ' '. $page_text
-        );
+        $before_page_number_mu = '<span class="ntt--txt">';
+            $before_page_number_mu .= '<span class="page-text">'. esc_html_x( 'Page', 'Next Page, Previous Page', 'ntt' ). '</span>';
+            $before_page_number_mu .= ' '. '<span class="page-number-txt ntt--num">';
+            $after_page_number_mu = '</span>';
+        $after_page_number_mu .= '</span>';
         ?>
         
-        <div role="navigation" class="entry-sub-content-nav nav cp" data-name="Entry Sub-Content Navigation">
-            <div class="entry-sub-content-nav---cr nav---cr">
-                <div class="entry-sub-content-nav-name nav-name obj"><?php esc_html_e( 'Entry Sub-Content Navigation', 'ntt' ); ?></div>
-                <div class="entry-sub-content-nav-group nav-group cp">
-                    <?php
-                    $big_number = 999999999;
-                    echo paginate_links( array(
-                        'base'                  => str_replace( $big_number, '%#%', esc_url( get_pagenum_link( $big_number ) ) ),
-                        'format'                => '?paged=%#%',
-                        'current'               => max( 1, get_query_var( 'paged' ) ),
-                        'total'                 => $total,
-                        'show_all'              => true,
-                        'mid_size'              => 0,
-                        'type'                  => 'list',
-                        'before_page_number'    => $l_mu_start,
-                        'after_page_number'     => $l_mu_end,
-                        'next_text'             => $next,
-                        'prev_text'             => $previous,
-                    ) );
-                    ?>
-                </div>
+        <div aria-label="<?php esc_attr_e( 'Entry Subcontent', 'ntt' ); ?>" role="navigation" class="ntt--entry-subcontent-nav ntt--nav ntt--cp" data-name="Entry Subcontent Navigation">
+            <div class="ntt--entry-subcontent-nav-name ntt--nav-name ntt--obj">
+                <span class="ntt--txt"><?php esc_html_e( 'Entry Subcontent Navigation', 'ntt' ); ?></span>
+            </div>
+            <div class="ntt--entry-subcontent-nav-group ntt--nav-group ntt--cp">
+                <?php
+                echo paginate_links( array(
+                    'base'                  => str_replace( $big_number, '%#%', esc_url( get_pagenum_link( $big_number ) ) ),
+                    'format'                => '?paged=%#%',
+                    'current'               => max( 1, get_query_var( 'paged' ) ),
+                    'total'                 => $total,
+                    'show_all'              => true,
+                    'mid_size'              => 0,
+                    'type'                  => 'list',
+                    'before_page_number'    => $before_page_number_mu,
+                    'after_page_number'     => $after_page_number_mu,
+                    'next_text'             => '<span aria-label="'. esc_attr( $next_page_text ).'" title="'. esc_attr( $next_page_text ).'" class="ntt--txt">'. esc_html_x( 'Next', 'Next Page', 'ntt' ).'</span>',
+                    'prev_text'             => '<span aria-label="'. esc_attr( $previous_page_text ).'" title="'. esc_attr( $previous_page_text ).'" class="ntt--txt">'. esc_html_x( 'Previous', 'Previous Page', 'ntt' ).'</span>',
+                ) );
+                ?>
             </div>
         </div>
         <?php

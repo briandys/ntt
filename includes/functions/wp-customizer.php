@@ -15,7 +15,7 @@ function ntt_wp_customizer( $wp_customize ) {
         $wp_customize->selective_refresh->add_partial(
 			'blogname',
 			array(
-				'selector'        => '.entity-primary-name .txt',
+				'selector'        => '.ntt--entity-name .txt',
 				'render_callback' => 'ntt_wp_customize_partial_blogname',
 			)
 		);
@@ -167,7 +167,7 @@ function ntt_wp_customizer_color_patterns() {
         --wp-customizer-custom-color-scheme--saturation: '. $saturation.';
     }
     
-    .wp-customizer-color-scheme--custom .entity-header {
+    .ntt--wp-customizer-color-scheme---custom .entity-header {
         background-color: hsl('. $hue. ', '. $saturation. ', 50%);
     }
     ';

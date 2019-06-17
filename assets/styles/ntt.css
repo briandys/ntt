@@ -603,7 +603,7 @@ textarea {
   position: inherit;
 }
 
-.entity-primary-name-description--0 .entity-primary-name,
-.entity-primary-name-description--0 .entity-primary-description {
+.ntt--entity-name-description---0 .ntt--entity-name,
+.ntt--entity-name-description---0 .ntt--entity-description {
   display: none;
 }

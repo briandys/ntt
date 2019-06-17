@@ -1,14 +1,17 @@
 <?php
-// Entry CSS
+/**
+ * Entry CSS
+ */
+
 function ntt_entry_css( $classes ) {
     
     global $post;
     
     // Default
     $r_defaults = array(
-        'entry-'. $post->ID,
-        'entry',
-        'cp',
+        'ntt--entry-'. $post->ID,
+        'ntt--entry',
+        'ntt--cp',
     );
     
     foreach ( $r_defaults as $css ) {

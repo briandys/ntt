@@ -1,28 +1,25 @@
 <?php
-if ( ! function_exists( 'ntt_entry_admin_actions') ) {
-    function ntt_entry_admin_actions() {
+/**
+ * Entry Actions
+ */
+
+if ( ! function_exists( 'ntt_entry_actions') ) {
+    function ntt_entry_actions() {
 
         if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
 
-            $edit_text = __( 'Edit', 'ntt' );
-            
             if ( get_the_title() ) {
-                $entry_name_title_attr = esc_attr( get_the_title() );
+                $entry_name = get_the_title();
             } else {
-                $entry_text = __( 'Entry', 'ntt' );
-                $get_the_id = get_the_id();
-                
-                $entry_name_title_attr = esc_attr( $entry_text ). ' '. esc_attr( $get_the_id );
+                $entry_name = _x( 'Entry', 'Entry (i.e. Article, Post)', 'ntt' ). ' '. get_the_id();
             }
-            
-            $entry_name_label = '<span title="'. esc_attr__( 'Edit', 'ntt' ). ' '. $entry_name_title_attr. '" class="txt">'. esc_html__( 'Edit', 'ntt' ).'</span>';
+
+            $edit_text = __( 'Edit', 'ntt' );
             ?>
             
-            <div class="entry-axns cp" data-name="Entry Actions">
-                <div class="entry-axns---cr">
-                    <div aria-label="Edit Entry" class="modify-entry-axn obj" data-name="Modify Entry Action">
-                        <?php echo edit_post_link( $entry_name_label, '', '' ); ?>
-                    </div>
+            <div class="ntt--entry-axns ntt--cp" data-name="Entry Actions">
+                <div aria-label="<?php esc_attr_e( 'Edit Entry', 'ntt' ); ?>" title="<?php echo esc_attr( $edit_text ). ' '. esc_attr( $entry_name ); ?>" class="ntt--modify-entry-axn ntt--obj" data-name="Modify Entry Action">
+                    <?php echo edit_post_link( '<span class="ntt--txt">'. esc_html( $edit_text ).'</span>', '', '' ); ?>
                 </div>
             </div>
             <?php

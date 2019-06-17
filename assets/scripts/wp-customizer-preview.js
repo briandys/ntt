@@ -5,14 +5,14 @@
     // Entity Name
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.entity-primary-name .txt' ).text( to );
+			$( '.ntt--entity-name .txt' ).text( to );
 		} );
 	} );
     
     // Entity Description
     wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.entity-primary-description .txt' ).text( to );
+			$( '.ntt--entity-description .txt' ).text( to );
 		} );
 	} );
 	
@@ -22,19 +22,19 @@
 			
             if ( 'blank' === to ) {
 				$html
-                    .addClass( 'entity-primary-name-description--0' );
+                    .addClass( 'ntt--entity-name-description---0' );
 			} else {
 
 				if ( ! to.length ) {
 					$( '#ntt-custom-header-colors-style' ).remove();
 				}
 				
-                $( '.entity-primary-name a, .entity-primary-description' ).css( {
+                $( '.ntt--entity-name a, .ntt--entity-description' ).css( {
 					color: to
 				} );
 				
                 $html
-                    .removeClass( 'entity-primary-name-description--0' );
+                    .removeClass( 'ntt--entity-name-description---0' );
 			}
 		} );
 	} );
@@ -43,8 +43,8 @@
 	wp.customize( 'colorscheme', function( value ) {
 		value.bind( function( to ) {
 			$html
-				.addClass( 'wp-customizer-color-scheme--default' )
-				.removeClass( 'wp-customizer-color-scheme--custom' );
+				.addClass( 'ntt--wp-customizer-color-scheme---default' )
+				.removeClass( 'ntt--wp-customizer-color-scheme---custom' );
 		} );
 	} );
 	
@@ -52,8 +52,8 @@
 	wp.customize( 'colorscheme_hue', function( value ) {
 		value.bind( function( to ) {
             $html
-				.addClass( 'wp-customizer-color-scheme--custom' )
-				.removeClass( 'wp-customizer-color-scheme--default' );
+				.addClass( 'ntt--wp-customizer-color-scheme---custom' )
+				.removeClass( 'ntt--wp-customizer-color-scheme---default' );
 
 			var style = $( '#ntt-wp-customizer-custom-color-scheme-style' ),
 				hue = style.data( 'hue' ),

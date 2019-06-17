@@ -2,6 +2,7 @@
 /**
  * Entry Footer
  */
+
 if ( ! function_exists( 'ntt_entry_footer' ) ) {
 	function ntt_entry_footer() {
 
@@ -9,14 +10,12 @@ if ( ! function_exists( 'ntt_entry_footer' ) ) {
 
 		if ( $multipage || get_the_tag_list() || is_singular() ) {
 			?>
-			<footer class="entry-footer cn" data-name="Entry Footer">
-				<div class="entry-footer---cr">
-					<?php
-					ntt_entry_content_nav();
-					ntt_entry_secondary_meta();
-					comments_template();
-					?>
-				</div>
+			<footer class="ntt--entry-footer ntt--cn" data-name="Entry Footer">
+				<?php
+                ntt_entry_content_nav();
+                ntt_entry_secondary_meta();
+                comments_template();
+                ?>
 			</footer>
 			<?php
 		}

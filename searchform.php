@@ -1,25 +1,25 @@
 <?php
-$unique_id = uniqid( 'search-text-input-' );
+/**
+ * Search Form
+ */
+
+$unique_id = uniqid();
 $search_text = __( 'Search', 'ntt' );
 $go_text = __( 'Go', 'ntt' );
 ?>
 
-<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search cp" data-name="Search">
-    <div class="search---cr">
-        <div class="search-field field cp" data-name="Search Field">
-            <div class="search-field---cr field---cr">
-                <label for="<?php echo esc_attr( $unique_id ); ?>" class="search-field-label field-label obj">
-                    <span class="txt"><?php echo esc_html( $search_text ); ?></span>
-                </label>
-                <div class="search-field-textbox textbox obj" data-name="Search Field Textbox">
-                    <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php echo esc_attr( $search_text ); ?>" title="<?php echo esc_attr( $search_text ); ?>" inputmode="search" id="<?php echo esc_attr( $unique_id ); ?>" class="text-input">
-                </div>
-            </div>
+<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="ntt--search ntt--cp" data-name="Search">
+    <div class="ntt--search-field ntt--form-field ntt--cp" data-name="Search Field">
+        <label for="ntt--search-text-input-<?php echo esc_attr( $unique_id ); ?>" class="ntt--search-label ntt--form-label ntt--obj">
+            <span class="ntt--txt"><?php echo esc_html( $search_text ); ?></span>
+        </label>
+        <div class="ntt--search-textbox ntt--form-element ntt--obj" data-name="Search Textbox">
+            <input type="search" name="s" value="<?php echo get_search_query(); ?>" required placeholder="<?php echo esc_attr( $search_text ); ?>" title="<?php echo esc_attr( $search_text ); ?>" inputmode="search" id="ntt--search-text-input-<?php echo esc_attr( $unique_id ); ?>" class="text-input">
         </div>
-        <div class="submit-search-axn submit-axn axn obj" data-name="Submit Search Action">
-            <button type="submit" title="<?php echo esc_attr( $go_text ); ?>">
-                <span class="txt"><?php echo esc_html( $go_text ); ?></span>
-            </button>
-        </div>
+    </div>
+    <div class="ntt--submit-search-axn ntt--submit-axn ntt--axn ntt--obj" data-name="Submit Search Action">
+        <button type="submit" title="<?php echo esc_attr( $go_text ); ?>">
+            <span class="ntt--txt"><?php echo esc_html( $go_text ); ?></span>
+        </button>
     </div>
 </form>

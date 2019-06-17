@@ -4,7 +4,7 @@ if ( ! function_exists( 'ntt_comment_author') ) {
         
         $comment_author = get_comment_author();
         ?>
-        <div class="comment-author cm-author cp" data-name="Comment Author">
+        <div class="comment-author ntt--cm-author ntt--cp" data-name="Comment Author">
             <div class="comment-author---cr">
 
                 <?php
@@ -23,17 +23,17 @@ if ( ! function_exists( 'ntt_comment_author') ) {
                     $img_end_mu = '</span>';
                 }
                 ?>
-                <span class="comment-author-glabel obj"><?php echo esc_html( $commented_by_text); ?></span>
-                <span class="comment-author-name cm-author-name obj">
+                <span class="comment-author-glabel ntt--obj"><?php echo esc_html( $commented_by_text); ?></span>
+                <span class="comment-author-name ntt--cm-author-name ntt--obj">
                     <?php echo $anchor_start_mu; ?>
-                        <span class="txt"><?php echo esc_html( $comment_author ); ?></span>
+                        <span class="ntt--txt"><?php echo esc_html( $comment_author ); ?></span>
                     <?php echo $anchor_end_mu; ?>
                 </span>
 
                 <?php
                 if ( get_option( 'show_avatars' ) == 1 ) {
                     ?>
-                    <span class="comment-author-avatar cm-author-avatar obj" data-name="Comment Author Avatar">
+                    <span class="comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">
                         <?php
                         echo $img_start_mu;
                         

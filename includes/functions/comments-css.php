@@ -38,16 +38,16 @@ function ntt_status_css_comments_css( $classes ) {
     
     // Comments Population Status
     if ( $comments_count >= 1 ) {
-        $classes[] = 'comments--populated';
+        $classes[] = 'ntt--comments---populated';
     } else {
-        $classes[] = 'comments--empty';
+        $classes[] = 'ntt--comments---empty';
     }
 
     // Comment Creation Ability Status
     if ( comments_open() ) {
-        $classes[] = 'comment-creation--1';
+        $classes[] = 'ntt--comment-creation---1';
     } else {
-        $classes[] = 'comment-creation--0';
+        $classes[] = 'ntt--comment-creation---0';
     }
 
     return $classes;

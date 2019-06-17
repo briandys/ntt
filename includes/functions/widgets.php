@@ -5,10 +5,8 @@
 function ntt_aside_markup( $aside_name ) {
     $aside = sanitize_title( $aside_name );
     ?>
-    <div id="<?php echo esc_attr( $aside ); ?>" class="<?php echo esc_attr( $aside ); ?> cn" data-name="<?php echo esc_attr( $aside_name ); ?>">
-        <div class="<?php echo esc_attr( $aside ); ?>---cr">
-            <?php dynamic_sidebar( $aside ); ?>
-        </div>
+    <div class="<?php echo 'ntt--'. esc_attr( $aside ); ?> ntt--cn" data-name="<?php echo esc_attr( $aside_name ); ?>">
+        <?php dynamic_sidebar( $aside ); ?>
     </div>
     <?php
 }
@@ -19,13 +17,11 @@ function ntt_aside_markup( $aside_name ) {
 function ntt_widgets() {
 		
 	// Markup
-	$widget_start_mu = '<div id="%1$s" class="%2$s widget cp" data-name="Widget">';
-		$widget_start_mu .= '<div class="widget---cr">';
-	    $widget_end_mu = '</div>';
-    $widget_end_mu .= '</div>';
+	$widget_start_mu = '<div id="ntt--%1$s" class="ntt--%2$s widget ntt--cp" data-name="Widget">';
+    $widget_end_mu = '</div>';
     
-    $title_mu_start = '<div class="widget-name obj">';
-        $title_mu_start .= '<span class="txt">';
+    $title_mu_start = '<div class="ntt--widget-name ntt--obj" data-name="Widget Name">';
+        $title_mu_start .= '<span class="ntt--txt">';
         $title_mu_end = '</span>';
 	$title_mu_end .= '</div>';
 	
@@ -72,14 +68,13 @@ add_action( 'widgets_init', 'ntt_widgets' );
 /**
  * HTML CSS
  */
-function ntt_widgets_html_css( $classes ) {
 
-    $disabled_css = '0';
-    $enabled_css = '1';
+function ntt_widgets_html_css( $classes ) {
 
     /**
      * Entity Widgets Ability Status
      */
+
     $r_widgets = array(
         'entity-header-aside',
         'entity-main-main-aside',
@@ -87,9 +82,9 @@ function ntt_widgets_html_css( $classes ) {
 
     foreach ( $r_widgets as $widget ) {
         if ( is_active_sidebar( $widget ) ) {
-            $classes[] = $widget. '--'. $enabled_css;
+            $classes[] = 'ntt--'. $widget. '---1';
         } else {
-            $classes[] = $widget. '--'. $disabled_css;
+            $classes[] = 'ntt--'. $widget. '---0';
         }
     }
 

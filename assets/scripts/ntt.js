@@ -88,13 +88,13 @@
     }
 
 	function updateDomReadyCss() {
-		addClass( html, 'dom--loaded');
-		deleteClass( html, 'dom--unloaded');
+		addClass( html, 'dom---loaded');
+		deleteClass( html, 'dom---unloaded');
 	}
 
 	function updateWindowLoadedCss() {
-		addClass( html, 'window--loaded');
-		deleteClass( html, 'window--unloaded');
+		addClass( html, 'window---loaded');
+		deleteClass( html, 'window---unloaded');
 	}
 
 	/**

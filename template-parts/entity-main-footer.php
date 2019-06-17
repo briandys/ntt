@@ -1,13 +1,15 @@
 <?php
-if ( ( ( is_single() || is_page() ) && ( get_adjacent_post( false, '', false ) || get_adjacent_post( false, '', true ) ) ) || get_the_posts_pagination() ) {
+/**
+ * Entity Main Footer
+ */
+
+ if ( ( ( is_single() || is_page() ) && ( get_adjacent_post( false, '', false ) || get_adjacent_post( false, '', true ) ) ) || get_the_posts_pagination() ) {
     ?>
-    <div id="entity-main-footer" class="entity-main-footer footer cn" data-name="Entity Main Footer">
-        <div class="entity-main-footer---cr">
-            <?php
-            ntt_entry_nav();
-            ntt_entries_nav();
-            ?>
-        </div>
+    <div class="ntt--entity-main-footer ntt--cn" data-name="Entity Main Footer">
+        <?php
+        ntt_entry_nav();
+        ntt_entries_nav();
+        ?>
     </div>
     <?php
 }

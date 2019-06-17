@@ -1,55 +1,44 @@
 <?php
+/**
+ * Comment DateTime
+ */
+
 if ( ! function_exists( 'ntt_comment_datetime') ) {
     function ntt_comment_datetime( $comment ) {
         
         $comment_url = get_comment_link( $comment->comment_ID );
+        
+        // [Variables] Published DateTime
+        $commented_on_text = __( 'Commented on', 'ntt' );
+        $published_day_text = get_comment_date( 'j' );
+        $published_month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
+        $published_year_text = get_comment_date( 'Y' );
+        $published_hour_text = get_comment_time( 'H' );
+        $published_minute_text = get_comment_time( 'i' );
+        $published_second_text = get_comment_time( 's' );
         ?>
-        <div class="comment-published-datetime cm-datetime cp" data-name="Comment Published DateTime">
-            <div class="comment-published-datetime---cr">
-
-                <?php
-                // Date
-                $day_text = get_comment_date( 'j' );
-                $month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month_wp_filter', 'F' ) );
-                $year_text = get_comment_date( 'Y' );
-                
-                $date_title_attr = $day_text. ' '. $month_text. ' '. $year_text;
-                
-                $date_mu = '<span class="day---txt">'. esc_html( $day_text ). '</span>';
-                $date_mu .= ' '. '<span class="month---txt">'. esc_html( $month_text ). '</span>';
-                $date_mu .= ' '. '<span class="year---txt">'. esc_html( $year_text ). '</span>';
-                
-                // Time
-                $hour_text = get_comment_time( 'H' );
-                $minute_text = get_comment_time( 'i' );
-                $second_text = get_comment_time( 's' );
-                $delimeter_mu = '<span class="delimiter---txt">:</span>';
-                
-                $time_title_attr = $hour_text. ':'. $minute_text. ':'. $second_text;
-                
-                $time_mu = '<span class="hour---txt">'. esc_html( $hour_text ). '</span>';
-                $time_mu .= $delimeter_mu;
-                $time_mu .= '<span class="minute---txt">'. esc_html( $minute_text ). '</span>';
-                $time_mu .= $delimeter_mu;
-                $time_mu .= '<span class="second---txt">'. esc_html( $second_text ). '</span>';
-                ?>
-
-                <span class="comment-published-datetime-glabel obj">
-                    <span class="txt"><?php echo esc_html_x( 'Commented on', 'Commented on [date]', 'ntt' ); ?></span>
-                </span>
-
-                <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="comment-published-date cm-date dt-published obj" data-name="Comment Published Date">
-                    <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented on', 'Commented on [date]', 'ntt' ). ' '. esc_attr( $date_title_attr ); ?>">
-                        <span class="l"><?php echo $date_mu; ?></span>
+        
+        <div class="ntt--comment-datetime ntt--cm-datetime-trunk ntt--cp" data-name="Comment DateTime">
+            <div class="ntt--comment-published-datetime ntt--cm-datetime ntt--cp" data-name="Comment Published DateTime">
+                <label class="ntt--comment-published-datetime-label ntt--obj" data-name="Comment Published DateTime Label">
+                    <span class="ntt--txt"><?php echo esc_html( $commented_on_text ); ?></span>
+                </label>
+                <time datetime="<?php echo esc_attr( get_comment_date( DATE_W3C ) ); ?>" class="ntt--comment-published-date ntt--cm-date dt-published ntt--obj" data-name="Comment Published Date">
+                    <a href="<?php echo esc_attr( $comment_url ); ?>" title="<?php echo esc_attr( $commented_on_text. ' '. $published_day_text. ' '. $published_month_text. ' '. $published_year_text. ','. ' '. $published_hour_text. ':'. $published_minute_text. ':'. $published_second_text ); ?>">
+                        <span class="ntt--txt">
+                            <span class="day-txt"><?php echo esc_html( $published_day_text ); ?></span>
+                            <span class="month-txt"><?php echo esc_html( $published_month_text ); ?></span>
+                            <span class="year-txt"><?php echo esc_html( $published_year_text ); ?></span>
+                        </span>
                     </a>
                 </time>
-                
-                <span class="comment-published-time cm-time obj" data-name="Comment Published Time">
-                    <a href="<?php echo esc_url( $comment_url ); ?>" title="<?php echo esc_attr_x( 'Commented at', 'Commented at [time]', 'ntt' ). ' '. esc_attr( $time_title_attr ); ?>">
-                        <span class="l"><?php echo $time_mu; ?></span>
+                <span class="ntt--comment-published-time ntt--cm-time ntt--obj" data-name="Comment Published Time">
+                    <a href="<?php echo esc_attr( $comment_url ); ?>" title="<?php echo esc_attr( $commented_on_text. ' '. $published_day_text. ' '. $published_month_text. ' '. $published_year_text. ','. ' '. $published_hour_text. ':'. $published_minute_text. ':'. $published_second_text ); ?>">
+                        <span class="ntt--txt">
+                            <span class="hour-txt"><?php echo esc_html( $published_hour_text ); ?></span><span class="delimiter-txt">:</span><span class="minute-txt"><?php echo esc_html( $published_minute_text ); ?></span><span class="delimiter-txt">:</span><span class="second-txt"><?php echo esc_html( $published_second_text ); ?></span>
+                        </span>
                     </a>
                 </span>
-
             </div>
         </div>
         <?php

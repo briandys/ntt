@@ -1,4 +1,8 @@
 <?php
+/**
+ * Entity View Heading
+ */
+
 if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
     function ntt_entity_view_heading() {
         
@@ -24,7 +28,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         if ( is_home() || is_archive() || is_search() ) {
 
             $property_suffix = __( 'Index', 'ntt' );
-            $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
+            $property_mu = '<span class="ntt--txt">'. esc_html( $property_suffix ). '</span>';
             $value_attr = '';
 
             // Current Index
@@ -125,7 +129,7 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
         } elseif ( is_singular() ) {
 
             $property_suffix = __( 'Entry', 'ntt' );
-            $property_mu = '<span class="txt">'. esc_html( $property_suffix ). '</span>';
+            $property_mu = '<span class="ntt--txt">'. esc_html( $property_suffix ). '</span>';
 
             if ( is_single() ) {
                 $value = __( 'Post', 'ntt' );
@@ -135,50 +139,48 @@ if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
                 $value = __( 'Attachment', 'ntt' );
             }
 
-            $value_mu = '<span class="txt">'. esc_html( $value ). '</span>';
+            $value_mu = '<span class="ntt--txt">'. esc_html( $value ). '</span>';
 
         // None
         } elseif ( is_404() ) {
             
-            $property_mu = '<span class="txt">'. esc_html__( 'Page', 'ntt' ). '</span>';
-            $value_mu = '<span class="txt">'. esc_html__( 'Four Zero Four', 'ntt' ). '</span>';
+            $property_mu = '<span class="ntt--txt">'. esc_html__( 'Page', 'ntt' ). '</span>';
+            $value_mu = '<span class="ntt--txt">'. esc_html__( 'Four Zero Four', 'ntt' ). '</span>';
         }
         ?>
 
-        <div class="entity-view-heading cp" data-name="Entity View Heading">
-            <div class="entity-view-heading---cr">
-                <div class="entity-view-name obj">
-                    
-                    <?php
-                    echo $text_label_start_mu;
-                    
-                    if ( is_search() ) {
-                        ?>
-                        <span class="l">
-                            <span class="property---line"><?php echo $property_mu; ?></span>
-                            <span class="value---line"><?php echo $value_mu; ?></span>
-                        </span>
-                        <?php
-                    } else {
-                        ?>
-                        <span class="l">
-                            <span class="value---line"><?php echo $value_mu; ?></span>
-                            <span class="property---line"><?php echo $property_mu; ?></span>
-                        </span>
-                        <?php
-                    }
-                    
-                    echo $text_label_end_mu;
-                    ?>
-                </div>
-
+        <div class="ntt--entity-view-heading ntt--cp" data-name="Entity View Heading">
+            <div class="ntt--entity-view-name ntt--obj" data-name="Entity View Name">
+                
                 <?php
-                // Entry Count is displayed only in Plural View
-                if ( is_home() || is_archive() || is_search() ) {
-                    ntt_entry_count( $args = '', $entry_count_name = 'Entity View', $entry_count_css = 'entity-view' );
+                echo $text_label_start_mu;
+                
+                if ( is_search() ) {
+                    ?>
+                    <span class="l">
+                        <span class="property---line"><?php echo $property_mu; ?></span>
+                        <span class="value---line"><?php echo $value_mu; ?></span>
+                    </span>
+                    <?php
+                } else {
+                    ?>
+                    <span class="l">
+                        <span class="value---line"><?php echo $value_mu; ?></span>
+                        <span class="property---line"><?php echo $property_mu; ?></span>
+                    </span>
+                    <?php
                 }
+                
+                echo $text_label_end_mu;
                 ?>
             </div>
+
+            <?php
+            // Entry Count is displayed only in Plural View
+            if ( is_home() || is_archive() || is_search() ) {
+                ntt_entry_count( $args = '' );
+            }
+            ?>
         </div>
         <?php
     }
