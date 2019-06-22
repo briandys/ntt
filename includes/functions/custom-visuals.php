@@ -12,8 +12,8 @@ function ntt_custom_visuals() {
     add_theme_support( 'custom-header', apply_filters( 'ntt_custom_header_args', array(
         'default-image'      => '',
         'default_text_color' => 'black',
-        'width'              => 1920,
-        'height'             => 1440,
+        'width'              => 0,
+        'height'             => 0,
         'flex-width'         => true,
         'flex-height'        => true,
         'wp-head-callback'   => 'ntt_custom_header_callback',
@@ -44,8 +44,8 @@ function ntt_custom_header_callback() {
         <style id="ntt--custom-header-colors-style">
             .ntt--entity-header,
             .ntt--entity-header a,
-            .ntt--wp-customizer-color-scheme---custom .ntt--entity-header,
-            .ntt--wp-customizer-color-scheme---custom .ntt--entity-header a {
+            .ntt--customizer-color-scheme---custom .ntt--entity-header,
+            .ntt--customizer-color-scheme---custom .ntt--entity-header a {
                 color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
             }
         </style>

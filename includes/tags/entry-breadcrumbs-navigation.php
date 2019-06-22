@@ -48,7 +48,7 @@
 
         if ( is_attachment() ) {
             the_post_navigation( array(
-                'prev_text' => sprintf( '<span class="ntt--txt"><span class="ntt--label-txt">'. _x( 'Published in', 'Published in Entry Name', 'ntt' ). '</span>'. ' '. '<span class="entry-name-txt">'. esc_html( '%s' ). '</span></span>',
+                'prev_text' => sprintf( '<span class="ntt--txt"><span class="ntt--label-txt">'. _x( 'Published in', 'Published in Entry Name', 'ntt' ). '</span>'. ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%s' ). '</span></span>',
                 '%title' ), )
             );
         }

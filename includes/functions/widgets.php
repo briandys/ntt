@@ -20,7 +20,7 @@ function ntt_widgets() {
 	$widget_start_mu = '<div id="ntt--%1$s" class="ntt--%2$s ntt--widget ntt--cp" data-name="Widget">';
     $widget_end_mu = '</div>';
     
-    $title_mu_start = '<div class="ntt--widget-name ntt--obj" data-name="Widget Name">';
+    $title_mu_start = '<div class="ntt--widget-name ntt--obj">';
         $title_mu_start .= '<span class="ntt--txt">';
         $title_mu_end = '</span>';
 	$title_mu_end .= '</div>';
@@ -90,4 +90,4 @@ function ntt_widgets_html_css( $classes ) {
 
 	return $classes;
 }
-add_filter( 'ntt_html_css_wp_filter', 'ntt_widgets_html_css' );
+add_filter( 'ntt_html_css_filter', 'ntt_widgets_html_css' );

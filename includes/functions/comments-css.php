@@ -36,9 +36,9 @@ function ntt_status_css_comments_css( $classes ) {
     
     // Comments Population Status
     if ( $comments_count >= 1 ) {
-        $classes[] = 'ntt--comments---populated';
+        $classes[] = 'ntt--populated-comments';
     } else {
-        $classes[] = 'ntt--comments---empty';
+        $classes[] = 'ntt--empty-comments';
     }
 
     // Comment Creation Ability Status
@@ -52,6 +52,6 @@ function ntt_status_css_comments_css( $classes ) {
 }
 add_filter( 'ntt_comments_css_wp_filter', 'ntt_status_css_comments_css' );
 
-add_filter( 'ntt_html_css_wp_filter', function( $classes ) {
+add_filter( 'ntt_html_css_filter', function( $classes ) {
     return is_singular() ? ntt_status_css_comments_css( $classes ) : $classes;
 } );

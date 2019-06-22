@@ -26,18 +26,19 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
             
                         $next_navi_txt_mu = '<span aria-label="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--txt">';
                             $next_navi_txt_mu .= '<span class="ntt--label-txt">'. esc_html_x( 'Next', 'Next Entry', 'ntt' ). '</span>';
-                            $next_navi_txt_mu .= ' '. '<span class="entry-name-txt">'. esc_html( '%title' ) .'</span>';
+                            $next_navi_txt_mu .= '<span class="ntt--delimiter-txt">'. esc_html( ':' ). '</span>';
+                            $next_navi_txt_mu .= ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%title' ) .'</span>';
                         $next_navi_txt_mu .= '</span>';
 
                         if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
-                            $next_post_thumbnail = '<span aria-label="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_next_post()->ID, $featured_image_size ). '</span>';
+                            $next_post_thumbnail_mu = '<span aria-label="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_next_post()->ID, $featured_image_size ). '</span>';
                         } else {
-                            $next_post_thumbnail = '';
+                            $next_post_thumbnail_mu = '';
                         }
                         ?>
                         
                         <div class="ntt--next-entry-navi ntt--entry-navi ntt--navi ntt--obj">
-                            <?php next_post_link( '%link', $next_navi_txt_mu. $next_post_thumbnail ); ?>
+                            <?php next_post_link( '%link', $next_navi_txt_mu. $next_post_thumbnail_mu ); ?>
                         </div>
                         <?php
                     }
@@ -48,18 +49,19 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
 
                         $previous_navi_txt_mu = '<span aria-label="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--txt">';
                             $previous_navi_txt_mu .= '<span class="ntt--label-txt">'. esc_html_x( 'Previous', 'Previous Entry', 'ntt' ). '</span>';
-                            $previous_navi_txt_mu .= ' '. '<span class="entry-name-txt">'. esc_html( '%title' ) .'</span>';
+                            $previous_navi_txt_mu .= '<span class="ntt--delimiter-txt">'. esc_html( ':' ). '</span>';
+                            $previous_navi_txt_mu .= ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%title' ) .'</span>';
                         $previous_navi_txt_mu .= '</span>';
 
                         if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
-                            $prev_post_thumbnail = '<span aria-label="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size ). '</span>';
+                            $prev_post_thumbnail_mu = '<span aria-label="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size ). '</span>';
                         } else {
-                            $prev_post_thumbnail = '';
+                            $prev_post_thumbnail_mu = '';
                         }
                         ?>
                         
                         <div class="ntt--previous-entry-navi ntt--entry-navi ntt--navi ntt--obj">
-                            <?php previous_post_link( '%link', $previous_navi_txt_mu. $prev_post_thumbnail ); ?>
+                            <?php previous_post_link( '%link', $previous_navi_txt_mu. $prev_post_thumbnail_mu ); ?>
                         </div>
                         <?php 
                     }

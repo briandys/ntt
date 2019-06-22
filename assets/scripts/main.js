@@ -113,6 +113,6 @@
 	 */
 	window.addEventListener( 'load', function() {
 		updateWindowLoadedCss();
-	});
-
+    });
 } )();
+

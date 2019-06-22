@@ -1,5 +1,5 @@
 /**
- * WordPress Customizer Controls
+ * Customizer Controls
  */
 
 ( function() {

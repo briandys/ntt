@@ -3,7 +3,7 @@
  * Content
  */
 ?>
-<article id="ntt--entry-<?php the_id(); ?>" <?php post_class( ntt_get_comments_css() ); ?> data-name="Entry">
+<article id="ntt--entry--<?php the_id(); ?>" <?php post_class( ntt_get_comments_css() ); ?> data-name="Entry">
     <?php
     ntt_entry_header();
     ntt_entry_main();

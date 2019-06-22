@@ -1,5 +1,5 @@
 /**
- * WordPress Customizer Preview
+ * Customizer Preview
  */
 
 ( function( $ ) {
@@ -58,8 +58,8 @@
 	wp.customize( 'colorscheme', function( value ) {
 		value.bind( function( to ) {
 			$html
-				.addClass( 'ntt--wp-customizer-color-scheme---default' )
-				.removeClass( 'ntt--wp-customizer-color-scheme---custom' );
+				.addClass( 'ntt--customizer-color-scheme---default' )
+				.removeClass( 'ntt--customizer-color-scheme---custom' );
 		} );
 	} );
 	
@@ -70,10 +70,10 @@
 	wp.customize( 'colorscheme_hue', function( value ) {
 		value.bind( function( to ) {
             $html
-				.addClass( 'ntt--wp-customizer-color-scheme---custom' )
-				.removeClass( 'ntt--wp-customizer-color-scheme---default' );
+				.addClass( 'ntt--customizer-color-scheme---custom' )
+				.removeClass( 'ntt--customizer-color-scheme---default' );
 
-			var style = $( '#ntt--wp-customizer-custom-color-scheme-style' ),
+			var style = $( '#ntt--customizer-custom-color-scheme-style' ),
 				hue = style.data( 'hue' ),
 				css = style.html();
 

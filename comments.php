@@ -10,9 +10,9 @@ if ( post_password_required() ) {
 }
 
 // title_reply
-$title_reply_mu = '<h2 class="ntt--comment-composition-name ntt--obj">';
+$title_reply_mu = '<div class="ntt--comment-composition-name ntt--obj">';
     $title_reply_mu .= '<span class="ntt--txt">'. esc_html__( 'Compose Comment', 'ntt' ). '</span>';
-$title_reply_mu .= '</h2>';
+$title_reply_mu .= '</div>';
 
 // title_reply_to
 // Appears if wp_enqueue_script( 'comment-reply' ) is not active
@@ -74,7 +74,7 @@ $comment_field_mu = '<div class="ntt--comment-author-message-field ntt--form-fie
         $comment_field_mu .= '<span class="ntt--txt">'. esc_html( $comment_text ).'</span>';
     $comment_field_mu .= '</label>';
         $comment_field_mu .= '<div class="ntt--comment-author-message-textbox ntt--form-element ntt--obj" data-name="Comment Author Message Textbox">';
-            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr( $comment_text ).'" id="comment" class="text-input"></textarea>';
+            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr__( 'Required', 'ntt' ).'" id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
 ?>

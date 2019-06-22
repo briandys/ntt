@@ -6,7 +6,7 @@
  */
 ?>
 <article class="ntt--entry ntt--empty-entry ntt--cp" data-name="Empty Entry">
-    <div class="entry-header header ntt--cn" data-name="Entry Header">
+    <div class="ntt--entry-header ntt--cn" data-name="Entry Header">
         <div class="ntt--entry-heading ntt--cp" data-name="Entry Heading">
             <?php ntt_before_entry_name_wp_hook(); ?>
             <h1 class="ntt--entry-name ntt--obj">

@@ -1,5 +1,7 @@
 <?php
 function ntt_get_html_css( $class='' ) {
+
+    global $post;
     
     // Making conditionals out of search results
     global $wp_query;
@@ -12,19 +14,43 @@ function ntt_get_html_css( $class='' ) {
     /**
      * Defaults
      */
+
     $classes[] = 'ntt';
     $classes[] = 'ntt--view';
     $classes[] = 'no-js';
 
     /**
-     * Entity View Count Types
+     * Entry Count Types
      */
+
     if ( is_home() || is_archive() || $is_with_search_results ) {
-        $classes[] = 'ntt--plural-view';
+        $classes[] = 'ntt--multiple-entries';
 	} elseif ( is_singular() ) {
-		$classes[] = 'ntt--singular-view';
+		$classes[] = 'ntt--single-entry';
 	} elseif ( is_404() || $is_no_search_results ) {
-        $classes[] = 'ntt--none-view';
+        $classes[] = 'ntt--zero-entry';
+    }
+
+    /**
+     * Entry Index Types
+     */
+
+    if ( is_home() ) {
+        $classes[] = 'ntt--current-index';
+    } elseif ( is_archive() ) {
+        $classes[] = 'ntt--archive-index';
+    } elseif( $is_with_search_results ) {
+        $classes[] = 'ntt--search-index';
+    }
+
+    /**
+     * View Position Types
+     */
+    
+    if ( is_front_page() ) {
+        $classes[] = 'ntt--front-view';
+    } else {
+        $classes[] = 'ntt--inner-view';
     }
 
     /**
@@ -53,28 +79,11 @@ function ntt_get_html_css( $class='' ) {
     }
 
     /**
-     * WP Customizer Color Scheme
+     * Customizer Color Scheme
      */
     if ( get_theme_mod( 'colorscheme' ) == 'custom' ) {
-        $classes[] = 'ntt--wp-customizer-color-scheme---'. ntt_wp_customize_color_scheme_sanitizer( get_theme_mod( 'colorscheme' ) );
+        $classes[] = 'ntt--customizer-color-scheme---custom';
 	}
-
-    /**
-     * Entry Index Types
-     */
-    if ( is_home() ) {
-        $classes[] = 'ntt--current-index-view';
-    } elseif ( is_archive() ) {
-        $classes[] = 'ntt--archive-index-view';
-    } elseif( $is_with_search_results ) {
-        $classes[] = 'ntt--search-index-view';
-    }
-
-    if ( is_front_page() ) {
-        $classes[] = 'ntt--front-view';
-    } else {
-        $classes[] = 'ntt--inner-view';
-    }
 
     if ( ! empty( $class ) ) {
         if ( !is_array( $class ) )
@@ -93,7 +102,7 @@ function ntt_get_html_css( $class='' ) {
      * @param array $classes An array of classes.
      * @param array $class   An array of additional classes.
      */
-    $classes = apply_filters( 'ntt_html_css_wp_filter', $classes, $class );
+    $classes = apply_filters( 'ntt_html_css_filter', $classes, $class );
  
     return array_unique( $classes );
 }

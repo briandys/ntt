@@ -33,13 +33,13 @@ if ( ! function_exists( 'ntt_comment') ) {
 
         // Additional CSS Classes
         $r_comment_css = array(
-            'ntt--comment-'. $comment_id,
-            'p-comment',
-            'h-entry',
+            'ntt--comment--'. $comment_id,
             'ntt--cp',
             $comment_hierarchy_css,
             $comment_author_avatar_type_css,
             $comments_thread_limit_css,
+            'p-comment',
+            'h-entry',
         );
         
         foreach ( $r_comment_css as $comment_css ) {

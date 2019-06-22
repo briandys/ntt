@@ -3,33 +3,33 @@
  * Functions
  */
 
-$GLOBALS['ntt_name'] = 'NTT';
-
-// Functions
 $r_functions = array(
     // Primary
     'back-compatibility',
     'settings',
-    'wp-hooks',
+    'hooks',
     'styles-scripts',
     // Secondary
     'comments-css',
     'comment-form',
+    'customizer',
     'custom-visuals',
     'entry-css',
+    'excerpt',
     'gallery',
     'html-css',
     'pingback-header',
     'widgets',
-    'wp-customizer',
-    'wp-excerpt',
 );
 
-foreach ( $r_functions as $file_name ) {
-    require( get_parent_theme_file_path( '/includes/functions/'. $file_name. '.php' ) );
+foreach ( $r_functions as $function ) {
+    require( get_parent_theme_file_path( '/includes/functions/'. $function. '.php' ) );
 }
 
-// Tags
+/**
+ * Tags
+ */
+
 $r_tags = array(
     'comment',
     'comment-actions',
@@ -60,6 +60,6 @@ $r_tags = array(
     'entry-taxonomy',
 );
 
-foreach ( $r_tags as $file_name ) {
-    require( get_parent_theme_file_path( '/includes/tags/'. $file_name. '.php' ) );
+foreach ( $r_tags as $tag ) {
+    require( get_parent_theme_file_path( '/includes/tags/'. $tag. '.php' ) );
 }
