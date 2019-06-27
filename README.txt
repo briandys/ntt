@@ -8,11 +8,11 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 A Hypertext Document
 
-For more information about NTT please go to http://ntt.briandys.com.
+For more information about NTT please go to http://briandys.com/ntt/.
 
 == Copyright ==
 
-NTT WP Theme, Copyright 2018 DysineLab
+NTT WordPress Theme, Copyright 2018 - 2019 Brian Dys
 NTT is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify

@@ -58,7 +58,7 @@ function ntt_manual_excerpt_search_excerpt( $excerpt ) {
     
     if ( is_search() ) {
         ?>
-        <p class="ntt--content-snippet ntt--obj" data-name="Content Snippet">
+        <p class="ntt--entry-content-snippet ntt--obj" data-name="Entry Content Snippet">
             <a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>"><?php echo esc_html( $excerpt ); ?></a>
         </p>
         <?php

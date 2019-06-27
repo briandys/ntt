@@ -41,7 +41,7 @@ add_filter( 'post_class', 'ntt_entry_css' );
 
 /**
  * Entry CSS added to HTML
- */
 add_filter( 'ntt_html_css_filter', function( $classes ) {
     return is_singular() ? ntt_entry_css( $classes ) : $classes;
 } );
+ */

@@ -31,7 +31,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                         $next_navi_txt_mu .= '</span>';
 
                         if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
-                            $next_post_thumbnail_mu = '<span aria-label="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_next_post()->ID, $featured_image_size ). '</span>';
+                            $next_post_thumbnail_mu = '<span title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_next_post()->ID, $featured_image_size ). '</span>';
                         } else {
                             $next_post_thumbnail_mu = '';
                         }
@@ -54,7 +54,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                         $previous_navi_txt_mu .= '</span>';
 
                         if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
-                            $prev_post_thumbnail_mu = '<span aria-label="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size ). '</span>';
+                            $prev_post_thumbnail_mu = '<span title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size ). '</span>';
                         } else {
                             $prev_post_thumbnail_mu = '';
                         }
