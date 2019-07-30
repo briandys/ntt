@@ -20,7 +20,7 @@ function ntt_get_comments_css( $class='' ) {
      * @param array $classes An array of classes.
      * @param array $class   An array of additional classes.
      */
-    $classes = apply_filters( 'ntt_comments_css_wp_filter', $classes, $class );
+    $classes = apply_filters( 'ntt_comments_css_filter', $classes, $class );
  
     return array_unique( $classes );
 }
@@ -29,16 +29,18 @@ function ntt_comments_css( $class='' ) {
     echo join( ' ', ntt_get_comments_css( $class ) );
 }
 
-// Add Comments Status CSS
-function ntt_status_css_comments_css( $classes ) {
-    
+/**
+ * Comments Status CSS
+ */
+function ntt_comments_status_css( $classes ) {
+
     $comments_count = (int) get_comments_number( get_the_ID() );
     
     // Comments Population Status
     if ( $comments_count >= 1 ) {
-        $classes[] = 'ntt--populated-comments';
+        $classes[] = 'ntt--comments---populated';
     } else {
-        $classes[] = 'ntt--empty-comments';
+        $classes[] = 'ntt--comments---empty';
     }
 
     // Comment Creation Ability Status
@@ -50,8 +52,4 @@ function ntt_status_css_comments_css( $classes ) {
 
     return $classes;
 }
-add_filter( 'ntt_comments_css_wp_filter', 'ntt_status_css_comments_css' );
-
-add_filter( 'ntt_html_css_filter', function( $classes ) {
-    return is_singular() ? ntt_status_css_comments_css( $classes ) : $classes;
-} );
+add_filter( 'ntt_comments_css_filter', 'ntt_comments_status_css' );

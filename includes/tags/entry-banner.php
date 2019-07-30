@@ -31,7 +31,7 @@ if ( ! function_exists( 'ntt_entry_banner' ) ) {
                             $featured_image_size = 'ntt-small';
                         }
 
-                        the_post_thumbnail( apply_filters( 'ntt_entry_banner_visuals_featured_image_size_wp_filter', $featured_image_size ), array( 'class' => 'u-featured', ) );
+                        the_post_thumbnail( apply_filters( 'ntt_entry_banner_visuals_featured_image_size_filter', $featured_image_size ), array( 'class' => 'u-featured', ) );
                         
                         echo $anchor_mu_end;
                         ?>

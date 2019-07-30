@@ -10,7 +10,7 @@ if ( ! function_exists( 'ntt_entry_categories' ) ) {
             ?>
             <div class="ntt--entry-categories ntt--cp" data-name="Entry Categories">
                 <div class="ntt--entry-categories-name ntt--obj">
-                    <span class="ntt--txt"><?php echo apply_filters( 'ntt_categories_name_wp_filter', esc_html__( 'Categories', 'ntt' ) ); ?></span>
+                    <span class="ntt--txt"><?php echo apply_filters( 'ntt_categories_name_filter', esc_html__( 'Categories', 'ntt' ) ); ?></span>
                 </div>
                 <?php echo get_the_category_list(); ?>
             </div>
@@ -26,7 +26,7 @@ if ( ! function_exists( 'ntt_entry_tags' ) ) {
             ?>
             <div class="ntt--entry-tags ntt--cp" data-name="Entry Tags">
                 <div class="ntt--entry-tags-name ntt--obj">
-                    <span class="ntt--txt"><?php echo apply_filters( 'ntt_entry_tags_name_wp_filter', esc_html__( 'Tags', 'ntt' ) ); ?></span>
+                    <span class="ntt--txt"><?php echo apply_filters( 'ntt_entry_tags_name_filter', esc_html__( 'Tags', 'ntt' ) ); ?></span>
                 </div>
                 <?php
                 $the_tags_before = '<ul class="ntt--entry-tags-group ntt--cp"><li>';

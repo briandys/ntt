@@ -107,7 +107,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                                         'add_below'     => 'comment',
                                         'depth'         => $depth,
                                         'max_depth'     => $args['max_depth'],
-                                        'reply_text'    => '<span title="'. esc_attr( $reply_text ). '" class="ntt--reply-text">'. esc_html( $reply_text ). '</span>',
+                                        'reply_text'    => '<span title="'. esc_attr( $reply_text ). ' '. '('. esc_attr( $requirement_txt ). ')'. '" class="ntt--txt"><span class="ntt--reply-text">'. esc_html( $reply_text ). '</span></span>',
                                         'login_text'    => '<span title="'. esc_attr( $reply_text ). ' '. '('. esc_attr( $requirement_txt ). ')'. '" class="ntt--txt"><span class="ntt--reply-text">'. esc_html( $reply_text ). '</span>'. ' '. '<span class="ntt--requirement-txt">'. esc_html( $requirement_txt ). '</span>'. '</span>',
                                     )
                                 )
