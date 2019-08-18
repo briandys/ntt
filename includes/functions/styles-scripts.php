@@ -29,8 +29,8 @@ function ntt_inline_scripts() {
         ( function() {
             var html = document.documentElement;
             html.className = html.className.replace( /\bno-js\b/,'js' );
-            html.className += ' ' + 'dom---unloaded';
-            html.className += ' ' + 'window---unloaded';
+            html.className += ' ' + 'ntt--dom---unloaded';
+            html.className += ' ' + 'ntt--window---unloaded';
         } )();
     </script>
     <?php

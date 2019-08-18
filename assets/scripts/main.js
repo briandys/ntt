@@ -92,13 +92,13 @@
     }
 
 	function updateDomReadyCss() {
-		addClass( html, 'dom---loaded');
-		deleteClass( html, 'dom---unloaded');
+		addClass( html, 'ntt--dom---loaded');
+		deleteClass( html, 'ntt--dom---unloaded');
 	}
 
 	function updateWindowLoadedCss() {
-		addClass( html, 'window---loaded');
-		deleteClass( html, 'window---unloaded');
+		addClass( html, 'ntt--window---loaded');
+		deleteClass( html, 'ntt--window---unloaded');
 	}
 
 	/**
