@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-A Hypertext Document
+NTT upholds the Open Web through Information Architecture and Semantics.
 
 For more information about NTT please go to http://briandys.com/ntt/.
 
