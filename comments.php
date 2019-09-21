@@ -9,6 +9,8 @@ if ( post_password_required() ) {
 	return;
 }
 
+global $current_user;
+
 // title_reply
 $title_reply_mu = '<div class="ntt--comment-composition-name ntt--obj">';
     $title_reply_mu .= '<span class="ntt--txt">'. esc_html__( 'Compose Comment', 'ntt' ). '</span>';
@@ -33,14 +35,42 @@ $cancel_reply_axn_end_mu = '</div>';
 // cancel_reply_link
 $cancel_reply_link_mu = '<span class="ntt--txt">'. esc_html__( 'Cancel', 'ntt' ). '</span>';
 
+/*
+$logged_in_as_mu .= '<div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">';
+    $logged_in_as_mu .= '<label class="ntt--comment-author-label ntt--obj">';
+        $logged_in_as_mu .= '<span class="ntt--txt">'. esc_html_x( 'Commenting as', 'Commenting as Author Name', 'ntt' ). '</span>';
+    $logged_in_as_mu .= '</label>'. ' ';
+    $logged_in_as_mu .= '<span title="Commenting as'. $user_identity. '" class="ntt--comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">';
+        $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" class="p-name u-url">';
+            $logged_in_as_mu .= '<span class="ntt--img">'. get_avatar( $current_user->ID, apply_filters( 'ntt_author_avatar_filter', '48' ) ).'</span>';
+        $logged_in_as_mu .= '</a>';
+    $logged_in_as_mu .= '</span>';
+    $logged_in_as_mu .= '<span title="Commenting as'. $user_identity. '" class="ntt--comment-author-name ntt--cm-author-name ntt--obj">';
+        $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" class="p-name u-url">';
+            $logged_in_as_mu .= '<span class="ntt--txt">'. $user_identity.'</span>';
+        $logged_in_as_mu .= '</a>';
+    $logged_in_as_mu .= '</span>';
+$logged_in_as_mu .= '</div>';
+*/
+
 // logged_in_as
 $log_out_text = __( 'Log Out', 'ntt' );
 
-$logged_in_as_mu = '<div class="ntt--account-log-status ntt--cp" data-name="Account Log Status">';
-    $logged_in_as_mu .= '<div class="ntt--logged-in-account ntt--obj" data-name="Logged In Account">';
-        $logged_in_as_mu .= '<span class="ntt--txt">';
-            $logged_in_as_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Logged in as', 'Logged in as Name', 'ntt' ).'</label>'. ' ';
-            $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" title="Logged in as '. $user_identity.'" class="ntt--account-name-txt">'. $user_identity.'</a>';
+$logged_in_as_mu = '<div class="ntt--account-logged-in-status ntt--cp" data-name="Account Logged In Status">';
+    
+    $logged_in_as_mu .= '<div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">';
+        $logged_in_as_mu .= '<label class="ntt--comment-author-label ntt--obj">';
+            $logged_in_as_mu .= '<span class="ntt--txt">'. esc_html_x( 'Commenting as', 'Commenting as Author Name', 'ntt' ). '</span>';
+        $logged_in_as_mu .= '</label>'. ' ';
+        $logged_in_as_mu .= '<span title="Commenting as'. ' '. $user_identity. '" class="ntt--comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">';
+            $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" class="p-name u-url">';
+                $logged_in_as_mu .= '<span class="ntt--img">'. get_avatar( $current_user->ID, apply_filters( 'ntt_author_avatar_filter', '48' ) ).'</span>';
+            $logged_in_as_mu .= '</a>';
+        $logged_in_as_mu .= '</span>';
+        $logged_in_as_mu .= '<span title="Commenting as'. ' '. $user_identity. '" class="ntt--comment-author-name ntt--cm-author-name ntt--obj">';
+            $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" class="p-name u-url">';
+                $logged_in_as_mu .= '<span class="ntt--txt">'. $user_identity.'</span>';
+            $logged_in_as_mu .= '</a>';
         $logged_in_as_mu .= '</span>';
     $logged_in_as_mu .= '</div>';
     $logged_in_as_mu .= '<div aria-label="'. esc_attr( $log_out_text ). ' '. $user_identity.'" title="'. esc_attr( $log_out_text ). ' '. $user_identity.'" class="ntt--log-out-account-axn ntt--axn ntt--obj" data-name="Log Out Account Action">';
@@ -49,6 +79,19 @@ $logged_in_as_mu = '<div class="ntt--account-log-status ntt--cp" data-name="Acco
         $logged_in_as_mu .= '</a>';
     $logged_in_as_mu .= '</div>';
 $logged_in_as_mu .= '</div>';
+
+/*
+<div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">
+            <label class="ntt--comment-author-label ntt--obj">
+                <span class="ntt--txt">Commented by</span>
+            </label>
+            
+                            <span title="Commented by Brian Dys" class="ntt--comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">
+                    <a href="http://briandys.com" class="p-name u-url"><span class="ntt--img"><img alt="Avatar" src="http://2.gravatar.com/avatar/80a1fda15bb91040818b4535a3e18bce?s=48&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/80a1fda15bb91040818b4535a3e18bce?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo u-photo" height="48" width="48"></span></a>                </span>
+                            <span title="Commented by Brian Dys" class="ntt--comment-author-name ntt--cm-author-name ntt--obj">
+                <a href="http://briandys.com" class="p-name u-url"><span class="ntt--txt">Brian Dys</span></a>            </span>
+        </div>
+        */
 
 // must_log_in
 $log_in_text = __( 'Log In', 'ntt' );
