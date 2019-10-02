@@ -13,7 +13,7 @@ if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
                 <?php
                 $comments_count_mu = '<span class="ntt--txt">';
                     $comments_count_mu .= '<span class="ntt--count-txt ntt--num">'. esc_html( '%1$s' ).'</span>';
-                    $comments_count_mu .= ' '. '<span class="ntt--label-txt">'. esc_html( '%2$s' ). '</span>';
+                    $comments_count_mu .= ' '. '<label class="ntt--label-txt">'. esc_html( '%2$s' ). '</label>';
                 $comments_count_mu .= '</span>';
                 
                 $single_count_label = sprintf( $comments_count_mu,

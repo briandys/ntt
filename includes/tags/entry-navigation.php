@@ -25,7 +25,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                         $next_entry_text = __( 'Next Entry', 'ntt' );
             
                         $next_navi_txt_mu = '<span aria-label="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--txt">';
-                            $next_navi_txt_mu .= '<span class="ntt--label-txt">'. esc_html_x( 'Next', 'Next Entry', 'ntt' ). '</span>';
+                            $next_navi_txt_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Next', 'Next Entry', 'ntt' ). '</label>';
                             $next_navi_txt_mu .= '<span class="ntt--delimiter-txt">'. esc_html( ':' ). '</span>';
                             $next_navi_txt_mu .= ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%title' ) .'</span>';
                         $next_navi_txt_mu .= '</span>';
@@ -48,7 +48,7 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
                         $previous_entry_text = __( 'Previous Entry', 'ntt' );
 
                         $previous_navi_txt_mu = '<span aria-label="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--txt">';
-                            $previous_navi_txt_mu .= '<span class="ntt--label-txt">'. esc_html_x( 'Previous', 'Previous Entry', 'ntt' ). '</span>';
+                            $previous_navi_txt_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Previous', 'Previous Entry', 'ntt' ). '</label>';
                             $previous_navi_txt_mu .= '<span class="ntt--delimiter-txt">'. esc_html( ':' ). '</span>';
                             $previous_navi_txt_mu .= ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%title' ) .'</span>';
                         $previous_navi_txt_mu .= '</span>';

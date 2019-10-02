@@ -28,7 +28,7 @@
                     <div class="ntt--entity-maker-tag ntt--obj" data-name="Entity Maker Tag">
                         <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_filter', '//briandys.com/ntt/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Made with [Theme Name] by Maker', 'ntt' ). ' '. esc_attr( $entity_maker_tag_theme_name_filter ). ' '. esc_attr_x( 'by', 'Made with [Theme Name] by Maker', 'ntt' ). ' '. esc_attr( $entity_maker_tag_maker_name_filter ); ?>">
                             <span class="ntt--txt">
-                                <label class="design-by-text"><?php echo esc_html_x( 'Design by', 'Design by Maker', 'ntt' ); ?></label>
+                                <label class="ntt--label-txt"><?php echo esc_html_x( 'Design by', 'Design by Maker', 'ntt' ); ?></label>
                                 <span class="ntt--maker-name-txt"><?php echo esc_html( $entity_maker_tag_maker_name_filter ); ?></span>
                             </span>
                         </a>

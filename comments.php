@@ -21,7 +21,7 @@ $title_reply_mu .= '</div>';
 $title_reply_to_mu = $title_reply_mu;
 $title_reply_to_mu .= '<div class="ntt--comment-reply-reference ntt--obj" data-name="Comment Reply Reference">';
     $title_reply_to_mu .= '<span class="ntt--txt">';
-        $title_reply_to_mu .= '<span class="ntt--label-txt">'. esc_html__( 'Reply to', 'ntt' ). '</span>';
+        $title_reply_to_mu .= '<label class="ntt--label-txt">'. esc_html__( 'Reply to', 'ntt' ). '</label>';
         $title_reply_to_mu .= ' '. '%s';
     $title_reply_to_mu .= '</span>';
 $title_reply_to_mu .= '</div>';

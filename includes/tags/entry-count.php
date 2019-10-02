@@ -35,7 +35,7 @@ if ( ! function_exists( 'ntt_entry_count') ) {
         <div class="<?php echo $entry_count_css. ' '. $status_css; ?> ntt--obj" data-name="<?php echo $entry_count_name; ?>">
             <span class="ntt--txt">
                 <span class="ntt--count-txt ntt--num"><?php echo esc_html( $total_entries ); ?></span>
-                <span class="ntt--label-txt"><?php echo esc_html( $label_txt ); ?></span>
+                <label class="ntt--label-txt"><?php echo esc_html( $label_txt ); ?></label>
             </span>
         </div>
         <?php
