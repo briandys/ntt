@@ -609,7 +609,7 @@ textarea {
 .alignright,
 .alignleft,
 .aligncenter {
-  display: initial;
+  position: initial;
 }
 
 .ntt--entity-name-description---0 .ntt--entity-name,
