@@ -47,7 +47,7 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
                     wp_nav_menu( array(
                         'theme_location'    => 'entity-primary-nav',
                         'container'         => 'div',
-                        'container_class'   => '',
+                        'container_class'   => 'menu',
                         'link_before'       => '<span class="ntt--txt">',
                         'link_after'        => '</span>',
                         'items_wrap'        => '<ul class="ntt--entity-primary-nav-group ntt--nav-group">'. '%3$s'. '</ul>',
@@ -79,7 +79,7 @@ if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
                 wp_nav_menu( array(
                     'theme_location'    => 'entity-secondary-nav',
                     'container'         => 'div',
-                    'container_class'   => '',
+                    'container_class'   => 'menu',
                     'link_before'       => '<span class="ntt--txt">',
                     'link_after'        => '</span>',
                     'items_wrap'        => '<ul class="ntt--entity-secondary-nav-group ntt--nav-group ntt--cp">'. '%3$s'. '</ul>',
