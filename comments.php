@@ -80,19 +80,6 @@ $logged_in_as_mu = '<div class="ntt--account-logged-in-status ntt--cp" data-name
     $logged_in_as_mu .= '</div>';
 $logged_in_as_mu .= '</div>';
 
-/*
-<div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">
-            <label class="ntt--comment-author-label ntt--obj">
-                <span class="ntt--txt">Commented by</span>
-            </label>
-            
-                            <span title="Commented by Brian Dys" class="ntt--comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">
-                    <a href="http://briandys.com" class="p-name u-url"><span class="ntt--img"><img alt="Avatar" src="http://2.gravatar.com/avatar/80a1fda15bb91040818b4535a3e18bce?s=48&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/80a1fda15bb91040818b4535a3e18bce?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo u-photo" height="48" width="48"></span></a>                </span>
-                            <span title="Commented by Brian Dys" class="ntt--comment-author-name ntt--cm-author-name ntt--obj">
-                <a href="http://briandys.com" class="p-name u-url"><span class="ntt--txt">Brian Dys</span></a>            </span>
-        </div>
-        */
-
 // must_log_in
 $log_in_text = __( 'Log In', 'ntt' );
 

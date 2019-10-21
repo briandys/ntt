@@ -1,5 +1,5 @@
 = NTT =
-Author: Brian Dys
+Author: Brian Dys CL
 Requires at least: WordPress 4.7
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -12,7 +12,7 @@ For more information about NTT please go to http://briandys.com/ntt/.
 
 == Copyright ==
 
-NTT WordPress Theme, Copyright 2018 - 2019 Brian Dys
+NTT WordPress Theme, Copyright 2018 - 2019 Brian Dys CL
 NTT is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify

@@ -9,7 +9,7 @@
                 <div class="ntt--entity-secondary-info ntt--cp" data-name="Entity Secondary Information">
                     <?php
                     $get_bloginfo_name = get_bloginfo( 'name', 'display' );
-                    $entity_maker_name = 'Brian Dys';
+                    $entity_maker_name = 'Brian Dys CL';
                     
                     $entity_maker_tag_theme_name_filter = apply_filters( 'ntt_entity_maker_tag_theme_name_filter', 'NTT' );
                     $entity_maker_tag_maker_name_filter = apply_filters( 'ntt_entity_maker_tag_maker_name_filter', $entity_maker_name );
