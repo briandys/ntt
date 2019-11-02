@@ -28,6 +28,14 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
         ?>
         
         <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" class="ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
+            <div class="ntt--entries-page-indicator ntt--obj" data-name="Entries Page Indicator">
+                <span class="ntt--txt">
+                    <span class="ntt--page-text"><?php echo esc_html( $page_text ); ?></span>
+                    <span class="ntt--current-page-txt ntt--num"><?php echo esc_html( $current_page ); ?></span>
+                    <span class="ntt--of-text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
+                    <span class="ntt--total-pages-txt ntt--num"><?php echo esc_html( $total_pages ); ?></span>
+                </span>
+            </div>
             <?php
             the_posts_pagination( array(
                 'screen_reader_text'    => __( 'Entries Navigation', 'ntt' ),
@@ -40,14 +48,6 @@ if ( ! function_exists( 'ntt_entries_nav' ) ) {
                 'prev_text'             => '<span aria-label="'. esc_attr( $previous_page_text ).'" title="'. esc_attr( $previous_page_text ).'" class="ntt--txt">'. esc_html_x( 'Previous', 'Previous Page', 'ntt' ).'</span>',
             ) );
             ?>
-            <div class="ntt--entries-page-indicator ntt--obj" data-name="Entries Page Indicator">
-                <span class="ntt--txt">
-                    <span class="ntt--page-text"><?php echo esc_html( $page_text ); ?></span>
-                    <span class="ntt--current-page-txt ntt--num"><?php echo esc_html( $current_page ); ?></span>
-                    <span class="ntt--of-text"><?php echo esc_html_x( 'of', 'Page [Current Page Number] of [Total Pages]', 'ntt' ); ?></span>
-                    <span class="ntt--total-pages-txt ntt--num"><?php echo esc_html( $total_pages ); ?></span>
-                </span>
-            </div>
         </div>
         <?php 
     }
