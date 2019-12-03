@@ -5,7 +5,6 @@
 
 $unique_id = uniqid();
 $search_text = __( 'Search', 'ntt' );
-$go_text = __( 'Go', 'ntt' );
 ?>
 
 <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="ntt--search ntt--cp" data-name="Search">
@@ -18,8 +17,8 @@ $go_text = __( 'Go', 'ntt' );
         </div>
     </div>
     <div class="ntt--submit-search-axn ntt--submit-axn ntt--axn ntt--obj" data-name="Submit Search Action">
-        <button type="submit" title="<?php echo esc_attr( $go_text ); ?>">
-            <span class="ntt--txt"><?php echo esc_html( $go_text ); ?></span>
+        <button type="submit" title="<?php echo esc_attr( $search_text ); ?>">
+            <span class="ntt--txt"><?php echo esc_html( $search_text ); ?></span>
         </button>
     </div>
 </form>
