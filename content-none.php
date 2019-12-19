@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="ntt--entry-main ntt--cn" data-name="Entry Main">
-        <div class="ntt--entry-content ntt--content-trunk ntt--cp" data-name="Entry Content">
-            <div class="ntt--entry-full-content e-content ntt--content ntt--cp" data-name="Entry Full Content">
+        <div class="ntt--entry-content ntt--content-trunk ntt--cm--content-trunk ntt--cp" data-name="Entry Content">
+            <div class="ntt--entry-full-content ntt--content ntt--cm--content ntt--cp e-content" data-name="Entry Full Content">
                 <?php
                 if ( is_search() ) {
                     $suggestion_content = __( 'Please try another search term.', 'ntt' );

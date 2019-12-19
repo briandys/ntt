@@ -8,11 +8,7 @@ if ( ! function_exists( 'ntt_entry_primary_meta' ) ) {
     function ntt_entry_primary_meta() {
         ?>
         <div class="ntt--entry-primary-meta ntt--cp" data-name="Entry Primary Meta">
-            <?php
-            ntt_entry_datetime();
-            ntt_entry_author();
-            ntt_entry_categories();
-            ?>
+            <?php ntt_entry_primary_meta_content(); ?>
         </div>
         <?php
     }
@@ -33,5 +29,17 @@ if ( ! function_exists( 'ntt_entry_secondary_meta' ) ) {
             </div>
             <?php
         }
+    }
+}
+
+/** Entry Primary Meta Content
+ */
+
+if ( ! function_exists( 'ntt_entry_primary_meta_content' ) ) {
+    function ntt_entry_primary_meta_content() {
+        
+        ntt_entry_datetime();
+        ntt_entry_author();
+        ntt_entry_categories();
     }
 }

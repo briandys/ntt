@@ -48,9 +48,9 @@ function ntt_get_html_css( $class='' ) {
      */
     
     if ( is_front_page() ) {
-        $classes[] = 'ntt--front-view';
+        $classes[] = 'ntt--view---front';
     } else {
-        $classes[] = 'ntt--inner-view';
+        $classes[] = 'ntt--view---inner';
     }
 
     /**

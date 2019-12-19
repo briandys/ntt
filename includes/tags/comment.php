@@ -71,8 +71,8 @@ if ( ! function_exists( 'ntt_comment') ) {
                 </div>
             </div>
             <div class="ntt--comment-main ntt--cn" data-name="Comment Main">
-                <div class="ntt--comment-content ntt--content-trunk ntt--cp" data-name="Comment Content">
-                    <div class="ntt--comment-full-content ntt--content e-content ntt--cp" data-name="Comment Full Content">
+                <div class="ntt--comment-content ntt--content-trunk ntt--cm--content-trunk ntt--cp" data-name="Comment Content">
+                    <div class="ntt--comment-full-content ntt--content ntt--cm--content ntt--cp e-content" data-name="Comment Full Content">
                         <?php
                         // Appears for not logged in users and those who opt-in to save info in cookie
                         // Settings > Discussion > Show comments cookies opt-in checkbox.

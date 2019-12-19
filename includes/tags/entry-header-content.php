@@ -1,19 +1,5 @@
 <?php
 /**
- * Entry Header
- */
-
-if ( ! function_exists( 'ntt_entry_header' ) ) {
-    function ntt_entry_header() {
-        ?>
-        <header class="ntt--entry-header ntt--cn" data-name="Entry Header">
-            <?php ntt_entry_header_content(); ?>
-        </header>
-        <?php
-    }
-}
-
-/**
  * Entry Header Content
  */
 
