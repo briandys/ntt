@@ -98,13 +98,14 @@ $must_log_in_mu .= '</div>';
 // Comment Author Message Field | comment_field
 // Other fields are in comment-form.php
 $comment_text = __( 'Comment', 'ntt' );
+$required_text = __( 'Required', 'ntt' );
 
 $comment_field_mu = '<div class="ntt--comment-author-message-field ntt--form-field ntt--cp" data-name="Comment Author Message Field">';
     $comment_field_mu .= '<label for="comment" class="ntt--comment-author-message-label ntt--form-label ntt--obj">';
-        $comment_field_mu .= '<span class="ntt--txt">'. esc_html( $comment_text ).'</span>';
+        $comment_field_mu .= '<span class="ntt--txt"><span class="ntt--comment-txt">'. esc_html( $comment_text ). '</span> <span class="ntt--required-txt">'. esc_html( $required_text ).'</span></span>';
     $comment_field_mu .= '</label>';
         $comment_field_mu .= '<div class="ntt--comment-author-message-textbox ntt--form-element ntt--obj" data-name="Comment Author Message Textbox">';
-            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr__( 'Required', 'ntt' ).'" id="comment" class="text-input"></textarea>';
+            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr__( $comment_text, 'ntt' ). ' '. esc_attr__( $required_text, 'ntt' ).'" id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
 ?>
