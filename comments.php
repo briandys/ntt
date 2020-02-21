@@ -35,24 +35,6 @@ $cancel_reply_axn_end_mu = '</div>';
 // cancel_reply_link
 $cancel_reply_link_mu = '<span class="ntt--txt">'. esc_html__( 'Cancel', 'ntt' ). '</span>';
 
-/*
-$logged_in_as_mu .= '<div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">';
-    $logged_in_as_mu .= '<label class="ntt--comment-author-label ntt--obj">';
-        $logged_in_as_mu .= '<span class="ntt--txt">'. esc_html_x( 'Commenting as', 'Commenting as Author Name', 'ntt' ). '</span>';
-    $logged_in_as_mu .= '</label>'. ' ';
-    $logged_in_as_mu .= '<span title="Commenting as'. $user_identity. '" class="ntt--comment-author-avatar ntt--cm-author-avatar ntt--obj" data-name="Comment Author Avatar">';
-        $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" class="p-name u-url">';
-            $logged_in_as_mu .= '<span class="ntt--img">'. get_avatar( $current_user->ID, apply_filters( 'ntt_author_avatar_filter', '48' ) ).'</span>';
-        $logged_in_as_mu .= '</a>';
-    $logged_in_as_mu .= '</span>';
-    $logged_in_as_mu .= '<span title="Commenting as'. $user_identity. '" class="ntt--comment-author-name ntt--cm-author-name ntt--obj">';
-        $logged_in_as_mu .= '<a href="'. admin_url( 'profile.php' ).'" class="p-name u-url">';
-            $logged_in_as_mu .= '<span class="ntt--txt">'. $user_identity.'</span>';
-        $logged_in_as_mu .= '</a>';
-    $logged_in_as_mu .= '</span>';
-$logged_in_as_mu .= '</div>';
-*/
-
 // logged_in_as
 $log_out_text = __( 'Log Out', 'ntt' );
 
@@ -105,7 +87,7 @@ $comment_field_mu = '<div class="ntt--comment-author-message-field ntt--form-fie
         $comment_field_mu .= '<span class="ntt--txt"><span class="ntt--comment-txt">'. esc_html( $comment_text ). '</span> <span class="ntt--required-txt">'. esc_html( $required_text ).'</span></span>';
     $comment_field_mu .= '</label>';
         $comment_field_mu .= '<div class="ntt--comment-author-message-textbox ntt--form-element ntt--obj" data-name="Comment Author Message Textbox">';
-            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr__( $comment_text, 'ntt' ). ' '. esc_attr__( $required_text, 'ntt' ).'" id="comment" class="text-input"></textarea>';
+            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr__( $comment_text, 'ntt' ). ' '. '('. esc_attr__( $required_text, 'ntt' ). ')" id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
 ?>
