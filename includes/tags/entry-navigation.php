@@ -10,9 +10,9 @@ if ( ! function_exists('ntt_entry_nav' ) ) {
 
             if ( ! get_adjacent_post( false, '', false ) && ! get_adjacent_post( false, '', true ) ) {
                 return;
-
-                $entry_nav_name_text = apply_filters( 'ntt_entry_nav_name_filter', __( 'Entry Navigation', 'ntt' ) );
             }
+
+            $entry_nav_name_text = apply_filters( 'ntt_entry_nav_name_filter', __( 'Entry Navigation', 'ntt' ) );
             ?>
             <div aria-label="<?php esc_attr_e( 'Entry', 'ntt' ); ?>" role="navigation" class="ntt--entry-nav ntt--nav ntt--cp" data-name="Entry Navigation">
                 <div class="ntt--entry-nav-name ntt--nav-name ntt--obj">
