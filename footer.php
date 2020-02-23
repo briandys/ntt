@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="ntt--wild-card" data-name="Wild Card">
+        <div id="ntt--wild-card" class="ntt--wild-card" data-name="Wild Card">
             <!-- Dynamically-Created Content -->
         </div>
         <?php wp_footer(); ?>

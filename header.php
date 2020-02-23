@@ -13,7 +13,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <div class="ntt--entity" data-name="Entity">
+        <div id="ntt--entity" class="ntt--entity" data-name="Entity">
             <div class="ntt--entity-start ntt--cn" data-name="Entity Start">
                 <?php $go_content_text = __( 'Go to Content', 'ntt' ); ?>
                 <div aria-label="<?php echo esc_attr( $go_content_text ); ?>" role="navigation" class="ntt--go-content-nav ntt--nav ntt--cp" data-name="Go to Content Navigation">
