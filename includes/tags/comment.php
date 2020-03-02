@@ -31,13 +31,22 @@ if ( ! function_exists( 'ntt_comment') ) {
             $comments_thread_limit_css = '';
         }
 
+        // Comment Approval Status
+        if ( $comment->comment_approved == 0 ) {
+            $comments_approval_css = 'ntt--comment-approval---unapproved';
+        } else {
+            $comments_approval_css = 'ntt--comment-approval---approved';
+        }
+
         // Additional CSS Classes
         $r_comment_css = array(
             'ntt--comment--'. $comment_id,
+            'ntt--comment',
             'ntt--cp',
             $comment_hierarchy_css,
             $comment_author_avatar_type_css,
             $comments_thread_limit_css,
+            $comments_approval_css,
             'p-comment',
             'h-entry',
         );
@@ -76,7 +85,7 @@ if ( ! function_exists( 'ntt_comment') ) {
                         <?php
                         // Appears for not logged in users and those who opt-in to save info in cookie
                         // Settings > Discussion > Show comments cookies opt-in checkbox.
-                        if ( $comment->comment_approved == '0' ) {
+                        if ( $comment->comment_approved == 0 ) {
                             ?>
                             <div class="ntt--unapproved-comments-note ntt--note ntt--cp" data-name="Unapproved Comments Note">
                                 <p><?php esc_html_e( 'Your comment is awaiting moderation.', 'ntt' ); ?></p>
