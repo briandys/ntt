@@ -25,14 +25,14 @@ function ntt_get_comments_css( $class='' ) {
     return array_unique( $classes );
 }
 
-function ntt_comments_css( $class='' ) {
+function ntt__function__comments__css( $class='' ) {
     echo join( ' ', ntt_get_comments_css( $class ) );
 }
 
 /**
  * Comments Status CSS
  */
-function ntt_comments_status_css( $classes ) {
+function ntt__function__comments_status__css( $classes ) {
 
     $comments_count = (int) get_comments_number( get_the_ID() );
     
@@ -52,4 +52,4 @@ function ntt_comments_status_css( $classes ) {
 
     return $classes;
 }
-add_filter( 'ntt_comments_css_filter', 'ntt_comments_status_css' );
+add_filter( 'ntt_comments_css_filter', 'ntt__function__comments_status__css' );

@@ -3,8 +3,8 @@
  * Comments Actions Snippet
  */
 
-if ( ! function_exists( 'ntt_comments_actions_snippet' ) ) {
-    function ntt_comments_actions_snippet() {
+if ( ! function_exists( 'ntt__tag__comments_actions_snippet' ) ) {
+    function ntt__tag__comments_actions_snippet() {
         
         $comments_count = (int) get_comments_number( get_the_ID() );
         ?>

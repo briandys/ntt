@@ -3,7 +3,7 @@
  * Comment Form
  */
 
-function ntt_comment_form( $fields ) {       
+function ntt__function__comment_form( $fields ) {       
     
     $comment_author = wp_get_current_commenter();
     
@@ -52,4 +52,4 @@ function ntt_comment_form( $fields ) {
 
     return $fields;
 }
-add_filter( 'comment_form_default_fields', 'ntt_comment_form' );
+add_filter( 'comment_form_default_fields', 'ntt__function__comment_form' );

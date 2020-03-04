@@ -2,9 +2,9 @@
 /**
  * Entity Main Header
  */
+get_header();
 ?>
-<?php get_header(); ?>
 
 <div class="ntt--entity-main-header ntt--cn" data-name="Entity Main Header">
-    <?php ntt_entity_view_heading(); ?>
+    <?php ntt__tag__entity_view_heading(); ?>
 </div>

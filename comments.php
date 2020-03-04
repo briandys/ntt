@@ -98,7 +98,7 @@ $comment_field_mu .= '</div>';
             <h2 class="ntt--comments-name ntt--obj">
                 <span class="ntt--txt"><?php esc_html_e( 'Comments', 'ntt' ); ?></span>
             </h2>
-            <?php ntt_comments_actions_snippet(); ?>
+            <?php ntt__tag__comments_actions_snippet(); ?>
         </div>
         <div class="ntt--comments-main ntt--cn" data-name="Comments Main">
             <?php
@@ -109,7 +109,7 @@ $comment_field_mu .= '</div>';
                     wp_list_comments( array(
                         'style'         => 'ul',
                         'avatar_size'   => 48,
-                        'callback'      => 'ntt_comment',
+                        'callback'      => 'ntt__tag__comment',
                         'echo'          => true,
                     ) );
                     ?>
@@ -144,7 +144,7 @@ $comment_field_mu .= '</div>';
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
             ?>
             <div class="ntt--comments-footer ntt--cn" data-name="Comments Footer">
-                <?php ntt_comments_nav(); ?>
+                <?php ntt__tag__comments_nav(); ?>
             </div>
             <?php
         }

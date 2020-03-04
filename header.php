@@ -26,7 +26,7 @@
                 </div>
             </div>
             <header class="ntt--entity-header ntt--cn" data-name="Entity Header">
-                <?php ntt_before_entity_primary_heading_hook(); ?>
+                <?php ntt__wp_hook__entity_primary_heading___before(); ?>
                 <div class="ntt--entity-heading ntt--cp" data-name="Entity Heading">
                     <?php
                     if ( has_custom_logo() ) {
@@ -58,7 +58,7 @@
                     }
                     ?>
                 </div>
-                <?php ntt_after_entity_primary_heading_hook(); ?>
+                <?php ntt__wp_hook__entity_primary_heading___after(); ?>
 
                 <?php
                 ntt_entity_primary_nav();

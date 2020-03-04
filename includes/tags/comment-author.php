@@ -3,8 +3,8 @@
  * Comment Author
  */
 
-if ( ! function_exists( 'ntt_comment_author') ) {
-    function ntt_comment_author( $comment, $args ) {
+if ( ! function_exists( 'ntt__tag__comment_author') ) {
+    function ntt__tag__comment_author( $comment, $args ) {
         ?>
         <div class="ntt--comment-author ntt--cm-author ntt--cp" data-name="Comment Author">
             <label class="ntt--comment-author-label ntt--obj">

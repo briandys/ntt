@@ -3,8 +3,8 @@
  * Comments Navigation
  */
 
-if ( ! function_exists( 'ntt_comments_nav' ) ) {
-    function ntt_comments_nav() {
+if ( ! function_exists( 'ntt__tag__comments_nav' ) ) {
+    function ntt__tag__comments_nav() {
         
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
             ?>

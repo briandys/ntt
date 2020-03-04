@@ -3,8 +3,8 @@
  * Comment DateTime
  */
 
-if ( ! function_exists( 'ntt_comment_datetime') ) {
-    function ntt_comment_datetime( $comment ) {
+if ( ! function_exists( 'ntt__tag__comment_datetime') ) {
+    function ntt__tag__comment_datetime( $comment ) {
         
         $comment_url = get_comment_link( $comment->comment_ID );
         

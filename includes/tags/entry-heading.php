@@ -24,11 +24,11 @@ if ( ! function_exists( 'ntt_entry_heading') ) {
         ?>
         <div class="ntt--entry-heading ntt--cp" data-name="Entry Heading">
             <?php
-            ntt_before_entry_name_wp_hook();
+            ntt__wp_hook__entry_name___before();
             echo '<'. esc_attr( $heading_level ). ' '. 'class="ntt--entry-name ntt--obj" data-name="Entry Name">';
             echo $anchor_mu_start. $entry_name. $anchor_mu_end;
             echo '</'. esc_attr( $heading_level ). '>';
-            ntt_after_entry_name_wp_hook();
+            ntt__wp_hook__entry_name___after();
             ?>
         </div>
         <?php

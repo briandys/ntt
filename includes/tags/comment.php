@@ -3,8 +3,8 @@
  * Comment
  */
 
-if ( ! function_exists( 'ntt_comment') ) {
-    function ntt_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'ntt__tag__comment') ) {
+    function ntt__tag__comment( $comment, $args, $depth ) {
         
         $comment_author = wp_get_current_commenter();
         $comment_url = get_comment_link( $comment->comment_ID );
@@ -67,15 +67,15 @@ if ( ! function_exists( 'ntt_comment') ) {
                         <span class="ntt--txt"><?php echo esc_html__( 'Comment', 'ntt' ). ' '. esc_html( $comment_id ); ?></span>
                     </div>
                     <div class="ntt--comment-axns ntt--cp" data-name="Comment Actions">
-                        <?php ntt_comment_admin_actions(); ?>
+                        <?php ntt__tag__comment_admin_actions(); ?>
                     </div>
                     <?php
                 }
                 ?>
                 <div class="ntt--comment-meta ntt--cm-meta ntt--cp" data-name="Comment Meta">
                     <?php
-                    ntt_comment_datetime( $comment );
-                    ntt_comment_author( $comment, $args );
+                    ntt__tag__comment_datetime( $comment );
+                    ntt__tag__comment_author( $comment, $args );
                     ?>
                 </div>
             </div>

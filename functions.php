@@ -63,3 +63,23 @@ $r_tags = array(
 foreach ( $r_tags as $tag ) {
     require( get_parent_theme_file_path( '/includes/tags/'. $tag. '.php' ) );
 }
+
+/**
+ * List User Defined Functions
+ * https://www.php.net/manual/en/function.get-defined-functions.php
+ * https://stackoverflow.com/a/10474285
+ */
+( function() {
+
+    $arr = get_defined_functions()['user'];
+
+    //$arr = array_filter( $arr, function ( $var ) { return ( (stripos( $var, 'ntt' ) !== false) && (stripos( $var, 'css' ) !== false) ); } );
+    
+    $arr = array_filter( $arr, function ( $var ) { return ( stripos( $var, 'ntt' ) !== false ); } );
+
+    sort($arr);
+
+    foreach( $arr as $func ) {
+        echo "<li>". $func. "</li>";
+    }
+} )();

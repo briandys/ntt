@@ -8,7 +8,7 @@
 <article class="ntt--entry ntt--empty-entry ntt--cp" data-name="Empty Entry">
     <div class="ntt--entry-header ntt--cn" data-name="Entry Header">
         <div class="ntt--entry-heading ntt--cp" data-name="Entry Heading">
-            <?php ntt_before_entry_name_wp_hook(); ?>
+            <?php ntt__wp_hook__entry_name___before(); ?>
             <h1 class="ntt--entry-name ntt--obj">
                 <?php
                 if ( is_search() ) {
@@ -19,7 +19,7 @@
                 ?>
                 <span class="ntt--txt"><?php echo esc_html( $entry_name ); ?></span>
             </h1>
-            <?php ntt_after_entry_name_wp_hook(); ?>
+            <?php ntt__wp_hook__entry_name___after(); ?>
         </div>
     </div>
     <div class="ntt--entry-main ntt--cn" data-name="Entry Main">

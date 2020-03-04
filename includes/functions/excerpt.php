@@ -45,10 +45,10 @@ add_filter( 'the_content_more_link', 'ntt_more_quicktag_excerpt' );
  * Auto-Excerpt Delimiter
  */
 
-function ntt_auto_excerpt_delimiter( $more ) {
+function ntt__function__auto_excerpt__delimiter( $more ) {
     return '&hellip;';
 }
-add_filter( 'excerpt_more', 'ntt_auto_excerpt_delimiter' );
+add_filter( 'excerpt_more', 'ntt__function__auto_excerpt__delimiter' );
 
 /**
  * Manual Excerpt, Search Excerpt

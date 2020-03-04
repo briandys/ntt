@@ -41,21 +41,21 @@ add_action( 'after_setup_theme', 'ntt_settings' );
 /**
  * Content Width
  */
-function ntt_content_width() {
+function ntt__function__content_width() {
     // This variable is intended to be overruled from themes.
     // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
     // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
     $GLOBALS['content_width'] = apply_filters( 'ntt_content_width_filter', 640 );
 }
-add_action( 'after_setup_theme', 'ntt_content_width', 0 );
+add_action( 'after_setup_theme', 'ntt__function__content_width', 0 );
 
 /**
  * Custom Image Size
  *
  * Adds an option in Dashboard
  */
-function ntt_custom_image_size_option( $sizes ) {
+function ntt__function__custom_image_size_option( $sizes ) {
     $custom_sizes = array( 'ntt-hd-thumbnail' => 'Thumbnail (16:9)', );
     return array_merge( $sizes, $custom_sizes );
 }
-add_filter( 'image_size_names_choose', 'ntt_custom_image_size_option' );
+add_filter( 'image_size_names_choose', 'ntt__function__custom_image_size_option' );

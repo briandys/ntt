@@ -2,7 +2,7 @@
 /**
  * Aside Markup
  */
-function ntt_aside_markup( $aside_name ) {
+function ntt__function__aside__markup( $aside_name ) {
     $aside = sanitize_title( $aside_name );
     ?>
     <div class="<?php echo 'ntt--'. esc_attr( $aside ); ?> ntt--cn" data-name="<?php echo esc_attr( $aside_name ); ?>">
@@ -40,7 +40,7 @@ function ntt_widgets() {
 		$aside_name = 'Entity Header Aside';
 
 		if ( is_active_sidebar( sanitize_title( $aside_name ) )  ) {
-			ntt_aside_markup( $aside_name );
+			ntt__function__aside__markup( $aside_name );
 		}
 	}
 	
@@ -59,7 +59,7 @@ function ntt_widgets() {
 		$aside_name = 'Entity Main Main Aside';
 
 		if ( is_active_sidebar( sanitize_title( $aside_name ) )  ) {
-			ntt_aside_markup( $aside_name );
+			ntt__function__aside__markup( $aside_name );
 		}
 	}
 }

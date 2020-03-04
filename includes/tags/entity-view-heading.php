@@ -3,8 +3,8 @@
  * Entity View Heading
  */
 
-if ( ! function_exists( 'ntt_entity_view_heading' ) ) {
-    function ntt_entity_view_heading() {
+if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
+    function ntt__tag__entity_view_heading() {
         
         global $wp_query;
         $query_found_posts = $wp_query->found_posts;

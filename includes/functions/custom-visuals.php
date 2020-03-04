@@ -3,7 +3,7 @@
  * Custom Visuals
  */
 
-function ntt_custom_visuals() {
+function ntt__wp_theme__custom_visuals() {
     
     // Custom Background
     add_theme_support( 'custom-background' );
@@ -16,7 +16,7 @@ function ntt_custom_visuals() {
         'height'             => 0,
         'flex-width'         => true,
         'flex-height'        => true,
-        'wp-head-callback'   => 'ntt_custom_header_callback',
+        'wp-head-callback'   => 'ntt__wp_theme__custom_header__callback',
      ) ) );
     
     // Custom Logo
@@ -27,13 +27,13 @@ function ntt_custom_visuals() {
         'flex-height' => true,
      ) ) );
 }
-add_action( 'after_setup_theme', 'ntt_custom_visuals' );
+add_action( 'after_setup_theme', 'ntt__wp_theme__custom_visuals' );
 
 /**
  * Custom Header Callback
  */
 
-function ntt_custom_header_callback() {
+function ntt__wp_theme__custom_header__callback() {
     
     if ( get_theme_support( 'custom-header', 'default-text-color' ) === get_header_textcolor() ) {
         return;
