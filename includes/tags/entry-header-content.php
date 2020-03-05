@@ -3,19 +3,19 @@
  * Entry Header Content
  */
 
-if ( ! function_exists( 'ntt_entry_header_content') ) {
-    function ntt_entry_header_content() {
+if ( ! function_exists( 'ntt__tag__entry_header__content') ) {
+    function ntt__tag__entry_header__content() {
 
-        ntt_entry_heading();
-        ntt_entry_actions();
-        ntt_entry_breadcrumbs_nav();
-        ntt_entry_primary_meta();
+        ntt__tag__entry_heading();
+        ntt__tag__entry_actions();
+        ntt__tag__entry_breadcrumbs_nav();
+        ntt__tag__entry_primary_meta();
         ntt__tag__comments_actions_snippet();
         
         if ( ( ( is_singular() || is_home() || is_archive() ) && has_excerpt() ) || is_search() ) {
-            ntt_entry_summary_content();
+            ntt__tag__entry_secondary_meta__content();
         }
 
-        ntt_entry_banner();
+        ntt__tag__entry_banner();
     }
 }

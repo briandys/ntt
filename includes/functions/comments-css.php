@@ -1,5 +1,5 @@
 <?php
-function ntt_get_comments_css( $class='' ) {   
+function ntt__function__comments__css__getter( $class='' ) {   
     
     $classes = array();
 
@@ -26,7 +26,7 @@ function ntt_get_comments_css( $class='' ) {
 }
 
 function ntt__function__comments__css( $class='' ) {
-    echo join( ' ', ntt_get_comments_css( $class ) );
+    echo join( ' ', ntt__function__comments__css__getter( $class ) );
 }
 
 /**

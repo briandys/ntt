@@ -3,8 +3,8 @@
  * Entry Author
  */
 
-if ( ! function_exists( 'ntt_entry_author' ) ) {
-    function ntt_entry_author() {
+if ( ! function_exists( 'ntt__tag__entry_author' ) ) {
+    function ntt__tag__entry_author() {
         ?>
         <div class="ntt--entry-author ntt--cm-author ntt--cp" data-name="Entry Author">
             <label class="ntt--entry-author-label ntt--cm-entry-author-label ntt--obj" data-name="Entry Author Label">

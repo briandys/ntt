@@ -1,8 +1,8 @@
 <?php
 /**
- * Settings
+ * WP Theme Settings
  */
-function ntt_settings() {
+function ntt__wp_theme__settings() {
     
     load_theme_textdomain( 'ntt' );
     add_theme_support( 'automatic-feed-links' );
@@ -36,7 +36,7 @@ function ntt_settings() {
 	
     add_theme_support( 'customize-selective-refresh-widgets' );
 }
-add_action( 'after_setup_theme', 'ntt_settings' );
+add_action( 'after_setup_theme', 'ntt__wp_theme__settings' );
 
 /**
  * Content Width

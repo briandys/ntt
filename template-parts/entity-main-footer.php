@@ -7,8 +7,8 @@
     ?>
     <div class="ntt--entity-main-footer ntt--cn" data-name="Entity Main Footer">
         <?php
-        ntt_entry_nav();
-        ntt_entries_nav();
+        ntt__tag__entry_nav();
+        ntt__tag__entries_nav();
         ?>
     </div>
     <?php

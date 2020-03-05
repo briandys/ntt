@@ -3,8 +3,8 @@
  * Entry DateTime
  */
 
-if ( ! function_exists( 'ntt_entry_datetime' ) ) {
-    function ntt_entry_datetime() {
+if ( ! function_exists( 'ntt__tag__entry_datetime' ) ) {
+    function ntt__tag__entry_datetime() {
         
         // [Variables] Published DateTime
         $published_on_text = apply_filters( 'ntt_entry_published_datetime_label_filter', __( 'Published on', 'ntt' ) );

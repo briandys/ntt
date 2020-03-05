@@ -5,8 +5,8 @@
  * Displays the number of entries in a query
  */
 
-if ( ! function_exists( 'ntt_entry_count') ) {
-    function ntt_entry_count( $args, $entry_count_name = 'Entry Count', $entry_count_css = 'ntt--entry-count' ) {
+if ( ! function_exists( 'ntt__tag__entry_count') ) {
+    function ntt__tag__entry_count( $args, $entry_count_name = 'Entry Count', $entry_count_css = 'ntt--entry-count' ) {
 
         if ( is_singular() ) {
             $the_query = new WP_Query( $args );

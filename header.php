@@ -4,7 +4,7 @@
  */
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?> id="start" class="<?php ntt_html_css(); ?>" data-name="View">
+<html <?php language_attributes(); ?> id="start" class="<?php ntt__function__view__css(); ?>" data-name="View">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -61,7 +61,7 @@
                 <?php ntt__wp_hook__entity_primary_heading___after(); ?>
 
                 <?php
-                ntt_entity_primary_nav();
+                ntt__tag__entity_primary_nav();
                 
                 if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
                     ?>

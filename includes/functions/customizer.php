@@ -71,7 +71,7 @@ function ntt__wp_customizer( $wp_customize ) {
      * NTT Settings
      */
 
-    $wp_customize->add_section( 'ntt_settings', array(
+    $wp_customize->add_section( 'ntt__wp_theme__settings', array(
         'title'         => 'NTT Settings',
         'description'   => 'Customize NTT',
     ) );
@@ -87,7 +87,7 @@ function ntt__wp_customizer( $wp_customize ) {
 
     $wp_customize->add_control( 'ntt_settings_site_id', array(
         'label'         => 'Site ID',
-        'section'       => 'ntt_settings',
+        'section'       => 'ntt__wp_theme__settings',
 		'priority'      => 1,
     ) );
  
@@ -102,7 +102,7 @@ function ntt__wp_customizer( $wp_customize ) {
 
     $wp_customize->add_control( 'ntt_settings_features', array(
         'label'         => 'Features',
-        'section'       => 'ntt_settings',
+        'section'       => 'ntt__wp_theme__settings',
 		'priority'      => 2,
     ) );
 }

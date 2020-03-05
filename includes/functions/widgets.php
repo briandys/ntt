@@ -14,7 +14,7 @@ function ntt__function__aside__markup( $aside_name ) {
 /**
  * Widgets
  */
-function ntt_widgets() {
+function ntt__wp_widgets() {
 		
 	// Markup
 	$widget_start_mu = '<div id="ntt--%1$s" class="ntt--%2$s ntt--widget ntt--cp" data-name="Widget">';
@@ -63,13 +63,13 @@ function ntt_widgets() {
 		}
 	}
 }
-add_action( 'widgets_init', 'ntt_widgets' );
+add_action( 'widgets_init', 'ntt__wp_widgets' );
 
 /**
  * HTML CSS
  */
 
-function ntt_widgets_html_css( $classes ) {
+function ntt__wp_widgets__css( $classes ) {
 
     /**
      * Entity Widgets Ability Status
@@ -90,4 +90,4 @@ function ntt_widgets_html_css( $classes ) {
 
 	return $classes;
 }
-add_filter( 'ntt_html_css_filter', 'ntt_widgets_html_css' );
+add_filter( 'ntt_html_css_filter', 'ntt__wp_widgets__css' );

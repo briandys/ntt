@@ -3,8 +3,8 @@
  * Entry Heading
  */
 
-if ( ! function_exists( 'ntt_entry_heading') ) {
-    function ntt_entry_heading() {
+if ( ! function_exists( 'ntt__tag__entry_heading') ) {
+    function ntt__tag__entry_heading() {
 
         if ( is_singular() ) {
             $heading_level = 'h1';

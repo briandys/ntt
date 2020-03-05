@@ -7,8 +7,8 @@
  * Navigation to use for pages that display all entries within a specific category.
  */
 
-if ( ! function_exists('ntt_sub_content_nav' ) ) {
-    function ntt_sub_content_nav( $total ) {
+if ( ! function_exists('ntt__tag__subcontent_nav' ) ) {
+    function ntt__tag__subcontent_nav( $total ) {
 
         $next_page_text = __( 'Next Page', 'ntt' );
         $previous_page_text = __( 'Previous Page', 'ntt' );

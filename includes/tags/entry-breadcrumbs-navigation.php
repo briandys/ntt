@@ -5,8 +5,8 @@
  * https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
  */
 
- if ( ! function_exists( 'ntt_entry_breadcrumbs_nav' ) ) {
-    function ntt_entry_breadcrumbs_nav() {
+ if ( ! function_exists( 'ntt__tag__entry_breadcrumbs_nav' ) ) {
+    function ntt__tag__entry_breadcrumbs_nav() {
 
         global $post;
         

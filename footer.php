@@ -5,7 +5,7 @@
 ?>
             </main>
             <footer class="ntt--entity-footer ntt--cn" data-name="Entity Footer">
-                <?php ntt_entity_secondary_nav(); ?>
+                <?php ntt__tag__entity_secondary_nav(); ?>
                 <div class="ntt--entity-secondary-info ntt--cp" data-name="Entity Secondary Information">
                     <?php
                     $get_bloginfo_name = get_bloginfo( 'name', 'display' );

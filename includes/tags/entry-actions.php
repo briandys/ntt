@@ -3,8 +3,8 @@
  * Entry Actions
  */
 
-if ( ! function_exists( 'ntt_entry_actions') ) {
-    function ntt_entry_actions() {
+if ( ! function_exists( 'ntt__tag__entry_actions') ) {
+    function ntt__tag__entry_actions() {
 
         if ( current_user_can( 'editor' ) || current_user_can( 'administrator' ) ) {
 

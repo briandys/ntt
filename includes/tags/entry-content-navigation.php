@@ -5,8 +5,8 @@
  * https://bavotasan.com/2012/a-better-wp_link_pages-for-wordpress/
  */
 
-if ( ! function_exists('ntt_entry_content_nav' ) ) {
-    function ntt_entry_content_nav( $args = '' ) {
+if ( ! function_exists('ntt__tag__entry_content_nav' ) ) {
+    function ntt__tag__entry_content_nav( $args = '' ) {
 
         // For Theme Check
         ob_start();

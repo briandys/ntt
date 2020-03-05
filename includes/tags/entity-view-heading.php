@@ -311,7 +311,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
             <?php
             // If in Plural View, show Entry Count
             if ( is_home() || is_archive() || is_search() ) {
-                ntt_entry_count( $args = '' );
+                ntt__tag__entry_count( $args = '' );
             }
             ?>
         </div>

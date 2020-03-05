@@ -5,8 +5,8 @@
  * Display: Previous | Page 1 | Page 2 | Page 3 | Next | Page 1 of 3
  */
 
-if ( ! function_exists( 'ntt_entries_nav' ) ) {
-    function ntt_entries_nav() {
+if ( ! function_exists( 'ntt__tag__entries_nav' ) ) {
+    function ntt__tag__entries_nav() {
 
         if ( ! get_the_posts_pagination() ) {
             return;

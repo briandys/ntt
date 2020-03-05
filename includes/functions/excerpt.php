@@ -3,7 +3,7 @@
  * Show More Action
  */
 
-function ntt_show_more_action( $excerpt ) {
+function ntt__function__show_more_action( $excerpt ) {
     $show_more_of_text = _x( 'Show more of', 'Show more of Entry Name', 'ntt' );
     
     // Show More Attribute
@@ -33,28 +33,28 @@ function ntt_show_more_action( $excerpt ) {
  * <!--more--> Quicktag
  */
 
-function ntt_more_quicktag_excerpt( $excerpt ) {
+function ntt__function__more_quicktag_excerpt( $excerpt ) {
     
     if ( is_home() || is_archive() ) {
-        return ntt_show_more_action( $excerpt );
+        return ntt__function__show_more_action( $excerpt );
     }
 }
-add_filter( 'the_content_more_link', 'ntt_more_quicktag_excerpt' );
+add_filter( 'the_content_more_link', 'ntt__function__more_quicktag_excerpt' );
 
 /**
  * Auto-Excerpt Delimiter
  */
 
-function ntt__function__auto_excerpt__delimiter( $more ) {
+function ntt__function__auto_excerpt( $more ) {
     return '&hellip;';
 }
-add_filter( 'excerpt_more', 'ntt__function__auto_excerpt__delimiter' );
+add_filter( 'excerpt_more', 'ntt__function__auto_excerpt' );
 
 /**
  * Manual Excerpt, Search Excerpt
  */
 
-function ntt_manual_excerpt_search_excerpt( $excerpt ) {
+function ntt__function__manual_excerpt__search_excerpt( $excerpt ) {
     
     if ( is_search() ) {
         ?>
@@ -62,9 +62,9 @@ function ntt_manual_excerpt_search_excerpt( $excerpt ) {
             <a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>"><?php echo esc_html( $excerpt ); ?></a>
         </p>
         <?php
-        echo ntt_show_more_action( $excerpt );
+        echo ntt__function__show_more_action( $excerpt );
     } else {
         return $excerpt;
     }
 }
-add_filter( 'get_the_excerpt', 'ntt_manual_excerpt_search_excerpt' );
+add_filter( 'get_the_excerpt', 'ntt__function__manual_excerpt__search_excerpt' );

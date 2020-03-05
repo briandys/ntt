@@ -3,8 +3,8 @@
  * Entry Taxonomy (Categories, Tags)
  */
 
-if ( ! function_exists( 'ntt_entry_categories' ) ) {
-    function ntt_entry_categories() {        
+if ( ! function_exists( 'ntt__tag__entry_categories' ) ) {
+    function ntt__tag__entry_categories() {        
         
         if ( get_post_type() === 'post' && get_the_category_list() ) {
             ?>
@@ -19,8 +19,8 @@ if ( ! function_exists( 'ntt_entry_categories' ) ) {
     }
 }
 
-if ( ! function_exists( 'ntt_entry_tags' ) ) {
-    function ntt_entry_tags() {        
+if ( ! function_exists( 'ntt__tag__entry_tags' ) ) {
+    function ntt__tag__entry_tags() {        
         
         if ( get_post_type() === 'post' && get_the_tag_list() ) {
             ?>

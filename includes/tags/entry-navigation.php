@@ -3,8 +3,8 @@
  * Entry Navigation
  */
 
-if ( ! function_exists('ntt_entry_nav' ) ) {
-    function ntt_entry_nav() {
+if ( ! function_exists('ntt__tag__entry_nav' ) ) {
+    function ntt__tag__entry_nav() {
         
         if ( is_single() || is_page() ) {
 

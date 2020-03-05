@@ -5,8 +5,8 @@
 
 register_nav_menu( 'entity-primary-nav', __( 'Primary Navigation', 'ntt' ) );
 
-if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
-    function ntt_entity_primary_nav() {
+if ( ! function_exists( 'ntt__tag__entity_primary_nav' ) ) {
+    function ntt__tag__entity_primary_nav() {
         
         if ( wp_nav_menu( array( 'theme_location' => 'entity-primary-nav', 'echo' => false, ) ) !== false) {
             ?>
@@ -65,8 +65,8 @@ if ( ! function_exists( 'ntt_entity_primary_nav' ) ) {
  */
 register_nav_menu( 'entity-secondary-nav', __( 'Secondary Navigation', 'ntt' ) );
 
-if ( ! function_exists( 'ntt_entity_secondary_nav' ) ) {
-    function ntt_entity_secondary_nav() {
+if ( ! function_exists( 'ntt__tag__entity_secondary_nav' ) ) {
+    function ntt__tag__entity_secondary_nav() {
         
         if ( has_nav_menu( 'entity-secondary-nav' ) ) {
             ?>

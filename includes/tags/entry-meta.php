@@ -4,11 +4,11 @@
  * Located in Entry Header
  */
 
-if ( ! function_exists( 'ntt_entry_primary_meta' ) ) {
-    function ntt_entry_primary_meta() {
+if ( ! function_exists( 'ntt__tag__entry_primary_meta' ) ) {
+    function ntt__tag__entry_primary_meta() {
         ?>
         <div class="ntt--entry-primary-meta ntt--cp" data-name="Entry Primary Meta">
-            <?php ntt_entry_primary_meta_content(); ?>
+            <?php ntt__tag__entry_primary_meta__content(); ?>
         </div>
         <?php
     }
@@ -19,13 +19,13 @@ if ( ! function_exists( 'ntt_entry_primary_meta' ) ) {
  * Located in Entry Footer
  */
 
-if ( ! function_exists( 'ntt_entry_secondary_meta' ) ) {
-    function ntt_entry_secondary_meta() {
+if ( ! function_exists( 'ntt__tag__entry_secondary_meta' ) ) {
+    function ntt__tag__entry_secondary_meta() {
 
         if ( get_the_tag_list() ) {
             ?>
             <div class="ntt--entry-secondary-meta ntt--cp" data-name="Entry Secondary Meta">
-                <?php ntt_entry_tags(); ?>
+                <?php ntt__tag__entry_tags(); ?>
             </div>
             <?php
         }
@@ -35,11 +35,11 @@ if ( ! function_exists( 'ntt_entry_secondary_meta' ) ) {
 /** Entry Primary Meta Content
  */
 
-if ( ! function_exists( 'ntt_entry_primary_meta_content' ) ) {
-    function ntt_entry_primary_meta_content() {
+if ( ! function_exists( 'ntt__tag__entry_primary_meta__content' ) ) {
+    function ntt__tag__entry_primary_meta__content() {
         
-        ntt_entry_datetime();
-        ntt_entry_author();
-        ntt_entry_categories();
+        ntt__tag__entry_datetime();
+        ntt__tag__entry_author();
+        ntt__tag__entry_categories();
     }
 }

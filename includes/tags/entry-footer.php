@@ -3,8 +3,8 @@
  * Entry Footer
  */
 
-if ( ! function_exists( 'ntt_entry_footer' ) ) {
-	function ntt_entry_footer() {
+if ( ! function_exists( 'ntt__tag__entry_footer' ) ) {
+	function ntt__tag__entry_footer() {
 
 		global $multipage;
 
@@ -12,8 +12,8 @@ if ( ! function_exists( 'ntt_entry_footer' ) ) {
 			?>
 			<footer class="ntt--entry-footer ntt--cn" data-name="Entry Footer">
 				<?php
-                ntt_entry_content_nav();
-                ntt_entry_secondary_meta();
+                ntt__tag__entry_content_nav();
+                ntt__tag__entry_secondary_meta();
                 comments_template();
                 ?>
 			</footer>

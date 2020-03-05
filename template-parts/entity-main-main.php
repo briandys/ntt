@@ -10,7 +10,7 @@
             
             while ( have_posts() ) {
                 the_post();
-                ntt_entry_content();
+                ntt__tag__entry_content();
             }
         } else {
             
@@ -20,7 +20,7 @@
                     <?php
                     while ( have_posts() ) {
                         the_post();
-                        ntt_entry_content();
+                        ntt__tag__entry_content();
                     }
                     ?>
                 </div>

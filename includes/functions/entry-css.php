@@ -3,7 +3,7 @@
  * Entry CSS
  */
 
-function ntt_entry_css( $classes ) {
+function ntt__function__entry__css( $classes ) {
     
     global $post;
     
@@ -23,4 +23,4 @@ function ntt_entry_css( $classes ) {
 
     return $classes;
 }
-add_filter( 'post_class', 'ntt_entry_css' );
+add_filter( 'post_class', 'ntt__function__entry__css' );

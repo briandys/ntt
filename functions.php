@@ -69,17 +69,52 @@ foreach ( $r_tags as $tag ) {
  * https://www.php.net/manual/en/function.get-defined-functions.php
  * https://stackoverflow.com/a/10474285
  */
-( function() {
+function ntt__function__user_functions() {
 
-    $arr = get_defined_functions()['user'];
+    if ( is_page( 'Functions' ) && current_user_can( 'edit_private_posts' ) ) {
 
-    //$arr = array_filter( $arr, function ( $var ) { return ( (stripos( $var, 'ntt' ) !== false) && (stripos( $var, 'css' ) !== false) ); } );
-    
-    $arr = array_filter( $arr, function ( $var ) { return ( stripos( $var, 'ntt' ) !== false ); } );
+        $arr = get_defined_functions()['user'];
 
-    sort($arr);
+        //$arr = array_filter( $arr, function ( $var ) { return ( (stripos( $var, 'ntt' ) !== false) && (stripos( $var, 'css' ) !== false) ); } );
+        
+        // All ntt
+        $arr = array_filter( $arr, function ( $var ) {
+            return ( stripos( $var, 'ntt' ) !== false );
+        } );
 
-    foreach( $arr as $func ) {
-        echo "<li>". $func. "</li>";
+        $count = count($arr);
+        sort($arr);
+
+        // All ntt__function
+        $r_ntt_functions = array_filter( $arr, function ( $var ) {
+            return ( stripos( $var, 'ntt__function' ) !== false );
+        } );
+
+        $r_ntt_functions_count = count($r_ntt_functions);
+        sort($r_ntt_functions);
+        ?>
+        <div><?php echo $count; ?></div>
+        <ul>
+            <?php
+            foreach( $arr as $func ) {
+                ?>
+                <li><?php echo $func; ?></li>
+                <?php
+            }
+            ?>
+        </ul>
+
+        <div><?php echo $r_ntt_functions_count; ?></div>
+        <ul>
+            <?php
+            foreach( $r_ntt_functions as $func ) {
+                ?>
+                <li><?php echo $func; ?></li>
+                <?php
+            }
+            ?>
+        </ul>
+        <?php
     }
-} )();
+}
+add_action( 'ntt__wp_hook__the_content___after', 'ntt__function__user_functions');

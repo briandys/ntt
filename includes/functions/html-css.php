@@ -1,5 +1,5 @@
 <?php
-function ntt_get_html_css( $class='' ) {
+function ntt__function__view__css__getter( $class='' ) {
 
     global $post;
     
@@ -107,6 +107,6 @@ function ntt_get_html_css( $class='' ) {
     return array_unique( $classes );
 }
 
-function ntt_html_css( $class='' ) {
-    echo join( ' ', ntt_get_html_css( $class ) );
+function ntt__function__view__css( $class='' ) {
+    echo join( ' ', ntt__function__view__css__getter( $class ) );
 }
