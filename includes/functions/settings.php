@@ -2,7 +2,7 @@
 /**
  * WP Theme Settings
  */
-function ntt__wp_theme__settings() {
+function ntt__wp_theme() {
     
     load_theme_textdomain( 'ntt' );
     add_theme_support( 'automatic-feed-links' );
@@ -36,7 +36,7 @@ function ntt__wp_theme__settings() {
 	
     add_theme_support( 'customize-selective-refresh-widgets' );
 }
-add_action( 'after_setup_theme', 'ntt__wp_theme__settings' );
+add_action( 'after_setup_theme', 'ntt__wp_theme' );
 
 /**
  * Content Width

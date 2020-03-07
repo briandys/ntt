@@ -65,10 +65,10 @@ function ntt__wp_theme__custom_header() {
  * @param string $attachment_content the attachment html
  * @return string $attachment_content the attachment html
  */
-function ntt__function__attachment_content( $attachment_content ){
+function ntt__function__attachment_size( $attachment_content ){
         
     $attachment_content = sprintf( '<p class="ntt--attachment-visuals ntt--obj" data-name="Attachment Visuals">%s</p>', wp_get_attachment_link( 0, 'ntt-large', false ) );
     
     return $attachment_content;
 }
-add_filter( 'prepend_attachment', 'ntt__function__attachment_content' );
+add_filter( 'prepend_attachment', 'ntt__function__attachment_size' );
