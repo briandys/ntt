@@ -8,7 +8,7 @@ if ( ! function_exists( 'ntt__tag__entry_primary_meta' ) ) {
     function ntt__tag__entry_primary_meta() {
         ?>
         <div class="ntt--entry-primary-meta ntt--cp" data-name="Entry Primary Meta">
-            <?php ntt__tag__entry_primary_meta__content(); ?>
+            <?php ntt__tag__entry_primary_meta__structure(); ?>
         </div>
         <?php
     }
@@ -35,8 +35,8 @@ if ( ! function_exists( 'ntt__tag__entry_secondary_meta' ) ) {
 /** Entry Primary Meta Content
  */
 
-if ( ! function_exists( 'ntt__tag__entry_primary_meta__content' ) ) {
-    function ntt__tag__entry_primary_meta__content() {
+if ( ! function_exists( 'ntt__tag__entry_primary_meta__structure' ) ) {
+    function ntt__tag__entry_primary_meta__structure() {
         
         ntt__tag__entry_datetime();
         ntt__tag__entry_author();
