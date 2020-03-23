@@ -62,6 +62,25 @@ function ntt__wp_widget() {
 			ntt__function__aside__markup( $aside_name );
 		}
 	}
+	
+	// Entity Footer Aside
+	register_sidebar( array(
+		'name'          => __( 'Footer Aside', 'ntt' ),
+		'id'            => 'entity-footer-aside',
+		'description'   => __( 'Located within Entity Footer', 'ntt' ),
+		'before_widget' => $widget_start_mu,
+		'after_widget'  => $widget_end_mu,
+		'before_title'  => $title_mu_start,
+		'after_title'   => $title_mu_end,
+	 ) );
+	
+	function ntt_entity_footer_aside() {
+		$aside_name = 'Entity Footer Aside';
+
+		if ( is_active_sidebar( sanitize_title( $aside_name ) )  ) {
+			ntt__function__aside__markup( $aside_name );
+		}
+	}
 }
 add_action( 'widgets_init', 'ntt__wp_widget' );
 
@@ -78,6 +97,7 @@ function ntt__wp_widget__css( $classes ) {
     $r_widgets = array(
         'entity-header-aside',
         'entity-main-main-aside',
+        'entity-footer-aside',
     );
 
     foreach ( $r_widgets as $widget ) {

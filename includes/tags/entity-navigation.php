@@ -24,6 +24,7 @@ if ( ! function_exists( 'ntt__tag__entity_primary_nav' ) ) {
 
                     /**
                      * Default Menu
+                     * If Primary Navigation is not set
                      * Navigation Item <li class="page_item">
                      * Current Navigation Item <li class="current_page_item">
                      * Sub-Navigation <ul class="children">
@@ -40,6 +41,7 @@ if ( ! function_exists( 'ntt__tag__entity_primary_nav' ) ) {
                     
                     /**
                      * Custom Menu (WP Admin > Apperance > Menus)
+                     * If any Menu is set to Primary Navigation
                      * Navigation Item <li class="menu-item">
                      * Current Navigation Item <li class="current-menu-item">
                      * Sub-Navigation <ul class="sub-menu">

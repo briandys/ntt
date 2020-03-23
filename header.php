@@ -62,6 +62,7 @@
 
                 <?php
                 ntt__tag__entity_primary_nav();
+                ntt__tag__entity_secondary_nav();
                 
                 if ( has_header_image() || is_active_sidebar( 'entity-banner-aside' ) ) {
                     ?>
