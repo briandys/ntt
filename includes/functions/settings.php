@@ -7,20 +7,28 @@ function ntt__wp_theme() {
     load_theme_textdomain( 'ntt' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'title-tag' );
+    
     add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 1200, 9999 );
     
     add_image_size( 'ntt-large', 1920, 1440 );
     add_image_size( 'ntt-medium', 1280, 960 );
     add_image_size( 'ntt-medium-hd', 1280, 800 );
     add_image_size( 'ntt-small', 1024, 768 );
     add_image_size( 'ntt-thumbnail', 640, 480 );
-    
-    add_theme_support( 'html5', array(
-		'search-form',
-		'comment-list',
-		'gallery',
-		'caption',
-     ) );
+
+    add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		)
+	);
     
     add_theme_support( 'post-formats', array(
 		'aside',
@@ -35,6 +43,16 @@ function ntt__wp_theme() {
      ) );
 	
     add_theme_support( 'customize-selective-refresh-widgets' );
+
+    // Add support for full and wide align images.
+    add_theme_support( 'align-wide' );
+
+    /*
+	 * Adds `async` and `defer` support for scripts registered or enqueued
+	 * by the theme.
+	 */
+	$loader = new NTT_Script_Loader();
+	add_filter( 'script_loader_tag', array( $loader, 'ntt__function__filter_script_loader_tag' ), 10, 2 );
 }
 add_action( 'after_setup_theme', 'ntt__wp_theme' );
 

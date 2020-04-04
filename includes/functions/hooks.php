@@ -21,6 +21,13 @@ function ntt__wp_hook__the_content___after() {
 }
 
 /**
+ * entry-full-content.php
+ */
+function ntt__wp_hook__entry_full_content___after() {
+    do_action( 'ntt__wp_hook__entry_full_content___after' );
+}
+
+/**
  * header.php
  */
 function ntt__wp_hook__entity_primary_heading___before() {

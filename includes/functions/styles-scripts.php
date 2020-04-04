@@ -28,7 +28,7 @@ function ntt__function__inline_scripts() {
     <script>
         ( function() {
             var html = document.documentElement;
-            html.className = html.className.replace( /\bno-js\b/,'js' );
+            html.className = html.className.replace( 'no-js','js' );
             html.className += ' ' + 'ntt--dom---unloaded';
             html.className += ' ' + 'ntt--window---unloaded';
         } )();

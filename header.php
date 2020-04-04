@@ -7,12 +7,15 @@
 <html <?php language_attributes(); ?> id="start" class="<?php ntt__function__view__css(); ?>" data-name="View">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+        <?php
+		wp_body_open();
+		?>
         <div id="ntt--entity" class="ntt--entity" data-name="Entity">
             <div class="ntt--entity-start ntt--cn" data-name="Entity Start">
                 <?php $go_content_text = __( 'Go to Content', 'ntt' ); ?>

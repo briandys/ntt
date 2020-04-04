@@ -5,9 +5,10 @@
 
 $unique_id = uniqid();
 $search_text = __( 'Search', 'ntt' );
+$aria_label = ! empty( $args['label'] ) ? 'aria-label="' . esc_attr( $args['label'] ) . '"' : '';
 ?>
 
-<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="ntt--search ntt--cp" data-name="Search">
+<form role="search" method="get" <?php echo $aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?> action="<?php echo esc_url( home_url( '/' ) ); ?>" class="ntt--search ntt--cp" data-name="Search">
     <div class="ntt--search-field ntt--form-field ntt--cp" data-name="Search Field">
         <label for="ntt--search-text-input-<?php echo esc_attr( $unique_id ); ?>" class="ntt--search-label ntt--form-label ntt--obj">
             <span class="ntt--txt"><?php echo esc_html( $search_text ); ?></span>

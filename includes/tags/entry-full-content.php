@@ -13,5 +13,6 @@ if ( ! function_exists( 'ntt__tag__entry_full_content' ) ) {
             ?>
         </div>
         <?php
+        ntt__wp_hook__entry_full_content___after();
     }
 }

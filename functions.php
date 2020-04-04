@@ -1,5 +1,17 @@
 <?php
 /**
+ * Classes
+ */
+
+$r_classes = array(
+    'class-script-loader',
+);
+
+foreach ( $r_classes as $class ) {
+    require( get_parent_theme_file_path( '/classes/'. $class. '.php' ) );
+}
+
+/**
  * Functions
  */
 
