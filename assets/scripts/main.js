@@ -28,40 +28,6 @@
 }());
 
 /**
- * File skip-link-focus-fix.js.
- *
- * Helps with accessibility for keyboard only users.
- *
- * This is the source file for what is minified in the twentynineteen_skip_link_focus_fix() PHP function.
- *
- * Learn more: https://git.io/vWdr2
- */
-( function() {
-	var isIe = /(trident|msie)/i.test( navigator.userAgent );
-
-	if ( isIe && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function() {
-			var id = location.hash.substring( 1 ),
-				element;
-
-			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-				return;
-			}
-
-			element = document.getElementById( id );
-
-			if ( element ) {
-				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-					element.tabIndex = -1;
-				}
-
-				element.focus();
-			}
-		}, false );
-	}
-} )();
-
-/**
  * Basic NTT Scripts
  * From Twenty Nineteen WP Theme
  */
@@ -92,13 +58,13 @@
     }
 
 	function updateDomReadyCss() {
-		addClass( html, 'ntt--dom---loaded');
-		deleteClass( html, 'ntt--dom---unloaded');
+		addClass( html, 'ntt--dom---loaded--js');
+		deleteClass( html, 'ntt--dom---unloaded--js');
 	}
 
 	function updateWindowLoadedCss() {
-		addClass( html, 'ntt--window---loaded');
-		deleteClass( html, 'ntt--window---unloaded');
+		addClass( html, 'ntt--window---loaded--js');
+		deleteClass( html, 'ntt--window---unloaded--js');
 	}
 
 	/**

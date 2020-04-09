@@ -17,7 +17,7 @@ function ntt__function__view__css__getter( $class='' ) {
 
     $classes[] = 'ntt';
     $classes[] = 'ntt--view';
-    $classes[] = 'no-js';
+    $classes[] = 'ntt--no-js';
 
     /**
      * Entry Count Types

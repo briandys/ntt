@@ -28,9 +28,9 @@ function ntt__function__inline_scripts() {
     <script>
         ( function() {
             var html = document.documentElement;
-            html.className = html.className.replace( 'no-js','js' );
-            html.className += ' ' + 'ntt--dom---unloaded';
-            html.className += ' ' + 'ntt--window---unloaded';
+            html.className = html.className.replace( 'ntt--no-js','ntt--js' );
+            html.className += ' ' + 'ntt--dom---unloaded--js';
+            html.className += ' ' + 'ntt--window---unloaded--js';
         } )();
     </script>
     <?php

@@ -16,12 +16,10 @@ foreach ( $r_classes as $class ) {
  */
 
 $r_functions = array(
-    // Primary
     'back-compatibility',
     'settings',
     'hooks',
     'styles-scripts',
-    // Secondary
     'comments-css',
     'comment-form',
     'customizer',
