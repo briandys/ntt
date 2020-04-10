@@ -39,6 +39,10 @@ function ntt__function__view__css__getter( $class='' ) {
         $classes[] = 'ntt--current-index';
     } elseif ( is_archive() ) {
         $classes[] = 'ntt--archive-index';
+
+        if ( is_tag() ) {
+            $classes[] = 'ntt--tag-archive-index';
+        }
     } elseif( $is_with_search_results ) {
         $classes[] = 'ntt--search-index';
     }

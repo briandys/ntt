@@ -39,7 +39,7 @@
             </footer>
             <div class="ntt--entity-end ntt--cn" data-name="Entity End">
                 <?php $go_start_text = __( 'Go to Start', 'ntt' ); ?>
-                <div aria-label="<?php echo esc_attr( $go_start_text ); ?>" role="navigation" class="ntt--go-start-nav ntt--nav ntt--cp" data-name="Go to Start Navigation">
+                <div aria-label="<?php echo esc_attr( $go_start_text ); ?>" role="navigation" id="ntt--go-start-nav" class="ntt--go-start-nav ntt--nav ntt--cp" data-name="Go to Start Navigation">
                     <div class="ntt--go-start-navi ntt--navi ntt--obj">
                         <a href="#start" title="<?php echo esc_attr( $go_start_text ); ?>">
                             <span class="ntt--txt"><?php echo esc_html( $go_start_text ); ?></span>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div id="ntt--wild-card" class="ntt--wild-card" data-name="Wild Card">
-            <!-- Dynamically-Created Content -->
+            <!-- Dynamically-created Content -->
         </div>
         <?php wp_footer(); ?>
     </body>
