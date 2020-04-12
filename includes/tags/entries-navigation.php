@@ -27,7 +27,7 @@ if ( ! function_exists( 'ntt__tag__entries_nav' ) ) {
         $after_page_number_mu .= '</span>';
         ?>
         
-        <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" class="ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
+        <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
             <div class="ntt--entries-page-indicator ntt--obj" data-name="Entries Page Indicator">
                 <span class="ntt--txt">
                     <span class="ntt--page-text"><?php echo esc_html( $page_text ); ?></span>

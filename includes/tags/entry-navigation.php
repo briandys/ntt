@@ -6,11 +6,7 @@
 if ( ! function_exists('ntt__tag__entry_nav' ) ) {
     function ntt__tag__entry_nav() {
         
-        if ( is_single() || is_page() ) {
-
-            if ( ! get_adjacent_post( false, '', false ) && ! get_adjacent_post( false, '', true ) ) {
-                return;
-            }
+        if ( ( is_single() || is_page() ) && ( get_next_post_link() || get_previous_post_link() ) ) {
 
             $entry_nav_name_text = apply_filters( 'ntt_entry_nav_name_filter', __( 'Entry Navigation', 'ntt' ) );
             ?>
@@ -60,6 +56,8 @@ if ( ! function_exists('ntt__tag__entry_nav' ) ) {
                         } else {
                             $prev_post_thumbnail_mu = '';
                         }
+
+                        $prev_post = get_previous_post();
                         ?>
                         
                         <div class="ntt--previous-entry-navi ntt--entry-navi ntt--navi ntt--obj">
