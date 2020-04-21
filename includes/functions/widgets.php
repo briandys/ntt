@@ -110,4 +110,4 @@ function ntt__wp_widget__css( $classes ) {
 
 	return $classes;
 }
-add_filter( 'ntt_html_css_filter', 'ntt__wp_widget__css' );
+add_filter( 'ntt__wp_filter__view_css', 'ntt__wp_widget__css' );

@@ -27,8 +27,8 @@ $r_functions = array(
     'entry-css',
     'excerpt',
     'gallery',
-    'html-css',
     'pingback-header',
+    'view-css',
     'widgets',
 );
 

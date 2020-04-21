@@ -177,12 +177,12 @@ function ntt__wp_customizer__color_scheme() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 	$saturation = absint( apply_filters( 'ntt_custom_colors_saturation', 50 ) ). '%';
     $css = '
-    .ntt--customizer-color-scheme---custom .ntt--entity-header {
+    .ntt--customizer-color-scheme---custom--view .ntt--entity-header {
         background-color: hsl('. $hue. ', '. $saturation. ', 50%);
     }
 
-    .ntt--customizer-color-scheme---custom .ntt--entity-header,
-    .ntt--customizer-color-scheme---custom .ntt--entity-header a {
+    .ntt--customizer-color-scheme---custom--view .ntt--entity-header,
+    .ntt--customizer-color-scheme---custom--view .ntt--entity-header a {
         color: white;
     }
     ';
@@ -231,4 +231,4 @@ function ntt__wp_customizer__css( $classes ) {
     
     return $classes;
 }
-add_filter( 'ntt_html_css_filter', 'ntt__wp_customizer__css' );
+add_filter( 'ntt__wp_filter__view_css', 'ntt__wp_customizer__css' );

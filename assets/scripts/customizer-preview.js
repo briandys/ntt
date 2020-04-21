@@ -34,7 +34,7 @@
 			
             if ( 'blank' === to ) {
 				$html
-                    .addClass( 'ntt--entity-name-description---0' );
+                    .addClass( 'ntt--entity-name-description---0--view' );
 			} else {
 
 				if ( ! to.length ) {
@@ -46,7 +46,7 @@
 				} );
 				
                 $html
-                    .removeClass( 'ntt--entity-name-description---0' );
+                    .removeClass( 'ntt--entity-name-description---0--view' );
 			}
 		} );
 	} );
@@ -59,7 +59,7 @@
 		value.bind( function( to ) {
 			$html
 				.addClass( 'ntt--customizer-color-scheme---default' )
-				.removeClass( 'ntt--customizer-color-scheme---custom' );
+				.removeClass( 'ntt--customizer-color-scheme---custom--view' );
 		} );
 	} );
 	
@@ -70,7 +70,7 @@
 	wp.customize( 'colorscheme_hue', function( value ) {
 		value.bind( function( to ) {
             $html
-				.addClass( 'ntt--customizer-color-scheme---custom' )
+				.addClass( 'ntt--customizer-color-scheme---custom--view' )
 				.removeClass( 'ntt--customizer-color-scheme---default' );
 
 			var style = $( '#ntt--customizer-custom-color-scheme-style' ),

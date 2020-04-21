@@ -32,6 +32,8 @@
                 <?php ntt__wp_hook__entity_primary_heading___before(); ?>
                 <div class="ntt--entity-heading ntt--cp" data-name="Entity Heading">
                     <?php
+                    ntt__wp_hook__entity_logo___before();
+                    
                     if ( has_custom_logo() ) {
                         ?>
                         <div class="ntt--entity-logo ntt--obj" data-name="Entity Logo"><?php the_custom_logo(); ?></div>
@@ -59,6 +61,8 @@
                         </div>
                         <?php
                     }
+
+                    ntt__wp_hook__entity_description___after();
                     ?>
                 </div>
                 <?php ntt__wp_hook__entity_primary_heading___after(); ?>

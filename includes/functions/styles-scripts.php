@@ -51,5 +51,5 @@ if ( is_child_theme() ) {
         $classes[] = 'ntt--'. sanitize_title( $GLOBALS['ntt__gvar__child_theme__name'] );
         return $classes;
     }
-    add_filter( 'ntt_html_css_filter', 'ntt__function__child_theme__css' );
+    add_filter( 'ntt__wp_filter__view_css', 'ntt__function__child_theme__css' );
 }

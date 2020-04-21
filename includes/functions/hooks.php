@@ -37,3 +37,17 @@ function ntt__wp_hook__entity_primary_heading___before() {
 function ntt__wp_hook__entity_primary_heading___after() {
     do_action( 'ntt__wp_hook__entity_primary_heading___after' );
 }
+
+/**
+ * header.php
+ */
+function ntt__wp_hook__entity_logo___before() {
+    do_action( 'ntt__wp_hook__entity_logo___before' );
+}
+
+/**
+ * header.php
+ */
+function ntt__wp_hook__entity_description___after() {
+    do_action( 'ntt__wp_hook__entity_description___after' );
+}

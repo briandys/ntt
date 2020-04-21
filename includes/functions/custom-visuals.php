@@ -44,8 +44,8 @@ function ntt__wp_theme__custom_header() {
         <style id="ntt--custom-header-colors-style">
             .ntt--entity-header,
             .ntt--entity-header a,
-            .ntt--customizer-color-scheme---custom .ntt--entity-header,
-            .ntt--customizer-color-scheme---custom .ntt--entity-header a {
+            .ntt--customizer-color-scheme---custom--view .ntt--entity-header,
+            .ntt--customizer-color-scheme---custom--view .ntt--entity-header a {
                 color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
             }
         </style>
