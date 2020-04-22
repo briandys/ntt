@@ -22,7 +22,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                 $entry_text = __( 'Entry', 'ntt' );
                 $miscellaneous_text = __( 'Miscellaneous', 'ntt' );
                 
-                // Plural
+                // Multiple Entries
                 if ( is_home() || is_archive() || is_search() ) {
 
                     // Current Index
@@ -245,10 +245,10 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     <?php
                     }
                 
-                // Singular
+                // Singular Entry
                 } elseif ( is_singular() ) {
 
-                    // Single Entry
+                    // Post Entry
                     if ( is_single() && ! is_attachment() ) {
                         ?>
                         <span class="ntt--txt">
@@ -286,7 +286,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     <?php
                     }
 
-                // None
+                // Zero Entry
                 } elseif ( is_404() ) {
                     ?>
                     <span class="ntt--txt">
@@ -309,7 +309,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
             </div>
             
             <?php
-            // If in Plural View, show Entry Count
+            // If in Multiple Entries View, show Entry Count
             if ( is_home() || is_archive() || is_search() ) {
                 ntt__tag__entry_count( $args = '' );
             }

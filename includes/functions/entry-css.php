@@ -10,7 +10,6 @@ function ntt__function__entry__css( $classes ) {
     /**
      * Defaults
      */
-
     $r_defaults = array(
         'ntt--entry--'. $post->ID,
         'ntt--entry',

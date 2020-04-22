@@ -14,7 +14,6 @@ function ntt__function__view__css__getter( $class='' ) {
     /**
      * Defaults
      */
-
     $classes[] = 'ntt';
     $classes[] = 'ntt--view';
     $classes[] = 'ntt--no-js';
@@ -64,7 +63,7 @@ function ntt__function__view__css__getter( $class='' ) {
     }
 
     /**
-     * Entity Primary Name, Entity Description Ability Status
+     * Entity Name, Entity Description Ability Status
      */
     if ( get_header_textcolor() === 'blank' || ( ! get_bloginfo( 'name', 'display' ) && ! get_bloginfo( 'description', 'display' ) ) ) {
         $classes[] = 'ntt--entity-name-description---0--view';
