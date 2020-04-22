@@ -28,7 +28,7 @@ if ( ! function_exists( 'ntt__tag__entry_banner' ) ) {
                     }
 
                     echo $anchor_mu_start;
-                    the_post_thumbnail( apply_filters( 'ntt_entry_banner_visuals_featured_image_size_filter', $featured_image_size ), array( 'class' => 'u-featured', ) );
+                    the_post_thumbnail( apply_filters( 'ntt__wp_filter__entry_banner_visuals_featured_image_size', $featured_image_size ), array( 'class' => 'u-featured', ) );
                     echo $anchor_mu_end;
 
                     if ( get_the_post_thumbnail_caption() !== '' ) {

@@ -11,7 +11,7 @@ if ( ! function_exists( 'ntt__tag__comment_datetime') ) {
         // [Variables] Published DateTime
         $commented_on_text = __( 'Commented on', 'ntt' );
         $published_day_text = get_comment_date( 'j' );
-        $published_month_text = get_comment_date( apply_filters( 'ntt_cm_datetime_month_filter', 'F' ) );
+        $published_month_text = get_comment_date( apply_filters( 'ntt__wp_filter__cm_datetime_month', 'F' ) );
         $published_year_text = get_comment_date( 'Y' );
         $published_hour_text = get_comment_time( 'H' );
         $published_minute_text = get_comment_time( 'i' );

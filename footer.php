@@ -13,7 +13,7 @@
                     $get_bloginfo_name = get_bloginfo( 'name', 'display' );
                     $entity_maker_name = 'Brian Dys CL';
                     
-                    $entity_maker_tag_theme_name_filter = apply_filters( 'ntt_entity_maker_tag_theme_name_filter', 'NTT' );
+                    $entity_maker_tag_theme_name_filter = apply_filters( 'ntt__wp_filter__entity_maker_tag_theme_name', 'NTT' );
                     $entity_maker_tag_maker_name_filter = apply_filters( 'ntt_entity_maker_tag_maker_name_filter', $entity_maker_name );
                     
                     if ( $get_bloginfo_name || is_customize_preview() ) {
@@ -28,7 +28,7 @@
                         <span class="ntt--txt"><?php esc_html_e( 'Copyright', 'ntt' ); echo ' '. esc_html( apply_filters( 'ntt_entity_copyright_year_filter', date_i18n( 'Y' ) ) ); ?></span>
                     </span>
                     <div class="ntt--entity-maker-tag ntt--obj" data-name="Entity Maker Tag">
-                        <a href="<?php echo esc_url( apply_filters( 'ntt_entity_maker_tag_theme_url_filter', '//briandys.com/ntt/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Made with [Theme Name] by Maker', 'ntt' ). ' '. esc_attr( $entity_maker_tag_theme_name_filter ). ' '. esc_attr_x( 'by', 'Made with [Theme Name] by Maker', 'ntt' ). ' '. esc_attr( $entity_maker_tag_maker_name_filter ); ?>">
+                        <a href="<?php echo esc_url( apply_filters( 'ntt__wp_filter__entity_maker_tag_theme_url', '//briandys.com/ntt/' ) ); ?>" title="<?php echo esc_attr_x( 'Made with', 'Made with [Theme Name] by Maker', 'ntt' ). ' '. esc_attr( $entity_maker_tag_theme_name_filter ). ' '. esc_attr_x( 'by', 'Made with [Theme Name] by Maker', 'ntt' ). ' '. esc_attr( $entity_maker_tag_maker_name_filter ); ?>">
                             <span class="ntt--txt">
                                 <label class="ntt--label-txt"><?php echo esc_html_x( 'Design by', 'Design by Maker', 'ntt' ); ?></label>
                                 <span class="ntt--maker-name-txt"><?php echo esc_html( $entity_maker_tag_maker_name_filter ); ?></span>

@@ -9,7 +9,7 @@ if ( ! function_exists( 'ntt__tag__entry_datetime' ) ) {
         // [Variables] Published DateTime
         $published_on_text = apply_filters( 'ntt_entry_published_datetime_label_filter', __( 'Published on', 'ntt' ) );
         $published_day_txt = get_the_date( 'j' );
-        $published_month_txt = get_the_date( apply_filters( 'ntt_cm_datetime_month_filter', 'F' ) );
+        $published_month_txt = get_the_date( apply_filters( 'ntt__wp_filter__cm_datetime_month', 'F' ) );
         $published_year_txt = get_the_date( 'Y' );
         $published_hour_txt = get_the_date( 'H' );
         $published_minute_txt = get_the_date( 'i' );
@@ -18,7 +18,7 @@ if ( ! function_exists( 'ntt__tag__entry_datetime' ) ) {
         // [Variables] Modified DateTime
         $updated_on_text = apply_filters( 'ntt_entry_modified_datetime_label_filter', __( 'Updated on', 'ntt' ) );
         $modified_day_txt = get_the_modified_time( 'j' );
-        $modified_month_txt = get_the_modified_time( apply_filters( 'ntt_cm_datetime_month_filter', 'F' ) );
+        $modified_month_txt = get_the_modified_time( apply_filters( 'ntt__wp_filter__cm_datetime_month', 'F' ) );
         $modified_year_txt = get_the_modified_time( 'Y' );
         $modified_hour_txt = get_the_modified_time( 'H' );
         $modified_minute_txt = get_the_modified_time( 'i' );
