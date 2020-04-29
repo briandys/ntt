@@ -61,17 +61,23 @@ function ntt__wp_customizer( $wp_customize ) {
 		'priority'    => 5,
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colorscheme_hue', array(
-		'mode'        => 'hue',
-		'section'     => 'colors',
-		'priority'    => 6,
-     ) ) );
+	$wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'colorscheme_hue',
+            array(
+                'mode'        => 'hue',
+                'section'     => 'colors',
+                'priority'    => 6,
+            )
+        )
+    );
      
     /**
      * NTT Settings
      */
 
-    $wp_customize->add_section( 'ntt__wp_theme', array(
+    $wp_customize->add_section( 'ntt__wp_customizer__section__theme', array(
         'title'         => 'NTT Settings',
         'description'   => 'Customize NTT',
     ) );
@@ -80,14 +86,14 @@ function ntt__wp_customizer( $wp_customize ) {
      * Site ID
      */
 
-    $wp_customize->add_setting( 'ntt_settings_site_id', array(
+    $wp_customize->add_setting( 'ntt__wp_customizer__settings__site_id', array(
         'default'           => '',
         'sanitize_callback' => 'esc_attr',
     ) );
 
-    $wp_customize->add_control( 'ntt_settings_site_id', array(
+    $wp_customize->add_control( 'ntt__wp_customizer__settings__site_id', array(
         'label'         => 'Site ID',
-        'section'       => 'ntt__wp_theme',
+        'section'       => 'ntt__wp_customizer__section__theme',
 		'priority'      => 1,
     ) );
  
@@ -95,14 +101,14 @@ function ntt__wp_customizer( $wp_customize ) {
      * Features
      */
 
-    $wp_customize->add_setting( 'ntt_settings_features', array(
+    $wp_customize->add_setting( 'ntt__wp_customizer__settings__features', array(
         'default'           => '',
         'sanitize_callback' => 'esc_attr',
     ) );
 
-    $wp_customize->add_control( 'ntt_settings_features', array(
+    $wp_customize->add_control( 'ntt__wp_customizer__settings__features', array(
         'label'         => 'Features',
-        'section'       => 'ntt__wp_theme',
+        'section'       => 'ntt__wp_customizer__section__theme',
 		'priority'      => 2,
     ) );
 }
@@ -215,20 +221,31 @@ add_action( 'wp_head', 'ntt__wp_customizer__color_scheme__styles' );
  * Customizer HTML CSS
  */
 
-function ntt__wp_customizer__css( $classes ) {
+function ntt__wp_customizer__view_css( $classes ) {
 
-    $site_id = get_theme_mod( 'ntt_settings_site_id' );
-    $features = get_theme_mod( 'ntt_settings_features' );
+    $site_id = get_theme_mod( 'ntt__wp_customizer__settings__site_id' );
+    $features = get_theme_mod( 'ntt__wp_customizer__settings__features' );
 
     if ( $site_id ) {
-        $classes[] = 'ntt--site-id--'. sanitize_title( $site_id );
+        $classes[] = 'ntt--site-id--'. sanitize_title( wp_strip_all_tags( $site_id ) ). '--view';
     }
 
     if ( $features ) {
-        $features = trim( preg_replace( '/\s+/', ' ', $features ) );
-        $classes[] = $features;
+
+        function prefix( $element ) {
+            return 'ntt--feature--'. $element. '--view';
+        }
+
+        $features = trim( preg_replace( '/\s+/', ' ', $features ) ); // Remove extra whitespace
+        $features = wp_strip_all_tags( $features ); // Strip Tags
+        $features = preg_split( '/\s+/', $features ); // Split into separate array values
+        $features = array_map( 'sanitize_title', $features ); // Sanitize each value
+        $features = array_filter( $features ); // Remove empty values
+        $features = array_map( 'prefix', $features ); // Prefix each value
+        $features = join( ' ', $features ); // Join into a string
+        $classes[] = $features; // Add to classes array
     }
     
     return $classes;
 }
-add_filter( 'ntt__wp_filter__view_css', 'ntt__wp_customizer__css' );
+add_filter( 'ntt__wp_filter__view_css', 'ntt__wp_customizer__view_css' );
