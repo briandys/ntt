@@ -16,13 +16,13 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
             <div class="ntt--entity-view-name ntt--obj" data-name="Entity View Name">
                 
                 <?php
-                $archive_text = __( 'Archive', 'ntt' );
-                $index_text = __( 'Index', 'ntt' );
-                $page_text = __( 'Page', 'ntt' );
-                $entry_text = __( 'Entry', 'ntt' );
+                $archive_text       = __( 'Archive', 'ntt' );
+                $index_text         = __( 'Index', 'ntt' );
+                $page_text          = __( 'Page', 'ntt' );
+                $entry_text         = __( 'Entry', 'ntt' );
                 $miscellaneous_text = __( 'Miscellaneous', 'ntt' );
                 
-                // Multiple Entries
+                // Entry Index
                 if ( is_home() || is_archive() || is_search() ) {
 
                     // Current Index
@@ -309,7 +309,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
             </div>
             
             <?php
-            // If in Multiple Entries View, show Entry Count
+            // If in Entry Index View, show Entry Count
             if ( is_home() || is_archive() || is_search() ) {
                 ntt__tag__entry_count( $args = '' );
             }

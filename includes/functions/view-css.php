@@ -28,14 +28,14 @@ function ntt__function__view__css__getter( $class='' ) {
     }
 
     /**
-     * Entry Count Types
+     * Entry Display Types
      */
     if ( is_home() || is_archive() || $is_with_search_results ) {
-        $classes[] = 'ntt--entry---multiple--view';
+        $classes[] = 'ntt--entry-index--view';
 	} elseif ( is_singular() ) {
-		$classes[] = 'ntt--entry---single--view';
+		$classes[] = 'ntt--entry-singular--view';
 	} elseif ( is_404() || $is_no_search_results ) {
-        $classes[] = 'ntt--entry---zero--view';
+        $classes[] = 'ntt--entry-zero--view';
     }
 
     /**
