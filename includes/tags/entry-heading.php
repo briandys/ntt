@@ -4,12 +4,13 @@
  */
 
 if ( ! function_exists( 'ntt__tag__entry_heading') ) {
+    
     function ntt__tag__entry_heading() {
 
         if ( is_singular() ) {
             $heading_level = 'h1';
-            $anchor_mu_start = '';
-            $anchor_mu_end = '';
+            $anchor_mu_start = '<a href="'. esc_url( get_permalink() ). '" rel="bookmark" class="u-url">';
+            $anchor_mu_end = '</a>';
         } else {
             $heading_level = 'h3';
             $anchor_mu_start = '<a href="'. esc_url( get_permalink() ). '" rel="bookmark" class="u-url">';

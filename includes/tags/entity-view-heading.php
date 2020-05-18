@@ -312,6 +312,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
             // If in Entry Index View, show Entry Count
             if ( is_home() || is_archive() || is_search() ) {
                 ntt__tag__entry_count( $args = '' );
+                the_archive_description( '<div class="ntt--entry-archive-description ntt--obj" data-name="Entry Archive Description">', '</div>' );
             }
             ?>
         </div>
