@@ -12,8 +12,9 @@ if ( ! function_exists( 'ntt__tag__entry_footer' ) ) {
 			?>
 			<footer class="ntt--entry-footer ntt--cn" data-name="Entry Footer">
 				<?php
-                ntt__tag__entry_content_nav();
+				ntt__tag__entry_content_nav();
                 ntt__tag__entry_secondary_meta();
+				ntt__wp_hook__entry_secondary_meta___after();
                 comments_template();
                 ?>
 			</footer>

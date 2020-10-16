@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 global $current_user;
 
 // title_reply
-$title_reply_mu = '<div class="ntt--comment-composition-name ntt--obj">';
+$title_reply_mu = '<div id="reply-title" class="ntt--comment-composition-name ntt--obj comment-reply-title">';
     $title_reply_mu .= '<span class="ntt--txt">'. esc_html__( 'Compose Comment', 'ntt' ). '</span>';
 $title_reply_mu .= '</div>';
 

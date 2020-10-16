@@ -51,3 +51,10 @@ function ntt__wp_hook__entity_logo___before() {
 function ntt__wp_hook__entity_description___after() {
     do_action( 'ntt__wp_hook__entity_description___after' );
 }
+
+/**
+ * entry-footer.php
+ */
+function ntt__wp_hook__entry_secondary_meta___after() {
+    do_action( 'ntt__wp_hook__entry_secondary_meta___after' );
+}
