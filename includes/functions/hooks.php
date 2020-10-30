@@ -58,3 +58,10 @@ function ntt__wp_hook__entity_description___after() {
 function ntt__wp_hook__entry_secondary_meta___after() {
     do_action( 'ntt__wp_hook__entry_secondary_meta___after' );
 }
+
+/**
+ * entry-meta.php
+ */
+function ntt__wp_hook__entry_primary_meta__structure___after() {
+    do_action( 'ntt__wp_hook__entry_primary_meta__structure___after' );
+}

@@ -6,7 +6,7 @@ function ntt__function__aside__markup( $aside_name ) {
     $aside = sanitize_title( $aside_name );
     ?>
     <div class="<?php echo 'ntt--'. esc_attr( $aside ); ?> ntt--cn" data-name="<?php echo esc_attr( $aside_name ); ?>">
-        <?php dynamic_sidebar( $aside ); ?>
+		<?php dynamic_sidebar( $aside ); ?>
     </div>
     <?php
 }

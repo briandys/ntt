@@ -8,7 +8,10 @@ if ( ! function_exists( 'ntt__tag__entry_primary_meta' ) ) {
     function ntt__tag__entry_primary_meta() {
         ?>
         <div class="ntt--entry-primary-meta ntt--cp" data-name="Entry Primary Meta">
-            <?php ntt__tag__entry_primary_meta__structure(); ?>
+            <?php
+            ntt__tag__entry_primary_meta__structure();
+            ntt__wp_hook__entry_primary_meta__structure___after();
+            ?>
         </div>
         <?php
     }
