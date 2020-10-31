@@ -33,11 +33,8 @@ function ntt__function__show_more_action( $excerpt ) {
  * <!--more--> Quicktag
  */
 
-function ntt__function__more_quicktag_excerpt( $excerpt ) {
-    
-    if ( is_home() || is_archive() ) {
-        return ntt__function__show_more_action( $excerpt );
-    }
+function ntt__function__more_quicktag_excerpt( $excerpt ) {    
+    return ntt__function__show_more_action( $excerpt );
 }
 add_filter( 'the_content_more_link', 'ntt__function__more_quicktag_excerpt' );
 
