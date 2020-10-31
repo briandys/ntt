@@ -7,6 +7,7 @@
             <footer class="ntt--entity-footer ntt--cn" data-name="Entity Footer">
                 <?php
                 ntt_entity_footer_aside();
+                ntt__wp_hook__entity_secondary_info___before();
                 ?>
                 <div class="ntt--entity-secondary-info ntt--cp" data-name="Entity Secondary Information">
                     <?php
