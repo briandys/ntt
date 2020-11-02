@@ -2,7 +2,6 @@
 /**
  * Entry Full Content
  */
-
 if ( ! function_exists( 'ntt__tag__entry_full_content' ) ) {
     function ntt__tag__entry_full_content() {
         ?>

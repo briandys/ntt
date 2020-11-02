@@ -3,19 +3,19 @@
  * Classes
  */
 
-$r_classes = array(
+$ntt_r_classes = array(
     'class-script-loader',
 );
 
-foreach ( $r_classes as $class ) {
-    require( get_parent_theme_file_path( '/classes/'. $class. '.php' ) );
+foreach ( $ntt_r_classes as $ntt_class ) {
+    require( get_parent_theme_file_path( '/classes/'. $ntt_class. '.php' ) );
 }
 
 /**
  * Functions
  */
 
-$r_functions = array(
+$ntt_r_functions = array(
     'back-compatibility',
     'settings',
     'hooks',
@@ -32,15 +32,15 @@ $r_functions = array(
     'widgets',
 );
 
-foreach ( $r_functions as $function ) {
-    require( get_parent_theme_file_path( '/includes/functions/'. $function. '.php' ) );
+foreach ( $ntt_r_functions as $ntt_function ) {
+    require( get_parent_theme_file_path( '/includes/functions/'. $ntt_function. '.php' ) );
 }
 
 /**
  * Tags
  */
 
-$r_tags = array(
+$ntt_r_tags = array(
     'comment',
     'comment-actions',
     'comment-author',
@@ -68,8 +68,9 @@ $r_tags = array(
     'entry-sub-content-navigation',
     'entry-summary-content',
     'entry-taxonomy',
+    'entry-trimmed-content',
 );
 
-foreach ( $r_tags as $tag ) {
-    require( get_parent_theme_file_path( '/includes/tags/'. $tag. '.php' ) );
+foreach ( $ntt_r_tags as $ntt_tag ) {
+    require( get_parent_theme_file_path( '/includes/tags/'. $ntt_tag. '.php' ) );
 }

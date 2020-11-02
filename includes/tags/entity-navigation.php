@@ -15,10 +15,10 @@ if ( ! function_exists( 'ntt__tag__entity_primary_nav' ) ) {
                     <span class="ntt--txt"><?php esc_html_e( 'Primary Navigation', 'ntt' ); ?></span>
                 </h2>
                 <?php
-                function escape_html_the_title( $title, $id = null ) {
+                function ntt__function__escape_html_the_title( $title, $id = null ) {
                     return esc_html( $title );
                 }
-                add_filter( 'the_title', 'escape_html_the_title', 10, 2 );
+                add_filter( 'the_title', 'ntt__function__escape_html_the_title', 10, 2 );
                 
                 if ( ! has_nav_menu( 'entity-primary-nav' ) ) {
 

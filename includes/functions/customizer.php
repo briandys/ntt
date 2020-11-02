@@ -232,8 +232,8 @@ function ntt__wp_customizer__view_css( $classes ) {
 
     if ( $features ) {
 
-        function prefix( $element ) {
-            return 'ntt--feature--'. $element. '--view';
+        function ntt__function__feature_pre_suf_fix( $ntt_element ) {
+            return 'ntt--feature--'. $ntt_element. '--view';
         }
 
         $features = trim( preg_replace( '/\s+/', ' ', $features ) ); // Remove extra whitespace
@@ -241,8 +241,9 @@ function ntt__wp_customizer__view_css( $classes ) {
         $features = preg_split( '/\s+/', $features ); // Split into separate array values
         $features = array_map( 'sanitize_title', $features ); // Sanitize each value
         $features = array_filter( $features ); // Remove empty values
-        $features = array_map( 'prefix', $features ); // Prefix each value
+        $features = array_map( 'ntt__function__feature_pre_suf_fix', $features ); // Prefix and suffix each value
         $features = join( ' ', $features ); // Join into a string
+        
         $classes[] = $features; // Add to classes array
     }
     

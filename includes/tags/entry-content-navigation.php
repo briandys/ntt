@@ -28,8 +28,8 @@ if ( ! function_exists('ntt__tag__entry_content_nav' ) ) {
             'echo'              => 1,
         );
         
-        $r = apply_filters( 'wp_link_pages_args', wp_parse_args( $args, $defaults ) );
-        extract( $r, EXTR_SKIP );
+        $ntt_pages_r = apply_filters( 'wp_link_pages_args', wp_parse_args( $args, $defaults ) );
+        extract( $ntt_pages_r, EXTR_SKIP );
 
         global $post, $page, $numpages, $multipage, $more, $pagenow;
         

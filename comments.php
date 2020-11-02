@@ -89,7 +89,7 @@ $comment_field_mu = '<div class="ntt--comment-author-message-field ntt--form-fie
         $comment_field_mu .= '<span class="ntt--txt"><span class="ntt--comment-txt">'. esc_html( $comment_label_text_filter ). '</span> <span class="ntt--required-txt">'. esc_html( $required_text ).'</span></span>';
     $comment_field_mu .= '</label>';
         $comment_field_mu .= '<div class="ntt--comment-author-message-textbox ntt--form-element ntt--obj" data-name="Comment Author Message Textbox">';
-            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr__( $comment_text, 'ntt' ). ' '. '('. esc_attr__( $required_text, 'ntt' ). ')" id="comment" class="text-input"></textarea>';
+            $comment_field_mu .= '<textarea name="comment" title="'. esc_attr( $comment_text ).'" maxlength="65525" required placeholder="'. esc_attr( $comment_text ). ' '. '('. esc_attr( $required_text ). ')" id="comment" class="text-input"></textarea>';
         $comment_field_mu .= '</div>';
 $comment_field_mu .= '</div>';
 ?>

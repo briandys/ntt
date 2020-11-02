@@ -2,7 +2,6 @@
 /**
  * Entry Taxonomy (Categories, Tags)
  */
-
 if ( ! function_exists( 'ntt__tag__entry_categories' ) ) {
     function ntt__tag__entry_categories() {        
         
