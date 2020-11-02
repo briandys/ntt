@@ -57,7 +57,7 @@
                     if ( $get_bloginfo_description || is_customize_preview() ) {
                         ?>
                         <div class="ntt--entity-description ntt--obj" data-name="Entity Description">
-                            <span class="ntt--txt"><?php echo esc_attr( $get_bloginfo_description ); ?></span>
+                            <span class="ntt--txt"><?php echo esc_html( $get_bloginfo_description ); ?></span>
                         </div>
                         <?php
                     }

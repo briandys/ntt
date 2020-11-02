@@ -1,22 +1,18 @@
 @charset "UTF-8";
 /*
 Theme Name: NTT
-Text Domain: ntt
-Version: 0.9.9.1
-Requires at least: 4.7
-Requires PHP: 5.2.4
-Description: NTT upholds the Open Web through Semantics and Information Architecture.
-Tags: translation-ready, blog
+Theme URI: https://briandys.com/ntt/
 Author: Brian Dys Sahagun
 Author URI: https://briandys.com/
-Theme URI: https://briandys.com/ntt/
+Description: NTT upholds the Open Web through Semantics and Information Architecture.
+Tags: translation-ready, blog
+Version: 0.9.9.2
+Requires at least: 4.7
+Tested up to: 5.5.3
+Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-All files, unless otherwise stated, are released under the GNU General Public
-License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-
+Text Domain: ntt
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned
-with others.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
