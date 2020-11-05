@@ -2,7 +2,6 @@
 /**
  * Classes
  */
-
 $ntt_r_classes = array(
     'class-script-loader',
 );
@@ -14,7 +13,6 @@ foreach ( $ntt_r_classes as $ntt_class ) {
 /**
  * Functions
  */
-
 $ntt_r_functions = array(
     'back-compatibility',
     'settings',
@@ -39,7 +37,6 @@ foreach ( $ntt_r_functions as $ntt_function ) {
 /**
  * Tags
  */
-
 $ntt_r_tags = array(
     'comment',
     'comment-actions',
@@ -54,6 +51,7 @@ $ntt_r_tags = array(
     'entry-author',
     'entry-banner',
     'entry-breadcrumbs-navigation',
+    'entry-category-name',
     'entry-content',
     'entry-content-navigation',
     'entry-count',
@@ -66,9 +64,10 @@ $ntt_r_tags = array(
     'entry-meta',
     'entry-navigation',
     'entry-sub-content-navigation',
-    'entry-summary-content',
+    'entry-excerpt-content',
     'entry-taxonomy',
     'entry-trimmed-content',
+    'view-details-action',
 );
 
 foreach ( $ntt_r_tags as $ntt_tag ) {

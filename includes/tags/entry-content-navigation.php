@@ -86,7 +86,7 @@ if ( ! function_exists('ntt__tag__entry_content_nav' ) ) {
             ?>
             <div aria-label="<?php esc_attr_e( 'Entry Content', 'ntt' ); ?>" role="navigation" class="ntt--entry-content-nav ntt--nav ntt--cp" data-name="Entry Content Navigation">
                 <div class="ntt--entry-content-nav-name ntt--nav-name ntt--obj">
-                    <span class="ntt--txt"><?php esc_html_e( 'Entry Content Navigation', 'ntt' ); ?></span>
+                    <span class="ntt--txt"><?php echo esc_html( 'Entry Content Navigation' ); ?></span>
                 </div>
                 <?php echo $content_pagination_group_mu; ?>
             </div>
