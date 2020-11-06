@@ -58,6 +58,7 @@ $ntt_r_tags = array(
     'entry-datetime',
     'entry-footer',
     'entry-full-content',
+    'entry-header-structure',
     'entry-header',
     'entry-heading',
     'entry-main',

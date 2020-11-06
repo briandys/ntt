@@ -41,5 +41,6 @@ if ( ! function_exists( 'ntt__tag__entry_banner' ) ) {
             </div>
             <?php
         }
+        ntt__wp_hook__entry_banner___after();
     }
 }

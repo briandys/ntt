@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry Header Content
+ * Entry Header Structure
  */
 
 if ( ! function_exists( 'ntt__tag__entry_header__structure') ) {

@@ -29,7 +29,6 @@ if ( ! function_exists( 'ntt__tag__entry_header__structure') ) {
         if ( ( ( is_singular() || is_home() || is_archive() ) && has_excerpt() ) || is_search() ) {
             ntt__tag__entry_excerpt_content();
         }
-
         ntt__tag__entry_banner();
     }
 }

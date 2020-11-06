@@ -72,3 +72,10 @@ function ntt__wp_hook__entry_primary_meta__structure___after() {
 function ntt__wp_hook__entity_secondary_info___before() {
     do_action( 'ntt__wp_hook__entity_secondary_info___before' );
 }
+
+/**
+ * entry-banner.php
+ */
+function ntt__wp_hook__entry_banner___after() {
+    do_action( 'ntt__wp_hook__entry_banner___after' );
+}

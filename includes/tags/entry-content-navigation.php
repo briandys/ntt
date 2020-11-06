@@ -36,7 +36,7 @@ if ( ! function_exists('ntt__tag__entry_content_nav' ) ) {
         if ( $multipage ) {
             $content_pagination_group_mu = '';
 
-            if ( 'number' == $next_or_number ) {
+            if ( 'number' === $next_or_number ) {
                 $content_pagination_group_mu .= $before;
                 
                 for ( $i = 1; $i < ( $numpages + 1 ); $i = $i + 1 ) {
