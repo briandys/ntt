@@ -1,9 +1,9 @@
 <?php
 /**
- * View Details Action
+ * View Entry Details Action
  */
-if ( ! function_exists( 'ntt__tag__view_details_action' ) ) {
-    function ntt__tag__view_details_action() {
+if ( ! function_exists( 'ntt__tag__view_entry_details_action' ) ) {
+    function ntt__tag__view_entry_details_action() {
         $view_details_of_text = _x( 'View details of', 'View details of Entry Name', 'ntt' );
         
         // Attribute

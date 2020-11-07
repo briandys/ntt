@@ -3,7 +3,7 @@
  * <!--more--> Quicktag
  */
 function ntt__function__more_quicktag_excerpt() {    
-    return ntt__tag__view_details_action();
+    return ntt__tag__view_entry_details_action();
 }
 add_filter( 'the_content_more_link', 'ntt__function__more_quicktag_excerpt' );
 
@@ -26,7 +26,7 @@ function ntt__function__manual_excerpt__search_excerpt( $excerpt ) {
             <a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>"><?php echo esc_html( $excerpt ); ?></a>
         </p>
         <?php
-        echo ntt__tag__view_details_action( $excerpt );
+        echo ntt__tag__view_entry_details_action( $excerpt );
     } else {
         return $excerpt;
     }

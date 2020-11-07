@@ -68,7 +68,7 @@ $ntt_r_tags = array(
     'entry-excerpt-content',
     'entry-taxonomy',
     'entry-trimmed-content',
-    'view-details-action',
+    'view-entry-details-action',
 );
 
 foreach ( $ntt_r_tags as $ntt_tag ) {
