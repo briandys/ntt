@@ -16,7 +16,6 @@ if ( ! function_exists( 'ntt__tag__entry_header' ) ) {
 /**
  * Entry Header Structure
  */
-
 if ( ! function_exists( 'ntt__tag__entry_header__structure') ) {
     function ntt__tag__entry_header__structure() {
 
