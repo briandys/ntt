@@ -21,10 +21,10 @@ if ( ! function_exists( 'ntt__tag__entry_count') ) {
         if ( $total_entries == 1 ) {
             $label_txt = __( 'Entry', 'ntt' );
             $status_css = $entry_count_css. '---single';
-        } elseif ( $total_entries > 1 ) {
+        } else if ( $total_entries > 1 ) {
             $label_txt = __( 'Entries', 'ntt' );
             $status_css = $entry_count_css. '---multiple';
-        } elseif ( $total_entries == 0 ) {
+        } else if ( $total_entries == 0 ) {
             $label_txt = __( 'Entry', 'ntt' );
             $status_css = $entry_count_css. '---none';
         } else {

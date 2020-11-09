@@ -32,9 +32,9 @@ function ntt__function__view__css__getter( $class='' ) {
      */
     if ( is_home() || is_archive() || $is_with_search_results ) {
         $classes[] = 'ntt--entry-index--view';
-	} elseif ( is_singular() ) {
+	} else if ( is_singular() ) {
 		$classes[] = 'ntt--entry-singular--view';
-	} elseif ( is_404() || $is_no_search_results ) {
+	} else if ( is_404() || $is_no_search_results ) {
         $classes[] = 'ntt--entry-zero--view';
     }
 
@@ -43,13 +43,13 @@ function ntt__function__view__css__getter( $class='' ) {
      */
     if ( is_home() ) {
         $classes[] = 'ntt--entry-index---current--view';
-    } elseif ( is_archive() ) {
+    } else if ( is_archive() ) {
         $classes[] = 'ntt--entry-index---archive--view';
 
         if ( is_tag() ) {
             $classes[] = 'ntt--entry-index---tag-archive--view';
         }
-    } elseif( $is_with_search_results ) {
+    } else if( $is_with_search_results ) {
         $classes[] = 'ntt--entry-index---search--view';
     }
 

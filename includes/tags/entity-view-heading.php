@@ -42,7 +42,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     
                     <?php
                     // Archive Index
-                    } elseif ( is_archive() ) {
+                    } else if ( is_archive() ) {
 
                         // Date Archive Index
                         if ( is_day() || is_month() || is_year() ) {
@@ -70,7 +70,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                                 </a>
                             
                             <?php
-                            } elseif ( is_month() ) {
+                            } else if ( is_month() ) {
                                 ?>
                                 <a href="<?php echo esc_url( get_month_link( $year_link, $month_link ) ); ?>">
                                     <span class="ntt--txt">
@@ -86,7 +86,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                                 </a>
                             
                             <?php
-                            } elseif ( is_year() ) {
+                            } else if ( is_year() ) {
                                 ?>
                                 <a href="<?php echo esc_url( get_year_link( $year_link ) ); ?>">
                                     <span class="ntt--txt">
@@ -119,7 +119,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                             }
 
                         // Author Archive Index
-                        } elseif ( is_author() && ! is_post_type_archive() ) {
+                        } else if ( is_author() && ! is_post_type_archive() ) {
 
                             if ( get_queried_object() ) {
                                 ?>
@@ -155,7 +155,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                             }
                         
                         // Category Archive Index
-                        } elseif ( is_category() ) {
+                        } else if ( is_category() ) {
                             ?>
                             <a href="<?php echo esc_url( get_category_link( get_queried_object()->term_id ) ); ?>">
                                 <span class="ntt--txt">
@@ -172,7 +172,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                         
                         <?php
                         // Tag Archive Index
-                        } elseif ( is_tag() ) {
+                        } else if ( is_tag() ) {
                             ?>
                             <a href="<?php echo esc_url( get_tag_link( get_queried_object()->term_id ) ); ?>">
                                 <span class="ntt--txt">
@@ -206,11 +206,11 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                         }
 
                     // Search Index
-                    } elseif ( is_search() ) {
+                    } else if ( is_search() ) {
 
                         if ( $query_found_posts == 0 || $query_found_posts ==1 ) {
                             $search_results_label = __( 'Search Result', 'ntt' );
-                        } elseif ( $query_found_posts > 1 ) {
+                        } else if ( $query_found_posts > 1 ) {
                             $search_results_label = __( 'Search Results', 'ntt' );
                         } else {
                             $search_results_label = '';
@@ -246,7 +246,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     }
                 
                 // Singular Entry
-                } elseif ( is_singular() ) {
+                } else if ( is_singular() ) {
 
                     // Post Entry
                     if ( is_single() && ! is_attachment() ) {
@@ -258,7 +258,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     
                     <?php
                     // Page Entry
-                    } elseif ( is_page() ) {
+                    } else if ( is_page() ) {
                         ?>
                         <span class="ntt--txt">
                             <span class="ntt--page-text"><?php echo esc_html( $page_text ); ?></span>
@@ -267,7 +267,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     
                     <?php
                     // Attachment Entry
-                    } elseif ( is_attachment() ) {
+                    } else if ( is_attachment() ) {
                         ?>
                         <span class="ntt--txt">
                             <span class="ntt--attachment-text"><?php esc_html_e( 'Attachment', 'ntt' ); ?></span>
@@ -287,7 +287,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     }
 
                 // Zero Entry
-                } elseif ( is_404() ) {
+                } else if ( is_404() ) {
                     ?>
                     <span class="ntt--txt">
                         <span class="ntt--four-zero-four-text"><?php esc_html_e( '404', 'ntt' ); ?></span>
