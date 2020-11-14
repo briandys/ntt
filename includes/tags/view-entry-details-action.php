@@ -14,8 +14,10 @@ if ( ! function_exists( 'ntt__tag__view_entry_details_action' ) ) {
             $label = $text. ' '. __( 'Entry', 'ntt' ). ' '. get_the_id();
         }
 
+        $query = apply_filters( 'ntt__wp_filter__view_entry_details_action_query', '' );
+
         $markup = '<div aria-label="'. esc_attr( $label ).'" title="'. esc_attr( $label ).'" class="ntt--view-entry-details-axn ntt--axn ntt--obj" data-name="Show More Action">';
-            $markup .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). '">';
+            $markup .= '<a href="'. esc_url( get_permalink( get_the_ID() ) ). $query. '">';
                 $markup .= '<span class="ntt--txt">'. esc_html_x( 'More', 'Show More of Entry', 'ntt' ). '</span>';
             $markup .= '</a>';
         $markup .= '</div>';
