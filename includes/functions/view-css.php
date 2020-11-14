@@ -3,12 +3,6 @@ function ntt__function__view__css__getter( $class='' ) {
 
     global $post;
     
-    // Making conditionals out of search results
-    global $wp_query;
-    $query_found_posts = $wp_query->found_posts;
-    $is_no_search_results = ( is_search() && $query_found_posts == 0 );
-    $is_with_search_results = ( is_search() && $query_found_posts >= 1 );
-    
     $classes = array();
 
     /**
@@ -30,11 +24,11 @@ function ntt__function__view__css__getter( $class='' ) {
     /**
      * Entry Display Types
      */
-    if ( is_home() || is_archive() || $is_with_search_results ) {
+    if ( is_home() || is_archive() || ntt__function__search_results__entity_validation( $match = true ) ) {
         $classes[] = 'ntt--entry-index--view';
 	} else if ( is_singular() ) {
 		$classes[] = 'ntt--entry-singular--view';
-	} else if ( is_404() || $is_no_search_results ) {
+	} else if ( is_404() || ntt__function__search_results__entity_validation( $match = false ) ) {
         $classes[] = 'ntt--entry-zero--view';
     }
 
@@ -49,7 +43,7 @@ function ntt__function__view__css__getter( $class='' ) {
         if ( is_tag() ) {
             $classes[] = 'ntt--entry-index---tag-archive--view';
         }
-    } else if( $is_with_search_results ) {
+    } else if( ntt__function__search_results__entity_validation( $match = true ) ) {
         $classes[] = 'ntt--entry-index---search--view';
     }
 

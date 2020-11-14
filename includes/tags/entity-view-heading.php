@@ -7,9 +7,7 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
     function ntt__tag__entity_view_heading() {
         
         global $wp_query;
-        $query_found_posts = $wp_query->found_posts;
-        $is_no_search_results = ( is_search() && $query_found_posts == 0 );
-        $is_with_search_results = ( is_search() && $query_found_posts >= 1 );
+        $found_posts = $wp_query->found_posts;
         ?>
         
         <div class="ntt--entity-view-heading ntt--cp" data-name="Entity View Heading">
@@ -208,9 +206,9 @@ if ( ! function_exists( 'ntt__tag__entity_view_heading' ) ) {
                     // Search Index
                     } else if ( is_search() ) {
 
-                        if ( $query_found_posts == 0 || $query_found_posts ==1 ) {
+                        if ( $found_posts == 0 || $found_posts == 1 ) {
                             $search_results_label = __( 'Search Result', 'ntt' );
-                        } else if ( $query_found_posts > 1 ) {
+                        } else if ( $found_posts > 1 ) {
                             $search_results_label = __( 'Search Results', 'ntt' );
                         } else {
                             $search_results_label = '';

@@ -26,6 +26,7 @@ $ntt_r_functions = array(
     'excerpt',
     'gallery',
     'pingback-header',
+    'search',
     'view-css',
     'widgets',
 );

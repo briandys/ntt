@@ -11,7 +11,7 @@ if ( ! function_exists( 'ntt__tag__entry_actions') ) {
             if ( get_the_title() ) {
                 $entry_name = get_the_title();
             } else {
-                $entry_name = _x( 'Entry', 'Entry (i.e. Article, Post)', 'ntt' ). ' '. get_the_id();
+                $entry_name = _x( 'Entry', 'Entry (i.e. Post, Page)', 'ntt' ). ' '. get_the_id();
             }
 
             $edit_text = __( 'Edit', 'ntt' );
