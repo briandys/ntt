@@ -3,7 +3,7 @@
  * Entry Category Name
  */
 if ( ! function_exists( 'ntt__tag__entry_category_heading' ) ) {    
-    function ntt__tag__entry_category_heading( $category_slug = '' ) {
+    function ntt__tag__entry_category_heading( $category_slug ) {
 
         if ( $category_slug ) {
             $cat_obj = get_category_by_slug( $category_slug ); 
@@ -30,7 +30,7 @@ if ( ! function_exists( 'ntt__tag__entry_category_heading' ) ) {
 }
 
 if ( ! function_exists( 'ntt__tag__entry_tag_heading' ) ) {    
-    function ntt__tag__entry_tag_heading( $tag_slug = '' ) {
+    function ntt__tag__entry_tag_heading( $tag_slug ) {
 
         if ( $tag_slug ) {
             $tag_obj = get_term_by('slug', $tag_slug, 'post_tag'); 
