@@ -53,7 +53,7 @@ $ntt_r_tags = array(
     'entry-banner',
     'entry-banner-visuals',
     'entry-breadcrumbs-navigation',
-    'entry-category-heading',
+    'entry-taxonomy-heading',
     'entry-content',
     'entry-content-navigation',
     'entry-count',
