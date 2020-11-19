@@ -65,7 +65,6 @@ $ntt_r_tags = array(
     'entry-main',
     'entry-meta',
     'entry-navigation',
-    'entry-sub-content-navigation',
     'entry-excerpt-content',
     'entry-taxonomy',
     'entry-trimmed-content',
