@@ -87,7 +87,7 @@ if ( ! function_exists('ntt__tag__entries_custom_nav' ) ) {
 
         $current_page = ( get_query_var('paged') ? get_query_var('paged') : 1 );
 
-        if ( $current_page == $total_pages ) {
+        if ( $total_pages == '1' ) {
             return;
         }
         ?>
