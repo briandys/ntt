@@ -18,7 +18,7 @@ function ntt__function__entries_nav_pagination( $total_pages = '' ) {
     $next_text_mu = '<span aria-label="'. esc_attr( $next_page_text ).'" title="'. esc_attr( $next_page_text ).'" class="ntt--txt">'. esc_html( $next_page_text ). '</span>';
     $prev_text_mu = '<span aria-label="'. esc_attr( $previous_page_text ).'" title="'. esc_attr( $previous_page_text ).'" class="ntt--txt">'. esc_html( $previous_page_text ). '</span>';
 
-    $super_pager = array(
+    $pagination = array(
         'main-query' => array(
             'show_all'              => true,
             'mid_size'              => 0,
@@ -36,7 +36,7 @@ function ntt__function__entries_nav_pagination( $total_pages = '' ) {
         ),
     );
 
-    return $super_pager;
+    return $pagination;
 }
 
 // Entries Navigation Page Indicator
@@ -73,7 +73,7 @@ if ( ! function_exists( 'ntt__tag__entries_nav' ) ) {
         $page_text = _x( 'Page', 'Next Page, Previous Page', 'ntt' );
         ?>
         
-        <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
+        <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-main-nav ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
             <?php
             ntt__tag__entries_nav_page_indicator( $current_page , $total_pages );
             the_posts_pagination ( ntt__function__entries_nav_pagination()['main-query'] );
@@ -91,7 +91,7 @@ if ( ! function_exists('ntt__tag__entries_custom_nav' ) ) {
         $page_text = _x( 'Page', 'Next Page, Previous Page', 'ntt' );
         ?>
 
-        <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
+        <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-custom-nav ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
             <?php
             ntt__tag__entries_nav_page_indicator( $current_page , $total_pages );
             echo paginate_links( array_merge( ntt__function__entries_nav_pagination( $total_pages )['main-query'], ntt__function__entries_nav_pagination( $total_pages )['custom-query'] ) ); ?>
