@@ -69,8 +69,6 @@ if ( ! function_exists( 'ntt__tag__entries_nav' ) ) {
         global $wp_query;
         $current_page = ( get_query_var('paged') ? get_query_var('paged') : 1 );
         $total_pages = $wp_query->max_num_pages;
-
-        $page_text = _x( 'Page', 'Next Page, Previous Page', 'ntt' );
         ?>
         
         <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-main-nav ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
@@ -87,8 +85,11 @@ if ( ! function_exists( 'ntt__tag__entries_nav' ) ) {
 if ( ! function_exists('ntt__tag__entries_custom_nav' ) ) {
     function ntt__tag__entries_custom_nav( $total_pages ) {
 
-        $current_page = ( get_query_var('paged') ? get_query_var('paged') : 1 );        
-        $page_text = _x( 'Page', 'Next Page, Previous Page', 'ntt' );
+        $current_page = ( get_query_var('paged') ? get_query_var('paged') : 1 );
+
+        if ( $current_page == $total_pages ) {
+            return;
+        }
         ?>
 
         <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-custom-nav ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
