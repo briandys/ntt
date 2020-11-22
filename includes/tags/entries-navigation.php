@@ -20,6 +20,7 @@ function ntt__function__entries_nav_pagination( $total_pages = '' ) {
 
     $pagination = array(
         'main-query' => array(
+            'screen_reader_text'    => 'Entries Navigation',
             'show_all'              => true,
             'mid_size'              => 0,
             'type'                  => 'list',
