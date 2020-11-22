@@ -5,8 +5,9 @@
 if ( ! function_exists( 'ntt__tag__entry_category_heading' ) ) {    
     function ntt__tag__entry_category_heading( $category_slug ) {
 
-        if ( $category_slug ) {
-            $cat_obj = get_category_by_slug( $category_slug ); 
+        $cat_obj = get_category_by_slug( $category_slug );
+        
+        if ( $category_slug && $cat_obj ) {
             $cat_name = $cat_obj->name;
             $cat_description = $cat_obj->description;
             $cat_ID = $cat_obj->term_id;
@@ -32,8 +33,9 @@ if ( ! function_exists( 'ntt__tag__entry_category_heading' ) ) {
 if ( ! function_exists( 'ntt__tag__entry_tag_heading' ) ) {    
     function ntt__tag__entry_tag_heading( $tag_slug ) {
 
-        if ( $tag_slug ) {
-            $tag_obj = get_term_by('slug', $tag_slug, 'post_tag'); 
+        $tag_obj = get_term_by('slug', $tag_slug, 'post_tag');
+
+        if ( $tag_slug && $tag_obj ) {
             $tag_name = $tag_obj->name;
             $tag_description = $tag_obj->description;
             $tag_ID = $tag_obj->term_id;
