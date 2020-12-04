@@ -74,7 +74,7 @@ if ( ! function_exists( 'ntt__tag__entries_nav' ) ) {
         
         <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-main-nav ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
             <?php
-            ntt__tag__entries_nav_page_indicator( $current_page , $total_pages );
+            ntt__tag__entries_nav_page_indicator( $current_page, $total_pages );
             the_posts_pagination ( ntt__function__entries_nav_pagination()['main-query'] );
             ?>
         </div>
@@ -95,7 +95,7 @@ if ( ! function_exists('ntt__tag__entries_custom_nav' ) ) {
 
         <div aria-label="<?php esc_attr_e( 'Entries', 'ntt' ); ?>" role="navigation" id="ntt--entries-nav" class="ntt--entries-custom-nav ntt--entries-nav ntt--nav ntt--cp" data-name="Entries Navigation">
             <?php
-            ntt__tag__entries_nav_page_indicator( $current_page , $total_pages );
+            ntt__tag__entries_nav_page_indicator( $current_page, $total_pages );
             echo paginate_links( array_merge( ntt__function__entries_nav_pagination( $total_pages )['main-query'], ntt__function__entries_nav_pagination( $total_pages )['custom-query'] ) ); ?>
         </div>
         <?php
