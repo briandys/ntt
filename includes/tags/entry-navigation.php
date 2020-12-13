@@ -20,16 +20,18 @@ if ( ! function_exists('ntt__tag__entry_nav' ) ) {
                     
                     if ( get_next_post_link() ) {
 
-                        $next_entry_text = __( 'Next Entry', 'ntt' );
+                        $next_entry_text = __( 'Newer Entry', 'ntt' );
             
                         $next_navi_txt_mu = '<span aria-label="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--txt">';
-                            $next_navi_txt_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Next', 'Next Entry', 'ntt' ). '</label>';
+                            $next_navi_txt_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Newer', 'Newer Entry', 'ntt' ). '</label>';
                             $next_navi_txt_mu .= '<span class="ntt--delimiter-txt">'. esc_html( ':' ). '</span>';
                             $next_navi_txt_mu .= ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%title' ) .'</span>';
                         $next_navi_txt_mu .= '</span>';
 
                         if ( '' !== get_the_post_thumbnail( get_next_post()->ID ) ) {
-                            $next_post_thumbnail_mu = '<span title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_next_post()->ID, $featured_image_size ). '</span>';
+                            $next_post_thumbnail_mu = '<span title="'. esc_attr( $next_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">';
+                            $next_post_thumbnail_mu .= get_the_post_thumbnail( get_next_post()->ID, $featured_image_size );
+                            $next_post_thumbnail_mu .= '</span>';
                         } else {
                             $next_post_thumbnail_mu = '';
                         }
@@ -43,16 +45,18 @@ if ( ! function_exists('ntt__tag__entry_nav' ) ) {
                     
                     if ( get_previous_post_link() ) {
 
-                        $previous_entry_text = __( 'Previous Entry', 'ntt' );
+                        $previous_entry_text = __( 'Older Entry', 'ntt' );
 
                         $previous_navi_txt_mu = '<span aria-label="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--txt">';
-                            $previous_navi_txt_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Previous', 'Previous Entry', 'ntt' ). '</label>';
+                            $previous_navi_txt_mu .= '<label class="ntt--label-txt">'. esc_html_x( 'Older', 'Previous Entry', 'ntt' ). '</label>';
                             $previous_navi_txt_mu .= '<span class="ntt--delimiter-txt">'. esc_html( ':' ). '</span>';
                             $previous_navi_txt_mu .= ' '. '<span class="ntt--entry-name-txt">'. esc_html( '%title' ) .'</span>';
                         $previous_navi_txt_mu .= '</span>';
 
                         if ( '' !== get_the_post_thumbnail( get_previous_post()->ID ) ) {
-                            $prev_post_thumbnail_mu = '<span title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">'. get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size ). '</span>';
+                            $prev_post_thumbnail_mu = '<span title="'. esc_attr( $previous_entry_text ). ':'. ' '. esc_attr( '%title' ). '" class="ntt--img">';
+                            $prev_post_thumbnail_mu .= get_the_post_thumbnail( get_previous_post()->ID, $featured_image_size );
+                            $prev_post_thumbnail_mu .= '</span>';
                         } else {
                             $prev_post_thumbnail_mu = '';
                         }
