@@ -24,7 +24,7 @@ function ntt__function__manual_excerpt__search_excerpt( $excerpt ) {
         $query = apply_filters( 'ntt__wp_filter__manual_excerpt__search_excerpt_query', '' );
         ?>
         <p class="ntt--entry-snippet-content ntt--obj" data-name="Entry Snippet Content">
-            <a href="<?php echo esc_url( get_permalink( get_the_ID() ). $query ); ?>"><?php echo esc_html( $excerpt ); ?></a>
+            <a href="<?php echo esc_url( get_permalink( get_the_ID() ). $query ); ?>"><?php echo wp_kses_post( $excerpt ); ?></a>
         </p>
         <?php
         echo ntt__tag__view_entry_details_action( $excerpt );
