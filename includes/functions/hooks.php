@@ -28,6 +28,17 @@ function ntt__wp_hook__entry_full_content___after() {
 }
 
 /**
+ * entity-main-main.php
+ */
+function ntt__wp_hook__entry_module___first_child() {
+    do_action( 'ntt__wp_hook__entry_module___first_child' );
+}
+
+function ntt__wp_hook__entry_module___last_child() {
+    do_action( 'ntt__wp_hook__entry_module___last_child' );
+}
+
+/**
  * header.php
  */
 function ntt__wp_hook__entity_primary_heading___before() {

@@ -6,6 +6,8 @@
 <div class="ntt--entity-main-main ntt--cn" data-name="Entity Main Main">
     <div id="content" class="ntt--entry-md ntt--cm ntt--md" data-name="Entry Module">
         <?php
+        ntt__wp_hook__entry_module___first_child();
+
         if ( is_singular() ) {
             
             while ( have_posts() ) {
@@ -29,6 +31,8 @@
                 get_template_part( 'content', 'none' );
             }
         }
+
+        ntt__wp_hook__entry_module___last_child();
         ?>
     </div>
     <?php get_sidebar(); ?>
