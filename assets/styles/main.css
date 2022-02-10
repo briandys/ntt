@@ -2,6 +2,7 @@
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   height: 1px;
   margin: -1px;
@@ -15,6 +16,7 @@
 
 .screen-reader-text:focus {
   clip: auto !important;
+  -webkit-clip-path: none;
   clip-path: none;
   height: auto;
   width: auto;
@@ -66,7 +68,8 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -103,7 +106,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -250,7 +254,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -284,7 +289,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -384,6 +390,10 @@ html {
    *
    * Customize the background color to match your design.
    */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
 
 ::selection {
   background: #b3d4fc;
@@ -531,7 +541,7 @@ textarea {
   /* Style adjustments for viewports that meet the condition */
 }
 
-@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -547,7 +557,8 @@ textarea {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster */
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important;
   }
   a,
